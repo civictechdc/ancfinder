@@ -1,0 +1,173 @@
+<html>
+<head>
+	<title>DC 2013 Wards, ANCs, and SMDs</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<style>
+		body { margin: 0; padding: 0; font-family: sans-serif; }
+		h1 { margin: .5em; text-align: center; }
+		.map { border: 1px solid black; }
+	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"> </script>
+
+	
+	<!-- FOR GOOGLE MAPS API V3 -->
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript" src="http://gis.govtrack.us/static/js/google_maps_helpers.js"></script>
+	
+	<!--- COMMON HELPERS -->
+	<script type="text/javascript" src="http://gis.govtrack.us/static/js/maps_helpers.js"></script>
+
+	
+	<script type="text/javascript">
+		function initialize() {
+			$('#map_col').css({ height: $('#map_col').width() * 3.5/4 });
+			initialize_google();
+		}
+	
+		/*** FOR GOOGLE MAPS API V3 ***/
+		function initialize_google() {
+			// Create a basic roadmap centered on the United States.
+			var myOptions = {
+				zoom: 4,
+				center: new google.maps.LatLng(38, -96),
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				panControl: false,
+				zoomControl: true,
+				mapTypeControl: false,
+				scaleControl: true,
+				streetViewControl: false,
+				styles: [ { "featureType": "poi.park", "elementType": "geometry.fill", "stylers": [ { "visibility": "off" } ] } ]
+				};
+			map = new google.maps.Map(document.getElementById("map_canvas_google"), myOptions);
+			
+			map.fitBounds(new google.maps.LatLngBounds(
+				new google.maps.LatLng(38.869472385, -77.1014200414),
+				new google.maps.LatLng(38.9613165232, -76.923349042)));
+			
+			// Add a tile overlay for this layer.
+			function add_overlay(map, layer, minzoom, maxzoom) {
+				var tileimgformat = 'png';
+				if (navigator.appName == 'Microsoft Internet Explorer' && new RegExp("MSIE [678]").exec(navigator.userAgent)) tileimgformat = 'gif';
+				
+				var overlay = new google.maps.ImageMapType({
+				  getTileUrl: function(coord, zoom) {
+				  	  if (zoom > maxzoom) return null; // minZoom, maxZoom ineffectual below?
+				  	  if (zoom < minzoom) return null;
+					  return "http://gis.govtrack.us/map/tiles/" + layer + "/" + zoom + "/" + coord.x + "/" + coord.y + "." + tileimgformat + "?gen=8";
+				  },
+				  tileSize: new google.maps.Size(256, 256),
+				  isPng: tileimgformat == 'png',
+				  
+				  minZoom: minzoom,
+				  maxZoom: maxzoom,
+				  opacity: tileimgformat == 'png' ? .8 : .25
+				});
+				map.overlayMapTypes.insertAt(0, overlay);
+			}
+			
+			add_overlay(map, "dc-ward-2013", 8, 12);
+			add_overlay(map, "dc-ward-2013-outlines", 13, 20);
+			add_overlay(map, "dc-anc-2013", 13, 14);
+			add_overlay(map, "dc-anc-2013-outlines", 15, 20);
+			add_overlay(map, "dc-smd-2013-outlines", 13, 14);
+			add_overlay(map, "dc-smd-2013", 15, 20);
+
+			// Create a fast mouse move handler.
+			/*
+			google.maps.event.addListener(map, "mousemove", function(e) {
+				map_hit_test(
+					getTileCoordinate(e.latLng, map),
+					"dc-smd-2013",
+					null,
+					function(key, data) {
+						if (data) $('#moousemove').text(data.name);
+					});
+			});
+			*/
+		}
+		
+		var anc_data = null;
+		$.ajax({
+			url: "/ancs.json",
+			dataType: "json",
+			success: function(data) {
+				anc_data = data;
+			}
+		});
+
+
+		var geocoder;
+		function do_address() {
+			var addr = $('#addr').val();
+			if (!geocoder) geocoder = new google.maps.Geocoder();
+			geocoder.geocode(
+				{ 'address': addr },
+				function(results, status) {
+					if (status == google.maps.GeocoderStatus.OK) {
+						var geocoder_result = results[0].geometry.location;
+
+						$.ajax({
+							url: "http://gis.govtrack.us/boundaries/dc-smd-2013/?contains=" + results[0].geometry.location.lat() + "," + results[0].geometry.location.lng(),
+							dataType: "jsonp",
+							success: function(data) {
+								var smd = data.objects[0].external_id;
+							
+								var boundsarray = eval(data.objects[0].extent);
+								var sw = new google.maps.LatLng(boundsarray[1], boundsarray[0]);
+								var ne = new google.maps.LatLng(boundsarray[3], boundsarray[2]);
+								var bounds = new google.maps.LatLngBounds(sw, ne);
+								map.fitBounds(bounds);
+								
+								var found = false;
+								for (var i in anc_data) {
+									var anc = anc_data[i];
+									if (anc.anc == smd.substring(0, 2)) {
+										$('#info').find(".smd-name").text(smd);
+										$('#info').find(".ward-name").text(smd.substring(0, 1));
+										$('#info').find(".anc-short-name").text(smd.substring(1, 2));
+									
+										$('#info').find(".anc-name").text(anc.anc);
+										$('#info').find(".anc-website").text(anc.website);
+										$('#info').find(".anc-website").attr('href', anc.website);
+										found = true;
+										break;
+									}
+								}
+								
+								if (found) {
+									$('#info').fadeIn();
+								} else {
+									$('#info').fadeOut();
+								}
+							}
+						});
+					}
+				});
+			
+			return false;
+		}
+	</script>
+</head>
+<body onload="initialize()">
+	<h1>DC Wards, ANCs, and SMDs (2013)</h1>
+	
+	<div style="float: left; width: 50%;">
+		<div style="padding: 1em">
+			<p>What's your address?</p>
+			<input id="addr" type="text" value="1818 H St NW, Washington, DC"/>
+			<input type="button" onclick="do_address()" value="Go"/>
+		
+			<p id="info" style="display: none">
+				You live in SMD <span class="smd-name"> </span>.
+				That's Ward <span class="ward-name"> </span> ANC <span class="anc-short-name"> </span>, or <span class="anc-name"> for short.
+				The ANC <span class="anc-name"> </span> website is <a class="anc-website"> </a>.
+			</p>
+		</div>
+	</div>
+	
+	<div id="map_col" style="float: left; width: 49%;">
+		<div id="map_canvas_google" class="map" style="width: 100%; height: 100%;"> </div>
+	</div>
+</body>
+</html>
