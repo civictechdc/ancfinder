@@ -219,10 +219,16 @@
 									$('#info_address_not_found').fadeIn();
 									return;
 								}
+
+								// call again to get the boundary extents
+								$.ajax({
+								url: "http://gis.govtrack.us" + data.objects[0].url,
+								dataType: "jsonp",
+								success: function(data) {
 							
-								var smd = data.objects[0].external_id;
+								var smd = data.external_id;
 							
-								var boundsarray = eval(data.objects[0].extent);
+								var boundsarray = eval(data.extent);
 								var sw = new google.maps.LatLng(boundsarray[1], boundsarray[0]);
 								var ne = new google.maps.LatLng(boundsarray[3], boundsarray[2]);
 								var bounds = new google.maps.LatLngBounds(sw, ne);
@@ -250,6 +256,8 @@
 								} else {
 									$('#info').fadeOut();
 								}
+								
+								}}); // inner Ajax call
 							}
 						});
 					}
