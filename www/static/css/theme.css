@@ -286,8 +286,15 @@ h2 {
 	background-color: #77BBFF;
 }
 .container.style2 {
+	color: #555;
 }
 .container.style1 h2, .container.style2 h2 {
-	color: black;
 	margin-bottom: 1em;
 }
+.container.style1 h2 {
+	color: white;
+}
+.container.style2 h2 {
+	color: #3376bb;
+}
+
