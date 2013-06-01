@@ -1,5 +1,5 @@
 /*
-Theme styles for My2012District.com
+Theme styles based originally on My2012District.com
 */
 
 @font-face {
@@ -276,3 +276,18 @@ h2 {
 	margin-bottom: .5em;
 }
 
+.container.style1, .container.style2 {
+	margin: 0;
+	width: 100%;
+	height: 320px;
+	padding: 25px 50px;
+}
+.container.style1 {
+	background-color: #77BBFF;
+}
+.container.style2 {
+}
+.container.style1 h2, .container.style2 h2 {
+	color: black;
+	margin-bottom: 1em;
+}
