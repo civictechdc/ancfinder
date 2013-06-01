@@ -237,6 +237,7 @@ input[type="color"].large,
 	}
 
 	ul.nav-links {
+		text-align: right;
 		list-style: none;
 	}
 	ul.nav-links li {
@@ -284,7 +285,6 @@ h2 {
 	margin: 0;
 	width: 100%;
 	height: 320px;
-	padding: 25px 50px;
 	font-size: 17px;
 }
 .container.style1 {
@@ -304,10 +304,10 @@ h2 {
 .container.style2 h2 {
 }
 
-.container .span6.image {
+.container .span5.image {
 	text-align: center;
 }
-.span6.image img {
+.span5.image img {
 	margin-top: 20px;
 	width: 50%;
 }

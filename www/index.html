@@ -43,7 +43,7 @@
     		</div>
     	</div>
     </div>
-	<div class="container style2" style="height: auto;">
+	<div class="main container style2" style="height: auto;">
 	
 		<div class="row">
 			<div class="span5 offset1">
@@ -82,20 +82,20 @@
 		  </div>
 		  
 		  <div id="map_col" class="span5">
-			<div id="map_canvas_google" class="map" style="width: 100%; height: 100%;"> </div>
+			<div id="map_canvas_google" class="map" style="width: 400px; height: 340px; margin-top: 30px"> </div>
 		  </div>
 		</div>
 	</div>
 	
 	<div id="what-is-an-anc" class="container style1">
 		<div class="row">
-			<div class="span6 text">
+			<div class="span5 offset1 text">
 				<h2>What is an ANC?</h2>
 				<p>Washington DC is divided into 40 districts called Advisory Neighborhood Commissions, or ANCs.</p>
 				<p>ANCs are lead by an average of 2-12 commissioners who are your most local government representative in DC.</p>
 				<p>ANC commissioners make decisions about a broad range of issues in your community, such as liquor licenses, parking, and sanitation.</p>
 			</div>
-			<div class="span6 image">
+			<div class="span5 image">
 				<img src="static/img/anc.svg"/>
 			</div>
 		</div>
@@ -103,10 +103,10 @@
 
 	<div class="container style2">
 		<div class="row">
-			<div class="span6 image">
+			<div class="span5 offset1 image">
 				<img src="static/img/neighborhood.svg"/>
 			</div>
-			<div class="span6 text">
+			<div class="span5 text">
 				<h2>Single Member Districts</h2>
 				<p>Each ANC has 2-12 ANC commissioners who each represent a division of the ANC called a Single Member District, or SMD. Commissioners each represent about 2,000 DC residents who live in the SMD.</p>
 			</div>
@@ -115,12 +115,12 @@
  
 	<div class="container style1">
 		<div class="row">
-			<div class="span6 text">
+			<div class="span6 offset1 text">
 				<h2>What do ANCs do? Why should I care?</h2>
 				<p>ANCs hold regular meetings and make decisions about many important community issues, such as parking, recreation, street improvements, liquor licenses, zoning, restaurants and businesses, police protection, sanitation and trash collection, and the District's annual budget.</p>
 				<p>Your ANC commissioners also control grant money of several thousand dollars (or more) for the general purpose of improving their area and hiring staff. Learn more about ANC authority and budget.</p>
 			</div>
-			<div class="span6 image">
+			<div class="span5 image">
 				<img src="static/img/people.svg"/>
 			</div>
 		</div>
@@ -128,10 +128,10 @@
  
 	<div class="container style2">
 		<div class="row">
-			<div class="span6 image">
+			<div class="span5 offset1 image">
 				<img src="static/img/vote.svg"/>
 			</div>
-			<div class="span6 text">
+			<div class="span5 text">
 				<h2>Who elects ANC commissioners?</h2>
 				<p>You elect your ANC commissioner every two years in non-partisan elections. ANC commissioners each represent one single member district (SMD). ANC campaigns are typically small, grassroots efforts. In fact, winning candidates often run unopposed and receive just a few hundred votes. Learn more about running for ANC commissioner.</p>
 			</div>
@@ -140,11 +140,11 @@
 
 	<div class="container style1">
 		<div class="row">
-			<div class="span6 text">
+			<div class="span5 offset1 text">
 				<h2>How can I get involved?</h2>
 				<p>To get involved in your ANC, you can attend ANC meetings, learn more about your ANC, or even become an ANC Commissioner. Start by finding your ANC.</p>
 			</div>
-			<div class="span6 image">
+			<div class="span5 image">
 				<img src="static/img/hand.svg"/>
 				
 				<div id="jump_to_top">
@@ -183,13 +183,15 @@
 		function initialize() {
 			$('#map_col').css({ height: $('#map_col').width() * 3.5/4 });
 			initialize_google();
+		
+			$('.container.main').css({ minHeight: $(window).height() - $('.container.main').offset().top*2 });
 			
 			$('a.smooth').click(function(e) {
 				e.preventDefault();
 				var target = this.hash,
 				$target = $(target);
 				$('html, body').stop().animate({
-					'scrollTop': $target.offset().top
+					'scrollTop': $target.offset().top - 15
 				}, 900, 'swing', function () {
 					window.location.hash = target;
 				});
