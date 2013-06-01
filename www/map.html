@@ -277,7 +277,7 @@
 
 		var geocoder;
 		function do_address() {
-			var addr = $('#addr').val();
+			var addr = $('#addr').val() + ", Washington, DC";
 			if (!geocoder) geocoder = new google.maps.Geocoder();
 			geocoder.geocode(
 				{
@@ -289,9 +289,8 @@
 				function(results, status) {
 					if (status == google.maps.GeocoderStatus.OK) {
 						var geocoder_result = results[0].geometry.location;
-
 						$.ajax({
-							url: "http://gis.govtrack.us/boundaries/dc-smd-2013/?contains=" + results[0].geometry.location.lat() + "," + results[0].geometry.location.lng(),
+							url: "http://gis.govtrack.us/boundaries/dc-smd-2013/?contains=" + geocoder_result.lat() + "," + geocoder_result.lng(),
 							dataType: "jsonp",
 							success: function(data) {
 								if (data.objects.length == 0) {
