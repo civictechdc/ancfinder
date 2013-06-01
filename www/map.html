@@ -6,54 +6,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 
-	<!-- bootstrap -->
-	<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	<!-- styles -->
+	<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="static/css/theme.css" rel="stylesheet">
+	<link href="static/css/map.css" rel="stylesheet">
 	
-	<style>
-		body {
-			background-color: #EEE;
-			font-size: 14px;
-		}
-		
-		h1 {
-			background-color: #444;
-			color: #EEE;
-			padding: .5em;
-			text-align: center;
-		}
-		h1 small {
-			display: block;
-			font-size: 80%;
-			color: #DDD;
-		}
-		
-		#addr_box {
-			border: 1px solid black;
-			background-color: white;
-			padding: 5px;
-			font: bold 16px/18px serif;
-			color: #777;
-			width: 405px;
-		}
-		#addr_box input[type=text] {
-			width: 220px;
-			border: none;
-			margin: 0 .5em 0 0;
-			background-color: #FFA;
-			padding: 0 2px 0 2px;
-			font: inherit;
-			text-align: right;
-			color: black;
-		}
-		#addr_box input[type=button] {
-			margin: 0 0 0 1em;
-		}
-		
-		.map { border: 1px solid black; }
-	</style>
 </head>
 <body onload="initialize()">
+	<div id="header"> <!-- doesn't use bootstrap's navbar styling, ought to fix this -->
+  		<div class="container">
+	  		<div class="row">
+	  			<a href="index.html" id="logo" class="span2">ANCBrigade</a>
+	  			<div class="span10">
+	  				<ul class="nav-links">
+              <li><a href="#AboutANC" title="Discover what ANCs do for DC.">What Are ANCs?</a></li>
+              <li><a href="map.html" title="Which ANC distict do you live in? Who is your Commissioner? Learn that and more here.">Find My ANC</a></li>
+              <li><a href="#SubmitANC" title="We're all in this together. You can submit any kind of info about an ANC here, such as meeting minutes, budget info, Commissioner websites, etc.">Submit ANC Info</a></li>
+              <li><a href="#AboutUs" title="This is a project of Code for DC, a group of volunteer civic hackers. Learn more and get involved!">About</a></li>
+	  				</ul>
+	  			</div>
+	  		</div>
+	  	</div>
+    </div><!-- /header -->
+
 	<h1>ANC Brigade <small>Open government for DC&rsquo;s advisory neighborhood commissions</small></h1>
 	
 	<div class="container" style="margin-top: 10px">
@@ -94,10 +70,12 @@
 		  </div>
 		</div>
 	</div>
+
+
 	
 	<!-- jQuery, Bootstrap, and Google Maps -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"> </script>
-	<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+	<script src="static/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript" src="http://gis.govtrack.us/static/js/google_maps_helpers.js"></script>
 	

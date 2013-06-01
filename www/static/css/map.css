@@ -1,0 +1,23 @@
+#addr_box {
+			border: 1px solid black;
+			background-color: white;
+			padding: 5px;
+			font: bold 16px/18px serif;
+			color: #777;
+			width: 405px;
+		}
+#addr_box input[type=text] {
+	width: 220px;
+	border: none;
+	margin: 0 .5em 0 0;
+	background-color: #FFA;
+	padding: 0 2px 0 2px;
+	font: inherit;
+	text-align: right;
+	color: black;
+}
+#addr_box input[type=button] {
+	margin: 0 0 0 1em;
+}
+
+.map { border: 1px solid black; }

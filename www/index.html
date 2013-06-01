@@ -8,9 +8,9 @@
     <meta name="author" content="DC Chapter of the Code for America Brigade">
 
     <!-- styles -->
-    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="/static/css/theme.css" rel="stylesheet">
+    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="static/css/theme.css" rel="stylesheet">
    
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -19,39 +19,51 @@
   </head>
   
   <body>
-  	<div id="header">
+  	<div id="header"> <!-- doesn't use bootstrap's navbar styling, ought to fix this -->
   		<div class="container">
 	  		<div class="row">
-	  			<a href="/" id="logo" class="span2">ANCBrigade</a>
+	  			<a href="index.html" id="logo" class="span2">ANCBrigade</a>
 	  			<div class="span10">
 	  				<ul class="nav-links">
-	  					<li><a href="http://codefordc.org/">Code for DC</a></li>
-	  					<li><a href="http://www.codeforamerica.org/">Code for America</a></li>
-	  					<li><a href="http://brigade.codeforamerica.org/">CfA Brigade</a></li>
+              <li><a href="#AboutANC" title="Discover what ANCs do for DC.">What Are ANCs?</a></li>
+              <li><a href="map.html" title="Which ANC distict do you live in? Who is your Commissioner? Learn that and more here.">Find My ANC</a></li>
+              <li><a href="#SubmitANC" title="We're all in this together. You can submit any kind of info about an ANC here, such as meeting minutes, budget info, Commissioner websites, etc.">Submit ANC Info</a></li>
+              <li><a href="#AboutUs" title="This is a project of Code for DC, a group of volunteer civic hackers. Learn more and get involved!">About</a></li>
 	  				</ul>
 	  			</div>
 	  		</div>
 	  	</div>
-	</div><!-- /header -->
+    </div><!-- /header -->
 
    <!-- Main hero unit for a primary marketing message or call to action -->
-	<div id="masthead">
-		<div class="container">
-			<div class="row">
-				<h1 class="span8 offset2">Strengthening Hyper-Local Government</h1>
-				<div class="span8 offset2">
-					<p>ANCBrigade is a project in Washington, D.C. to strengthen our unique hyper-local level of government called <b>Advisory Neighborhood Commissions (ANCs)</b>.</p>
-					<p>The District is divided into 40 ANCs, about 5 per ward. Each ANC is made up of about 7-8 commissioners. Commissioners are each elected from Single Member Districts (SMDs) comprising about 2,000 District residents.
-					There are 296 ANC commissioners (and SMDs) in the District.</p>
-					<p>This website is a project of the <a href="http://codefordc.org/">DC chapter</a>
-					of the <a href="http://brigade.codeforamerica.org/">Code for America Brigade</a>. We&rsquo;re volunteers
-					interested in using technology to solve problems in our civic lives. This is a work in progress.</p>
-				</div>
-			</div>
-		</div><!-- /container -->
-	</div><!-- /masthead -->
-    
-    <div class="container body">
+  	<div id="masthead">
+  		<div class="container">
+  			<div class="row">
+  				<h1 class="span8 offset2">Strengthening Hyper-Local Government</h1>
+  				<div class="span8 offset2">
+  					<p>ANCBrigade is a project in Washington, D.C. to strengthen our unique hyper-local level of government called <b>Advisory Neighborhood Commissions (ANCs)</b>.</p>
+  					<p>The District is divided into 40 ANCs, about 5 per ward. Each ANC is made up of about 7-8 commissioners. Commissioners are each elected from Single Member Districts (SMDs) comprising about 2,000 District residents.
+  					There are 296 ANC commissioners (and SMDs) in the District.</p>
+  					<p>This website is a project of the <a href="http://codefordc.org/">DC chapter</a>
+  					of the <a href="http://brigade.codeforamerica.org/">Code for America Brigade</a>. We&rsquo;re volunteers
+  					interested in using technology to solve problems in our civic lives. This is a work in progress.</p>
+  				</div>
+  			</div>
+  		</div><!-- /container -->
+  	</div><!-- /masthead -->
+
+    <div class="container">
+      <div class="row">
+        <div class="span10 offset1">
+          <h2 id="AboutANC">What Are ANCs?</h2>
+          <p>Washington DC is divided into 40 districts called Advisory Neighborhood Commissions, or ANCs. Each ANC has 7-8 ANC commissioners, who are your most local government representative in DC.</p>
+          <p>ANCs hold regular meetings and make decisions about a range of issues, including traffic, parking, recreation, street improvements, liquor licenses, zoning, economic development, police protection, sanitation and trash collection, and the District's annual budget. Learn more about ANC authority.</p>
+          <p>Each ANC is divided into 7-8 Single Member Districts, or SMDs. Commissioners are each elected from Single Member Districts, and they each represent about 2,000 DC residents. There are 296 ANC commissioners (and SMDs) in the District.</p>
+          <p>You elect your ANC Commissioner every two years. They do not receive a salary, but they receive grant money for the general purpose of improving their area and hiring staff. Learn more about ANC grant money.</p>
+          <h2>Why should I care about my ANC?</h2>
+          <p>In addition to awarding grant money as they see fit, ANC Commissioners’ main power comes from making decisions about neighborhood issues and then advising the DC Council and DC government agencies to take action - and this is nearly always the final decision in a matter.</p>
+        </div>
+      </div>
       <div class="row">
         <div class="span5 offset1">
             <h2>Goals</h2>
@@ -100,33 +112,33 @@
             <li>Patrick says ANC documents include docs: bylaws, original applications, agendas, minutes, and voting records.</li>
             <li>List of ANCs/SMDs <a href="https://docs.google.com/spreadsheet/ccc?key=0AsuPWK1wtxNfdGdyVWU4Z3J3X3g3RzVyVWJ1Rkd4dXc#gid=1">google doc</a></li>
             <li>GitHub <a href="https://github.com/codefordc/ancbrigade">project</a>.</li>
-            <li>Demo <a href="/map.html">map</a>.</li>
+            <li>Demo <a href="map.html">map</a>.</li>
           </ul>
         </div>
       </div>
     </div> <!-- /container -->
       
-      <footer>
-          <div class="row">
-              <div class="span4">
-                  <p class="by">ANCBrigade is a project of the <a href="http://codefordc.org/">DC chapter</a>
-                  of the <a href="http://brigade.codeforamerica.org/">Code for America Brigade</a>. We&rsquo;re volunteers.</p>
-              </div>
-              <div class="span4">
-                  <p>This is a work in progress.</p>
-              </div>
-              <div class="span4">
-                  <p>Last updated January 2013.</p>
-              </div>
+    <footer>
+        <div class="row">
+          <div class="span3 offset2">
+                <p>ANCBrigade is a project in Washington, D.C. to strengthen our unique hyper-local level of government called Advisory Neighborhood Commissions (ANCs).</p>
           </div>
-      </footer>
+          <div class="span3 offset">
+              <p class="by">ANCBrigade is a project of the <a href="http://codefordc.org/">DC chapter</a>
+              of the <a href="http://brigade.codeforamerica.org/">Code for America Brigade</a>. We’re volunteers interested in using technology to solve problems in our civic lives. This is a work in progress.</p>
+          </div>
+          <div class="span3">
+              <p>Last updated January 2013.</p>
+          </div>
+        </div>
+    </footer>
 
     <!-- javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/static/bootstrap/js/jquery-1.7.2.min.js"></script>
-    <script src="/static/bootstrap/js/bootstrap-transition.js"></script>
-    <script src="/static/bootstrap/js/bootstrap-collapse.js"></script>
+    <script src="static/bootstrap/js/jquery-1.7.2.min.js"></script>
+    <script src="static/bootstrap/js/bootstrap-transition.js"></script>
+    <script src="static/bootstrap/js/bootstrap-collapse.js"></script>
 	</body>
 </html>
 
