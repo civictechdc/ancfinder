@@ -104,11 +104,19 @@ body {
 	font-size: 16px;
 }
 
-h1,
+h1 {
+    font-family: 'PTSerif', 'Palatino Linotype', 'Times New Roman', Times, serif;
+    font-size: 2em;
+    text-align: center;
+    line-height: 1.2em;
+    padding-bottom: .3em;
+    margin-bottom: .3em;
+    color: #37a276;
+}
 h2,
 h3,
 h4 {
-	color: #40a4bd;
+	color: #37a276;
 	font-family: 'PTSerif', 'Palatino Linotype', 'Times New Roman', Times, serif;
 }
 h2 span, h3 span, h4 span, span span, a em {
@@ -256,7 +264,6 @@ input[type="color"].large,
 	line-height: 1.2em;
 	padding-bottom: .3em;
 	margin-bottom: .3em;
-	border-bottom: solid 1px #c0e7ef;
 	color: #fff;
     text-shadow: 0 1px 1px #066982;
 }
