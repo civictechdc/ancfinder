@@ -241,7 +241,7 @@ input[type="color"].large,
 	}
 	ul.nav-links li {
 		display: inline;
-		margin-left: 20px;
+		margin-left: 60px;
 	}
 	
 #masthead {
@@ -270,6 +270,7 @@ input[type="color"].large,
 h2 {
 	margin: .75em 0 .25em 0;
 }
+
 
 .body ul li {
 	margin-bottom: .5em;
