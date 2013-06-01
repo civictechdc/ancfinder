@@ -162,7 +162,7 @@
 		
 		var anc_data = null;
 		$.ajax({
-			url: "/ancs.json",
+			url: "ancs.json",
 			dataType: "json",
 			success: function(data) {
 				anc_data = data;
@@ -202,31 +202,27 @@
 								dataType: "jsonp",
 								success: function(data) {
 							
-								var smd = data.external_id;
+								var smd_id = data.external_id.toUpperCase();
 							
-								var boundsarray = eval(data.extent);
+								var boundsarray = data.extent;
 								var sw = new google.maps.LatLng(boundsarray[1], boundsarray[0]);
 								var ne = new google.maps.LatLng(boundsarray[3], boundsarray[2]);
 								var bounds = new google.maps.LatLngBounds(sw, ne);
 								map.fitBounds(bounds);
 								
-								var found = false;
-								for (var i in anc_data) {
-									var anc = anc_data[i];
-									if (anc.anc == smd.substring(0, 2)) {
-										$('#info').find(".smd-name").text(smd);
-										$('#info').find(".ward-name").text(smd.substring(0, 1));
-										$('#info').find(".anc-short-name").text(smd.substring(1, 2));
-									
-										$('#info').find(".anc-name").text(anc.anc);
-										$('#info').find(".anc-website").text(anc.website);
-										$('#info').find(".anc-website").attr('href', anc.website);
-										found = true;
-										break;
-									}
-								}
+								var ward = anc_data[smd_id.substring(0,1)];
+								var anc = ward["ancs"][smd_id.substring(1,2)];
+								var smd = anc["smds"][smd_id.substring(2,4)];
 								
-								if (found) {
+								if (smd) {
+									$('#info').find(".smd-name").text(smd.smd);
+									$('#info').find(".ward-name").text(ward.ward);
+									$('#info').find(".anc-short-name").text(anc.anc_letter);
+								
+									$('#info').find(".anc-name").text(anc.anc);
+									$('#info').find(".anc-website").text(anc.website);
+									$('#info').find(".anc-website").attr('href', anc.website);
+
 									$('#info').fadeIn();
 									$('#info_address_not_found').fadeOut();
 								} else {
