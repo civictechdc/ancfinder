@@ -56,15 +56,19 @@
 			
 			<!--If search successful, details below-->
 			<div id="info" style="display: none; margin-top: 1em;">
-				<h3>You live in...</h3>
-				<div style="margin: 1em">
+				<div>
 					<p>You live in <b>Ward <span class="ward-name"> </span>&rsquo;s ANC <span class="anc-short-name"> </span></b>.
 					It&rsquo;s called <span class="anc-name"> </span> for short.</p>
 					
+					<p>Your single member district is <b><span class="smd-name"> </span></b>.</p>
+					
+					<p>Your commissioner is: <b><span class="smd-commissioner"> </span></b><span class="smd-commissioner-email"></span>.</p>
+
 					<p>ANC <span class="anc-name"> </span>&rsquo;s website is <a class="anc-website"> </a>.
 					
-					<p>Your single member district is <b><span class="smd-name"> </span></b>. That is the district that elected your ANC commissioner.</p>
-				</div>
+    				<p style="margin-top: 1.5em"><a class="smooth" href="#what-is-an-anc">Learn more about ANCs <span>▼</span></a></p>
+					
+					</div>
 			</div>
 			<!--Search unsuccessful-->
 			<div id="info_address_not_found" style="display: none">
@@ -319,6 +323,22 @@
 									$('#info').find(".anc-name").text(anc.anc);
 									$('#info').find(".anc-website").text(anc.website);
 									$('#info').find(".anc-website").attr('href', anc.website);
+									
+									var name = "";
+									name += smd["First Name"] + " ";
+									if (smd["Nickname"]) name += smd["Nickname"] + " ";
+									if (smd["Middle Name"]) name += smd["Middle Name"] + " ";
+									name += smd["Last Name"];
+									$('#info').find(".smd-commissioner").text(name);
+									
+									if (smd.Email || smd.Phone) {
+										var contacts = [];
+										if (smd.Email) contacts.push(smd.Email);
+										if (smd.Phone) contacts.push(smd.Phone);
+										$('#info').find('.smd-commissioner-email').text(" (" + contacts.join(", ") + ")");
+									} else {
+										$('#info').find('.smd-commissioner-email').text(" (contact information was not provided)");
+									}
 
 									$('#info').fadeIn();
 									$('#info_address_not_found').fadeOut();
