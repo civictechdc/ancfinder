@@ -111,12 +111,12 @@ h1 {
     line-height: 1.2em;
     padding-bottom: .3em;
     margin-bottom: .3em;
-    color: #37a276;
+	color: #79A5D3;
 }
 h2,
 h3,
 h4 {
-	color: #37a276;
+	color: #79A5D3;
 	font-family: 'PTSerif', 'Palatino Linotype', 'Times New Roman', Times, serif;
 }
 h2 span, h3 span, h4 span, span span, a em {
@@ -245,25 +245,24 @@ input[type="color"].large,
 	}
 	
 #masthead {
-    background: #37a276 url('../img/masthead-blue-gradient.jpg') 50% top no-repeat;
-    padding: 40px 0 20px;
-    color: #FAF5FF;
+	background-color: #79A5D3;
+    padding: 20px 0 20px;
+	color: #79A5D3;
 }
 
 #masthead a {
-	color: #fff1AA;
-	font-weight: bold;
+	color: inherit;
 }
 #masthead a:hover {
-	color: #fff1AA;
+	color: inherit;
 }
 
 #masthead h1 {
-	font-size: 2em;
+	font-size: 1.5em;
 	text-align: center;
 	line-height: 1.2em;
-	padding-bottom: .3em;
-	margin-bottom: .3em;
+	padding: 0;
+	margin: 0;
 	color: #fff;
     text-shadow: 0 1px 1px #066982;
 }
@@ -274,6 +273,10 @@ h2 {
 
 .body ul li {
 	margin-bottom: .5em;
+}
+
+#addr_box {
+	margin-top: 1em;
 }
 
 .container.style1, .container.style2 {
@@ -298,7 +301,6 @@ h2 {
 	color: white;
 }
 .container.style2 h2 {
-	color: #79A5D3;
 }
 
 .container .span6.image {
@@ -307,4 +309,11 @@ h2 {
 .span6.image img {
 	margin-top: 20px;
 	width: 50%;
+}
+
+#jump_to_top {
+	text-align: right;
+}
+#jump_to_top a {
+	color: white;
 }
