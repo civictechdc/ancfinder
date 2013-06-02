@@ -300,6 +300,7 @@ h2 {
 	color: black;
 	text-align: left;
 }
+
 #addr_box div {
 	font: bold 16px/20px sans-serif;
 	color: #777;
@@ -307,6 +308,13 @@ h2 {
 }
 #addr_box input {
 	margin-top: 5px;
+}
+div#use_my_location {
+	margin-top: 4px;
+	text-align: right;
+}
+#use_my_location a {
+	font: normal 12px/14px sans-serif;
 }
 
 .widecontainer.style1, .widecontainer.style2 {

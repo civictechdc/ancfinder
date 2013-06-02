@@ -52,9 +52,10 @@
 				<p>Let&rsquo;s find yours. Enter your home address to get started:</p>
 			</div>
 			<div id="addr_box">
-				<input id="addr" type="text" placeholder="1818 H St NW"/>
+				<input id="addr" type="text"/>
 				<div>Washington, DC</div>
 				<input type="button" onclick="do_address()" value="Find Out About My ANC ▶"/>
+				<div id="use_my_location"><a href="#" onclick="use_my_location(); return false;">Use my current location</a></div>
 			</div>
 			
 			<!--If search successful, details below-->
@@ -202,8 +203,10 @@
 			
 			initialize_google();
 			
-			$('#addr').focus();
 			$('#addr').keydown_enter(do_address);
+			$('#addr').input_default("1818 H St. NW");
+			
+			if (navigator.geolocation) $('#use_my_location').show();
 			
 			$('a.smooth').click(function(e) {
 				e.preventDefault();
@@ -289,6 +292,29 @@
 			}
 		});
 
+		var location_marker = null;
+		function use_my_location() {
+			navigator.geolocation.getCurrentPosition(
+				function(position) {
+					if (!position || !position.coords) return;
+					$('#addr').val("your current location");
+					show_info(position.coords.latitude, position.coords.longitude);
+					
+					if (location_marker) map.removeOverlay(location_marker);
+					location_marker = new google.maps.Marker({
+						map: map,
+						position: new google.maps.LatLng(
+							position.coords.latitude,
+							position.coords.longitude
+							),
+						title: "Your Current Location"
+						});
+				},
+				function(position) {
+					alert("We couldn't get your current location.");
+				}
+			);
+		}
 
 		var geocoder;
 		function do_address() {
@@ -304,8 +330,15 @@
 				function(results, status) {
 					if (status == google.maps.GeocoderStatus.OK) {
 						var geocoder_result = results[0].geometry.location;
+						show_info(geocoder_result.lat(), geocoder_result.lng());
+					}
+				}
+				);
+		}
+		
+		function show_info(lat, lng) {
 						$.ajax({
-							url: "http://gis.govtrack.us/boundaries/dc-smd-2013/?contains=" + geocoder_result.lat() + "," + geocoder_result.lng(),
+							url: "http://gis.govtrack.us/boundaries/dc-smd-2013/?contains=" + lat + "," + lng,
 							dataType: "jsonp",
 							success: function(data) {
 								if (data.objects.length == 0) {
@@ -362,12 +395,8 @@
 								$('#info').fadeIn();
 								$('#info_address_not_found').fadeOut();
 							}
-						});
-					}
-				});
-			
-			return false;
-		}
+						}); // ajax to resolve SMD
+		}			
 	</script>
 	
 </body>
