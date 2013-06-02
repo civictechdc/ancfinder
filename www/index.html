@@ -43,8 +43,8 @@
     		</div>
     	</div>
     </div>
-	<div class="main container style2" style="height: auto;">
-	
+	<div class="main widecontainer style2">
+	<div class="container"
 		<div class="row">
 			<div class="span5 offset1">
 			
@@ -86,8 +86,10 @@
 		  </div>
 		</div>
 	</div>
+	</div>
 	
-	<div id="what-is-an-anc" class="container style1">
+	<div id="what-is-an-anc" class="widecontainer style1">
+	<div class="container">
 		<div class="row">
 			<div class="span5 offset1 text">
 				<h2>What is an ANC?</h2>
@@ -100,8 +102,10 @@
 			</div>
 		</div>
 	</div>
+	</div>
 
-	<div class="container style2">
+	<div class="widecontainer style2">
+	<div class="container">
 		<div class="row">
 			<div class="span5 offset1 image">
 				<img src="static/img/neighborhood.svg"/>
@@ -112,10 +116,12 @@
 			</div>
 		</div>
 	</div>
+	</div>
  
-	<div class="container style1">
+	<div class="widecontainer style1">
+	<div class="container">
 		<div class="row">
-			<div class="span6 offset1 text">
+			<div class="span5 offset1 text">
 				<h2>What do ANCs do? Why should I care?</h2>
 				<p>ANCs hold regular meetings and make decisions about many important community issues, such as parking, recreation, street improvements, liquor licenses, zoning, restaurants and businesses, police protection, sanitation and trash collection, and the District's annual budget.</p>
 				<p>Your ANC commissioners also control grant money of several thousand dollars (or more) for the general purpose of improving their area and hiring staff. Learn more about ANC authority and budget.</p>
@@ -125,8 +131,10 @@
 			</div>
 		</div>
 	</div>
+	</div>
  
-	<div class="container style2">
+	<div class="widecontainer style2">
+	<div class="container">
 		<div class="row">
 			<div class="span5 offset1 image">
 				<img src="static/img/vote.svg"/>
@@ -137,8 +145,10 @@
 			</div>
 		</div>
 	</div>
+	</div>
 
-	<div class="container style1">
+	<div class="widecontainer style1">
+	<div class="container">
 		<div class="row">
 			<div class="span5 offset1 text">
 				<h2>How can I get involved?</h2>
@@ -152,6 +162,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 
     <footer>
@@ -182,8 +193,13 @@
 		function initialize() {
 			$('#map_col').css({ height: $('#map_col').width() * 3.5/4 });
 			initialize_google();
-		
-			$('.container.main').css({ minHeight: $(window).height() - $('.container.main').offset().top*2 });
+			
+			var h = $(window).height() - $('.widecontainer.main').offset().top*2;
+			$('.widecontainer.main').css({ minHeight: h });
+
+			var w = $(window).width()/2 - 100;
+			if (w > 400) $('#map_canvas_google').css({ width: w });
+			if (h-100 > 340) $('#map_canvas_google').css({ height: h-100 });
 			
 			$('a.smooth').click(function(e) {
 				e.preventDefault();
