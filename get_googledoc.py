@@ -107,10 +107,14 @@ if __name__ == "__main__":
         "size": rec["size"],
         "pages": rec["pages,"],
       })
+    
+  # Add ANC/SMD geographic extents (bounding box) from the GIS server.
+  for ward in output.values():
+    for anc in ward["ancs"].values():
+      anc["bounds"] = json.load(urllib.urlopen("http://gis.govtrack.us/boundaries/dc-anc-2013/" + anc["anc"].lower()))["extent"]
+      for smd in anc["smds"].values():
+      	  smd["bounds"] = json.load(urllib.urlopen("http://gis.govtrack.us/boundaries/dc-smd-2013/" + smd["smd"].lower()))["extent"]
 
+  # Output.
   print json.dumps(output, indent=True, ensure_ascii=False).encode("utf8")
-  
-  #out = json.dumps( [ row for row in reader ] )  
-  #jsonFile = open( 'www/ancs.json', 'w')  
-  #jsonFile.write(out)
   

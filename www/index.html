@@ -174,11 +174,13 @@
               <p class="by">ANCBrigade is a project of the <a href="http://codefordc.org/">Code for DC</a>. We’re volunteers interested in using technology to solve problems in our civic lives. This is a work in progress.</p>
           </div>
           <div class="span3">
-              <p>Last updated June 2, 2013.</p>
+              <p>Last updated June 2, 2013.
+              <br>
+              <a href="https://github.com/codefordc/ancbrigade">Source code on github</a>.</p>
           </div>
         </div>
     </footer>
-
+    
 	<!-- jQuery, Bootstrap, and Google Maps -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"> </script>
 	<script src="static/bootstrap/js/bootstrap.min.js"></script>
@@ -244,58 +246,37 @@
 				new google.maps.LatLng(38.869472385, -77.1014200414),
 				new google.maps.LatLng(38.9613165232, -76.923349042)));
 			
-			// Add a tile overlay for this layer.
-			function add_overlay(map, layer, minzoom, maxzoom) {
-				var tileimgformat = 'png';
-				if (navigator.appName == 'Microsoft Internet Explorer' && new RegExp("MSIE [678]").exec(navigator.userAgent)) tileimgformat = 'gif';
-				
-				var overlay = new google.maps.ImageMapType({
-				  getTileUrl: function(coord, zoom) {
-				  	  if (zoom > maxzoom) return null; // minZoom, maxZoom ineffectual below?
-				  	  if (zoom < minzoom) return null;
-					  return "http://gis.govtrack.us/map/tiles/" + layer + "/" + zoom + "/" + coord.x + "/" + coord.y + "." + tileimgformat + "?gen=9";
-				  },
-				  tileSize: new google.maps.Size(256, 256),
-				  isPng: tileimgformat == 'png',
-				  
-				  minZoom: minzoom,
-				  maxZoom: maxzoom,
-				  opacity: tileimgformat == 'png' ? .8 : .25
-				});
-				map.overlayMapTypes.insertAt(0, overlay);
-			}
-			
+			map.overlayMapTypes.clear();
 			add_overlay(map, "dc-ward-2013", 8, 12);
 			//add_overlay(map, "dc-ward-2013-outlines", 13, 20);
 			add_overlay(map, "dc-anc-2013", 13, 14);
 			add_overlay(map, "dc-anc-2013-outlines", 15, 20);
 			add_overlay(map, "dc-smd-2013-outlines", 13, 14);
 			add_overlay(map, "dc-smd-2013", 15, 20);
-			
-			google.maps.event.addListener(map, "zoom_changed", function() {
-				var z = map.getZoom();
-				if (z >= 15)
-					$('#map_col h2').text("Single Member Districts");
-				else if (z >= 13)
-					$('#map_col h2').text("Advisory Neighborhood Commissions");
-				else
-					$('#map_col h2').text("DC Wards");
-			});
-			
-
-			// Create a fast mouse move handler.
-			/*
-			google.maps.event.addListener(map, "mousemove", function(e) {
-				map_hit_test(
-					getTileCoordinate(e.latLng, map),
-					"dc-smd-2013",
-					null,
-					function(key, data) {
-						if (data) $('#moousemove').text(data.name);
-					});
-			});
-			*/
 		}
+
+		// Add a tile overlay for this layer.
+		function add_overlay(map, layer, minzoom, maxzoom, opacity) {
+			if (!opacity) opacity = 1.0;
+			var tileimgformat = 'png';
+			if (navigator.appName == 'Microsoft Internet Explorer' && new RegExp("MSIE [678]").exec(navigator.userAgent)) tileimgformat = 'gif';
+			
+			var overlay = new google.maps.ImageMapType({
+			  getTileUrl: function(coord, zoom) {
+				  if (maxzoom && zoom > maxzoom) return null; // minZoom, maxZoom ineffectual below?
+				  if (minzoom && zoom < minzoom) return null;
+				  return "http://gis.govtrack.us/map/tiles/" + layer + "/" + zoom + "/" + coord.x + "/" + coord.y + "." + tileimgformat + "?gen=8";
+			  },
+			  tileSize: new google.maps.Size(256, 256),
+			  isPng: tileimgformat == 'png',
+			  
+			  minZoom: minzoom,
+			  maxZoom: maxzoom,
+			  opacity: (tileimgformat == 'png' ? .8 : .25) * opacity
+			});
+			map.overlayMapTypes.insertAt(0, overlay);
+		}
+		
 		
 		var anc_data = null;
 		$.ajax({
@@ -331,24 +312,23 @@
 									$('#info_address_not_found').fadeIn();
 									return;
 								}
+								
+								data = data.objects[0];
 
-								// call again to get the boundary extents
-								$.ajax({
-								url: "http://gis.govtrack.us" + data.objects[0].url,
-								dataType: "jsonp",
-								success: function(data) {
-							
 								var smd_id = data.external_id.toUpperCase();
 							
-								var boundsarray = data.extent;
+								var ward = anc_data[smd_id.substring(0,1)];
+								var anc = ward["ancs"][smd_id.substring(1,2)];
+								var smd = anc["smds"][smd_id.substring(2,4)];
+								
+								var boundsarray = anc.bounds;
 								var sw = new google.maps.LatLng(boundsarray[1], boundsarray[0]);
 								var ne = new google.maps.LatLng(boundsarray[3], boundsarray[2]);
 								var bounds = new google.maps.LatLngBounds(sw, ne);
 								map.fitBounds(bounds);
-								
-								var ward = anc_data[smd_id.substring(0,1)];
-								var anc = ward["ancs"][smd_id.substring(1,2)];
-								var smd = anc["smds"][smd_id.substring(2,4)];
+								map.overlayMapTypes.clear();
+								add_overlay(map, "dc-anc-2013/" + smd_id.toLowerCase().substring(0, 2), null, null, .75);
+								add_overlay(map, "dc-smd-2013/" + smd_id.toLowerCase());
 								
 								if (smd) {
 									$('#info').find(".smd-name").text(smd.smd);
@@ -380,8 +360,6 @@
 								} else {
 									$('#info').fadeOut();
 								}
-								
-								}}); // inner Ajax call
 							}
 						});
 					}
