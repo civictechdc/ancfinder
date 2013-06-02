@@ -277,8 +277,36 @@ h2 {
 	margin-bottom: .5em;
 }
 
+#intro {
+	margin-top: 1.75em;
+	font-size: 11pt;
+}
+#intro p { margin: 0; } /* weirdness with slideUp() */
+
 #addr_box {
-	margin-top: 1em;
+	margin: 1.75em 2em 2em 1em;
+	text-align: right;
+}
+#addr {
+	display: block;
+	width: 100%;
+	margin-top: 5px;
+	border: none;
+	border-bottom: 1px solid #888;
+	box-shadow: none;
+	padding: 3px 0 3px 1px;
+	height: 32px;
+	font: bold 28px/32px sans-serif;
+	color: black;
+	text-align: left;
+}
+#addr_box div {
+	font: bold 16px/20px sans-serif;
+	color: #777;
+	text-align: left;
+}
+#addr_box input {
+	margin-top: 5px;
 }
 
 .widecontainer.style1, .widecontainer.style2 {
