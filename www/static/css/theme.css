@@ -318,8 +318,6 @@ div#use_my_location {
 }
 
 .widecontainer.style1, .widecontainer.style2 {
-	margin: 0;
-	width: 100%;
 	min-height: 320px;
 	font-size: 17px;
 }
@@ -353,6 +351,7 @@ div#use_my_location {
 
 #jump_to_top {
 	text-align: right;
+	margin-bottom: .5em;
 }
 #jump_to_top a {
 	color: white;
@@ -360,4 +359,47 @@ div#use_my_location {
 
 .active {
 	font-weight: bold;
+}
+
+#map_canvas_google {
+	width: 400px;
+	height: 340px;
+	margin-top: 30px;
+}
+
+/* Some fixes for the responsive layout */
+@media (max-width: 767px) {
+	body {
+		padding-right: 0;
+		padding-left: 0;
+		font-size: 13px;
+	}
+	#header {
+		padding: 5px;
+	}
+	ul.nav-links {
+		margin: 5px 0 0 0;
+		text-align: left;
+		font-size: 13px;
+	}
+	ul.nav-links li {
+		margin: 0 15px 0 0;
+	}
+	.widecontainer {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+@media (max-width: 1024px) {
+	#map_canvas_google {
+		width: 350px;
+		height: 300px;
+	}
+}
+@media (max-width: 420px) {
+	#map_canvas_google {
+		width: 290px;
+		height: 350px;
+		margin-top: 20px;
+	}
 }

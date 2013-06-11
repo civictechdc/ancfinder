@@ -82,8 +82,8 @@
 			
 		  </div>
 		  
-		  <div id="map_col" class="span5">
-			<div id="map_canvas_google" class="map" style="width: 400px; height: 340px; margin-top: 30px;"> </div>
+		  <div id="map_col" class="span5" style="padding-bottom: 10px">
+			<div id="map_canvas_google" class="map"> </div>
 		  </div>
 		</div>
 	</div>
@@ -196,14 +196,12 @@
 
 	
 	<script type="text/javascript">
+		var map = null;
+		
 		function initialize() {
-			$('#map_col').css({ height: $('#map_col').width() * 3.5/4 });
-			var h = $(window).height() - $('.widecontainer.main').offset().top*2;
-			$('.widecontainer.main').css({ minHeight: h });
-
-			var w = $(window).width()/2 - 100;
-			if (w > 400) $('#map_canvas_google').css({ width: w });
-			if (h-100 > 340) $('#map_canvas_google').css({ height: h-100 });
+			// manually resizing things causes too much responsive design trouble
+			//resize_things();
+			//$(window).resize(resize_things);
 			
 			initialize_google();
 			
@@ -234,7 +232,19 @@
 				return false;
 			});
 		}
-	
+
+		function resize_things() {
+			$('#map_col').css({ height: $('#map_col').width() * 3.5/4 });
+			
+			var h = $(window).height() - $('.widecontainer.main').offset().top*2;
+			$('.widecontainer.main').css({ minHeight: h });
+
+			var w = $(window).width()/2 - 100;
+			if (w > 400) $('#map_canvas_google').css({ width: w });
+			if (h-100 > 340) $('#map_canvas_google').css({ height: h-100 });
+			if (map) google.maps.event.trigger(map, "resize");
+		}
+		
 		/*** FOR GOOGLE MAPS API V3 ***/
 		function initialize_google() {
 			// Create a basic roadmap centered on the United States.
