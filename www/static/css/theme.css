@@ -291,8 +291,7 @@ h2 {
 	display: block;
 	width: 100%;
 	margin-top: 5px;
-	border: none;
-	border-bottom: 1px solid #888;
+	border: 1px solid #888;
 	box-shadow: none;
 	padding: 3px 0 3px 1px;
 	height: 32px;
