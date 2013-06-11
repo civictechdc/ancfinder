@@ -382,16 +382,16 @@
 								
 								$('.has-commissioner').show();
 								var name = "";
-								name += smd["First Name"] + " ";
-								if (smd["Nickname"]) name += smd["Nickname"] + " ";
-								if (smd["Middle Name"]) name += smd["Middle Name"] + " ";
-								name += smd["Last Name"];
+								name += smd["first_name"] + " ";
+								if (smd["nickname"]) name += smd["nickname"] + " ";
+								if (smd["middle_name"]) name += smd["middle_name"] + " ";
+								name += smd["last_name"];
 								$(".smd-commissioner").text(name);
 								
-								if (smd.Email || smd.Phone) {
+								if (smd.email || smd.phone) {
 									var contacts = [];
-									if (smd.Email) contacts.push(smd.Email);
-									if (smd.Phone) contacts.push(smd.Phone);
+									if (smd.email) contacts.push(smd.email);
+									if (smd.phone) contacts.push(smd.phone);
 									$('.smd-commissioner-email').text(" (" + contacts.join(", ") + ")");
 								} else {
 									$('.smd-commissioner-email').text(" (contact information was not provided)");

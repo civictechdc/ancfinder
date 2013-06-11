@@ -75,17 +75,13 @@ if __name__ == "__main__":
     a["smds"] = OrderedDict()
 
   for smd in smds:
-    s = OrderedDict()
-    output[ smd["SMD"][0] ]["ancs"][ smd["SMD"][1] ]["smds"][ smd["SMD"][2:] ] = s
-    s["smd"] = smd["SMD"]
-    s["smd_number"] = smd["SMD"][2:]
-    del smd["SMD"]
-    s.update(smd)
+    output[ smd["smd"][0] ]["ancs"][ smd["smd"][1] ]["smds"][ smd["smd"][2:] ] = smd
+    smd["smd_number"] = smd["smd"][2:]
     
   # Now add scraped info from scraperwiki.
   
-  for rec in json.load(urllib.urlopen("https://api.scraperwiki.com/api/1.0/datastore/sqlite?format=json&name=dc_anc_commissioners&query=select+*+from+`swdata`&apikey=")):
-    smd = rec["SMD"].strip()
+  for rec in json.load(urllib.urlopen("https://api.scraperwiki.com/api/1.0/datastore/sqlite?format=json&name=dc_anc_commissioner_info_from_official_anc_website&query=select+*+from+`swdata`&apikey=")):
+    smd = rec["smd"].strip()
     for k, v in rec.items():
       if v == None: continue
       output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]][k] = v.strip()
@@ -116,5 +112,5 @@ if __name__ == "__main__":
       	  smd["bounds"] = json.load(urllib.urlopen("http://gis.govtrack.us/boundaries/dc-smd-2013/" + smd["smd"].lower()))["extent"]
 
   # Output.
-  print json.dumps(output, indent=True, ensure_ascii=False).encode("utf8")
+  print json.dumps(output, indent=True, ensure_ascii=False, sort_keys=True).encode("utf8")
   
