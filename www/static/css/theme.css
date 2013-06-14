@@ -388,6 +388,12 @@ div#use_my_location {
 		padding-left: 10px;
 		padding-right: 10px;
 	}
+	.image img {
+		display: none;
+	}
+	#jump_to_top {
+		padding-top: 8em;
+	}
 }
 @media (max-width: 1024px) {
 	#map_canvas_google {
