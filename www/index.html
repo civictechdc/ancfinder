@@ -329,7 +329,7 @@
 				function(position) {
 					if (!position || !position.coords) return;
 					$('#addr').val("your current location");
-					show_info(position.coords.latitude, position.coords.longitude);
+					show_info_for_coord(position.coords.latitude, position.coords.longitude);
 					
 					if (location_marker) map.removeOverlay(location_marker);
 					location_marker = new google.maps.Marker({
@@ -361,30 +361,35 @@
 				function(results, status) {
 					if (status == google.maps.GeocoderStatus.OK) {
 						var geocoder_result = results[0].geometry.location;
-						show_info(geocoder_result.lat(), geocoder_result.lng());
+						show_info_for_coord(geocoder_result.lat(), geocoder_result.lng());
 					}
 				}
 				);
 		}
 		
-		function show_info(lat, lng) {
+		function show_info_for_coord(lat, lng) {
 						$.ajax({
 							url: "http://gis.govtrack.us/boundaries/dc-smd-2013/?contains=" + lat + "," + lng,
 							dataType: "jsonp",
 							success: function(data) {
 								if (data.objects.length == 0) {
 									// Not found!
-									$('#info').fadeOut();
-									$('#info_address_not_found').fadeIn();
-									return;
+									hide_smd_info();
+								} else {
+									show_smd_info(data.objects[0].external_id.toUpperCase());
 								}
-								
+							}
+						});
+		}
+
+		function hide_smd_info() {
+			$('#info').fadeOut();
+			$('#info_address_not_found').fadeIn();
+		}
+		
+		function show_smd_info(smd_id) {
 								$('#intro').slideUp();
 								
-								data = data.objects[0];
-
-								var smd_id = data.external_id.toUpperCase();
-							
 								var ward = anc_data[smd_id.substring(0,1)];
 								var anc = ward["ancs"][smd_id.substring(1,2)];
 								var smd = anc["smds"][smd_id.substring(2,4)];
@@ -442,9 +447,7 @@
 									var li = $('<li>/').text(ss.smd + ": " + ss["First Name"] + " " + ss["Last Name"]);
 									ul.append(li);
 								}*/
-							}
-						}); // ajax to resolve SMD
-		}			
+		}
 	</script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
