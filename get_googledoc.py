@@ -112,5 +112,6 @@ if __name__ == "__main__":
       	  smd["bounds"] = json.load(urllib.urlopen("http://gis.govtrack.us/boundaries/dc-smd-2013/" + smd["smd"].lower()))["extent"]
 
   # Output.
+  print "anc_data = ",
   print json.dumps(output, indent=True, ensure_ascii=False, sort_keys=True).encode("utf8")
   

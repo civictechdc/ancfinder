@@ -1,4 +1,4 @@
-{
+var anc_data = {
  "1": {
   "ancs": {
    "A": {
