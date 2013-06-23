@@ -238,6 +238,9 @@
 				});
 				return false;
 			});
+			
+			// If the URL fragment has an SMD name, show the info for that SMD.
+			show_smd_info(window.location.hash.substring(1));
 		}
 
 		function resize_things() {
@@ -388,11 +391,16 @@
 		}
 		
 		function show_smd_info(smd_id) {
-								$('#intro').slideUp();
-								
 								var ward = anc_data[smd_id.substring(0,1)];
+								if (!ward) return false;
 								var anc = ward["ancs"][smd_id.substring(1,2)];
+								if (!anc) return false;
 								var smd = anc["smds"][smd_id.substring(2,4)];
+								if (!smd) return false;
+								
+								window.location.hash = "#" + smd_id;
+								
+								$('#intro').slideUp();
 								
 								if (map) {
 									var boundsarray = anc.bounds;
@@ -447,6 +455,8 @@
 									var li = $('<li>/').text(ss.smd + ": " + ss["First Name"] + " " + ss["Last Name"]);
 									ul.append(li);
 								}*/
+								
+								return true;
 		}
 	</script>
 <script>
