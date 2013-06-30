@@ -1,8 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import csv
 import json
-import re, urllib, urllib2, os.path
+import re, urllib.request, urllib.parse, urllib.error, os.path, io
 import getpass
 from collections import OrderedDict
 
@@ -21,8 +21,8 @@ class GoogleDocsClient(object):
       "accountType": "HOSTED_OR_GOOGLE",
       "source": source
     }
-    req = urllib2.Request(url, urllib.urlencode(params))
-    return re.findall(r"Auth=(.*)", urllib2.urlopen(req).read())[0]
+    req = urllib.request.Request(url, urllib.parse.urlencode(params).encode("utf8"))
+    return re.findall(br"Auth=(.*)", urllib.request.urlopen(req).read())[0]
   
   def get_auth_token(self):
     source = type(self).__name__
@@ -31,25 +31,30 @@ class GoogleDocsClient(object):
   def download(self, spreadsheet, gid, format="csv"):
     url_format = "https://spreadsheets.google.com/feeds/download/spreadsheets/Export?key=%s&exportFormat=%s&gid=%i"
     headers = {
-      "Authorization": "GoogleLogin auth=" + self.get_auth_token(),
-      "GData-Version": "3.0"
+      b"Authorization": b"GoogleLogin auth=" + self.get_auth_token(),
+      b"GData-Version": b"3.0"
     }
-    req = urllib2.Request(url_format % (spreadsheet, format, gid), headers=headers)
-    return urllib2.urlopen(req)
+    req = urllib.request.Request(url_format % (spreadsheet, format, gid), headers=headers)
+    return io.TextIOWrapper(urllib.request.urlopen(req), encoding="utf8")
+
+def urlopen(url):
+  # Opens a URL and decodes its content assuming UTF-8; returns a stream.
+  data = urllib.request.urlopen(url)
+  return io.TextIOWrapper(data, encoding="utf8")
 
 def csv_file_to_dict(csv_file):
   return list(csv.DictReader(csv_file))
 
 if __name__ == "__main__":
   if not os.path.exists("get_googledoc_creds.py"):
-    print "This program downloads our public Google Doc with Ward/ANC/SMD information."
-    print "But we need your Google login info to get it..."
-    email = raw_input("google account email> ")
+    print("This program downloads our public Google Doc with Ward/ANC/SMD information.")
+    print("But we need your Google login info to get it...")
+    email = input("google account email> ")
     password = getpass.getpass("google account password> ")
   else:
     # Store your personal credentials in this file if you don't want
     # to type it in.
-    execfile("get_googledoc_creds.py")
+    exec(compile(open("get_googledoc_creds.py").read(), "get_googledoc_creds.py", 'exec'))
     
   # Create Google Documents client and download the spreadsheet as a CSV for each worksheet.
   spreadsheet_id = "0AsuPWK1wtxNfdGdyVWU4Z3J3X3g3RzVyVWJ1Rkd4dXc" # our spreadsheet
@@ -80,16 +85,18 @@ if __name__ == "__main__":
     
   # Now add scraped info from scraperwiki.
   
-  for rec in json.load(urllib.urlopen("https://api.scraperwiki.com/api/1.0/datastore/sqlite?format=json&name=dc_anc_commissioner_info_from_official_anc_website&query=select+*+from+`swdata`&apikey=")):
+  sw_data = urlopen("https://api.scraperwiki.com/api/1.0/datastore/sqlite?format=json&name=dc_anc_commissioner_info_from_official_anc_website&query=select+*+from+`swdata`&apikey=")
+  for rec in json.load(sw_data):
     smd = rec["smd"].strip()
-    for k, v in rec.items():
+    for k, v in list(rec.items()):
       if v == None: continue
       output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]][k] = v.strip()
 
   # Add quarterly financial report URLs from Luke's CSV file.
   # Warning: Historical information may not correspond to current ANCs if they
   # were renamed after 2012 redistricting.
-  for rec in csv.DictReader(urllib.urlopen("https://s3.amazonaws.com/dcanc/index.csv")):
+  s3_data = urlopen("https://s3.amazonaws.com/dcanc/index.csv")
+  for rec in csv.DictReader(s3_data):
     try:
       anc = output[rec["ANC"][0]]["ancs"][rec["ANC"][1]]
     except KeyError:
@@ -105,13 +112,13 @@ if __name__ == "__main__":
       })
     
   # Add ANC/SMD geographic extents (bounding box) from the GIS server.
-  for ward in output.values():
-    for anc in ward["ancs"].values():
-      anc["bounds"] = json.load(urllib.urlopen("http://gis.govtrack.us/boundaries/dc-anc-2013/" + anc["anc"].lower()))["extent"]
-      for smd in anc["smds"].values():
-      	  smd["bounds"] = json.load(urllib.urlopen("http://gis.govtrack.us/boundaries/dc-smd-2013/" + smd["smd"].lower()))["extent"]
+  for ward in list(output.values()):
+    for anc in list(ward["ancs"].values()):
+      anc["bounds"] = json.load(urlopen("http://gis.govtrack.us/boundaries/dc-anc-2013/" + anc["anc"].lower()))["extent"]
+      for smd in list(anc["smds"].values()):
+        smd["bounds"] = json.load(urlopen("http://gis.govtrack.us/boundaries/dc-smd-2013/" + smd["smd"].lower()))["extent"]
 
   # Output.
-  print "anc_data = ",
-  print json.dumps(output, indent=True, ensure_ascii=False, sort_keys=True).encode("utf8")
+  print("anc_data = ", end=' ')
+  print(json.dumps(output, indent=True, ensure_ascii=False, sort_keys=True))
   
