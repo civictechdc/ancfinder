@@ -316,6 +316,12 @@ div#use_my_location {
 	font: normal 12px/14px sans-serif;
 }
 
+
+#meeting .details {
+	margin-left: 2em;
+	margin-bottom: 0;
+}
+
 .widecontainer.style1, .widecontainer.style2 {
 	min-height: 320px;
 	font-size: 17px;
