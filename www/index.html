@@ -71,6 +71,8 @@
 
 					<p class="anc-has-website">ANC <span class="anc-name"> </span>&rsquo;s website is <a class="anc-website"> </a>.
 					
+					<p id="meeting" style="display: none"> </p>
+					
     				<p style="margin-top: 1.5em"><a class="smooth" href="#what-is-an-anc">Learn more about ANCs <span>▼</span></a></p>
 					
 					</div>
@@ -195,12 +197,14 @@
 	</script>
 	<script src="static/bootstrap/js/bootstrap.min.js"></script>
 	<script src="static/jquery-utils.js"> </script>
+	<script src="static/moment.min.js"> </script>
 	
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript" src="http://gis.govtrack.us/static/js/google_maps_helpers.js"></script>
 	<script type="text/javascript" src="http://gis.govtrack.us/static/js/maps_helpers.js"></script>
 
     <script type="text/javascript" src="ancs.jsonp"></script>
+    <script type="text/javascript" src="meetings.jsonp"></script>
 	
 	<script type="text/javascript">
 		var map = null;
@@ -255,7 +259,7 @@
 			if (map) google.maps.event.trigger(map, "resize");
 		}
 		
-		/*** FOR GOOGLE MAPS API V3 ***/
+		// GOOGLE MAPS API V3
 		function initialize_google() {
 			// Create a basic roadmap centered on Washington, DC.
 
@@ -313,19 +317,6 @@
 			map.overlayMapTypes.insertAt(0, overlay);
 		}
 		
-		/*
-		// We were originally loading JSON via AJAX, but it's easier to load
-		// JSONP via a <script> tag so that testing works locally.
-		var anc_data = null;
-		$.ajax({
-			url: "ancs.json",
-			dataType: "json",
-			success: function(data) {
-				anc_data = data;
-			}
-		});
-		*/
-
 		var location_marker = null;
 		function use_my_location() {
 			navigator.geolocation.getCurrentPosition(
@@ -398,10 +389,14 @@
 								var smd = anc["smds"][smd_id.substring(2,4)];
 								if (!smd) return false;
 								
+								// put SMD in the URL fragment so the user can reloa the page
+								// and get right to his district again
 								window.location.hash = "#" + smd_id;
 								
+								// hide prompt text to enter your address
 								$('#intro').slideUp();
 								
+								// update the map
 								if (map) {
 									var boundsarray = anc.bounds;
 									var sw = new google.maps.LatLng(boundsarray[1], boundsarray[0]);
@@ -413,6 +408,7 @@
 									add_overlay(map, "dc-smd-2013/" + smd_id.toLowerCase());
 								}
 								
+								// show ANC/SMD info
 								$(".smd-name").text(smd.smd);
 								$(".ward-name").text(ward.ward);
 								$(".anc-short-name").text(anc.anc_letter);
@@ -446,15 +442,42 @@
 								$('#what-is-an-anc h2').text("What is ANC " + anc.anc + "?");
 								$('#what-is-an-anc .what-is-it').text(anc.anc + " is one of Washington DC’s 40 Advisory Neighborhood Commissions.");  
 								$('#what-is-an-anc .how-many-commissioners').text("Your ANC is lead by " +  Object.keys(anc["smds"]).length + " commissioners who make decisions about a broad range of issues in your community, such as liquor licenses, parking, and sanitation.");
-								/*$('#commissioners').text('');
-								$('#commissioners').append($('<p>Your commissioners in ' + anc.anc + " are:</p>"));
-								var ul = $("<ul/>");
-								$('#commissioners').append(ul);
-								for (s in anc["smds"]) {
-									var ss = anc["smds"][s];
-									var li = $('<li>/').text(ss.smd + ": " + ss["First Name"] + " " + ss["Last Name"]);
-									ul.append(li);
-								}*/
+								
+								// Show next meeting for the ANC.
+
+								var now = moment().format(); // get current local time in ISO format (assumes user is in Eastern Time)
+								anc_meetings.sort(function(a,b) { a.when.localeCompare(b.when); });
+								var mtg = null;
+								for (var i = 0; i < anc_meetings.length; i++) {
+									if (anc_meetings[i].anc != anc.anc) continue;
+									mtg = anc_meetings[i];
+									if (mtg.when > now) break; // stop at first meeting in the future
+								}
+								if (mtg) {
+									// Found a meeting.
+									var future = (mtg.when > now);
+									$('#meeting').show().text("");
+									$('#meeting').append($("<p/>").text(
+										  (future ? "The next" : "THe last")
+										+ " meeting of ANC "
+										+ anc.anc
+										+ " "
+										+ (future ? "will be" : "was")
+										+ " on "
+										+ moment(mtg.when).format("dddd, MMMM Do YYYY, h:mm a")
+										+ "."
+									));
+									
+									var mtg_fields = ["location", "suite-number", "location2", "alternate-location", "phone"];
+									for (var i = 0; i < mtg_fields.length; i++) {
+										if (mtg[mtg_fields[i]]) {
+											$('#meeting').append($("<p class='details'/>").text(mtg[mtg_fields[i]]));
+										}
+									}
+
+								} else {
+									$('#meeting').hide();
+								}
 								
 								return true;
 		}
