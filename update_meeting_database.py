@@ -3,7 +3,7 @@
 # Store them in www/meetings.json, and update existing meetings
 # in place according to the RSS feed's guid field.
 
-import json, os.path, urllib, re
+import json, os.path, urllib.request, urllib.parse, urllib.error, re
 import lxml.etree, lxml.html
 from datetime import datetime
 
@@ -18,7 +18,7 @@ else:
 #meetings = [m for m in meetings if "anc" in m]
 
 # Open the RSS feed.	
-dom = lxml.etree.parse(urllib.urlopen("http://anc.dc.gov/node/all/events"))
+dom = lxml.etree.parse(urllib.request.urlopen("http://anc.dc.gov/node/all/events"))
 
 # In the description HTML, divs have nice class names identifying what
 # the information is about. Map CSS classes to field names we'll store
@@ -77,11 +77,11 @@ for meeting in dom.xpath("channel/item"):
 		meetings.append(meeting_info)
 	
 	# The description tag has HTML content. Parse it.
-	descr = meeting.xpath("string(description)").replace("&nbsp;", u"\u00A0")
+	descr = meeting.xpath("string(description)").replace("&nbsp;", "\u00A0")
 	description = lxml.html.fromstring(descr)
 	
 	# Loop through the fields we know about and try to extract the values.
-	for classname, fieldname in class_name_map.items():
+	for classname, fieldname in list(class_name_map.items()):
 		# Should we include the field's label in the value we store?
 		# Get the field value's div elements. There may be more than one.
 		labels = description.cssselect("." + classname + " .field-label")
@@ -97,7 +97,7 @@ for meeting in dom.xpath("channel/item"):
 	# meeting it is.
 	m = re.match(r"ANC (\d[A-Z]) (Meeting|Monthly Meeting|Bimonthly Meetings)$", meeting_info["title"])
 	if not m:
-		print "Unrecognized meeting title format:", meeting_info["title"]
+		print(("Unrecognized meeting title format:", meeting_info["title"]))
 	else:
 		meeting_info["anc"] = m.group(1)
 		meeting_info["meeting_type"] = m.group(2)
