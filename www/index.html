@@ -67,7 +67,7 @@
 					
 					<p>Your single member district is <b><span class="smd-name"> </span></b>.</p>
 					
-					<p>Your commissioner is: <b><span class="smd-commissioner"> </span></b><span class="smd-commissioner-email"></span>.</p>
+					<p>Your commissioner is: <b><span class="smd-commissioner"> </span></b><span class="smd-commissioner-email"></span>. <span class="smd-commissioner-position"></span></p>
 
 					<p class="anc-has-website">ANC <span class="anc-name"> </span>&rsquo;s website is <a class="anc-website"> </a>.
 					
@@ -389,7 +389,7 @@
 								var smd = anc["smds"][smd_id.substring(2,4)];
 								if (!smd) return false;
 								
-								// put SMD in the URL fragment so the user can reloa the page
+								// put SMD in the URL fragment so the user can reload the page
 								// and get right to his district again
 								window.location.hash = "#" + smd_id;
 								
@@ -433,6 +433,12 @@
 									$('.smd-commissioner-email').text(" (" + contacts.join(", ") + ")");
 								} else {
 									$('.smd-commissioner-email').text(" (contact information was not provided)");
+								}
+								
+								if (smd.Position) {
+									$('.smd-commissioner-position').text(smd.first_name + " serves as the " + smd.Position + " of the ANC.");
+								} else {
+									$('.smd-commissioner-position').text("");
 								}
 								
 								$('#map_col').show();
