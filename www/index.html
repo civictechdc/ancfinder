@@ -416,7 +416,9 @@
 								$(".anc-name").text(anc.anc);
 								$(".anc-website").text(anc.website);
 								$(".anc-website").attr('href', anc.website);
-								$(".anc-has-website").toggle(anc.website);
+								if (!anc.website) {
+									$(".anc-has-website").hide();
+								}
 								
 								$('.has-commissioner').show();
 								var name = "";
