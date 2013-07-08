@@ -62,6 +62,8 @@
 			<!--If search successful, details below-->
 			<div id="info" style="display: none; margin-top: 1em;">
 				<div>
+					<h3>About Your ANC:</h3>
+					
 					<p>You live in <b>ANC <span class="anc-short-name"> </span></b> within <b>Ward <span class="ward-name"> </span></b>.
 					It&rsquo;s called <span class="anc-name"> </span> for short.</p>
 					
@@ -487,6 +489,10 @@
 								} else {
 									$('#meeting').hide();
 								}
+								
+								// Move address bar under map to get it out of the way.
+								$('#addr_box').insertAfter('#map_canvas_google');
+								
 								
 								return true;
 		}
