@@ -191,7 +191,7 @@
 			});
 			
 			// If the URL fragment has an SMD name, show the info for that SMD.
-			show_smd_info(window.location.hash.substring(1));
+			show_smd_info(window.location.hash.substring(1), null);
 		});
 
 		function resize_things() {
@@ -264,23 +264,12 @@
 			map.overlayMapTypes.insertAt(0, overlay);
 		}
 		
-		var location_marker = null;
 		function use_my_location() {
 			navigator.geolocation.getCurrentPosition(
 				function(position) {
 					if (!position || !position.coords) return;
 					$('#addr').val("your current location");
 					show_info_for_coord(position.coords.latitude, position.coords.longitude);
-					
-					if (location_marker) map.removeOverlay(location_marker);
-					location_marker = new google.maps.Marker({
-						map: map,
-						position: new google.maps.LatLng(
-							position.coords.latitude,
-							position.coords.longitude
-							),
-						title: "Your Current Location"
-						});
 				},
 				function(position) {
 					alert("We couldn't get your current location.");
@@ -317,7 +306,7 @@
 									// Not found!
 									hide_smd_info();
 								} else {
-									show_smd_info(data.objects[0].external_id.toUpperCase());
+									show_smd_info(data.objects[0].external_id.toUpperCase(), new google.maps.LatLng(lat, lng));
 								}
 							}
 						});
@@ -328,7 +317,8 @@
 			$('#info_address_not_found').fadeIn();
 		}
 		
-		function show_smd_info(smd_id) {
+		var location_marker = null;
+		function show_smd_info(smd_id, addr_coords) {
 								var ward = anc_data[smd_id.substring(0,1)];
 								if (!ward) return false;
 								var anc = ward["ancs"][smd_id.substring(1,2)];
@@ -350,9 +340,24 @@
 									var ne = new google.maps.LatLng(boundsarray[3], boundsarray[2]);
 									var bounds = new google.maps.LatLngBounds(sw, ne);
 									map.fitBounds(bounds);
+									if (addr_coords) map.panTo(addr_coords);
 									map.overlayMapTypes.clear();
 									add_overlay(map, "dc-anc-2013/" + smd_id.toLowerCase().substring(0, 2), null, null, .75);
 									add_overlay(map, "dc-smd-2013/" + smd_id.toLowerCase());
+									
+									if (addr_coords) {
+										if (!location_marker) {
+											location_marker = new google.maps.Marker({
+												map: map,
+												position: addr_coords,
+												title: "You"
+												});
+										}
+										location_marker.setPosition(addr_coords);
+										location_marker.setVisible(true);
+									} else if (location_marker) {
+										location_marker.setVisible(false);
+									}
 								}
 								
 								// show ANC/SMD info
