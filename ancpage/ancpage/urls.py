@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from ancpage.views import home, smd_info, about, share, authority, elections
+from ancpage.views import home, anc_info, about, share, authority, elections
 
 admin.autodiscover()
 
@@ -14,7 +14,7 @@ urlpatterns = patterns('',
 	url(r'^share/$', share),
 	url(r'^authority/$', authority),
 	url(r'^elections/$', elections),
-	url(r'^smd/(?P<smd>.{4})/$', smd_info),
+	url(r'^anc/(?P<anc>.{2})/$', anc_info),
 	url(r'^admin/', include(admin.site.urls)),
 
     # Examples:
