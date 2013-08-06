@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<script type="text/javascript" src="{{ STATIC_URL }}ancs.jsonp"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}meetings.jsonp"></script>
+
+   <!-- Main hero unit for a primary marketing message or call to action -->
+  	<div id="masthead">
+  		<div class="container">
+  			<div class="row">
+  				<h1 class="span8 offset1">ANC Brigade: Strengthening Hyper-Local Government</h1>
+  			</div>
+  		</div><!-- /container -->
+  	</div><!-- /masthead -->
+
+	<div class="body">
+		<div class="column">				
+				<h2>Commissioners</h2>
+        		<!-- ANC info -->
+        		<ul>
+        			{% for commissioner in anc_smds %}
+        			<li>{{ smd }}: {{ commissioner }}</li>
+					{% endfor %}
+        		</ul>
+        		
+        		<h2>What's in ANC {{ anc }}</h2>
+        		<!-- demographic info -->
+        		
+
+  		</div><!-- /column -->
+  	
+  		<div class="column">
+  			
+  			<!-- map of ANC -->
+  			
+  			<h2>{{ anc }}'s Recent Documents</h2>
+  			
+  			<!-- documents -->
+
+  		</div><!-- /column -->
+  	</div><!-- /body -->
+
+{% endblock %}
