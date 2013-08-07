@@ -14,7 +14,7 @@ urlpatterns = patterns('',
 	url(r'^share/$', share),
 	url(r'^authority/$', authority),
 	url(r'^elections/$', elections),
-	url(r'^anc/(?P<anc>.{2})/$', anc_info),
+	url(r'^(?P<anc>[0-9][A-Za-z])$', anc_info),
 	url(r'^admin/', include(admin.site.urls)),
 
     # Examples:

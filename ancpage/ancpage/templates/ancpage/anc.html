@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+   <!-- Main hero unit for a primary marketing message or call to action -->
+  	<div id="masthead">
+  		<div class="container">
+  			<div class="row">
+  				<h1>ANC {{anc}}</h1>
+  			</div>
+  		</div><!-- /container -->
+  	</div><!-- /masthead -->
+  	
+	<div class="container">
+		<div class="row">
+			<div class="span7">
+	
+				<h2>Commissioners</h2>
+	
+				<ul>
+					{% for smd in info.smds.values %}
+					<li>{{ smd.smd_number }}: {{ smd.first_name }} {{ smd.last_name }}</li>
+					{% endfor %}
+				</ul>
+					
+				<h2>{{ anc }}'s Recent Documents</h2>
+				
+			</div><!-- /column -->
+		
+			<div class="span5">
+				
+				<!-- map of ANC -->
+				
+					<h2>What&rsquo;s in ANC {{ anc }}</h2>
+					<!-- demographic info -->
+					
+	
+				<!-- documents -->
+	
+			</div><!-- /column -->
+		</div>
+  	</div><!-- /body -->
+
+{% endblock %}
