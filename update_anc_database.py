@@ -92,25 +92,6 @@ if __name__ == "__main__":
       if v == None: continue
       output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]][k] = v.strip()
 
-  # Add quarterly financial report URLs from Luke's CSV file.
-  # Warning: Historical information may not correspond to current ANCs if they
-  # were renamed after 2012 redistricting.
-  s3_data = urlopen("https://s3.amazonaws.com/dcanc/index.csv")
-  for rec in csv.DictReader(s3_data):
-    try:
-      anc = output[rec["ANC"][0]]["ancs"][rec["ANC"][1]]
-    except KeyError:
-      # ANC no longer exists after redistricting.
-      continue
-    anc.setdefault("quarterly_financial_report_pdf_url", []).append(
-      {
-        "fiscal_year": rec["FY"],
-        "quarter": rec["quarter"],
-        "url": "https://s3.amazonaws.com/dcanc/" + rec["filename"],
-        "size": rec["size"],
-        "pages": rec["pages,"],
-      })
-    
   # Add ANC/SMD geographic extents (bounding box) from the GIS server.
   for ward in list(output.values()):
     for anc in list(ward["ancs"].values()):
@@ -119,6 +100,14 @@ if __name__ == "__main__":
         smd["bounds"] = json.load(urlopen("http://gis.govtrack.us/boundaries/dc-smd-2013/" + smd["smd"].lower()))["extent"]
 
   # Output.
-  print("anc_data = ", end=' ')
-  print(json.dumps(output, indent=True, ensure_ascii=False, sort_keys=True))
+  output = json.dumps(output, indent=True, ensure_ascii=False, sort_keys=True)
   
+  # for old static file site
+  with open("www/ancs.jsonp", "w") as f:
+  	  f.write("anc_data = ")
+  	  f.write(output)
+
+  # for new Django-backed site
+  with open("www/ancs.json", "w") as f:
+  	  f.write(output)
+  	  
