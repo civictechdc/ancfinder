@@ -43,8 +43,8 @@
 					
 					<p id="meeting" style="display: none"> </p>
 					
-    				<p id="smd-link"></p>
-					
+					<p><a id="anc-link">Find out more about this ANC.</a></p>
+				
 					</div>
 			</div>
 			<!--Search unsuccessful-->
@@ -432,7 +432,9 @@
 								} else {
 									$('#meeting').hide();
 								}
-																
+								
+								$('#anc-link').attr('href', "http://www.ancbrigade.com/" + anc.anc);
+								
 								return true;
 		}
 	</script>
