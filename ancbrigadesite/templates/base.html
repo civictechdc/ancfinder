@@ -22,13 +22,13 @@
 	<div id="header"> <!-- doesn't use bootstrap's navbar styling, ought to fix this -->
   		<div class="container">
 	  		<div class="row">
-	  			<a href="{% url 'ancbrigadesite.views.home' %}" id="logo" class="span2">ANC Brigade</a>
+	  			<a href="{% url ancbrigadesite.views.home %}" id="logo" class="span2">ANC Brigade</a>
 	  			<div class="span10">
 	  				<ul class="nav-links">
-              <li><a class="smooth" href="{% url 'ancbrigadesite.views.home' %}#what-is-an-anc" title="Discover what ANCs do for DC.">What Are ANCs?</a></li>
+              <li><a class="smooth" href="{% url ancbrigadesite.views.home %}#what-is-an-anc" title="Discover what ANCs do for DC.">What Are ANCs?</a></li>
 			  <!--<li><a href="map.html" title="Which ANC distict do you live in? Who is your Commissioner? Learn that and more here.">Find My ANC</a></li>-->
-              <li><a href="{% url 'ancbrigadesite.views.share' %}" title="We're all in this together. You can submit any kind of info about an ANC here, such as meeting minutes, budget info, Commissioner websites, etc.">Submit ANC Info</a></li>
-              <li><a href="{% url 'ancbrigadesite.views.about' %}" title="This is a project of Code for DC, a group of volunteer civic hackers. Learn more and get involved!">About Us</a></li>
+              <li><a href="{% url ancbrigadesite.views.share %}" title="We're all in this together. You can submit any kind of info about an ANC here, such as meeting minutes, budget info, Commissioner websites, etc.">Submit ANC Info</a></li>
+              <li><a href="{% url ancbrigadesite.views.about %}" title="This is a project of Code for DC, a group of volunteer civic hackers. Learn more and get involved!">About Us</a></li>
 	  				</ul>
 	  			</div>
 	  		</div>
