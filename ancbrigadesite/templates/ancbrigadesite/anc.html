@@ -7,6 +7,7 @@
   		<div class="container">
   			<div class="row">
   				<h1>ANC {{anc}}</h1>
+				<div style="text-align: center">{{info.neighborhoods}}</div>
   			</div>
   		</div><!-- /container -->
   	</div><!-- /masthead -->
@@ -14,12 +15,13 @@
 	<div class="container">
 		<div class="row">
 			<div class="span7">
-	
+			
 				<h2>Commissioners</h2>
 	
 				<ul>
-					{% for smd in info.smds.values %}
-					<li>{{ smd.smd_number }}: {{ smd.first_name }} {{ smd.last_name }}</li>
+					{% for smd in info.smd_list %}
+					<li>{{ smd.first_name }} {{ smd.last_name }}<br>
+					SMD {{ smd.smd_number }}, {{ smd.neighborhoods }}</li>
 					{% endfor %}
 				</ul>
 					
