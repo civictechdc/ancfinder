@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from ancpage.views import home, anc_info, about, share, authority, elections
+from ancbrigadesite.views import home, anc_info, about, share, authority, elections
 
 admin.autodiscover()
 
@@ -18,8 +18,8 @@ urlpatterns = patterns('',
 	url(r'^admin/', include(admin.site.urls)),
 
     # Examples:
-    # url(r'^$', 'ancpage.views.home', name='home'),
-    # url(r'^ancpage/', include('ancpage.foo.urls')),
+    # url(r'^$', 'ancbrigadesite.views.home', name='home'),
+    # url(r'^ancbrigadesite/', include('ancpage.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
