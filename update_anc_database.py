@@ -46,23 +46,13 @@ def csv_file_to_dict(csv_file):
   return list(csv.DictReader(csv_file))
 
 def get_base_data():
-  if not os.path.exists("get_googledoc_creds.py"):
-    print("This program downloads our public Google Doc with Ward/ANC/SMD information.")
-    print("But we need your Google login info to get it...")
-    email = input("google account email> ")
-    password = getpass.getpass("google account password> ")
-  else:
-    # Store your personal credentials in this file if you don't want
-    # to type it in.
-    exec(compile(open("get_googledoc_creds.py").read(), "get_googledoc_creds.py", 'exec'))
-    
   # Create Google Documents client and download the spreadsheet as a CSV for each worksheet.
   spreadsheet_id = "0AsuPWK1wtxNfdGdyVWU4Z3J3X3g3RzVyVWJ1Rkd4dXc" # our spreadsheet
-  gs = GoogleDocsClient(email, password)
+  gs = GoogleDocsClient(google_email, google_password)
   wards = csv_file_to_dict(gs.download(spreadsheet_id, 1)) # second argument is the worksheet ID
   ancs = csv_file_to_dict(gs.download(spreadsheet_id, 2))
   smds = csv_file_to_dict(gs.download(spreadsheet_id, 0))
-  	
+      
   output = OrderedDict()
   for ward in wards:
     w = OrderedDict()
@@ -104,7 +94,7 @@ def add_geographic_data(output):
 
 def add_neighborhood_data(output):
   # Add intersections between ANCs/SMDs and neighborhoods and Census block groups.
-  for division in ("neighborhood", "blockgroup"):
+  for division in ("neighborhood", "blockgroup", "tract"):
     # clear out existing data
     for ward in output.values():
       for anc in ward["ancs"].values():
@@ -123,13 +113,64 @@ def add_neighborhood_data(output):
           feature = output[ward]["ancs"][anc]
         else:
           feature = output[ward]["ancs"][anc]["smds"][smd]
-        feature["map"][division].append({
+          
+        f = {
           "name": ix[division]["name"],
           "part-of-" + anc_smd: ix[anc_smd]["ratio"],
           "part-of-" + division: ix[division]["ratio"],
-        })
+        }
+        
+        if division == "tract":
+          # Extra processing for block groups.
+          state_fips = ix[division]["id"][0:2]
+          county_fips = ix[division]["id"][2:5]
+          tract = ix[division]["id"][5:11]
+          
+          # Remove degenerate intersections with Virginia and Maryland block groups.
+          if state_fips != "11" or county_fips != "001":
+              continue
+              
+          # Query the Census API for population information for this block group.
+          census_fields = {
+              "2010/sf1": [
+                  "P0010001", # Total Population
+                  "P0180001", # Households
+                  "P0180002", # Family Households
+                  "H0040001", # Occupied Housing Units
+                  "H0050001", # Vacant Housing Units
+              ],
+              "2011/acs5": [
+                  "B01002_001E", # Median Age
+                  "B07001_001E", # Geographic Mobility in the Past Year Total Population
+                  "B07001_017E", # .... Same House One Year Ago
+                  "B07001_033E", # .... Moved Within Same County
+                  "B07001_065E", # .... Moved From Different State
+                  "B07001_081E", # .... Moved From Abroad
+                  "B19019_001E", # Median Household Income
+              ],
+          }
+          for census_table in census_fields:
+              url = "http://api.census.gov/data/%s?key=%s&get=%s&in=state:%s+county:%s&for=tract:%s" \
+                  % (census_table, census_api_key, ",".join(census_fields[census_table]), state_fips, county_fips, tract)
+              census_data = json.load(urlopen(url))
+              for i, k in enumerate(census_fields[census_table]):
+                  f[k] = census_data[1][i]
+
+        feature["map"][division].append(f)
 
 if __name__ == "__main__":
+  if not os.path.exists("update_anc_database_creds.py"):
+    print("This program downloads our public Google Doc with Ward/ANC/SMD information.")
+    print("But we need your Google login info to get it...")
+    google_email = input("google account email> ")
+    google_password = getpass.getpass("google account password> ")
+    census_api_key = getpass.getpass("census api key> ")
+  else:
+    # Store your personal credentials in this file if you don't want
+    # to type it in.
+    exec(compile(open("update_anc_database_creds.py").read(), "update_anc_database_creds.py", 'exec'))
+    
+    
   output = get_base_data()
   add_scraperwiki_data(output)
   add_geographic_data(output)
@@ -143,10 +184,10 @@ if __name__ == "__main__":
   
   ## for old static file site
   #with open("www/ancs.jsonp", "w") as f:
-  #	  f.write("anc_data = ")
-  #	  f.write(output)
+  #      f.write("anc_data = ")
+  #      f.write(output)
 
   # for new Django-backed site
   with open("ancbrigadesite/static/ancs.json", "w") as f:
-  	  f.write(output)
-  	  
+        f.write(output)
+        
