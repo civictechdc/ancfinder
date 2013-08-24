@@ -94,6 +94,27 @@ def add_geographic_data(output):
 
 def add_neighborhood_data(output):
   # Add intersections between ANCs/SMDs and neighborhoods and Census block groups.
+  
+  # First estimate the total population of DC neighborhoods because we'll want
+  # to ignore neighborhoods for non-residential areas, because they look really
+  # odd when we say ANC 1B contains the Tidal Basin.
+  #
+  # For each neighborhood, sum the populations of the block groups it intersects with
+  # weighted by the proportion of the block group that intersects with the neighborhood.
+  hood_population = { }
+  for intsect in json.load(open("data/neighborhoods-blockgroups.json")):
+    h = intsect["dc-neighborhoods"]["id"]
+    tr = intsect["2012-blockgroups"]["id"]
+    state_fips, county_fips, tract, bg = tr[0:2], tr[2:5], tr[5:11], tr[11:12]
+    if state_fips != "11": continue # not DC
+    url = "http://api.census.gov/data/%s?key=%s&get=%s&in=state:%s+county:%s+tract:%s&for=block+group:%s" \
+        % ("2010/sf1", census_api_key, "P0010001", state_fips, county_fips, tract, bg)
+    census_data = json.load(urlopen(url))
+    tract_pop = int(census_data[1][0])
+    intsect_pop = tract_pop * intsect["2012-blockgroups"]["ratio"]
+    hood_population[h] = hood_population.get(h, 0) + intsect_pop
+    
+  # Bring in the pre-computed intersection data.
   for division in ("neighborhood", "blockgroup", "tract"):
     # clear out existing data
     for ward in output.values():
@@ -120,17 +141,20 @@ def add_neighborhood_data(output):
           "part-of-" + division: ix[division]["ratio"],
         }
         
+        if division == "neighborhood":
+          # Esimate the population of this neighborhood intersection by multipying our
+          # earlier estimate of the neighborhood's population by the portion of the
+          # neighborhood that falls within this ANC/SMD.
+          f["population"] = hood_population[ix[division]["id"]] * ix[division]["ratio"] 
+        
         if division == "tract":
-          # Extra processing for block groups.
-          state_fips = ix[division]["id"][0:2]
-          county_fips = ix[division]["id"][2:5]
-          tract = ix[division]["id"][5:11]
+          # Query the Census API for information about this tract.
+          state_fips, county_fips, tract = ix[division]["id"][0:2], ix[division]["id"][2:5], ix[division]["id"][5:11]
           
           # Remove degenerate intersections with Virginia and Maryland block groups.
-          if state_fips != "11" or county_fips != "001":
-              continue
+          if state_fips != "11" or county_fips != "001": continue
               
-          # Query the Census API for population information for this block group.
+          # Query the Census API for population information for this tract.
           census_fields = {
               "2010/sf1": [
                   "P0010001", # Total Population

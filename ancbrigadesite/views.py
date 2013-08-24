@@ -39,17 +39,34 @@ def elections(request):
 	
 def prep_hoods(info, is_anc):
 	def is_part(h):
-		return h["part-of-neighborhood"] < .9
+		if h.get("part-of-neighborhood", 0) < (.9 if is_anc else .6): return "parts of "
+		return ""
+		
+	# First sort by population and remove the smallest neighborhood intersections
+	# so long as the cumulative population removed is less than 5% of the total
+	# population. These are either degenerate intersections of very small area or
+	# non-residential neighborhoods like the Tidal Basin or Union Station.
+	hoods = list(info["map"]["neighborhood"])
+	hoods.sort(key = lambda h : h["population"])
+	p = 0
+	pt = sum(h["population"] for h in hoods)
+	while True:
+		p += hoods[0]["population"]
+		if p > .05*pt: break
+		hoods.pop(0)
 	
-	# Filter out neighborhoods that are less than 1% in the ANC/SMD.
-	info["map"]["neighborhood"] = [h for h in info["map"]["neighborhood"] if h["part-of-neighborhood"] > .01]
-
 	# Sort neighborhoods by putting the ones that are "entirely" contained in this
-	# ANC/SMD first, and then sort from most coverage of the object to least coverage.
-	info["map"]["neighborhood"].sort(key = lambda h : (is_part(h), -h["part-of-" + ("anc" if is_anc else "smd")]))
-	
+	# ANC/SMD first, and then sort by population.
+	hoods.sort(key = lambda h : (is_part(h), -h["population"]))
+
+	# If there are more than six neighborhoods, remove ones from the end and replace with
+	# "and other areas".
+	if len(hoods) > 6:
+		hoods = hoods[0:6]
+		hoods.append({ "name": "other areas" })
+
 	# For a nice string for display.
-	hoods = [("part of " if is_part(h) else "") + h["name"] for h in info["map"]["neighborhood"]]
+	hoods = [is_part(h) + h["name"] for h in hoods]
 	if len(hoods) <= 2:
 		hoods = " and ".join(hoods)
 	else:
