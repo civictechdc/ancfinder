@@ -1,4 +1,4 @@
-# Django settings for ancpage project.
+# Django settings for ancbrigadesite project.
 
 import os.path
 
@@ -62,7 +62,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = 'ancpage/ancpage/static/'
+STATIC_ROOT = 'ancbrigadesite/ancpage/static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -104,10 +104,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'ancpage.urls'
+ROOT_URLCONF = 'ancbrigadesite.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'ancpage.wsgi.application'
+WSGI_APPLICATION = 'ancbrigadesite.wsgi.application'
 
 TEMPLATE_DIRS = (
     os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
@@ -123,7 +123,6 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'smd',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

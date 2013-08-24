@@ -100,7 +100,7 @@
 			<div class="span5 offset1 text">
 				<h2>What do ANCs do? Why should I care?</h2>
 				<p>ANCs hold regular meetings and make decisions to advise the DC Council and government about many important community issues, such as parking, recreation, street improvements, liquor licenses, zoning, restaurants and businesses, police protection, sanitation and trash collection, and the District's annual budget. Their recommendations are often very influential.</p>
-				<p>Your ANC commissioners also control grant money of several thousand dollars (or more) for the general purpose of improving their area and hiring staff. <a href="{% url ancpage.views.authority %}">Learn more about ANC authority and budget.</a></p>
+				<p>Your ANC commissioners also control grant money of several thousand dollars (or more) for the general purpose of improving their area and hiring staff. <a href="{% url 'ancbrigadesite.views.authority' %}">Learn more about ANC authority and budget.</a></p>
 			</div>
 			<div class="span5 image">
 				<img src="static/img/people.svg"/>
@@ -117,7 +117,7 @@
 			</div>
 			<div class="span5 text">
 				<h2>Who elects ANC commissioners?</h2>
-				<p>You elect your ANC commissioner every two years in non-partisan elections. ANC commissioners each represent one single member district (SMD). ANC campaigns are typically small, grassroots efforts. In fact, winning candidates often run unopposed and receive just a few hundred votes. <a href="{% url ancpage.views.elections %}">Learn more about ANC elections.</a></p>
+				<p>You elect your ANC commissioner every two years in non-partisan elections. ANC commissioners each represent one single member district (SMD). ANC campaigns are typically small, grassroots efforts. In fact, winning candidates often run unopposed and receive just a few hundred votes. <a href="{% url "ancbrigadesite.views.elections" %}">Learn more about ANC elections.</a></p>
 			</div>
 		</div>
 	</div>
@@ -149,10 +149,11 @@
 	<script type="text/javascript" src="http://gis.govtrack.us/static/js/google_maps_helpers.js"></script>
 	<script type="text/javascript" src="http://gis.govtrack.us/static/js/maps_helpers.js"></script>
 
-    <script type="text/javascript" src="{{ STATIC_URL }}ancs.jsonp"></script>
     <script type="text/javascript" src="{{ STATIC_URL }}meetings.jsonp"></script>
 	
 	<script type="text/javascript">
+		var anc_data = {{ anc_data|safe }};
+		
 		var map = null;
 		
 		function initialize() {
@@ -433,7 +434,7 @@
 									$('#meeting').hide();
 								}
 								
-								$('#anc-link').attr('href', "http://www.ancbrigade.com/" + anc.anc);
+								$('#anc-link').attr('href', "/" + anc.anc);
 								
 								return true;
 		}

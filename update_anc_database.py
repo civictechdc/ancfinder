@@ -102,12 +102,12 @@ if __name__ == "__main__":
   # Output.
   output = json.dumps(output, indent=True, ensure_ascii=False, sort_keys=True)
   
-  # for old static file site
-  with open("www/ancs.jsonp", "w") as f:
-  	  f.write("anc_data = ")
-  	  f.write(output)
+  ## for old static file site
+  #with open("www/ancs.jsonp", "w") as f:
+  #	  f.write("anc_data = ")
+  #	  f.write(output)
 
   # for new Django-backed site
-  with open("www/ancs.json", "w") as f:
+  with open("ancbrigadesite/static/ancs.json", "w") as f:
   	  f.write(output)
   	  
