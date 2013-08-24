@@ -1,5 +1,7 @@
-get_googledoc_creds.py
+update_anc_database_creds.py
 ancbrigadesite/database.sqlite
 
 *~
 *.pyc
+.env
+
