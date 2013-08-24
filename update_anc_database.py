@@ -45,7 +45,7 @@ def urlopen(url):
 def csv_file_to_dict(csv_file):
   return list(csv.DictReader(csv_file))
 
-if __name__ == "__main__":
+def get_base_data():
   if not os.path.exists("get_googledoc_creds.py"):
     print("This program downloads our public Google Doc with Ward/ANC/SMD information.")
     print("But we need your Google login info to get it...")
@@ -83,8 +83,10 @@ if __name__ == "__main__":
     output[ smd["smd"][0] ]["ancs"][ smd["smd"][1] ]["smds"][ smd["smd"][2:] ] = smd
     smd["smd_number"] = smd["smd"][2:]
     
-  # Now add scraped info from scraperwiki.
+  return output
   
+def add_scraperwiki_data(output):
+  # additional information about ANC commissioners
   sw_data = urlopen("https://api.scraperwiki.com/api/1.0/datastore/sqlite?format=json&name=dc_anc_commissioner_info_from_official_anc_website&query=select+*+from+`swdata`&apikey=")
   for rec in json.load(sw_data):
     smd = rec["smd"].strip()
@@ -92,12 +94,49 @@ if __name__ == "__main__":
       if v == None: continue
       output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]][k] = v.strip()
 
+def add_geographic_data(output):
   # Add ANC/SMD geographic extents (bounding box) from the GIS server.
   for ward in list(output.values()):
     for anc in list(ward["ancs"].values()):
       anc["bounds"] = json.load(urlopen("http://gis.govtrack.us/boundaries/dc-anc-2013/" + anc["anc"].lower()))["extent"]
       for smd in list(anc["smds"].values()):
         smd["bounds"] = json.load(urlopen("http://gis.govtrack.us/boundaries/dc-smd-2013/" + smd["smd"].lower()))["extent"]
+
+def add_neighborhood_data(output):
+  # Add intersections between ANCs/SMDs and neighborhoods and Census block groups.
+  for division in ("neighborhood", "blockgroup"):
+    # clear out existing data
+    for ward in output.values():
+      for anc in ward["ancs"].values():
+        anc.setdefault("map", {})[division] = []
+        for smd in anc["smds"].values():
+          smd.setdefault("map", {})[division] = []
+    
+    # set data
+    for anc_smd in ("anc", "smd"):
+      dat = json.load(open("data/%s-%s.json" % (anc_smd, division)))
+      for ix in dat:
+        ward = ix[anc_smd]["id"][0]
+        anc = ix[anc_smd]["id"][1]
+        smd = ix[anc_smd]["id"][2:]
+        if anc_smd == "anc":
+          feature = output[ward]["ancs"][anc]
+        else:
+          feature = output[ward]["ancs"][anc]["smds"][smd]
+        feature["map"][division].append({
+          "name": ix[division]["name"],
+          "part-of-" + anc_smd: ix[anc_smd]["ratio"],
+          "part-of-" + division: ix[division]["ratio"],
+        })
+
+if __name__ == "__main__":
+  output = get_base_data()
+  add_scraperwiki_data(output)
+  add_geographic_data(output)
+  add_neighborhood_data(output)
+  
+  #output = json.load(open("ancbrigadesite/static/ancs.json"))
+  #add_neighborhood_data(output)
 
   # Output.
   output = json.dumps(output, indent=True, ensure_ascii=False, sort_keys=True)
