@@ -1,4 +1,5 @@
 get_googledoc_creds.py
+ancbrigadesite/database.sqlite
 
 *~
 *.pyc
