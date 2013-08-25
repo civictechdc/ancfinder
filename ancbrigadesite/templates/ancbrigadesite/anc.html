@@ -58,7 +58,7 @@
 			$('#map_canvas').css({ width: cw, height: cw < wht ? cw : wht });
 		}
 		
-		function initialize() {
+		$(function () {
 			on_resize();
 			$(window).resize(on_resize);
 		
@@ -84,6 +84,7 @@
 				styles: [ { "featureType": "poi.park", "elementType": "geometry.fill", "stylers": [ { "visibility": "off" } ] } ]
 				};
 			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
 			map.fitBounds(bounds);
 			
 			add_overlay(map, "dc-ward-2013", 8, 12);
@@ -91,7 +92,7 @@
 			add_overlay(map, "dc-anc-2013-outlines", 15, 20);
 			add_overlay(map, "dc-smd-2013-outlines", 13, 14);
 			add_overlay(map, "dc-smd-2013", 15, 20);
-		}
+		});
 
 		// Add a tile overlay for this layer.
 		function add_overlay(map, layer, minzoom, maxzoom, opacity) {

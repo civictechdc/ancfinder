@@ -8,11 +8,13 @@ Dependencies
 
 Set up your environment for installing dependencies:
 
-	git clone https://github.com/codefordc/ancbrigade
+	git clone --recursive https://github.com/codefordc/ancbrigade
 	virtualenv -p python3 .env
 	. .env/bin/activate
 	pip install -r pip-requirements.txt
 	
+Note --recursive on 'git clone' to get the submodule dependencies.
+
 Running the Site
 ----------------
 

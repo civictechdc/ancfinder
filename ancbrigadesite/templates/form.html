@@ -1,0 +1,27 @@
+<form class="form-{{form_display_layout}}" method="post" {% if form.is_multipart %}enctype="multipart/form-data"{% endif %}>
+{% csrf_token %}
+<fieldset>
+
+	<legend>{{title}}</legend>
+	
+	{% for field in form %}
+		<div class="control-group">
+		  <label class="control-label" for="form-field-{{field.name}}">{{field.label}}</label>
+		  <div class="controls">
+			{{field}}
+			<p class="help-block" style="line-height: 120%; margin-top: {% if form_display_layout == 'horizontal' %}0{% else %}-10px{% endif %}"><small>{{field.help_text}}</small></p>
+			{% for err in field.errors %}<p class="text-error">{{err}}</p>{% endfor %}
+		  </div>
+		</div>
+	{% endfor %}
+	
+	<div class="control-group">
+	  <label class="control-label" for="singlebutton"></label>
+	  <div class="controls">
+		<button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+	  </div>
+	</div>
+
+</fieldset>
+</form>
+

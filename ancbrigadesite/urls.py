@@ -16,7 +16,10 @@ urlpatterns = patterns('',
 	url(r'^elections/$', elections),
 	url(r'^(?P<anc>[0-9][A-Za-z])$', anc_info),
 	url(r'^admin/', include(admin.site.urls)),
-	
+
+	# Backend
+	url(r'^upload-document$', 'ancbrigadesite.backend_views.upload_document'),
+	url(r'^document/(\d+)/edit$', 'ancbrigadesite.backend_views.edit_document'),
 	url(r'^document-annotations', include('annotator.urls')),
 
     # Examples:
