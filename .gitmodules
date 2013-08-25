@@ -1,0 +1,3 @@
+[submodule "ext/django-annotator-store"]
+	path = ext/django-annotator-store
+	url = https://github.com/tauberer/django-annotator-store

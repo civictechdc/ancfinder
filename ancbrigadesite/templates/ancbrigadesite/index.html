@@ -156,7 +156,7 @@
 		
 		var map = null;
 		
-		function initialize() {
+		$(function() {
 			// manually resizing things causes too much responsive design trouble
 			//resize_things();
 			//$(window).resize(resize_things);
@@ -192,7 +192,7 @@
 			
 			// If the URL fragment has an SMD name, show the info for that SMD.
 			show_smd_info(window.location.hash.substring(1));
-		}
+		});
 
 		function resize_things() {
 			$('#map_col').css({ height: $('#map_col').width() * 3.5/4 });

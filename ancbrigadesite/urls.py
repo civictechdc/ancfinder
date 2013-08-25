@@ -16,6 +16,8 @@ urlpatterns = patterns('',
 	url(r'^elections/$', elections),
 	url(r'^(?P<anc>[0-9][A-Za-z])$', anc_info),
 	url(r'^admin/', include(admin.site.urls)),
+	
+	url(r'^document-annotations', include('annotator.urls')),
 
     # Examples:
     # url(r'^$', 'ancbrigadesite.views.home', name='home'),
