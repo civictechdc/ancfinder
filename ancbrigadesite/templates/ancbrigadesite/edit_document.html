@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Document - ANCBrigade{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="http://assets.annotateit.org/annotator/v1.2.7/annotator.min.css">
+{% endblock %}
+
+{% block scripts %}
+<script src="http://assets.annotateit.org/annotator/v1.2.7/annotator-full.js"></script>
+
+<script>
+Annotator.Plugin.ReadOnlyAnnotations = function (element) {
+  return {
+    pluginInit: function () {
+      this.annotator
+          .subscribe("annotationViewerShown", function (viewer) {
+            for (var i in viewer.annotations) {
+            	if (viewer.annotations[i].readonly) { 
+            		$(viewer.element).find(".annotator-edit").remove();
+            		$(viewer.element).find(".annotator-delete").remove();
+				}
+			}
+            console.info("The annotation: %o has just been created!", viewer)
+          })
+    }
+  };
+};
+
+jQuery(function ($) {
+    $('#annotation_body').annotator()
+    	.annotator('addPlugin', 'Tags')
+    	.annotator('addPlugin', 'ReadOnlyAnnotations')
+    	.annotator('addPlugin', 'Store', {
+			  prefix: '{{storage_api_base_url}}',
+			  annotationData: {
+				'document': {{document.annotation_document.id}}
+			  },
+			  loadFromSearch: {
+				'document': {{document.annotation_document.id}}
+			  }
+			});
+});
+</script>
+{% endblock %}
+
+{% block body %}
+<div id="masthead">
+	<div class="container">
+		<div class="row">
+			<h1>Edit Document{% if document.title %}: {{document.title}}{% endif %}</h1>
+		</div>
+	</div><!-- /container -->
+</div><!-- /masthead -->
+
+<div class="container">
+  <div class="row">
+	<div class="span3">
+		{% include "form.html" with form=form title="Metadata" form_display_layout="vertical" %}
+	</div>
+  	<div class="span7">
+		<legend style="margin-top: 20px">Tag This Document</legend>
+  		
+		<p><small><em>Select some text in the document to tag or annotate it.</em></small></p>
+		
+		<div id="annotation_body" style="font-size: 90%"> {# reduce font size to avoid line wraping arifacts #}
+			{{ document.annotation_document.body|safe }}
+		</div>
+  	</div>
+  </div>
+</div>
+{% endblock %}

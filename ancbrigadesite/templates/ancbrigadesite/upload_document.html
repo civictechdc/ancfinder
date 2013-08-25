@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Document - ANCBrigade{% endblock %}
+
+{% block body %}
+<div id="masthead">
+	<div class="container">
+		<div class="row">
+			<h1>Upload a Document</h1>
+		</div>
+	</div><!-- /container -->
+</div><!-- /masthead -->
+
+<div class="container">
+  <div class="row">
+	<div class="span10 offset1">
+		{% include "form.html" with form=form title="Upload Document" form_display_layout="horizontal" %}
+		<p>You will be asked to edit the document&rsquo;s metadata on the next screen.</p>
+	</div>
+  </div>
+</div>
+{% endblock %}
