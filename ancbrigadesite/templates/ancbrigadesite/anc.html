@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load humanize %}
 
 {% block body %}
 
@@ -18,12 +19,14 @@
 			
 				<h2>Commissioners</h2>
 	
-				<ul>
+				<div class="row">
 					{% for smd in info.smd_list %}
-					<li>{{ smd.first_name }} {{ smd.last_name }}<br>
-					SMD {{ smd.smd_number }}, {{ smd.neighborhoods }}</li>
+					<div class="span2">
+						<div style="padding-bottom: .4em">{{ smd.first_name }} {{ smd.last_name }}</div>
+						<div style="padding-bottom: .75em"><small><b>SMD {{ smd.smd_number }}</b>: {{ smd.neighborhoods }}</small></div>
+					</div>
 					{% endfor %}
-				</ul>
+				</div>
 					
 				<h2>{{ anc }}'s Recent Documents</h2>
 				
@@ -36,7 +39,16 @@
 					<h2>What&rsquo;s in ANC {{ anc }}</h2>
 					<!-- demographic info -->
 					
-	
+					<table>
+					<tr><td>Families:</td> <td>{{info.census.family_households|intcomma}}</td></tr>
+					<tr><td>Population:</td> <td>{{info.census.population|intcomma}}</td></tr>
+					<tr><td>Households:</td> <td>{{info.census.households|intcomma}}</td></tr>
+					<tr><td>Occupied Housing Units:</td> <td>{{info.census.occupied_housing_units|intcomma}}</td></tr>
+					<tr><td>Vacant Housing Units:</td> <td>{{info.census.vacant_housing_units|intcomma}}</td></tr>
+					<tr><td>Median Age:</td> <td>{{info.census.median_age|intcomma}}</td></tr>
+					<tr><td>Median Income:</td> <td>${{info.census.median_income|intcomma}}</td></tr>
+					</table>
+
 				<!-- documents -->
 	
 			</div><!-- /column -->
