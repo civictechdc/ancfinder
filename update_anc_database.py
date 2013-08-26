@@ -178,7 +178,7 @@ def add_neighborhood_data(output):
                   % (census_table, census_api_key, ",".join(census_fields[census_table]), state_fips, county_fips, tract)
               census_data = json.load(urlopen(url))
               for i, k in enumerate(census_fields[census_table]):
-                  f[k] = census_data[1][i]
+                  f[k] = float(census_data[1][i])
 
         feature["map"][division].append(f)
 

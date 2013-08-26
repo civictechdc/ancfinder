@@ -22,6 +22,16 @@ def anc_info(request, anc):
 	prep_hoods(info, True)
 	for smd in info["smds"].values():
 		prep_hoods(smd, False)
+		
+	info["census"] = {
+		"population": get_census_value_count(info, "tract", "P0010001"),
+		"households": get_census_value_count(info, "tract", "P0180002"),
+		"family_households": get_census_value_count(info, "tract", "P0180002"),
+		"occupied_housing_units": get_census_value_count(info, "tract", "H0040001"),
+		"vacant_housing_units": get_census_value_count(info, "tract", "H0050001"),
+		"median_age": get_census_value_median(info, "tract", "B01002_001E"),
+		"median_income": get_census_value_median(info, "tract", "B19019_001E"),
+	}
 	
 	return render(request, 'ancbrigadesite/anc.html', {'anc': anc, 'info': info})
 	
@@ -74,4 +84,26 @@ def prep_hoods(info, is_anc):
 		hoods = ", ".join(hoods)
 		
 	info["neighborhoods"] = hoods
+	
+def get_census_value_count(anc, gistype, field):
+	# sum the values of the intersecting regions multiplied by the percent of that region
+	# that intersects with the ANC
+	r = 0.0
+	for b in anc["map"][gistype]:
+		w = b["part-of-tract"]
+		v = float(b[field]) # TODO remove float() when this is fixed in the json file
+		r += w * v
+	return int(r)
+def get_census_value_median(anc, gistype, field):
+	# weight the value by the estimated population in the intersection of the ANC and
+	# the region
+	r = 0.0
+	t = 0.0
+	for b in anc["map"][gistype]:
+		w = float(b['P0010001'])*b["part-of-tract"] # weight by this value
+		v = float(b[field]) # TODO remove float() when this is fixed in the json file
+		r += w * v
+		t += w
+	if t == 0.0: return None
+	return round(r/t)
 	
