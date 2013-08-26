@@ -37,4 +37,13 @@ And to fetch the latest ANC meetings calendar:
 	
 	python3 update_meeting_database.py
 	
+Deployment
+----------
 
+We're currently deploying to dotCloud.
+
+	sudo pip install dotcloud
+	dotcloud setup
+	dotcloud connect ancbrigade
+	dotcloud push # push changes to the live site
+	

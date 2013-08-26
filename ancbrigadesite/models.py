@@ -27,8 +27,6 @@ class Document(models.Model):
 	
 	annotation_document = models.ForeignKey('annotator.Document', editable=False, blank=True, null=True, on_delete=models.SET_NULL)
 
-	source_id = models.CharField(max_length=256, unique=True, editable=False, help_text="Abitrary data to identify where the document was scraped from.")
-
 	def __str__(self):
 		return self.get_doc_type_display() + ("/" + self.title if self.title else "")
 
