@@ -9,9 +9,9 @@ Dependencies
 Set up your environment for installing dependencies:
 
 	git clone --recursive https://github.com/codefordc/ancbrigade
-	virtualenv -p python3 .env
+	virtualenv .env # maybe one day we'll use '-p python3' but dotcloud makes that harder
 	. .env/bin/activate
-	pip install -r pip-requirements.txt
+	pip install -r requirements.txt
 	
 Note --recursive on 'git clone' to get the submodule dependencies.
 
