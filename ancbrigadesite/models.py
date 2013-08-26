@@ -25,7 +25,7 @@ class Document(models.Model):
 	document_content_type = models.CharField(editable=False, max_length=128, help_text="The MIME type of the document_content.")
 	document_content_size = models.IntegerField(editable=False)
 	
-	annotation_document = models.ForeignKey('annotator.Document', editable=False, blank=True, null=True)
+	annotation_document = models.ForeignKey('annotator.Document', editable=False, blank=True, null=True, on_delete=models.SET_NULL)
 
 	source_id = models.CharField(max_length=256, unique=True, editable=False, help_text="Abitrary data to identify where the document was scraped from.")
 
@@ -61,12 +61,12 @@ class Document(models.Model):
 	def convert_pdf_to_html(pdf_blob):
 		# Use Josh's hacky CGI script running on his server as a PDF-to-HTML converter.
 		# Extract just the <body> content.
-		import urllib.request, lxml.etree, re
-		html = urllib.request.urlopen("http://razor.occams.info/cgi-bin/ancbrigade-pdf-to-html.cgi", pdf_blob)
+		import urllib, lxml.etree, re
+		html = urllib.urlopen("http://razor.occams.info/cgi-bin/ancbrigade-pdf-to-html.cgi", pdf_blob)
 		dom = lxml.etree.parse(html, lxml.etree.HTMLParser())
 		for n in dom.xpath('//*'):
 			# clear various styles
 			if n.get("style"):
 				n.set("style", re.sub(r"(left|top|width|height|font-size|position):.*?(;|$)", "", n.get("style")))
-		return lxml.etree.tostring(dom.getroot().xpath("body")[0], pretty_print=True, method="html")
+		return lxml.etree.tostring(dom.getroot().xpath("body")[0], pretty_print=True, method="html", encoding=unicode)
 		

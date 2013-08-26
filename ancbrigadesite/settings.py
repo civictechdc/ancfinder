@@ -8,22 +8,51 @@ import os.path
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
-)
+if not os.path.exists('/home/dotcloud/environment.json'):
+	# Settings for local (not public) deployments.
+	
+	# Make this unique, and don't share it with anybody.
+	SECRET_KEY = '7^^6oohvb%oc3$&amp;4z^#vplkp(!@dy24nm$d6a2g9^w#imqpme8'
 
-MANAGERS = ADMINS
+	DATABASES = {
+		'default': {
+			'ENGINE': 'django.db.backends.sqlite3',
+			'NAME': os.path.join(os.path.dirname(__file__), 'database.sqlite').replace('\\','/'),
+		}
+	}
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': os.path.join(os.path.dirname(__file__), 'database.sqlite').replace('\\','/'),                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
-}
+	ADMINS = (
+		# ('Your Name', 'your_email@example.com'),
+	)
+	
+	MANAGERS = ADMINS
+	
+
+else:
+	# Settings for a public dotcloud deployment.
+	
+	#DEBUG = False
+	#TEMPLATE_DEBUG = False
+	import json
+	with open('/home/dotcloud/environment.json') as f:
+	  env = json.load(f)
+	SECRET_KEY = env['DJANGO_SECRET_KEY']
+	DATABASES = {
+		'default': {
+			'ENGINE': 'django.db.backends.postgresql_psycopg2',
+			'NAME': 'template1',
+			'USER': env['DOTCLOUD_DB_SQL_LOGIN'],
+			'PASSWORD': env['DOTCLOUD_DB_SQL_PASSWORD'],
+			'HOST': env['DOTCLOUD_DB_SQL_HOST'],
+			'PORT': int(env['DOTCLOUD_DB_SQL_PORT']),
+		}
+	}
+
+	ADMINS = (
+		(env['DOTCLOUD_USERNAME'], env['DOTCLOUD_EMAIL']),
+	)
+	MANAGERS = ADMINS
+	
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.4/ref/settings/#allowed-hosts
@@ -65,7 +94,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = 'ancbrigadesite/ancpage/static/'
+STATIC_ROOT = '/home/dotcloud/volatile/static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -73,7 +102,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (os.path.join(os.path.dirname(__file__), 'static'),
-    '/static/',
+    #'/static/',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -86,9 +115,6 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
-
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = '7^^6oohvb%oc3$&amp;4z^#vplkp(!@dy24nm$d6a2g9^w#imqpme8'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
