@@ -19,14 +19,17 @@
 			
 				<h2>Commissioners</h2>
 	
-				<div class="row">
+				<table cols="3">
+					<tr>
 					{% for smd in info.smd_list %}
-					<div class="span2">
-						<div style="padding-bottom: .4em">{{ smd.first_name }} {{ smd.last_name }}</div>
+					<td width="33%" style="vertical-align: top; padding-right: 1.25em;">
+						<div style="padding-bottom: .4em; color: black; border-bottom: 1px solid #444;">{{ smd.first_name }} {{ smd.last_name }}</div>
 						<div style="padding-bottom: .75em"><small><b>SMD {{ smd.smd_number }}</b>: {{ smd.neighborhoods }}</small></div>
-					</div>
+					</td>
+					{% if forloop.counter|divisibleby:3 and not forloop.last %}</tr><tr>{% endif %}
 					{% endfor %}
-				</div>
+					</tr>
+				</table>
 					
 				<h2>{{ anc }}'s Recent Documents</h2>
 				
@@ -36,7 +39,7 @@
 				
 				<div id="map_canvas"> </div>
 				
-					<h2>What&rsquo;s in ANC {{ anc }}</h2>
+					<h2>A little about {{ anc }}</h2>
 					<!-- demographic info -->
 					
 					<table>
