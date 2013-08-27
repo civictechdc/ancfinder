@@ -93,7 +93,7 @@ def get_census_value_count(anc, gistype, field):
 		w = b["part-of-tract"]
 		v = float(b[field]) # TODO remove float() when this is fixed in the json file
 		r += w * v
-	return int(r)
+	return int(round(r))
 def get_census_value_median(anc, gistype, field):
 	# weight the value by the estimated population in the intersection of the ANC and
 	# the region
@@ -105,5 +105,5 @@ def get_census_value_median(anc, gistype, field):
 		r += w * v
 		t += w
 	if t == 0.0: return None
-	return round(r/t)
+	return int(round(r/t))
 	
