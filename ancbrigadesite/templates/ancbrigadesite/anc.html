@@ -19,10 +19,10 @@
 			
 				<h2>Commissioners</h2>
 	
-				<table cols="3">
+				<table class="commissioners" cols="3">
 					<tr>
 					{% for smd in info.smd_list %}
-					<td width="33%" style="vertical-align: top; padding-right: 1.25em;">
+					<td id="{{ smd.smd_number }}" width="33%" style="vertical-align: top; padding-right: 1.25em;">
 						<div style="padding-bottom: .4em; color: black; border-bottom: 1px solid #444;">{{ smd.first_name }} {{ smd.last_name }}</div>
 						<div style="padding-bottom: .75em"><small><b>SMD {{ smd.smd_number }}</b>: {{ smd.neighborhoods }}</small></div>
 					</td>
@@ -33,6 +33,8 @@
 					
 				<h2>{{ anc }}'s Recent Documents</h2>
 				
+				<!-- documents -->
+
 			</div><!-- /column -->
 		
 			<div class="span5">
@@ -52,8 +54,6 @@
 					<tr><td>Median Age:</td> <td>{{info.census.median_age|intcomma}}</td></tr>
 					<tr><td>Median Income:</td> <td>${{info.census.median_income|intcomma}}</td></tr>
 					</table>
-
-				<!-- documents -->
 	
 			</div><!-- /column -->
 		</div>
@@ -131,6 +131,53 @@
 			});
 			map.overlayMapTypes.insertAt(0, overlay);
 		}
+		
+		$(".commissioners td").hover(function() {
+			$(this).css({"background-color": "#ffffcc"});
+		},
+		function() {
+			$(this).css({"background-color": "white"});
+		});
+		
+		{% for smd in info.smd_list %}
+		$("#{{ smd.smd_number }}").click(function() {
+			$(function () {
+			on_resize();
+			$(window).resize(on_resize);
+		
+			try {
+				google;
+			} catch (err) {
+				return; // We're working off-line and don't have access to Google Maps.
+			}
+			
+			var sw = new google.maps.LatLng({{smd.bounds.1}}, {{smd.bounds.0}});
+			var ne = new google.maps.LatLng({{smd.bounds.3}}, {{smd.bounds.2}});
+			var bounds = new google.maps.LatLngBounds(sw, ne);
+			
+			var myOptions = {
+				zoom: 13,
+				center: bounds.getCenter(),
+				mapTypeId: google.maps.MapTypeId.ROADMAP,
+				panControl: false,
+				zoomControl: true,
+				mapTypeControl: false,
+				scaleControl: true,
+				streetViewControl: false,
+				styles: [ { "featureType": "poi.park", "elementType": "geometry.fill", "stylers": [ { "visibility": "off" } ] } ]
+				};
+			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+			map.fitBounds(bounds);
+			
+			add_overlay(map, "dc-ward-2013", 8, 12);
+			add_overlay(map, "dc-anc-2013", 13, 14);
+			add_overlay(map, "dc-anc-2013-outlines", 15, 20);
+			add_overlay(map, "dc-smd-2013-outlines", 13, 14);
+			add_overlay(map, "dc-smd-2013", 15, 20);
+		});
+		});
+		{% endfor %}
 		
 	</script>
 {% endblock %}	
