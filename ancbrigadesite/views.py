@@ -31,6 +31,11 @@ def anc_info(request, anc):
 		"vacant_housing_units": get_census_value_count(info, "tract", "H0050001"),
 		"median_age": get_census_value_median(info, "tract", "B01002_001E"),
 		"median_income": get_census_value_median(info, "tract", "B19019_001E"),
+		"county_mobility": get_census_value_median(info, "tract", "B07001_033E"),
+		"state_mobility": get_census_value_median(info, "tract", "B07001_065E"),
+		"foreign_mobility": get_census_value_median(info, "tract", "B07001_081E"),
+#		"no_english_spoken": get_census_value_count(info, "tract", "B16002_001E"),
+#		"educational_attainment": get_census_value_count(info, "tract", "B99151_001E"),
 	}
 	
 	return render(request, 'ancbrigadesite/anc.html', {'anc': anc, 'info': info})

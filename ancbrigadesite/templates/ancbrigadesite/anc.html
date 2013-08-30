@@ -48,6 +48,7 @@
 					<tr><td>Households:</td> <td>{{info.census.households|intcomma}}</td></tr>
 					<tr><td>Occupied Housing Units:</td> <td>{{info.census.occupied_housing_units|intcomma}}</td></tr>
 					<tr><td>Vacant Housing Units:</td> <td>{{info.census.vacant_housing_units|intcomma}}</td></tr>
+					<tr><td>New-ish Residents:</td> <td>{{info.census.county_mobility|add:info.census.state_mobility|add:info.census.foreign_mobility|intcomma}}</td></tr>
 					<tr><td>Median Age:</td> <td>{{info.census.median_age|intcomma}}</td></tr>
 					<tr><td>Median Income:</td> <td>${{info.census.median_income|intcomma}}</td></tr>
 					</table>
