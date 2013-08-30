@@ -105,10 +105,13 @@ def get_census_value_median(anc, gistype, field):
 	r = 0.0
 	t = 0.0
 	for b in anc["map"][gistype]:
-		w = float(b['P0010001'])*b["part-of-tract"] # weight by this value
-		v = float(b[field]) # TODO remove float() when this is fixed in the json file
-		r += w * v
-		t += w
+		try:
+			w = float(b['P0010001'])*b["part-of-tract"] # weight by this value
+			v = float(b[field]) # TODO remove float() when this is fixed in the json file
+			r += w * v
+			t += w
+		except TypeError:
+			continue
 	if t == 0.0: return None
 	return int(round(r/t))
 	
