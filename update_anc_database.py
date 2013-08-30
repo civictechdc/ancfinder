@@ -171,6 +171,8 @@ def add_neighborhood_data(output):
                   "B07001_065E", # .... Moved From Different State
                   "B07001_081E", # .... Moved From Abroad
                   "B19019_001E", # Median Household Income
+#                  "B16002_001E", # No One Age 14+ in Household Speaks English
+#                  "B99151_001E", # Imputation of Educational Attainment for Age 25+
               ],
           }
           for census_table in census_fields:
