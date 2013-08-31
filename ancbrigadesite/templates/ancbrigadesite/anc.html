@@ -74,7 +74,8 @@
 			$('#map_canvas').css({ width: cw, height: cw < wht ? cw : wht });
 		}
 		
-		$(function () {
+		function make_map(bound1, bound2, bound3, bound4) {
+		
 			on_resize();
 			$(window).resize(on_resize);
 		
@@ -84,8 +85,8 @@
 				return; // We're working off-line and don't have access to Google Maps.
 			}
 			
-			var sw = new google.maps.LatLng({{info.bounds.1}}, {{info.bounds.0}});
-			var ne = new google.maps.LatLng({{info.bounds.3}}, {{info.bounds.2}});
+			var sw = new google.maps.LatLng(bound1, bound2);
+			var ne = new google.maps.LatLng(bound3, bound4);
 			var bounds = new google.maps.LatLngBounds(sw, ne);
 			
 			var myOptions = {
@@ -108,7 +109,10 @@
 			add_overlay(map, "dc-anc-2013-outlines", 15, 20);
 			add_overlay(map, "dc-smd-2013-outlines", 13, 14);
 			add_overlay(map, "dc-smd-2013", 15, 20);
-		});
+		
+		}
+		
+		$(make_map({{info.bounds.1}}, {{info.bounds.0}}, {{info.bounds.3}}, {{info.bounds.2}}));
 
 		// Add a tile overlay for this layer.
 		function add_overlay(map, layer, minzoom, maxzoom, opacity) {
@@ -141,41 +145,7 @@
 		
 		{% for smd in info.smd_list %}
 		$("#{{ smd.smd_number }}").click(function() {
-			$(function () {
-			on_resize();
-			$(window).resize(on_resize);
-		
-			try {
-				google;
-			} catch (err) {
-				return; // We're working off-line and don't have access to Google Maps.
-			}
-			
-			var sw = new google.maps.LatLng({{smd.bounds.1}}, {{smd.bounds.0}});
-			var ne = new google.maps.LatLng({{smd.bounds.3}}, {{smd.bounds.2}});
-			var bounds = new google.maps.LatLngBounds(sw, ne);
-			
-			var myOptions = {
-				zoom: 13,
-				center: bounds.getCenter(),
-				mapTypeId: google.maps.MapTypeId.ROADMAP,
-				panControl: false,
-				zoomControl: true,
-				mapTypeControl: false,
-				scaleControl: true,
-				streetViewControl: false,
-				styles: [ { "featureType": "poi.park", "elementType": "geometry.fill", "stylers": [ { "visibility": "off" } ] } ]
-				};
-			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-
-			map.fitBounds(bounds);
-			
-			add_overlay(map, "dc-ward-2013", 8, 12);
-			add_overlay(map, "dc-anc-2013", 13, 14);
-			add_overlay(map, "dc-anc-2013-outlines", 15, 20);
-			add_overlay(map, "dc-smd-2013-outlines", 13, 14);
-			add_overlay(map, "dc-smd-2013", 15, 20);
-		});
+			make_map({{smd.bounds.1}}, {{smd.bounds.0}}, {{smd.bounds.3}}, {{smd.bounds.2}});
 		});
 		{% endfor %}
 		
