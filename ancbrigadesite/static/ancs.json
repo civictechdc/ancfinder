@@ -320,6 +320,7 @@
       "smd": "1A01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "1", 
       "zip": "20010"
      }, 
@@ -411,6 +412,7 @@
       "smd": "1A02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "1", 
       "zip": "20010"
      }, 
@@ -475,6 +477,7 @@
       "smd": "1A03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "1", 
       "zip": "20009"
      }, 
@@ -539,6 +542,7 @@
       "smd": "1A04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "1", 
       "zip": "20010"
      }, 
@@ -631,6 +635,7 @@
       "smd": "1A05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "1", 
       "zip": "20010"
      }, 
@@ -761,6 +766,7 @@
       "smd": "1A06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "1", 
       "zip": "20010"
      }, 
@@ -853,6 +859,7 @@
       "smd": "1A07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "1", 
       "zip": "20010"
      }, 
@@ -944,6 +951,7 @@
       "smd": "1A08", 
       "smd_number": "08", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "1", 
       "zip": "20010"
      }, 
@@ -1041,6 +1049,7 @@
       "smd": "1A09", 
       "smd_number": "09", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "1", 
       "zip": "20010"
      }, 
@@ -1138,6 +1147,7 @@
       "smd": "1A10", 
       "smd_number": "10", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "1", 
       "zip": "20010"
      }, 
@@ -1246,6 +1256,7 @@
       "smd": "1A11", 
       "smd_number": "11", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "1", 
       "zip": "20009"
      }, 
@@ -1376,6 +1387,7 @@
       "smd": "1A12", 
       "smd_number": "12", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "1", 
       "zip": "20009"
      }
@@ -1837,6 +1849,7 @@
       "smd": "1B01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "1", 
       "zip": "20001"
      }, 
@@ -1928,6 +1941,7 @@
       "smd": "1B02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "1", 
       "zip": "20001"
      }, 
@@ -2053,6 +2067,7 @@
       "smd": "1B03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "1", 
       "zip": "20009"
      }, 
@@ -2167,6 +2182,7 @@
       "smd": "1B04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "1", 
       "zip": "20009"
      }, 
@@ -2259,6 +2275,7 @@
       "smd": "1B05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "1", 
       "zip": "20009"
      }, 
@@ -2350,6 +2367,7 @@
       "smd": "1B06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "1", 
       "zip": "20009"
      }, 
@@ -2414,6 +2432,7 @@
       "smd": "1B07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "1", 
       "zip": "20009"
      }, 
@@ -2505,6 +2524,7 @@
       "smd": "1B08", 
       "smd_number": "08", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "1", 
       "zip": "20009"
      }, 
@@ -2619,6 +2639,7 @@
       "smd": "1B09", 
       "smd_number": "09", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "1", 
       "zip": "20009"
      }, 
@@ -2723,6 +2744,7 @@
       "smd": "1B10", 
       "smd_number": "10", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "1", 
       "zip": "20001"
      }, 
@@ -2860,6 +2882,7 @@
       "smd": "1B11", 
       "smd_number": "11", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "1", 
       "zip": "20001"
      }, 
@@ -2951,6 +2974,7 @@
       "smd": "1B12", 
       "smd_number": "12", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "1", 
       "zip": "20009"
      }
@@ -3343,6 +3367,7 @@
       "smd": "1C01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "1", 
       "zip": "20009"
      }, 
@@ -3423,6 +3448,7 @@
       "smd": "1C02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "1", 
       "zip": "20009"
      }, 
@@ -3520,6 +3546,7 @@
       "smd": "1C03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "1", 
       "zip": "20009"
      }, 
@@ -3645,6 +3672,7 @@
       "smd": "1C04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "1", 
       "zip": "20009"
      }, 
@@ -3752,6 +3780,7 @@
       "smd": "1C05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "1", 
       "zip": "20009"
      }, 
@@ -3849,6 +3878,7 @@
       "smd": "1C06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "1", 
       "zip": "20009"
      }, 
@@ -3996,6 +4026,7 @@
       "smd": "1C07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "1", 
       "zip": "20009"
      }, 
@@ -4093,6 +4124,7 @@
       "smd": "1C08", 
       "smd_number": "08", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "1", 
       "zip": "20009"
      }
@@ -4314,6 +4346,7 @@
       "smd": "1D01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "1", 
       "zip": "20010"
      }, 
@@ -4389,6 +4422,7 @@
       "smd": "1D02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "1", 
       "zip": "20010"
      }, 
@@ -4508,6 +4542,7 @@
       "smd": "1D03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "6", 
       "ward": "1", 
       "zip": "20010"
      }, 
@@ -4594,6 +4629,7 @@
       "smd": "1D04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "1", 
       "zip": "20010"
      }, 
@@ -4691,6 +4727,7 @@
       "smd": "1D05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "1", 
       "zip": "20010"
      }
@@ -5107,6 +5144,7 @@
       "smd": "2A01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "2", 
       "zip": "20006"
      }, 
@@ -5182,6 +5220,7 @@
       "smd": "2A02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "2", 
       "zip": "20037"
      }, 
@@ -5285,6 +5324,7 @@
       "smd": "2A03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "2", 
       "zip": "20037"
      }, 
@@ -5421,6 +5461,7 @@
       "smd": "2A04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "2", 
       "zip": "20037"
      }, 
@@ -5496,6 +5537,7 @@
       "smd": "2A05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "2", 
       "zip": "20037"
      }, 
@@ -5599,6 +5641,7 @@
       "smd": "2A06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "2", 
       "zip": "20037"
      }, 
@@ -5723,6 +5766,7 @@
       "smd": "2A07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "2", 
       "zip": "20006"
      }, 
@@ -5797,6 +5841,7 @@
       "smd": "2A08", 
       "smd_number": "08", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "2", 
       "zip": "20052"
      }
@@ -6243,6 +6288,7 @@
       "smd": "2B01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "2", 
       "zip": "20009"
      }, 
@@ -6328,6 +6374,7 @@
       "smd": "2B02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "2", 
       "zip": "20037"
      }, 
@@ -6446,6 +6493,7 @@
       "smd": "2B03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "2", 
       "zip": "20009"
      }, 
@@ -6543,6 +6591,7 @@
       "smd": "2B04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "2", 
       "zip": "20009"
      }, 
@@ -6852,6 +6901,7 @@
       "smd": "2B06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "2", 
       "zip": "20036"
      }, 
@@ -6943,6 +6993,7 @@
       "smd": "2B07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "2", 
       "zip": "20036"
      }, 
@@ -7040,6 +7091,7 @@
       "smd": "2B08", 
       "smd_number": "08", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "2", 
       "zip": "20036"
      }, 
@@ -7143,6 +7195,7 @@
       "smd": "2B09", 
       "smd_number": "09", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "2", 
       "zip": "20009"
      }
@@ -7448,6 +7501,7 @@
       "smd": "2C01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "2", 
       "zip": "20001"
      }, 
@@ -7534,6 +7588,7 @@
       "smd": "2C02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "2", 
       "zip": "20001"
      }, 
@@ -7665,6 +7720,7 @@
       "smd": "2C03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "2", 
       "zip": "20004"
      }
@@ -7822,6 +7878,7 @@
       "smd": "2D01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "2", 
       "zip": "20008"
      }, 
@@ -7909,6 +7966,7 @@
       "smd": "2D02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "2", 
       "zip": "20008"
      }
@@ -8390,6 +8448,7 @@
       "smd": "2E01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "5", 
       "ward": "2", 
       "zip": "20007"
      }, 
@@ -8521,6 +8580,7 @@
       "smd": "2E02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "2", 
       "zip": "20007"
      }, 
@@ -8629,6 +8689,7 @@
       "smd": "2E03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "2", 
       "zip": "20007"
      }, 
@@ -8705,6 +8766,7 @@
       "smd": "2E04", 
       "smd_number": "04", 
       "suffix": "Jr", 
+      "terms": "1", 
       "ward": "2", 
       "zip": "20057"
      }, 
@@ -8864,6 +8926,7 @@
       "smd": "2E05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "7", 
       "ward": "2", 
       "zip": "20007"
      }, 
@@ -8972,6 +9035,7 @@
       "smd": "2E06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "5", 
       "ward": "2", 
       "zip": "20007"
      }, 
@@ -9087,6 +9151,7 @@
       "smd": "2E07", 
       "smd_number": "07", 
       "suffix": "Jr", 
+      "terms": "5", 
       "ward": "2", 
       "zip": "20007"
      }, 
@@ -9179,6 +9244,7 @@
       "smd": "2E08", 
       "smd_number": "08", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "2", 
       "zip": "20007"
      }
@@ -9493,6 +9559,7 @@
       "smd": "2F01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "2", 
       "zip": "20009"
      }, 
@@ -9606,6 +9673,7 @@
       "smd": "2F02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "2", 
       "zip": "20005"
      }, 
@@ -9697,6 +9765,7 @@
       "smd": "2F03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "2", 
       "zip": "20005"
      }, 
@@ -9843,6 +9912,7 @@
       "smd": "2F04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "2", 
       "zip": "20005"
      }, 
@@ -9962,6 +10032,7 @@
       "smd": "2F05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "2", 
       "zip": "20005"
      }, 
@@ -10059,6 +10130,7 @@
       "smd": "2F06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "2", 
       "zip": "20001"
      }, 
@@ -10151,6 +10223,7 @@
       "smd": "2F07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "2", 
       "zip": "20005"
      }, 
@@ -10243,6 +10316,7 @@
       "smd": "2F08", 
       "smd_number": "08", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "2", 
       "zip": "20005"
      }
@@ -10618,6 +10692,7 @@
       "smd": "3B01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "3", 
       "zip": "20007"
      }, 
@@ -10786,6 +10861,7 @@
       "smd": "3B02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "3", 
       "zip": "20007"
      }, 
@@ -10916,6 +10992,7 @@
       "smd": "3B03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "3", 
       "zip": "20007"
      }, 
@@ -11045,6 +11122,7 @@
       "smd": "3B04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "3", 
       "zip": "20016"
      }, 
@@ -11159,6 +11237,7 @@
       "smd": "3B05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "3", 
       "zip": "20007"
      }
@@ -11762,6 +11841,7 @@
       "smd": "3C01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "3", 
       "zip": "20008"
      }, 
@@ -11848,6 +11928,7 @@
       "smd": "3C02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "3", 
       "zip": "20008"
      }, 
@@ -11917,6 +11998,7 @@
       "smd": "3C03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "3", 
       "zip": "20008"
      }, 
@@ -12043,6 +12125,7 @@
       "smd": "3C04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "3", 
       "zip": "20008"
      }, 
@@ -12151,6 +12234,7 @@
       "smd": "3C05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "3", 
       "zip": "20008"
      }, 
@@ -12243,6 +12327,7 @@
       "smd": "3C06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "3", 
       "zip": "20016"
      }, 
@@ -12339,6 +12424,7 @@
       "smd": "3C07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "3", 
       "zip": "20016"
      }, 
@@ -12549,6 +12635,7 @@
       "smd": "3C08", 
       "smd_number": "08", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "3", 
       "zip": "20007"
      }, 
@@ -12673,6 +12760,7 @@
       "smd": "3C09", 
       "smd_number": "09", 
       "suffix": "", 
+      "terms": "7", 
       "ward": "3", 
       "zip": "20016"
      }
@@ -13121,6 +13209,7 @@
       "smd": "3D01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "3", 
       "zip": "20016"
      }, 
@@ -13202,6 +13291,7 @@
       "smd": "3D02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "3", 
       "zip": "20016"
      }, 
@@ -13316,6 +13406,7 @@
       "smd": "3D03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "3", 
       "zip": "20016"
      }, 
@@ -13442,6 +13533,7 @@
       "smd": "3D04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "3", 
       "zip": "20016"
      }, 
@@ -13566,6 +13658,7 @@
       "smd": "3D05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "3", 
       "zip": "20016"
      }, 
@@ -13692,6 +13785,7 @@
       "smd": "3D06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "3", 
       "zip": "20007"
      }, 
@@ -13790,6 +13884,7 @@
       "smd": "3D07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "3", 
       "zip": "20016"
      }, 
@@ -13865,6 +13960,7 @@
       "smd": "3D08", 
       "smd_number": "08", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "3", 
       "zip": "20016"
      }, 
@@ -14063,6 +14159,7 @@
       "smd": "3D09", 
       "smd_number": "09", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "3", 
       "zip": "20007"
      }, 
@@ -14211,6 +14308,7 @@
       "smd": "3D10", 
       "smd_number": "10", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "3", 
       "zip": "20016"
      }
@@ -14583,6 +14681,7 @@
       "smd": "3E01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "3", 
       "zip": "20016"
      }, 
@@ -14672,6 +14771,7 @@
       "smd": "3E02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "3", 
       "zip": "20016"
      }, 
@@ -14795,6 +14895,7 @@
       "smd": "3E03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "3", 
       "zip": "20016"
      }, 
@@ -14919,6 +15020,7 @@
       "smd": "3E04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "3", 
       "zip": "20015"
      }, 
@@ -15055,6 +15157,7 @@
       "smd": "3E05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "3", 
       "zip": "20016"
      }
@@ -15425,6 +15528,7 @@
       "smd": "3F01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "3", 
       "zip": "20008"
      }, 
@@ -15494,6 +15598,7 @@
       "smd": "3F02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "10", 
       "ward": "3", 
       "zip": "20008"
      }, 
@@ -15629,6 +15734,7 @@
       "smd": "3F03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "3", 
       "zip": "20008"
      }, 
@@ -15726,6 +15832,7 @@
       "smd": "3F04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "3", 
       "zip": "20008"
      }, 
@@ -15851,6 +15958,7 @@
       "smd": "3F05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "3", 
       "zip": "20015"
      }, 
@@ -15963,6 +16071,7 @@
       "smd": "3F06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "3", 
       "zip": "20008"
      }, 
@@ -16104,6 +16213,7 @@
       "smd": "3F07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "3", 
       "zip": "20008"
      }
@@ -16467,6 +16577,7 @@
       "smd": "3G01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "3", 
       "zip": "20015"
      }, 
@@ -16603,6 +16714,7 @@
       "smd": "3G02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "3", 
       "zip": "20015"
      }, 
@@ -16716,6 +16828,7 @@
       "smd": "3G03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "3", 
       "zip": "20015"
      }, 
@@ -16817,6 +16930,7 @@
       "smd": "3G04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "17", 
       "ward": "3", 
       "zip": "20015"
      }, 
@@ -16918,6 +17032,7 @@
       "smd": "3G05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "3", 
       "zip": "20015"
      }, 
@@ -17041,6 +17156,7 @@
       "smd": "3G06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "5", 
       "ward": "3", 
       "zip": "20015"
      }, 
@@ -17154,6 +17270,7 @@
       "smd": "3G07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "3", 
       "zip": "20015"
      }
@@ -17585,6 +17702,7 @@
       "smd": "4A01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "4", 
       "zip": "20012"
      }, 
@@ -17669,6 +17787,7 @@
       "smd": "4A02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "4", 
       "zip": "20012"
      }, 
@@ -17816,6 +17935,7 @@
       "smd": "4A03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "7", 
       "ward": "4", 
       "zip": "20012"
      }, 
@@ -17917,6 +18037,7 @@
       "smd": "4A04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -18105,6 +18226,7 @@
       "smd": "4A06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -18219,6 +18341,7 @@
       "smd": "4A07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -18294,6 +18417,7 @@
       "smd": "4A08", 
       "smd_number": "08", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "4", 
       "zip": "20011"
      }
@@ -18724,6 +18848,7 @@
       "smd": "4B01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "5", 
       "ward": "4", 
       "zip": "20012"
      }, 
@@ -18821,6 +18946,7 @@
       "smd": "4B02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "6", 
       "ward": "4", 
       "zip": "20012"
      }, 
@@ -18918,6 +19044,7 @@
       "smd": "4B03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -19025,6 +19152,7 @@
       "smd": "4B04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -19167,6 +19295,7 @@
       "smd": "4B05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -19296,6 +19425,7 @@
       "smd": "4B06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -19436,6 +19566,7 @@
       "smd": "4B07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "6", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -19564,6 +19695,7 @@
       "smd": "4B08", 
       "smd_number": "08", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -19660,6 +19792,7 @@
       "smd": "4B09", 
       "smd_number": "09", 
       "suffix": "", 
+      "terms": "6", 
       "ward": "4", 
       "zip": "20011"
      }
@@ -19993,6 +20126,7 @@
       "smd": "4C01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -20117,6 +20251,7 @@
       "smd": "4C02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -20208,6 +20343,7 @@
       "smd": "4C03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -20272,6 +20408,7 @@
       "smd": "4C04", 
       "smd_number": "04", 
       "suffix": "Jr", 
+      "terms": "1", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -20368,6 +20505,7 @@
       "smd": "4C05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -20459,6 +20597,7 @@
       "smd": "4C06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -20605,6 +20744,7 @@
       "smd": "4C07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -20679,6 +20819,7 @@
       "smd": "4C08", 
       "smd_number": "08", 
       "suffix": "", 
+      "terms": "9", 
       "ward": "4", 
       "zip": "20010"
      }, 
@@ -20825,6 +20966,7 @@
       "smd": "4C09", 
       "smd_number": "09", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -20894,6 +21036,7 @@
       "smd": "4C10", 
       "smd_number": "10", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "4", 
       "zip": "20011"
      }
@@ -21188,6 +21331,7 @@
       "smd": "4D01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -21283,6 +21427,7 @@
       "smd": "4D02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -21423,6 +21568,7 @@
       "smd": "4D03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "4", 
       "zip": "20001"
      }, 
@@ -21519,6 +21665,7 @@
       "smd": "4D04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "5", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -21653,6 +21800,7 @@
       "smd": "4D05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "4", 
       "zip": "20011"
      }, 
@@ -21727,6 +21875,7 @@
       "smd": "4D06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "4", 
       "zip": "20011"
      }
@@ -22075,6 +22224,7 @@
       "smd": "5A01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "5", 
       "zip": "20017"
      }, 
@@ -22200,6 +22350,7 @@
       "smd": "5A02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "5", 
       "zip": "20017"
      }, 
@@ -22324,6 +22475,7 @@
       "smd": "5A03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "5", 
       "zip": "20017"
      }, 
@@ -22564,6 +22716,7 @@
       "smd": "5A05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "5", 
       "zip": "20017"
      }, 
@@ -22678,6 +22831,7 @@
       "smd": "5A06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "5", 
       "zip": "20011"
      }, 
@@ -22808,6 +22962,7 @@
       "smd": "5A07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "5", 
       "ward": "5", 
       "zip": "20011"
      }, 
@@ -22937,6 +23092,7 @@
       "smd": "5A08", 
       "smd_number": "08", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "5", 
       "zip": "20017"
      }
@@ -23346,6 +23502,7 @@
       "smd": "5B01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "5", 
       "zip": "20018"
      }, 
@@ -23509,6 +23666,7 @@
       "smd": "5B02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "5", 
       "zip": "20018"
      }, 
@@ -23660,6 +23818,7 @@
       "smd": "5B03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "5", 
       "zip": "20018"
      }, 
@@ -23790,6 +23949,7 @@
       "smd": "5B04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "5", 
       "zip": "20017"
      }, 
@@ -23898,6 +24058,7 @@
       "smd": "5B05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "5", 
       "zip": "20017"
      }
@@ -24297,6 +24458,7 @@
       "smd": "5C01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "5", 
       "zip": "20018"
      }, 
@@ -24404,6 +24566,7 @@
       "smd": "5C02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "5", 
       "zip": "20018"
      }, 
@@ -24484,6 +24647,7 @@
       "smd": "5C03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "5", 
       "zip": "20018"
      }, 
@@ -24673,6 +24837,7 @@
       "smd": "5C04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "5", 
       "zip": "20002"
      }, 
@@ -24810,6 +24975,7 @@
       "smd": "5C05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "7", 
       "ward": "5", 
       "zip": "20018"
      }, 
@@ -24885,6 +25051,7 @@
       "smd": "5C06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "5", 
       "zip": ""
      }, 
@@ -24999,6 +25166,7 @@
       "smd": "5C07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "5", 
       "zip": "20018"
      }
@@ -25402,6 +25570,7 @@
       "smd": "5D01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "5", 
       "zip": "20002"
      }, 
@@ -25499,6 +25668,7 @@
       "smd": "5D02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "5", 
       "zip": "20002"
      }, 
@@ -25590,6 +25760,7 @@
       "smd": "5D03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "5", 
       "zip": "20002"
      }, 
@@ -25771,6 +25942,7 @@
       "smd": "5D04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "5", 
       "zip": "20002"
      }, 
@@ -25862,6 +26034,7 @@
       "smd": "5D05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "5", 
       "ward": "5", 
       "zip": "20002"
      }, 
@@ -25953,6 +26126,7 @@
       "smd": "5D06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "5", 
       "zip": "20002"
      }, 
@@ -26071,6 +26245,7 @@
       "smd": "5D07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "5", 
       "zip": "20002"
      }
@@ -26634,6 +26809,7 @@
       "smd": "5E01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "5", 
       "ward": "5", 
       "zip": "20017"
      }, 
@@ -26753,6 +26929,7 @@
       "smd": "5E02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "5", 
       "zip": "20017"
      }, 
@@ -26878,6 +27055,7 @@
       "smd": "5E03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "5", 
       "zip": "20002"
      }, 
@@ -27024,6 +27202,7 @@
       "smd": "5E04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "5", 
       "zip": "20002"
      }, 
@@ -27121,6 +27300,7 @@
       "smd": "5E05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "5", 
       "ward": "5", 
       "zip": "20001"
      }, 
@@ -27246,6 +27426,7 @@
       "smd": "5E06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "5", 
       "zip": "20001"
      }, 
@@ -27337,6 +27518,7 @@
       "smd": "5E07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "5", 
       "zip": "20001"
      }, 
@@ -27423,6 +27605,7 @@
       "smd": "5E08", 
       "smd_number": "08", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "5", 
       "zip": "20001"
      }, 
@@ -27595,6 +27778,7 @@
       "smd": "5E09", 
       "smd_number": "09", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "5", 
       "zip": "20001"
      }, 
@@ -27693,6 +27877,7 @@
       "smd": "5E10", 
       "smd_number": "10", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "5", 
       "zip": "20002"
      }
@@ -28061,6 +28246,7 @@
       "smd": "6A01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "6", 
       "zip": "20002"
      }, 
@@ -28185,6 +28371,7 @@
       "smd": "6A02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "6", 
       "zip": "20002"
      }, 
@@ -28281,6 +28468,7 @@
       "smd": "6A03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "6", 
       "zip": "20002"
      }, 
@@ -28350,6 +28538,7 @@
       "smd": "6A04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "6", 
       "ward": "6", 
       "zip": "20002"
      }, 
@@ -28446,6 +28635,7 @@
       "smd": "6A05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "6", 
       "zip": "20002"
      }, 
@@ -28598,6 +28788,7 @@
       "smd": "6A06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "6", 
       "zip": "20002"
      }, 
@@ -28682,6 +28873,7 @@
       "smd": "6A07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "6", 
       "zip": "20002"
      }, 
@@ -28784,6 +28976,7 @@
       "smd": "6A08", 
       "smd_number": "08", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "6", 
       "zip": "20002"
      }
@@ -29297,6 +29490,7 @@
       "smd": "6B01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "6", 
       "zip": "20003"
      }, 
@@ -29427,6 +29621,7 @@
       "smd": "6B02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "6", 
       "zip": "20003"
      }, 
@@ -29551,6 +29746,7 @@
       "smd": "6B03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "6", 
       "zip": "20003"
      }, 
@@ -29715,6 +29911,7 @@
       "smd": "6B04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "6", 
       "zip": "20003"
      }, 
@@ -29784,6 +29981,7 @@
       "smd": "6B05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "6", 
       "zip": "20003"
      }, 
@@ -29936,6 +30134,7 @@
       "smd": "6B06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "6", 
       "zip": "20003"
      }, 
@@ -30011,6 +30210,7 @@
       "smd": "6B07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "6", 
       "zip": "20003"
      }, 
@@ -30124,6 +30324,7 @@
       "smd": "6B08", 
       "smd_number": "08", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "6", 
       "zip": "20003"
      }, 
@@ -30304,6 +30505,7 @@
       "smd": "6B09", 
       "smd_number": "09", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "6", 
       "zip": "20003"
      }, 
@@ -30373,6 +30575,7 @@
       "smd": "6B10", 
       "smd_number": "10", 
       "suffix": "", 
+      "terms": "6", 
       "ward": "6", 
       "zip": "20003"
      }
@@ -30701,6 +30904,7 @@
       "smd": "6C01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "6", 
       "zip": "20002"
      }, 
@@ -30843,6 +31047,7 @@
       "smd": "6C02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "6", 
       "zip": "20002"
      }, 
@@ -30956,6 +31161,7 @@
       "smd": "6C03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "6", 
       "zip": "20002"
      }, 
@@ -31065,6 +31271,7 @@
       "smd": "6C04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "6", 
       "zip": "20002"
      }, 
@@ -31178,6 +31385,7 @@
       "smd": "6C05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "6", 
       "zip": "20002"
      }, 
@@ -31280,6 +31488,7 @@
       "smd": "6C06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "6", 
       "zip": "20002"
      }
@@ -31641,6 +31850,7 @@
       "smd": "6D01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "6", 
       "zip": "20024"
      }, 
@@ -31777,6 +31987,7 @@
       "smd": "6D02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "6", 
       "zip": "20024"
      }, 
@@ -31874,6 +32085,7 @@
       "smd": "6D03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "6", 
       "zip": "20024"
      }, 
@@ -32004,6 +32216,7 @@
       "smd": "6D04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "8", 
       "ward": "6", 
       "zip": "20024"
      }, 
@@ -32190,6 +32403,7 @@
       "smd": "6D05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "9", 
       "ward": "6", 
       "zip": "20024"
      }, 
@@ -32271,6 +32485,7 @@
       "smd": "6D06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "6", 
       "zip": "20024"
      }, 
@@ -32368,6 +32583,7 @@
       "smd": "6D07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "6", 
       "ward": "6", 
       "zip": "20024"
      }
@@ -32690,6 +32906,7 @@
       "smd": "6E01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "7", 
       "ward": "6", 
       "zip": "20001"
      }, 
@@ -32754,6 +32971,7 @@
       "smd": "6E02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "6", 
       "zip": "20001"
      }, 
@@ -32851,6 +33069,7 @@
       "smd": "6E03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "6", 
       "zip": "20001"
      }, 
@@ -32970,6 +33189,7 @@
       "smd": "6E04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "6", 
       "zip": "20001"
      }, 
@@ -33062,6 +33282,7 @@
       "smd": "6E05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "6", 
       "zip": "20001"
      }, 
@@ -33142,6 +33363,7 @@
       "smd": "6E06", 
       "smd_number": "06", 
       "suffix": "Sr", 
+      "terms": "6", 
       "ward": "6", 
       "zip": "20001"
      }, 
@@ -33251,6 +33473,7 @@
       "smd": "6E07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "6", 
       "zip": "20001"
      }
@@ -33732,6 +33955,7 @@
       "smd": "7B01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -33824,6 +34048,7 @@
       "smd": "7B02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "7", 
       "zip": "20020"
      }, 
@@ -33983,6 +34208,7 @@
       "smd": "7B03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "7", 
       "zip": "20020"
      }, 
@@ -34109,6 +34335,7 @@
       "smd": "7B04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "7", 
       "zip": "20020"
      }, 
@@ -34211,6 +34438,7 @@
       "smd": "7B05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "7", 
       "zip": "20020"
      }, 
@@ -34303,6 +34531,7 @@
       "smd": "7B06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "7", 
       "zip": "20020"
      }, 
@@ -34424,6 +34653,7 @@
       "smd": "7B07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "5", 
       "ward": "7", 
       "zip": "20020"
      }
@@ -34792,6 +35022,7 @@
       "smd": "7C01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "5", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -34889,6 +35120,7 @@
       "smd": "7C02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -34975,6 +35207,7 @@
       "smd": "7C03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "6", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -35071,6 +35304,7 @@
       "smd": "7C04", 
       "smd_number": "04", 
       "suffix": "II", 
+      "terms": "1", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -35183,6 +35417,7 @@
       "smd": "7C05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "10", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -35285,6 +35520,7 @@
       "smd": "7C06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -35359,6 +35595,7 @@
       "smd": "7C07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "7", 
       "zip": "20019"
      }
@@ -35863,6 +36100,7 @@
       "smd": "7D01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -36149,6 +36387,7 @@
       "smd": "7D03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -36280,6 +36519,7 @@
       "smd": "7D04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -36395,6 +36635,7 @@
       "smd": "7D05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -36514,6 +36755,7 @@
       "smd": "7D06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -36657,6 +36899,7 @@
       "smd": "7D07", 
       "smd_number": "07", 
       "suffix": "Jr", 
+      "terms": "3", 
       "ward": "7", 
       "zip": "20019"
      }
@@ -36986,6 +37229,7 @@
       "smd": "7E01", 
       "smd_number": "01", 
       "suffix": "Jr", 
+      "terms": "4", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -37114,6 +37358,7 @@
       "smd": "7E02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -37233,6 +37478,7 @@
       "smd": "7E03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "5", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -37336,6 +37582,7 @@
       "smd": "7E04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "13", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -37432,6 +37679,7 @@
       "smd": "7E05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -37511,6 +37759,7 @@
       "smd": "7E06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -37585,6 +37834,7 @@
       "smd": "7E07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "7", 
       "zip": "20019"
      }
@@ -38130,6 +38380,7 @@
       "smd": "7F01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -38244,6 +38495,7 @@
       "smd": "7F02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -38347,6 +38599,7 @@
       "smd": "7F03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "11", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -38450,6 +38703,7 @@
       "smd": "7F04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "5", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -38519,6 +38773,7 @@
       "smd": "7F05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "11", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -38688,6 +38943,7 @@
       "smd": "7F06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "7", 
       "zip": "20019"
      }, 
@@ -39192,6 +39448,7 @@
       "smd": "8A01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "8", 
       "zip": "20013"
      }, 
@@ -39332,6 +39589,7 @@
       "smd": "8A02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "6", 
       "ward": "8", 
       "zip": "20020"
      }, 
@@ -39440,6 +39698,7 @@
       "smd": "8A03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "8", 
       "zip": "20020"
      }, 
@@ -39538,6 +39797,7 @@
       "smd": "8A04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "8", 
       "zip": "20020"
      }, 
@@ -39685,6 +39945,7 @@
       "smd": "8A05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "5", 
       "ward": "8", 
       "zip": "20020"
      }, 
@@ -39878,6 +40139,7 @@
       "smd": "8A06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "8", 
       "zip": "20020"
      }, 
@@ -39964,6 +40226,7 @@
       "smd": "8A07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "8", 
       "zip": "20020"
      }
@@ -40440,6 +40703,7 @@
       "smd": "8B01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "8", 
       "zip": "20013"
      }, 
@@ -40549,6 +40813,7 @@
       "smd": "8B02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "8", 
       "zip": "20030"
      }, 
@@ -40730,6 +40995,7 @@
       "smd": "8B03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "7", 
       "ward": "8", 
       "zip": "20020"
      }, 
@@ -40889,6 +41155,7 @@
       "smd": "8B04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "8", 
       "zip": "20020"
      }, 
@@ -40986,6 +41253,7 @@
       "smd": "8B05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "8", 
       "zip": "20020"
      }, 
@@ -41092,6 +41360,7 @@
       "smd": "8B06", 
       "smd_number": "06", 
       "suffix": "III", 
+      "terms": "4", 
       "ward": "8", 
       "zip": "20020"
      }, 
@@ -41189,6 +41458,7 @@
       "smd": "8B07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "8", 
       "zip": "20020"
      }
@@ -41894,6 +42164,7 @@
       "smd": "8C02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "8", 
       "zip": "20020"
      }, 
@@ -42024,6 +42295,7 @@
       "smd": "8C03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "13", 
       "ward": "8", 
       "zip": "20032"
      }, 
@@ -42312,6 +42584,7 @@
       "smd": "8C05", 
       "smd_number": "05", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "8", 
       "zip": "20032"
      }, 
@@ -42555,6 +42828,7 @@
       "smd": "8C07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "8", 
       "zip": "20030"
      }
@@ -42827,6 +43101,7 @@
       "smd": "8D01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "8", 
       "zip": "20032"
      }, 
@@ -42952,6 +43227,7 @@
       "smd": "8D02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "3", 
       "ward": "8", 
       "zip": "20032"
      }, 
@@ -43038,6 +43314,7 @@
       "smd": "8D03", 
       "smd_number": "03", 
       "suffix": "", 
+      "terms": "7", 
       "ward": "8", 
       "zip": "20032"
      }, 
@@ -43181,6 +43458,7 @@
       "smd": "8D04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "8", 
       "zip": "20032"
      }, 
@@ -43358,6 +43636,7 @@
       "smd": "8D06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "8", 
       "zip": "20032"
      }, 
@@ -43500,6 +43779,7 @@
       "smd": "8D07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "8", 
       "zip": "20032"
      }
@@ -43922,6 +44202,7 @@
       "smd": "8E01", 
       "smd_number": "01", 
       "suffix": "", 
+      "terms": "4", 
       "ward": "8", 
       "zip": "20032"
      }, 
@@ -44014,6 +44295,7 @@
       "smd": "8E02", 
       "smd_number": "02", 
       "suffix": "", 
+      "terms": "9", 
       "ward": "8", 
       "zip": "20056"
      }, 
@@ -44187,6 +44469,7 @@
       "smd": "8E04", 
       "smd_number": "04", 
       "suffix": "", 
+      "terms": "1", 
       "ward": "8", 
       "zip": "20032"
      }, 
@@ -44393,6 +44676,7 @@
       "smd": "8E06", 
       "smd_number": "06", 
       "suffix": "", 
+      "terms": "2", 
       "ward": "8", 
       "zip": "20032"
      }, 
@@ -44494,6 +44778,7 @@
       "smd": "8E07", 
       "smd_number": "07", 
       "suffix": "", 
+      "terms": "5", 
       "ward": "8", 
       "zip": "20032"
      }

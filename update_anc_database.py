@@ -83,6 +83,13 @@ def add_scraperwiki_data(output):
     for k, v in list(rec.items()):
       if v == None: continue
       output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]][k] = v.strip()
+      
+def add_term_data(output):
+  # Number of terms served by current ANC commissioner
+  term_data = csv.reader(open('data/anc-terms.csv'), delimiter=',')
+  for rec in term_data:
+    smd = rec[1]
+    output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]]["terms"] = rec[4]
 
 def add_geographic_data(output):
   # Add ANC/SMD geographic extents (bounding box) from the GIS server.
@@ -142,7 +149,7 @@ def add_neighborhood_data(output):
         }
         
         if division == "neighborhood":
-          # Esimate the population of this neighborhood intersection by multipying our
+          # Esimate the population of this neighborhood intersection by multiplying our
           # earlier estimate of the neighborhood's population by the portion of the
           # neighborhood that falls within this ANC/SMD.
           f["population"] = hood_population[ix[division]["id"]] * ix[division]["ratio"] 
@@ -180,7 +187,7 @@ def add_neighborhood_data(output):
                   % (census_table, census_api_key, ",".join(census_fields[census_table]), state_fips, county_fips, tract)
               census_data = json.load(urlopen(url))
               for i, k in enumerate(census_fields[census_table]):
-                  f[k] = float(census_data[1][i])
+                  f[k] = census_data[1][i]
 
         feature["map"][division].append(f)
 
@@ -199,6 +206,7 @@ if __name__ == "__main__":
     
   output = get_base_data()
   add_scraperwiki_data(output)
+  add_term_data(output)
   add_geographic_data(output)
   add_neighborhood_data(output)
   
