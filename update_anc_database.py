@@ -89,7 +89,7 @@ def add_term_data(output):
   term_data = csv.reader(open('data/anc-terms.csv'), delimiter=',')
   for rec in term_data:
     smd = rec[1]
-    output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]]["terms"] = rec[4]
+    output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]]["terms"] = rec[5]
 
 def add_geographic_data(output):
   # Add ANC/SMD geographic extents (bounding box) from the GIS server.

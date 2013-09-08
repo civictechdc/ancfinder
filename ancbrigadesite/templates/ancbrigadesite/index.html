@@ -397,8 +397,10 @@
 									$('.smd-commissioner-position').text("");
 								}
 								
-								$('#smd-terms').text(smd.first_name + " has been an ANC commissioner for " + smd.terms + " terms.");
-								
+								if (smd.terms) {
+									$('#smd-terms').text(smd.first_name + " has been an ANC commissioner for " + smd.terms + " terms.");
+								}
+	
 								$('#map_col').show();
 								$('#info').fadeIn();
 								$('#info_address_not_found').fadeOut();
