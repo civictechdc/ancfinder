@@ -46,6 +46,7 @@ def csv_file_to_dict(csv_file):
   return list(csv.DictReader(csv_file))
 
 def get_base_data():
+  print("fetching Google spreadsheet")
   # Create Google Documents client and download the spreadsheet as a CSV for each worksheet.
   spreadsheet_id = "0AsuPWK1wtxNfdGdyVWU4Z3J3X3g3RzVyVWJ1Rkd4dXc" # our spreadsheet
   gs = GoogleDocsClient(google_email, google_password)
@@ -76,6 +77,7 @@ def get_base_data():
   return output
   
 def add_scraperwiki_data(output):
+  print("adding more commissioner data")
   # additional information about ANC commissioners
   sw_data = urlopen("https://api.scraperwiki.com/api/1.0/datastore/sqlite?format=json&name=dc_anc_commissioner_info_from_official_anc_website&query=select+*+from+`swdata`&apikey=")
   for rec in json.load(sw_data):
@@ -85,13 +87,19 @@ def add_scraperwiki_data(output):
       output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]][k] = v.strip()
       
 def add_term_data(output):
+  print("adding commissioner term information")
   # Number of terms served by current ANC commissioner
   term_data = csv.reader(open('data/anc-terms.csv'), delimiter=',')
+  con_data = csv.reader(open('data/anc-contestation.csv'), delimiter=',')
   for rec in term_data:
     smd = rec[1]
     output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]]["terms"] = rec[5]
+  for rec in con_data:
+    smd = rec[0]
+    output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]]["contestation"] = rec[1]
 
 def add_geographic_data(output):
+  print("adding geographic data")
   # Add ANC/SMD geographic extents (bounding box) from the GIS server.
   for ward in list(output.values()):
     for anc in list(ward["ancs"].values()):
@@ -100,6 +108,7 @@ def add_geographic_data(output):
         smd["bounds"] = json.load(urlopen("http://gis.govtrack.us/boundaries/dc-smd-2013/" + smd["smd"].lower()))["extent"]
 
 def add_neighborhood_data(output):
+  print("adding neighborhood data")
   # Add intersections between ANCs/SMDs and neighborhoods and Census block groups.
   
   # First estimate the total population of DC neighborhoods because we'll want
