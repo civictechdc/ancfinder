@@ -1,13 +1,18 @@
 import csv
-reader = csv.reader(open('data/historical-commissioners.csv', 'rb'), delimiter=',', quoting=csv.QUOTE_MINIMAL)
-writer = csv.writer(open('data/anc-terms.csv', 'wb'), delimiter=',', quotechar='/') 
+
+history = csv.reader(open('data/historical-commissioners.csv', 'rb'), delimiter=',', quoting=csv.QUOTE_MINIMAL)
+contestation = csv.reader(open('data/anc-candidates-2012.csv', 'rb'), delimiter=',')
+h_output = csv.writer(open('data/anc-terms.csv', 'wb'), delimiter=',', quotechar='/') 
+c_output = csv.writer(open('data/anc-contestation.csv', 'wb'), delimiter=',')
 
 #Not sure if I used quotechar correctly, but this got the result I was trying to achieve.
 
 terms = {}
-writer.writerow(['election_date'] + ['anc'] + ['last_name'] + ['first_name'] + ['suffix'] + ['terms'])
+candidates = {}
 
-for row in reader:
+#h_output.writerow(['election_date'] + ['anc'] + ['last_name'] + ['first_name'] + ['suffix'] + ['terms'])
+
+for row in history:
 	short = str([row[3][:3] + " " + row[2][:3]])
 	if row[2] == 'No candidate':
 		continue
@@ -19,4 +24,15 @@ for row in reader:
 		t = 1
 	output = [row[0]] + [row[1]] + [row[2]] + [row[3]] + [row[4]] + [t]
 	if row[0][:4] == "2012":
-		writer.writerow(output)
+		h_output.writerow(output)
+		
+for row in contestation:
+	if row[1] in candidates:
+		candidates[row[1]] += 1
+	else:
+		candidates[row[1]] = 1
+
+for total in candidates:
+	output = [total] + [candidates[total]]
+	if len(total) == 4:
+		c_output.writerow(output)

@@ -272,6 +272,7 @@
        -77.03272978915508, 
        38.93742715142687
       ], 
+      "contestation": "1", 
       "email": "1A01@anc.dc.gov", 
       "first_name": "Lisa", 
       "last_name": "Kralovic", 
@@ -342,6 +343,7 @@
        -77.03086614480488, 
        38.936801612464734
       ], 
+      "contestation": "2", 
       "email": "1A02@anc.dc.gov", 
       "first_name": "Vickey A.", 
       "last_name": "Wright-Smith", 
@@ -434,6 +436,7 @@
        -77.03251634506378, 
        38.92880662454097
       ], 
+      "contestation": "1", 
       "email": "1A03@anc.dc.gov", 
       "first_name": "Steve", 
       "last_name": "Swank", 
@@ -499,6 +502,7 @@
        -77.02970875401147, 
        38.93707827694278
       ], 
+      "contestation": "2", 
       "email": "1A04@anc.dc.gov", 
       "first_name": "Laina", 
       "last_name": "Aquiline", 
@@ -564,6 +568,7 @@
        -77.03084978909335, 
        38.93328765243887
       ], 
+      "contestation": "1", 
       "email": "1A05@anc.dc.gov", 
       "first_name": "Kevin", 
       "last_name": "Holmes", 
@@ -657,6 +662,7 @@
        -77.02638052334869, 
        38.93279089616326
       ], 
+      "contestation": "3", 
       "email": "1A06@anc.dc.gov", 
       "first_name": "Patrick W.", 
       "last_name": "Flynn", 
@@ -788,6 +794,7 @@
        -77.02519808837148, 
        38.93628481820259
       ], 
+      "contestation": "1", 
       "email": "1A07@anc.dc.gov", 
       "first_name": "Thomas", 
       "last_name": "Boisvert", 
@@ -881,6 +888,7 @@
        -77.01880406209835, 
        38.93739822177313
       ], 
+      "contestation": "1", 
       "email": "1A08@anc.dc.gov", 
       "first_name": "Kent C.", 
       "last_name": "Boese", 
@@ -973,6 +981,7 @@
        -77.02007684893654, 
        38.93398395559023
       ], 
+      "contestation": "1", 
       "email": "1A09@anc.dc.gov", 
       "first_name": "Bobby", 
       "last_name": "Holmes", 
@@ -1071,6 +1080,7 @@
        -77.01794875472561, 
        38.932690701173
       ], 
+      "contestation": "3", 
       "email": "1A10@anc.dc.gov", 
       "first_name": "Anthony", 
       "last_name": "Cimino", 
@@ -1169,6 +1179,7 @@
        -77.02593920125177, 
        38.92980181299724
       ], 
+      "contestation": "2", 
       "email": "1A11@anc.dc.gov", 
       "first_name": "Dotti Love", 
       "last_name": "Wade", 
@@ -1278,6 +1289,7 @@
        -77.02970685908764, 
        38.92763738949592
       ], 
+      "contestation": "2", 
       "email": "1A12@anc.dc.gov", 
       "first_name": "Rosalind M.", 
       "last_name": "Gilliam", 
@@ -1717,6 +1729,7 @@
        -77.01427106821012, 
        38.919369710478314
       ], 
+      "contestation": "1", 
       "email": "1B01@anc.dc.gov", 
       "first_name": "Marc", 
       "last_name": "Morgan", 
@@ -1871,6 +1884,7 @@
        -77.02294260503386, 
        38.920775010606384
       ], 
+      "contestation": "1", 
       "email": "1B02@anc.dc.gov", 
       "first_name": "Jeremy C.", 
       "last_name": "Leffler", 
@@ -1963,6 +1977,7 @@
        -77.02133785222973, 
        38.925895895594
       ], 
+      "contestation": "1", 
       "email": "1B03@anc.dc.gov", 
       "first_name": "Sedrick", 
       "last_name": "Muhammad", 
@@ -2089,6 +2104,7 @@
        -77.02808172290604, 
        38.92108733772688
       ], 
+      "contestation": "1", 
       "email": "1B04@anc.dc.gov", 
       "first_name": "Deborah R.", 
       "last_name": "Thomas", 
@@ -2204,6 +2220,7 @@
        -77.03183866292909, 
        38.92329508354092
       ], 
+      "contestation": "1", 
       "email": "1B05@anc.dc.gov", 
       "first_name": "Ricardo A.", 
       "last_name": "Reinoso", 
@@ -2297,6 +2314,7 @@
        -77.02703539227986, 
        38.92376662341044
       ], 
+      "contestation": "1", 
       "email": "1B06@anc.dc.gov", 
       "first_name": "Dyana", 
       "last_name": "Forester", 
@@ -2389,6 +2407,7 @@
        -77.0322198126939, 
        38.92550154629492
       ], 
+      "contestation": "1", 
       "email": "1B07@anc.dc.gov", 
       "first_name": "Juan E.", 
       "last_name": "Lopez", 
@@ -2454,6 +2473,7 @@
        -77.02970458641951, 
        38.92574816478202
       ], 
+      "contestation": "1", 
       "email": "1B08@anc.dc.gov", 
       "first_name": "Emily", 
       "last_name": "Washington", 
@@ -2546,6 +2566,7 @@
        -77.02266435773798, 
        38.9281228998739
       ], 
+      "contestation": "1", 
       "email": "1B09@anc.dc.gov", 
       "first_name": "James A.", 
       "last_name": "Turner", 
@@ -2661,6 +2682,7 @@
        -77.01214104685872, 
        38.92857570155528
       ], 
+      "contestation": "1", 
       "email": "1B10@anc.dc.gov", 
       "first_name": "Tony", 
       "last_name": "Norman", 
@@ -2766,6 +2788,7 @@
        -77.01469030565512, 
        38.924920210135014
       ], 
+      "contestation": "1", 
       "email": "1B11@anc.dc.gov", 
       "first_name": "E. Gail", 
       "last_name": "Anderson-Holness", 
@@ -2904,6 +2927,7 @@
        -77.02807957365968, 
        38.9181151365761
       ], 
+      "contestation": "4", 
       "email": "1B12@anc.dc.gov", 
       "first_name": "Zahra", 
       "last_name": "Jilani", 
@@ -3269,6 +3293,7 @@
        -77.04164704052592, 
        38.91953517423365
       ], 
+      "contestation": "3", 
       "email": "1C01@anc.dc.gov", 
       "first_name": "Brian", 
       "last_name": "Hart", 
@@ -3389,6 +3414,7 @@
        -77.04469188905298, 
        38.923340321569505
       ], 
+      "contestation": "1", 
       "email": "1C02@anc.dc.gov", 
       "first_name": "Martis Marty", 
       "last_name": "Davis", 
@@ -3470,6 +3496,7 @@
        -77.04168104164177, 
        38.9226607788401
       ], 
+      "contestation": "2", 
       "email": "1C03@anc.dc.gov", 
       "first_name": "Ted", 
       "last_name": "Guthrie", 
@@ -3568,6 +3595,7 @@
        -77.04105072068207, 
        38.92813215000627
       ], 
+      "contestation": "1", 
       "email": "1C04@anc.dc.gov", 
       "first_name": "Gabriela", 
       "last_name": "Mossi", 
@@ -3694,6 +3722,7 @@
        -77.03648505206372, 
        38.927556174082376
       ], 
+      "contestation": "1", 
       "email": "1C05@anc.dc.gov", 
       "first_name": "Elham", 
       "last_name": "Dehbozorgi", 
@@ -3802,6 +3831,7 @@
        -77.0364833986451, 
        38.92652528443698
       ], 
+      "contestation": "2", 
       "email": "1C06@anc.dc.gov", 
       "first_name": "William", 
       "last_name": "Simpson", 
@@ -3900,6 +3930,7 @@
        -77.03847213760632, 
        38.9251919813281
       ], 
+      "contestation": "1", 
       "email": "1C07@anc.dc.gov", 
       "first_name": "Wilson", 
       "last_name": "Reynolds", 
@@ -4048,6 +4079,7 @@
        -77.03648687248236, 
        38.9227322419038
       ], 
+      "contestation": "1", 
       "email": "1C08@anc.dc.gov", 
       "first_name": "Jimmy R.", 
       "last_name": "Rock", 
@@ -4276,6 +4308,7 @@
        -77.03645144820244, 
        38.93520145919866
       ], 
+      "contestation": "2", 
       "email": "1D01@anc.dc.gov", 
       "first_name": "Yasmin", 
       "last_name": "Romero-Castillo", 
@@ -4368,6 +4401,7 @@
        -77.03644480084319, 
        38.93823071715113
       ], 
+      "contestation": "1", 
       "email": "1D02@anc.dc.gov", 
       "first_name": "Adam", 
       "last_name": "Hoey", 
@@ -4444,6 +4478,7 @@
        -77.03855345886487, 
        38.93721106284415
       ], 
+      "contestation": "1", 
       "email": "1D03@anc.dc.gov", 
       "first_name": "Jack", 
       "last_name": "McKay", 
@@ -4564,6 +4599,7 @@
        -77.0364559997803, 
        38.93349400401507
       ], 
+      "contestation": "1", 
       "email": "1D04@anc.dc.gov", 
       "first_name": "Phil", 
       "last_name": "Greiner", 
@@ -4651,6 +4687,7 @@
        -77.03647650530847, 
        38.93326910782089
       ], 
+      "contestation": "2", 
       "email": "1D05@anc.dc.gov", 
       "first_name": "China", 
       "last_name": "Terrell", 
@@ -5026,6 +5063,7 @@
        -77.03195161419254, 
        38.89881348017954
       ], 
+      "contestation": "2", 
       "email": "2A01@anc.dc.gov", 
       "first_name": "Patrick", 
       "last_name": "Kennedy", 
@@ -5166,6 +5204,7 @@
        -77.05010115940831, 
        38.907246374271885
       ], 
+      "contestation": "1", 
       "email": "2A02@anc.dc.gov", 
       "first_name": "Rebecca", 
       "last_name": "Coder", 
@@ -5242,6 +5281,7 @@
        -77.05141435044573, 
        38.90455346078961
       ], 
+      "contestation": "1", 
       "email": "2A03@anc.dc.gov", 
       "first_name": "Asher", 
       "last_name": "Corson", 
@@ -5346,6 +5386,7 @@
        -77.05010947369605, 
        38.90254428778492
       ], 
+      "contestation": "1", 
       "email": "2A04@anc.dc.gov", 
       "first_name": "Armando", 
       "last_name": "Irizarry", 
@@ -5483,6 +5524,7 @@
        -77.05011517427477, 
        38.89957931726691
       ], 
+      "contestation": "1", 
       "email": "2A05@anc.dc.gov", 
       "first_name": "Graham M.", 
       "last_name": "Galka", 
@@ -5559,6 +5601,7 @@
        -77.04488952567085, 
        38.90724638809574
       ], 
+      "contestation": "1", 
       "email": "2A06@anc.dc.gov", 
       "first_name": "Florence E.", 
       "last_name": "Harmon", 
@@ -5663,6 +5706,7 @@
        -77.04489951153163, 
        38.90297744766306
       ], 
+      "contestation": "1", 
       "email": "2A07@anc.dc.gov", 
       "first_name": "Jackson", 
       "last_name": "Carnes", 
@@ -6190,6 +6234,7 @@
        -77.03885020144266, 
        38.915888095125645
       ], 
+      "contestation": "1", 
       "email": "2B01@anc.dc.gov", 
       "first_name": "Michael", 
       "last_name": "Feldstein", 
@@ -6310,6 +6355,7 @@
        -77.04264817858852, 
        38.91261006435899
       ], 
+      "contestation": "1", 
       "email": "2B02@anc.dc.gov", 
       "first_name": "Kevin", 
       "last_name": "O'Connor", 
@@ -6396,6 +6442,7 @@
        -77.0384756563108, 
        38.91493489574526
       ], 
+      "contestation": "2", 
       "email": "2B03@anc.dc.gov", 
       "first_name": "Stephanie", 
       "last_name": "Maltz", 
@@ -6515,6 +6562,7 @@
        -77.03454529674958, 
        38.91409328909642
       ], 
+      "contestation": "3", 
       "email": "2B04@anc.dc.gov", 
       "first_name": "Kishan", 
       "last_name": "Putta", 
@@ -6613,6 +6661,7 @@
        -77.0336386937355, 
        38.911127212090186
       ], 
+      "contestation": "1", 
       "email": "2B05@anc.dc.gov", 
       "first_name": "", 
       "last_name": "Vacant", 
@@ -6798,6 +6847,7 @@
        -77.03944300627364, 
        38.90963540228532
       ], 
+      "contestation": "1", 
       "email": "2B06@anc.dc.gov", 
       "first_name": "Mike", 
       "last_name": "Silverstein", 
@@ -6923,6 +6973,7 @@
        -77.03848642540211, 
        38.91112827155761
       ], 
+      "contestation": "1", 
       "email": "2B07@anc.dc.gov", 
       "first_name": "Leo", 
       "last_name": "Dwyer", 
@@ -7015,6 +7066,7 @@
        -77.03649231068353, 
        38.91700783042471
       ], 
+      "contestation": "1", 
       "email": "2B08@anc.dc.gov", 
       "first_name": "Will", 
       "last_name": "Stephens", 
@@ -7113,6 +7165,7 @@
        -77.0319507318842, 
        38.91700284172929
       ], 
+      "contestation": "1", 
       "email": "2B09@anc.dc.gov", 
       "first_name": "Noah", 
       "last_name": "Smith", 
@@ -7373,6 +7426,7 @@
        -77.01892693374208, 
        38.90394853327897
       ], 
+      "contestation": "1", 
       "email": "2C01@anc.dc.gov", 
       "first_name": "John", 
       "last_name": "Tinpe", 
@@ -7523,6 +7577,7 @@
        -77.01407496112085, 
        38.90112395854687
       ], 
+      "contestation": "1", 
       "email": "2C02@anc.dc.gov", 
       "first_name": "Harold", 
       "last_name": "Closter", 
@@ -7610,6 +7665,7 @@
        -77.0090633053037, 
        38.899811240049246
       ], 
+      "contestation": "1", 
       "email": "2C03@anc.dc.gov", 
       "first_name": "Kevin", 
       "last_name": "Wilsey", 
@@ -7819,6 +7875,7 @@
        -77.04673979715261, 
        38.921218266574655
       ], 
+      "contestation": "1", 
       "email": "2D01@anc.dc.gov", 
       "first_name": "David R.", 
       "last_name": "Bender", 
@@ -7900,6 +7957,7 @@
        -77.0461660303003, 
        38.917714220619395
       ], 
+      "contestation": "1", 
       "email": "2A02@anc.dc.gov", 
       "first_name": "Eric", 
       "last_name": "Lamar", 
@@ -8298,6 +8356,7 @@
        -77.06779475889893, 
        38.917725556781825
       ], 
+      "contestation": "1", 
       "email": "2E01@anc.dc.gov", 
       "first_name": "Ed", 
       "last_name": "Soloman", 
@@ -8470,6 +8529,7 @@
        -77.06382553344451, 
        38.915761320767444
       ], 
+      "contestation": "1", 
       "email": "2E02@anc.dc.gov", 
       "first_name": "Ron", 
       "last_name": "Lewis", 
@@ -8602,6 +8662,7 @@
        -77.06123197860946, 
        38.91047585104599
       ], 
+      "contestation": "1", 
       "email": "2E03@anc.dc.gov", 
       "first_name": "Jeffrey", 
       "last_name": "Jones", 
@@ -8788,6 +8849,7 @@
        -77.05596435276048, 
        38.9076372635846
       ], 
+      "contestation": "1", 
       "email": "2E05@anc.dc.gov", 
       "first_name": "Bill", 
       "last_name": "Starrels", 
@@ -8948,6 +9010,7 @@
        -77.0500395970488, 
        38.91054602102735
       ], 
+      "contestation": "1", 
       "email": "2E06@anc.dc.gov", 
       "first_name": "Tom", 
       "last_name": "Birch", 
@@ -9057,6 +9120,7 @@
        -77.05004849879816, 
        38.91867077806059
       ], 
+      "contestation": "1", 
       "email": "2E07@anc.dc.gov", 
       "first_name": "Charles F.", 
       "last_name": "Eason", 
@@ -9173,6 +9237,7 @@
        -77.06940657483435, 
        38.911175945378154
       ], 
+      "contestation": "1", 
       "email": "2E08@anc.dc.gov", 
       "first_name": "Peter", 
       "last_name": "Prindiville", 
@@ -9483,6 +9548,7 @@
        -77.02703514245967, 
        38.91409379018861
       ], 
+      "contestation": "1", 
       "email": "2F01@anc.dc.gov", 
       "first_name": "Peter", 
       "last_name": "Lallas", 
@@ -9581,6 +9647,7 @@
        -77.02961973889948, 
        38.91112876749157
       ], 
+      "contestation": "4", 
       "email": "2F02@anc.dc.gov", 
       "first_name": "Walt", 
       "last_name": "Cain", 
@@ -9695,6 +9762,7 @@
        -77.02999594130603, 
        38.909424133664956
       ], 
+      "contestation": "1", 
       "email": "2F03@anc.dc.gov", 
       "first_name": "Chris", 
       "last_name": "Linn", 
@@ -9787,6 +9855,7 @@
        -77.02598620095802, 
        38.913675404715164
       ], 
+      "contestation": "2", 
       "email": "2F04@anc.dc.gov", 
       "first_name": "John", 
       "last_name": "Fanning", 
@@ -9934,6 +10003,7 @@
        -77.02962019307844, 
        38.90724216454499
       ], 
+      "contestation": "1", 
       "email": "2F05@anc.dc.gov", 
       "first_name": "Jim", 
       "last_name": "Lamare", 
@@ -10054,6 +10124,7 @@
        -77.02191376360584, 
        38.90964672995348
       ], 
+      "contestation": "1", 
       "email": "2F06@anc.dc.gov", 
       "first_name": "Greg", 
       "last_name": "Melcher", 
@@ -10152,6 +10223,7 @@
        -77.02598268743444, 
        38.90724245746498
       ], 
+      "contestation": "1", 
       "email": "2F07@anc.dc.gov", 
       "first_name": "Matt", 
       "last_name": "Raymond", 
@@ -10245,6 +10317,7 @@
        -77.02703648736998, 
        38.905647668579334
       ], 
+      "contestation": "3", 
       "email": "2F08@anc.dc.gov", 
       "first_name": "Matthew", 
       "last_name": "Connolly", 
@@ -10583,6 +10656,7 @@
        -77.0731874218564, 
        38.92753035265237
       ], 
+      "contestation": "1", 
       "email": "3B01@anc.dc.gov", 
       "first_name": "Joe", 
       "last_name": "Fiorillo", 
@@ -10714,6 +10788,7 @@
        -77.0673116454731, 
        38.92618539558128
       ], 
+      "contestation": "1", 
       "email": "3B02@anc.dc.gov", 
       "first_name": "Jackie", 
       "last_name": "Blumenthal", 
@@ -10883,6 +10958,7 @@
        -77.07705046133758, 
        38.92471582498412
       ], 
+      "contestation": "1", 
       "email": "3B03@anc.dc.gov", 
       "first_name": "Charles Cinque", 
       "last_name": "Fulwood", 
@@ -11014,6 +11090,7 @@
        -77.07700861466273, 
        38.93349348821355
       ], 
+      "contestation": "1", 
       "email": "3B04@anc.dc.gov", 
       "first_name": "Mary C.", 
       "last_name": "Young", 
@@ -11144,6 +11221,7 @@
        -77.07285603887993, 
        38.92254991915225
       ], 
+      "contestation": "1", 
       "email": "3B05@anc.dc.gov", 
       "first_name": "Brian A.", 
       "last_name": "Cohen", 
@@ -11692,6 +11770,7 @@
        -77.04449764847669, 
        38.93392330081207
       ], 
+      "contestation": "1", 
       "email": "3C01@anc.dc.gov", 
       "first_name": "Lee Brian", 
       "last_name": "Reba", 
@@ -11863,6 +11942,7 @@
        -77.05151343747573, 
        38.927527792078656
       ], 
+      "contestation": "2", 
       "email": "3C02@anc.dc.gov", 
       "first_name": "Gwendolyn", 
       "last_name": "Bole", 
@@ -11950,6 +12030,7 @@
        -77.053280438746, 
        38.93271519544422
       ], 
+      "contestation": "2", 
       "email": "3C03@anc.dc.gov", 
       "first_name": "Jeffrey", 
       "last_name": "Kaliel", 
@@ -12020,6 +12101,7 @@
        -77.04778894497773, 
        38.93862435980226
       ], 
+      "contestation": "1", 
       "email": "3C04@anc.dc.gov", 
       "first_name": "Richard", 
       "last_name": "Steacy", 
@@ -12147,6 +12229,7 @@
        -77.05745147875862, 
        38.939426446432336
       ], 
+      "contestation": "1", 
       "email": "3C05@anc.dc.gov", 
       "first_name": "Margaret A.", 
       "last_name": "Siegel", 
@@ -12256,6 +12339,7 @@
        -77.0725047696151, 
        38.94316221934185
       ], 
+      "contestation": "1", 
       "email": "3C06@anc.dc.gov", 
       "first_name": "Carl", 
       "last_name": "Roller", 
@@ -12349,6 +12433,7 @@
        -77.0724093715357, 
        38.93508987674328
       ], 
+      "contestation": "1", 
       "email": "3C07@anc.dc.gov", 
       "first_name": "Victor", 
       "last_name": "Silveira", 
@@ -12446,6 +12531,7 @@
        -77.05016803168665, 
        38.93187534085437
       ], 
+      "contestation": "1", 
       "email": "3C08@anc.dc.gov", 
       "first_name": "Catherine", 
       "last_name": "May", 
@@ -12657,6 +12743,7 @@
        -77.05498555743632, 
        38.93733256395928
       ], 
+      "contestation": "1", 
       "email": "3C09@anc.dc.gov", 
       "first_name": "Nancy J.", 
       "last_name": "MacWood", 
@@ -13132,6 +13219,7 @@
        -77.08189807536009, 
        38.93697502782905
       ], 
+      "contestation": "2", 
       "email": "3D01@anc.dc.gov", 
       "first_name": "W. Kent", 
       "last_name": "Slowinski", 
@@ -13231,6 +13319,7 @@
        -77.08825943125775, 
        38.944408535022276
       ], 
+      "contestation": "1", 
       "email": "3D02@anc.dc.gov", 
       "first_name": "Thomas M.", 
       "last_name": "Smith", 
@@ -13313,6 +13402,7 @@
        -77.09479993022674, 
        38.94871875070522
       ], 
+      "contestation": "1", 
       "email": "3D03@anc.dc.gov", 
       "first_name": "Nan S.", 
       "last_name": "Wells", 
@@ -13428,6 +13518,7 @@
        -77.09830659272085, 
        38.94003842643655
       ], 
+      "contestation": "1", 
       "email": "3D04@anc.dc.gov", 
       "first_name": "Stuart", 
       "last_name": "Ross", 
@@ -13555,6 +13646,7 @@
        -77.09255496740755, 
        38.932678370309006
       ], 
+      "contestation": "2", 
       "email": "3D05@anc.dc.gov", 
       "first_name": "W. Philip", 
       "last_name": "Thomas", 
@@ -13906,6 +13998,7 @@
        -77.08003522588274, 
        38.93388569568824
       ], 
+      "contestation": "1", 
       "email": "3D08@anc.dc.gov", 
       "first_name": "Mike", 
       "last_name": "Gold", 
@@ -13982,6 +14075,7 @@
        -77.07756170435019, 
        38.917428996896334
       ], 
+      "contestation": "2", 
       "email": "3D09@anc.dc.gov", 
       "first_name": "Gayle", 
       "last_name": "Trotter", 
@@ -14181,6 +14275,7 @@
        -77.07827889339771, 
        38.94316308101155
       ], 
+      "contestation": "2", 
       "email": "3D10@anc.dc.gov", 
       "first_name": "Joe", 
       "last_name": "Wisniewski", 
@@ -14551,6 +14646,7 @@
        -77.07460029189257, 
        38.95073261968039
       ], 
+      "contestation": "1", 
       "email": "3E01@anc.dc.gov", 
       "first_name": "Elizabeth S.", 
       "last_name": "Haile", 
@@ -14703,6 +14799,7 @@
        -77.08863138423057, 
        38.954730190735006
       ], 
+      "contestation": "1", 
       "email": "3E02@anc.dc.gov", 
       "first_name": "Matthew", 
       "last_name": "Frumin", 
@@ -14793,6 +14890,7 @@
        -77.0795639848495, 
        38.96093137499534
       ], 
+      "contestation": "1", 
       "email": "3E03@anc.dc.gov", 
       "first_name": "Jonathan", 
       "last_name": "Bender", 
@@ -14917,6 +15015,7 @@
        -77.07150307595634, 
        38.965074558333995
       ], 
+      "contestation": "1", 
       "email": "3E04@anc.dc.gov", 
       "first_name": "Tom", 
       "last_name": "Quinn", 
@@ -15042,6 +15141,7 @@
        -77.07460261069241, 
        38.947139351359816
       ], 
+      "contestation": "1", 
       "email": "3E05@anc.dc.gov", 
       "first_name": "Sam", 
       "last_name": "Serebin", 
@@ -15452,6 +15552,7 @@
        -77.06033543116042, 
        38.94673581367997
       ], 
+      "contestation": "1", 
       "email": "3F01@anc.dc.gov", 
       "first_name": "Adam", 
       "last_name": "Tope", 
@@ -15550,6 +15651,7 @@
        -77.05532348579831, 
        38.94548226074441
       ], 
+      "contestation": "1", 
       "email": "3F02@anc.dc.gov", 
       "first_name": "Karen Lee", 
       "last_name": "Perry", 
@@ -15620,6 +15722,7 @@
        -77.0405108134544, 
        38.961942458243044
       ], 
+      "contestation": "1", 
       "email": "3F03@anc.dc.gov", 
       "first_name": "Mary Beth", 
       "last_name": "Ray", 
@@ -15756,6 +15859,7 @@
        -77.06292467526129, 
        38.95209630647027
       ], 
+      "contestation": "2", 
       "email": "3F04@anc.dc.gov", 
       "first_name": "Sally W.", 
       "last_name": "Gresham", 
@@ -15854,6 +15958,7 @@
        -77.06436573350716, 
        38.959388294316746
       ], 
+      "contestation": "2", 
       "email": "3F05@anc.dc.gov", 
       "first_name": "Manolis R.", 
       "last_name": "Priniotakis", 
@@ -15980,6 +16085,7 @@
        -77.06500581198516, 
        38.95603327618005
       ], 
+      "contestation": "1", 
       "email": "3F06@anc.dc.gov", 
       "first_name": "David Solorzano", 
       "last_name": "Lowell", 
@@ -16093,6 +16199,7 @@
        -77.04988705339723, 
        38.94619550744323
       ], 
+      "contestation": "1", 
       "email": "3F07@anc.dc.gov", 
       "first_name": "Bob", 
       "last_name": "Summersgill", 
@@ -16468,6 +16575,7 @@
        -77.03988129902916, 
        38.987015609131376
       ], 
+      "contestation": "1", 
       "email": "3G01@anc.dc.gov", 
       "first_name": "Carolyn A.", 
       "last_name": "Cook", 
@@ -16599,6 +16707,7 @@
        -77.03948453144702, 
        38.97884499656808
       ], 
+      "contestation": "1", 
       "email": "3G02@anc.dc.gov", 
       "first_name": "Gary", 
       "last_name": "Thompson", 
@@ -16736,6 +16845,7 @@
        -77.0560032589482, 
        38.967061222005334
       ], 
+      "contestation": "1", 
       "email": "3G03@anc.dc.gov", 
       "first_name": "Randy", 
       "last_name": "Speck", 
@@ -16850,6 +16960,7 @@
        -77.06087537329323, 
        38.97402185302397
       ], 
+      "contestation": "1", 
       "email": "3G04@anc.dc.gov", 
       "first_name": "", 
       "last_name": "Vacant", 
@@ -16952,6 +17063,7 @@
        -77.06676348206364, 
        38.971924983337985
       ], 
+      "contestation": "1", 
       "email": "3G05@anc.dc.gov", 
       "first_name": "David", 
       "last_name": "Engel", 
@@ -17054,6 +17166,7 @@
        -77.07043688328451, 
        38.967929959969446
       ], 
+      "contestation": "1", 
       "email": "3G06@anc.dc.gov", 
       "first_name": "Jim", 
       "last_name": "McCarthy", 
@@ -17178,6 +17291,7 @@
        -77.06754274565073, 
        38.96102121310477
       ], 
+      "contestation": "3", 
       "email": "3G07@anc.dc.gov", 
       "first_name": "Henry", 
       "last_name": "Griffin", 
@@ -17724,6 +17838,7 @@
        -77.02645909233341, 
        38.98999559491314
       ], 
+      "contestation": "1", 
       "email": "4A02@anc.dc.gov", 
       "first_name": "Dwayne M.", 
       "last_name": "Toliver", 
@@ -17809,6 +17924,7 @@
        -77.02642509163933, 
        38.979393607737705
       ], 
+      "contestation": "1", 
       "email": "4A03@anc.dc.gov", 
       "first_name": "Stephen A.", 
       "last_name": "Whatley", 
@@ -17957,6 +18073,7 @@
        -77.0272648430835, 
        38.96992987689108
       ], 
+      "contestation": "1", 
       "email": "4A04@anc.dc.gov", 
       "first_name": "Marian C.", 
       "last_name": "Bennett", 
@@ -18145,6 +18262,7 @@
        -77.02771006600528, 
        38.965018418519115
       ], 
+      "contestation": "1", 
       "email": "4A06@anc.dc.gov", 
       "first_name": "Karrye Y.", 
       "last_name": "Braxton", 
@@ -18248,6 +18366,7 @@
        -77.03147522805621, 
        38.97324845346183
       ], 
+      "contestation": "1", 
       "email": "4A07@anc.dc.gov", 
       "first_name": "Dave", 
       "last_name": "Wilson", 
@@ -18363,6 +18482,7 @@
        -77.03639803893145, 
        38.96088365149558
       ], 
+      "contestation": "1", 
       "email": "4A08@anc.dc.gov", 
       "first_name": "Gale B.", 
       "last_name": "Black", 
@@ -18753,6 +18873,7 @@
        -77.01567009190363, 
        38.984770265741844
       ], 
+      "contestation": "2", 
       "email": "4B01@anc.dc.gov", 
       "first_name": "Sara", 
       "last_name": "Green", 
@@ -18870,6 +18991,7 @@
        -77.01608294443558, 
        38.97728571036408
       ], 
+      "contestation": "1", 
       "email": "4B02@anc.dc.gov", 
       "first_name": "Faith E.", 
       "last_name": "Wheeler", 
@@ -18968,6 +19090,7 @@
        -77.01616480032447, 
        38.969926379483475
       ], 
+      "contestation": "1", 
       "email": "4B03@anc.dc.gov", 
       "first_name": "Fred", 
       "last_name": "Grant", 
@@ -19066,6 +19189,7 @@
        -77.01802846312351, 
        38.96613509248908
       ], 
+      "contestation": "3", 
       "email": "4B04@anc.dc.gov", 
       "first_name": "Brenda", 
       "last_name": "Parks", 
@@ -19174,6 +19298,7 @@
        -77.01787367601098, 
        38.961316523160484
       ], 
+      "contestation": "1", 
       "email": "4B05@anc.dc.gov", 
       "first_name": "Brenda", 
       "last_name": "Speaks", 
@@ -19317,6 +19442,7 @@
        -77.00620037379085, 
        38.96995031367846
       ], 
+      "contestation": "1", 
       "email": "4B06@anc.dc.gov", 
       "first_name": "Ronald (Ron)", 
       "last_name": "Austin", 
@@ -19447,6 +19573,7 @@
        -77.00236002987783, 
        38.97622342742433
       ], 
+      "contestation": "2", 
       "email": "4B07@anc.dc.gov", 
       "first_name": "Judi", 
       "last_name": "Jones", 
@@ -19588,6 +19715,7 @@
        -76.99908281980379, 
        38.96583106156201
       ], 
+      "contestation": "1", 
       "email": "4B08@anc.dc.gov", 
       "first_name": "Yvonne A.", 
       "last_name": "Jefferson", 
@@ -20073,6 +20201,7 @@
        -77.02757224836694, 
        38.9613384335216
       ], 
+      "contestation": "1", 
       "email": "4C01@anc.dc.gov", 
       "first_name": "Michael", 
       "last_name": "Yates", 
@@ -20148,6 +20277,7 @@
        -77.02693286675128, 
        38.95621446471124
       ], 
+      "contestation": "1", 
       "email": "4C02@anc.dc.gov", 
       "first_name": "Janet M.", 
       "last_name": "Myers", 
@@ -20273,6 +20403,7 @@
        -77.02633665948427, 
        38.94825941144237
       ], 
+      "contestation": "1", 
       "email": "4C03@anc.dc.gov", 
       "first_name": "Jeff", 
       "last_name": "Standish", 
@@ -20365,6 +20496,7 @@
        -77.03272649351582, 
        38.941873950921725
       ], 
+      "contestation": "1", 
       "email": "4C04@anc.dc.gov", 
       "first_name": "Rickey", 
       "last_name": "Williams", 
@@ -20430,6 +20562,7 @@
        -77.02562195314975, 
        38.94506636309414
       ], 
+      "contestation": "1", 
       "email": "4C05@anc.dc.gov", 
       "first_name": "Joseph M.", 
       "last_name": "Vaughan", 
@@ -20527,6 +20660,7 @@
        -77.0242975442923, 
        38.94080604191579
       ], 
+      "contestation": "2", 
       "email": "4C06@anc.dc.gov", 
       "first_name": "Vann-Di", 
       "last_name": "Galloway", 
@@ -20619,6 +20753,7 @@
        -77.01762259002643, 
        38.94628037750487
       ], 
+      "contestation": "1", 
       "email": "4C07@anc.dc.gov", 
       "first_name": "Shanel O.", 
       "last_name": "Anthony", 
@@ -20766,6 +20901,7 @@
        -77.01898635580864, 
        38.94205358983308
       ], 
+      "contestation": "1", 
       "email": "4C08@anc.dc.gov", 
       "first_name": "Timothy A.", 
       "last_name": "Jones", 
@@ -20841,6 +20977,7 @@
        -77.01149885644492, 
        38.94927264793556
       ], 
+      "contestation": "2", 
       "email": "4C09@anc.dc.gov", 
       "first_name": "Zachary", 
       "last_name": "Hartman", 
@@ -21267,6 +21404,7 @@
        -77.01983744217404, 
        38.95816531066533
       ], 
+      "contestation": "2", 
       "email": "4D01@anc.dc.gov", 
       "first_name": "Lamont", 
       "last_name": "Akins", 
@@ -21353,6 +21491,7 @@
        -77.00904608624519, 
        38.957802216160495
       ], 
+      "contestation": "1", 
       "email": "4D02@anc.dc.gov", 
       "first_name": "Renée L.", 
       "last_name": "Bowser", 
@@ -21449,6 +21588,7 @@
        -77.01324110966628, 
        38.95543750413945
       ], 
+      "contestation": "1", 
       "email": "4D03@anc.dc.gov", 
       "first_name": "Lisa", 
       "last_name": "Colbert", 
@@ -21590,6 +21730,7 @@
        -77.02200680461003, 
        38.95530926644109
       ], 
+      "contestation": "1", 
       "email": "4D04@anc.dc.gov", 
       "first_name": "Donna", 
       "last_name": "Brockington", 
@@ -21822,6 +21963,7 @@
        -77.01951251066251, 
        38.951020630835565
       ], 
+      "contestation": "1", 
       "email": "4D06@anc.dc.gov", 
       "first_name": "Bill", 
       "last_name": "Quirk", 
@@ -22166,6 +22308,7 @@
        -76.98558396257022, 
        38.95729185567821
       ], 
+      "contestation": "2", 
       "email": "5A01@anc.dc.gov", 
       "first_name": "Frank", 
       "last_name": "Wilds", 
@@ -22246,6 +22389,7 @@
        -76.98167458730471, 
        38.95362436706569
       ], 
+      "contestation": "1", 
       "email": "5A02@anc.dc.gov", 
       "first_name": "Grace J.", 
       "last_name": "Lewis", 
@@ -22372,6 +22516,7 @@
        -76.98333193956988, 
        38.95074549885345
       ], 
+      "contestation": "1", 
       "email": "5A03@anc.dc.gov", 
       "first_name": "Adrian T.", 
       "last_name": "Jordan", 
@@ -22667,6 +22812,7 @@
        -77.00244758635328, 
        38.94461291921653
       ], 
+      "contestation": "2", 
       "email": "5A05@anc.dc.gov", 
       "first_name": "Ronnie", 
       "last_name": "Edwards", 
@@ -22738,6 +22884,7 @@
        -76.99966998415772, 
        38.94688029980827
       ], 
+      "contestation": "2", 
       "email": "5A06@anc.dc.gov", 
       "first_name": "Jasmine N.", 
       "last_name": "White", 
@@ -22853,6 +23000,7 @@
        -77.00033680318721, 
        38.95596539658255
       ], 
+      "contestation": "1", 
       "email": "5A07@anc.dc.gov", 
       "first_name": "Sandra \"Sandi\"", 
       "last_name": "Washington", 
@@ -22984,6 +23132,7 @@
        -76.99435409182375, 
        38.956808988464054
       ], 
+      "contestation": "1", 
       "email": "5A08@anc.dc.gov", 
       "first_name": "Angel Sherri", 
       "last_name": "Alston", 
@@ -23390,6 +23539,7 @@
        -76.96665942440521, 
        38.950231792483336
       ], 
+      "contestation": "4", 
       "email": "5B01@anc.dc.gov", 
       "first_name": "Shirley Rivens", 
       "last_name": "Smith", 
@@ -23524,6 +23674,7 @@
        -76.9734553191608, 
        38.94256576447154
       ], 
+      "contestation": "1", 
       "email": "5B02@anc.dc.gov", 
       "first_name": "Ursula", 
       "last_name": "Higgins", 
@@ -23688,6 +23839,7 @@
        -76.97622118588255, 
        38.93311569022262
       ], 
+      "contestation": "1", 
       "email": "5B03@anc.dc.gov", 
       "first_name": "Tiffany", 
       "last_name": "Bridge", 
@@ -23840,6 +23992,7 @@
        -76.98798807012027, 
        38.932655812679094
       ], 
+      "contestation": "3", 
       "email": "5B04@anc.dc.gov", 
       "first_name": "Carolyn C.", 
       "last_name": "Steptoe", 
@@ -23971,6 +24124,7 @@
        -76.98564620827744, 
        38.94286798476364
       ], 
+      "contestation": "2", 
       "email": "5B05@anc.dc.gov", 
       "first_name": "Jenese L.", 
       "last_name": "Jones", 
@@ -24378,6 +24532,7 @@
        -76.96122689432738, 
        38.93851213485627
       ], 
+      "contestation": "2", 
       "email": "5C01@anc.dc.gov", 
       "first_name": "Antonette E.", 
       "last_name": "Russell", 
@@ -24480,6 +24635,7 @@
        -76.95757893844787, 
        38.933685829300636
       ], 
+      "contestation": "2", 
       "email": "5C02@anc.dc.gov", 
       "first_name": "Karla", 
       "last_name": "Butler", 
@@ -24588,6 +24744,7 @@
        -76.94185954483042, 
        38.93083287092538
       ], 
+      "contestation": "2", 
       "email": "5C03@anc.dc.gov", 
       "first_name": "Bob", 
       "last_name": "King", 
@@ -24669,6 +24826,7 @@
        -76.9437251847573, 
        38.925168418226065
       ], 
+      "contestation": "2", 
       "email": "5C04@anc.dc.gov", 
       "first_name": "Jacqueline", 
       "last_name": "Manning", 
@@ -24859,6 +25017,7 @@
        -76.97778557222638, 
        38.92456636991506
       ], 
+      "contestation": "2", 
       "email": "5C05@anc.dc.gov", 
       "first_name": "Regina", 
       "last_name": "James", 
@@ -24997,6 +25156,7 @@
        -76.97899321474121, 
        38.92686175503336
       ], 
+      "contestation": "2", 
       "email": "5C06@anc.dc.gov", 
       "first_name": "", 
       "last_name": "Vacant", 
@@ -25073,6 +25233,7 @@
        -76.96728388070947, 
        38.93311473364263
       ], 
+      "contestation": "3", 
       "email": "5C07@anc.dc.gov", 
       "first_name": "Nolan", 
       "last_name": "Treadway", 
@@ -25475,6 +25636,7 @@
        -76.97840398542606, 
        38.917216942652296
       ], 
+      "contestation": "1", 
       "email": "5D01@anc.dc.gov", 
       "first_name": "Peta-Gay S.", 
       "last_name": "Lewis", 
@@ -25592,6 +25754,7 @@
        -76.9787182887856, 
        38.910474300986685
       ], 
+      "contestation": "1", 
       "email": "5D02@anc.dc.gov", 
       "first_name": "Vonetta", 
       "last_name": "Dumas", 
@@ -25690,6 +25853,7 @@
        -76.97416735460658, 
        38.90733238570287
       ], 
+      "contestation": "1", 
       "email": "5D03@anc.dc.gov", 
       "first_name": "India A.", 
       "last_name": "Henderson", 
@@ -25782,6 +25946,7 @@
        -76.95822187568662, 
        38.90563956763581
       ], 
+      "contestation": "1", 
       "email": "5D04@anc.dc.gov", 
       "first_name": "Bernice S", 
       "last_name": "Blacknell", 
@@ -25964,6 +26129,7 @@
        -76.97416967933977, 
        38.90389045329378
       ], 
+      "contestation": "3", 
       "email": "5D05@anc.dc.gov", 
       "first_name": "Kathy", 
       "last_name": "Henderson", 
@@ -26056,6 +26222,7 @@
        -76.98169668336871, 
        38.90638606518887
       ], 
+      "contestation": "1", 
       "email": "5D06@anc.dc.gov", 
       "first_name": "Tina", 
       "last_name": "Laskaris", 
@@ -26148,6 +26315,7 @@
        -76.97997540122482, 
        38.90777672443235
       ], 
+      "contestation": "2", 
       "email": "5D07@anc.dc.gov", 
       "first_name": "David", 
       "last_name": "Hooper", 
@@ -26698,6 +26866,7 @@
        -76.99396446558599, 
        38.933846866786205
       ], 
+      "contestation": "2", 
       "email": "5E01@anc.dc.gov", 
       "first_name": "Debbie", 
       "last_name": "Smith-Steiner", 
@@ -26831,6 +27000,7 @@
        -76.99428301981978, 
        38.92558455659492
       ], 
+      "contestation": "3", 
       "email": "5E02@anc.dc.gov", 
       "first_name": "Christy 'Love'", 
       "last_name": "Davis", 
@@ -26951,6 +27121,7 @@
        -76.99618652766588, 
        38.921244458318284
       ], 
+      "contestation": "1", 
       "email": "5E03@anc.dc.gov", 
       "first_name": "Tim", 
       "last_name": "Clark", 
@@ -27077,6 +27248,7 @@
        -77.00350440426686, 
        38.918091070117214
       ], 
+      "contestation": "2", 
       "email": "5E04@anc.dc.gov", 
       "first_name": "Sylvia M.", 
       "last_name": "Pinkney", 
@@ -27224,6 +27396,7 @@
        -77.00905076448029, 
        38.91260543043326
       ], 
+      "contestation": "2", 
       "email": "5E05@anc.dc.gov", 
       "first_name": "Joyce", 
       "last_name": "Robinson-Paul", 
@@ -27322,6 +27495,7 @@
        -77.00904859002665, 
        38.91498834662905
       ], 
+      "contestation": "3", 
       "email": "5E06@anc.dc.gov", 
       "first_name": "Teri Janine", 
       "last_name": "Quinn", 
@@ -27448,6 +27622,7 @@
        -77.00904159023413, 
        38.91699994093647
       ], 
+      "contestation": "3", 
       "email": "5E07@anc.dc.gov", 
       "first_name": "Wanda B.", 
       "last_name": "Foster", 
@@ -27540,6 +27715,7 @@
        -77.0090416350092, 
        38.920234715902176
       ], 
+      "contestation": "1", 
       "email": "5E08@anc.dc.gov", 
       "first_name": "Mark", 
       "last_name": "Mueller", 
@@ -27627,6 +27803,7 @@
        -77.00244393725363, 
        38.93125884872399
       ], 
+      "contestation": "3", 
       "email": "5E09@anc.dc.gov", 
       "first_name": "C. Dianne", 
       "last_name": "Barnes", 
@@ -27800,6 +27977,7 @@
        -76.99844408735203, 
        38.92559418027855
       ], 
+      "contestation": "2", 
       "email": "5E10@anc.dc.gov", 
       "first_name": "Angela", 
       "last_name": "Blanks", 
@@ -28154,6 +28332,7 @@
        -76.98829026527983, 
        38.9047582691817
       ], 
+      "contestation": "1", 
       "email": "6A01@anc.dc.gov", 
       "first_name": "J. Omar", 
       "last_name": "Mahmud", 
@@ -28268,6 +28447,7 @@
        -76.98830159063856, 
        38.90020192913299
       ], 
+      "contestation": "2", 
       "email": "6A02@anc.dc.gov", 
       "first_name": "Gloria", 
       "last_name": "Nauden", 
@@ -28393,6 +28573,7 @@
        -76.99024017114326, 
        38.89614854390805
       ], 
+      "contestation": "1", 
       "email": "6A03@anc.dc.gov", 
       "first_name": "David", 
       "last_name": "Holmes", 
@@ -28490,6 +28671,7 @@
        -76.98364391247932, 
        38.89357555909205
       ], 
+      "contestation": "1", 
       "email": "6A04@anc.dc.gov", 
       "first_name": "Nickholas", 
       "last_name": "Alberti", 
@@ -28560,6 +28742,7 @@
        -76.98364355035913, 
        38.896120720820115
       ], 
+      "contestation": "1", 
       "email": "6A05@anc.dc.gov", 
       "first_name": "Jay", 
       "last_name": "Williams", 
@@ -28657,6 +28840,7 @@
        -76.98185995877212, 
        38.90194124210099
       ], 
+      "contestation": "2", 
       "email": "6A06@anc.dc.gov", 
       "first_name": "Andrew J", 
       "last_name": "Hysell", 
@@ -28810,6 +28994,7 @@
        -76.97645633569714, 
        38.900130750586754
       ], 
+      "contestation": "2", 
       "email": "6A07@anc.dc.gov", 
       "first_name": "Sondra", 
       "last_name": "Phillips-Gilbert", 
@@ -28895,6 +29080,7 @@
        -76.97383571860317, 
        38.89611589041833
       ], 
+      "contestation": "2", 
       "email": "6A08@anc.dc.gov", 
       "first_name": "Calvin", 
       "last_name": "Ward", 
@@ -29364,6 +29550,7 @@
        -76.99951162991347, 
        38.88981182548032
       ], 
+      "contestation": "1", 
       "email": "6B01@anc.dc.gov", 
       "first_name": "David", 
       "last_name": "Garrison", 
@@ -29512,6 +29699,7 @@
        -76.99375645969852, 
        38.889808729434506
       ], 
+      "contestation": "2", 
       "email": "6B02@anc.dc.gov", 
       "first_name": "Ivan", 
       "last_name": "Frishberg", 
@@ -29643,6 +29831,7 @@
        -76.9949724273482, 
        38.88427424208356
       ], 
+      "contestation": "2", 
       "email": "6B03@anc.dc.gov", 
       "first_name": "Phil", 
       "last_name": "Peisch", 
@@ -29768,6 +29957,7 @@
        -76.9902411481284, 
        38.88603426505225
       ], 
+      "contestation": "1", 
       "email": "6B04@anc.dc.gov", 
       "first_name": "Kirsten", 
       "last_name": "Oldenburg", 
@@ -29933,6 +30123,7 @@
        -76.9883128023774, 
        38.88980473757753
       ], 
+      "contestation": "2", 
       "email": "6B05@anc.dc.gov", 
       "first_name": "Brian", 
       "last_name": "Pate", 
@@ -30003,6 +30194,7 @@
        -76.97797333053038, 
        38.886227118643895
       ], 
+      "contestation": "3", 
       "email": "6B06@anc.dc.gov", 
       "first_name": "Nichole", 
       "last_name": "Opkins", 
@@ -30156,6 +30348,7 @@
        -76.98550569749212, 
        38.88224961754845
       ], 
+      "contestation": "1", 
       "email": "6B07@anc.dc.gov", 
       "first_name": "Sara", 
       "last_name": "Loveland", 
@@ -30232,6 +30425,7 @@
        -76.98221412010093, 
        38.889802968531455
       ], 
+      "contestation": "1", 
       "email": "6B08@anc.dc.gov", 
       "first_name": "Chander", 
       "last_name": "Jayaraman", 
@@ -30346,6 +30540,7 @@
        -76.97096836887174, 
        38.88653877898564
       ], 
+      "contestation": "1", 
       "email": "6B09@anc.dc.gov", 
       "first_name": "Brian", 
       "last_name": "Flahaven", 
@@ -30527,6 +30722,7 @@
        -76.97725561031764, 
        38.8898019097013
       ], 
+      "contestation": "1", 
       "email": "6B10@anc.dc.gov", 
       "first_name": "Francis M.", 
       "last_name": "Campbell", 
@@ -30806,6 +31002,7 @@
        -76.9949603274062, 
        38.89207228218936
       ], 
+      "contestation": "1", 
       "email": "6C01@anc.dc.gov", 
       "first_name": "Daniele Megan", 
       "last_name": "Schiffman", 
@@ -30926,6 +31123,7 @@
        -77.00057154248663, 
        38.899433792894065
       ], 
+      "contestation": "1", 
       "email": "6C02@anc.dc.gov", 
       "first_name": "Karen J.", 
       "last_name": "Wirt", 
@@ -31069,6 +31267,7 @@
        -76.99495995577823, 
        38.89733610074311
       ], 
+      "contestation": "1", 
       "email": "6C03@anc.dc.gov", 
       "first_name": "John Scott", 
       "last_name": "Price", 
@@ -31183,6 +31382,7 @@
        -76.99844388626049, 
        38.90132672066247
       ], 
+      "contestation": "1", 
       "email": "6C04@anc.dc.gov", 
       "first_name": "Mark", 
       "last_name": "Eckenwiler", 
@@ -31293,6 +31493,7 @@
        -76.99495854951878, 
        38.9025145691539
       ], 
+      "contestation": "1", 
       "email": "6C05@anc.dc.gov", 
       "first_name": "Mark", 
       "last_name": "Kazmierczak", 
@@ -31407,6 +31608,7 @@
        -76.99489751205749, 
        38.90889709108679
       ], 
+      "contestation": "2", 
       "email": "6C06@anc.dc.gov", 
       "first_name": "Tony T", 
       "last_name": "Goodman", 
@@ -31796,6 +31998,7 @@
        -77.01754434081971, 
        38.88757135393921
       ], 
+      "contestation": "1", 
       "email": "6D01@anc.dc.gov", 
       "first_name": "Donna L", 
       "last_name": "Hopkins", 
@@ -31872,6 +32075,7 @@
        -77.00351895900761, 
        38.88759182089671
       ], 
+      "contestation": "2", 
       "email": "6D02@anc.dc.gov", 
       "first_name": "Ed", 
       "last_name": "Kaminski", 
@@ -32009,6 +32213,7 @@
        -77.01295634174589, 
        38.88757127396877
       ], 
+      "contestation": "1", 
       "email": "6D03@anc.dc.gov", 
       "first_name": "Ron", 
       "last_name": "McBee", 
@@ -32107,6 +32312,7 @@
        -77.01511868064708, 
        38.88343871104629
       ], 
+      "contestation": "1", 
       "email": "6D04@anc.dc.gov", 
       "first_name": "Andy", 
       "last_name": "Litsky", 
@@ -32238,6 +32444,7 @@
        -77.00565434839093, 
        38.87928555750456
       ], 
+      "contestation": "2", 
       "email": "6D05@anc.dc.gov", 
       "first_name": "Roger", 
       "last_name": "Moffatt", 
@@ -32425,6 +32632,7 @@
        -77.00887826481853, 
        38.876471810773936
       ], 
+      "contestation": "1", 
       "email": "6D06@anc.dc.gov", 
       "first_name": "Rhonda N.", 
       "last_name": "Hamilton", 
@@ -32507,6 +32715,7 @@
        -76.99036297381114, 
        38.881530879939135
       ], 
+      "contestation": "1", 
       "email": "6D07@anc.dc.gov", 
       "first_name": "David", 
       "last_name": "Garber", 
@@ -32830,6 +33039,7 @@
        -77.02092107948415, 
        38.9140917269493
       ], 
+      "contestation": "2", 
       "email": "6E01@anc.dc.gov", 
       "first_name": "Alexander M. \"Alex\"", 
       "last_name": "Padro", 
@@ -32928,6 +33138,7 @@
        -77.01590805719928, 
        38.9157380834627
       ], 
+      "contestation": "4", 
       "email": "6E02@anc.dc.gov", 
       "first_name": "Kevin", 
       "last_name": "Chapple", 
@@ -32993,6 +33204,7 @@
        -77.018925114453, 
        38.908574980324595
       ], 
+      "contestation": "2", 
       "email": "6E03@anc.dc.gov", 
       "first_name": "Frank S.", 
       "last_name": "Wiggins", 
@@ -33091,6 +33303,7 @@
        -77.01364830433167, 
        38.908573774189165
       ], 
+      "contestation": "2", 
       "email": "6E04@anc.dc.gov", 
       "first_name": "Rachelle P.", 
       "last_name": "Nigro", 
@@ -33211,6 +33424,7 @@
        -77.01617347826468, 
        38.90487878284235
       ], 
+      "contestation": "2", 
       "email": "6E05@anc.dc.gov", 
       "first_name": "Marge", 
       "last_name": "Maceda", 
@@ -33304,6 +33518,7 @@
        -77.00905296785794, 
        38.907350470462035
       ], 
+      "contestation": "1", 
       "email": "6E06@anc.dc.gov", 
       "first_name": "Alvin O.", 
       "last_name": "Judd", 
@@ -33385,6 +33600,7 @@
        -77.00906038632404, 
        38.90626868783905
       ], 
+      "contestation": "2", 
       "email": "6E07@anc.dc.gov", 
       "first_name": "Alfreda S.", 
       "last_name": "Judd", 
@@ -33856,6 +34072,7 @@
        -76.95523173956165, 
        38.88689331346058
       ], 
+      "contestation": "1", 
       "email": "7B01@anc.dc.gov", 
       "first_name": "Patricia", 
       "last_name": "Howard-Chittams", 
@@ -33977,6 +34194,7 @@
        -76.96048948446595, 
        38.872307652218446
       ], 
+      "contestation": "1", 
       "email": "7B02@anc.dc.gov", 
       "first_name": "Zina D.", 
       "last_name": "Williams", 
@@ -34230,6 +34448,7 @@
        -76.95132354075197, 
        38.877846912091975
       ], 
+      "contestation": "1", 
       "email": "7B04@anc.dc.gov", 
       "first_name": "Phillip J.", 
       "last_name": "Hammond", 
@@ -34357,6 +34576,7 @@
        -76.95562341199837, 
        38.86192288860566
       ], 
+      "contestation": "1", 
       "email": "7B05@anc.dc.gov", 
       "first_name": "Robin Hammond", 
       "last_name": "Marlin", 
@@ -34460,6 +34680,7 @@
        -76.94667186949307, 
        38.865594383856134
       ], 
+      "contestation": "1", 
       "email": "7B06@anc.dc.gov", 
       "first_name": "Robert A.", 
       "last_name": "Jordan", 
@@ -34553,6 +34774,7 @@
        -76.94250524202761, 
        38.880009760132246
       ], 
+      "contestation": "1", 
       "email": "7B07@anc.dc.gov", 
       "first_name": "Robert T.", 
       "last_name": "Richards", 
@@ -34919,6 +35141,7 @@
        -76.9251435451751, 
        38.90183631087524
       ], 
+      "contestation": "1", 
       "email": "7C01@anc.dc.gov", 
       "first_name": "Patricia A.", 
       "last_name": "Malloy", 
@@ -35044,6 +35267,7 @@
        -76.91911527120133, 
        38.89658132731451
       ], 
+      "contestation": "1", 
       "email": "7C02@anc.dc.gov", 
       "first_name": "Greg", 
       "last_name": "Stewart", 
@@ -35142,6 +35366,7 @@
        -76.92704220994216, 
        38.89861324204818
       ], 
+      "contestation": "1", 
       "email": "7C03@anc.dc.gov", 
       "first_name": "Catherine A.", 
       "last_name": "Woods", 
@@ -35229,6 +35454,7 @@
        -76.92334904196885, 
        38.90468980174192
       ], 
+      "contestation": "1", 
       "email": "7C04@anc.dc.gov", 
       "first_name": "Walter J.", 
       "last_name": "Garcia", 
@@ -35326,6 +35552,7 @@
        -76.90914770688994, 
        38.897315154533004
       ], 
+      "contestation": "1", 
       "email": "7C05@anc.dc.gov", 
       "first_name": "Mary L.", 
       "last_name": "Gaffney", 
@@ -35439,6 +35666,7 @@
        -76.91475428363026, 
        38.90404593067003
       ], 
+      "contestation": "1", 
       "email": "7C06@anc.dc.gov", 
       "first_name": "Sherrie", 
       "last_name": "Lawson", 
@@ -35542,6 +35770,7 @@
        -76.92417136396067, 
        38.91023576010927
       ], 
+      "contestation": "4", 
       "email": "7C07@anc.dc.gov", 
       "first_name": "Antawan", 
       "last_name": "Holmes", 
@@ -35995,6 +36224,7 @@
        -76.96190893638743, 
        38.89890309324688
       ], 
+      "contestation": "2", 
       "email": "7D01@anc.dc.gov", 
       "first_name": "Lisa", 
       "last_name": "White", 
@@ -36260,6 +36490,7 @@
        -76.93125532726873, 
        38.91853526566978
       ], 
+      "contestation": "1", 
       "email": "7D03@anc.dc.gov", 
       "first_name": "Donna R.", 
       "last_name": "Muhammad", 
@@ -36409,6 +36640,7 @@
        -76.95178852862871, 
        38.89706327652048
       ], 
+      "contestation": "1", 
       "email": "7D04@anc.dc.gov", 
       "first_name": "Jo-Anne", 
       "last_name": "Prue", 
@@ -36541,6 +36773,7 @@
        -76.9348701230115, 
        38.89836977253429
       ], 
+      "contestation": "3", 
       "email": "7D05@anc.dc.gov", 
       "first_name": "Janis D.", 
       "last_name": "Hazel", 
@@ -36657,6 +36890,7 @@
        -76.93654709382315, 
        38.902935182510255
       ], 
+      "contestation": "2", 
       "email": "7D06@anc.dc.gov", 
       "first_name": "Ericka S.", 
       "last_name": "Black", 
@@ -36777,6 +37011,7 @@
        -76.94528038359029, 
        38.90825785968208
       ], 
+      "contestation": "1", 
       "email": "7D07@anc.dc.gov", 
       "first_name": "Willie H.", 
       "last_name": "Woods", 
@@ -37165,6 +37400,7 @@
        -76.92799840569054, 
        38.88053956779297
       ], 
+      "contestation": "1", 
       "email": "7E01@anc.dc.gov", 
       "first_name": "George B.", 
       "last_name": "Browne", 
@@ -37251,6 +37487,7 @@
        -76.93236616512233, 
        38.88086946706568
       ], 
+      "contestation": "2", 
       "email": "7E02@anc.dc.gov", 
       "first_name": "Linda S.", 
       "last_name": "Green", 
@@ -37380,6 +37617,7 @@
        -76.92390545329008, 
        38.88230388393923
       ], 
+      "contestation": "2", 
       "email": "7E03@anc.dc.gov", 
       "first_name": "Rosa A.", 
       "last_name": "Hamlett", 
@@ -37500,6 +37738,7 @@
        -76.928842593863, 
        38.889776290701235
       ], 
+      "contestation": "2", 
       "email": "7E04@anc.dc.gov", 
       "first_name": "Mary D.", 
       "last_name": "Jackson", 
@@ -37604,6 +37843,7 @@
        -76.92614582317287, 
        38.88976350516056
       ], 
+      "contestation": "1", 
       "email": "7E05@anc.dc.gov", 
       "first_name": "Jean M.", 
       "last_name": "McVea", 
@@ -37781,6 +38021,7 @@
        -76.91324300795104, 
        38.889765792555444
       ], 
+      "contestation": "2", 
       "email": "7E07@anc.dc.gov", 
       "first_name": "Wendell", 
       "last_name": "Felder", 
@@ -38227,6 +38468,7 @@
        -76.94024537868377, 
        38.89838008634105
       ], 
+      "contestation": "1", 
       "email": "7F01@anc.dc.gov", 
       "first_name": "Evie L.", 
       "last_name": "Washington", 
@@ -38402,6 +38644,7 @@
        -76.93822631783503, 
        38.88978993993831
       ], 
+      "contestation": "1", 
       "email": "7F02@anc.dc.gov", 
       "first_name": "Eboni-Rose", 
       "last_name": "Thompson", 
@@ -38517,6 +38760,7 @@
        -76.93304017545472, 
        38.88760190424717
       ], 
+      "contestation": "1", 
       "email": "7F03@anc.dc.gov", 
       "first_name": "Sheila Carson", 
       "last_name": "Carr", 
@@ -38621,6 +38865,7 @@
        -76.94577185042876, 
        38.88818003521923
       ], 
+      "contestation": "1", 
       "email": "7F04@anc.dc.gov", 
       "first_name": "Charlene", 
       "last_name": "Exum", 
@@ -38725,6 +38970,7 @@
        -76.94519833057899, 
        38.88979235862834
       ], 
+      "contestation": "2", 
       "email": "7F05@anc.dc.gov", 
       "first_name": "Karen", 
       "last_name": "Settles", 
@@ -39367,6 +39613,7 @@
        -76.97093570338885, 
        38.876849372495634
       ], 
+      "contestation": "1", 
       "email": "8A01@anc.dc.gov", 
       "first_name": "Holly", 
       "last_name": "Muhammad", 
@@ -39470,6 +39717,7 @@
        -76.97485865159955, 
        38.8755228347316
       ], 
+      "contestation": "2", 
       "email": "8A02@anc.dc.gov", 
       "first_name": "Barbara J.", 
       "last_name": "Clark", 
@@ -39611,6 +39859,7 @@
        -76.97016995772803, 
        38.87074802288954
       ], 
+      "contestation": "1", 
       "email": "8A03@anc.dc.gov", 
       "first_name": "L. Yvonne (L.Y.)", 
       "last_name": "Moore", 
@@ -39720,6 +39969,7 @@
        -76.97665723163693, 
        38.8650550512208
       ], 
+      "contestation": "1", 
       "email": "8A04@anc.dc.gov", 
       "first_name": "Moses", 
       "last_name": "Smith", 
@@ -39819,6 +40069,7 @@
        -76.97724399821016, 
        38.868847206139876
       ], 
+      "contestation": "2", 
       "email": "8A05@anc.dc.gov", 
       "first_name": "Charles E.", 
       "last_name": "Wilson", 
@@ -39967,6 +40218,7 @@
        -76.98511998459617, 
        38.871941032877764
       ], 
+      "contestation": "3", 
       "email": "8A06@anc.dc.gov", 
       "first_name": "Kendall J.", 
       "last_name": "Graham", 
@@ -40161,6 +40413,7 @@
        -76.98458656756343, 
        38.861502211749176
       ], 
+      "contestation": "1", 
       "email": "8A07@anc.dc.gov", 
       "first_name": "Natalie", 
       "last_name": "Williams", 
@@ -40586,6 +40839,7 @@
        -76.9687694717703, 
        38.86477391004721
       ], 
+      "contestation": "1", 
       "email": "8B01@anc.dc.gov", 
       "first_name": "Khadijah", 
       "last_name": "Watson", 
@@ -40725,6 +40979,7 @@
        -76.9657077826948, 
        38.86227105384259
       ], 
+      "contestation": "1", 
       "email": "8B02@anc.dc.gov", 
       "first_name": "Darrell Danny", 
       "last_name": "Gaston", 
@@ -40835,6 +41090,7 @@
        -76.96341834446542, 
        38.858077520653616
       ], 
+      "contestation": "1", 
       "email": "8B03@anc.dc.gov", 
       "first_name": "Charles H.", 
       "last_name": "Wilson", 
@@ -41017,6 +41273,7 @@
        -76.97723981205408, 
        38.857860866944414
       ], 
+      "contestation": "2", 
       "email": "8B04@anc.dc.gov", 
       "first_name": "Anthony Lorenzo", 
       "last_name": "Green", 
@@ -41177,6 +41434,7 @@
        -76.96177234894189, 
        38.855167625686356
       ], 
+      "contestation": "1", 
       "email": "8B05@anc.dc.gov", 
       "first_name": "Betty", 
       "last_name": "Scippio", 
@@ -41275,6 +41533,7 @@
        -76.96543074563526, 
        38.85119361948003
       ], 
+      "contestation": "1", 
       "email": "8B06@anc.dc.gov", 
       "first_name": "Mitchell G.", 
       "last_name": "Hawkins", 
@@ -41382,6 +41641,7 @@
        -76.97382893920192, 
        38.84696821500627
       ], 
+      "contestation": "1", 
       "email": "8B07@anc.dc.gov", 
       "first_name": "Louise", 
       "last_name": "Thorne", 
@@ -42087,6 +42347,7 @@
        -76.99518972954439, 
        38.86050578606707
       ], 
+      "contestation": "3", 
       "email": "8C02@anc.dc.gov", 
       "first_name": "Alicia", 
       "last_name": "Fremling", 
@@ -42186,6 +42447,7 @@
        -76.98504699987448, 
        38.85579889276525
       ], 
+      "contestation": "2", 
       "email": "8C03@anc.dc.gov", 
       "first_name": "Mary", 
       "last_name": "Cuthbert", 
@@ -42447,6 +42709,7 @@
        -77.00435754579824, 
        38.84950715062466
       ], 
+      "contestation": "1", 
       "email": "8C05@anc.dc.gov", 
       "first_name": "Lloyd T.", 
       "last_name": "Logan", 
@@ -42752,6 +43015,7 @@
        -76.99350644848646, 
        38.843501355230046
       ], 
+      "contestation": "1", 
       "email": "8C07@anc.dc.gov", 
       "first_name": "Pho", 
       "last_name": "Palmer", 
@@ -43043,6 +43307,7 @@
        -76.99112368663394, 
        38.82920587423641
       ], 
+      "contestation": "1", 
       "email": "8D01@anc.dc.gov", 
       "first_name": "Patricia", 
       "last_name": "Carmon", 
@@ -43123,6 +43388,7 @@
        -76.9979533594153, 
        38.82920565537827
       ], 
+      "contestation": "1", 
       "email": "8D02@anc.dc.gov", 
       "first_name": "Olivia L.", 
       "last_name": "Henderson", 
@@ -43249,6 +43515,7 @@
        -77.00049997808807, 
        38.83096522992373
       ], 
+      "contestation": "1", 
       "email": "8D03@anc.dc.gov", 
       "first_name": "Absalom", 
       "last_name": "Jordan", 
@@ -43336,6 +43603,7 @@
        -77.0072256301719, 
        38.82887843220452
       ], 
+      "contestation": "1", 
       "email": "8D04@anc.dc.gov", 
       "first_name": "M. Jay", 
       "last_name": "Lee", 
@@ -43571,6 +43839,7 @@
        -77.00542858058061, 
        38.83022065857222
       ], 
+      "contestation": "1", 
       "email": "8D06@anc.dc.gov", 
       "first_name": "Thea", 
       "last_name": "Dyson", 
@@ -43658,6 +43927,7 @@
        -77.00192429860104, 
        38.84364418557499
       ], 
+      "contestation": "1", 
       "email": "8D07@anc.dc.gov", 
       "first_name": "Theresa H.", 
       "last_name": "Jones", 
@@ -44224,6 +44494,7 @@
        -76.97282652985845, 
        38.85424905859308
       ], 
+      "contestation": "1", 
       "email": "8E02@anc.dc.gov", 
       "first_name": "Anthony", 
       "last_name": "Muhammad", 
@@ -44381,6 +44652,7 @@
        -76.97890536375176, 
        38.84660231130143
       ], 
+      "contestation": "1", 
       "email": "8E04@anc.dc.gov", 
       "first_name": "Sharece", 
       "last_name": "Crawford", 
@@ -44605,6 +44877,7 @@
        -76.9894842169032, 
        38.837494131954536
       ], 
+      "contestation": "1", 
       "email": "8E06@anc.dc.gov", 
       "first_name": "Karlene (K.)", 
       "last_name": "Armstead", 
@@ -44698,6 +44971,7 @@
        -76.98566606650685, 
        38.83402982674485
       ], 
+      "contestation": "1", 
       "email": "8E07@anc.dc.gov", 
       "first_name": "Sandra (SV)", 
       "last_name": "Williams", 

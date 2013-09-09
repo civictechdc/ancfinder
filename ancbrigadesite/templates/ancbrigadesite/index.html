@@ -39,7 +39,7 @@
 					
 					<p>Your commissioner is: <b><span class="smd-commissioner"> </span></b><span class="smd-commissioner-email"></span>. <span class="smd-commissioner-position"></span></p>
 					
-					<p id="smd-terms"> </p>
+					<p><span id="smd-terms"> </span> <span id="smd-contestation"> </span></p>
 
 					<p class="anc-has-website">ANC <span class="anc-name"> </span>&rsquo;s website is <a class="anc-website"> </a>.
 					
@@ -399,6 +399,14 @@
 								
 								if (smd.terms) {
 									$('#smd-terms').text(smd.first_name + " has been an ANC commissioner for " + smd.terms + " terms.");
+								}
+								
+								if (smd.contestation == 1) {
+									$('#smd-contestation').text("Only 1 candidate competed for this seat in the 2012 election.")
+								} else if (smd.contestation > 1) {
+									$('#smd-contestation').text(smd.contestation + " candidates competed for this seat in the 2012 election.")
+								} else {
+									$('#smd-contestation').text("Nobody ran for this seat in the 2012 election.")
 								}
 	
 								$('#map_col').show();
