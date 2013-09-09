@@ -1,0 +1,391 @@
+id,smd,last_name,first_name,suffix,pickup_date,filing_date,address,zip,phone,email,ward,anc
+1,1A01,Kralovic,Lisa,,2012-07-25,2012-08-07,1529 Spring Place NW,20010,202-494-2949,lisakralovic@yahoo.com,1A,1A01
+2,1A02,Gallo,Alexander,,2012-07-11,2012-08-08,3460 14th Street NW #401,20010,202-588-5800,movedcforward@gmail.com,1A,1A02
+3,1A02,Wright-Smith,Vickey A.,,2012-07-09,2012-07-30,1410 Meridian Place NW,20010,202-361-6139,vawsesq@yahoo.com,1A,1A02
+4,1A03,Swank,Steve,,2012-07-09,2012-08-06,1440 Columbia Road NW #103,20009,301-606-7755,steveswank2012@gmail.com,1A,1A03
+5,1A04,Aquiline,Laina,,2012-07-13,2012-08-08,1338 Meridian Place NW,20010,202-390-3247,laquiline@gmail.com,1A,1A04
+6,1A04,Kiremerwa,Sentamu,,2012-07-09,2012-08-08,3418 13th Street NW,20010,202-423-3562,ksentamu@gmail.com,1A,1A04
+7,1A05,Holmes,Kevin,,2012-08-06,2012-08-08,1521 Monroe Street NW,20010,202-234-4101,holmes4anc@gmail.com,1A,1A05
+8,1A06,Clinesmith,Kevin E.,,2012-07-12,2012-07-23,1375 Kenyon Street NW #304,20010,202-841-9259,kevin.clinesmith@gmail.com,1A,1A06
+9,1A06,Brown,"William ""Bill""",Jr,2012-07-20,2012-08-07,1215 Lamont Street NW,20010,202-271-3467,williamebrownjr@gmail.com,1A,1A06
+10,1A06,Flynn,Patrick,,2012-08-07,2012-08-08,1364 Kenyon Street NW #1,20010,202-747-4633,patrickwarnerflynn@gmail.com,1A,1A06
+11,1A07,Boisvert,Thomas,,2012-07-13,2012-08-08,3516 10th Street NW,20010,202-870-6219,thomas.boisvert@gmail.com,1A,1A07
+12,1A08,Boese,Kent C.,,2012-07-09,2012-07-18,608 Rock Creek Church Road NW,20010,202-722-1351,kcboese@hotmail.com,1A,1A08
+13,1A09,Holmes,Bobby,,2012-07-12,2012-08-07,641 Keefer Place NW,20010,202-716-4436,bigbob641@yahoo.com,1A,1A09
+14,1A10,Cimino,Anthony,,2012-07-12,2012-08-03,425 Irving Street NW,20010,202-734-9592,cimino.anthony@gmail.com,1A,1A10
+15,1A10,Johnson,"Lenwood ""Lenny""",,2012-07-09,2012-08-08,P.O. Box 2881,20013,202-309-4619,slimwood145@yahoo.com,1A,1A10
+16,1A10,Isakow,Craig John,,2012-08-07,2012-08-08,614 Keefer Place NW,20010,202-681-8816,craig.isakow@gmail.com,1A,1A10
+17,1A11,Wade,Dotti Love,,2012-07-16,2012-08-08,1116 Columbia Road NW,20009,202-738-2325,luvuwade@aol.com,1A,1A11
+18,1A11,Savad,Miriam,,2012-07-26,2012-08-07,3111 11th Street NW,20010,315-256-1813,miriamzsavad@gmail.com,1A,1A11
+19,1A12,Teutsch,Zach,,2012-07-20,2012-08-08,1317 Harvard Street NW #1,20009,202-599-0915,zteutsch@gmail.com,1A,1A12
+20,1A12,Gilliam,Rosalind M.,,2012-08-01,2012-08-07,2802 14th Street NW #204,20009,202-328-8770,rmgrag@verizon.net,1A,1A12
+21,1B01,Morgan,Marc,,2012-07-09,2012-08-07,414 Oakdale Place NW,20001,202-361-4717,morgan@morganfordc.com,1B,1B01
+22,1B02,Leffler,Jeremy C.,,2012-07-09,2012-08-07,2250 11th Street NW #108,20001,202-412-3128,jeremy_leffler@hotmail.com,1B,1B02
+23,1B03,Muhammad,Sedrick,,2012-07-09,2012-08-08,2515 13th Street NW #504,20009,202-719-0281,sedrickmuhammad@yahoo.com,1B,1B03
+24,1B04,Thomas,Deborah R.,,2012-07-18,2012-08-08,1440 W Street NW #B1,20009,202-265-3871,dsborahanc@juno.com,1B,1B04
+25,1B05,Reinoso,Ricardo A.,,2012-08-03,2012-08-08,1440 Belmont Street NW #3,20009,202-590-0046,ricodc@ymail.com,1B,1B05
+26,1B06,Forester,Dyana,,2012-07-24,2012-08-08,1443 Clifton Street NW #B,20009,202-277-5553,dyana.forester@gmail.com,1B,1B06
+27,1B07,Lopez,Juan E.,,2012-07-09,2012-08-08,2750 14th Street NW #208,20009,703-969-1655,anc1b07@me.com,1B,1B07
+28,1B08,Washington,Emily,,2012-07-25,2012-08-07,1375 Fairmont Street NW #302,20009,970-201-3930,emilybwashington@gmail.com,1B,1B08
+29,1B09,Turner,James A.,,2012-07-10,2012-07-27,1236 Girard Street NW,20009,202-232-7971,bkc1crc@aol.com,1B,1B09
+30,1B10,Norman,Tony,,2012-07-10,2012-08-02,533 Gresham Place NW,20001,202-319-0955,tonynorman@peoplepc.com,1B,1B10
+31,1B11,Holness,E. Gail Anderson,,2012-07-23,2012-08-08,1629 K Street NW Suite 300,20006,202-600-7700,egailandersonholness@gmail.com,1B,1B11
+32,1B12,Green,John Carlos,,2012-07-26,2012-08-07,1927 13th Street NW,20009,202-607-5224,jcgreen1@gmail.com,1B,1B12
+33,1B12,Jilani,Zahra,,2012-07-26,2012-08-08,2013 New Hamspire Avenue NW #405,20009,202-709-9241,zahrajilani.anc1B12@gmail.com,1B,1B12
+34,1B12,Wittels,Dan,,2012-07-31,2012-08-07,1325 Wallach Place NW,20009,202-270-7801,wittels@msn.com,1B,1B12
+35,1B12,Bailey,Erling,,2012-08-07,2012-08-08,1335 T Street NW,20009,202-797-7707,ebjdc@aol.com,1B,1B12
+36,1C01,Hart,Brian,,2012-07-11,2012-08-08,1850 Wyoming Avenue NW #1,20009,202-223-7349,bhart311@gmail.com,1C,1C01
+37,1C01,Clifton,Eric,,2012-07-16,2012-08-06,1847 California Street NW,20009,202-460-3251,eclifton50@yahoo.com,1C,1C01
+38,1C01,Meier,Joseph,,2012-07-31,2012-08-08,1841 Vernon Street NW,20009,202-215-0217,tagio@aol.com,1C,1C01
+39,1C02,Davis,"Martis ""Marty""",,2012-07-12,2012-07-25,2032 Belmont Road NW #607,20009,202-328-3817,martis_davis@comcast.net,1C,1C02
+40,1C03,Guthrie,Ted,,2012-07-30,2012-08-07,1849 Kalorama Road NW #2,20009,202-667-2742,tedguthrie3@gmail.com,1C,1C03
+41,1C03,Sueiro,Jose,,2012-08-03,2012-08-08,1841 Columbia Road NW #614,20009,202-232-7419,,1C,1C03
+42,1C04,Mossi,Gabriela,,2012-07-27,2012-08-06,2853 Ontario Road NW,20009,202-320-6965,gabrielamossi@yahoo.com,1C,1C04
+43,1C05,Dehbozorgi,Elham,,2012-07-30,2012-08-07,1731 Lanier Place NW,20009,786-200-0120,elham17@gmail.com,1C,1C05
+44,1C06,Mosley,Raymond,,2012-07-17,2012-07-26,2551 17th Street NW #410,20009,202-265-2788,,1C,1C06
+45,1C06,Simpson,William (Billy),,2012-07-23,2012-08-07,1721 Euclid Street NW,20009,202-271-4851,simpson_billy@yahoo.com,1C,1C06
+46,1C07,Reynolds,Wilson,,2012-07-10,2012-08-06,2370 Champlain Street NW #23,20009,202-340-7476,wreynoldsanc@aol.com,1C,1C07
+47,1C08,Rock,Jimmy R.,,2012-07-17,2012-08-07,2440 16th Street NW #106,20009,202-492-0904,jimmy.rock@gmail.com,1C,1C08
+48,1D01,Agbro,Frank O.,,2012-07-23,2012-08-06,1702 Kilbourne Place NW,20010,202-667-8846,frankojazz@aol.com,1D,1D01
+49,1D01,Romero-Castillo,Yasmin,,2012-07-26,2012-08-03,3354 Mt. Pleasant Street NW #9,20010,202-486-6677,yasminkiki@yahoo.com,1D,1D01
+50,1D02,Hoey,Adam,,2012-07-11,2012-08-08,1655 Newton Street NW,20010,202-667-4242,achoey001@gmail.com,1D,1D02
+51,1D03,McKay,Jack,,2012-07-16,2012-08-01,3200 19th Street NW,20010,202-462-8692,jack.mckay@verizon.net,1D,1D03
+52,1D04,Greiner,Philip,,2012-07-13,2012-08-08,1665 Lamont Street NW #31,20010,732-267-5458,philgreiner@yahoo.com,1D,1D04
+53,1D05,Terrell,China,,2012-07-27,2012-08-08,1900 Lamont Street NW #304,20010,202-415-2916,china@chinaterrell.com,1D,1D05
+54,1D05,Griffiths,Arturo,,2012-08-03,2012-08-08,1907 Kenyon Street NW,20010,202-445-0411,arturo@dcjuj.org,1D,1D05
+55,2A01,Kennedy,Patrick,,2012-07-09,2012-08-08,2020 F Street NW #530,20006,727-804-2522,pkenn91@gwu.edu,2A,2A01
+56,2A01,Lehrman,David M.,,2012-07-10,2012-08-08,2020 F Street NW #622,20006,202-413-4088,lehrmandavid10@gmail.com,2A,2A01
+57,2A02,Coder,Rebecca,,2012-07-20,2012-07-25,2501 M Street NW #721,20037,202-253-2612,rebeccacoder@yahoo.com,2A,2A02
+58,2A03,Corson,Asher,,2012-07-24,2012-08-08,955 26th Street NW #709,20037,202-683-7869,lashercorson@gmail.com,2A,2A03
+59,2A04,Irizarry,Armando,,2012-07-24,2012-08-08,2475 Virginia Avenue NW #430,20037,202-441-7045,armandoanc@gmail.com,2A,2A04
+60,2A05,Galka,Graham Michael,,2012-08-01,2012-08-03,2450 Virginia Avenue NW #E319,20037,202-626-8111,graham.galka@gmail.com,2A,2A05
+61,2A06,Harmon,Florence,,2012-07-19,2012-08-08,1099 22nd Street NW #1011,20037,202-390-4438,florencedc@comcast.net,2A,2A06
+62,2A07,Carnes,Jackson,,2012-07-09,2012-08-06,510 21st Street NW #405,20006,502-544-5765,jcarnes@gwu.edu,2A,2A07
+63,2B01,Feldstein,Mike,,2012-07-11,2012-08-07,1920 S Street NW #203,20009,202-462-0647,mikeme123@aol.com,2B,2B01
+64,2B02,O'Connor,Kevin,,2012-07-11,2012-08-02,2147 O Street NW,20037,202-222-5362,kev.oconnor@gmail.com,2B,2B02
+65,2B03,Maltz,Stephanie,,2012-07-09,2012-07-26,1727 R Street NW #402,20009,202-309-5138,smaltz@gmail.com,2B,2B03
+66,2B03,Mace,Bevan,,2012-08-01,2012-08-07,1735 New Hampshire Avenue NW #204,20009,202-986-9460,bkmace+anc@gmail.com,2B,2B03
+67,2B04,Espinoza,Martin,,2012-07-09,2012-08-08,1615 Q Street NW #1005,20009,202-729-3562,martin@martinespinoza.com,2B,2B04
+68,2B04,Putta,Kishan,,2012-07-09,2012-08-07,"1701 16th Street,NW #701",20009,202-320-0058,kishanputta@gmail.com,2B,2B04
+69,2B04,Sheridan,Stephanie,,2012-07-16,2012-08-08,P.O. Box 18953,20036,202-660-3306,stephaniemsheridan@gmail.com,2B,2B04
+70,2B05,Wexler,Victor,,2012-07-12,2012-07-30,1520 16th Street NW #504,20036,202-745-0054,wexler@umbc.edu,2B,2B05
+71,2B06,Silverstein,Mike,,2012-07-10,2012-07-26,1301 20th Street NW #705,20036,202-833-4440,mikesilversteinusa@yahoo.com,2B,2B06
+72,2B07,Dwyer,Leo,,2012-08-01,2012-08-08,1514 17th Street NW #501,20036,202-812-0407,rleo.dwyer@gmail.com,2B,2B07
+73,2B08,Stephens,Will,,2012-07-10,2012-08-07,9 Dupont Circle NW,20036,202-527-9522,willstephensanc2b08@gmail.com,2B,2B08
+74,2B09,Smith,Noah,,2012-07-12,2012-08-03,1815 17th Street NW #412,20009,651-338-4402,noahsmith6@gmail.com,2B,2B09
+75,2C01,Tinpe,John,,2012-08-06,2012-08-08,777 7th Street NW #506,20001,202-230-8538,jtinpe@gmail.com,2C,2C01
+76,2C02,Closter,Harold A.,,2012-07-13,2012-08-07,400 Massachusetts Avenue NW #1019,20001,202-408-1990,closterh@yahoo.com,2C,2C02
+77,2C03,Wilsey,Kevin,,2012-07-12,2012-08-07,425 8th Street NW #845,20004,202-783-2817,mkwilsey7@rcn.com,2C,2C03
+78,2D01,Bender,David R.,,2012-07-10,2012-07-20,2126 Connecticut Avenue NW #34,20008,202-483-0839,,2D,2D01
+79,2D02,Lamar,Eric,,2012-07-16,2012-08-08,2122 California Street NW #62,20008,202-489-8216,ericslamar@gmail.com,2D,2D02
+80,2E01,Solomon,Ed,,2012-07-26,2012-08-07,3525 S Street NW,20007,202-494-8378,dctuxedo@aol.com,2E,2E01
+81,2E02,Lewis,Ron,,2012-07-09,2012-08-06,3400 Reservoir Road NW,20007,202-253-5969,ronald.b.lewis@gmail.com,2E,2E02
+82,2E03,Jones,Jeffrey,,2012-07-19,2012-07-20,3526 P Street NW,20007,202-342-8090,jeffanc2e@yahoo.com,2E,2E03
+83,2E05,Starrels,Bill,,2012-07-10,2012-07-27,1045 31st Street NW #502,20007,202-338-1450,bill.starrels@gmail.com,2E,2E05
+84,2E06,Birch,Tom,,2012-07-12,2012-08-03,1240 29th Steet NW,20007,202-364-4002,bircht@earthlink.net,2E,2E06
+85,2E07,Eason,Charles F.,Jr,2012-07-19,2012-08-08,3027 Cambridge Place NW,20007,202-342-6262,cfeason@cadwalader.us,2E,2E07
+86,2E08,Prindiville,Peter,,2012-07-09,2012-07-13,3700 O Street NW,20007,202-643-8293,peterap@gmail.com,2E,2E08
+87,2F01,Lallas,Peter,,2012-07-19,2012-08-06,1736 13th Street NW #3,20009,202-821-3160,peterlallas@gmail.com,2F,2F01
+88,2F02,Stempel,Adam L.,,2012-07-09,2012-08-06,1305 Rhode Island Avenue NW #2,20005,203-781-6586,adam.l.stempel@gmail.com,2F,2F02
+89,2F02,Jetmund,Jack,,2012-07-17,2012-08-08,1515 15th Street NW #702,20005,202-251-9240,jjetmund@hotmail.com,2F,2F02
+90,2F02,Cain,Walt,,2012-07-25,2012-08-08,1325 15th Street NW #1004,20005,601-941-9869,waltcain@gmail.com,2F,2F02
+91,2F02,Baker,James,,2012-08-06,2012-08-08,1424 Q Street NW,20009,202-745-5818,jim@jim-baker.net,2F,2F02
+92,2F03,Linn,Chris,,2012-07-26,2012-08-07,1301 15th Street NW #620,20005,202-669-6771,chris@chrislinn.org,2F,2F03
+93,2F04,Fanning,John,,2012-07-13,2012-08-01,1307 12th Street NW #505,20005,202-510-1983,johnjfanning2@yahoo.com,2F,2F04
+94,2F04,Heisey,Joel,,2012-07-30,2012-08-03,1516 12th Street NW,20005,202-483-3861,dchome@hotmail.com,2F,2F04
+95,2F05,Lamare,James,,2012-08-02,2012-08-06,1330 Massachusetts Avenue NW #605,20005,202-292-1974,jwlamare@gmail.com,2F,2F05
+96,2F06,Melcher,Greg,,2012-07-30,2012-08-07,1327 10th Street NW,20001,202-713-0457,melcherg@aol.com,2F,2F06
+97,2F07,Raymond,Matt,,2012-07-12,2012-08-08,1209 13th Street NW #804,20005,202-744-1921,matt@mattraymond.com,2F,2F07
+98,2F08,Connolly,Matthew,,2012-07-11,2012-08-06,1212 M Steet NW #101,20005,202-347-3590,connolly.matthew@gmail.com,2F,2F08
+99,2F08,Marks,Howard S.,,2012-07-12,2012-08-06,1150 K Street NW #1002,20005,202-898-0802,hmarks@mail.com,2F,2F08
+100,2F08,Ampudia,Ricardo,,2012-08-07,2012-08-08,1112 M Street NW #104,20005,305-968-1148,ampudia.ricardo@gmail.com,2F,2F08
+101,3B01,Fiorillo,Joe,,2012-07-11,2012-08-06,3851 Calvert Street NW,20007,202-342-0225,gscmfiorillo@aol.com,3B,3B01
+102,3B02,Blumenthal,Jackie,,2012-07-11,2012-07-17,3515 W Place NW,20007,202-333-7488,jackieblumenthal@aol.com,3B,3B02
+103,3B03,Fulwood,Charles Cinque,,2012-07-13,2012-08-03,2325 42nd Street NW #221,20007,202-338-9484,cfulwood@mediavisionusa.net,3B,3B03
+104,3B04,Young,Mary C.,,2012-07-09,2012-08-08,3040 Idaho Avenue NW #722,20016,202-895-0268,marycyoung@starpower.net,3B,3B04
+105,3B05,Cohen,Brian A.,,2012-07-13,2012-07-23,3908 Benton Street NW,20007,202-337-0134,brian.a.cohen@gmail.com,3B,3B05
+106,3C01,Reba,Lee Brian,,2012-07-09,2012-08-08,2829 Connecticut Avenue NW,20008,202-328-2212,leebrianreba@hotmail.com,3C,3C01
+107,3C02,Brusoe,Peter W.,,2012-07-27,2012-08-08,2800 Woodley Road NW #13,20008,518-588-3631,pwbrusoe@gmail.com,3C,3C02
+108,3C02,Bole,Gwendolyn,,2012-07-31,2012-08-08,2833 29th Place NW,20008,202-462-9267,gwendolynbole@aol.com,3C,3C02
+109,3C03,Kaliel,Jeffrey,,2012-07-30,2012-08-06,2813 27th Street NW,20008,202-615-3948,jdkaliel@gmail.com,3C,3C03
+110,3C03,Wheatley,Kevin,,2012-08-02,2012-08-08,2801 Cortland Place NW #301,20008,202-297-3594,kwheatl2@gmail.com,3C,3C03
+111,3C04,Steacy,Richard,,2012-07-11,2012-08-06,2720 Ordway Street NW #6,20008,202-607-8575,richardsteacy@yahoo.com,3C,3C04
+112,3C05,Siegel,Margaret A.,,2012-07-25,2012-08-01,3019 Ordway Street NW,20008,202-244-1729,margaret.siegel@verizon.net,3C,3C05
+113,3C06,Roller,Carl,,2012-07-12,2012-08-08,3530 39th Street NW #A649,20016,202-505-3206,crollanc@gmail.com,3C,3C06
+114,3C07,Silveira,Victor,,2012-07-09,2012-07-23,3810 Klingle Place NW,20016,202-684-6635,victor@silveira.com,3C,3C07
+115,3C08,May,Catherine,,2012-07-20,2012-08-08,2800 36th Street NW,20007,202-965-3332,csmaymd@aol.com,3C,3C08
+116,3C09,MacWood,Nancy J.,,2012-07-25,2012-08-06,3417 Woodley Road NW,20016,202-966-5333,nmacwood@gmail.com,3C,3C09
+117,3D01,Slowinski,Kent,,2012-07-12,2012-08-06,4505 Dexter Street NW,20007,202-669-5368,wksla@aol.com,3D,3D01
+118,3D01,Mazzuchi,Michael,,2012-07-16,2012-07-24,4430 Macomb Street NW,20016,202-974-1572,mazzuchi@starpower.net,3D,3D01
+119,3D02,Smith,Tom,,2012-07-09,2012-08-01,4601 Tilden Street NW,20016,202-364-7130,tmfsmith@rcn.com,3D,3D02
+120,3D03,Wells,Nan S.,,2012-08-01,2012-08-07,5057 Overlook Road NW,20006,202-362-4088,wellsleone@aol.com,3D,3D03
+121,3D04,Ross,Stuart,,2012-08-01,2012-08-07,5445 Potomac Avenue NW,20016,202-966-0645,stuart.ross@troutmansanders.com,3D,3D04
+122,3D05,Freeman,Jameson,,2012-07-09,2012-08-07,2745 Arizona Avenue NW,20016,202-957-2745,jameson@fabum.org,3D,3D05
+123,3D05,Thomas,W. Philip,,2012-07-16,2012-07-30,2830 University Terrace NW,20016,202-248-2514,wpthomas85@gmail.com,3D,3D05
+124,3D08,Gold,Michael,,2012-07-16,2012-08-03,3101 New Mexico Avenue NW #243,20016,202-997-3230,mchlgold@yahoo.com,3D,3D08
+125,3D09,Trotter,Gayle,,2012-07-09,2012-07-26,1935 Foxview Circle NW,20007,703-625-3227,gayle.trotter@gmail.com,3D,3D09
+126,3D09,Purchess,Kerron,,2012-07-27,2012-08-08,4560 MacArthur Boulevard NW #202,20007,202-271-8486,kpurchess@gmail.com,3D,3D09
+127,3D10,Lucero,Silvia,,2012-07-27,2012-08-08,4323 Massachusetts Ave. NW,20016,,,3D,3D10
+128,3D10,Wisniewski,Joe,,2012-07-09,2012-08-08,4201 Massachusetts Ave. NW #4041C,20016,219-707-0554,wisniewski2010@gmail.com,3D,3D10
+129,3E01,Haile,Elizabeth,,2012-08-06,2012-08-08,4317 Yuma Street NW,20016,202-237-5281,elizabeth_haile@hotmail.com,3E,3E01
+130,3E02,Frumin,Matthew,,2012-07-12,2012-08-08,4709 Albemarle Street NW,20016,202-247-0819,matthewfrumin@gmail.com,3E,3E02
+131,3E03,Bender,Jonathan,,2012-07-13,2012-08-06,4411 Fessenden Street NW,20016,202-686-7419,jonbender@gmail.com,3E,3E03
+132,3E04,Quinn,Tom,,2012-07-13,2012-08-03,5322 41st Street NW,20015,202-497-5097,tomquinn@rcn.com,3E,3E04
+133,3E05,Serebin,Sam,,2012-07-13,2012-08-06,4300 Van Ness Street NW,20016,202-641-4111,sam@serebin.com,3E,3E05
+134,3F01,Tope,Adam Scott,,2012-07-12,2012-08-06,4319 Reno Road NW,20008,610-428-1412,ast13@cornell.edu,3F,3F01
+135,3F02,Perry,Karen Lee,,2012-07-12,2012-08-06,3003 Van Ness Street NW #w-118,20008,202-363-6748,karenperry2@juno.com,3F,3F02
+136,3F03,Ray,Mary Beth,,2012-07-25,2012-08-07,4526 29th Street NW,20008,202-966-5441,marybethray@verizon.net,3F,3F03
+137,3F04,Wilson,John,Jr,2012-08-02,2012-08-07,4545 Connecticut Avenue NW #408,20008,202-345-3317,johnwilson1133@yahoo.com,3F,3F04
+138,3F04,Gresham,Sally W.,,2012-08-03,2012-08-08,3222 Davenport Street NW,20008,202-255-4111,sgresham@verizon.net,3F,3F04
+139,3F05,Priniotakis,Manolis,,2012-08-02,2012-08-03,5201 Nebraska Avenue NW,20015,202-746-6943,manolisforanc3f05@gmail.com,3F,3F05
+140,3F05,Rosan,Megan N.,,2012-08-02,2012-08-07,4740 Connecticut Avenue NW #812,20008,410-708-6957,meg.rosan@gmail.com,3F,3F05
+141,3F06,Lowell,David Solorzano,,2012-07-12,2012-08-02,4521 36th Street NW,20008,202-375-3162,dslowell@gmail.com,3F,3F06
+142,3F07,Summersgill,Bob,,2012-07-09,2012-07-26,3701 Connecticut Ave. NW #139,20008,202-341-0457,bob@summersgill.net,3F,3F07
+143,3G01,Cook,"Carolyn ""Callie""",,2012-07-12,2012-08-07,6521 Barnaby Street NW,20015,202-309-1963,getcookinganc@verizon.net,3G,3G01
+144,3G02,Thompson,Gary,,2012-08-06,2012-08-08,2840 Northampton Street NW,20015,202-256-9910,thompsong87@yahoo.com,3G,3G02
+145,3G03,Speck,Randy,,2012-07-09,2012-08-06,2940 Northampton Street NW,20015,202-682-3510,rspeck@kayescholer.com,3G,3G03
+146,3G04,Beach,Allen E.,,2012-07-17,2012-08-03,3342 Stuyvesant Place NW,20015,202-362-2239,abeach@pipeline.com,3G,3G04
+147,3G05,Engel,David,,2012-07-10,2012-07-30,3731 Northampton Street NW,20015,202-302-7054,duvid1@verizon.net,3G,3G05
+148,3G06,McCarthy,Jim,,2012-07-18,2012-08-03,3835 Livingston Street NW,20015,202-362-7614,,3G,3G06
+149,3G07,Chu,Jonathan T.,,2012-07-09,2012-08-03,3729 Harrison Street NW,20015,202-365-0009,chu.jonathan1@gmail.com,3G,3G07
+150,3G07,Thomas,Sandra,,2012-07-13,2012-07-17,5201 Connecticut Avenue NW #905,20015,202-702-1455,swthomas2726@yahoo.com,3G,3G07
+151,3G07,Griffin,Henry,,2012-07-16,2012-08-07,3729 Joycelyn Street NW,20015,202-244-2813,,3G,3G07
+152,4A02,Toliver,Dwayne M.,,2012-07-26,2012-07-30,1326 Hemlock Street NW,20012,202-360-3334,dwaynetoliver@gmail.com,4A,4A02
+153,4A03,Whatley,"Stephen A. ""Steve""",,2012-07-24,2012-08-07,1315 Fern Street NW,20012,202-720-4590,stephen.whatley@fsis.usda.gov,4A,4A03
+154,4A04,Bennett,Marian C.,,2012-07-09,2012-07-27,1346 Sheridan Street NW,20011,571-227-2454,mariancbennett@aol.com,4A,4A04
+155,4A06,Braxton,Karrye Y.,,2012-08-02,2012-08-08,1320 Missouri Avenue NW #102,20011,202-291-9558,karrye@usa.net,4A,4A06
+156,4A07,Wilson,Dave,,2012-07-11,2012-08-07,5810 16th Street NW,20011,202-722-1177,dwilson@demersrealestate.com,4A,4A07
+157,4A08,Black,Gale,,2012-07-09,2012-07-31,1761 Crestwood Drive NW,20011,202-291-4679,gbb@rcn.com,4A,4A08
+158,4B01,Green,Sara,,2012-07-13,2012-07-26,7106 Piney Branch Road NW,20012,202-829-8802,ancsaragreen@yahoo.com,4B,4B01
+159,4B01,Onwuche,Charles E.,Jr,2012-07-10,2012-08-01,739 Butternut Street NW,20012,202-595-4706,ceonwuche@gmail.com,4B,4B01
+160,4B02,Wheeler,Faith E.,,2012-07-20,2012-08-01,818 Whittier Place NW,20012,202-882-7565,fewdcc@gmail.com,4B,4B02
+161,4B03,Grant,Fred,,2012-07-20,2012-08-08,601 Roxboro Place NW,20011,202-288-6016,fredgrantanc4b03@yahoo.com,4B,4B03
+162,4B04,Sazon,Gerald Long,Jr,2012-07-17,2012-08-08,526 Peabody Street NW,20011,202-386-8072,geraldsazon@allstate.com,4B,4B04
+163,4B04,Sydnor,James J.,,2012-07-20,2012-08-03,411 Oneida Place NW,20011,206-931-3671,jassyd50@gmail.com,4B,4B04
+164,4B04,Parks,Brenda Dawson,,2012-07-23,2012-08-03,6001 8th Street NW,20011,202-291-2557,dnbrenda808@yahoo.com,4B,4B04
+165,4B05,Speaks,Brenda,,2012-07-09,2012-07-30,5700 4th Street NW,20011,202-506-5632,,4B,4B05
+166,4B06,Austin,Ronald (Ron),,2012-07-17,2012-08-06,6120 North Dakota Avenue NW,20011,202-829-6120,ronaldazo@gmail.com,4B,4B06
+167,4B07,Gaston,James D.,III,2012-07-09,2012-08-02,P.O. Box 60404,20039,202-276-2116,james.gastoniii@gmail.com,4B,4B07
+168,4B07,Jones,Judi,,2012-07-12,2012-08-02,25 Sheridan Street NW,20011,202-446-7580,cariblamond@yahoo.com,4B,4B07
+169,4B08,Jefferson,Yvonne A.,,2012-07-19,2012-08-08,6009 New Hampshire Avenue NE,20011,202-529-3887,yjeffer@yahoo.com,4B,4B08
+170,4C01,Yates,Michael,,2012-07-13,2012-08-07,1216 Madison Street NW,20011,202-726-1870,dcjammin@aol.com,4C,4C01
+171,4C02,Myers,Janet M.,,2012-07-13,2012-08-06,5005 13th Street NW,20011,202-731-6461,gammatwins@yahoo.com,4C,4C02
+172,4C03,Standish,Jeff,,2012-08-06,2012-08-08,1127 Buchanan Street NW,20011,508-317-6217,jeff.standish@gmail.com,4C,4C03
+173,4C04,Williams,Rickey,Jr,2012-07-30,2012-08-08,3900 14th Street NW #207,20011,202-290-7600,rickeywilliams78@gmail.com,4C,4C04
+174,4C05,Vaughan,Joseph M.,,2012-07-31,2012-08-08,1305 Shepherd Street NW,20011,202-744-3874,,4C,4C05
+175,4C06,Galloway,Vann-Di,,2012-07-11,2012-08-08,3809 13th Street NW,20011,202-545-8155,v_m_galloway@hotmail.com,4C,4C06
+176,4C06,Noti,Adav,,2012-07-11,2012-07-23,3821 10th Street NW,20011,202-289-5050,adavnoti@gmail.com,4C,4C06
+177,4C07,Anthony,Shanel O.,,2012-07-18,2012-08-08,4409 Kansas Avenue NW,20011,202-291-6455,shanelanthony4c07@gmail.com,4C,4C07
+178,4C08,Jones,Timothy A.,,2012-07-20,2012-08-08,737 Rock Creek Church Road NW #110,20010,202-722-0701,taj_reinv@juno.com,4C,4C08
+179,4C09,Hartman,Zachary,,2012-07-13,2012-08-03,117 Webster Street NW,20011,202-747-4557,zachfor4c09@gmail.com,4C,4C09
+180,4C09,Hillsman,Jarahn D.,,2012-07-09,2012-08-08,4612 4th Street NW,20011,202-550-7773,jarahn.hillsmananc4c09@yahoo.com,4C,4C09
+181,4D01,Akins,Lamont,,2012-07-19,2012-08-07,738 Longfellow Street NW,20011,202-652-1018,lakins_99@yahoo.com,4D,4D01
+182,4D01,Duroseau,Alain N.,,2012-08-06,2012-08-08,506 Longfellow Street NW #204,20011,516-509-9691,alainmnd@gmail.com,4D,4D01
+183,4D02,Bowser,Renee L.,,2012-07-30,2012-08-06,5322 2nd Street NW,20011,202-882-1733,scatting@comcast.net,4D,4D02
+184,4D03,Colbert,Lisa,,2012-07-30,2012-08-08,601 Gallatin Street NW,20011,202-200-0144,lisacolbertanc@yahoo.com,4D,4D03
+185,4D04,Brockington,Donna,,2012-07-25,2012-08-08,143 Kennedy Street NW #1,20011,202-200-0136,dbrock1104@hotmail.com,4D,4D04
+186,4D06,Quirk,Bill,,2012-07-30,2012-08-08,143 Kennedy Street NW #1,20011,202-200-0125,anc4d06@gmail.com,4D,4D06
+187,5A01,Roberts,Patricia,,2012-08-01,2012-08-07,5278 Chillum Place NE,20011,202-635-7173,4peacebstill@comcast.net,5A,5A01
+188,5A01,Wilds,Frank,,2012-08-01,2012-08-07,5016 Eastern Avenue NE,20017,202-635-6215,bfwilds@yahoo.com,5A,5A01
+189,5A02,Williams,Michael,,2012-08-01,2012-08-03,1510 Gallatin Place NE,20017,202-577-9737,mwilliams_77@verizon.net,5A,5A02
+190,5A03,Jordan,Adrian,,2012-08-06,2012-08-08,4618 S. Dakota Avenue NE,20017,202-258-7486,athomas.jordan@hotmail.com,5A,5A03
+191,5A05,Edwards,Ronnie,,2012-07-12,2012-08-07,122 Michigan Avenue NE #L24,20017,202-413-2715,ronnieedwards.5c11@gmail.com,5A,5A05
+192,5A05,Defoe,Allison,,2012-07-19,2012-08-03,3149 Hawthorne Drive NE,20017,202-744-0325,,5A,5A05
+193,5A06,Ransom,"Albrette ""Gigi""",,2012-07-16,2012-08-08,219 Webster Street NE #2,20011,202-341-9134,gigifor5c12@yahoo.com,5A,5A06
+194,5A06,Holloway,Derrick O.,,2012-08-02,2012-08-08,4430 First Street NE,20011,202-286-5175,wubebetter10@yahoo.com,5A,5A06
+195,5A07,Washington,"Sandra ""Sandi""",,2012-08-03,2012-08-07,32 Buchanan Street NE,20011,202-832-0804,sandi31268@aol.com,5A,5A07
+196,5A08,Alston,Angel,,2012-07-11,2012-08-08,4720 7th Street NE,20017,202-556-5958,angel.alston@yahoo.com,5A,5A08
+197,5B01,Hall-Carley,Gayle E.,,2012-07-09,2012-07-16,4031 South Dakota Avenue NE,20018,315-383-7071,gtcarleys@yahoo.com,5B,5B01
+198,5B01,Gambill,Christopher D.,,2012-07-10,2012-08-08,4125 19th Street NE,20018,703-966-5436,cgambill@mindspring.com,5B,5B01
+199,5B01,Thomas,Timothy,,2012-07-09,2012-07-17,4716 Eastern Avenue NE,20017,202-390-2229,,5B,5B01
+200,5B01,Smith,Shirley Rivens,,2012-07-16,2012-07-31,2000 Upshur Street NE,20018,202-635-3138,srs-usasc@rcn.com,5B,5B01
+201,5B02,Higgins,Ursula,,2012-07-09,2012-07-17,1902 Newton Street NE,20018,202-526-5932,uhiggins@hotmail.com,5B,5B02
+202,5B03,Bridge,Tiffany,,2012-07-17,2012-07-30,1621 Monroe Street NE,20018,703-763-9241,tiffany@welovedc.com,5B,5B03
+203,5B04,Steptoe,Carolyn C.,,2012-07-10,2012-07-26,1257 Lawrence Street NE,20017,202-636-8191,csteptoe@verizon.net,5B,5B04
+204,5B04,Woodland,Rayseen,,2012-07-16,2012-07-20,1024 Girard Street NE,20017,202-528-3560,woodland@anc5b04.org,5B,5B04
+205,5B04,Daggett,John T.,,2012-07-17,2012-08-03,1240 Kearny Street NE,20017,202-223-4103,twelfth_and_kearney@yahoo.com,5B,5B04
+206,5B05,Feeley,John J.,Jr,2012-07-10,2012-07-30,1009 Sigsbee Place NE,20017,202-526-8754,johnjfeeleyjr@aol.com,5B,5B05
+207,5B05,Jones,Jenese L.,,2012-07-25,2012-08-08,3919 9th Street NE #1,20017,202-903-7162,jenesej@gmail.com,5B,5B05
+208,5C01,Russell,Antonette E.,,2012-07-31,2012-08-07,2620 Rhode Island Avenue NE,20018,202-546-6181,russell_antonette@hotmail.com,5C,5C01
+209,5C01,Goodwin,Gretta L.,,2012-08-02,2012-08-07,3720 24th Street NE,20018,202-506-7636,glgphd98@yahoo.com,5C,5C01
+210,5C02,Butler,Karla,,2012-07-12,2012-08-02,2214 Douglas Street NE,20018,240-478-1220,karlandn1@gmail.com,5C,5C02
+211,5C02,Redmond,Thomas E.,,2012-07-16,2012-08-07,1877 Channing Street NE,20018,202-832-1101,tredmond26@yahoo.com,5C,5C02
+212,5C03,King,Bob,,2012-07-09,2012-07-19,3102 Apple Road NE,20018,202-635-7664,rbob.king@comcast.net,5C,5C03
+213,5C03,Redmond,Leona,,2012-07-20,2012-08-08,3400 Comm Joshua Barney Drive NE #204,20018,202-529-1629,fortlincolnturnaroundtable@gmail.com,5C,5C03
+214,5C04,Manning,Jacqueline,,2012-07-13,2012-08-07,2116 R Street NE,20002,202-321-6708,jacquemanning8@aol.com,5C,5C04
+215,5C04,Robinson,Carolyn A.,,2012-07-20,2012-08-08,3298 Fort Lincoln Drive NE #515,20018,202-277-2868,crobinson800@gmail.com,5C,5C04
+216,5C05,Goines,Nicole,,2012-07-09,2012-08-08,1316 Saratoga Avenue NE #3,20018,202-683-0031,nicole.goines2011@gmail.com,5C,5C05
+217,5C05,James,Regina,,2012-07-13,2012-07-25,1363 Adams Street NE,20018,202-526-1681,,5C,5C05
+218,5C06,Thomas-Barnes,Majorie D.,,2012-07-09,2012-08-06,2501 14th Steet NE #1,20015,202-491-9225,barnesm58@yahoo.com,5C,5C06
+219,5C06,Banks,Mercile,,2012-07-31,2012-08-08,1448 Channing Street NE,20018,202-832-1739,,5C,5C06
+220,5C07,Gardner,Shelly,,2012-07-13,2012-08-06,2803 26th Street NE,20018,202-269-1719,winward52012@gmail.com,5C,5C07
+221,5C07,Treadway,Nolan,,2012-07-20,2012-07-23,2222 Lawrence Street NE,20018,202-248-0527,nolan@nolantreadway.com,5C,5C07
+222,5C07,Brown-Daniels,Patricia,,2012-07-31,2012-08-07,2429 Hamlin Place NE,20018,202-529-6217,pbdaniels0@aol.com,5C,5C07
+223,5D01,Lewis,Peta-Gay S.,,2012-07-13,2012-08-02,1868 Corcoran Street NE,20002,202-403-1730,petagaylewis@yahoo.com,5D,5D01
+224,5D02,Dumas,Vonetta,,2012-07-30,2012-08-06,1274 Holbrook Terrace NE,20002,202-271-6972,vonetta1274@gmail.com,5D,5D02
+225,5D03,Henderson,India A.,,2012-07-11,2012-08-06,1812 L Street NE,20002,202-399-3416,crm_112@yahoo.com,5D,5D03
+226,5D04,Blacknell,Bernice S,,2012-07-09,2012-08-01,849 21st Street NE #11,20002,202-399-1370,bsb@quixnet.net,5D,5D04
+227,5D05,Henderson,Kathy,,2012-07-11,2012-08-08,1807 L Street NE,20002,202-397-2777,khenderson029@aol.com,5D,5D05
+228,5D05,Glymph,Darlene,,2012-07-26,2012-08-08,814 20th Street NE,20002,202-210-6226,darlene.glymph@gmail.com,5D,5D05
+229,5D05,Burton,Rodney Marcella,,2012-07-31,2012-08-08,1905 Maryland Avenue NE #109,20002,202-396-3464,rodneymarcella@gmail.com,5D,5D05
+230,5D06,Laskaris,Tina,,2012-07-20,2012-08-02,1236 Florida Avenue NE,20002,202-549-2888,tinamarieindc@gmail.com,5D,5D06
+231,5D07,Fearer,Jaime S.,,2012-07-20,2012-08-06,1218 Oates Street NE,20002,202-596-1809,jaime.fearer@gmail.com,5D,5D07
+232,5D07,Hooper,David L.,,2012-08-07,2012-08-08,1324 Queen Street NE,20002,202-276-5180,dlhooperr@aol.com,5D,5D07
+233,5E01,Smith-Steiner,Debbie,,2012-07-13,2012-08-03,2826 6th Street NE,20017,202-269-1808,dlsmith112@msn.com,5E,5E01
+234,5E01,Boston,William B.,,2012-08-03,2012-08-08,612 Franklin Street NE,20017,202-415-2158,,5E,5E01
+235,5E02,Lee,Linda D.,,2012-07-09,2012-07-26,635 Edgewood Street NE #110,20017,202-526-0813,elcsmail@yahoo.com,5E,5E02
+236,5E02,Jenkins,Dona Farris,,2012-07-24,2012-07-30,622 Evarts Street NE,20017,202-329-3831,dfjemerald@aol.com,5E,5E02
+237,5E02,Davis,Christy,,2012-08-06,2012-08-08,611 Edgewood Terrace NE,20017,202-738-8683,,5E,5E02
+238,5E03,Clark,Tim,,2012-07-10,2012-08-08,1901 2nd Street NE #1,20002,202-277-6386,timclarkdc@gmail.com,5E,5E03
+239,5E04,Farmer-Allen,Mary Lois,,2012-07-09,2012-07-30,119 Rhode Island Avenue NE,20002,202-635-1401,marylois52@aol.com,5E,5E04
+240,5E04,Pinkney,Sylvia M.,,2012-07-09,2012-08-03,34 R Street NE,20002,202-269-4180,sylvia.pinkney@yahoo.com,5E,5E04
+241,5E05,Thomas,Bradley Ashton,,2012-07-09,2012-08-08,107 P Street NW,20001,202-670-0151,b-ashton-thomas@verizon.net,5E,5E05
+242,5E05,Robinson-Paul,Joyce,,2012-07-20,2012-07-26,16 N Street. NW,20001,202-330-7955,jarpaul2@verizon.net,5E,5E05
+243,5E06,Hrdina,Chad,,2012-07-18,2012-08-06,1716 4th Street NW,20001,202-276-5343,chad.hrdina@gmail.com,5E,5E06
+244,5E06,Youngblood,W. Hugh,,2012-07-23,2012-08-07,70 R Street NW,20001,240-925-1079,anc5c03@gmail.com,5E,5E06
+245,5E06,Quinn,Teri Janine,,2012-07-27,2012-08-07,1708 2nd Street NW,20001,214-908-1913,terijanine@gmail.com,5E,5E06
+246,5E07,Foster,Wanda B.,,2012-07-10,2012-07-20,141 Randolph Place NW,20001,202-332-2649,,5E,5E07
+247,5E07,Jenkins,Eric,,2012-07-09,2012-07-27,135 S Street NW,20001,202-277-1906,ericjenkins.jdmba@gmail.com,5E,5E07
+248,5E07,McDaniel,Betsy,,2012-08-02,2012-08-07,1727 1st Street NW,20001,202-262-5307,betsyforanc@gmail.com,5E,5E07
+249,5E08,Mueller,Mark,,2012-07-12,2012-08-07,114 W Street NW,20001,202-200-3191,anc5c04@gmail.com,5E,5E08
+250,5E09,Barnes,C. Dianne,,2012-07-09,2012-07-30,41 Adams Street NW,20001,202-387-2497,dianne_brns@yahoo.com,5E,5E09
+251,5E09,Vining,Kirby,,2012-07-09,2012-08-06,16 Franklin Street NE,20002,202-234-0427,nulliparaacnestis@gmail.com,5E,5E09
+252,5E09,(Boone),Ronald Brooks,,2012-07-30,2012-08-02,2603 North Capitol Street NE,20002,202-527-4906,rmdbrooksrb@gmail.com,5E,5E09
+253,5E10,Hobaugh,Sally,,2012-08-03,2012-08-07,213 Ascot Place NE,20002,202-412-9618,sally.hobaugh@gmail.com,5E,5E10
+254,5E10,Blanks,Angela C.,,2012-08-06,2012-08-08,223 Bryant Street NE,20002,202-907-3155,blanks.angela@epa.gov,5E,5E10
+255,6A01,Mahmud,J. Omar,,2012-08-02,2012-08-08,718 10th Street NE,20002,202-546-1520,mahmud6a01@gmail.com,6A,6A01
+256,6A02,Ronneberg,Drew,,2012-07-19,2012-08-07,646 11th Street NE,20002,202-431-4305,ronneberg6a02@gmail.com,6A,6A02
+257,6A02,Nauden,Gloria,,2012-08-06,2012-08-08,1239 Maryland Avenue NE,20002,202-528-9005,gnauden@gmail.com,6A,6A02
+258,6A03,Holmes,David,,2012-07-18,2012-08-03,919 Massachusetts Avenue NE,20002,202-251-7079,holmes6a3@gmail.com,6A,6A03
+259,6A04,Alberti,Nick,,2012-07-12,2012-07-31,1330 North Carolina Avenue NE,20002,202-329-1193,alberti6a04@yahoo.com,6A,6A04
+260,6A05,Williams,Jay,,2012-07-18,2012-08-07,315 12th Street NE #100,20002,202-906-0657,jbwilliams3@gmail.com,6A,6A05
+261,6A06,Amons,H. J.,Sr,2012-07-19,2012-08-08,1418 G Street NE,20002,202-903-3427,h.j.amonssr@yahoo.com,6A,6A06
+262,6A06,Hysell,Andrew J,,2012-07-20,2012-08-03,1364 Emerald Street NE,20002,203-570-7560,ahysellanc6a06@hotmail.com,6A,6A06
+263,6A07,Bowens,"Necothia ""Nikki""",,2012-07-12,2012-08-02,1770 E Street NE,20002,202-486-4296,ndbowens@gmail.com,6A,6A07
+264,6A07,Phillips-Gilbert,Sondra,,2012-07-10,2012-07-12,1744 E Street NE,20002,202-397-7228,spgilbert01@comcast.net,6A,6A07
+265,6A08,Rosset,Benjamin,,2012-07-17,2012-07-27,1515 Constitution Avenue NE #2,20002,202-669-1782,rosset37@gmail.com,6A,6A08
+266,6A08,Ward,Calvin,,2012-08-03,2012-08-06,436 19th Street NE,20002,202-506-5449,,6A,6A08
+267,6B01,Garrison,Dave,,2012-07-09,2012-07-30,8 - 4th Street SE,20003,202-543-3591,davegarrison@mac.com,6B,6B01
+268,6B02,Frishberg,Ivan,,2012-07-11,2012-07-31,620 D Street SE,20003,202-487-6064,ivanfrishberganc@gmail.com,6B,6B02
+269,6B02,Sroufe,Gerald (Jerry),,2012-08-01,2012-08-06,129 6th Street SE,20003,202-544-4351,,6B,6B02
+270,6B03,Peisch,Philip,,2012-07-09,2012-08-06,506 G Street SE,20003,339-927-6908,philip.peisch@gmail.com,6B,6B03
+271,6B03,Steer,Randy,,2012-07-13,2012-08-07,535 7th Street SE,20003,202-548-3288,dcgov@randysteer.com,6B,6B03
+272,6B04,Oldenburg,Kirsten,,2012-07-10,2012-08-06,423 12th Street SE,20003,202-546-8542,beat26@aol.com,6B,6B04
+273,6B05,Pate,Brian,,2012-07-26,2012-08-07,111 13th Street SE,20003,202-546-1792,patebc@gmail.com,6B,6B05
+274,6B05,Holtzman,Steve,,2012-07-30,2012-08-06,210 8th Street SE,20003,202-546-7248,sbholtzman@aol.com,6B,6B05
+275,6B06,Harlow,Chris,,2012-07-23,2012-08-07,1306 Pennsylvania Avenue SE #202,20003,505-385-1069,charlow1998@gmail.com,6B,6B06
+276,6B06,Opkins,Nichole,,2012-07-25,2012-08-07,542 14th Street SE,20003,202-631-2154,nichole.opkins@gmail.com,6B,6B06
+277,6B06,Critchfield,Jared,,2012-08-06,2012-08-07,1505 K Street SE,20003,202-525-9350,critchfieldaj@gmail.com,6B,6B06
+278,6B07,Loveland,Sara,,2012-08-03,2012-08-08,951 14th Street SE,20003,202-330-8745,saraloveland@gmail.com,6B,6B07
+279,6B08,Jayaraman,Chander,,2012-07-20,2012-08-06,1436 Independence Avenue SE,20003,202-489-8951,chanderforanc@gmail.com,6B,6B08
+280,6B09,Flahaven,Brian,,2012-07-16,2012-08-03,1628 Potomac Avenue SE,20003,202-744-1854,bflahave@gmail.com,6B,6B09
+281,6B10,Campbell,Francis M.,,2012-07-17,2012-07-26,1800 Burke Street SE,20003,202-543-2528,fmcampbell6b10@yahoo.com,6B,6B10
+282,6C01,Schiffman,Daniele Megan,,2012-07-23,2012-08-08,19 7th Street NE,20002,202-544-5112,daniele.schiffman@gmail.com,6C,6C01
+283,6C02,Wirt,Karen,,2012-07-11,2012-07-19,234 E Street NE,20002,202-547-7168,,6C,6C02
+284,6C03,Price,John Scott,,2012-07-11,2012-08-03,517 E Street NE,20002,202-577-6261,,6C,6C03
+285,6C04,Eckenwiler,Mark,,2012-07-11,2012-07-17,312 E Street NE,20002,202-330-1885,anc@eckenwiler.org,6C,6C04
+286,6C05,Kazmierczak,Mark,,2012-07-31,2012-08-08,829 5th Street NE,20002,617-314-0124,markerjk@gmail.com,6C,6C05
+287,6C06,Goodman,Tony T,,2012-07-10,2012-08-02,1152 4th Street NE,20002,202-271-8707,tonytgood@gmail.com,6C,6C06
+288,6C06,Chauhan,Shree,,2012-08-03,2012-08-08,1207 6th Street NE,20002,407-484-0455,,6C,6C06
+289,6D01,Hopkins,Donna L,,2012-08-02,2012-08-06,605 4th Place SW,20024,202-863-1818,donna.l.hopkins@gmail.com,6D,6D01
+290,6D02,Kaminski,Ed,,2012-07-09,2012-07-30,1025 1st Street SE #513,20003,571-242-1446,kaminskied@comcast.net,6D,6D02
+291,6D02,Patton,Damon C.,,2012-07-30,2012-08-06,909 New Jersey Avenue SE #1304,20003,216-288-1807,damon.patton@gmail.com,6D,6D02
+292,6D03,McBee,Ron,,2012-07-20,2012-08-08,827 3rd Steet SW,20024,202-215-0070,ron_mcbee@hotmail.com,6D,6D03
+293,6D04,Litsky,Andy,,2012-07-20,2012-08-02,423 N Street SW,20024,202-554-8070,alitsky@aol.com,6D,6D04
+294,6D05,Moffatt,Roger,,2012-07-17,2012-08-01,1301 Delaware Avenue SW #N717,20024,202-488-0288,mofatt@verizon.net,6D,6D05
+295,6D05,Daughtridge,Grace E.,,2012-07-18,2012-08-07,1257 Delaware Avenue SW,20024,202-997-5831,graceecorp@msn.com,6D,6D05
+296,6D06,Hamilton,Rhonda N.,,2012-07-25,2012-08-08,44 O Street SW #12,20024,202-417-5979,misrhonda@yahoo.com,6D,6D06
+297,6D07,Garber,David,,2012-07-13,2012-08-02,1100 1st Street SE #716,20003,202-374-5340,dggarber@gmail.com,6D,6D07
+298,6E01,Padro,"Alexander M. ""Alex""",,2012-07-09,2012-07-24,1519 8th Street NW,20001,202-518-3794,padroanc2c@gmail.com,6E,6E01
+299,6E01,Sutherland,Mary A.,,2012-07-13,2012-08-06,1520 8th Street NW,20001,202-328-6550,maryasutherland@yahoo.com,6E,6E01
+300,6E02,Moulton,Martin,,2012-07-09,2012-07-31,1510 5th Street NW,20001,202-422-1161,moultonm@aol.com,6E,6E02
+301,6E02,Simms,Eugene,,2012-07-10,2012-08-08,1739 7th Street NW #8,20001,202-518-0580,eldere.simms29@yahoo.com,6E,6E02
+302,6E02,Thorpe,Leroy Joseph,Jr,2012-07-13,2012-08-02,1704 5th Street NW,20001,202-281-5474,mlthorpe2c02@aol.com,6E,6E02
+303,6E02,Chapple,Kevin L,,2012-07-17,2012-08-02,438 S Street NW,20001,202-449-5072,chappleanc@aol.com,6E,6E02
+304,6E03,James,Kennith,,2012-07-09,2012-08-06,1330 7th Street NW #803,20001,240-595-8880,kenjam@yahoo.com,6E,6E03
+305,6E03,Wiggins,Frank S.,,2012-07-09,2012-08-08,1340 5th Street NW,20001,202-829-4717,fswiggins@gmail.com,6E,6E03
+306,6E04,Brown,Clyde H.,,2012-07-09,2012-08-08,519 L Street NW #1,20001,202-345-1471,stelderb@yahoo.com,6E,6E04
+307,6E04,Nigro,Rachelle P.,,2012-07-09,2012-07-30,437 New York Avenue NW #809,20001,202-236-3329,nigroanc2c@gmail.com,6E,6E04
+308,6E05,Kozey,Matthew,,2012-07-10,2012-08-06,440 L Street NW #607,20001,317-258-8521,mattkozey@gmail.com,6E,6E05
+309,6E05,Maceda,Marge,,2012-07-09,2012-07-24,475 K Street NW #802,20001,202-360-7404,marge.maceda1@gmail.com,6E,6E05
+310,6E06,Dixon,Mark,,2012-07-13,2012-08-02,80 New York Avenue NW #402,20001,202-438-2228,,6E,6E06
+311,6E07,Wise,Connell,,2012-07-16,2012-08-08,901 New Jersey Avenue NW,20001,202-400-9458,connellpwise@gmail.com,6E,6E07
+312,6E07,Judd,Alfreda S.,,2012-08-01,2012-08-08,117 Pierce Street NW,20001,202-628-6717,,6E,6E07
+313,7B01,Howard-Chittams,Patricia,,2012-08-02,2012-08-08,2936 M Street SE,20019,202-257-3502,phchittams@gmail.com,7B,7B01
+314,7B02,Williams,Zina D.,,2012-07-11,2012-08-08,2540 Naylor Road SE #301,20020,202-327-1455,zinawilliams343@hotmail.com,7B,7B02
+315,7B04,Hammond,Phillip J.,,2012-07-17,2012-08-07,2132 Branch Avenue SE,20020,202-582-3059,mphammond@msn.com,7B,7B04
+316,7B05,Marlin,Robin Hammond,,2012-07-17,2012-08-08,3200 S Street SE,20020,202-584-3400,anc7b@earthlink.net,7B,7B05
+317,7B06,Jordan,Robert A.,,2012-07-18,2012-08-08,3901 Pennsylvania Avenue SE #A,20020,202-596-7628,,7B,7B06
+318,7B07,Richards,Robert T. (Bob),,2012-07-26,2012-08-06,3524 Carpenter Street SE,20020,202-583-3524,rbrchrds@cs.com,7B,7B07
+319,7C01,Malloy,Patricia A.,,2012-07-27,2012-08-08,501 50th Place NE,20019,202-398-1956,linkmalloy@aol.com,7C,7C01
+320,7C02,Stewart,Gregori,,2012-07-10,2012-08-08,5364 Ames Street NE,20019,301-802-3433,kengstew@msn.com,7C,7C02
+321,7C03,Woods,Catherine A.,,2012-07-13,2012-08-08,4904 Fitch Place NE,20019,202-398-5307,cwoods8173@verizon.net,7C,7C03
+322,7C04,Garcia,Walter J.,II,2012-07-09,2012-08-06,4605 Hunt Place NE,20019,202-251-0783,wjgarcia2@gmail.com,7C,7C04
+323,7C05,Gaffney,Mary L.,,2012-07-12,2012-08-07,328 62nd Street NE #201,20019,202-399-1828,,7C,7C05
+324,7C06,Lawson,Sherrie,,2012-08-03,2012-08-06,944 Eastern Avenue NE #12,20019,240-606-5559,sherrielawson@gmail.com,7C,7C06
+325,7C07,Sinisterra,Didier,,2012-07-09,2012-08-06,4510 Lee Street NE,20019,202-446-8784,sinisterra.didier@gmail.com,7C,7C07
+326,7C07,Holmes,Antawan,,2012-07-16,2012-08-07,4805 Meade Street NE,20019,202-285-9711,antawan@gmail.com,7C,7C07
+327,7C07,Kone,Keith,,2012-07-19,2012-07-31,1014 50th Place NE,20019,202-905-4565,coachkeith07@yahoo.com,7C,7C07
+328,7C07,Weathington,Muriel Chambers,,2012-07-19,2012-08-06,1027 46th Street NE,20019,202-378-3953,,7C,7C07
+329,7D01,White,Lisa,,2012-07-20,2012-08-03,554 25th Place NE,20002,202-706-4713,lisa.white7d01@gmail.com,7D,7D01
+330,7D01,Raglin,Veronica,,2012-07-27,2012-08-03,408 21st Street NE,20002,202-396-7653,veronica.raglin@mris.com,7D,7D01
+331,7D03,Muhammad,Donna R.,,2012-07-25,2012-08-07,4406 Quarles Street NE,20019,202-398-8806,matinahm@aol.com,7D,7D03
+332,7D04,Prue,Jo-Anne,,2012-07-18,2012-08-08,313 34th Place NE,20019,202-997-5813,joanneprue@verizon.net,7D,7D04
+333,7D05,Hazel,Janis D.,,2012-07-09,2012-08-08,34 - 46th Place NE,20019,202-509-3769,janisdhazel@gmail.com,7D,7D05
+334,7D05,Pecot,Liz,,2012-07-11,2012-08-08,4607 Central Avenue NE #2,20019,202-569-0204,liz7d05@gmail.com,7D,7D05
+335,7D05,Yore,Jamila K.,,2012-08-03,2012-08-08,27 42nd Street NE ##40,20019,202-500-1757,jamila4dc@yahoo.com,7D,7D05
+336,7D06,Black,Ericka S.,,2012-07-09,2012-08-08,4231 Eads Street NE,20019,202-670-6677,erickasblack@gmail.com,7D,7D06
+337,7D06,Muhammad,Sherice A.,,2012-07-09,2012-08-08,4409 Jay Street NE,20019,202-621-7259,impeccabletaste@aol.com,7D,7D06
+338,7D07,Woods,Willie,Jr,2012-07-19,2012-08-03,3725 Cassell Place NE,20019,202-322-1912,wwoods04@gmail.com,7D,7D07
+339,7E01,Browne,George B.,Jr,2012-07-11,2012-08-02,4535 Alabama Avenue SE,20019,202-494-0148,bagby260@gmail.com,7E,7E01
+340,7E02,Brooks,Vanessa,,2012-07-13,2012-08-08,4460 Alabama Avenue SE,20019,202-581-0406,vanessabrooks@rcn.com,7E,7E02
+341,7E02,Green,Linda S.,,2012-07-31,2012-08-08,4239 Massachusetts Avenue SE,20019,202-354-1861,lsneeg@verizon.net,7E,7E02
+342,7E03,Hamlett,Rosa A.,,2012-07-09,2012-08-06,503 53rd Street SE,20019,202-582-0138,rosahamlett@comcast.net,7E,7E03
+343,7E03,Russell,Wyna R.,,2012-08-07,2012-08-08,5313 E Street SE #321,20019,202-583-1846,,7E,7E03
+344,7E04,Smith,Myron,,2012-07-09,2012-08-06,4633 East Capitol Street SE,20019,202-306-6040,myroncurtissmith@hotmail.com,7E,7E04
+345,7E04,Jackson,Mary D.,,2012-07-17,2012-08-07,135 49th Street SE,20019,202-575-2811,mdj_192@yahoo.com,7E,7E04
+346,7E05,McVea,Jean M.,,2012-07-25,2012-08-08,4901 Astor Place SE,20019,202-409-8914,mcveajean@yahoo.com,7E,7E05
+347,7E07,Felder,Wendell,,2012-07-17,2012-08-06,30 58th Street SE,20019,202-427-3376,wendell.felder@gmail.com,7E,7E07
+348,7E07,Pina,Jarni,,2012-08-06,2012-08-08,56 53rd Street SE,20019,202-584-0100,anc7e07jpina@gmail.com,7E,7E07
+349,7F01,Washington,Evie L.,,2012-07-09,2012-08-07,3938 East Capitol Street NE,20019,202-396-7794,evieadaptive@hotmail.com,7F,7F01
+350,7F02,Thompson,Eboni-Rose,,2012-07-27,2012-08-06,4562 Texas Avenue SE,20019,202-460-3498,ebonirose@gmail.com,7F,7F02
+351,7F03,Carr,Sheila M. Carson,,2012-07-24,2012-08-08,515 46th Street SE,20019,202-487-6760,my3bg@aol.com,7F,7F03
+352,7F04,Exum,Charlene,,2012-08-08,2012-08-08,3423 Minnesota Avenue SE,20019,202-469-1300,cexum20019@yahoo.com,7F,7F04
+353,7F05,Settles,Karen,,2012-07-24,2012-08-08,234 37th Street SE,20019,202-841-4069,,7F,7F05
+354,7F05,Essiam,Pauletta,,2012-08-01,2012-08-08,321 Burns Street SE,20019,202-575-6725,essiam6@verizon.net,7F,7F05
+355,8A01,Muhammad,Holly,,2012-07-11,2012-08-03,P.O. Box 2237,20013,202-907-5990,,8A,8A01
+356,8A02,Clark,Barbara J.,,2012-07-10,2012-08-02,1620 Ridge Place SE,20020,202-359-2407,pmbclark@yahoo.com,8A,8A02
+357,8A02,Powell,Randi K.,,2012-07-09,2012-08-08,1616 Ridge Place SE,20020,202-413-4361,randikp@gmail.com,8A,8A02
+358,8A03,Moore,L. Yvonne (L.Y.),,2012-07-25,2012-08-08,2330 Good Hope Road SE #1112,20020,202-889-8966,lmoore6577@aol.com,8A,8A03
+359,8A04,Smith,Moses,,2012-07-12,2012-08-07,2318 16th Street SE #6,20020,202-322-6796,mosesjsmith@hotmail.com,8A,8A04
+360,8A05,Wilson,Charles E.,,2012-07-09,2012-08-06,1643 U Street SE,20020,202-834-0600,charleswilsonhu@gmail.com,8A,8A05
+361,8A05,Phillips,Jeremy J.,,2012-07-27,2012-08-08,1645 U Street SE,20020,832-423-1745,jeremyjphillips@gmail.com,8A,8A05
+362,8A06,Fuller,Greta J.,,2012-07-18,2012-08-07,1352 Maple View Place SE,20020,202-359-2754,gretajanet@yahoo.com,8A,8A06
+363,8A06,Cooke,Stephen,,2012-07-20,2012-08-07,1117 Chicago Street SE,20020,202-678-1124,,8A,8A06
+364,8A06,Graham,Kendall J.,,2012-07-30,2012-08-07,1300 Dexter Terrace SE 20020,20020,202-321-4944,,8A,8A06
+365,8A07,Williams,Natalie,,2012-08-02,2012-08-06,2619 Douglass Place SE #403,20020,202-904-9466,nataliewilliams9427@gmail.com,8A,8A07
+366,8B01,Watson,Khadijah,,2012-07-11,2012-07-31,2437 Wagner Street SE,20020,202-510-0111,akhadijahwatson@yahoo.com,8B,8B01
+367,8B02,Gaston,Darrell Danny,,2012-08-01,2012-08-08,P.O. Box 30497,20030,202-656-4043,teamgaston2012@gmail.com,8B,8B02
+368,8B03,Wilson,Charles H.,,2012-07-12,2012-07-19,1808 Morris Road SE,20020,202-678-5230,cwil54@verizon.net,8B,8B03
+369,8B04,Lorenzo,Anthony,,2012-07-09,2012-08-06,1600 Frankford Street SE #101,20020,202-709-8091,anthonylorenzo.8b04@gmail.com,8B,8B04
+370,8B04,Shoatz,JB,,2012-07-25,2012-08-08,1601 Gainesville Street SE #301,20020,202-494-4330,jbmrcompany@yahoo.com,8B,8B04
+371,8B05,Scippio,Betty,,2012-07-10,2012-07-20,2740 Knox Terrace SE,20020,202-427-6472,scippi9627@aol.com,8B,8B05
+372,8B06,Hawkins,Mitchell G.,III,2012-07-23,2012-08-08,3406 23rd Street SE,20020,202-678-0711,mitchaw31@yahoo.com,8B,8B06
+373,8B07,Thorne,Louise,,2012-08-02,2012-08-08,1924 Trenton Place SE,20020,202-510-0185,thornelouise@hotmail.com,8B,8B07
+374,8C02,Jordan,Dion,,2012-07-13,2012-08-08,2820 2nd Street SE,20032,202-695-5616,anccommissioner@gmail.com,8C,8C02
+375,8C02,Fremling,Alicia,,2012-07-27,2012-08-08,1500 Eaton Road SE #301,20020,480-220-4939,alicia.fremling@gmail.com,8C,8C02
+376,8C02,Edwards,Grady,III,2012-08-08,2012-08-08,617 Mellon Street SE,20032,202-562-0963,grady5758@hotmail.com,8C,8C02
+377,8C03,Boston,Charles,,2012-07-09,2012-08-08,2913 8th Street SE,20032,202-506-6403,cottob@gmail.com,8C,8C03
+378,8C03,Cuthbert,Mary J.,,2012-07-11,2012-08-06,3325 Martin Lurther King Ave. SE#12,20032,202-246-9410,,8C,8C03
+379,8C05,Logan,Lloyd T.,,2012-07-25,2012-08-08,3630 Brothers Place SE,20032,202-384-9917,logan.lloyd@gmail.com,8C,8C05
+380,8C07,Palmer,Pho,,2012-07-17,2012-08-08,3314 5th Street SE #3,20032,202-997-1704,phopalmer@gmail.com,8C,8C07
+381,8D01,Carmon,Patricia Pat,,2012-07-11,2012-08-07,816 Southern Avenue SE #204,20032,202-905-6513,patcarmon@comcast.net,8D,8D01
+382,8D02,Henderson,Olivia L.,,2012-07-12,2012-08-08,4612 6th Street SE,20032,202-905-6818,ohenderson@liuna.org,8D,8D02
+383,8D03,Jordan,Absalom,,2012-07-20,2012-08-07,4335 4th Street SE #3,20032,202-574-5657,,8D,8D03
+384,8D04,Lee,M. Jay,,2012-07-11,2012-08-08,136 Ivanhoe Street SW,20032,202-369-3072,,8D,8D04
+385,8D06,Dyson,Thea,,2012-07-09,2012-08-07,142 Elmira Street SW,20032,202-489-4819,Theadysn@aol.com,8D,8D06
+386,8D07,Jones,Theresa Howe,,2012-07-20,2012-08-03,4020 1st Place SW,20032,202-561-7318,,8D,8D07
+387,8E02,Muhammad,Anthony,,2012-07-09,2012-07-16,P.O. Box 73878,20056,202-359-3517,adcmuhammad@hotmail.com,8E,8E02
+388,8E04,Townes,Brian,,2012-07-16,2012-08-07,1207 Congress Street SE,20032,202-904-8771,bktownes@aol.com,8E,8E04
+389,8E06,Armstead,Karlene (K.),,2012-07-13,2012-08-08,559 Foxhall Place SE,20032,202-563-8572,k.armstead4you@gmail.com,8E,8E06
+390,8E07,Williams,Sandra (SV),,2012-07-09,2012-07-17,847 Barnaby Street SE,20032,202-294-0548,svwmsforanc8e07@gmail.com,8E,8E07
