@@ -1,13 +1,13 @@
 # Scrape the DC ANC website's RSS feed for upcoming ANC meetings.
 #
-# Store them in www/meetings.json, and update existing meetings
+# Store them in ancbrigadesite/static/meetings.json, and update existing meetings
 # in place according to the RSS feed's guid field.
 
 import json, os.path, urllib.request, urllib.parse, urllib.error, re
 import lxml.etree, lxml.html
 from datetime import datetime
 
-output_filename = "www/meetings.json"
+output_filename = "ancbrigadesite/static/meetings.json"
 
 if os.path.exists(output_filename):
 	meetings = json.load(open(output_filename))
