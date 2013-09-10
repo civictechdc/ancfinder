@@ -242,7 +242,7 @@ input[type="color"].large,
 
 #header {
 	font-family: CentralUnionMission;
-	font-variant:small-caps; /* required for CentralUnionMission font which only provides uppercase glyphs */
+	text-transform: uppercase; /* required for CentralUnionMission font which only provides uppercase glyphs */
 	padding: 1em 0;
 	background: #394042;
 	line-height: 1.5em;
@@ -260,6 +260,8 @@ input[type="color"].large,
 	#logo {
 		display: block;
 		font-size: 1.5em;
+		margin-top: -6px;
+		margin-bottom: -6px;
 	}
 
 	ul.nav-links {
