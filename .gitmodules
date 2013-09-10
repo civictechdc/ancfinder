@@ -1,3 +1,6 @@
 [submodule "ext/django-annotator-store"]
 	path = ext/django-annotator-store
 	url = https://github.com/tauberer/django-annotator-store
+[submodule "ext/central-union-mission-font"]
+	path = ext/central-union-mission-font
+	url = https://github.com/ryantroyford/central-union-mission
