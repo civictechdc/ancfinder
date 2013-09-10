@@ -98,6 +98,29 @@ Theme styles based originally on My2012District.com
 
 }
 
+@font-face {
+    font-family: 'CentralUnionMission';
+    src: url('../fonts/centralunionmission-filled-webfont.eot');
+    src: url('../fonts/centralunionmission-filled-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/centralunionmission-filled-webfont.woff') format('woff'),
+         url('../fonts/centralunionmission-filled-webfont.ttf') format('truetype'),
+         url('../fonts/centralunionmission-filled-webfont.svg#PTSerifRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'CentralUnionMission';
+    src: url('../fonts/centralunionmission-neon-webfont.eot');
+    src: url('../fonts/centralunionmission-neon-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/centralunionmission-neon-webfont.woff') format('woff'),
+         url('../fonts/centralunionmission-neon-webfont.ttf') format('truetype'),
+         url('../fonts/centralunionmission-neon-webfont.svg#PTSerifRegular') format('svg');
+    font-weight: normal;
+    font-style: oblique; /* use "oblique" to invoke the neon version of the font */
+
+}
+
 body {
 	padding-bottom: 40px;
 	font-family: OpenSans, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -218,11 +241,13 @@ input[type="color"].large,
 /* 04. Layout styles =============================== */
 
 #header {
-	font-family: PTSerif;
+	font-family: CentralUnionMission;
+	font-variant:small-caps; /* required for CentralUnionMission font which only provides uppercase glyphs */
 	padding: 1em 0;
 	background: #394042;
 	line-height: 1.5em;
 }
+
 	#header a {
 		color: #fff;
 	}
