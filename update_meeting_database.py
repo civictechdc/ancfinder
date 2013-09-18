@@ -95,7 +95,7 @@ for meeting in dom.xpath("channel/item"):
 			
 	# Scrape the title field to determine which ANC this is for and what kind of
 	# meeting it is.
-	m = re.match(r"ANC (\d[A-Z]) (Meeting|Monthly Meeting|Bimonthly Meetings)$", meeting_info["title"])
+	m = re.match(r"ANC (\d[A-Z]) (Meeting|Monthly Meeting|Bimonthly Meetings)$", meeting_info["title"].strip())
 	if not m:
 		print(("Unrecognized meeting title format:", meeting_info["title"]))
 	else:
@@ -104,7 +104,11 @@ for meeting in dom.xpath("channel/item"):
 		
 	# Parse the meeting time into the ISO datetime format.
 	meeting_info["when"] = re.sub(" to \d.*$", "", meeting_info["when"]) # if there's "time X to time Y", chop off the second time
-	meeting_info["when"] = datetime.strptime(meeting_info["when"], "%A, %B %d, %Y - %I:%M%p").isoformat()
+	try:
+		meeting_info["when"] = datetime.strptime(meeting_info["when"], "%A, %B %d, %Y - %I:%M%p").isoformat()
+	except ValueError:
+		meeting_info["when_unparsed"] = meeting_info["when"]
+		del meeting_info["when"]
 
 # Write out the JSON file.
 with open(output_filename, "w") as outputfile:

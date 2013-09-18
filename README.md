@@ -15,6 +15,8 @@ Set up your environment for installing dependencies:
 	
 Note --recursive on 'git clone' to get the submodule dependencies.
 
+If it seems like you're missing stuff, also try 'git submodule init; git submodule update".
+
 Running the Site
 ----------------
 
