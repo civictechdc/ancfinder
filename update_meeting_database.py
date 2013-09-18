@@ -104,8 +104,10 @@ for meeting in dom.xpath("channel/item"):
 		
 	# Parse the meeting time into the ISO datetime format.
 	meeting_info["when"] = re.sub(" to \d.*$", "", meeting_info["when"]) # if there's "time X to time Y", chop off the second time
+	meeting_info["when"] = re.sub(r"Repeats every month\s+on the \S+ (Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday) \d+ times\s*. (Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)", r"\1", meeting_info["when"])
 	try:
 		meeting_info["when"] = datetime.strptime(meeting_info["when"], "%A, %B %d, %Y - %I:%M%p").isoformat()
+		if "when_unparsed" in meeting_info: del meeting_info["when_unparsed"]
 	except ValueError:
 		meeting_info["when_unparsed"] = meeting_info["when"]
 		del meeting_info["when"]
