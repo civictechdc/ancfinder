@@ -434,7 +434,7 @@
 								}
 								if (mtg) {
 									// Found a meeting.
-									var future = (mtg.when > now);
+									var future = (!mtg.when || (mtg.when > now));
 									$('#meeting').show().text("");
 									$('#meeting').append($("<p/>").text(
 										  (future ? "The next" : "The last")
@@ -443,7 +443,7 @@
 										+ " "
 										+ (future ? "will be" : "was")
 										+ " on "
-										+ moment(mtg.when).format("dddd, MMMM Do YYYY, h:mm a")
+										+ (mtg.when ? moment(mtg.when).format("dddd, MMMM Do YYYY, h:mm a") : mtg.when_unparsed)
 										+ "."
 									));
 									
