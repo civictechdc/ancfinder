@@ -193,7 +193,7 @@
 			});
 			
 			// If the URL fragment has an SMD name, show the info for that SMD.
-			show_smd_info(window.location.hash.substring(1), null);
+			show_smd_info(window.location.hash.toUpperCase().substring(1), null);
 		});
 
 		function resize_things() {
