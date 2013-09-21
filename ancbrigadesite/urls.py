@@ -22,6 +22,9 @@ urlpatterns = patterns('',
 	url(r'^document/(\d+)/edit$', 'ancbrigadesite.backend_views.edit_document'),
 	url(r'^document-annotations', include('annotator.urls')),
 
+	# Externals
+	url(r'^tinymce/', include('tinymce.urls')),
+
     # Examples:
     # url(r'^$', 'ancbrigadesite.views.home', name='home'),
     # url(r'^ancbrigadesite/', include('ancpage.foo.urls')),

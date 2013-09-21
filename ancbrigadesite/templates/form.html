@@ -5,7 +5,8 @@
 	<legend>{{title}}</legend>
 	
 	{% for field in form %}
-		<div class="control-group">
+	{% if 'type="hidden"' not in field|capfirst %} {# capfirst forces type cast to string #}
+		<div id="control-group-{{field.name}}" class="control-group">
 		  <label class="control-label" for="form-field-{{field.name}}">{{field.label}}</label>
 		  <div class="controls">
 			{{field}}
@@ -13,6 +14,9 @@
 			{% for err in field.errors %}<p class="text-error">{{err}}</p>{% endfor %}
 		  </div>
 		</div>
+	{% else %}
+		{{field}}
+	{% endif %}
 	{% endfor %}
 	
 	<div class="control-group">
