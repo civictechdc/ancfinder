@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import sys
 import csv
 import json
 import re, urllib.request, urllib.parse, urllib.error, os.path, io
@@ -46,7 +47,13 @@ def csv_file_to_dict(csv_file):
   return list(csv.DictReader(csv_file))
 
 def get_base_data():
-  print("fetching Google spreadsheet")
+  # This function initializes an empty JSON file with base data.
+  # We don't normally use this function since we try to update
+  # data in place selectively, because it's a lot faster than
+  # collecting everything from scratch.
+
+  print("fetching Google spreadsheet to create base data")
+
   # Create Google Documents client and download the spreadsheet as a CSV for each worksheet.
   spreadsheet_id = "0AsuPWK1wtxNfdGdyVWU4Z3J3X3g3RzVyVWJ1Rkd4dXc" # our spreadsheet
   gs = GoogleDocsClient(google_email, google_password)
@@ -59,7 +66,6 @@ def get_base_data():
     w = OrderedDict()
     output[ward["Ward"]] = w
     w["ward"] = int(ward["Ward"])
-    w["description"] = ward["Description"]
     w["ancs"] = OrderedDict()
   
   for anc in ancs:
@@ -67,14 +73,42 @@ def get_base_data():
     output[ anc["ANC"][0] ]["ancs"][ anc["ANC"][1] ] = a
     a["anc"] = anc["ANC"][0:2]
     a["anc_letter"] = anc["ANC"][1]
-    a["website"] = anc["Website"]
     a["smds"] = OrderedDict()
 
   for smd in smds:
-    output[ smd["smd"][0] ]["ancs"][ smd["smd"][1] ]["smds"][ smd["smd"][2:] ] = smd
-    smd["smd_number"] = smd["smd"][2:]
+    s = OrderedDict()
+    output[ smd["smd"][0] ]["ancs"][ smd["smd"][1] ]["smds"][ smd["smd"][2:] ] = s
+    s["anc"] = smd["smd"][0:2]
+    s["smd"] = smd["smd"]
+    s["smd_number"] = smd["smd"][2:]
+    s["ward"] = smd["ward"]
     
   return output
+
+def add_googledoc_data(output):
+  print("fetching Google spreadsheet")
+
+  # Don't ever run this without also running the scraperwiki
+  # data because scraperwiki overrides google doc data.
+  
+  # Create Google Documents client and download the spreadsheet as a CSV for each worksheet.
+  spreadsheet_id = "0AsuPWK1wtxNfdGdyVWU4Z3J3X3g3RzVyVWJ1Rkd4dXc" # our spreadsheet
+  gs = GoogleDocsClient(google_email, google_password)
+  wards = csv_file_to_dict(gs.download(spreadsheet_id, 1)) # second argument is the worksheet ID
+  ancs = csv_file_to_dict(gs.download(spreadsheet_id, 2))
+  smds = csv_file_to_dict(gs.download(spreadsheet_id, 0))
+      
+  for ward in wards:
+    w = output[ward["Ward"]]
+    w["description"] = ward["Description"]
+  
+  for anc in ancs:
+    a = output[ anc["ANC"][0] ]["ancs"][ anc["ANC"][1] ]
+    a["website"] = anc["Website"]
+
+  for smd in smds:
+    s = output[ smd["smd"][0] ]["ancs"][ smd["smd"][1] ]["smds"][ smd["smd"][2:] ]
+    s.update(smd)
   
 def add_scraperwiki_data(output):
   print("adding more commissioner data")
@@ -109,119 +143,264 @@ def add_geographic_data(output):
 
 def add_neighborhood_data(output):
   print("adding neighborhood data")
-  # Add intersections between ANCs/SMDs and neighborhoods and Census block groups.
-  
-  # First estimate the total population of DC neighborhoods because we'll want
-  # to ignore neighborhoods for non-residential areas, because they look really
-  # odd when we say ANC 1B contains the Tidal Basin.
-  #
+
+  # Add intersections between ANCs/SMDs and neighborhoods, and estimate the
+  # population in every intersection because it looks weird to say ANC 1B
+  # contains the "Tidal Basin". We'll handle small-population intersections
+  # in the front-end.
+
+  # Query the Census API for the population of every block group that intersects
+  # with a neighborhood.
+  bg_population = { }
+  for intsect in json.load(open("data/neighborhoods-blockgroups.json")):
+    bg = intsect["2012-blockgroups"]["id"]
+    if bg in bg_population: continue
+    state_fips, county_fips, tract, bg_num = bg[0:2], bg[2:5], bg[5:11], bg[11:12]
+    if state_fips != "11":
+      # not in DC! this should be a denegerate intersection of some sort
+      bg_population[bg] = 0
+      continue
+    url = "http://api.census.gov/data/%s?key=%s&get=%s&in=state:%s+county:%s+tract:%s&for=block+group:%s" \
+        % ("2010/sf1", census_api_key, "P0010001", state_fips, county_fips, tract, bg_num)
+    census_data = json.load(urlopen(url))
+    bg_population[bg] = int(census_data[1][0])
+
   # For each neighborhood, sum the populations of the block groups it intersects with
   # weighted by the proportion of the block group that intersects with the neighborhood.
   hood_population = { }
   for intsect in json.load(open("data/neighborhoods-blockgroups.json")):
     h = intsect["dc-neighborhoods"]["id"]
-    tr = intsect["2012-blockgroups"]["id"]
-    state_fips, county_fips, tract, bg = tr[0:2], tr[2:5], tr[5:11], tr[11:12]
-    if state_fips != "11": continue # not DC
-    url = "http://api.census.gov/data/%s?key=%s&get=%s&in=state:%s+county:%s+tract:%s&for=block+group:%s" \
-        % ("2010/sf1", census_api_key, "P0010001", state_fips, county_fips, tract, bg)
-    census_data = json.load(urlopen(url))
-    tract_pop = int(census_data[1][0])
-    intsect_pop = tract_pop * intsect["2012-blockgroups"]["ratio"]
+    bg = intsect["2012-blockgroups"]["id"]
+    intsect_pop = bg_population[bg] * intsect["2012-blockgroups"]["ratio"]
     hood_population[h] = hood_population.get(h, 0) + intsect_pop
     
-  # Bring in the pre-computed intersection data.
-  for division in ("neighborhood", "blockgroup", "tract"):
-    # clear out existing data
-    for ward in output.values():
-      for anc in ward["ancs"].values():
-        anc.setdefault("map", {})[division] = []
-        for smd in anc["smds"].values():
-          smd.setdefault("map", {})[division] = []
-    
-    # set data
-    for anc_smd in ("anc", "smd"):
-      dat = json.load(open("data/%s-%s.json" % (anc_smd, division)))
-      for ix in dat:
-        ward = ix[anc_smd]["id"][0]
-        anc = ix[anc_smd]["id"][1]
+  # Clear out existing data.
+  for ward in output.values():
+    for anc in ward["ancs"].values():
+      anc["neighborhoods"] = []
+      for smd in anc["smds"].values():
+        smd["neighborhoods"] = []
+  
+  # Now store the neighborhood data in the output, once for ANCs as a whole
+  # and once for the SMDs.
+
+  for anc_smd in ("anc", "smd"):
+    dat = json.load(open("data/%s-neighborhood.json" % anc_smd))
+    for ix in dat:
+      ward = ix[anc_smd]["id"][0]
+      anc = ix[anc_smd]["id"][1]
+
+      if anc_smd == "anc":
+        feature = output[ward]["ancs"][anc]
+      else:
         smd = ix[anc_smd]["id"][2:]
-        if anc_smd == "anc":
+        feature = output[ward]["ancs"][anc]["smds"][smd]
+        
+      feature["neighborhoods"].append({
+        "name": ix["neighborhood"]["name"],
+        "part-of-" + anc_smd: ix[anc_smd]["ratio"],
+        "part-of-neighborhood": ix["neighborhood"]["ratio"],
+        "population": int(round(hood_population[ix["neighborhood"]["id"]] * ix["neighborhood"]["ratio"])),
+      })
+
+  # Sort so that JSON output is consistent from run to run.
+  for ward in output.values():
+    for anc in ward["ancs"].values():
+      anc["neighborhoods"].sort(key = lambda h : -h["part-of-anc"])
+      for smd in anc["smds"].values():
+        smd["neighborhoods"].sort(key = lambda h : -h["part-of-smd"])
+
+def add_census_data(output):
+  # Estimate ANC/SMD Census population data by averaging across the tracts that
+  # each ANC and SMD intersects with. Tracts appear to be the lowest level that
+  # interesting data is uniformly available from the 2011 American Community Survey.
+  # We can get more precise information on population from block groups though.
+
+  # Pre-load the relevant data points from the Census API.
+
+  census_fields = {
+      "2010/sf1": [
+          ("P0010001", int, "count"), # Total Population
+          ("P0180001", int, "count"), # Households
+          ("P0180002", int, "count"), # Family Households
+          ("H0040001", int, "count"), # Occupied Housing Units
+          ("H0050001", int, "count"), # Vacant Housing Units
+      ],
+
+      # http://www.census.gov/developers/data/acs_5yr_2011_var.xml
+      "2011/acs5": [
+          ("B01003_001E", int, "count"), # Total Population
+          ("B01002_001E", float, "median"), # Median Age
+          ("B07001_001E", int, "count"), # Geographic Mobility in the Past Year Total Population
+          ("B07001_017E", int, "count"), # .... Same House One Year Ago
+          ("B07001_033E", int, "count"), # .... Moved Within Same County
+          ("B07001_065E", int, "count"), # .... Moved From Different State
+          ("B07001_081E", int, "count"), # .... Moved From Abroad
+          ("B19019_001E", float, "median"), # Median Household Income
+          ("B16002_001E", int, "count"), # No One Age 14+ in Household Speaks English
+      ],
+  }
+
+  census_data = { }
+  for division in ("tract", "blockgroup"):
+    dat = json.load(open("data/smd-%s.json" % division))
+    for intsect in dat:
+      #if intsect["smd"]["id"] != "1A02": continue
+
+      # get the ID of this tract or blockgroup
+      id = intsect[division]["id"]
+      if id in census_data: continue
+      census_data[id] = { }
+
+      # query Census API
+      state_fips, county_fips, tract, bg_num = id[0:2], id[2:5], id[5:11], (id+"?")[11:12]
+      for census_table in census_fields:
+        field_list = ",".join(f[0] for f in census_fields[census_table])
+        if division == "tract":
+          url = "http://api.census.gov/data/%s?key=%s&get=%s&in=state:%s+county:%s&for=tract:%s" \
+            % (census_table, census_api_key, field_list, state_fips, county_fips, tract)
+        else:
+          url = "http://api.census.gov/data/%s?key=%s&get=%s&in=state:%s+county:%s+tract:%s&for=blockgroup:%s" \
+            % (census_table, census_api_key, field_list, state_fips, county_fips, tract, bg_num)
+        data_from_api = json.load(urlopen(url))
+        for i, (fieldname, datatype, sum_mode) in enumerate(census_fields[census_table]):
+          v = data_from_api[1][i]
+          if v is not None: v = datatype(v)
+          census_data[id][fieldname] = v
+
+  # Clear out existing data.
+  for ward in output.values():
+    for anc in ward["ancs"].values():
+      anc["census"] = { "by-blockgroup": { }, "by-tract": { } }
+      for smd in anc["smds"].values():
+        smd["census"] = { "by-blockgroup": { }, "by-tract": { } }
+
+  # Estimate values for the ANCs and SMDs as a whole.
+  for division1 in ("smd", "anc"):
+    for division2 in ("tract", "blockgroup"):
+      dat = json.load(open("data/%s-%s.json" % (division1, division2)))
+      for ix in dat:
+        # Here's an intersection between an ANC/SMD and a blockgroup/tract.
+
+        # Get the dict that represents the ANC or SMD's census info.
+        ward = ix[division1]["id"][0]
+        anc = ix[division1]["id"][1]
+        if division1 == "anc":
           feature = output[ward]["ancs"][anc]
         else:
+          smd = ix[division1]["id"][2:]
           feature = output[ward]["ancs"][anc]["smds"][smd]
-          
-        f = {
-          "name": ix[division]["name"],
-          "part-of-" + anc_smd: ix[anc_smd]["ratio"],
-          "part-of-" + division: ix[division]["ratio"],
-        }
-        
-        if division == "neighborhood":
-          # Esimate the population of this neighborhood intersection by multiplying our
-          # earlier estimate of the neighborhood's population by the portion of the
-          # neighborhood that falls within this ANC/SMD.
-          f["population"] = hood_population[ix[division]["id"]] * ix[division]["ratio"] 
-        
-        if division == "tract":
-          # Query the Census API for information about this tract.
-          state_fips, county_fips, tract = ix[division]["id"][0:2], ix[division]["id"][2:5], ix[division]["id"][5:11]
-          
-          # Remove degenerate intersections with Virginia and Maryland block groups.
-          if state_fips != "11" or county_fips != "001": continue
-              
-          # Query the Census API for population information for this tract.
-          census_fields = {
-              "2010/sf1": [
-                  "P0010001", # Total Population
-                  "P0180001", # Households
-                  "P0180002", # Family Households
-                  "H0040001", # Occupied Housing Units
-                  "H0050001", # Vacant Housing Units
-              ],
-              "2011/acs5": [
-                  "B01002_001E", # Median Age
-                  "B07001_001E", # Geographic Mobility in the Past Year Total Population
-                  "B07001_017E", # .... Same House One Year Ago
-                  "B07001_033E", # .... Moved Within Same County
-                  "B07001_065E", # .... Moved From Different State
-                  "B07001_081E", # .... Moved From Abroad
-                  "B19019_001E", # Median Household Income
-#                  "B16002_001E", # No One Age 14+ in Household Speaks English
-#                  "B99151_001E", # Imputation of Educational Attainment for Age 25+
-              ],
-          }
-          for census_table in census_fields:
-              url = "http://api.census.gov/data/%s?key=%s&get=%s&in=state:%s+county:%s&for=tract:%s" \
-                  % (census_table, census_api_key, ",".join(census_fields[census_table]), state_fips, county_fips, tract)
-              census_data = json.load(urlopen(url))
-              for i, k in enumerate(census_fields[census_table]):
-                  f[k] = census_data[1][i]
+        feature = feature["census"]["by-" + division2]
 
-        feature["map"][division].append(f)
+        # Get the id of the blockgroup or tract.
+        census_id = ix[division2]["id"]
+        #if census_id not in census_data: continue # only for testing
+
+        # Estimate each field for the ANC/SND as a whole.
+        for census_table in census_fields:
+          for fieldname, datatype, summode in census_fields[census_table]:
+            if summode == "count":
+              # This value may not available from the Census (some blockgroup ACS data) so
+              # mark the feature as not-computable.
+              if census_data[census_id][fieldname] is None:
+                feature[fieldname] = "missing-data"
+                continue
+              if feature.get(fieldname) == "missing-data":
+                # Already marked this field is non-computable because data is missing?
+                continue
+
+              # This field is a count, so we estimate the whole by adding the
+              # field values weighted by the ratio of the intersection area to
+              # the area of the blockgroup or tract.
+              feature.setdefault(fieldname, { "value": 0, "type": summode })
+              feature[fieldname]["value"] += census_data[census_id][fieldname] * ix[division2]["ratio"]
+            elif summode == "median":
+              # For medians, we take the average across all of the intersections
+              # weighted by the population in each intersction.
+              feature.setdefault(fieldname, { "value": 0.0, "type": summode, "weight": 0.0, "missing_weight": 0.0 })
+              w = census_data[census_id]["B01003_001E"] * ix[division2]["ratio"]
+
+              # This value may not available from the Census (some blockgroup ACS data). It seems
+              # like even tracts are missing some of these values, but we want to estimate as
+              # best as possible so we'll estimate from those tracts where values exist, and we'll
+              # record the proportion of the population in this ANC/SMD that did not contribute
+              # to the estimate.
+              if census_data[census_id][fieldname] is None:
+                feature[fieldname]["missing_weight"] += w
+                continue
+
+              feature[fieldname]["value"] += census_data[census_id][fieldname] * w
+              feature[fieldname]["weight"] += w
+
+  # Finish up.
+  def clean_up(f):
+    # Prefer blockgroup statistics if available.
+    # Round some values.
+    # For medians, divide by the total weight.
+    for division in ("tract", "blockgroup"):
+      for k, v in list(f["by-" + division].items()):
+        if v == "missing-data": continue
+
+        if v["type"] == "count":
+          f[k] = v
+          f[k]["source"] = division
+          v["value"] = int(round(v["value"]))
+        elif v["type"] == "median" and v["weight"] > 0:
+          # Skip this if we're missing more data as a blockgroup than as a tract,
+          # or if we're just missing a lot of data (more than 33%).
+          v["missing_pct"] = v["missing_weight"] / (v["weight"] + v["missing_weight"])
+          if v["missing_pct"] > .33 or (k in f and f[k]["missing_pct"] < v["missing_pct"]): continue
+
+          f[k] = v
+          f[k]["source"] = division
+          v["value"] = round(v["value"] / v["weight"])
+          del v["weight"]
+          del v["missing_weight"]
+        del v["type"]
+      del f["by-" + division]
+
+  for ward in output.values():
+    for anc in ward["ancs"].values():
+      clean_up(anc["census"])
+      for smd in anc["smds"].values():
+        clean_up(smd["census"])
 
 if __name__ == "__main__":
   if not os.path.exists("update_anc_database_creds.py"):
     print("This program downloads our public Google Doc with Ward/ANC/SMD information.")
-    print("But we need your Google login info to get it...")
+    print("But we need your Google login and Census API key info to get it...")
     google_email = input("google account email> ")
     google_password = getpass.getpass("google account password> ")
     census_api_key = getpass.getpass("census api key> ")
   else:
-    # Store your personal credentials in this file if you don't want
-    # to type it in.
+    # Or create a file named "update_anc_database_creds.py" and put in
+    # it your Google credentials and Census API key (see the README).
     exec(compile(open("update_anc_database_creds.py").read(), "update_anc_database_creds.py", 'exec'))
     
-    
-  output = get_base_data()
-  add_scraperwiki_data(output)
-  add_term_data(output)
-  add_geographic_data(output)
-  add_neighborhood_data(output)
   
-  #output = json.load(open("ancbrigadesite/static/ancs.json"))
-  #add_neighborhood_data(output)
+  if "--reset" in sys.argv:
+    # Re-create file from scratch.
+    output = get_base_data()
+  else:
+    # Update file in place.
+    output = json.load(open("ancbrigadesite/static/ancs.json"))
 
+  def should(argname):
+    # Should we process this selective update? Yes if:
+    #   * no command line arguments were given (i.e. process all)
+    #   * --reset was specified (must process all)
+    #   * --argname was specified
+    return len(sys.argv) == 1 or "--reset" in sys.argv or ("--"+argname) in sys.argv
+
+  if should("base"):
+    # always do this together
+    add_googledoc_data(output)
+    add_scraperwiki_data(output)
+  if should("terms"): add_term_data(output)
+  if should("gis"): add_geographic_data(output)
+  if should("neighborhoods"): add_neighborhood_data(output)
+  if should("census"): add_census_data(output)
+  
   # Output.
   output = json.dumps(output, indent=True, ensure_ascii=False, sort_keys=True)
   
