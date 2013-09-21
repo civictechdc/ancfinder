@@ -2,6 +2,10 @@
 
 {% block title %}Upload Document - ANCBrigade{% endblock %}
 
+{% block head %}
+	{{ form.media }}
+{% endblock %}
+
 {% block body %}
 <div id="masthead">
 	<div class="container">
@@ -14,9 +18,28 @@
 <div class="container">
   <div class="row">
 	<div class="span10 offset1">
+
 		{% include "form.html" with form=form title="Upload Document" form_display_layout="horizontal" %}
+
+		{% if url_error %}<p class="text-error">{{url_error}}</p>{% endif %}
+
 		<p>You will be asked to edit the document&rsquo;s metadata on the next screen.</p>
 	</div>
   </div>
 </div>
+{% endblock %}
+
+
+{% block scripts %}
+	<script>
+		update_toggle_state();
+
+		$('#id_upload_type').change(update_toggle_state);
+		
+		function update_toggle_state() {
+			$('#control-group-docfile').toggle($('#id_upload_type').val() == "file");
+			$('#control-group-content').toggle($('#id_upload_type').val() == "paste");
+			$('#control-group-url').toggle($('#id_upload_type').val() == "url");
+		}
+	</script>
 {% endblock %}

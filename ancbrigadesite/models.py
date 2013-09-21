@@ -2,7 +2,7 @@ from django.db import models
 import base64
 
 class Document(models.Model):
-	"""A ANC document."""
+	"""An ANC document."""
 
 	anc = models.CharField(max_length=4, db_index=True, verbose_name="ANC") # e.g. "3B" or later perhaps "3B08"
 	title = models.CharField(max_length=64, blank=True, null=True)
@@ -24,32 +24,51 @@ class Document(models.Model):
 	document_content = models.TextField(editable=False, help_text="The binary document content, stored Base64-encoded.")
 	document_content_type = models.CharField(editable=False, max_length=128, help_text="The MIME type of the document_content.")
 	document_content_size = models.IntegerField(editable=False)
+
+	source_url = models.CharField(max_length=256, blank=True, null=True, verbose_name="Source URL", help_text="The web address where this document was obtained from.")
 	
 	annotation_document = models.ForeignKey('annotator.Document', editable=False, blank=True, null=True, on_delete=models.SET_NULL)
 
 	def __str__(self):
 		return self.get_doc_type_display() + ("/" + self.title if self.title else "")
 
-	def set_document_content(self, content):
-		# content is a Django UploadedFile object.
-		self.document_content = content.read()
-		self.document_content_type = content.content_type
-		if content.charset and content.charset != "utf8":
-			self.document_content = self.document_content.decode(content.charset, "replace").encode("utf8")
+	def set_document_content(self, content, mime_type=None):
+		if mime_type:
+			self.document_content = content
+			self.document_content_type = mime_type
+		elif isinstance(content, (str, unicode)):
+			if isinstance(content, unicode): content = content.encode("utf8")
+			self.document_content = content
+			self.document_content_type = "text/html"
+		else:
+			# content is a Django UploadedFile object.
+			self.document_content = content.read()
+			self.document_content_type = content.content_type
+			if content.charset and content.charset != "utf8":
+				self.document_content = self.document_content.decode(content.charset, "replace").encode("utf8")
+
 		self.document_content_size = len(self.document_content)
 		self.document_content = base64.b64encode(self.document_content)
+
 		self.save()
 		
 	def populate_annotation_document(self):
 		if self.annotation_document:
 			# already created
 			return
-		
+
 		from annotator.models import Document as AD
-		
 		ad = AD()
 		ad.title = str(self)
-		ad.body = Document.convert_pdf_to_html(base64.b64decode(self.document_content))
+
+		if self.document_content_type == "text/html":
+			ad.body = base64.b64decode(self.document_content)
+		elif self.document_content_type == "application/pdf":
+			ad.body = Document.convert_pdf_to_html(base64.b64decode(self.document_content))
+		else:
+			# don't know how to convert this file type
+			return
+
 		ad.save()
 		
 		self.annotation_document = ad
@@ -57,14 +76,38 @@ class Document(models.Model):
 
 	@staticmethod
 	def convert_pdf_to_html(pdf_blob):
-		# Use Josh's hacky CGI script running on his server as a PDF-to-HTML converter.
-		# Extract just the <body> content.
-		import urllib, lxml.etree, re
-		html = urllib.urlopen("http://razor.occams.info/cgi-bin/ancbrigade-pdf-to-html.cgi", pdf_blob)
-		dom = lxml.etree.parse(html, lxml.etree.HTMLParser())
-		for n in dom.xpath('//*'):
-			# clear various styles
-			if n.get("style"):
-				n.set("style", re.sub(r"(left|top|width|height|font-size|position):.*?(;|$)", "", n.get("style")))
-		return lxml.etree.tostring(dom.getroot().xpath("body")[0], pretty_print=True, method="html", encoding=unicode)
+		import tempfile, os, subprocess, lxml.etree, re
+
+		# Convert the PDF to plain text. Conversion to HTML is usually either
+		# ugly or produces complex HTML layouts that make selection behave
+		# weirdly, and being able to select things is important for annotations.
+		try:
+			(fd1, fn1) = tempfile.mkstemp(suffix=".pdf")
+			os.write(fd1, pdf_blob)
+			os.close(fd1)
+
+			text_blob = subprocess.check_output(["pdf2txt.py", "-c", "utf8", "-t", "text", "-Y", "loose", fn1])
+			text_blob = text_blob.decode('utf8')
+		finally:
+			os.unlink(fn1)
+
+		# Now convert to simple HTML.
+		root = lxml.etree.Element("div")
+		for page in text_blob.split("\x0C"):
+			page = page.strip()
+			if page == "": continue
+
+			page_node = lxml.etree.Element("div")
+			page_node.set("class", "page")
+			root.append(page_node)
+
+			for line in page.split("\n"):
+				n = lxml.etree.Element("div")
+				n.set("style", "white-space: pre")
+				page_node.append(n)
+				if line.strip() == "":
+					n.text = u'\u00a0' # nbsp prevents the <div> from collapsing to zero height
+				else:
+					n.text = line
+		return lxml.etree.tostring(root, pretty_print=True, method="html", encoding=unicode)
 		
