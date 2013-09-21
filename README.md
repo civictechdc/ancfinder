@@ -35,6 +35,16 @@ from our Google Doc, our ScraperWiki scraper, and other external data sources, r
 
 	python3 update_anc_database.py
 
+You will need to provide your Google email & password and a Census API key, which you can get at http://www.census.gov/developers/tos/key_request.html. For convenience, you can also store these credentials in a file named "update_anc_database_creds.py" in this directory and put in it:
+
+	google_email="your.address@gmail.com"
+	google_password="your google password"
+	census_api_key="your Census API key"
+
+You can also selectively update just some of the data (because updating some takes a long time) using command line arguments:
+	
+	python3 update_anc_database.py [--base] [--terms] [--gis] [--neighborhoods] [--census]
+
 And to fetch the latest ANC meetings calendar:
 	
 	python3 update_meeting_database.py

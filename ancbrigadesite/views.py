@@ -23,21 +23,9 @@ def anc_info(request, anc):
 	for smd in info["smds"].values():
 		prep_hoods(smd, False)
 		
-	info["census"] = {
-		"population": get_census_value_count(info, "tract", "P0010001"),
-		"households": get_census_value_count(info, "tract", "P0180002"),
-		"family_households": get_census_value_count(info, "tract", "P0180002"),
-		"occupied_housing_units": get_census_value_count(info, "tract", "H0040001"),
-		"vacant_housing_units": get_census_value_count(info, "tract", "H0050001"),
-		"median_age": get_census_value_median(info, "tract", "B01002_001E"),
-		"median_income": get_census_value_median(info, "tract", "B19019_001E"),
-		"county_mobility": get_census_value_median(info, "tract", "B07001_033E"),
-		"state_mobility": get_census_value_median(info, "tract", "B07001_065E"),
-		"foreign_mobility": get_census_value_median(info, "tract", "B07001_081E"),
-#		"no_english_spoken": get_census_value_count(info, "tract", "B16002_001E"),
-#		"educational_attainment": get_census_value_count(info, "tract", "B99151_001E"),
-	}
-	
+	info["census"]["H0050001_PCT"] = { "value": int(round(100.0 * info["census"]["H0050001"]["value"] / info["census"]["H0040001"]["value"])) }
+	info["census"]["B07001_001E_PCT"] = { "value": int(round(100.0 * (info["census"]["B07001_065E"]["value"] + info["census"]["B07001_081E"]["value"]) / info["census"]["B07001_001E"]["value"])) }
+
 	return render(request, 'ancbrigadesite/anc.html', {'anc': anc, 'info': info})
 	
 def about(request):
@@ -61,7 +49,7 @@ def prep_hoods(info, is_anc):
 	# so long as the cumulative population removed is less than 5% of the total
 	# population. These are either degenerate intersections of very small area or
 	# non-residential neighborhoods like the Tidal Basin or Union Station.
-	hoods = list(info["map"]["neighborhood"])
+	hoods = list(info["neighborhoods"])
 	hoods.sort(key = lambda h : h["population"])
 	p = 0
 	pt = sum(h["population"] for h in hoods)
@@ -88,30 +76,5 @@ def prep_hoods(info, is_anc):
 		hoods[-1] = "and " + hoods[-1]
 		hoods = ", ".join(hoods)
 		
-	info["neighborhoods"] = hoods
-	
-def get_census_value_count(anc, gistype, field):
-	# sum the values of the intersecting regions multiplied by the percent of that region
-	# that intersects with the ANC
-	r = 0.0
-	for b in anc["map"][gistype]:
-		w = b["part-of-tract"]
-		v = float(b[field]) # TODO remove float() when this is fixed in the json file
-		r += w * v
-	return int(round(r))
-def get_census_value_median(anc, gistype, field):
-	# weight the value by the estimated population in the intersection of the ANC and
-	# the region
-	r = 0.0
-	t = 0.0
-	for b in anc["map"][gistype]:
-		try:
-			w = float(b['P0010001'])*b["part-of-tract"] # weight by this value
-			v = float(b[field]) # TODO remove float() when this is fixed in the json file
-			r += w * v
-			t += w
-		except TypeError:
-			continue
-	if t == 0.0: return None
-	return int(round(r/t))
+	info["neighborhood_list"] = hoods
 	
