@@ -296,41 +296,31 @@ input[type="color"].large,
     text-shadow: 0 1px 1px #066982;
 }
 
-.anc-menu ul {
-	display: none;
-	list-style: none;
-	float: left;
-	margin: 0;
-	padding: 0;
-}
-
-.anc-menu:hover > ul {
-	display: inline-table;
-	position: absolute;
-	color: white;
-	background-color: black;
-	z-index: 1;
-}
-
-.anc-menu ul li {
-	display: block;
-	padding: 5px 5px;
-	margin: 0;
-}
-
-.anc-menu ul li:hover > ul {
-	display: inline-table;
-	position: absolute;
-	margin: -25px 0px 0px 0px;
-	color: white;
-	background-color: black;
-	z-index: 1;
-}
-
 h2 {
 	margin: .75em 0 .25em 0;
 }
 
+#menu_anc_list {
+	text-align: left;
+	font-family: OpenSans, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	padding: 5px .5em;
+}
+	#header #menu_anc_list a {
+		color: black;
+	}
+	#header #menu_anc_list a:hover {
+		color: red;
+	}
+	#menu_anc_list .ward {
+		padding: .25em 0;
+		margin-bottom: .125em;
+	}
+	#menu_anc_list .ward.notlast {
+		border-bottom: 1px solid #DDD;
+	}
+	#menu_anc_list .anc {
+		margin-right: .5em;
+	}
 
 .body ul li {
 	margin-bottom: .5em;
