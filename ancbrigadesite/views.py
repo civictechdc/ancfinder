@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import Http404, HttpResponse
-import datetime
+import datetime, collections
 
 try:
 	import json
@@ -8,7 +8,12 @@ except ImportError:
 	import simplejson as json
 
 anc_data_as_json = open("ancbrigadesite/static/ancs.json").read()
-anc_data = json.loads(anc_data_as_json)
+anc_data = json.loads(anc_data_as_json, object_pairs_hook=collections.OrderedDict)
+
+def TemplateContextProcessor(request):
+	return {
+		"ancs": anc_data,
+	}
 
 def home(request):
 	return render(request, 'ancbrigadesite/index.html', { 'anc_data': anc_data_as_json } )
@@ -16,8 +21,6 @@ def home(request):
 def anc_info(request, anc):
 	anc = anc.upper()
 	info = anc_data[anc[0]]["ancs"][anc[1]]
-	
-	info["smd_list"] = sorted(info["smds"].values(), key = lambda s : s["smd"])
 	
 	prep_hoods(info, True)
 	for smd in info["smds"].values():
