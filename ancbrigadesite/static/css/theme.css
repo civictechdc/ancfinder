@@ -304,6 +304,7 @@ h2 {
 	text-align: left;
 	font-family: OpenSans, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	padding: 5px .5em;
+	text-transform: none;
 }
 	#header #menu_anc_list a {
 		color: black;
@@ -314,8 +315,6 @@ h2 {
 	#menu_anc_list .ward {
 		padding: .25em 0;
 		margin-bottom: .125em;
-	}
-	#menu_anc_list .ward.notlast {
 		border-bottom: 1px solid #DDD;
 	}
 	#menu_anc_list .anc {

@@ -163,7 +163,13 @@
 			//resize_things();
 			//$(window).resize(resize_things);
 			
-			initialize_google();
+			initialize_google_map(false);
+			add_overlay(map, "dc-ward-2013", 8, 12);
+			//add_overlay(map, "dc-ward-2013-outlines", 13, 20);
+			add_overlay(map, "dc-anc-2013", 13, 14);
+			add_overlay(map, "dc-anc-2013-outlines", 15, 20);
+			add_overlay(map, "dc-smd-2013-outlines", 13, 14);
+			add_overlay(map, "dc-smd-2013", 15, 20);
 			
 			$('#addr').keydown_enter(do_address);
 			$('#addr').input_default("Enter an address!");
@@ -207,64 +213,8 @@
 			if (h-100 > 340) $('#map_canvas_google').css({ height: h-100 });
 			if (map) google.maps.event.trigger(map, "resize");
 		}
-		
-		// GOOGLE MAPS API V3
-		function initialize_google() {
-			// Create a basic roadmap centered on Washington, DC.
 
-			try {
-				google;
-			} catch (err) {
-				return; // We're working off-line and don't have access to Google Maps.
-			}
-			
-			var myOptions = {
-				zoom: 4,
-				center: new google.maps.LatLng(38, -96),
-				mapTypeId: google.maps.MapTypeId.ROADMAP,
-				panControl: false,
-				zoomControl: true,
-				mapTypeControl: false,
-				scaleControl: true,
-				streetViewControl: false,
-				styles: [ { "featureType": "poi.park", "elementType": "geometry.fill", "stylers": [ { "visibility": "off" } ] } ]
-				};
-			map = new google.maps.Map(document.getElementById("map_canvas_google"), myOptions);
-			
-			map.fitBounds(new google.maps.LatLngBounds(
-				new google.maps.LatLng(38.869472385, -77.1014200414),
-				new google.maps.LatLng(38.9613165232, -76.923349042)));
-			
-			map.overlayMapTypes.clear();
-			add_overlay(map, "dc-ward-2013", 8, 12);
-			//add_overlay(map, "dc-ward-2013-outlines", 13, 20);
-			add_overlay(map, "dc-anc-2013", 13, 14);
-			add_overlay(map, "dc-anc-2013-outlines", 15, 20);
-			add_overlay(map, "dc-smd-2013-outlines", 13, 14);
-			add_overlay(map, "dc-smd-2013", 15, 20);
-		}
-
-		// Add a tile overlay for this layer.
-		function add_overlay(map, layer, minzoom, maxzoom, opacity) {
-			if (!opacity) opacity = 1.0;
-			var tileimgformat = 'png';
-			if (navigator.appName == 'Microsoft Internet Explorer' && new RegExp("MSIE [678]").exec(navigator.userAgent)) tileimgformat = 'gif';
-			
-			var overlay = new google.maps.ImageMapType({
-			  getTileUrl: function(coord, zoom) {
-				  if (maxzoom && zoom > maxzoom) return null; // minZoom, maxZoom ineffectual below?
-				  if (minzoom && zoom < minzoom) return null;
-				  return "http://gis.govtrack.us/map/tiles/" + layer + "/" + zoom + "/" + coord.x + "/" + coord.y + "." + tileimgformat + "?gen=8";
-			  },
-			  tileSize: new google.maps.Size(256, 256),
-			  isPng: tileimgformat == 'png',
-			  
-			  minZoom: minzoom,
-			  maxZoom: maxzoom,
-			  opacity: (tileimgformat == 'png' ? .8 : .25) * opacity
-			});
-			map.overlayMapTypes.insertAt(0, overlay);
-		}
+		{% include "ancbrigadesite/google_maps.js" %}
 		
 		function use_my_location() {
 			navigator.geolocation.getCurrentPosition(
