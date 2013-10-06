@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block title %}Advisory Neighborhood Commissions Map - ANCBrigade{% endblock %}
+
+{% block meta_viewport %}<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />{% endblock %}
+
+{% block body %}
+
+<div id="masthead">
+	<div class="container">
+		<div class="row">
+			<h1>Advisory Neighborhood Commissions Map</h1>
+		</div>
+	</div><!-- /container -->
+</div><!-- /masthead -->
+
+<div class="container">
+  <div class="row">
+    <div class="span12">
+
+        <div id="map_canvas_google" class="map" style="width: 100%"> </div>
+
+
+    </div> <!-- /span12 -->
+  </div> <!-- /row -->
+</div> <!-- /container -->
+
+<div style="display: none;">
+  <div id="map_infobox" style="padding: 4px; width: 200px; height: 200px; ">
+    <div style="border: 1px solid black; background-color: #FEFEFE; padding: 4px; height: 100%;">
+      <div class="nothing_here">
+        Move the mouse over the District to see information about each Advisory Neighborhood Commission.
+      </div>
+      <div class="loading" style="display: none;">
+        Loading information...
+      </div>
+      <div class="info" style="display: none;">
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="http://gis.govtrack.us/static/js/google_maps_helpers.js"></script>
+<script type="text/javascript" src="http://gis.govtrack.us/static/js/maps_helpers.js"></script>
+
+<script type="text/javascript">
+    var anc_data = {{ anc_data|safe }};
+    
+    var map = null;
+    
+    $(function() {
+      resize_things();
+      $(window).resize(resize_things);
+
+      initialize_google_map(true);
+      add_overlay(map, "dc-ward-2013", 8, 11);
+
+      add_overlay(map, "dc-anc-2013", 12, 14);
+      add_overlay(map, "dc-smd-2013-outlines", 12, 14);
+
+      add_overlay(map, "dc-anc-2013-outlines", 15, 20);
+      add_overlay(map, "dc-smd-2013", 15, 20);
+
+      map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push($('#map_infobox')[0]);
+
+      google.maps.event.addListener(map, "mousemove", function(e) {
+        // show "Loading..." if this takes more than 250ms
+        is_mapgrid_loading = true;
+        window.setTimeout("show_mapgrid_loading()", 350);
+
+        map_hit_test(
+          getTileCoordinate(e.latLng, map),
+          "dc-smd-2013",
+          null,
+          function(key, data) {
+            is_mapgrid_loading = false;
+            $('#map_infobox .loading').hide();
+
+            if (data) {
+              $('#map_infobox .info').show();
+              $('#map_infobox .nothing_here').hide();
+
+              var ward = anc_data[key.substring(0, 1)];
+              var anc = ward.ancs[key.substring(1, 2).toUpperCase()];
+              var smd = anc.smds[key.substring(2, 4)];
+
+              $('#map_infobox .info').html(smd.smd);
+            } else {
+              $('#map_infobox .info').hide();
+              $('#map_infobox .nothing_here').show();
+            }
+          },
+          "http://gis.govtrack.us");
+      });
+
+    });
+
+    var is_mapgrid_loading = false;
+    function show_mapgrid_loading() {
+      if (is_mapgrid_loading) {
+        $('#map_infobox .info').hide();
+        $('#map_infobox .nothing_here').hide();
+        $('#map_infobox .loading').show();
+      }
+    }
+
+    function resize_things() {
+      var h = $('#map_canvas_google').width();
+      var wh = $(window).height() - ($("#header").outerHeight() + $("#masthead").outerHeight()) - 75;
+      if (h > wh) h = wh;
+      $('#map_canvas_google').height(h);
+      $('#map_infobox').height(h/3);
+      $('#map_infobox').width(h/2);
+    }
+    
+    {% include "ancbrigadesite/google_maps.js" %}
+
+</script>
+{% endblock %}

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+	{% block meta_viewport %}<meta name="viewport" content="width=device-width, initial-scale=1.0">{% endblock %}
 
 	<title>
 		{% block title %}DC 2013 Wards, ANCs, and SMDs{% endblock %}
@@ -33,7 +33,7 @@
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Explore</a>
                 <ul id="menu_anc_list" class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                   {% for ward, ward_info in ancs.items %}
-                      <div class="ward {% if not forloop.last %}notlast{% endif %}">
+                      <div class="ward">
                       <nobr>
                       {% for anc, anc_info in ward_info.ancs.items %}
                           <a class="anc" href="/{{ward}}{{anc}}">{{ward}}{{anc}}</a>
@@ -41,6 +41,9 @@
                       </nobr>
                       </div>
                   {% endfor %}
+                  <div style="padding: .5em; text-align: center;">
+                    <a href="/map">View on a Map</a>
+                  </div>
                 </ul>
               </li>
 
