@@ -10,10 +10,10 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 	url(r'^$', home),
-	url(r'^about/$', about),
-	url(r'^share/$', share),
-	url(r'^authority/$', authority),
-	url(r'^elections/$', elections),
+	url(r'^about$', about),
+	url(r'^share$', share),
+	url(r'^authority$', authority),
+	url(r'^elections$', elections),
 	url(r'^(?P<anc>[0-9][A-Za-z])$', anc_info),
 	url(r'^admin/', include(admin.site.urls)),
 
