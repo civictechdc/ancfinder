@@ -414,12 +414,6 @@ div#use_my_location {
 	font-weight: bold;
 }
 
-#map_canvas_google {
-	width: 400px;
-	height: 340px;
-	margin-top: 30px;
-}
-
 /* Some fixes for the responsive layout */
 @media (max-width: 767px) {
 	body {
