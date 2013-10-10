@@ -4,9 +4,22 @@
 
 {% block head %}
 <link rel="stylesheet" href="http://assets.annotateit.org/annotator/v1.2.7/annotator.min.css">
+
+<style>
+.annotator-widget .btn-toolbar {
+	padding: 3px;
+}
+.annotator-widget .btn {
+	margin: 0 4px 0 0;
+	padding: 0px 2px;
+	color: #444;
+	font-size: 11px;
+}
+</style>
 {% endblock %}
 
 {% block scripts %}
+<script src="/static/showdown.js"></script>
 <script src="http://assets.annotateit.org/annotator/v1.2.7/annotator-full.js"></script>
 
 <script>
@@ -21,18 +34,62 @@ Annotator.Plugin.ReadOnlyAnnotations = function (element) {
             		$(viewer.element).find(".annotator-delete").remove();
 				}
 			}
-            console.info("The annotation: %o has just been created!", viewer)
           })
+    }
+  };
+};
+Annotator.Plugin.CommonTags = function (element) {
+  var tags = [ [ "ABRA", "zoning", "grant" ], ["something", "other"] ];
+
+  return {
+    pluginInit: function () {
+	  var tagsinput = this.annotator.editor.element.find("#annotator-field-1");
+
+      var elem = $("<div class='btn-toolbar'/>");
+      for (var i in tags) {
+	      var grp = $("<div class='btn-group'/>");
+	      elem.append(grp);
+	      for (var j in tags[i]) {
+	      	var tagtext = tags[i][j];
+	      	var b = $("<span class='btn'/>").text(tagtext);
+	      	grp.append(b)
+	      	b.on("click", function() {
+	      		// if the tag is not yet applied add it, otherwise remove it
+	      		var tagtext = $(this).text();
+	      		var t = Annotator.Plugin.Tags.prototype.parseTags(tagsinput.val());
+	      		var has_tag = false;
+	      		for (var k in t) {
+	      			if (t[k] == tagtext) {
+	      				has_tag = true;
+	      				t.splice(k, 1); // remove
+	      				break;
+	      			}
+	      		}
+      			if (!has_tag) t.push(tagtext);
+	      		tagsinput.val(Annotator.Plugin.Tags.prototype.stringifyTags(t));
+	      	});
+	      }
+      }
+
+	  this.annotator.editor.element.find('ul:first').append(elem);
+
+      this.annotator
+          .subscribe("annotationEditorShown", function (editor, annotation) {
+          	//editor.element.find("button").off("click");
+          });
     }
   };
 };
 
 jQuery(function ($) {
     $('#annotation_body').annotator()
+    	.annotator('addPlugin', 'Unsupported')
     	.annotator('addPlugin', 'Tags')
+    	.annotator('addPlugin', 'CommonTags')
+    	.annotator('addPlugin', 'Markdown')
     	.annotator('addPlugin', 'ReadOnlyAnnotations')
     	.annotator('addPlugin', 'Store', {
-			  prefix: '{{storage_api_base_url}}',
+			  prefix: '{{storage_api_base_url|escapejs}}',
 			  annotationData: {
 				'document': {{document.annotation_document.id}}
 			  },
