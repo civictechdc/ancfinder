@@ -4,6 +4,14 @@
 
 {% block meta_viewport %}<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />{% endblock %}
 
+{% block head %}
+<style>
+/* disable Boostrap CSS things that interferes with Google Maps controls */
+#map_canvas_google img { max-width: none; }
+#map_canvas_google label { width: auto; display:inline; } 
+</style>
+{% endblock %}
+
 {% block body %}
 
 <div id="masthead">
@@ -18,7 +26,7 @@
   <div class="row">
     <div class="span12">
 
-        <div id="map_canvas_google" class="map" style="width: 100%"> </div>
+        <div id="map_canvas_google" class="map" style="width: 100%;"> </div>
 
 
     </div> <!-- /span12 -->

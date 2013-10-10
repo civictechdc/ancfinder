@@ -15,6 +15,9 @@ function initialize_google_map(with_controls) {
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     panControl: with_controls,
     zoomControl: with_controls,
+    zoomControlOptions: {
+      style: google.maps.ZoomControlStyle.SMALL
+    },
     mapTypeControl: with_controls,
     scaleControl: with_controls,
     streetViewControl: false,
