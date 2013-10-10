@@ -4,3 +4,6 @@
 [submodule "ext/central-union-mission-font"]
 	path = ext/central-union-mission-font
 	url = https://github.com/ryantroyford/central-union-mission
+[submodule "ext/showdown"]
+	path = ext/showdown
+	url = https://github.com/coreyti/showdown
