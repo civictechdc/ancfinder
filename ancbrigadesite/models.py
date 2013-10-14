@@ -13,10 +13,16 @@ class Document(models.Model):
 		(1, "Agenda"),
 		(2, "Minutes"),
 		(3, "Report"),
-		(4, "Decision"),
+		(4, "Decision"), # resolutions, etc.
 		(5, "Draft"),
 		(6, "Application"),
-		(7, "Financial Statement"),
+		(7, "Grant"),
+		(8, "Official Correspondence"),
+		(9, "Financial Statement"),
+		(10, "Operating Documents"), # charter, etc.
+		(11, "Committee Agenda"),
+		(12, "Committee Minutes"),
+		(13, "Committee Report"),
 		], default=0, verbose_name="Document Type")
 	pub_date = models.DateField(blank=True, null=True, verbose_name="Date Published", help_text="The date the document was published by the ANC, if known.")
 	meeting_date = models.DateField(blank=True, null=True, verbose_name="Date of Meeting", help_text="The date of an associated meeting, if relevant.")
