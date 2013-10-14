@@ -1309,6 +1309,43 @@
      -77.01214104685872, 
      38.92857570155528
     ], 
+    "committees": {
+     "ABC (Liquor Licenses)": {
+      "chair": "Jeremy Leffler", 
+      "chair_email": "1b02@anc.dc.gov", 
+      "committee": "ABC (Liquor Licenses)", 
+      "meetings": "every third Wednesday at the Thurgood Marshall Center, 7:00 p.m.", 
+      "purpose": "The ABC Committee reviews and recommends action to the Commission on all issues affecting liquor, restaurant, retail and entertainment licenses."
+     }, 
+     "Design Review": {
+      "chair": "Tony Norman", 
+      "chair_email": " 1b10@anc.dc.gov", 
+      "committee": "Design Review", 
+      "meetings": "every third Monday at the Thurgood Marshall Center, 7:00 p.m.", 
+      "purpose": "The Design Review Committee reviews all applications and proposals relating to development, design, historic preservation and zoning."
+     }, 
+     "Grants": {
+      "chair": "E. Gail Anderson Holness", 
+      "chair_email": "1b11@anc.dc.gov", 
+      "committee": "Grants", 
+      "meetings": "", 
+      "purpose": "The Grants Committee reviews applications from community organizations for grants from ANC 1B to support worthy projects. Persons or organizations interested in applying for a grant should \ncontact the Commissioner representing their single-member district for \nassistance and support.\n"
+     }, 
+     "Public Safety": {
+      "chair": "Sedrick Muhammad", 
+      "chair_email": "1b03@anc.dc.gov", 
+      "committee": "Public Safety", 
+      "meetings": "", 
+      "purpose": "The committee reviews all issues affecting public safety and law enforcement in ANC 1B and recommends actions to the Commission when appropriate."
+     }, 
+     "Transportation": {
+      "chair": "Ben Klemens", 
+      "chair_email": "bklemens@gmail.com", 
+      "committee": "Transportation", 
+      "meetings": "every third Thursday at the Thurgood Marshall Center, 7:00 p.m.", 
+      "purpose": "The Transportation Committee reviews all applications and proposals relating to transportation, parking and other similar topics."
+     }
+    },
     "census": {
      "B01002_001E": {
       "missing_pct": 0.0, 

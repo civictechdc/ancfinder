@@ -88,6 +88,7 @@ def get_base_data():
   for cmte in committees:
     c = OrderedDict()
     output[ cmte["ANC"][0] ]["ancs"][ cmte["ANC"][1] ]["committees"][ cmte["committee"]] = c
+    c["committee"] = cmte["committee"]
     c["meetings"] = cmte["meetings"]
     c["chair"] = cmte["chair"]
     c["chair_email"] = cmte["chair email"]
