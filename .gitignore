@@ -1,7 +1,9 @@
 update_anc_database_creds.py
 ancbrigadesite/database.sqlite
 
+.DS_Store
 *~
 *.pyc
+*.swp
 .env
 __pycache__
