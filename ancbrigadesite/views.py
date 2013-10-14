@@ -45,6 +45,9 @@ def elections(request):
 
 def bigmap(request):
 	return render(request, 'ancbrigadesite/map.html', { 'anc_data': anc_data_as_json } )
+
+def legal(request):
+	return render(request, 'ancbrigadesite/legal.html')
 	
 def prep_hoods(info, is_anc):
 	def is_part(h):
