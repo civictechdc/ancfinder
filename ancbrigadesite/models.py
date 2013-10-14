@@ -1,7 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 
-import base64
+import base64, json
 
 class Document(models.Model):
 	"""An ANC document."""
@@ -55,6 +55,10 @@ class Document(models.Model):
 			return self.pub_date
 		else:
 			return self.created.date()
+
+	def get_tags(self):
+		if not self.annotation_document: return []
+		return sum([json.loads(a.data)["tags"] for a in self.annotation_document.annotations.all()], [])
 
 	def set_document_content(self, content, mime_type=None):
 		if mime_type:
