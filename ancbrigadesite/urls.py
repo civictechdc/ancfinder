@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from ancbrigadesite.views import home, anc_info, about, share, authority, elections, bigmap
+from ancbrigadesite.views import home, anc_info, about, share, authority, elections, bigmap, legal
 
 admin.autodiscover()
 
@@ -15,6 +15,7 @@ urlpatterns = patterns('',
 	url(r'^authority$', authority),
 	url(r'^elections$', elections),
 	url(r'^map$', bigmap),
+	url(r'^legal$', legal),
 	url(r'^(?P<anc>[0-9][A-Za-z])$', anc_info),
 
 	# Django admin
