@@ -1,5 +1,4 @@
-import requests
-import zipfile
+import requests, zipfile, subprocess
 
 update_data_file = 'http://data.octo.dc.gov/feeds/crime_incidents/archive/crime_incidents_2013_CSV.zip'
 zip_filename = 'crime_incidents_2013_CSV.zip'
@@ -15,4 +14,7 @@ with open(zip_filename, 'wb') as zip_file:
             zip_file.flush()    
 
 # Unzip the locally saved file
-zipfile.main(['-e', zip_filename, 'unzip'])
+zipfile.main(['-e', zip_filename, 'data'])
+
+# Clean up downloaded file
+subprocess.call('rm crime_incidents_2013_CSV.zip', shell=True)
