@@ -88,7 +88,7 @@
 					<div title="{{stat.details}}">
 						<span class="number">{% if stat.is_dollars %}${% endif %}{{stat.value|intcomma}}{% if stat.is_percent %}%{% endif %}</span>
 						<span class="description">{{stat.label}}</span>
-						<div class="grid" title="{{stat.adj}} {{stat.percentile}}% of ANCs">
+						<div class="grid">
 							{% for cell_anc, cell_value, cell_color in stat.grid %}<span
 								{% if cell_anc == anc %}class="me"{% endif %}
 								title="{{cell_anc}}: {% if stat.is_dollars %}${% endif %}{{cell_value|intcomma}}{% if stat.is_percent %}%{% endif %}"
