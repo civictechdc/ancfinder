@@ -31,9 +31,9 @@
 					</tr>
 				</table>
 
+            {% if info.committees.values %}
 				<h2>Committees</h2>
 
-            {% if info.committees.values %}
 				<table class="committees" cols="1">
 					<tr>
 					{% for cmte in info.committees.values %}
@@ -53,9 +53,17 @@
 				</table>
             {% endif %}
 
-				<h2>{{ anc }}'s Recent Documents</h2>
-
 				<!-- documents -->
+				
+				{% if documents %}	
+				<h2>{{ anc }}'s Recent Documents</h2>
+				<ul id="recent_documents">
+					{% for doc in documents %}
+						<li><a href="{{doc.get_absolute_url}}">{{doc.get_display_date|date}}. {{doc.title}}</a></li>
+					{% endfor %}
+				</ul>
+				
+				{% endif %}
 
 			</div><!-- /column -->
 
