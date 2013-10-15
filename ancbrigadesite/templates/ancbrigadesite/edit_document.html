@@ -6,6 +6,11 @@
 <link rel="stylesheet" href="http://assets.annotateit.org/annotator/v1.2.7/annotator.min.css">
 
 <style>
+#annotation_body .page {
+	border: 1px solid #DDD;
+	margin: 1em 0;
+	padding: 4px;
+}
 .annotator-widget .btn-toolbar {
 	padding: 3px;
 }
@@ -100,13 +105,6 @@ jQuery(function ($) {
 });
 </script>
 
-<style>
-	#annotation_body .page {
-		border: 1px solid #DDD;
-		margin: 1em 0;
-		padding: 4px;
-	}
-</style>
 {% endblock %}
 
 {% block body %}
@@ -122,6 +120,8 @@ jQuery(function ($) {
   <div class="row">
 	<div class="span3">
 		{% include "form.html" with form=form title="Metadata" form_display_layout="vertical" %}
+		<hr/>
+		<a href="{{document.get_absolute_url}}">View document on site &gt;</a>
 	</div>
   	<div class="span7">
 		<legend style="margin-top: 20px">Tag This Document</legend>

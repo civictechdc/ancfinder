@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import Http404, HttpResponse
 import datetime, collections
 
@@ -6,6 +6,8 @@ try:
 	import json
 except ImportError:
 	import simplejson as json
+
+from models import Document
 
 anc_data_as_json = open("ancbrigadesite/static/ancs.json").read()
 anc_data = json.loads(anc_data_as_json, object_pairs_hook=collections.OrderedDict)
@@ -29,7 +31,9 @@ def anc_info(request, anc):
 	info["census"]["H0050001_PCT"] = { "value": int(round(100.0 * info["census"]["H0050001"]["value"] / info["census"]["H0040001"]["value"])) }
 	info["census"]["B07001_001E_PCT"] = { "value": int(round(100.0 * (info["census"]["B07001_065E"]["value"] + info["census"]["B07001_081E"]["value"]) / info["census"]["B07001_001E"]["value"])) }
 
-	return render(request, 'ancbrigadesite/anc.html', {'anc': anc, 'info': info})
+	documents = Document.objects.filter(anc=anc).order_by('-created')[0:10]
+
+	return render(request, 'ancbrigadesite/anc.html', {'anc': anc, 'info': info, 'documents': documents})
 	
 def about(request):
 	return render(request, 'ancbrigadesite/about.html')
@@ -87,3 +91,6 @@ def prep_hoods(info, is_anc):
 		
 	info["neighborhood_list"] = hoods
 	
+def document(request, anc=None, date=None, id=None, slug=None):
+	document = get_object_or_404(Document, id=id)
+	return render(request, 'ancbrigadesite/document.html', { "document": document } )

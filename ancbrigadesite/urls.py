@@ -17,6 +17,7 @@ urlpatterns = patterns('',
 	url(r'^map$', bigmap),
 	url(r'^legal$', legal),
 	url(r'^(?P<anc>[0-9][A-Za-z])$', anc_info),
+	url(r'^document/(?P<anc>..)/(?P<date>....-..-..)/(?P<id>\d+)(?P<slug>/.*)?$', 'ancbrigadesite.views.document'),
 
 	# Django admin
 	url(r'^admin/', include(admin.site.urls)),

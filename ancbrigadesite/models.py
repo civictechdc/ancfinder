@@ -1,4 +1,6 @@
 from django.db import models
+from django.template.defaultfilters import slugify
+
 import base64
 
 class Document(models.Model):
@@ -37,6 +39,22 @@ class Document(models.Model):
 
 	def __str__(self):
 		return self.get_doc_type_display() + ("/" + self.title if self.title else "")
+
+	def get_absolute_url(self):
+		url = "/document/%s/%s/%d" % (self.anc, self.get_display_date().isoformat(), self.id)
+		if self.title:
+			s = slugify(self.title)
+			if len(s) > 7:
+				url += "/" + s
+		return url
+
+	def get_display_date(self):
+		if self.meeting_date:
+			return self.meeting_date
+		elif self.pub_date:
+			return self.pub_date
+		else:
+			return self.created.date()
 
 	def set_document_content(self, content, mime_type=None):
 		if mime_type:
