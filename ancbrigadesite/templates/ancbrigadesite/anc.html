@@ -12,13 +12,13 @@
   			</div>
   		</div><!-- /container -->
   	</div><!-- /masthead -->
-  	
+
 	<div class="container">
 		<div class="row">
 			<div class="span7">
-			
+
 				<h2>Commissioners</h2>
-	
+
 				<table class="commissioners" cols="3">
 					<tr>
 					{% for smd in info.smds.values %}
@@ -30,20 +30,42 @@
 					{% endfor %}
 					</tr>
 				</table>
-					
+
+				<h2>Committees</h2>
+
+            {% if info.committees.values %}
+				<table class="committees" cols="1">
+					<tr>
+					{% for cmte in info.committees.values %}
+                    <td id="{{cmte.committee}} " width="33%" style="vertical-align: top; padding-right: 1.25em;">
+                        <div style="padding-bottom: .4em; color: black; border-bottom: 1px solid #444;">{{cmte.committee}}</div>
+                        <div style="padding-bottom: .75em"><small>
+                                <b>Chair:</b> {{ cmte.chair }} ({{cmte.chair_email}})<br>
+                                {{ cmte.purpose }}
+                                {% if cmte.meetings %}
+                                <br><b>Meetings:</b> {{ cmte.meetings }}
+                                {% endif %}
+                        </small></div>
+					</td>
+					</tr><tr>
+					{% endfor %}
+					</tr>
+				</table>
+            {% endif %}
+
 				<h2>{{ anc }}'s Recent Documents</h2>
-				
+
 				<!-- documents -->
 
 			</div><!-- /column -->
-		
+
 			<div class="span5">
-				
+
 				<div id="map_canvas" style="margin-top: 2.5em;"> </div>
-				
+
 					<h2>A little bit about {{ anc }}</h2>
 					<!-- demographic info -->
-					
+
 					<table>
 					<tr><td title="Family households">Families:</td> <td>{{info.census.P0180002.value|intcomma}}</td></tr>
 					<tr><td>Population:</td> <td>{{info.census.P0010001.value|intcomma}}</td></tr>
@@ -53,7 +75,7 @@
 					<tr><td>Median Age:</td> <td>{{info.census.B01002_001E.value|intcomma}}</td></tr>
 					<tr><td>Median Household Income:</td> <td>${{info.census.B19019_001E.value|intcomma}}</td></tr>
 					</table>
-	
+
 			</div><!-- /column -->
 		</div>
   	</div><!-- /body -->
@@ -66,28 +88,28 @@
 
 	<script type="text/javascript">
 		var map = null;
-		
+
 		function on_resize() {
 			var cw = $('#map_canvas').parent().width();
 			var wht = $(window).height() / 2;
 			$('#map_canvas').css({ width: cw, height: cw < wht ? cw : wht });
 		}
-		
+
 		function make_map(bound1, bound2, bound3, bound4) {
-		
+
 			on_resize();
 			$(window).resize(on_resize);
-		
+
 			try {
 				google;
 			} catch (err) {
 				return; // We're working off-line and don't have access to Google Maps.
 			}
-			
+
 			var sw = new google.maps.LatLng(bound1, bound2);
 			var ne = new google.maps.LatLng(bound3, bound4);
 			var bounds = new google.maps.LatLngBounds(sw, ne);
-			
+
 			var myOptions = {
 				zoom: 13,
 				center: bounds.getCenter(),
@@ -102,15 +124,15 @@
 			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
 			map.fitBounds(bounds);
-			
+
 			add_overlay(map, "dc-ward-2013", 8, 12);
 			add_overlay(map, "dc-anc-2013", 13, 14);
 			add_overlay(map, "dc-anc-2013-outlines", 15, 20);
 			add_overlay(map, "dc-smd-2013-outlines", 13, 14);
 			add_overlay(map, "dc-smd-2013", 15, 20);
-		
+
 		}
-		
+
 		$(make_map({{info.bounds.1}}, {{info.bounds.0}}, {{info.bounds.3}}, {{info.bounds.2}}));
 
 		// Add a tile overlay for this layer.
@@ -118,7 +140,7 @@
 			if (!opacity) opacity = 1.0;
 			var tileimgformat = 'png';
 			if (navigator.appName == 'Microsoft Internet Explorer' && new RegExp("MSIE [678]").exec(navigator.userAgent)) tileimgformat = 'gif';
-			
+
 			var overlay = new google.maps.ImageMapType({
 			  getTileUrl: function(coord, zoom) {
 				  if (maxzoom && zoom > maxzoom) return null; // minZoom, maxZoom ineffectual below?
@@ -127,26 +149,26 @@
 			  },
 			  tileSize: new google.maps.Size(256, 256),
 			  isPng: tileimgformat == 'png',
-			  
+
 			  minZoom: minzoom,
 			  maxZoom: maxzoom,
 			  opacity: (tileimgformat == 'png' ? .8 : .25) * opacity
 			});
 			map.overlayMapTypes.insertAt(0, overlay);
 		}
-		
+
 		$(".commissioners td").hover(function() {
 			$(this).css({"background-color": "#ffffcc"});
 		},
 		function() {
 			$(this).css({"background-color": "white"});
 		});
-		
+
 		{% for smd in info.smd_list %}
 		$("#{{ smd.smd_number }}").click(function() {
 			make_map({{smd.bounds.1}}, {{smd.bounds.0}}, {{smd.bounds.3}}, {{smd.bounds.2}});
 		});
 		{% endfor %}
-		
+
 	</script>
-{% endblock %}	
+{% endblock %}
