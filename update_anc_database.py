@@ -132,6 +132,14 @@ def add_term_data(output):
     smd = rec[0]
     output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]]["contestation"] = rec[1]
 
+def add_abra_data(output):
+  print("adding liquor license information")
+  # Number of liquor licenses in each ANC and SMD
+  abra_data = csv.reader(open('data/abra-licenses.csv'), delimiter=',')
+  for rec in abra_data:
+    smd = rec[0]
+    output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]]["liquor licenses"] = rec[1]
+
 def add_geographic_data(output):
   print("adding geographic data")
   # Add ANC/SMD geographic extents (bounding box) from the GIS server.
