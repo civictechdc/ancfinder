@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 
-import sys
-import csv
-import json
-import re, urllib.request, urllib.parse, urllib.error, os.path, io
+import sys, os.path, csv, json, re
+import urllib.request, urllib.parse, urllib.error, io
 import getpass
 from collections import OrderedDict
 
@@ -384,6 +382,13 @@ def add_census_data(output):
       for smd in anc["smds"].values():
         clean_up(smd["census"])
 
+def add_census_data_analysis(output):
+  # Compute vacant home % and new resident %.
+  for ward in output.values():
+    for anc in ward["ancs"].values():
+      anc["census"]["H0050001_PCT"] = { "value": int(round(100.0 * anc["census"]["H0050001"]["value"] / anc["census"]["H0040001"]["value"])) }
+      anc["census"]["B07001_001E_PCT"] = { "value": int(round(100.0 * (anc["census"]["B07001_065E"]["value"] + anc["census"]["B07001_081E"]["value"]) / anc["census"]["B07001_001E"]["value"])) }
+
 if __name__ == "__main__":
   if not os.path.exists("update_anc_database_creds.py"):
     print("This program downloads our public Google Doc with Ward/ANC/SMD information.")
@@ -402,7 +407,7 @@ if __name__ == "__main__":
     output = get_base_data()
   else:
     # Update file in place.
-    output = json.load(open("ancbrigadesite/static/ancs.json"))
+    output = json.load(open("ancbrigadesite/static/ancs.json"), object_pairs_hook=OrderedDict)
 
   def should(argname):
     # Should we process this selective update? Yes if:
@@ -419,9 +424,10 @@ if __name__ == "__main__":
   if should("gis"): add_geographic_data(output)
   if should("neighborhoods"): add_neighborhood_data(output)
   if should("census"): add_census_data(output)
+  if should("census") or should("census-analysis"): add_census_data_analysis(output)
   
   # Output.
-  output = json.dumps(output, indent=True, ensure_ascii=False, sort_keys=True)
+  output = json.dumps(output, indent=True, ensure_ascii=False, sort_keys=("--reset" in sys.argv))
   
   ## for old static file site
   #with open("www/ancs.jsonp", "w") as f:

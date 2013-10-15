@@ -43,7 +43,7 @@ You will need to provide your Google email & password and a Census API key, whic
 
 You can also selectively update just some of the data (because updating some takes a long time) using command line arguments:
 	
-	python3 update_anc_database.py [--base] [--terms] [--gis] [--neighborhoods] [--census]
+	python3 update_anc_database.py [--base] [--terms] [--gis] [--neighborhoods] [--census] [--census-analysis]
 
 And to fetch the latest ANC meetings calendar:
 	

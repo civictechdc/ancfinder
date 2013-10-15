@@ -1,6 +1,16 @@
 {% extends "base.html" %}
 {% load humanize %}
 
+{% block head %}
+<style>
+#by_the_numbers > div { margin-top: 12px; }
+#by_the_numbers span.number { font-size: 130%; font-weight: bold; }
+#by_the_numbers span.description { margin-left: 1em; color: #555; }
+#by_the_numbers .grid span { cursor: default; font-size: 70%; color: #888; margin-right: 1px; font-family: Times New Roman; line-height: 100%;}
+#by_the_numbers .grid span.me { color: black !important; border: 1px solid black;}
+</style>
+{% endblock %}
+
 {% block body %}
 
    <!-- Main hero unit for a primary marketing message or call to action -->
@@ -71,19 +81,23 @@
 
 				<div id="map_canvas" style="margin-top: 2.5em;"> </div>
 
-					<h2>A little bit about {{ anc }}</h2>
-					<!-- demographic info -->
+				<h2>{{ anc }} by the numbers</h2>
 
-					<table>
-					<tr><td title="Family households">Families:</td> <td>{{info.census.P0180002.value|intcomma}}</td></tr>
-					<tr><td>Population:</td> <td>{{info.census.P0010001.value|intcomma}}</td></tr>
-					<tr><td>Households:</td> <td>{{info.census.P0180001.value|intcomma}}</td></tr>
-					<tr><td title="Vacant housing units out of all housing units">Vacant Homes:</td> <td>{{info.census.H0050001_PCT.value}}%</td></tr>
-					<tr><td title="Residents who moved into DC in the last year">New Residents:</td> <td>{{info.census.B07001_001E_PCT.value}}%</td></tr>
-					<tr><td>Median Age:</td> <td>{{info.census.B01002_001E.value|intcomma}}</td></tr>
-					<tr><td>Median Household Income:</td> <td>${{info.census.B19019_001E.value|intcomma}}</td></tr>
-					</table>
-
+				<div id="by_the_numbers">
+					{% for stat in census_stats %}
+					<div title="{{stat.details}}">
+						<span class="number">{% if stat.is_dollars %}${% endif %}{{stat.value|intcomma}}{% if stat.is_percent %}%{% endif %}</span>
+						<span class="description">{{stat.label}}</span>
+						<div class="grid" title="{{stat.adj}} {{stat.percentile}}% of ANCs">
+							{% for cell_anc, cell_value, cell_color in stat.grid %}<span
+								{% if cell_anc == anc %}class="me"{% endif %}
+								title="{{cell_anc}}: {% if stat.is_dollars %}${% endif %}{{cell_value|intcomma}}{% if stat.is_percent %}%{% endif %}"
+								style="color: #{{cell_color}}"
+								>{% if cell_anc != anc %}■{% else %}◼{% endif %}</span>{% endfor %}
+						</div>
+					</div>
+					{% endfor %}
+				</div>
 			</div><!-- /column -->
 		</div>
   	</div><!-- /body -->
