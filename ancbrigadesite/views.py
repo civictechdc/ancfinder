@@ -12,6 +12,23 @@ from models import Document
 anc_data_as_json = open("ancbrigadesite/static/ancs.json").read()
 anc_data = json.loads(anc_data_as_json, object_pairs_hook=collections.OrderedDict)
 
+# assemble census data on first load
+def make_anc_hex_color(anc):
+	def avg(t1, f1, t2, f2): return (int((t1[0]*f1+t2[0]*f2)/(f1+f2)), int((t1[1]*f1+t2[1]*f2)/(f1+f2)), int((t1[2]*f1+t2[2]*f2)/(f1+f2)))
+	def hexish(tup): return "".join(("%0.2X" % d) for d in tup)
+	ward_color_set = [ (27, 158, 119), (217, 95, 2), (166, 118, 29), (117, 112, 179), (231, 41, 138), (102, 166, 30), (230, 171, 2), (166, 118, 29) ]
+	anc_color_set = [ (228, 26, 28), (55, 126, 184), (77, 175, 74), (152, 78, 163), (255, 127, 0), (255, 127, 0), (166, 86, 40) ]
+	ward_color = ward_color_set[int(anc[0])-1]
+	anc_color = anc_color_set[ord(anc[1])-ord('A')]
+	return hexish(avg(ward_color, 1.0, anc_color, 0.22))
+census_grids = { }
+for ward in anc_data.values():
+	for anc in ward["ancs"].values():
+		for key, info in anc["census"].items():
+			census_grids.setdefault(key, []).append( (anc["anc"], info["value"], make_anc_hex_color(anc["anc"])) )
+for d in census_grids.values():
+	d.sort(key = lambda x : x[1])
+
 def TemplateContextProcessor(request):
 	return {
 		"ancs": anc_data,
@@ -27,13 +44,23 @@ def anc_info(request, anc):
 	prep_hoods(info, True)
 	for smd in info["smds"].values():
 		prep_hoods(smd, False)
-		
-	info["census"]["H0050001_PCT"] = { "value": int(round(100.0 * info["census"]["H0050001"]["value"] / info["census"]["H0040001"]["value"])) }
-	info["census"]["B07001_001E_PCT"] = { "value": int(round(100.0 * (info["census"]["B07001_065E"]["value"] + info["census"]["B07001_081E"]["value"]) / info["census"]["B07001_001E"]["value"])) }
 
+	census_stats = [
+		{ "key": "P0180002", 	"label": "families", 		"details": "Family households" },
+		{ "key": "P0180001", 	"label": "households", 		"details": "" },
+		{ "key": "P0010001", 	"label": "residents", 		"details": "" },
+		{ "key": "H0050001_PCT", "label": "vacant homes", 	"details": "Vacant housing units out of all housing units", "is_percent": True },
+		{ "key": "B07001_001E_PCT", "label": "new residents", "details": "Residents who moved into DC in the last year", "is_percent": True },
+		{ "key": "B01002_001E",	"label": "median age" },
+		{ "key": "B19019_001E",	"label": "median household income", "details": "", "is_dollars": True },
+	]
+	for s in census_stats:
+		s["value"] = info["census"][s["key"]]["value"]
+		s["grid"] = census_grids[s["key"]]
+		
 	documents = Document.objects.filter(anc=anc).order_by('-created')[0:10]
 
-	return render(request, 'ancbrigadesite/anc.html', {'anc': anc, 'info': info, 'documents': documents})
+	return render(request, 'ancbrigadesite/anc.html', {'anc': anc, 'info': info, 'documents': documents, 'census_stats': census_stats })
 	
 def about(request):
 	return render(request, 'ancbrigadesite/about.html')

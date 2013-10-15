@@ -68,6 +68,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 4073
+     }, 
+     "H0050001_PCT": {
+      "value": 11
+     }, 
+     "B07001_001E_PCT": {
+      "value": 9
      }
     }, 
     "neighborhoods": [
@@ -1345,7 +1351,7 @@
       "meetings": "every third Thursday at the Thurgood Marshall Center, 7:00 p.m.", 
       "purpose": "The Transportation Committee reviews all applications and proposals relating to transportation, parking and other similar topics."
      }
-    },
+    }, 
     "census": {
      "B01002_001E": {
       "missing_pct": 0.0, 
@@ -1404,6 +1410,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 2969
+     }, 
+     "H0050001_PCT": {
+      "value": 13
+     }, 
+     "B07001_001E_PCT": {
+      "value": 15
      }
     }, 
     "neighborhoods": [
@@ -2799,6 +2811,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 2255
+     }, 
+     "H0050001_PCT": {
+      "value": 8
+     }, 
+     "B07001_001E_PCT": {
+      "value": 13
      }
     }, 
     "neighborhoods": [
@@ -3778,6 +3796,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 1649
+     }, 
+     "H0050001_PCT": {
+      "value": 9
+     }, 
+     "B07001_001E_PCT": {
+      "value": 10
      }
     }, 
     "neighborhoods": [
@@ -4385,6 +4409,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 1043
+     }, 
+     "H0050001_PCT": {
+      "value": 20
+     }, 
+     "B07001_001E_PCT": {
+      "value": 23
      }
     }, 
     "neighborhoods": [
@@ -5429,6 +5459,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 1995
+     }, 
+     "H0050001_PCT": {
+      "value": 9
+     }, 
+     "B07001_001E_PCT": {
+      "value": 18
      }
     }, 
     "neighborhoods": [
@@ -6505,6 +6541,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 695
+     }, 
+     "H0050001_PCT": {
+      "value": 25
+     }, 
+     "B07001_001E_PCT": {
+      "value": 26
      }
     }, 
     "neighborhoods": [
@@ -6970,6 +7012,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 496
+     }, 
+     "H0050001_PCT": {
+      "value": 14
+     }, 
+     "B07001_001E_PCT": {
+      "value": 10
      }
     }, 
     "neighborhoods": [
@@ -7289,6 +7337,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 1997
+     }, 
+     "H0050001_PCT": {
+      "value": 10
+     }, 
+     "B07001_001E_PCT": {
+      "value": 15
      }
     }, 
     "neighborhoods": [
@@ -8354,6 +8408,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 2089
+     }, 
+     "H0050001_PCT": {
+      "value": 10
+     }, 
+     "B07001_001E_PCT": {
+      "value": 11
      }
     }, 
     "neighborhoods": [
@@ -9279,6 +9339,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 1678
+     }, 
+     "H0050001_PCT": {
+      "value": 8
+     }, 
+     "B07001_001E_PCT": {
+      "value": 10
      }
     }, 
     "neighborhoods": [
@@ -9922,6 +9988,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 3190
+     }, 
+     "H0050001_PCT": {
+      "value": 9
+     }, 
+     "B07001_001E_PCT": {
+      "value": 14
      }
     }, 
     "neighborhoods": [
@@ -11107,6 +11179,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 3739
+     }, 
+     "H0050001_PCT": {
+      "value": 9
+     }, 
+     "B07001_001E_PCT": {
+      "value": 13
      }
     }, 
     "neighborhoods": [
@@ -12484,6 +12562,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 2533
+     }, 
+     "H0050001_PCT": {
+      "value": 4
+     }, 
+     "B07001_001E_PCT": {
+      "value": 10
      }
     }, 
     "neighborhoods": [
@@ -13157,6 +13241,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 2540
+     }, 
+     "H0050001_PCT": {
+      "value": 7
+     }, 
+     "B07001_001E_PCT": {
+      "value": 12
      }
     }, 
     "neighborhoods": [
@@ -14026,6 +14116,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 3546
+     }, 
+     "H0050001_PCT": {
+      "value": 5
+     }, 
+     "B07001_001E_PCT": {
+      "value": 8
      }
     }, 
     "neighborhoods": [
@@ -14877,6 +14973,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 4071
+     }, 
+     "H0050001_PCT": {
+      "value": 6
+     }, 
+     "B07001_001E_PCT": {
+      "value": 5
      }
     }, 
     "neighborhoods": [
@@ -15859,6 +15961,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 4238
+     }, 
+     "H0050001_PCT": {
+      "value": 8
+     }, 
+     "B07001_001E_PCT": {
+      "value": 5
      }
     }, 
     "neighborhoods": [
@@ -16917,6 +17025,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 3969
+     }, 
+     "H0050001_PCT": {
+      "value": 9
+     }, 
+     "B07001_001E_PCT": {
+      "value": 6
      }
     }, 
     "neighborhoods": [
@@ -18001,6 +18115,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 2663
+     }, 
+     "H0050001_PCT": {
+      "value": 11
+     }, 
+     "B07001_001E_PCT": {
+      "value": 3
      }
     }, 
     "neighborhoods": [
@@ -18705,6 +18825,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 3009
+     }, 
+     "H0050001_PCT": {
+      "value": 11
+     }, 
+     "B07001_001E_PCT": {
+      "value": 8
      }
     }, 
     "neighborhoods": [
@@ -19712,6 +19838,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 2198
+     }, 
+     "H0050001_PCT": {
+      "value": 8
+     }, 
+     "B07001_001E_PCT": {
+      "value": 5
      }
     }, 
     "neighborhoods": [
@@ -20361,6 +20493,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 3012
+     }, 
+     "H0050001_PCT": {
+      "value": 10
+     }, 
+     "B07001_001E_PCT": {
+      "value": 6
      }
     }, 
     "neighborhoods": [
@@ -21302,6 +21440,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 2775
+     }, 
+     "H0050001_PCT": {
+      "value": 20
+     }, 
+     "B07001_001E_PCT": {
+      "value": 7
      }
     }, 
     "neighborhoods": [
@@ -22183,6 +22327,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 3472
+     }, 
+     "H0050001_PCT": {
+      "value": 14
+     }, 
+     "B07001_001E_PCT": {
+      "value": 9
      }
     }, 
     "neighborhoods": [
@@ -23472,6 +23622,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 3392
+     }, 
+     "H0050001_PCT": {
+      "value": 10
+     }, 
+     "B07001_001E_PCT": {
+      "value": 11
      }
     }, 
     "neighborhoods": [
@@ -24379,6 +24535,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 3828
+     }, 
+     "H0050001_PCT": {
+      "value": 10
+     }, 
+     "B07001_001E_PCT": {
+      "value": 10
      }
     }, 
     "neighborhoods": [
@@ -25536,6 +25698,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 1966
+     }, 
+     "H0050001_PCT": {
+      "value": 11
+     }, 
+     "B07001_001E_PCT": {
+      "value": 14
      }
     }, 
     "neighborhoods": [
@@ -26277,6 +26445,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 2422
+     }, 
+     "H0050001_PCT": {
+      "value": 17
+     }, 
+     "B07001_001E_PCT": {
+      "value": 10
      }
     }, 
     "neighborhoods": [
@@ -27176,6 +27350,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 2324
+     }, 
+     "H0050001_PCT": {
+      "value": 10
+     }, 
+     "B07001_001E_PCT": {
+      "value": 10
      }
     }, 
     "neighborhoods": [
@@ -28021,6 +28201,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 3309
+     }, 
+     "H0050001_PCT": {
+      "value": 11
+     }, 
+     "B07001_001E_PCT": {
+      "value": 5
      }
     }, 
     "neighborhoods": [
@@ -29051,6 +29237,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 3100
+     }, 
+     "H0050001_PCT": {
+      "value": 16
+     }, 
+     "B07001_001E_PCT": {
+      "value": 3
      }
     }, 
     "neighborhoods": [
@@ -29884,6 +30076,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 3165
+     }, 
+     "H0050001_PCT": {
+      "value": 10
+     }, 
+     "B07001_001E_PCT": {
+      "value": 5
      }
     }, 
     "neighborhoods": [
@@ -30896,6 +31094,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 3262
+     }, 
+     "H0050001_PCT": {
+      "value": 17
+     }, 
+     "B07001_001E_PCT": {
+      "value": 4
      }
     }, 
     "neighborhoods": [
@@ -31740,6 +31944,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 3308
+     }, 
+     "H0050001_PCT": {
+      "value": 11
+     }, 
+     "B07001_001E_PCT": {
+      "value": 5
      }
     }, 
     "neighborhoods": [
@@ -32691,6 +32901,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 3286
+     }, 
+     "H0050001_PCT": {
+      "value": 16
+     }, 
+     "B07001_001E_PCT": {
+      "value": 5
      }
     }, 
     "neighborhoods": [
@@ -33608,6 +33824,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 3593
+     }, 
+     "H0050001_PCT": {
+      "value": 12
+     }, 
+     "B07001_001E_PCT": {
+      "value": 5
      }
     }, 
     "neighborhoods": [
@@ -34549,6 +34771,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 3165
+     }, 
+     "H0050001_PCT": {
+      "value": 17
+     }, 
+     "B07001_001E_PCT": {
+      "value": 7
      }
     }, 
     "neighborhoods": [
@@ -35466,6 +35694,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 3421
+     }, 
+     "H0050001_PCT": {
+      "value": 12
+     }, 
+     "B07001_001E_PCT": {
+      "value": 9
      }
     }, 
     "neighborhoods": [
@@ -36345,6 +36579,12 @@
      "P0180002": {
       "source": "blockgroup", 
       "value": 3457
+     }, 
+     "H0050001_PCT": {
+      "value": 15
+     }, 
+     "B07001_001E_PCT": {
+      "value": 4
      }
     }, 
     "neighborhoods": [
