@@ -60,6 +60,7 @@ def get_base_data():
   wards = csv_file_to_dict(gs.download(spreadsheet_id, 1)) # second argument is the worksheet ID
   ancs = csv_file_to_dict(gs.download(spreadsheet_id, 2))
   smds = csv_file_to_dict(gs.download(spreadsheet_id, 0))
+  committees = csv_file_to_dict(gs.download(spreadsheet_id, 10))
       
   output = OrderedDict()
   for ward in wards:
@@ -74,6 +75,7 @@ def get_base_data():
     a["anc"] = anc["ANC"][0:2]
     a["anc_letter"] = anc["ANC"][1]
     a["smds"] = OrderedDict()
+    a["committees"] = OrderedDict()
 
   for smd in smds:
     s = OrderedDict()
@@ -82,6 +84,15 @@ def get_base_data():
     s["smd"] = smd["smd"]
     s["smd_number"] = smd["smd"][2:]
     s["ward"] = smd["ward"]
+
+  for cmte in committees:
+    c = OrderedDict()
+    output[ cmte["ANC"][0] ]["ancs"][ cmte["ANC"][1] ]["committees"][ cmte["committee"]] = c
+    c["committee"] = cmte["committee"]
+    c["meetings"] = cmte["meetings"]
+    c["chair"] = cmte["chair"]
+    c["chair_email"] = cmte["chair email"]
+    c["purpose"] = cmte["purpose"]
     
   return output
 
@@ -153,7 +164,7 @@ def add_neighborhood_data(output):
   print("adding neighborhood data")
 
   # Add intersections between ANCs/SMDs and neighborhoods, and estimate the
-  # population in every intersection because it looks weird to say ANC 1B
+  # population in every intersection because it looks weird to say ANC 2A
   # contains the "Tidal Basin". We'll handle small-population intersections
   # in the front-end.
 
