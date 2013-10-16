@@ -121,7 +121,8 @@ jQuery(function ($) {
 	<div class="span3">
 		{% include "form.html" with form=form title="Metadata" form_display_layout="vertical" %}
 		<hr/>
-		<a href="{{document.get_absolute_url}}">View document on site &gt;</a>
+		<div><a href="{{document.get_absolute_url}}">View document on site &gt;</a></div>
+		<div><a href="/upload-document">Upload another &gt;</a></div>
 	</div>
   	<div class="span7">
 		<legend style="margin-top: 20px">Tag This Document</legend>
