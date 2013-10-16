@@ -81,8 +81,11 @@ def upload_document(request):
 				newdoc.set_document_content(form.cleaned_data["content"])
 			elif form.cleaned_data["upload_type"] == "url":
 				try:
-					import urllib
-					resp = urllib.urlopen(form.cleaned_data["url"])
+					import urllib2
+					req = urllib2.Request(form.cleaned_data["url"])
+					req.add_unredirected_header('User-Agent', 'ANCBrigade.com') # some ANC websites require something like this
+					req.add_unredirected_header('Accept', '*/*') # some ANC websites require this
+					resp = urllib2.urlopen(req)
 					if resp.code != 200: raise ValueError("URL returned an error.")
 
 					mime_type = resp.info()["content-type"].split(";")[0].strip()
