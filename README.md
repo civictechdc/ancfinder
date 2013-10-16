@@ -27,6 +27,17 @@ Just run:
 	
 Then view the site in your browser at the address shown to you.
 
+Updating the Code
+-----------------
+
+As we make code changes you may need to run:
+
+	git pull --rebase
+	git submodule --init update
+	./manage.py syncdb
+
+If we modify the database schema, you may need to delete ancbrigadesite/database.sqlite and run `./manage.py syncdb` to recreate your database from scratch since we don't currently have a way to upgrade database schemas.
+
 Updating Static Data
 --------------------
 
