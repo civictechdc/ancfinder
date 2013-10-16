@@ -53,6 +53,7 @@ def anc_info(request, anc):
 		{ "key": "B07001_001E_PCT", "label": "new residents", "details": "Residents who moved into DC in the last year", "is_percent": True },
 		{ "key": "B01002_001E",	"label": "median age" },
 		{ "key": "B19019_001E",	"label": "median household income", "details": "", "is_dollars": True },
+		{ "key": "POP_DENSITY",	"label": "density (pop/sq-mi)", "details": "Total population divided by the area of the ANC." },
 	]
 	for s in census_stats:
 		s["value"] = info["census"][s["key"]]["value"]

@@ -151,12 +151,20 @@ def add_abra_data(output):
 
 def add_geographic_data(output):
   print("adding geographic data")
+
+  def get_gis_data(name, layer):
+      gisdata = json.load(urlopen("http://gis.govtrack.us/boundaries/dc-%s-2013/%s" % (layer, name.lower())))
+      ret = OrderedDict()
+      ret["bounds"] = gisdata["extent"]
+      ret["area"] = gisdata["metadata"]["area_sq_m"] # square meters
+      return ret
+
   # Add ANC/SMD geographic extents (bounding box) from the GIS server.
   for ward in list(output.values()):
     for anc in list(ward["ancs"].values()):
-      anc["bounds"] = json.load(urlopen("http://gis.govtrack.us/boundaries/dc-anc-2013/" + anc["anc"].lower()))["extent"]
+      anc.update(get_gis_data(anc["anc"], "anc"))
       for smd in list(anc["smds"].values()):
-        smd["bounds"] = json.load(urlopen("http://gis.govtrack.us/boundaries/dc-smd-2013/" + smd["smd"].lower()))["extent"]
+        smd.update(get_gis_data(smd["smd"], "smd"))
 
 def add_neighborhood_data(output):
   print("adding neighborhood data")
@@ -383,11 +391,12 @@ def add_census_data(output):
         clean_up(smd["census"])
 
 def add_census_data_analysis(output):
-  # Compute vacant home % and new resident %.
+  # Compute vacant home %, new resident %, population density.
   for ward in output.values():
     for anc in ward["ancs"].values():
       anc["census"]["H0050001_PCT"] = { "value": int(round(100.0 * anc["census"]["H0050001"]["value"] / anc["census"]["H0040001"]["value"])) }
       anc["census"]["B07001_001E_PCT"] = { "value": int(round(100.0 * (anc["census"]["B07001_065E"]["value"] + anc["census"]["B07001_081E"]["value"]) / anc["census"]["B07001_001E"]["value"])) }
+      anc["census"]["POP_DENSITY"] = { "value": int(round(anc["census"]["P0010001"]["value"] / anc["area"] * 2589990.0)) } # pop per sq mi
 
 if __name__ == "__main__":
   if not os.path.exists("update_anc_database_creds.py"):
