@@ -20,7 +20,7 @@ def make_anc_hex_color(anc):
 	anc_color_set = [ (228, 26, 28), (55, 126, 184), (77, 175, 74), (152, 78, 163), (255, 127, 0), (255, 127, 0), (166, 86, 40) ]
 	ward_color = ward_color_set[int(anc[0])-1]
 	anc_color = anc_color_set[ord(anc[1])-ord('A')]
-	return hexish(avg(ward_color, 1.0, anc_color, 0.22))
+	return hexish(ward_color) #avg(ward_color, 1.0, anc_color, 0.22))
 census_grids = { }
 for ward in anc_data.values():
 	for anc in ward["ancs"].values():
