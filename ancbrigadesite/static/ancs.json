@@ -77,6 +77,9 @@
      }, 
      "POP_DENSITY": {
       "value": 37750
+     },
+     "liquor_licenses": {
+      "value": 62
      }
     }, 
     "neighborhoods": [
@@ -182,6 +185,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 323
+       }, 
+       "liquor_licenses": {
+        "value": 6
        }
       }, 
       "contestation": "1", 
@@ -281,6 +287,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 359
+       }, 
+       "liquor_licenses": {
+        "value": 7
        }
       }, 
       "contestation": "2", 
@@ -380,6 +389,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 353
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "1", 
@@ -479,6 +491,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 284
+       }, 
+       "liquor_licenses": {
+        "value": 6
        }
       }, 
       "contestation": "2", 
@@ -578,6 +593,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 300
+       }, 
+       "liquor_licenses": {
+        "value": 6
        }
       }, 
       "contestation": "1", 
@@ -683,6 +701,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 265
+       }, 
+       "liquor_licenses": {
+        "value": 9
        }
       }, 
       "contestation": "3", 
@@ -782,6 +803,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 295
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "1", 
@@ -887,6 +911,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 368
+       }, 
+       "liquor_licenses": {
+        "value": 11
        }
       }, 
       "contestation": "1", 
@@ -986,6 +1013,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 367
+       }, 
+       "liquor_licenses": {
+        "value": 4
        }
       }, 
       "contestation": "1", 
@@ -1091,6 +1121,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 440
+       }, 
+       "liquor_licenses": {
+        "value": 7
        }
       }, 
       "contestation": "3", 
@@ -1435,6 +1468,9 @@
      }, 
      "POP_DENSITY": {
       "value": 22732
+     },
+      "liquor_licenses": {
+      "value": 114
      }
     }, 
     "neighborhoods": [
@@ -1570,6 +1606,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 205
+       }, 
+       "liquor_licenses": {
+        "value": 8
        }
       }, 
       "contestation": "1", 
@@ -1687,6 +1726,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 306
+       }, 
+       "liquor_licenses": {
+        "value": 40
        }
       }, 
       "contestation": "1", 
@@ -1786,6 +1828,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 152
+       }, 
+       "liquor_licenses": {
+        "value": 5
        }
       }, 
       "contestation": "1", 
@@ -1897,6 +1942,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 264
+       }, 
+       "liquor_licenses": {
+        "value": 9
        }
       }, 
       "contestation": "1", 
@@ -2206,6 +2254,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 233
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -2404,6 +2455,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 252
+       }, 
+       "liquor_licenses": {
+        "value": 5
        }
       }, 
       "contestation": "1", 
@@ -2509,6 +2563,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 189
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -2626,6 +2683,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 158
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "1", 
@@ -2749,6 +2809,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 264
+       }, 
+       "liquor_licenses": {
+        "value": 41
        }
       }, 
       "contestation": "4", 
@@ -2852,6 +2915,9 @@
      }, 
      "POP_DENSITY": {
       "value": 33456
+     },
+     "liquor_licenses": {
+      "value": 96
      }
     }, 
     "neighborhoods": [
@@ -2981,6 +3047,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 273
+       }, 
+       "liquor_licenses": {
+        "value": 9
        }
       }, 
       "contestation": "3", 
@@ -3191,6 +3260,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 267
+       }, 
+       "liquor_licenses": {
+        "value": 29
        }
       }, 
       "contestation": "2", 
@@ -3296,6 +3368,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 303
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "1", 
@@ -3407,6 +3482,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 219
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -3512,6 +3590,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 247
+       }, 
+       "liquor_licenses": {
+        "value": 6
        }
       }, 
       "contestation": "2", 
@@ -3617,6 +3698,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 405
+       }, 
+       "liquor_licenses": {
+        "value": 47
        }
       }, 
       "contestation": "1", 
@@ -3740,6 +3824,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 210
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -3849,6 +3936,9 @@
      }, 
      "POP_DENSITY": {
       "value": 28341
+     },
+     "liquor_licenses": {
+      "value": 20
      }
     }, 
     "neighborhoods": [
@@ -3948,6 +4038,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 279
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "2", 
@@ -4047,6 +4140,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 347
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -4257,6 +4353,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 296
+       }, 
+       "liquor_licenses": {
+        "value": 16
        }
       }, 
       "contestation": "1", 
@@ -4471,6 +4570,9 @@
      }, 
      "POP_DENSITY": {
       "value": 5896
+     },
+     "liquor_licenses": {
+      "value": 78
      }
     }, 
     "neighborhoods": [
@@ -4630,6 +4732,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 21
+       }, 
+       "liquor_licenses": {
+        "value": 4
        }
       }, 
       "contestation": "2", 
@@ -4777,6 +4882,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 228
+       }, 
+       "liquor_licenses": {
+        "value": 9
        }
       }, 
       "contestation": "1", 
@@ -4882,6 +4990,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 157
+       }, 
+       "liquor_licenses": {
+        "value": 9
        }
       }, 
       "contestation": "1", 
@@ -4993,6 +5104,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 304
+       }, 
+       "liquor_licenses": {
+        "value": 6
        }
       }, 
       "contestation": "1", 
@@ -5110,6 +5224,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 153
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "1", 
@@ -5215,6 +5332,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 111
+       }, 
+       "liquor_licenses": {
+        "value": 22
        }
       }, 
       "contestation": "1", 
@@ -5326,6 +5446,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 51
+       }, 
+       "liquor_licenses": {
+        "value": 12
        }
       }, 
       "contestation": "1", 
@@ -5431,6 +5554,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 19
+       }, 
+       "liquor_licenses": {
+        "value": 13
        }
       }, 
       "email": "2A08@anc.dc.gov", 
@@ -5533,6 +5659,9 @@
      }, 
      "POP_DENSITY": {
       "value": 23029
+     },
+     "liquor_licenses": {
+      "value": 233
      }
     }, 
     "neighborhoods": [
@@ -5662,6 +5791,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 207
+       }, 
+       "liquor_licenses": {
+        "value": 20
        }
       }, 
       "contestation": "1", 
@@ -5767,6 +5899,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 205
+       }, 
+       "liquor_licenses": {
+        "value": 37
        }
       }, 
       "contestation": "1", 
@@ -5872,6 +6007,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 241
+       }, 
+       "liquor_licenses": {
+        "value": 11
        }
       }, 
       "contestation": "2", 
@@ -5971,6 +6109,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 177
+       }, 
+       "liquor_licenses": {
+        "value": 9
        }
       }, 
       "contestation": "3", 
@@ -6076,6 +6217,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 279
+       }, 
+       "liquor_licenses": {
+        "value": 53
        }
       }, 
       "contestation": "1", 
@@ -6192,6 +6336,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 268
+       }, 
+       "liquor_licenses": {
+        "value": 64
        }
       }, 
       "contestation": "1", 
@@ -6309,6 +6456,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 158
+       }, 
+       "liquor_licenses": {
+        "value": 17
        }
       }, 
       "contestation": "1", 
@@ -6408,6 +6558,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 191
+       }, 
+       "liquor_licenses": {
+        "value": 13
        }
       }, 
       "contestation": "1", 
@@ -6513,6 +6666,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 270
+       }, 
+       "liquor_licenses": {
+        "value": 9
        }
       }, 
       "contestation": "1", 
@@ -6628,6 +6784,9 @@
      }, 
      "POP_DENSITY": {
       "value": 4945
+     },
+     "liquor_licenses": {
+      "value": 172
      }
     }, 
     "neighborhoods": [
@@ -6751,6 +6910,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 376
+       }, 
+       "liquor_licenses": {
+        "value": 140
        }
       }, 
       "contestation": "1", 
@@ -6886,6 +7048,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 38
+       }, 
+       "liquor_licenses": {
+        "value": 4
        }
       }, 
       "contestation": "1", 
@@ -6985,6 +7150,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 282
+       }, 
+       "liquor_licenses": {
+        "value": 28
        }
       }, 
       "contestation": "1", 
@@ -7106,6 +7274,9 @@
      }, 
      "POP_DENSITY": {
       "value": 8595
+     },
+     "liquor_licenses": {
+      "value": 6
      }
     }, 
     "neighborhoods": [
@@ -7211,6 +7382,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 186
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -7316,6 +7490,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 310
+       }, 
+       "liquor_licenses": {
+        "value": 5
        }
       }, 
       "contestation": "1", 
@@ -7437,6 +7614,9 @@
      }, 
      "POP_DENSITY": {
       "value": 9304
+     },
+     "liquor_licenses": {
+      "value": 107
      }
     }, 
     "neighborhoods": [
@@ -7596,6 +7776,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 348
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "1", 
@@ -7726,6 +7909,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 300
+       }, 
+       "liquor_licenses": {
+        "value": 10
        }
       }, 
       "contestation": "1", 
@@ -7843,6 +8029,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 329
+       }, 
+       "liquor_licenses": {
+        "value": 17
        }
       }, 
       "contestation": "1", 
@@ -8059,6 +8248,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 324
+       }, 
+       "liquor_licenses": {
+        "value": 61
        }
       }, 
       "contestation": "1", 
@@ -8182,6 +8374,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 350
+       }, 
+       "liquor_licenses": {
+        "value": 12
        }
       }, 
       "contestation": "1", 
@@ -8293,6 +8488,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 344
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -8411,6 +8609,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 5
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -8520,6 +8721,9 @@
      }, 
      "POP_DENSITY": {
       "value": 35998
+     },
+     "liquor_licenses": {
+      "value": 77
      }
     }, 
     "neighborhoods": [
@@ -8625,6 +8829,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 333
+       }, 
+       "liquor_licenses": {
+        "value": 5
        }
       }, 
       "contestation": "1", 
@@ -8730,6 +8937,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 231
+       }, 
+       "liquor_licenses": {
+        "value": 13
        }
       }, 
       "contestation": "4", 
@@ -8829,6 +9039,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 237
+       }, 
+       "liquor_licenses": {
+        "value": 8
        }
       }, 
       "contestation": "1", 
@@ -8928,6 +9141,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 261
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "2", 
@@ -9033,6 +9249,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 163
+       }, 
+       "liquor_licenses": {
+        "value": 28
        }
       }, 
       "contestation": "1", 
@@ -9138,6 +9357,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 331
+       }, 
+       "liquor_licenses": {
+        "value": 11
        }
       }, 
       "contestation": "1", 
@@ -9243,6 +9465,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 302
+       }, 
+       "liquor_licenses": {
+        "value": 4
        }
       }, 
       "contestation": "1", 
@@ -9348,6 +9573,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 230
+       }, 
+       "liquor_licenses": {
+        "value": 7
        }
       }, 
       "contestation": "3", 
@@ -9463,6 +9691,9 @@
      }, 
      "POP_DENSITY": {
       "value": 19771
+     },
+     "liquor_licenses": {
+      "value": 24
      }
     }, 
     "neighborhoods": [
@@ -9568,6 +9799,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 305
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -9679,6 +9913,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 279
+       }, 
+       "liquor_licenses": {
+        "value": 20
        }
       }, 
       "contestation": "1", 
@@ -9895,6 +10132,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 390
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "1", 
@@ -10121,6 +10361,9 @@
      }, 
      "POP_DENSITY": {
       "value": 8816
+     },
+     "liquor_licenses": {
+      "value": 64
      }
     }, 
     "neighborhoods": [
@@ -10310,6 +10553,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 252
+       }, 
+       "liquor_licenses": {
+        "value": 17
        }
       }, 
       "contestation": "1", 
@@ -10427,6 +10673,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 189
+       }, 
+       "liquor_licenses": {
+        "value": 8
        }
       }, 
       "contestation": "2", 
@@ -10526,6 +10775,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 263
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "2", 
@@ -10625,6 +10877,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 276
+       }, 
+       "liquor_licenses": {
+        "value": 18
        }
       }, 
       "contestation": "1", 
@@ -10742,6 +10997,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 329
+       }, 
+       "liquor_licenses": {
+        "value": 7
        }
       }, 
       "contestation": "1", 
@@ -10853,6 +11111,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 345
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -10970,6 +11231,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 391
+       }, 
+       "liquor_licenses": {
+        "value": 4
        }
       }, 
       "contestation": "1", 
@@ -11069,6 +11333,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 739
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -11216,6 +11483,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 412
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "1", 
@@ -11325,6 +11595,9 @@
      }, 
      "POP_DENSITY": {
       "value": 4830
+     },
+     "liquor_licenses": {
+      "value": 24
      }
     }, 
     "neighborhoods": [
@@ -11748,6 +12021,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 558
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -11865,6 +12141,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 515
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -11994,6 +12273,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 478
+       }, 
+       "liquor_licenses": {
+        "value": 13
        }
       }, 
       "contestation": "2", 
@@ -12239,6 +12521,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 90
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "email": "3D07@anc.dc.gov", 
@@ -12349,6 +12634,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 349
+       }, 
+       "liquor_licenses": {
+        "value": 5
        }
       }, 
       "contestation": "1", 
@@ -12454,6 +12742,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 480
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "2", 
@@ -12589,6 +12880,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 187
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "2", 
@@ -12722,6 +13016,9 @@
      }, 
      "POP_DENSITY": {
       "value": 7549
+     },
+     "liquor_licenses": {
+      "value": 37
      }
     }, 
     "neighborhoods": [
@@ -12845,6 +13142,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 442
+       }, 
+       "liquor_licenses": {
+        "value": 8
        }
       }, 
       "contestation": "1", 
@@ -12962,6 +13262,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 587
+       }, 
+       "liquor_licenses": {
+        "value": 4
        }
       }, 
       "contestation": "1", 
@@ -13061,6 +13364,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 502
+       }, 
+       "liquor_licenses": {
+        "value": 14
        }
       }, 
       "contestation": "1", 
@@ -13172,6 +13478,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 608
+       }, 
+       "liquor_licenses": {
+        "value": 8
        }
       }, 
       "contestation": "1", 
@@ -13289,6 +13598,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 398
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "1", 
@@ -13410,6 +13722,9 @@
      }, 
      "POP_DENSITY": {
       "value": 6651
+     },
+     "liquor_licenses": {
+      "value": 18
      }
     }, 
     "neighborhoods": [
@@ -13539,6 +13854,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 547
+       }, 
+       "liquor_licenses": {
+        "value": 4
        }
       }, 
       "contestation": "1", 
@@ -13644,6 +13962,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 151
+       }, 
+       "liquor_licenses": {
+        "value": 5
        }
       }, 
       "contestation": "1", 
@@ -13854,6 +14175,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 96
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "2", 
@@ -13959,6 +14283,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 253
+       }, 
+       "liquor_licenses": {
+        "value": 4
        }
       }, 
       "contestation": "2", 
@@ -14070,6 +14397,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 425
+       }, 
+       "liquor_licenses": {
+        "value": 4
        }
       }, 
       "contestation": "1", 
@@ -14296,6 +14626,9 @@
      }, 
      "POP_DENSITY": {
       "value": 5213
+     },
+     "liquor_licenses": {
+      "value": 10
      }
     }, 
     "neighborhoods": [
@@ -14845,6 +15178,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 522
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "1", 
@@ -14944,6 +15280,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 348
+       }, 
+       "liquor_licenses": {
+        "value": 7
        }
       }, 
       "contestation": "1", 
@@ -15164,6 +15503,9 @@
      }, 
      "POP_DENSITY": {
       "value": 5780
+     },
+     "liquor_licenses": {
+      "value": 10
      }
     }, 
     "neighborhoods": [
@@ -15427,6 +15769,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 535
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -15526,6 +15871,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 380
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -15637,6 +15985,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 498
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "1", 
@@ -15833,6 +16184,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 470
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -15938,6 +16292,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 691
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -16164,6 +16521,9 @@
      }, 
      "POP_DENSITY": {
       "value": 9409
+     },
+     "liquor_licenses": {
+      "value": 23
      }
     }, 
     "neighborhoods": [
@@ -16287,6 +16647,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 530
+       }, 
+       "liquor_licenses": {
+        "value": 6
        }
       }, 
       "contestation": "2", 
@@ -16386,6 +16749,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 288
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -16491,6 +16857,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 524
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "1", 
@@ -16596,6 +16965,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 476
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "3", 
@@ -16812,6 +17184,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 545
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "1", 
@@ -16917,6 +17292,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 470
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "2", 
@@ -17028,6 +17406,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 585
+       }, 
+       "liquor_licenses": {
+        "value": 6
        }
       }, 
       "contestation": "1", 
@@ -17139,6 +17520,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 452
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "email": "4B09@anc.dc.gov", 
@@ -17241,6 +17625,9 @@
      }, 
      "POP_DENSITY": {
       "value": 16442
+     },
+     "liquor_licenses": {
+      "value": 37
      }
     }, 
     "neighborhoods": [
@@ -17334,6 +17721,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 398
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -17433,6 +17823,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 454
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "1", 
@@ -17538,6 +17931,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 311
+       }, 
+       "liquor_licenses": {
+        "value": 4
        }
       }, 
       "contestation": "1", 
@@ -17637,6 +18033,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 430
+       }, 
+       "liquor_licenses": {
+        "value": 6
        }
       }, 
       "contestation": "1", 
@@ -17736,6 +18135,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 416
+       }, 
+       "liquor_licenses": {
+        "value": 5
        }
       }, 
       "contestation": "1", 
@@ -17835,6 +18237,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 353
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "2", 
@@ -17934,6 +18339,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 426
+       }, 
+       "liquor_licenses": {
+        "value": 7
        }
       }, 
       "contestation": "1", 
@@ -18039,6 +18447,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 361
+       }, 
+       "liquor_licenses": {
+        "value": 4
        }
       }, 
       "contestation": "1", 
@@ -18243,6 +18654,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 416
+       }, 
+       "liquor_licenses": {
+        "value": 4
        }
       }, 
       "email": "4C10@anc.dc.gov", 
@@ -18345,6 +18759,9 @@
      }, 
      "POP_DENSITY": {
       "value": 17411
+     },
+     "liquor_licenses": {
+      "value": 27
      }
     }, 
     "neighborhoods": [
@@ -18444,6 +18861,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 403
+       }, 
+       "liquor_licenses": {
+        "value": 13
        }
       }, 
       "contestation": "2", 
@@ -18549,6 +18969,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 497
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -18753,6 +19176,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 441
+       }, 
+       "liquor_licenses": {
+        "value": 5
        }
       }, 
       "contestation": "1", 
@@ -18852,6 +19278,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 428
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "email": "4D05@anc.dc.gov", 
@@ -18956,6 +19385,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 425
+       }, 
+       "liquor_licenses": {
+        "value": 5
        }
       }, 
       "contestation": "1", 
@@ -19065,6 +19497,9 @@
      }, 
      "POP_DENSITY": {
       "value": 7219
+     },
+     "liquor_licenses": {
+      "value": 7
      }
     }, 
     "neighborhoods": [
@@ -19521,6 +19956,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 306
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "email": "5A04@anc.dc.gov", 
@@ -19648,6 +20086,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 132
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "2", 
@@ -19753,6 +20194,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 207
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "2", 
@@ -19870,6 +20314,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 392
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -19981,6 +20428,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 383
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "1", 
@@ -20090,6 +20540,9 @@
      }, 
      "POP_DENSITY": {
       "value": 6699
+     },
+     "liquor_licenses": {
+      "value": 15
      }
     }, 
     "neighborhoods": [
@@ -20318,6 +20771,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 560
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -20435,6 +20891,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 470
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -20540,6 +20999,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 331
+       }, 
+       "liquor_licenses": {
+        "value": 5
        }
       }, 
       "contestation": "3", 
@@ -20639,6 +21101,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 356
+       }, 
+       "liquor_licenses": {
+        "value": 8
        }
       }, 
       "contestation": "2", 
@@ -20754,6 +21219,9 @@
      }, 
      "POP_DENSITY": {
       "value": 3825
+     },
+     "liquor_licenses": {
+      "value": 35
      }
     }, 
     "neighborhoods": [
@@ -20913,6 +21381,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 424
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "2", 
@@ -21012,6 +21483,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 204
+       }, 
+       "liquor_licenses": {
+        "value": 10
        }
       }, 
       "contestation": "2", 
@@ -21117,6 +21591,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 467
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "2", 
@@ -21222,6 +21699,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 614
+       }, 
+       "liquor_licenses": {
+        "value": 11
        }
       }, 
       "contestation": "2", 
@@ -21375,6 +21855,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 475
+       }, 
+       "liquor_licenses": {
+        "value": 4
        }
       }, 
       "contestation": "2", 
@@ -21498,6 +21981,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 413
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "2", 
@@ -21603,6 +22089,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 424
+       }, 
+       "liquor_licenses": {
+        "value": 6
        }
       }, 
       "contestation": "3", 
@@ -21712,6 +22201,9 @@
      }, 
      "POP_DENSITY": {
       "value": 10287
+     },
+     "liquor_licenses": {
+      "value": 37
      }
     }, 
     "neighborhoods": [
@@ -21853,6 +22345,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 234
+       }, 
+       "liquor_licenses": {
+        "value": 19
        }
       }, 
       "contestation": "1", 
@@ -21982,6 +22477,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 261
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "1", 
@@ -22087,6 +22585,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 438
+       }, 
+       "liquor_licenses": {
+        "value": 4
        }
       }, 
       "contestation": "1", 
@@ -22309,6 +22810,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 366
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "3", 
@@ -22408,6 +22912,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 435
+       }, 
+       "liquor_licenses": {
+        "value": 6
        }
       }, 
       "contestation": "1", 
@@ -22507,6 +23014,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 454
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "2", 
@@ -22610,6 +23120,9 @@
      }, 
      "POP_DENSITY": {
       "value": 13068
+     },
+     "liquor_licenses": {
+      "value": 38
      }
     }, 
     "neighborhoods": [
@@ -22775,6 +23288,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 246
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "2", 
@@ -22898,6 +23414,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 405
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "3", 
@@ -23003,6 +23522,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 376
+       }, 
+       "liquor_licenses": {
+        "value": 7
        }
       }, 
       "contestation": "1", 
@@ -23114,6 +23636,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 407
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "2", 
@@ -23219,6 +23744,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 391
+       }, 
+       "liquor_licenses": {
+        "value": 4
        }
       }, 
       "contestation": "2", 
@@ -23324,6 +23852,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 258
+       }, 
+       "liquor_licenses": {
+        "value": 7
        }
       }, 
       "contestation": "3", 
@@ -23435,6 +23966,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 291
+       }, 
+       "liquor_licenses": {
+        "value": 7
        }
       }, 
       "contestation": "3", 
@@ -23534,6 +24068,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 225
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -23645,6 +24182,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 451
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "3", 
@@ -23798,6 +24338,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 422
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "2", 
@@ -23919,6 +24462,9 @@
      }, 
      "POP_DENSITY": {
       "value": 20172
+     },
+     "liquor_licenses": {
+      "value": 49
      }
     }, 
     "neighborhoods": [
@@ -24024,6 +24570,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 355
+       }, 
+       "liquor_licenses": {
+        "value": 16
        }
       }, 
       "contestation": "1", 
@@ -24123,6 +24672,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 338
+       }, 
+       "liquor_licenses": {
+        "value": 7
        }
       }, 
       "contestation": "2", 
@@ -24327,6 +24879,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 330
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -24525,6 +25080,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 457
+       }, 
+       "liquor_licenses": {
+        "value": 15
        }
       }, 
       "contestation": "2", 
@@ -24636,6 +25194,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 471
+       }, 
+       "liquor_licenses": {
+        "value": 4
        }
       }, 
       "contestation": "2", 
@@ -24735,6 +25296,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 583
+       }, 
+       "liquor_licenses": {
+        "value": 6
        }
       }, 
       "contestation": "2", 
@@ -24844,6 +25408,9 @@
      }, 
      "POP_DENSITY": {
       "value": 13377
+     },
+     "liquor_licenses": {
+      "value": 86
      }
     }, 
     "neighborhoods": [
@@ -24961,6 +25528,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 374
+       }, 
+       "liquor_licenses": {
+        "value": 25
        }
       }, 
       "contestation": "1", 
@@ -25072,6 +25642,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 363
+       }, 
+       "liquor_licenses": {
+        "value": 19
        }
       }, 
       "contestation": "2", 
@@ -25171,6 +25744,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 373
+       }, 
+       "liquor_licenses": {
+        "value": 15
        }
       }, 
       "contestation": "2", 
@@ -25276,6 +25852,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 292
+       }, 
+       "liquor_licenses": {
+        "value": 13
        }
       }, 
       "contestation": "1", 
@@ -25387,6 +25966,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 414
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "2", 
@@ -25486,6 +26068,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 570
+       }, 
+       "liquor_licenses": {
+        "value": 9
        }
       }, 
       "contestation": "3", 
@@ -25702,6 +26287,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 394
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -25918,6 +26506,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 354
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -26021,6 +26612,9 @@
      }, 
      "POP_DENSITY": {
       "value": 11689
+     },
+     "liquor_licenses": {
+      "value": 65
      }
     }, 
     "neighborhoods": [
@@ -26138,6 +26732,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 264
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -26243,6 +26840,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 293
+       }, 
+       "liquor_licenses": {
+        "value": 31
        }
       }, 
       "contestation": "1", 
@@ -26354,6 +26954,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 379
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -26453,6 +27056,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 305
+       }, 
+       "liquor_licenses": {
+        "value": 14
        }
       }, 
       "contestation": "1", 
@@ -26570,6 +27176,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 290
+       }, 
+       "liquor_licenses": {
+        "value": 5
        }
       }, 
       "contestation": "1", 
@@ -26669,6 +27278,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 437
+       }, 
+       "liquor_licenses": {
+        "value": 13
        }
       }, 
       "contestation": "2", 
@@ -26778,6 +27390,9 @@
      }, 
      "POP_DENSITY": {
       "value": 3758
+     },
+     "liquor_licenses": {
+      "value": 38
      }
     }, 
     "neighborhoods": [
@@ -26913,6 +27528,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 298
+       }, 
+       "liquor_licenses": {
+        "value": 7
        }
       }, 
       "contestation": "1", 
@@ -27018,6 +27636,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 508
+       }, 
+       "liquor_licenses": {
+        "value": 7
        }
       }, 
       "contestation": "2", 
@@ -27135,6 +27756,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 149
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -27240,6 +27864,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 218
+       }, 
+       "liquor_licenses": {
+        "value": 16
        }
       }, 
       "contestation": "1", 
@@ -27351,6 +27978,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 638
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "2", 
@@ -27474,6 +28104,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 341
+       }, 
+       "liquor_licenses": {
+        "value": 4
        }
       }, 
       "contestation": "1", 
@@ -27585,6 +28218,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 269
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -27694,6 +28330,9 @@
      }, 
      "POP_DENSITY": {
       "value": 22292
+     },
+     "liquor_licenses": {
+      "value": 35
      }
     }, 
     "neighborhoods": [
@@ -27805,6 +28444,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 350
+       }, 
+       "liquor_licenses": {
+        "value": 7
        }
       }, 
       "contestation": "2", 
@@ -27910,6 +28552,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 274
+       }, 
+       "liquor_licenses": {
+        "value": 9
        }
       }, 
       "contestation": "4", 
@@ -28114,6 +28759,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 390
+       }, 
+       "liquor_licenses": {
+        "value": 10
        }
       }, 
       "contestation": "2", 
@@ -28219,6 +28867,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 244
+       }, 
+       "liquor_licenses": {
+        "value": 8
        }
       }, 
       "contestation": "2", 
@@ -28429,6 +29080,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 583
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "2", 
@@ -28556,6 +29210,9 @@
      }, 
      "POP_DENSITY": {
       "value": 6007
+     },
+     "liquor_licenses": {
+      "value": 11
      }
     }, 
     "neighborhoods": [
@@ -28745,6 +29402,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 399
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -28856,6 +29516,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 350
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -28973,6 +29636,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 503
+       }, 
+       "liquor_licenses": {
+        "value": 5
        }
       }, 
       "email": "7B03@anc.dc.gov", 
@@ -29107,6 +29773,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 574
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -29236,6 +29905,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 476
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -29470,6 +30142,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 509
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -29603,6 +30278,9 @@
      }, 
      "POP_DENSITY": {
       "value": 10672
+     },
+     "liquor_licenses": {
+      "value": 11
      }
     }, 
     "neighborhoods": [
@@ -29720,6 +30398,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 453
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -29930,6 +30611,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 419
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -30041,6 +30725,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 454
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -30140,6 +30827,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 406
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -30245,6 +30935,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 481
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -30350,6 +31043,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 420
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "4", 
@@ -30453,6 +31149,9 @@
      }, 
      "POP_DENSITY": {
       "value": 6306
+     },
+     "liquor_licenses": {
+      "value": 15
      }
     }, 
     "neighborhoods": [
@@ -30631,6 +31330,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 397
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "2", 
@@ -30748,6 +31450,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 240
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "email": "7D02@anc.dc.gov", 
@@ -30875,6 +31580,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 550
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -31004,6 +31712,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 443
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "1", 
@@ -31121,6 +31832,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 414
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "3", 
@@ -31244,6 +31958,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 421
+       }, 
+       "liquor_licenses": {
+        "value": 5
        }
       }, 
       "contestation": "2", 
@@ -31482,6 +32199,9 @@
      }, 
      "POP_DENSITY": {
       "value": 10773
+     },
+     "liquor_licenses": {
+      "value": 7
      }
     }, 
     "neighborhoods": [
@@ -31599,6 +32319,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 469
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -31704,6 +32427,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 539
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "2", 
@@ -31932,6 +32658,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 468
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "2", 
@@ -32142,6 +32871,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 474
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "email": "7E06@anc.dc.gov", 
@@ -32240,6 +32972,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 440
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "2", 
@@ -32343,6 +33078,9 @@
      }, 
      "POP_DENSITY": {
       "value": 9666
+     },
+     "liquor_licenses": {
+      "value": 10
      }
     }, 
     "neighborhoods": [
@@ -32514,6 +33252,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 654
+       }, 
+       "liquor_licenses": {
+        "value": 5
        }
       }, 
       "contestation": "1", 
@@ -32625,6 +33366,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 622
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -32742,6 +33486,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 558
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -33063,6 +33810,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 556
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "email": "7F06@anc.dc.gov", 
@@ -33311,6 +34061,9 @@
      }, 
      "POP_DENSITY": {
       "value": 9785
+     },
+     "liquor_licenses": {
+      "value": 13
      }
     }, 
     "neighborhoods": [
@@ -33446,6 +34199,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 509
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -33785,6 +34541,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 294
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -33896,6 +34655,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 329
+       }, 
+       "liquor_licenses": {
+        "value": 3
        }
       }, 
       "contestation": "2", 
@@ -34007,6 +34769,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 751
+       }, 
+       "liquor_licenses": {
+        "value": 6
        }
       }, 
       "contestation": "3", 
@@ -34142,6 +34907,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 352
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -34245,6 +35013,9 @@
      }, 
      "POP_DENSITY": {
       "value": 16840
+     },
+     "liquor_licenses": {
+      "value": 3
      }
     }, 
     "neighborhoods": [
@@ -34890,6 +35661,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 309
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -34995,6 +35769,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 571
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -35203,6 +35980,9 @@
      }, 
      "POP_DENSITY": {
       "value": 4028
+     },
+     "liquor_licenses": {
+      "value": 11
      }
     }, 
     "neighborhoods": [
@@ -35477,6 +36257,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 319
+       }, 
+       "liquor_licenses": {
+        "value": 4
        }
       }, 
       "contestation": "3", 
@@ -35588,6 +36371,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 460
+       }, 
+       "liquor_licenses": {
+        "value": 4
        }
       }, 
       "contestation": "2", 
@@ -35808,6 +36594,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 394
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -36028,6 +36817,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 474
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -36137,6 +36929,9 @@
      }, 
      "POP_DENSITY": {
       "value": 3040
+     },
+     "liquor_licenses": {
+      "value": 10
      }
     }, 
     "neighborhoods": [
@@ -36260,6 +37055,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 535
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -36359,6 +37157,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 467
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -36581,6 +37382,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 897
+       }, 
+       "liquor_licenses": {
+        "value": 5
        }
       }, 
       "contestation": "1", 
@@ -36807,6 +37611,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 359
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -36906,6 +37713,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 720
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
@@ -37033,6 +37843,9 @@
      }, 
      "POP_DENSITY": {
       "value": 12064
+     },
+     "liquor_licenses": {
+      "value": 3
      }
     }, 
     "neighborhoods": [
@@ -37486,6 +38299,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 385
+       }, 
+       "liquor_licenses": {
+        "value": 1
        }
       }, 
       "contestation": "1", 
@@ -37718,6 +38534,9 @@
        "P0180002": {
         "source": "blockgroup", 
         "value": 515
+       }, 
+       "liquor_licenses": {
+        "value": 2
        }
       }, 
       "contestation": "1", 
