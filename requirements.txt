@@ -3,3 +3,4 @@ cssselect
 lxml
 pdfminer
 django-tinymce
+BeautifulSoup4
