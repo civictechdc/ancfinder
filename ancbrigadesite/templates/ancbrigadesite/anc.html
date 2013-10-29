@@ -33,7 +33,7 @@
 				<table class="commissioners" cols="3">
 					<tr>
 					{% for smd in info.smds.values %}
-					<td id="{{ smd.smd_number }}" width="33%" style="vertical-align: top; padding-right: 1.25em;">
+					<td id="smd{{ smd.smd_number }}" width="33%" style="vertical-align: top; padding-right: 1.25em;">
 						<div style="padding-bottom: .4em; color: black; border-bottom: 1px solid #444;">{{ smd.first_name }} {{ smd.last_name }}</div>
 						<div style="padding-bottom: .75em"><small><b>SMD {{ smd.smd_number }}</b>: {{ smd.neighborhood_list }}</small></div>
 					</td>
@@ -180,18 +180,7 @@
 			map.overlayMapTypes.insertAt(0, overlay);
 		}
 
-		$(".commissioners td").hover(function() {
-			$(this).css({"background-color": "#ffffcc"});
-		},
-		function() {
-			$(this).css({"background-color": "white"});
-		});
-
-		{% for smd in info.smd_list %}
-		$("#{{ smd.smd_number }}").click(function() {
-			make_map({{smd.bounds.1}}, {{smd.bounds.0}}, {{smd.bounds.3}}, {{smd.bounds.2}});
-		});
-		{% endfor %}
+		$("#smd" + window.location.hash.replace("#", "")).css({"background-color": "#ffffcc"});
 
 	</script>
 {% endblock %}
