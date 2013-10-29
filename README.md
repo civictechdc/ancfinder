@@ -6,12 +6,14 @@ A website about DC's Advisory Neighborhood Commission system.
 Dependencies
 ------------
 
-Set up your environment for installing dependencies:
+Set up your environment, install dependencies, and set up the site database:
 
 	git clone --recursive https://github.com/codefordc/ancbrigade
 	virtualenv .env # maybe one day we'll use '-p python3' but dotcloud makes that harder
 	. .env/bin/activate
+	sudo apt-get install libxslt1-dev
 	pip install -r requirements.txt
+	./manage.py syncdb
 	
 Note --recursive on 'git clone' to get the submodule dependencies.
 
