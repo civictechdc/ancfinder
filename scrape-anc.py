@@ -1,4 +1,4 @@
-import urllib2, lxml, csv
+import urllib2, lxml, csv, re
 from bs4 import BeautifulSoup
 
 scraper_writer = csv.writer(open('data/scraped-anc.csv', 'w'), delimiter=',')
@@ -50,10 +50,10 @@ for anc in ANC:
 	for row in tr:
 		td = row.find_all('td')
 		records = {}
-		records['SMD'] = td[0].text.strip('\n\t')
-		name_parse(td[1].text.encode('utf-8').strip('\n\t').split())
-		records['Address'] = td[2].text.encode('utf-8').strip('\n\t')
-		area_coder(td[3].text.encode('utf-8').strip('\n\t'))
+		records['SMD'] = td[0].text.strip()
+		name_parse(td[1].text.encode('utf-8').strip().split())
+		records['Address'] = re.sub("\s*\n\s*", "; ", td[2].text.encode('utf-8').strip())
+		area_coder(td[3].text.encode('utf-8').strip())
 		records['Email'] = td[4].a.text
 		print(records)
 		scraper_writer.writerow([records['SMD']] + [records['First Name']] + [records['Middle Name']] + [records['Nickname']] + [records['Last Name']] + [records['Suffix']] + [records['Address']] + [records['Phone']] + [records['Email']])
@@ -69,22 +69,17 @@ for d in soup.find_all('i'):
 data = soup('tbody', limit=3)[2]
 tr = data.find_all('tr')
 for row in tr:
+	td = row.find_all('td')
+	records = {}
+	records['SMD'] = td[0].text.strip()
+	name_parse(td[1].text.encode('utf-8').strip().split())
+	records['Address'] = re.sub("\s*\n\s*", "; ", td[2].text.encode('utf-8').strip())
 	try:
-		td = row.find_all('td')
-		records = {}
-		records['SMD'] = td[0].text.strip('\n\t')
-		name_parse(td[1].text.encode('utf-8').strip('\n\t').split())
-		records['Address'] = td[2].text.encode('utf-8').strip('\n\t')
-		area_coder(td[3].text.encode('utf-8').strip('\n\t'))
+		area_coder(td[3].text.encode('utf-8').strip())
 		records['Email'] = td[4].a.text
 		print(records)
 		scraper_writer.writerow([records['SMD']] + [records['First Name']] + [records['Middle Name']] + [records['Nickname']] + [records['Last Name']] + [records['Suffix']] + [records['Address']] + [records['Phone']] + [records['Email']])
 	except IndexError:
-		td = row.find_all('td')
-		records = {}
-		records['SMD'] = td[0].text.strip('\n\t')
-		name_parse(td[1].text.encode('utf-8').strip('\n\t').split())
-		records['Address'] = td[2].text.encode('utf-8').strip('\n\t')
 		records['Phone'] = ''
 		records['Email'] = td[3].a.text
 		print(records)
