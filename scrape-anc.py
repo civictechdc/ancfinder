@@ -30,6 +30,7 @@ def name_parse(name):   #Separates name into proper fields
 			records['Last Name'] += ','
 
 def area_coder(phone):    #Adds (202) area code, if necessary
+	phone = phone.replace("(202) ", "202-")
 	if len(phone) == 8:
 		records['Phone'] = '202-' + phone
 	elif len(phone) < 8:
@@ -52,9 +53,9 @@ for anc in ANC:
 		records['SMD'] = td[0].text.strip('\n\t')
 		name_parse(td[1].text.encode('utf-8').strip('\n\t').split())
 		records['Address'] = td[2].text.encode('utf-8').strip('\n\t')
-	        area_coder(td[3].text.encode('utf-8').strip('\n\t'))
+		area_coder(td[3].text.encode('utf-8').strip('\n\t'))
 		records['Email'] = td[4].a.text
-		print records
+		print(records)
 		scraper_writer.writerow([records['SMD']] + [records['First Name']] + [records['Middle Name']] + [records['Nickname']] + [records['Last Name']] + [records['Suffix']] + [records['Address']] + [records['Phone']] + [records['Email']])
 
 # Add in the final information from broken 8E page
@@ -74,9 +75,9 @@ for row in tr:
 		records['SMD'] = td[0].text.strip('\n\t')
 		name_parse(td[1].text.encode('utf-8').strip('\n\t').split())
 		records['Address'] = td[2].text.encode('utf-8').strip('\n\t')
-	        area_coder(td[3].text.encode('utf-8').strip('\n\t'))
+		area_coder(td[3].text.encode('utf-8').strip('\n\t'))
 		records['Email'] = td[4].a.text
-		print records
+		print(records)
 		scraper_writer.writerow([records['SMD']] + [records['First Name']] + [records['Middle Name']] + [records['Nickname']] + [records['Last Name']] + [records['Suffix']] + [records['Address']] + [records['Phone']] + [records['Email']])
 	except IndexError:
 		td = row.find_all('td')
@@ -86,5 +87,5 @@ for row in tr:
 		records['Address'] = td[2].text.encode('utf-8').strip('\n\t')
 		records['Phone'] = ''
 		records['Email'] = td[3].a.text
-		print records
+		print(records)
 		scraper_writer.writerow([records['SMD']] + [records['First Name']] + [records['Middle Name']] + [records['Nickname']] + [records['Last Name']] + [records['Suffix']] + [records['Address']] + [records['Phone']] + [records['Email']])
