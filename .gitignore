@@ -7,3 +7,4 @@ ancbrigadesite/database.sqlite
 *.swp
 .env
 __pycache__
+
