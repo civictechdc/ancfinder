@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from ancbrigadesite.views import home, anc_info, about, share, authority, elections, bigmap, legal
+from .views import (AboutTemplateView, ShareTemplateView, AuthorityTemplateView, ElectionsTemplateView, 
+				LegalTemplateView, BigMapTemplateView, HomeTemplateView, DocumentTemplateView, AncInfoTemplateView)
 
 admin.autodiscover()
 
@@ -8,16 +9,18 @@ admin.autodiscover()
 # from django.contrib import admin
 # admin.autodiscover()
 
+
+# Using CBV and adding the name argument to url() so as to ease later use of urls
 urlpatterns = patterns('',
-	url(r'^$', home),
-	url(r'^about$', about),
-	url(r'^share$', share),
-	url(r'^authority$', authority),
-	url(r'^elections$', elections),
-	url(r'^map$', bigmap),
-	url(r'^legal$', legal),
-	url(r'^(?P<anc>[0-9][A-Za-z])$', anc_info),
-	url(r'^document/(?P<anc>..)/(?P<date>....-..-..)/(?P<id>\d+)(?P<slug>/.*)?$', 'ancbrigadesite.views.document'),
+	url(r'^$', HomeTemplateView.as_view(), name='ancbrigadesite_home',),
+	url(r'^about$', AboutTemplateView.as_view(), name='ancbrigadesite_about',),
+	url(r'^share$', ShareTemplateView.as_view(), name='ancbrigadesite_share',),
+	url(r'^authority$', AuthorityTemplateView.as_view(), name='ancbrigadesite_authority',),
+	url(r'^elections$', ElectionsTemplateView.as_view(), name='ancbrigadesite_elections',),
+	url(r'^map$', BigMapTemplateView.as_view(), name='ancbrigadesite_bigmap',),
+	url(r'^legal$', LegalTemplateView.as_view(), name='ancbrigadesite_legal',),
+	url(r'^(?P<anc>[0-9][A-Za-z])$', AncInfoTemplateView.as_view(), name = 'ancbrigadesite_anc_info'),
+	url(r'^document/(?P<anc>..)/(?P<date>....-..-..)/(?P<id>\d+)(?P<slug>/.*)?$', DocumentTemplateView.as_view(), name = 'ancbrigadesite_document',),
 
 	# Django admin
 	url(r'^admin/', include(admin.site.urls)),

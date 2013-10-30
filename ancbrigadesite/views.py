@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404, HttpResponse
+from django.views.generic import TemplateView
 import datetime, collections
 
 try:
@@ -34,53 +35,79 @@ def TemplateContextProcessor(request):
 		"ancs": anc_data,
 	}
 
-def home(request):
-	return render(request, 'ancbrigadesite/index.html', { 'anc_data': anc_data_as_json } )
-
-def anc_info(request, anc):
-	anc = anc.upper()
-	info = anc_data[anc[0]]["ancs"][anc[1]]
+class HomeTemplateView(TemplateView):
+	template_name = 'ancbrigadesite/index.html'
 	
-	prep_hoods(info, True)
-	for smd in info["smds"].values():
-		prep_hoods(smd, False)
+	def get(self, request, *args, **kwargs):
+		return render(request, self.template_name, { 'anc_data': anc_data_as_json } )
 
-	census_stats = [
-		{ "key": "P0180002", 	"label": "families", 		"details": "Family households" },
-		{ "key": "P0180001", 	"label": "households", 		"details": "" },
-		{ "key": "P0010001", 	"label": "residents", 		"details": "" },
-		{ "key": "H0050001_PCT", "label": "vacant homes", 	"details": "Vacant housing units out of all housing units", "is_percent": True },
-		{ "key": "B07001_001E_PCT", "label": "new residents", "details": "Residents who moved into DC in the last year", "is_percent": True },
-		{ "key": "B01002_001E",	"label": "median age" },
-		{ "key": "B19019_001E",	"label": "median household income", "details": "", "is_dollars": True },
-		{ "key": "POP_DENSITY",	"label": "density (pop/sq-mi)", "details": "Total population divided by the area of the ANC." },
-		{ "key": "liquor_licenses",	"label": "liquor licenses",	"details": "Liquor licenses held by bars and restaurants in the area" },
-	]
-	for s in census_stats:
-		s["value"] = info["census"][s["key"]]["value"]
-		s["grid"] = census_grids[s["key"]]
+	
+class AncInfoTemplateView(TemplateView):
+	template_name = 'ancbrigadesite/anc.html'
+	
+	def get(self, request, anc, *args, **kwargs):
+		anc = anc.upper()
+		info = anc_data[anc[0]]["ancs"][anc[1]]
 		
-	documents = Document.objects.filter(anc=anc).order_by('-created')[0:10]
-
-	return render(request, 'ancbrigadesite/anc.html', {'anc': anc, 'info': info, 'documents': documents, 'census_stats': census_stats})
+		prep_hoods(info, True)
+		for smd in info["smds"].values():
+			prep_hoods(smd, False)
 	
-def about(request):
-	return render(request, 'ancbrigadesite/about.html')
+		census_stats = [
+			{ "key": "P0180002", 	"label": "families", 		"details": "Family households" },
+			{ "key": "P0180001", 	"label": "households", 		"details": "" },
+			{ "key": "P0010001", 	"label": "residents", 		"details": "" },
+			{ "key": "H0050001_PCT", "label": "vacant homes", 	"details": "Vacant housing units out of all housing units", "is_percent": True },
+			{ "key": "B07001_001E_PCT", "label": "new residents", "details": "Residents who moved into DC in the last year", "is_percent": True },
+			{ "key": "B01002_001E",	"label": "median age" },
+			{ "key": "B19019_001E",	"label": "median household income", "details": "", "is_dollars": True },
+			{ "key": "POP_DENSITY",	"label": "density (pop/sq-mi)", "details": "Total population divided by the area of the ANC." },
+			{ "key": "liquor_licenses",	"label": "liquor licenses",	"details": "Liquor licenses held by bars and restaurants in the area" },
+		]
+		for s in census_stats:
+			s["value"] = info["census"][s["key"]]["value"]
+			s["grid"] = census_grids[s["key"]]
+			
+		documents = Document.objects.filter(anc=anc).order_by('-created')[0:10]
+		return render(request, self.template_name, {'anc': anc, 'info': info, 'documents': documents, 'census_stats': census_stats})
 
-def share(request):
-	return render(request, 'ancbrigadesite/share.html')
-
-def authority(request):
-	return render(request, 'ancbrigadesite/authority.html')
 	
-def elections(request):
-	return render(request, 'ancbrigadesite/elections.html')
 
-def bigmap(request):
-	return render(request, 'ancbrigadesite/map.html', { 'anc_data': anc_data_as_json } )
+	
+	
+#Using Class Based Views(CBV) to implement our logic
+	
+class AboutTemplateView(TemplateView):
+	'''This CBV generates the about page. '''
+	template_name = 'ancbrigadesite/about.html'
 
-def legal(request):
-	return render(request, 'ancbrigadesite/legal.html')
+
+class  ShareTemplateView(TemplateView):
+	'''This CBV generates the share page. '''
+	template_name = 'ancbrigadesite/share.html'
+
+
+class AuthorityTemplateView(TemplateView):
+	'''This CBV generates the authority page. '''
+	template_name = 'ancbrigadesite/authority.html'
+	
+	
+class  ElectionsTemplateView(TemplateView):
+	'''This CBV generates the elections page. '''
+	template_name =  'ancbrigadesite/elections.html'
+
+
+class BigMapTemplateView(TemplateView):
+	'''This CBV generates the map page. '''
+	template_name = 'ancbrigadesite/map.html'
+	
+	#override the get method to pass anc_data to our view
+	def get(self, request, *args, **kwargs):
+		return render(request, self.template_name, { 'anc_data': anc_data_as_json }) 
+
+	 
+class LegalTemplateView(TemplateView):
+	template_name = 'ancbrigadesite/legal.html'
 	
 def prep_hoods(info, is_anc):
 	def is_part(h):
@@ -120,6 +147,11 @@ def prep_hoods(info, is_anc):
 		
 	info["neighborhood_list"] = hoods
 	
-def document(request, anc=None, date=None, id=None, slug=None):
-	document = get_object_or_404(Document, id=id)
-	return render(request, 'ancbrigadesite/document.html', { "document": document } )
+	
+class DocumentTemplateView(TemplateView):
+	template_name = 'ancbrigadesite/document.html'
+	def get(self, request, anc=None, date=None, id=None, slug=None, *args, **kwagrs):
+		document = get_object_or_404(Document, id=id)
+		return render(request, self.template_name, {"document": document})
+		
+		
