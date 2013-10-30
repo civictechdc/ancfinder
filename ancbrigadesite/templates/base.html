@@ -24,10 +24,10 @@
 	<div id="header" class='topbar' data-dropdown="dropdown">
   		<div class="container">
 	  		<div class="row">
-	  			<a href="{% url 'ancbrigadesite.views.home' %}" id="logo" class="span2">ANC Brigade</a>
+	  			<a href="{% url 'ancbrigadesite_home' %}" id="logo" class="span2">ANC Brigade</a>
 	  			<div class="span10">
 	  				<ul class="nav-links">
-              <li><a class="smooth" href="{% url 'ancbrigadesite.views.home' %}#what-is-an-anc" title="Discover what ANCs do for DC.">What Are ANCs?</a></li>
+              <li><a class="smooth" href="{% url 'ancbrigadesite_home' %}#what-is-an-anc" title="Discover what ANCs do for DC.">What Are ANCs?</a></li>
 
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Explore</a>
@@ -48,8 +48,8 @@
               </li>
 
 			  <!--<li><a href="map.html" title="Which ANC distict do you live in? Who is your Commissioner? Learn that and more here.">Find My ANC</a></li>-->
-              <li><a href="{% url 'ancbrigadesite.views.share' %}" title="We're all in this together. You can submit any kind of info about an ANC here, such as meeting minutes, budget info, Commissioner websites, etc.">Submit ANC Info</a></li>
-              <li><a href="{% url 'ancbrigadesite.views.about' %}" title="This is a project of Code for DC, a group of volunteer civic hackers. Learn more and get involved!">About Us</a></li>
+              <li><a href="{% url 'ancbrigadesite_share' %}" title="We're all in this together. You can submit any kind of info about an ANC here, such as meeting minutes, budget info, Commissioner websites, etc.">Submit ANC Info</a></li>
+              <li><a href="{% url 'ancbrigadesite_about' %}" title="This is a project of Code for DC, a group of volunteer civic hackers. Learn more and get involved!">About Us</a></li>
 	  				</ul>
 	  			</div>
 	  		</div>
@@ -72,7 +72,7 @@
               <p>Last updated June 2, 2013.
               <br>
               <a href="https://github.com/codefordc/ancbrigade">Source code on github</a>.</p>
-              <p>Legal: <a href="{% url 'ancbrigadesite.views.legal' %}">Required disclaimers</a>.</p>
+              <p>Legal: <a href="{% url 'ancbrigadesite_legal' %}">Required disclaimers</a>.</p>
           </div>
         </div>
     </footer>
