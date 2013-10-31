@@ -4,6 +4,8 @@ ancbrigadesite/database.sqlite
 .DS_Store
 *~
 *.pyc
+*.project
+*.pydevproject
 *.swp
 .env
 __pycache__
