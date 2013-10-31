@@ -35,7 +35,7 @@ for rec in abra_read:
 
 subprocess.call('gdaltransform -s_srs EPSG:26985 -t_srs EPSG:4326 < data/abra-nad83.csv > data/abra-latlong.csv', shell=True)
 
-# Check coordinates against Govtrack GIS
+# Check coordinates against Govtrack GIS and sort into CSV
 abra_latlong = csv.reader(open('data/abra-latlong.csv'), delimiter=' ')
 smd_abra_licenses = csv.writer(open('data/smd-abra-licenses.csv', 'w'), delimiter=',')
 anc_abra_licenses = csv.writer(open('data/anc-abra-licenses.csv', 'w'), delimiter=',')

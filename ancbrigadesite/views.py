@@ -54,7 +54,8 @@ def anc_info(request, anc):
 		{ "key": "B01002_001E",	"label": "median age" },
 		{ "key": "B19019_001E",	"label": "median household income", "details": "", "is_dollars": True },
 		{ "key": "POP_DENSITY",	"label": "density (pop/sq-mi)", "details": "Total population divided by the area of the ANC." },
-		{ "key": "liquor_licenses",	"label": "liquor licenses",	"details": "Liquor licenses held by bars and restaurants in the area" },
+		{ "key": "liquor_licenses",	"label": "liquor licenses",	"details": "Liquor licenses granted by ABRA held by bars and restaurants in the area" },
+		{ "key": "building_permits",	"label": "building permits",	"details": "Permits granted by DCRA for construction or alteration in the area" },
 	]
 	for s in census_stats:
 		s["value"] = info["census"][s["key"]]["value"]

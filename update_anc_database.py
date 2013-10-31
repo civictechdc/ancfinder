@@ -153,6 +153,18 @@ def add_abra_data(output):
     anc = rec[0]
     output[anc[0]]["ancs"][anc[1]]["census"]["liquor_licenses"] = { "value": int(rec[1]) }
 
+def add_building_permit_data(output):
+  print("adding building permit information")
+  # Number of building permits in each ANC and SMD
+  smd_building_permits = csv.reader(open('data/smd-building-permits.csv'), delimiter=',')
+  anc_building_permits = csv.reader(open('data/anc-building-permits.csv'), delimiter=',')
+  for rec in smd_building_permits:
+    smd = rec[0]
+    output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]]["census"]["building_permits"] = { "value": int(rec[1]) }
+  for rec in anc_building_permits:
+    anc = rec[0]
+    output[anc[0]]["ancs"][anc[1]]["census"]["building_permits"] = { "value": int(rec[1]) }
+
 def add_geographic_data(output):
   print("adding geographic data")
 
@@ -434,11 +446,13 @@ if __name__ == "__main__":
     add_googledoc_data(output)
     add_scraperwiki_data(output)
   if should("terms"): add_term_data(output)
-  if should("abra"): add_abra_data(output)
   if should("gis"): add_geographic_data(output)
   if should("neighborhoods"): add_neighborhood_data(output)
   if should("census"): add_census_data(output)
   if should("census") or should("census-analysis"): add_census_data_analysis(output)
+  if should("abra"): add_abra_data(output)
+  if should("building"): add_building_permit_data(output)
+
   
   # Output.
   output = json.dumps(output, indent=True, ensure_ascii=False, sort_keys=("--reset" in sys.argv))
