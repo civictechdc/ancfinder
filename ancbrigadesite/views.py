@@ -15,14 +15,24 @@ anc_data = json.loads(anc_data_as_json, object_pairs_hook=collections.OrderedDic
 
 # assemble census data on first load
 def make_anc_hex_color(anc):
-	def avg(t1, f1, t2, f2): return (int((t1[0]*f1+t2[0]*f2)/(f1+f2)), int((t1[1]*f1+t2[1]*f2)/(f1+f2)), int((t1[2]*f1+t2[2]*f2)/(f1+f2)))
-	def hexish(tup): return "".join(("%0.2X" % d) for d in tup)
+	def avg(t1, f1, t2, f2): 
+		return (int((t1[0]*f1+t2[0]*f2)/(f1+f2)), int((t1[1]*f1+t2[1]*f2)/(f1+f2)), int((t1[2]*f1+t2[2]*f2)/(f1+f2)))
+	
+	def hexish(tup): 
+		return "".join(("%0.2X" % d) for d in tup)
+	
 	ward_color_set = [ (27, 158, 119), (217, 95, 2), (166, 118, 29), (117, 112, 179), (231, 41, 138), (102, 166, 30), (230, 171, 2), (166, 118, 29) ]
+	
 	anc_color_set = [ (228, 26, 28), (55, 126, 184), (77, 175, 74), (152, 78, 163), (255, 127, 0), (255, 127, 0), (166, 86, 40) ]
+	
 	ward_color = ward_color_set[int(anc[0])-1]
+	
 	anc_color = anc_color_set[ord(anc[1])-ord('A')]
+	
 	return hexish(ward_color) #avg(ward_color, 1.0, anc_color, 0.22))
+
 census_grids = { }
+
 for ward in anc_data.values():
 	for anc in ward["ancs"].values():
 		for key, info in anc["census"].items():
@@ -35,12 +45,18 @@ def TemplateContextProcessor(request):
 		"ancs": anc_data,
 	}
 
+
 class HomeTemplateView(TemplateView):
 	template_name = 'ancbrigadesite/index.html'
 	
-	def get(self, request, *args, **kwargs):
-		return render(request, self.template_name, { 'anc_data': anc_data_as_json } )
-
+	def get_context_date(self, **kwargs):
+		# Used to pass the anc_data to our home page
+		context = super(HomeTemplate, self).get_context_data(**kwargs)
+		# Add in the anc_data 
+		context['anc_data'] = anc_data_as_json
+		return context
+		
+	
 	
 class AncInfoTemplateView(TemplateView):
 	template_name = 'ancbrigadesite/anc.html'
@@ -101,10 +117,14 @@ class BigMapTemplateView(TemplateView):
 	'''This CBV generates the map page. '''
 	template_name = 'ancbrigadesite/map.html'
 	
-	#override the get method to pass anc_data to our view
-	def get(self, request, *args, **kwargs):
-		return render(request, self.template_name, { 'anc_data': anc_data_as_json }) 
-
+	# Add anc_data to the context of our CBV
+	def get_context_data(self, **kwargs):
+		# Call the base implementation first to get a context
+		context = super(BigMapTemplateView, self).get_context_data(**kwargs)
+		# Add in anc_data to our CBV
+		context['anc_data'] = anc_data_as_json
+		return context
+	
 	 
 class LegalTemplateView(TemplateView):
 	template_name = 'ancbrigadesite/legal.html'
