@@ -69,4 +69,3 @@ for rec in sorted(anc_licenses):
 
 # Clean up extra files
 subprocess.call('rm -rf data/abra data/abra.zip data/abra-nad83.csv data/abra-latlong.csv', shell=True)
-#subprocess.call('rm abra.zip abra-nad83.csv abra-latlong.csv', shell=True)
