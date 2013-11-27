@@ -66,6 +66,7 @@
 
 				<!-- documents -->
 				
+				<!-- Test if there are documents to display for the given anc. If yes, display them. -->
 				{% if documents %}	
 				<h2>{{ anc }}'s Recent Documents</h2>
 				<ul id="recent_documents">
@@ -74,12 +75,17 @@
 					{% endfor %}
 				</ul>
 				
-				{% else %}
-					<h2>{{ anc }}'s Recent Documents</h2>
-					<p> Looks like we don't have this yet. If you do, help us out and <a href="#">upload it here </a> </p>
-				
 				{% endif %}
-
+				<!-- If there are no recent documents for a given anc, allow the possibility of a user uploading one or two. For now they can upload Agendas and Minutes--> 
+				{% if not existing_docs %}
+					<h2>{{ anc }}'s Recent Documents</h2>
+					<ul id="recent_documents">
+						<p> No {{rec_doc.0}} for {{current_month|date:"F"}}: <a href="#"> Upload </a> </p>
+						<p> No {{rec_doc.1}} for {{current_month|date:"F"}}: <a href="#"> Upload </a> </p>
+												<hr>
+				{% endif %}		
+				
+				</ul>
 			</div><!-- /column -->
 
 			<div class="span5">

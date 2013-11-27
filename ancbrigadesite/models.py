@@ -31,7 +31,7 @@ class Document(models.Model):
 	
 	document_content = models.TextField(editable=False, help_text="The binary document content, stored Base64-encoded.")
 	document_content_type = models.CharField(editable=False, max_length=128, help_text="The MIME type of the document_content.")
-	document_content_size = models.IntegerField(editable=False)
+	document_content_size = models.IntegerField(editable=False, blank=True, null=True)
 
 	source_url = models.CharField(max_length=256, blank=True, null=True, verbose_name="Source URL", help_text="The web address where this document was obtained from.")
 	
