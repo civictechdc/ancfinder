@@ -55,12 +55,10 @@ class HomeTemplateView(TemplateView):
 		# Add in the anc_data 
 		context['anc_data'] = anc_data_as_json
 		return context
-		
-	
-	
+			
 class AncInfoTemplateView(TemplateView):
 	template_name = 'ancbrigadesite/anc.html'
-	
+	# Override the HTTP get method to pass along some additional information
 	def get(self, request, anc, *args, **kwargs):
 		anc = anc.upper()
 		info = anc_data[anc[0]]["ancs"][anc[1]]
@@ -84,9 +82,16 @@ class AncInfoTemplateView(TemplateView):
 		for s in census_stats:
 			s["value"] = info["census"][s["key"]]["value"]
 			s["grid"] = census_grids[s["key"]]
-	
+			
+		documents_list = ['Agenda', 'Minutes', 'Report', 'Decision', 'Draft', 'Application', 'Grant', 'Official Correspondence', 'Financial Statement', 'Operating Documents', 'Committee Agenda', 'Committee Minutes', 'Committee Report']		
+		recent_docs = documents_list[:2]
+		current_month = datetime.datetime.now()
+		existing_documents = Document.objects.filter(anc = anc, meeting_date__month=current_month.month, meeting_date__year = current_month.year)
+		
 		documents = Document.objects.filter(anc=anc).order_by('-created')[0:10]
-		return render(request, self.template_name, {'anc': anc, 'info': info, 'documents': documents, 'census_stats': census_stats})
+		#latest_to_upload = [ doc for doc in documents.doc_type if doc not in ]
+
+		return render(request, self.template_name, {'anc': anc, 'current_month': current_month, 'info': info, 'rec_doc': recent_docs, 'existing_docs': existing_documents, 'documents': documents, 'census_stats': census_stats})
 
 #Using Class Based Views(CBV) to implement our logic
 	
@@ -165,6 +170,7 @@ def prep_hoods(info, is_anc):
 	info["neighborhood_list"] = hoods
 	
 	
+# CBV for document page
 class DocumentTemplateView(TemplateView):
 	template_name = 'ancbrigadesite/document.html'
 	def get(self, request, anc=None, date=None, id=None, slug=None, *args, **kwagrs):
