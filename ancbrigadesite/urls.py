@@ -30,6 +30,11 @@ urlpatterns = patterns('',
 
 	# Externals
 	url(r'^tinymce/', include('tinymce.urls')),
+	url(r'^emailverif/', include('emailverification.urls')),
+	url(r'^registration/', include('registration.urls')),
+    url(r'^accounts/login/?$', 'registration.views.loginform'),
+    url(r'^accounts/logout/?$', 'registration.views.logoutview'),
+    url(r'^accounts/profile/?$', 'registration.views.profile'),
 
     # Examples:
     # url(r'^$', 'ancbrigadesite.views.home', name='home'),

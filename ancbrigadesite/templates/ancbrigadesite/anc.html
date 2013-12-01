@@ -1,5 +1,7 @@
-{% extends "base.html" %}
+{% extends "master.html" %}
 {% load humanize %}
+
+{% block master_title %}ANC {{anc}} - Washington, District of Columbia - ANCBrigade.com{% endblock %}
 
 {% block head %}
 <style>
@@ -12,7 +14,7 @@
 </style>
 {% endblock %}
 
-{% block body %}
+{% block master_body %}
 
    <!-- Main hero unit for a primary marketing message or call to action -->
   	<div id="masthead">
