@@ -7,3 +7,6 @@
 [submodule "ext/showdown"]
 	path = ext/showdown
 	url = https://github.com/coreyti/showdown
+[submodule "ext/django-registration-pv"]
+	path = ext/django-registration-pv
+	url = https://github.com/JoshData/django-registration-pv

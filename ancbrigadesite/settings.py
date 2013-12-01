@@ -21,6 +21,8 @@ if not os.path.exists('/home/dotcloud/environment.json'):
 		}
 	}
 
+	EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 	ADMINS = (
 		# ('Your Name', 'your_email@example.com'),
 	)
@@ -147,6 +149,7 @@ TEMPLATE_DIRS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.auth.context_processors.auth",
+    'django.core.context_processors.request',
     "django.core.context_processors.debug",
     "django.core.context_processors.i18n",
     "django.core.context_processors.media",
@@ -167,6 +170,9 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
     
     'tinymce',
+
+    'registration',
+    'emailverification',
     
     'ancbrigadesite',
     'annotator',
@@ -200,3 +206,7 @@ LOGGING = {
         },
     }
 }
+APP_NICE_SHORT_NAME = "ANCBrigade"
+SERVER_EMAIL = "ANCBrigade <no.reply@ancbrigade.com>" # From: address on verification emails
+REGISTRATION_ASK_USERNAME = True
+SITE_ROOT_URL = "http://www.ancbrigade.com"

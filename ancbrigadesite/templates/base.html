@@ -1,111 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-	{% block meta_viewport %}<meta name="viewport" content="width=device-width, initial-scale=1.0">{% endblock %}
+{% extends "master.html" %}
 
-	<title>
-		{% block title %}DC 2013 Wards, ANCs, and SMDs{% endblock %}
-	</title>
+{% block master_title %}{% block title %}{% endblock %} - ANCBrigade.com{% endblock %}
 
-	<!-- styles -->
-	<link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<link href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="{{ STATIC_URL }}css/theme.css" rel="stylesheet">
-	
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    
-    {% block head %}{% endblock %}
-</head>
-<body>
-	<div id="header" class='topbar' data-dropdown="dropdown">
+{% block master_body %}
+   <!-- Main hero unit for a primary marketing message or call to action -->
+  	<div id="masthead">
   		<div class="container">
-	  		<div class="row">
-	  			<a href="{% url 'ancbrigadesite_home' %}" id="logo" class="span2">ANC Brigade</a>
-	  			<div class="span10">
-	  				<ul class="nav-links">
-              <li><a class="smooth" href="{% url 'ancbrigadesite_home' %}#what-is-an-anc" title="Discover what ANCs do for DC.">What Are ANCs?</a></li>
+  			<div class="row">
+  				<h1>{% block masthead %}ANC Brigade: Strengthening Hyper-Local Government{% endblock %}</h1>
+  			</div>
+  		</div><!-- /container -->
+  	</div><!-- /masthead -->
 
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Explore</a>
-                <ul id="menu_anc_list" class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                  {% for ward, ward_info in ancs.items %}
-                      <div class="ward">
-                      <nobr>
-                      {% for anc, anc_info in ward_info.ancs.items %}
-                          <a class="anc" href="/{{ward}}{{anc}}">{{ward}}{{anc}}</a>
-                      {% endfor %}
-                      </nobr>
-                      </div>
-                  {% endfor %}
-                  <div style="padding: .5em; text-align: center;">
-                    <a href="/map">View on a Map</a>
-                  </div>
-                </ul>
-              </li>
-
-			  <!--<li><a href="map.html" title="Which ANC distict do you live in? Who is your Commissioner? Learn that and more here.">Find My ANC</a></li>-->
-              <li><a href="{% url 'ancbrigadesite_share' %}" title="We're all in this together. You can submit any kind of info about an ANC here, such as meeting minutes, budget info, Commissioner websites, etc.">Submit ANC Info</a></li>
-              <li><a href="{% url 'ancbrigadesite_about' %}" title="This is a project of Code for DC, a group of volunteer civic hackers. Learn more and get involved!">About Us</a></li>
-	  				</ul>
-	  			</div>
-	  		</div>
-	  	</div>
-    </div><!-- /header -->
-
-
-{% block body %}{% endblock %}
-
-    <footer>
-        <div class="row">
-          <div class="span3 offset2">
-                <p>ANCBrigade is a project in Washington, D.C. to strengthen our unique hyper-local level of government called Advisory Neighborhood Commissions (ANCs).</p>
+    <div class="container">
+      <div class="row">
+        <div class="span10 offset1">
+          <div style="margin-top: 1em">
+      		 {% block body %}{% endblock %}
           </div>
-          <div class="span3 offset">
-              <p class="by">ANCBrigade is a project of the <a href="http://codefordc.org/">Code for DC</a>. We’re volunteers interested in using technology to solve problems in our civic lives. This is a work in progress.</p>
-              <p>The <a href="http://ryantroyford.com/central-union-mission/">Central Union Mission-inspired font</a> in the header is by <a href="http://ryantroyford.com/">Ryan Troy</a>.</p>
-          </div>
-          <div class="span3">
-              <p>Last updated June 2, 2013.
-              <br>
-              <a href="https://github.com/codefordc/ancbrigade">Source code on github</a>.</p>
-              <p>Legal: <a href="{% url 'ancbrigadesite_legal' %}">Required disclaimers</a>.</p>
-          </div>
-        </div>
-    </footer>
-
-    <!-- javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"> </script>
-	<script>
-		// when debugging off the network, fall back to a local copy of jquery
-		try { $; } catch (err) {
-			document.write("\u003Cscript src\u003D\u0027static/bootstrap/js/jquery-1.7.2.min.js\u0027\u003E \u003C/script\u003E");
-		}
-	</script>
-	
-	{# CSRF as required by Django #}
-	<script>$('html').ajaxSend(function(event, xhr, settings) { if (!/^https?:.*/.test(settings.url)) xhr.setRequestHeader("X-CSRFToken", "{{csrf_token|escapejs}}"); });</script> <!-- {% csrf_token %} -->
-	
-	<script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
-	<script src="{{ STATIC_URL }}jquery-utils.js"> </script>
-	<script src="{{ STATIC_URL }}moment.min.js"> </script>
-	
-	{% block scripts %}
-	{% endblock %}
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-41757236-1', 'ancbrigade.com');
-  ga('send', 'pageview');
-</script>
-</body>
-</html>
+		    </div>
+	    </div>
+	   </div>
+{% endblock %}

@@ -4,3 +4,4 @@ lxml
 pdfminer
 django-tinymce
 BeautifulSoup4
+django-picklefield

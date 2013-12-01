@@ -267,12 +267,21 @@ input[type="color"].large,
 	ul.nav-links {
 		text-align: right;
 		list-style: none;
+		margin: 0;
 	}
 	ul.nav-links li {
 		display: inline;
 		margin-left: 60px;
 	}
 	
+	#header .login-row {
+		font-family: OpenSans, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		text-transform: none;
+		font-size: 70%;
+		color: white;
+		text-align: right;
+	}
+
 #masthead {
 	background-color: #79A5D3;
     padding: 20px 0 20px;
@@ -456,3 +465,7 @@ div#use_my_location {
 		margin-top: 20px;
 	}
 }
+
+/* forms */
+
+p.error { color: red; }
