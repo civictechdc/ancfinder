@@ -64,7 +64,6 @@ class UploadDocumentForm(forms.Form):
 		if "docfile" not in self.cleaned_data:
 			raise forms.ValidationError("Select a file.")
 
-@permission_required('ancbrigadesite.add_document')
 def upload_document(request):
 	# Handle file upload
 	if request.method == 'POST':
@@ -115,7 +114,6 @@ def upload_document(request):
 		context_instance=RequestContext(request)
 	)
 
-@permission_required('ancbrigadesite.change_document')
 def edit_document(request, doc_id):
 	class EditDocumentForm(forms.ModelForm):
 		class Meta:
