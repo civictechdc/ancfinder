@@ -52,9 +52,9 @@
                         <div style="padding-bottom: .4em; color: black; border-bottom: 1px solid #444;">{{cmte.committee}}</div>
                         <div style="padding-bottom: .75em"><small>
                                 <b>Chair:</b> {{ cmte.chair }} ({{cmte.chair_email}})<br>
-                                {{ cmte.purpose }}
+                                {{ cmte.purpose|safe }}
                                 {% if cmte.meetings %}
-                                <br><b>Meetings:</b> {{ cmte.meetings }}
+                                <br><b>Meetings:</b> {{ cmte.meetings|safe }}
                                 {% endif %}
                         </small></div>
 					</td>
