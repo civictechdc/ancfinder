@@ -54,6 +54,11 @@ else:
 		(env['DOTCLOUD_USERNAME'], env['DOTCLOUD_EMAIL']),
 	)
 	MANAGERS = ADMINS
+
+	EMAIL_HOST = env['SMTP_HOST']
+	EMAIL_HOST_USER = env['SMTP_USER']
+	EMAIL_HOST_PASSWORD = env['SMTP_PASSWORD']
+	EMAIL_USE_TLS = True
 	
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
