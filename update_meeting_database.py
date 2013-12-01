@@ -95,12 +95,14 @@ for meeting in dom.xpath("channel/item"):
 			
 	# Scrape the title field to determine which ANC this is for and what kind of
 	# meeting it is.
-	m = re.match(r"ANC (\d[A-Z]) (Meeting|Monthly Meeting|Bimonthly Meetings)$", meeting_info["title"].strip())
+	m = re.match(r"ANC (\d[A-Z]) (\d\d )?(Meeting|Monthly Meeting|Bimonthly Meetings)$", meeting_info["title"].strip())
 	if not m:
 		print(("Unrecognized meeting title format:", meeting_info["title"]))
+	elif m.group(2):
+		pass # skip SMD meetings
 	else:
 		meeting_info["anc"] = m.group(1)
-		meeting_info["meeting_type"] = m.group(2)
+		meeting_info["meeting_type"] = m.group(3)
 		
 	# Parse the meeting time into the ISO datetime format.
 	meeting_info["when"] = re.sub(" to \d.*$", "", meeting_info["when"]) # if there's "time X to time Y", chop off the second time
