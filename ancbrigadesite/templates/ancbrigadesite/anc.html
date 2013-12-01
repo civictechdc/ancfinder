@@ -35,7 +35,7 @@
 					{% for smd in info.smds.values %}
 					<td id="smd{{ smd.smd_number }}" width="33%" style="vertical-align: top; padding-right: 1.25em;">
 						<div style="padding-bottom: .4em; color: black; border-bottom: 1px solid #444;">{{ smd.first_name }} {{ smd.last_name }}</div>
-						<div style="padding-bottom: .75em"><small><b>SMD {{ smd.smd_number }}</b>: {{ smd.neighborhood_list }}</small></div>
+						<div style="padding-bottom: .75em"><small><b>SMD {{ smd.smd_number }}</b>: {{ smd.neighborhood_list|capfirst }}</small></div>
 					</td>
 					{% if forloop.counter|divisibleby:3 and not forloop.last %}</tr><tr>{% endif %}
 					{% endfor %}
