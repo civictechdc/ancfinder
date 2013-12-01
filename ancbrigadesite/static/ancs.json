@@ -1383,7 +1383,44 @@
      }
     }, 
     "website": "http://www.anc1a.org/", 
-    "area": 1663561.130268169
+    "area": 1663561.130268169, 
+    "committees": {
+     "Alcoholic Beverage Review Administration Committee (ABRA)": {
+      "committee": "Alcoholic Beverage Review Administration Committee (ABRA)", 
+      "meetings": "", 
+      "chair": "Sheldon Scott", 
+      "chair_email": "", 
+      "purpose": "Track ANC 1A\nrequests for information/reports and follow-up with ABRA as necessary. Research and\nreport findings and provide recommendations to ANC 1A.Draft\n(recommended) resolutions for ANC 1A’s consideration. Coordinate\ncommunity participation at ABC hearings by explicit request of the\ncommission.Maintain an\n(excel) spreadsheet of all ANC 1A ABC license holders, ANC ABRA\nnotifications, and appropriate deadlines. "
+     }, 
+     "Planning and Zoning Committee (PZC)": {
+      "committee": "Planning and Zoning Committee (PZC)", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": "Identify\nappropriate issues in regards to land-use planning, zoning, and\nregulations Draft\nresolutions for ANC 1A’s consideration. Coordinate\npublic meetings as necessary. If a public meeting is held, a\nparticipant sign-in sheet and meeting notes shall be provided to ANC 1A\nwithin 30 days of the meeting date. Research and\nreport findings, recommendations, and deadlines to ANC 1ATrack and\nnotify ANC 1A of all relevant hearing dates. "
+     }, 
+     "Public Safety Committee (PSC)": {
+      "committee": "Public Safety Committee (PSC)", 
+      "meetings": "", 
+      "chair": "Cecilia Jones", 
+      "chair_email": "", 
+      "purpose": "Formulate and\nexecute strategies for community involvement to promote greater public\nsafety and awareness of criminal activity.Support the\nMPD’s community policing initiatives through innovative approaches and\nencouraging more communication.Track ANC 1A\ncrimes and report information to ANC 1A.Raise public\nsafety issues to ANC 1A and other appropriate entities.Draft\nresolutions for ANC 1A’s consideration. "
+     }, 
+     "Education and Recreation Committee (ERC)": {
+      "committee": "Education and Recreation Committee (ERC)", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": "Indentify\nappropriate issues in regards to education and recreation.Explore\ncommunity partnerships with public schools to improve facilities and\nstudent safety.Encourage ANC\n1A residents to volunteer their time in ANC 1A parks, schools, and\nyouth programs. Assess use\nand demand for improvements and/or new facilities in the Department of\nParks and Recreation parks and playgrounds. Draft\nresolutions for ANC 1A’s consideration."
+     }, 
+     "Historic Preservation, Development, & Design Review Committee (HPDDR)": {
+      "committee": "Historic Preservation, Development, & Design Review Committee (HPDDR)", 
+      "meetings": "", 
+      "chair": "Kent Boese", 
+      "chair_email": "", 
+      "purpose": "Promote\npreservation of the historic, architectural, and residential character\nof the Columbia Heights, Park View, and Pleasant Plains neighborhoods.Establish and\nmaintain on-going working relations with those public and private\nentities with similar goals and purposes, such as the Historic\nPreservation Review Board, Board of Zoning Adjustment, the Zoning\nCommission, The DC Office of Planning and the DC Preservation League.Identify\nhistoric properties and districts of merit and submit them for landmark\nstatus when appropriate. Propose\nrelated policy positions for the Commission's Consideration. Review\ndesigns for all proposed development and recommend changes as\nappropriate to maintain overall character of ANC 1A neighborhoods."
+     }
+    }
    }, 
    "B": {
     "anc": "1B", 
@@ -1395,40 +1432,47 @@
      38.92857570155528
     ], 
     "committees": {
-     "ABC (Liquor Licenses)": {
-      "chair": "Jeremy Leffler", 
-      "chair_email": "1b02@anc.dc.gov", 
-      "committee": "ABC (Liquor Licenses)", 
-      "meetings": "every third Wednesday at the Thurgood Marshall Center, 7:00 p.m.", 
-      "purpose": "The ABC Committee reviews and recommends action to the Commission on all issues affecting liquor, restaurant, retail and entertainment licenses."
-     }, 
-     "Design Review": {
-      "chair": "Tony Norman", 
-      "chair_email": " 1b10@anc.dc.gov", 
-      "committee": "Design Review", 
-      "meetings": "every third Monday at the Thurgood Marshall Center, 7:00 p.m.", 
-      "purpose": "The Design Review Committee reviews all applications and proposals relating to development, design, historic preservation and zoning."
-     }, 
-     "Grants": {
-      "chair": "E. Gail Anderson Holness", 
-      "chair_email": "1b11@anc.dc.gov", 
-      "committee": "Grants", 
-      "meetings": "", 
-      "purpose": "The Grants Committee reviews applications from community organizations for grants from ANC 1B to support worthy projects. Persons or organizations interested in applying for a grant should \ncontact the Commissioner representing their single-member district for \nassistance and support.\n"
-     }, 
      "Public Safety": {
-      "chair": "Sedrick Muhammad", 
-      "chair_email": "1b03@anc.dc.gov", 
       "committee": "Public Safety", 
       "meetings": "", 
+      "chair": "Sedrick Muhammad", 
+      "chair_email": "1b03@anc.dc.gov", 
       "purpose": "The committee reviews all issues affecting public safety and law enforcement in ANC 1B and recommends actions to the Commission when appropriate."
      }, 
+     "Design Review": {
+      "committee": "Design Review", 
+      "meetings": "every third Monday at the Thurgood Marshall Center, 7:00 p.m.", 
+      "chair": "Tony Norman", 
+      "chair_email": " 1b10@anc.dc.gov", 
+      "purpose": "The Design Review Committee reviews all applications and proposals relating to development, design, historic preservation and zoning."
+     }, 
      "Transportation": {
-      "chair": "Ben Klemens", 
-      "chair_email": "bklemens@gmail.com", 
       "committee": "Transportation", 
       "meetings": "every third Thursday at the Thurgood Marshall Center, 7:00 p.m.", 
+      "chair": "Ben Klemens", 
+      "chair_email": "bklemens@gmail.com", 
       "purpose": "The Transportation Committee reviews all applications and proposals relating to transportation, parking and other similar topics."
+     }, 
+     "ABC (Liquor Licenses)": {
+      "committee": "ABC (Liquor Licenses)", 
+      "meetings": "every third Wednesday at the Thurgood Marshall Center, 7:00 p.m.", 
+      "chair": "Jeremy Leffler", 
+      "chair_email": "1b02@anc.dc.gov", 
+      "purpose": "The ABC Committee reviews and recommends action to the Commission on all issues affecting liquor, restaurant, retail and entertainment licenses."
+     }, 
+     "Grants": {
+      "committee": "Grants", 
+      "meetings": "", 
+      "chair": "E. Gail Anderson Holness", 
+      "chair_email": "1b11@anc.dc.gov", 
+      "purpose": "The Grants Committee reviews applications from community organizations for grants from ANC 1B to support worthy projects. Persons or organizations interested in applying for a grant should \ncontact the Commissioner representing their single-member district for \nassistance and support.\n"
+     }, 
+     "Economic Development Committee (EDC)": {
+      "committee": "Economic Development Committee (EDC)", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": "Identify\nappropriate issues in regards to job creation, and business development\n[housing development and policy, project development, public space,\ntransportation issues] Draft\nresolutions for ANC 1A’s considerationCoordinate\npublic meetings as necessary. If a public meeting is held, a\nparticipant sign-in sheet and meeting notes shall be provided to ANC 1A\nwithin 30 days of the meeting date. Research and\nreport findings and provide recommendations to ANC 1A Track and\nnotify ANC 1A of all relevant hearing dates. "
      }
     }, 
     "census": {
@@ -3921,7 +3965,30 @@
      }
     }, 
     "website": "http://www.anc1c.org/", 
-    "area": 1285240.4104597047
+    "area": 1285240.4104597047, 
+    "committees": {
+     "ABC & Public Safety ": {
+      "committee": "ABC & Public Safety ", 
+      "meetings": "held in conjunction with the PSA 303 meeting and typically occurs on the second Wednesday of each month at 7 p.m. at Kalorama Recreation Center. There is typically no meeting in August and the Committee Chair may cancel the meeting if there isn't any business before the committee.", 
+      "chair": "Brian Hart", 
+      "chair_email": " bhartdc@gmail.com", 
+      "purpose": " ABC licensing; business regulation and permits related to ABC establishment; Public Safety (Police, Fire, EMS); Public Space and Zoning related to ABC establishments. "
+     }, 
+     " Planning, Zoning & Transportation": {
+      "committee": " Planning, Zoning & Transportation", 
+      "meetings": "third Wednesday of the month at 7 p.m. at the Kalorama Recreation Center. There is typically no meeting in August.", 
+      "chair": "Jimmy Rock", 
+      "chair_email": "jimmyrockANC1C08@gmail.com", 
+      "purpose": "Housing, parking, planning, public space (other than ABC-related), signage, zoning, historic preservation and transportation and traffic."
+     }, 
+     "Public Services and the Environment": {
+      "committee": "Public Services and the Environment", 
+      "meetings": "fourth Wednesday of each month at 7 p.m. at the Kalorama Recreation Center. There is typically no meeting in August.", 
+      "chair": "Martis \"Marty\" Davis", 
+      "chair_email": "martis_davis@comcast.net", 
+      "purpose": " reviewing and recommending ANC grants, the environment, arts and culture, education, health and human services, parks and recreation, public works and libraries."
+     }
+    }
    }, 
    "D": {
     "anc": "1D", 
@@ -4561,7 +4628,8 @@
      }
     }, 
     "website": "http://www.anc1d.org/", 
-    "area": 947686.3883172404
+    "area": 947686.3883172404, 
+    "committees": {}
    }
   }, 
   "description": "", 
@@ -5671,7 +5739,8 @@
      }
     }, 
     "website": "http://www.anc2a.org/", 
-    "area": 7066065.358013029
+    "area": 7066065.358013029, 
+    "committees": {}
    }, 
    "B": {
     "anc": "2B", 
@@ -6826,7 +6895,8 @@
      }
     }, 
     "website": "http://www.dupontcircleanc.net/wordpress/", 
-    "area": 2160835.7724999543
+    "area": 2160835.7724999543, 
+    "committees": {}
    }, 
    "C": {
     "anc": "2C", 
@@ -7325,7 +7395,44 @@
      }
     }, 
     "website": "", 
-    "area": 2862036.3225485682
+    "area": 2862036.3225485682, 
+    "committees": {
+     "Alcohol Licensing ": {
+      "committee": "Alcohol Licensing ", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     " Communications": {
+      "committee": " Communications", 
+      "meetings": "", 
+      "chair": "Berin Szoka", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "Housing and Economic Development": {
+      "committee": "Housing and Economic Development", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "Planning, Transportation, and Zoning": {
+      "committee": "Planning, Transportation, and Zoning", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "Public Safety": {
+      "committee": "Public Safety", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": ""
+     }
+    }
    }, 
    "D": {
     "anc": "2D", 
@@ -7674,7 +7781,16 @@
      }
     }, 
     "website": "http://anc2d.org/", 
-    "area": 801853.0202236548
+    "area": 801853.0202236548, 
+    "committees": {
+     "None": {
+      "committee": "None", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": ""
+     }
+    }
    }, 
    "E": {
     "anc": "2E", 
@@ -8805,7 +8921,8 @@
      }
     }, 
     "website": "http://www.anc2e.com/", 
-    "area": 4256950.626770164
+    "area": 4256950.626770164, 
+    "committees": {}
    }, 
    "F": {
     "anc": "2F", 
@@ -9793,7 +9910,8 @@
      }
     }, 
     "website": "http://www.anc2f.org/", 
-    "area": 1186417.0074787685
+    "area": 1186417.0074787685, 
+    "committees": {}
    }
   }, 
   "description": "", 
@@ -10475,7 +10593,8 @@
      }
     }, 
     "website": "http://anc3b.org/", 
-    "area": 1406437.1245693155
+    "area": 1406437.1245693155, 
+    "committees": {}
    }, 
    "C": {
     "anc": "3C", 
@@ -11730,7 +11849,8 @@
      }
     }, 
     "website": "http://anc3c.org/", 
-    "area": 5294260.472881155
+    "area": 5294260.472881155, 
+    "committees": {}
    }, 
    "D": {
     "anc": "3D", 
@@ -13172,7 +13292,8 @@
      }
     }, 
     "website": "http://www.anc3d.org/", 
-    "area": 10928462.651007053
+    "area": 10928462.651007053, 
+    "committees": {}
    }, 
    "E": {
     "anc": "3E", 
@@ -13893,7 +14014,8 @@
      }
     }, 
     "website": "http://anc3e.org/", 
-    "area": 3755695.3304314334
+    "area": 3755695.3304314334, 
+    "committees": {}
    }, 
    "F": {
     "anc": "3F", 
@@ -14809,7 +14931,8 @@
      }
     }, 
     "website": "http://www.anc3f.us/", 
-    "area": 5524729.837595328
+    "area": 5524729.837595328, 
+    "committees": {}
    }, 
    "G": {
     "anc": "3G", 
@@ -15701,7 +15824,8 @@
      }
     }, 
     "website": "http://anc3g.org/", 
-    "area": 6955446.0344673395
+    "area": 6955446.0344673395, 
+    "committees": {}
    }
   }, 
   "description": "", 
@@ -16737,7 +16861,8 @@
      }
     }, 
     "website": "http://anc4a.org/", 
-    "area": 7739983.179818161
+    "area": 7739983.179818161, 
+    "committees": {}
    }, 
    "B": {
     "anc": "4B", 
@@ -17847,7 +17972,44 @@
      }
     }, 
     "website": "http://anc4b.org/", 
-    "area": 5035570.916793177
+    "area": 5035570.916793177, 
+    "committees": {
+     "Economic Development/Land Use": {
+      "committee": "Economic Development/Land Use", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "Education/Libraries/Recreation": {
+      "committee": "Education/Libraries/Recreation", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "Public Safety/Alcoholic Beverages": {
+      "committee": "Public Safety/Alcoholic Beverages", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "Public Works/Infrastructure/Utilities (including transportation)": {
+      "committee": "Public Works/Infrastructure/Utilities (including transportation)", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "Social Services/Health": {
+      "committee": "Social Services/Health", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": ""
+     }
+    }
    }, 
    "C": {
     "anc": "4C", 
@@ -19008,7 +19170,51 @@
      }
     }, 
     "website": "http://anc4c.org/", 
-    "area": 3139442.687400747
+    "area": 3139442.687400747, 
+    "committees": {
+     "Public Safety and Human Services": {
+      "committee": "Public Safety and Human Services", 
+      "meetings": "", 
+      "chair": "Commissioner Williams", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "Education and Youth Programs": {
+      "committee": "Education and Youth Programs", 
+      "meetings": "", 
+      "chair": "Commissioner Myers", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "Recreation and Library Issues": {
+      "committee": "Recreation and Library Issues", 
+      "meetings": "", 
+      "chair": "Commissioner Anthony", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "Business, Zoning, and Economic Development": {
+      "committee": "Business, Zoning, and Economic Development", 
+      "meetings": "", 
+      "chair": "Commissioner Yates", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "Public Works and Transportation": {
+      "committee": "Public Works and Transportation", 
+      "meetings": "", 
+      "chair": "Commissioner Galloway", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "Communications and Grants": {
+      "committee": "Communications and Grants", 
+      "meetings": "", 
+      "chair": "Commissioner Standish", 
+      "chair_email": "", 
+      "purpose": ""
+     }
+    }
    }, 
    "D": {
     "anc": "4D", 
@@ -19752,7 +19958,16 @@
      }
     }, 
     "website": "http://anc4d.org/", 
-    "area": 1859893.9233471826
+    "area": 1859893.9233471826, 
+    "committees": {
+     "No committees": {
+      "committee": "No committees", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": ""
+     }
+    }
    }
   }, 
   "description": "", 
@@ -20813,7 +21028,8 @@
      }
     }, 
     "website": "http://www.anc5a.org/", 
-    "area": 5823643.926731655
+    "area": 5823643.926731655, 
+    "committees": {}
    }, 
    "B": {
     "anc": "5B", 
@@ -21504,7 +21720,72 @@
      }
     }, 
     "website": "http://anc5b.org/", 
-    "area": 3872500.746220678
+    "area": 3872500.746220678, 
+    "committees": {
+     "DDOT": {
+      "committee": "DDOT", 
+      "meetings": "", 
+      "chair": "Rivens and Smith", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "DCRA": {
+      "committee": "DCRA", 
+      "meetings": "", 
+      "chair": "Rivens and Smith", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "Finance\n      and Revenue": {
+      "committee": "Finance\n      and Revenue", 
+      "meetings": "", 
+      "chair": "Rivens and Smith", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "Health": {
+      "committee": "Health", 
+      "meetings": "", 
+      "chair": "Higgins", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "Judiciary and Public Safety": {
+      "committee": "Judiciary and Public Safety", 
+      "meetings": "", 
+      "chair": "Higgins", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "Human Services": {
+      "committee": "Human Services", 
+      "meetings": "", 
+      "chair": "Steptoe", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "Economic Development": {
+      "committee": "Economic Development", 
+      "meetings": "", 
+      "chair": "Steptoe", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "Government Operations": {
+      "committee": "Government Operations", 
+      "meetings": "", 
+      "chair": "Jones", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "Education": {
+      "committee": "Education", 
+      "meetings": "", 
+      "chair": "Jones", 
+      "chair_email": "", 
+      "purpose": ""
+     }
+    }
    }, 
    "C": {
     "anc": "5C", 
@@ -22504,7 +22785,8 @@
      }
     }, 
     "website": "http://www.anc5c.biz/", 
-    "area": 9764919.54119969
+    "area": 9764919.54119969, 
+    "committees": {}
    }, 
    "D": {
     "anc": "5D", 
@@ -23438,7 +23720,8 @@
      }
     }, 
     "website": "", 
-    "area": 3486443.3040548535
+    "area": 3486443.3040548535, 
+    "committees": {}
    }, 
    "E": {
     "anc": "5E", 
@@ -24807,7 +25090,23 @@
      }
     }, 
     "website": "", 
-    "area": 3966298.4681042917
+    "area": 3966298.4681042917, 
+    "committees": {
+     "Committee on Consumer and Regulatory Affairs": {
+      "committee": "Committee on Consumer and Regulatory Affairs", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": ""
+     }, 
+     "Commitee on Economic Development": {
+      "committee": "Commitee on Economic Development", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": ""
+     }
+    }
    }
   }, 
   "description": "", 
@@ -25783,7 +26082,37 @@
      }
     }, 
     "website": "http://www.anc6a.org/", 
-    "area": 2113496.5855503147
+    "area": 2113496.5855503147, 
+    "committees": {
+     "Alcohol Beverage Licensing": {
+      "committee": "Alcohol Beverage Licensing", 
+      "meetings": "7 PM on the third Tuesday of each month, Sherwood Recreation Center, Corner of 10th and G Sts. NE", 
+      "chair": "Jay Williams", 
+      "chair_email": "williamsANC6a05@gmail.com", 
+      "purpose": ""
+     }, 
+     "Community Outreach": {
+      "committee": "Community Outreach", 
+      "meetings": "7:30 PM on the third Monday of each month, Church of the Lord Jesus Christ of the Apostolic Faith annex, 1235 C St. NE", 
+      "chair": "Elizabeth Nelson", 
+      "chair_email": "elizabeth_knits@yahoo.com", 
+      "purpose": "Grant applications at http://anc6a.org/grant.doc"
+     }, 
+     "Economic Development & Zoning": {
+      "committee": "Economic Development & Zoning", 
+      "meetings": "7 PM on the third Wednesday of each month, Sherwood Recreation Center Corner of 10th and G Sts. NE\n      ", 
+      "chair": "Dan Golden", 
+      "chair_email": "dpgolden@gmail.com", 
+      "purpose": ""
+     }, 
+     "Transportation & Public Space": {
+      "committee": "Transportation & Public Space", 
+      "meetings": "7 PM on the third Monday of each month, Sherwood Recreation Center, Corner of 10th and G Sts. NE", 
+      "chair": "Omar Mahmud", 
+      "chair_email": "mahmud6a01@gmail.com", 
+      "purpose": ""
+     }
+    }
    }, 
    "B": {
     "anc": "6B", 
@@ -27011,7 +27340,8 @@
      }
     }, 
     "website": "http://www.anc6b.org/", 
-    "area": 4055414.465766549
+    "area": 4055414.465766549, 
+    "committees": {}
    }, 
    "C": {
     "anc": "6C", 
@@ -27810,7 +28140,44 @@
      }
     }, 
     "website": "", 
-    "area": 2663588.5042186864
+    "area": 2663588.5042186864, 
+    "committees": {
+     "Alcoholic Beverage Licensing": {
+      "committee": "Alcoholic Beverage Licensing", 
+      "meetings": "", 
+      "chair": "Tony Richardson", 
+      "chair_email": " tonyrichardson08@gmail.com", 
+      "purpose": "See <a href=\"http://www.anc6c.org/abl.html\">this page</a>"
+     }, 
+     "Grants": {
+      "committee": "Grants", 
+      "meetings": "The Grants Committee meets as required to make recommendations to the full Commission on potential grant applications.<span class=\"Apple-converted-space\">&nbsp; </span>For more information, please review our <a href=\"http://www.anc6c.org/grantguidelines.html\"><span class=\"s4\">Grant Guidelines</span></a> and <a href=\"http://www.anc6c.org/6C_Grant_Application.pdf\"><span class=\"s4\">Grant Application</span></a> for more information.", 
+      "chair": "Mark Kazmierczak", 
+      "chair_email": "6C05@anc.dc.gov", 
+      "purpose": ""
+     }, 
+     "Planning, Zoning, and Environment": {
+      "committee": "Planning, Zoning, and Environment", 
+      "meetings": " first Wednesday of the month at 7 pm at Kaiser Permanente Capitol Hill Medical Center, 700 Second Street NE", 
+      "chair": "Mark Eckenwiler", 
+      "chair_email": "zoning@eckenwiler.org", 
+      "purpose": "See <a href=\"http://www.anc6c.org/pze.html\">this page</a>"
+     }, 
+     "Transportation and Public Space": {
+      "committee": "Transportation and Public Space", 
+      "meetings": " first Thursday of the month at 7:00 pm at the Kaiser Permanente Capitol Hill Medical Center, 700 Second Street NE.", 
+      "chair": "Joe McCann", 
+      "chair_email": "jgmccann@gmail.com", 
+      "purpose": ""
+     }, 
+     "Youth and Education": {
+      "committee": "Youth and Education", 
+      "meetings": "", 
+      "chair": "Karen Wirt", 
+      "chair_email": "Karen.Wirt@anc.dc.gov", 
+      "purpose": ""
+     }
+    }
    }, 
    "D": {
     "anc": "6D", 
@@ -28768,7 +29135,8 @@
      }
     }, 
     "website": "http://www.anc6d.org/", 
-    "area": 9866345.661738837
+    "area": 9866345.661738837, 
+    "committees": {}
    }, 
    "E": {
     "anc": "6E", 
@@ -29657,7 +30025,8 @@
      }
     }, 
     "website": "http://anc6e.org/", 
-    "area": 1529664.1911340505
+    "area": 1529664.1911340505, 
+    "committees": {}
    }
   }, 
   "description": "", 
@@ -30740,7 +31109,8 @@
      }
     }, 
     "website": "http://anc7b.us/", 
-    "area": 5986586.917878937
+    "area": 5986586.917878937, 
+    "committees": {}
    }, 
    "C": {
     "anc": "7C", 
@@ -31626,7 +31996,8 @@
      }
     }, 
     "website": "", 
-    "area": 3391236.4970300198
+    "area": 3391236.4970300198, 
+    "committees": {}
    }, 
    "D": {
     "anc": "7D", 
@@ -32685,7 +33056,16 @@
      }
     }, 
     "website": "", 
-    "area": 6124532.159651262
+    "area": 6124532.159651262, 
+    "committees": {
+     "None": {
+      "committee": "None", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": ""
+     }
+    }
    }, 
    "E": {
     "anc": "7E", 
@@ -33576,7 +33956,8 @@
      }
     }, 
     "website": "", 
-    "area": 3278695.6278094407
+    "area": 3278695.6278094407, 
+    "committees": {}
    }, 
    "F": {
     "anc": "7F", 
@@ -34559,7 +34940,8 @@
      }
     }, 
     "website": "", 
-    "area": 4039426.8672045637
+    "area": 4039426.8672045637, 
+    "committees": {}
    }
   }, 
   "description": "", 
@@ -35532,7 +35914,8 @@
      }
     }, 
     "website": "http://www.anc8adc.org/", 
-    "area": 3749937.877585046
+    "area": 3749937.877585046, 
+    "committees": {}
    }, 
    "B": {
     "anc": "8B", 
@@ -36499,7 +36882,51 @@
      }
     }, 
     "website": "http://www.anc8b.org/", 
-    "area": 2389655.3154332256
+    "area": 2389655.3154332256, 
+    "committees": {
+     "Economic Development": {
+      "committee": "Economic Development", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": "matters related to economic, industrial, and commercial development; the disposition of property for economic development purposes; development, maintenance, preservation, and regulation of the housing stock, including rental housing; and neighborhood development, improvement, stabilization, and urban affairs."
+     }, 
+     "Grants": {
+      "committee": "Grants", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": " promulgating rules for the submission and review of grant applications."
+     }, 
+     "Community Outreach": {
+      "committee": "Community Outreach", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": "engaging community stakeholders and developing strategies to inform residents on important issues through social media, flyers, newsletters, etc."
+     }, 
+     "Public Safety": {
+      "committee": "Public Safety", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": "working with public safety officials to ensure the safety of our residents and communities."
+     }, 
+     "Workforce Development": {
+      "committee": "Workforce Development", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": "matters related to workforce-development issues, employment and manpower development."
+     }, 
+     "Parking Enforcement": {
+      "committee": "Parking Enforcement", 
+      "meetings": "", 
+      "chair": "", 
+      "chair_email": "", 
+      "purpose": "ensuring residents have access to parking spaces near their homes, removal of abandoned and dangerous vehicles."
+     }
+    }
    }, 
    "C": {
     "anc": "8C", 
@@ -37457,7 +37884,8 @@
      }
     }, 
     "website": "", 
-    "area": 9240680.737490257
+    "area": 9240680.737490257, 
+    "committees": {}
    }, 
    "D": {
     "anc": "8D", 
@@ -38377,7 +38805,8 @@
      }
     }, 
     "website": "", 
-    "area": 12422466.14034544
+    "area": 12422466.14034544, 
+    "committees": {}
    }, 
    "E": {
     "anc": "8E", 
@@ -39291,7 +39720,8 @@
      }
     }, 
     "website": "", 
-    "area": 3166250.899503048
+    "area": 3166250.899503048, 
+    "committees": {}
    }
   }, 
   "description": "", 

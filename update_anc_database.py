@@ -58,7 +58,6 @@ def get_base_data():
   wards = csv_file_to_dict(gs.download(spreadsheet_id, 1)) # second argument is the worksheet ID
   ancs = csv_file_to_dict(gs.download(spreadsheet_id, 2))
   smds = csv_file_to_dict(gs.download(spreadsheet_id, 0))
-  committees = csv_file_to_dict(gs.download(spreadsheet_id, 10))
       
   output = OrderedDict()
   for ward in wards:
@@ -83,15 +82,6 @@ def get_base_data():
     s["smd_number"] = smd["smd"][2:]
     s["ward"] = smd["ward"]
 
-  for cmte in committees:
-    c = OrderedDict()
-    output[ cmte["ANC"][0] ]["ancs"][ cmte["ANC"][1] ]["committees"][ cmte["committee"]] = c
-    c["committee"] = cmte["committee"]
-    c["meetings"] = cmte["meetings"]
-    c["chair"] = cmte["chair"]
-    c["chair_email"] = cmte["chair email"]
-    c["purpose"] = cmte["purpose"]
-    
   return output
 
 def add_googledoc_data(output):
@@ -106,6 +96,7 @@ def add_googledoc_data(output):
   wards = csv_file_to_dict(gs.download(spreadsheet_id, 1)) # second argument is the worksheet ID
   ancs = csv_file_to_dict(gs.download(spreadsheet_id, 2))
   smds = csv_file_to_dict(gs.download(spreadsheet_id, 0))
+  committees = csv_file_to_dict(gs.download(spreadsheet_id, 10))
       
   for ward in wards:
     w = output[ward["Ward"]]
@@ -114,10 +105,21 @@ def add_googledoc_data(output):
   for anc in ancs:
     a = output[ anc["ANC"][0] ]["ancs"][ anc["ANC"][1] ]
     a["website"] = anc["Website"]
+    a["committees"] = OrderedDict() # clear
 
   for smd in smds:
     s = output[ smd["smd"][0] ]["ancs"][ smd["smd"][1] ]["smds"][ smd["smd"][2:] ]
     s.update(smd)
+
+  for cmte in committees:
+    c = OrderedDict()
+    output[ cmte["ANC"][0] ]["ancs"][ cmte["ANC"][1] ]["committees"][ cmte["committee"]] = c
+    c["committee"] = cmte["committee"]
+    c["meetings"] = cmte["meetings"]
+    c["chair"] = cmte["chair"]
+    c["chair_email"] = cmte["chair email"]
+    c["purpose"] = cmte["purpose"]
+    
   
 def add_scraperwiki_data(output):
   print("adding more commissioner data")
