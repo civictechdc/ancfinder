@@ -82,16 +82,26 @@ class AncInfoTemplateView(TemplateView):
 		for s in census_stats:
 			s["value"] = info["census"][s["key"]]["value"]
 			s["grid"] = census_grids[s["key"]]
-			
-		documents_list = ['Agenda', 'Minutes', 'Report', 'Decision', 'Draft', 'Application', 'Grant', 'Official Correspondence', 'Financial Statement', 'Operating Documents', 'Committee Agenda', 'Committee Minutes', 'Committee Report']		
-		recent_docs = documents_list[:2]
-		current_month = datetime.datetime.now()
-		existing_documents = Document.objects.filter(anc = anc, meeting_date__month=current_month.month, meeting_date__year = current_month.year)
-		
-		documents = Document.objects.filter(anc=anc).order_by('-created')[0:10]
-		#latest_to_upload = [ doc for doc in documents.doc_type if doc not in ]
 
-		return render(request, self.template_name, {'anc': anc, 'current_month': current_month, 'info': info, 'rec_doc': recent_docs, 'existing_docs': existing_documents, 'documents': documents, 'census_stats': census_stats})
+		# recent ANC documents
+		documents = Document.objects.filter(anc=anc).order_by('-created')[0:10]
+
+		# prompt the user to upload an agenda or minutes for the current month if there is none uploaded already
+		expected_doc_types = { 1: "agenda", 2: "meeting minutes" }
+		current_month = datetime.datetime.now()
+		missing_docs = []
+		for doc_type_id, doc_type_name in expected_doc_types.items():
+			if not Document.objects.filter(anc = anc, meeting_date__year = current_month.year, meeting_date__month=current_month.month,
+					doc_type=doc_type_id).exists():
+				missing_docs.append( (doc_type_id, doc_type_name, current_month.strftime("%B")) )
+		
+		return render(request, self.template_name, {
+			'anc': anc,
+			'info': info, 
+			'documents': documents,
+			'missing_docs': missing_docs,
+			'census_stats': census_stats,
+		})
 
 #Using Class Based Views(CBV) to implement our logic
 	
