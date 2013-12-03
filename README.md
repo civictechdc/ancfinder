@@ -9,6 +9,7 @@ Dependencies
 Set up your environment, install dependencies, and set up the site database:
 
 	git clone --recursive https://github.com/codefordc/ancbrigade
+        cd ./ancbrigade
 	virtualenv .env # maybe one day we'll use '-p python3' but dotcloud makes that harder
 	. .env/bin/activate
 	sudo apt-get install libxslt1-dev
@@ -61,7 +62,16 @@ You can also selectively update just some of the data (because updating some tak
 And to fetch the latest ANC meetings calendar:
 	
 	python3 update_meeting_database.py
-	
+
+There are also several scripts to grab data for use in `update_anc_database.py`. They are:
+
+        update_abra.py # Liquor licenses
+        update_building_permits.py # Building permits
+        update_crimes.py # Crimes reported
+        update_terms.py # Terms served by commissioners
+
+All of the scripts should be run occasionally to make sure the data shown on the site is up-to-date.
+
 Deployment
 ----------
 
