@@ -90,8 +90,16 @@ class AncInfoTemplateView(TemplateView):
 		expected_doc_types = { 1: "agenda", 2: "meeting minutes" }
 		current_month = datetime.datetime.now()
                 current_month_name = calendar.month_name[current_month.month]
-                previous_month_name = calendar.month_name[current_month.month - 1]
-                more_previous_month_name = calendar.month_name[current_month.month - 2]
+                pmonth = current_month.month - 1
+                mpmonth = current_month.month - 2
+                if pmonth = 0:  # This is extremely hacky. I'm sorry - SR
+                  pmonth = 12
+                if mpmonth = 0:
+                  mpmonth = 12
+                elif mpmonth = -1:
+                  mpmonth = 11
+                previous_month_name = calendar.month_name[pmonth]
+                more_previous_month_name = calendar.month_name[mpmonth]
 		missing_docs = []
 		for doc_type_id, doc_type_name in expected_doc_types.items():
 			if not Document.objects.filter(anc = anc, meeting_date__year = current_month.year, meeting_date__month=current_month.month,
