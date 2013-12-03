@@ -33,8 +33,15 @@
 
 				<h2>{{ anc }}'s Recent Documents</h2>
 
+                                <p>{{ current_month }}'s Minutes: </p>
+                                <p>{{ current_month }}'s Agenda: </p>
+                                <!-- Other documents from this month go here --!>
+                                <p>{{ previous_month }}'s Minutes: </p>
+                                <p>{{ previous_month }}'s Agenda: </p>
+                                <p>{{ more_previous_month }}'s Minutes: </p>
+                                <p>{{ more_previous_month }}'s Agenda: </p>
 				{# If there is no recent agenda or minutes, allow the possibility of a user uploading them. #}
-				{% if missing_docs %}
+<!--				{% if missing_docs %}
 					{% for doc_type_id, doc_type_name, time_name in missing_docs %}
 						<p>We don&rsquo;t have ANC {{anc}}&rsquo;s {{doc_type_name}} for {{time_name}}. Would you please <a href="/upload-document">upload it</a> for us?</p>
 					{% endfor %}
@@ -45,7 +52,7 @@
 						<li><a href="{{doc.get_absolute_url}}">{{doc.get_display_date|date}}. {% if doc.title %}{{doc.title}}{% endif %}</a></li>
 					{% endfor %}
 				</ul>
-
+--!>
 				<h2>Commissioners</h2>
 
 				<table class="commissioners" cols="3">

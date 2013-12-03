@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404, HttpResponse
 from django.views.generic import TemplateView
-import datetime, collections
+import datetime, collections, calendar
 
 try:
 	import json
@@ -89,6 +89,9 @@ class AncInfoTemplateView(TemplateView):
 		# prompt the user to upload an agenda or minutes for the current month if there is none uploaded already
 		expected_doc_types = { 1: "agenda", 2: "meeting minutes" }
 		current_month = datetime.datetime.now()
+                current_month_name = calendar.month_name[current_month.month]
+                previous_month_name = calendar.month_name[current_month.month - 1]
+                more_previous_month_name = calendar.month_name[current_month.month - 2]
 		missing_docs = []
 		for doc_type_id, doc_type_name in expected_doc_types.items():
 			if not Document.objects.filter(anc = anc, meeting_date__year = current_month.year, meeting_date__month=current_month.month,
@@ -101,6 +104,9 @@ class AncInfoTemplateView(TemplateView):
 			'documents': documents,
 			'missing_docs': missing_docs,
 			'census_stats': census_stats,
+                        'current_month': current_month_name,
+                        'previous_month': previous_month_name,
+                        'more_previous_month': more_previous_month_name,
 		})
 
 #Using Class Based Views(CBV) to implement our logic
