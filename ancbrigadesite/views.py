@@ -49,9 +49,9 @@ def TemplateContextProcessor(request):
 class HomeTemplateView(TemplateView):
 	template_name = 'ancbrigadesite/index.html'
 	
-	def get_context_date(self, **kwargs):
+	def get_context_data(self, **kwargs):
 		# Used to pass the anc_data to our home page
-		context = super(HomeTemplate, self).get_context_data(**kwargs)
+		context = super(HomeTemplateView, self).get_context_data(**kwargs)
 		# Add in the anc_data 
 		context['anc_data'] = anc_data_as_json
 		return context
