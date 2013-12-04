@@ -52,7 +52,8 @@
 						<li><a href="{{doc.get_absolute_url}}">{{doc.get_display_date|date}}. {% if doc.title %}{{doc.title}}{% endif %}</a></li>
 					{% endfor %}
 				</ul>
---!>
+                                
+--!>                            <p><a href="#document_archive">See all of {{ anc }}'s documents</a></p>
 				<h2>Commissioners</h2>
 
 				<table class="commissioners" cols="3">
@@ -89,15 +90,16 @@
 				</table>
             {% endif %}
 
+                                <h2 id="document_archive">Document Archive</h2>
                                 {% if documents %}        
-                                <h2>Document Archive</h2>
-                                <ul id="document_archive">
+                                <ul id="document_list">
                                         {% for doc in documents %}
                                                 <li><a href="{{doc.get_absolute_url}}">{{doc.get_display_date|date}}. {% if doc.title %}{{doc.title}}{% endif %}</a></li>
                                         {% endfor %}
                                 </ul>
-                                
                                 {% endif %}
+                                <p>Have more documents? <a href="/upload-document">Upload them!</a></p>
+                                
 			</div><!-- /column -->
 
 			<div class="span5">
