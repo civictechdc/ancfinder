@@ -53,7 +53,7 @@
                     <td id="{{cmte.committee}} " width="33%" style="vertical-align: top; padding-right: 1.25em;">
                         <div style="padding-bottom: .4em; color: black; border-bottom: 1px solid #444;">{{cmte.committee}}</div>
                         <div style="padding-bottom: .75em"><small>
-                                <b>Chair:</b> {{ cmte.chair }} ({{cmte.chair_email}})<br>
+                                {% if cmte.chair %}<b>Chair:</b> {{ cmte.chair }}{% if cmte.chair_email %} ({{cmte.chair_email}}){% endif %}<br>{% endif %}
                                 {{ cmte.purpose|safe }}
                                 {% if cmte.meetings %}
                                 <br><b>Meetings:</b> {{ cmte.meetings|safe }}
