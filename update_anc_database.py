@@ -124,7 +124,7 @@ def add_googledoc_data(output):
 def add_scraperwiki_data(output):
   print("adding more commissioner data")
   # additional information about ANC commissioners
-  sw_data = urlopen("https://api.scraperwiki.com/api/1.0/datastore/sqlite?format=json&name=dc_anc_commissioner_info_from_official_anc_website&query=select+*+from+`swdata`&apikey=")
+  sw_data = urlopen("https://api.scraperwiki.com/api/1.0/datastore/sqlite?format=json&name=dc_anc_commissioner_info_from_official_anc_websi_1&query=select+*+from+`swdata`&apikey=")
   for rec in json.load(sw_data):
     smd = rec["smd"].strip()
     for k, v in list(rec.items()):
