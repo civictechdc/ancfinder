@@ -61,7 +61,10 @@ class AncInfoTemplateView(TemplateView):
 	# Override the HTTP get method to pass along some additional information
 	def get(self, request, anc, *args, **kwargs):
 		anc = anc.upper()
-		info = anc_data[anc[0]]["ancs"][anc[1]]
+		try:
+			info = anc_data[anc[0]]["ancs"][anc[1]]
+		except KeyError:
+			raise Http404()
 		
 		prep_hoods(info, True)
 		for smd in info["smds"].values():
