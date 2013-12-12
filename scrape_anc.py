@@ -41,7 +41,7 @@ def area_coder(phone):    #Adds (202) area code, if necessary
 for anc in ANC:
 	url = 'http://anc.dc.gov/page/advisory-neighborhood-commission-' + anc
 	soup = BeautifulSoup(urllib2.urlopen(url))
-	tag_extract ['br', 'i', 'sub']
+	tag_extract = ['br', 'i', 'sub']
 	for tag in tag_extract:
 	    for d in soup.find_all(tag):
 	    	d.extract()
