@@ -1,0 +1,6 @@
+django==1.5.2
+cssselect
+lxml
+django-tinymce
+BeautifulSoup4
+django-picklefield
