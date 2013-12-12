@@ -5,6 +5,8 @@
 
 {% block head %}
 <style>
+#recent_docs > p { margin: 0; }
+
 #by_the_numbers > div { margin-top: 12px; }
 #by_the_numbers span.number { font-size: 130%; font-weight: bold; }
 #by_the_numbers span.description { margin-left: 1em; color: #555; }
@@ -32,28 +34,22 @@
 				<!-- documents -->
 
 				<h2>{{ anc }}'s Recent Documents</h2>
+				<div id="recent_docs">
+				{% for timeperiod, doclist in recent_documents %}
+					<p><b>{{timeperiod}}:</b>
+						{% for docname, doc in doclist %}
+							{% if not forloop.first %} | {% endif %}
+							{% if doc %}
+								<a href="{{doc.get_absolute_url}}">{{docname}}</a>
+							{% else %}
+								No {{docname}} (<a href="/upload-document">Upload</a>)
+							{% endif %}
+						{% endfor %}
+					</p>
+				{% endfor %}
+				</div>
+				<p style="margin-top: .33em"><a href="#document_archive">See all of {{anc}}&rsquo;s documents...</a></p>
 
-                                <p>{{ current_month }}'s Minutes: </p>
-                                <p>{{ current_month }}'s Agenda: </p>
-                                <!-- Other documents from this month go here --!>
-                                <p>{{ previous_month }}'s Minutes: </p>
-                                <p>{{ previous_month }}'s Agenda: </p>
-                                <p>{{ more_previous_month }}'s Minutes: </p>
-                                <p>{{ more_previous_month }}'s Agenda: </p>
-				{# If there is no recent agenda or minutes, allow the possibility of a user uploading them. #}
-<!--				{% if missing_docs %}
-					{% for doc_type_id, doc_type_name, time_name in missing_docs %}
-						<p>We don&rsquo;t have ANC {{anc}}&rsquo;s {{doc_type_name}} for {{time_name}}. Would you please <a href="/upload-document">upload it</a> for us?</p>
-					{% endfor %}
-				{% endif %}		
-	
-				<ul id="recent_documents">
-					{% for doc in documents %}
-						<li><a href="{{doc.get_absolute_url}}">{{doc.get_display_date|date}}. {% if doc.title %}{{doc.title}}{% endif %}</a></li>
-					{% endfor %}
-				</ul>
-                                
---!>                            <p><a href="#document_archive">See all of {{ anc }}'s documents</a></p>
 				<h2>Commissioners</h2>
 
 				<table class="commissioners" cols="3">
