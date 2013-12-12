@@ -89,35 +89,48 @@ class AncInfoTemplateView(TemplateView):
 		# recent ANC documents
 		documents = Document.objects.filter(anc=anc).order_by('-created')[0:10]
 
-		# prompt the user to upload an agenda or minutes for the current month if there is none uploaded already
-		expected_doc_types = { 1: "agenda", 2: "meeting minutes" }
-		current_month = datetime.datetime.now()
-                current_month_name = calendar.month_name[current_month.month]
-                pmonth = current_month.month - 1
-                mpmonth = current_month.month - 2
-                if pmonth == 0:  # This is extremely hacky. I'm sorry - SR
-                  pmonth = 12
-                if mpmonth == 0:
-                  mpmonth = 12
-                elif mpmonth == -1:
-                  mpmonth = 11
-                previous_month_name = calendar.month_name[pmonth]
-                more_previous_month_name = calendar.month_name[mpmonth]
-		missing_docs = []
-		for doc_type_id, doc_type_name in expected_doc_types.items():
-			if not Document.objects.filter(anc = anc, meeting_date__year = current_month.year, meeting_date__month=current_month.month,
-					doc_type=doc_type_id).exists():
-				missing_docs.append( (doc_type_id, doc_type_name, current_month.strftime("%B")) )
+		# get the agenda and minutes for the current and previous month, or if the
+		# documents don't exist prompt the user to upload them.
+		expected_doc_types = [ (1, "Agenda"), (2, "Meeting Minutes") ] # which docs do we want to display, as tuples of the numeric code for the doc type from models.py and some display text
+
+		# get the month as of a few days ago, since if the month just started there probably
+		# isn't a document ready for it yet.
+		nowish = datetime.datetime.now() - datetime.timedelta(days=2)
+		recent_documents = [(nowish.year, nowish.month)]
+		for i in xrange(2): # go back in time 2 month2 too
+			# add the previous month
+			recent_documents.append( (recent_documents[-1][0], recent_documents[-1][1]-1) )
+
+			# overflow
+			if recent_documents[-1][1] == 0:
+				# if we subtracted and got month 0, go to December of the previous year
+				recent_documents[-1] = (recent_documents[-1][0] - 1, 12)
+
+		def first(qs):
+			try:
+				return qs[0]
+			except IndexError:
+				return None
+
+		for i, (year, month) in enumerate(recent_documents):
+			recent_documents[i] = (
+				datetime.datetime(year, month, 1).strftime("%B"),
+				[
+					(
+						doc_type_name,
+						first(Document.objects.filter(anc=anc, meeting_date__year=year, meeting_date__month=month,
+					doc_type=doc_type_id))
+					)
+					for doc_type_id, doc_type_name in expected_doc_types
+				]
+				)
 		
 		return render(request, self.template_name, {
 			'anc': anc,
 			'info': info, 
 			'documents': documents,
-			'missing_docs': missing_docs,
+			'recent_documents': recent_documents,
 			'census_stats': census_stats,
-                        'current_month': current_month_name,
-                        'previous_month': previous_month_name,
-                        'more_previous_month': more_previous_month_name,
 		})
 
 #Using Class Based Views(CBV) to implement our logic
