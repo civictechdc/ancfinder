@@ -3,6 +3,13 @@ ancbrigade
 
 A website about DC's Advisory Neighborhood Commission system.
 
+Contributing
+------------
+
+If you plan to contribute to the repo, you should set up your own fork and open pull requests with any commits you make. 
+
+If you're not familiar with forking, Github has a [useful guide](https://help.github.com/articles/fork-a-repo).
+
 Dependencies
 ------------
 
