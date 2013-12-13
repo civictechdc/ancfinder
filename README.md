@@ -17,9 +17,9 @@ Set up your environment, install dependencies, and set up the site database:
 
 	git clone --recursive https://github.com/codefordc/ancbrigade
         cd ./ancbrigade
-	virtualenv .env # maybe one day we'll use '-p python3' but dotcloud makes that harder
+	virtualenv .env # Maybe one day we'll use '-p python3' but dotcloud makes that harder
 	. .env/bin/activate
-	sudo apt-get install libxslt1-dev
+	sudo apt-get install libxslt1-dev # On OSX, apt-get can be installed by installing Fink (http://www.finkproject.org/)
 	pip install -r requirements.txt
 	./manage.py syncdb
 	
