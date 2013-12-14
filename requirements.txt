@@ -1,7 +1,7 @@
 django==1.5.2
 cssselect
 lxml
-pdfminer
+pdfminer==20131113
 django-tinymce
 BeautifulSoup4
 django-picklefield
