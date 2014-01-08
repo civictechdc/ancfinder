@@ -405,17 +405,10 @@
 										+ " "
 										+ (future ? "will be" : "was")
 										+ " on "
-										+ (mtg.when ? moment(mtg.when).format("dddd, MMMM Do YYYY, h:mm a") : mtg.when_unparsed)
+										+ moment(mtg.when).format("dddd, MMMM Do YYYY, h:mm a")
 										+ "."
 									));
 									
-									var mtg_fields = ["location", "suite-number", "location2", "alternate-location", "phone"];
-									for (var i = 0; i < mtg_fields.length; i++) {
-										if (mtg[mtg_fields[i]]) {
-											$('#meeting').append($("<p class='details'/>").text(mtg[mtg_fields[i]]));
-										}
-									}
-
 								} else {
 									$('#meeting').hide();
 								}
