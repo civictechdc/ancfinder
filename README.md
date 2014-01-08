@@ -10,7 +10,7 @@ If you plan to contribute to the repo, you should set up your own fork and open 
 
 If you're not familiar with forking, Github has a [useful guide](https://help.github.com/articles/fork-a-repo).
 
-Dependencies
+Installation
 ------------
 
 Get the repo running on your machine:
@@ -49,7 +49,7 @@ Updating the Code
 As we make code changes you may need to run:
 
 	git pull --rebase
-	git submodule --init update
+	git submodule update --init
 	./manage.py syncdb
 
 If we modify the database schema, you may need to delete ancbrigadesite/database.sqlite and run `./manage.py syncdb` to recreate your database from scratch since we don't currently have a way to upgrade database schemas.
