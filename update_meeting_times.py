@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import urllib2, lxml, csv
+import urllib2, lxml, csv, json
 
 # URLs for different pages look like this:
 # http://anc.dc.gov/events?field_date_time_rep_value[value]=2013-12-25&field_date_time_rep_value2[value]&keys=& ... 
@@ -37,6 +37,8 @@ import urllib2, lxml, csv
 #------------------------------------------------------------------------------
 
 # Open up main page and figure out how many pages there are so we can loop through them all
+
+output_filename = "ancbrigadesite/static/meetings.json"
 
 presoup = BeautifulSoup(urllib2.urlopen('http://anc.dc.gov/events'))
 
@@ -76,16 +78,21 @@ while i<len(meettimes):
 	i+=1
 
 		
-# Write info to .csv as a dictionary. This will have to be read in accordingly
-ofile = open('anc_meet_times.csv','wb')
-writer = csv.writer(ofile)
-writer.writerow(['ANC','Meeting Times'])
+# Write info to a JSON file
+meeting_list = []
+for anc, meetings in master_dict.items():
+	for meeting in meetings:
+		meeting_list.append({
+			"anc": anc,
+			"when": meeting,
+			})
 
-for key,value in sorted(master_dict.items()):
-	writer.writerow([key,value])
+# Write out the JSON file.
+with open(output_filename, "w") as outputfile:
+	json.dump(meeting_list, outputfile, sort_keys=True, indent=4)
+
+# Also write out a JSONP file to make embedding in the site easier,
+with open(output_filename + "p", "w") as outputfile:
+	outputfile.write("anc_meetings = \n")
+	json.dump(meeting_list, outputfile, sort_keys=True, indent=4)
 	
-ofile.close()
-
-# To read it in in the future:
-# reader = csv.reader(open('master_dict.csv', 'rb'))
-# mydict = dict(x for x in reader)
