@@ -1,3 +1,5 @@
+crontab ~/current/conf/crontab
+
 python manage.py syncdb --noinput
 ./postinstall.py
 python manage.py collectstatic --noinput
