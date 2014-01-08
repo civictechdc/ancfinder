@@ -13,18 +13,24 @@ If you're not familiar with forking, Github has a [useful guide](https://help.gi
 Dependencies
 ------------
 
-Set up your environment, install dependencies, and set up the site database:
+Get the repo running on your machine:
 
 	git clone --recursive https://github.com/codefordc/ancbrigade
-        cd ./ancbrigade
-	virtualenv .env # Maybe one day we'll use '-p python3' but dotcloud makes that harder
-	. .env/bin/activate
-	sudo apt-get install libxslt1-dev # Not necessary on OSX
-        sudo pip install -r requirements.txt
-	./manage.py syncdb
-	
+	cd ./ancbrigade
+
 Note --recursive on 'git clone' to get the submodule dependencies.
 
+If you're using a virtual environment, set that up:
+
+	virtualenv .env # Maybe one day we'll use '-p python3' but dotcloud makes that harder
+	. .env/bin/activate
+
+Then, install dependencies and set up the site database:
+
+	sudo apt-get install libxslt1-dev # Not necessary on OSX
+	sudo pip install -r requirements.txt
+	./manage.py syncdb
+	
 If it seems like you're missing stuff, also try 'git submodule init; git submodule update".
 
 Running the Site
