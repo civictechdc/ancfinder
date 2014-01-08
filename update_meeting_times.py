@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import urllib2, lxml, csv, json
+import urllib2, lxml, csv, json, datetime
 
 # URLs for different pages look like this:
 # http://anc.dc.gov/events?field_date_time_rep_value[value]=2013-12-25&field_date_time_rep_value2[value]&keys=& ... 
@@ -84,7 +84,7 @@ for anc, meetings in master_dict.items():
 	for meeting in meetings:
 		meeting_list.append({
 			"anc": anc,
-			"when": meeting,
+			"when": datetime.datetime.strptime(meeting, "%m/%d/%Y - %I:%M%p").isoformat(),
 			})
 
 # Write out the JSON file.
