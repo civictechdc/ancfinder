@@ -76,7 +76,8 @@
 	</div>
 	</div>
 	
-	<div id="what-is-an-anc" class="widecontainer style1">
+        <div id="info-wrapper" style="display: none">
+        <div id="what-is-an-anc" class="widecontainer style1">
 	<div class="container">
 		<div class="row">
 			<div class="span5 offset1 text">
@@ -156,6 +157,7 @@
 		</div>
 	</div>
 	</div>
+      </div>
 {% endblock %}
 
 {% block scripts %}
@@ -190,6 +192,7 @@
 			if (navigator.geolocation) $('#use_my_location').show();
 			
 			$('a.smooth').click(function(e) {
+                          $("#info-wrapper").show();
 				e.preventDefault();
 				var target = this.hash,
 				$target = $(target);
