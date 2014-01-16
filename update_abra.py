@@ -16,7 +16,7 @@ with open(zip_filename, 'wb') as zip_file:
 # Unzip the locally saved file
 zipfile.main(['-e', zip_filename, 'abra'])
 
-# Remove existing ABRA file (OGR fails otherwise)
+# Remove existing ABRA download (OGR fails otherwise)
 subprocess.call('rm data/abra.csv', shell=True)
 
 # Run OGR on the downloaded ESRI file
@@ -27,45 +27,49 @@ abra_read = csv.reader(open('data/abra.csv'), delimiter=',')
 abra_write = csv.writer(open('data/abra-nad83.csv', 'w'), delimiter=' ')
 
 for rec in abra_read:
-	if rec[7] == "X":
-		continue
-	else:
-		output = [rec[7]] + [rec[8]]
-		abra_write.writerow(output)
+    if rec[7] == 'X':
+	continue
+    else:
+	output = [rec[7]] + [rec[8]]
+	abra_write.writerow(output)
 
 subprocess.call('gdaltransform -s_srs EPSG:26985 -t_srs EPSG:4326 < data/abra-nad83.csv > data/abra-latlong.csv', shell=True)
 
 # Check coordinates against Govtrack GIS and sort into CSV
 abra_latlong = csv.reader(open('data/abra-latlong.csv'), delimiter=' ')
-smd_abra_licenses = csv.writer(open('data/smd-abra-licenses.csv', 'w'), delimiter=',')
-anc_abra_licenses = csv.writer(open('data/anc-abra-licenses.csv', 'w'), delimiter=',')
 
-smd_licenses = {}
-anc_licenses = {}
+licenses = {}
 
 for rec in abra_latlong:
-	url = "http://gis.govtrack.us/boundaries/dc-smd-2013/?contains=" + rec[1] + "," + rec[0]
-	request = requests.get(url)
-	data = json.loads(request.text)
-	smd = data['objects'][0]['external_id']
-	anc = data['objects'][0]['external_id'][:2]
-	print smd, rec[0], rec[1]
-	if smd in smd_licenses:
-		smd_licenses[smd] += 1
-	else:
-		smd_licenses[smd] = 1
-	if anc in anc_licenses:
-		anc_licenses[anc] += 1
-	else:
-		anc_licenses[anc] = 1
+    location = rec[1] + ',' + rec[0]
+    url = 'http://gis.govtrack.us/boundaries/dc-smd-2013/?contains=' + location
+    request = requests.get(url)
+    data = json.loads(request.text)
+    smd = data['objects'][0]['external_id']
+    anc = data['objects'][0]['external_id'][:2]
+    print smd, rec[0], rec[1]
+    if anc in licenses:
+        if smd in licenses[anc]['smds']:
+            licenses[anc]['smds'][smd]['number'] += 1
+        else:
+            licenses[anc]['smds'][smd] = {}
+            licenses[anc]['smds'][smd]['locations'] = []
+            licenses[anc]['smds'][smd]['number'] = 1
+        licenses[anc]['number'] += 1
+    else:
+        licenses[anc] = {}
+        licenses[anc]['locations'] = []
+        licenses[anc]['number'] = 1
+        licenses[anc]['smds'] = {}
+        licenses[anc]['smds'][smd] = {}
+        licenses[anc]['smds'][smd]['locations'] = []
+        licenses[anc]['smds'][smd]['number'] = 1
+    licenses[anc]['smds'][smd]['locations'].append(location)
+    licenses[anc]['locations'].append(location)
 
-for rec in sorted(smd_licenses):
-	output = [rec] + [smd_licenses[rec]]
-	smd_abra_licenses.writerow(output)
+with open('data/abra-licenses.json', 'w') as output:
+    json.dump(licenses, output, sort_keys=True, indent=4)
 
-for rec in sorted(anc_licenses):
-	output = [rec] + [anc_licenses[rec]]
-	anc_abra_licenses.writerow(output)
 
 # Clean up extra files
-subprocess.call('rm -rf data/abra data/abra.zip data/abra-nad83.csv data/abra-latlong.csv', shell=True)
+subprocess.call('rm -rf abra abra.zip data/abra-nad83.csv data/abra-latlong.csv', shell=True)

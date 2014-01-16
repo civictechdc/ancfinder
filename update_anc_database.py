@@ -146,14 +146,13 @@ def add_term_data(output):
 def add_abra_data(output):
   print("adding liquor license information")
   # Number of liquor licenses in each ANC and SMD
-  smd_abra_data = csv.reader(open('data/smd-abra-licenses.csv'), delimiter=',')
-  anc_abra_data = csv.reader(open('data/anc-abra-licenses.csv'), delimiter=',')
-  for rec in smd_abra_data:
-    smd = rec[0]
-    output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]]["census"]["liquor_licenses"] = { "value": int(rec[1]) }
-  for rec in anc_abra_data:
-    anc = rec[0]
-    output[anc[0]]["ancs"][anc[1]]["census"]["liquor_licenses"] = { "value": int(rec[1]) }
+  abra_data = json.loads(open('data/abra-licenses.json').read())
+  for rec in abra_data:
+    anc = rec
+    output[anc[0]]["ancs"][anc[1]]["census"]["liquor_licenses"] = { "value": abra_data[rec]['number'] }
+    for rec in abra_data[rec]['smds']:
+        smd = rec
+        output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]]["census"]["liquor_licenses"] = { "value": abra_data[rec[:2]]['smds'][rec]['number'] }
 
 def add_building_permit_data(output):
   print("adding building permit information")
