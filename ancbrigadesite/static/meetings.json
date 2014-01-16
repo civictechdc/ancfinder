@@ -1,458 +1,662 @@
-[
-    {
-        "anc": "1A", 
-        "when": "2014-01-08T19:00:00"
-    }, 
-    {
-        "anc": "1A", 
-        "when": "2014-02-12T19:00:00"
-    }, 
-    {
-        "anc": "1A", 
-        "when": "2014-03-12T19:00:00"
-    }, 
-    {
-        "anc": "1A", 
-        "when": "2014-04-09T19:00:00"
-    }, 
-    {
-        "anc": "5E", 
-        "when": "2014-01-21T19:00:00"
-    }, 
-    {
-        "anc": "5E", 
-        "when": "2014-02-18T19:00:00"
-    }, 
-    {
-        "anc": "1C", 
-        "when": "2014-01-08T19:00:00"
-    }, 
-    {
-        "anc": "1C", 
-        "when": "2014-02-05T19:00:00"
-    }, 
-    {
-        "anc": "1C", 
-        "when": "2014-03-05T19:00:00"
-    }, 
-    {
-        "anc": "1C", 
-        "when": "2014-04-02T19:00:00"
-    }, 
-    {
-        "anc": "1B", 
-        "when": "2014-02-06T19:00:00"
-    }, 
-    {
-        "anc": "1B", 
-        "when": "2014-03-06T19:00:00"
-    }, 
-    {
-        "anc": "1B", 
-        "when": "2014-04-03T19:00:00"
-    }, 
-    {
-        "anc": "1D", 
-        "when": "2014-01-21T19:00:00"
-    }, 
-    {
-        "anc": "1D", 
-        "when": "2014-02-18T19:00:00"
-    }, 
-    {
-        "anc": "3B", 
-        "when": "2014-01-09T19:00:00"
-    }, 
-    {
-        "anc": "3B", 
-        "when": "2014-02-13T19:00:00"
-    }, 
-    {
-        "anc": "3B", 
-        "when": "2014-03-13T19:00:00"
-    }, 
-    {
-        "anc": "3C", 
-        "when": "2014-01-20T19:30:00"
-    }, 
-    {
-        "anc": "3C", 
-        "when": "2014-02-17T19:30:00"
-    }, 
-    {
-        "anc": "5D", 
-        "when": "2014-01-14T19:00:00"
-    }, 
-    {
-        "anc": "5D", 
-        "when": "2014-02-11T19:00:00"
-    }, 
-    {
-        "anc": "3G", 
-        "when": "2014-01-13T19:30:00"
-    }, 
-    {
-        "anc": "3G", 
-        "when": "2014-01-27T19:30:00"
-    }, 
-    {
-        "anc": "3G", 
-        "when": "2014-02-10T19:30:00"
-    }, 
-    {
-        "anc": "3F", 
-        "when": "2014-01-21T19:30:00"
-    }, 
-    {
-        "anc": "3F", 
-        "when": "2014-02-18T19:30:00"
-    }, 
-    {
-        "anc": "5C", 
-        "when": "2014-01-15T19:00:00"
-    }, 
-    {
-        "anc": "5C", 
-        "when": "2014-02-19T19:00:00"
-    }, 
-    {
-        "anc": "3D", 
-        "when": "2014-01-08T19:00:00"
-    }, 
-    {
-        "anc": "3D", 
-        "when": "2014-02-05T19:00:00"
-    }, 
-    {
-        "anc": "3D", 
-        "when": "2014-03-05T19:00:00"
-    }, 
-    {
-        "anc": "3D", 
-        "when": "2014-04-02T19:00:00"
-    }, 
-    {
-        "anc": "7F", 
-        "when": "2014-01-21T18:30:00"
-    }, 
-    {
-        "anc": "7F", 
-        "when": "2014-02-18T18:30:00"
-    }, 
-    {
-        "anc": "7F", 
-        "when": "2014-03-18T18:30:00"
-    }, 
-    {
-        "anc": "7F", 
-        "when": "2014-05-20T18:30:00"
-    }, 
-    {
-        "anc": "7E", 
-        "when": "2014-01-14T19:00:00"
-    }, 
-    {
-        "anc": "7E", 
-        "when": "2014-02-11T19:00:00"
-    }, 
-    {
-        "anc": "7E", 
-        "when": "2014-03-11T19:00:00"
-    }, 
-    {
-        "anc": "7E", 
-        "when": "2014-04-08T19:00:00"
-    }, 
-    {
-        "anc": "7D", 
-        "when": "2014-01-14T18:30:00"
-    }, 
-    {
-        "anc": "7D", 
-        "when": "2014-02-11T18:30:00"
-    }, 
-    {
-        "anc": "7C", 
-        "when": "2014-01-09T19:00:00"
-    }, 
-    {
-        "anc": "7C", 
-        "when": "2014-02-13T19:00:00"
-    }, 
-    {
-        "anc": "7B", 
-        "when": "2014-01-16T19:00:00"
-    }, 
-    {
-        "anc": "7B", 
-        "when": "2014-02-20T19:00:00"
-    }, 
-    {
-        "anc": "5A", 
-        "when": "2014-01-22T19:00:00"
-    }, 
-    {
-        "anc": "5A", 
-        "when": "2014-02-26T19:00:00"
-    }, 
-    {
-        "anc": "3E", 
-        "when": "2014-01-09T19:30:00"
-    }, 
-    {
-        "anc": "3E", 
-        "when": "2014-02-13T19:30:00"
-    }, 
-    {
-        "anc": "5B", 
-        "when": "2014-01-22T18:30:00"
-    }, 
-    {
-        "anc": "5B", 
-        "when": "2014-02-26T18:30:00"
-    }, 
-    {
-        "anc": "5B", 
-        "when": "2014-03-26T18:30:00"
-    }, 
-    {
-        "anc": "2D", 
-        "when": "2014-01-20T19:00:00"
-    }, 
-    {
-        "anc": "2D", 
-        "when": "2014-02-17T19:00:00"
-    }, 
-    {
-        "anc": "2E", 
-        "when": "2014-02-03T18:30:00"
-    }, 
-    {
-        "anc": "2E", 
-        "when": "2014-03-03T18:30:00"
-    }, 
-    {
-        "anc": "2E", 
-        "when": "2014-04-07T18:30:00"
-    }, 
-    {
-        "anc": "2E", 
-        "when": "2014-05-05T18:30:00"
-    }, 
-    {
-        "anc": "2E", 
-        "when": "2014-06-02T18:30:00"
-    }, 
-    {
-        "anc": "2E", 
-        "when": "2014-07-07T18:30:00"
-    }, 
-    {
-        "anc": "2E", 
-        "when": "2014-09-01T18:30:00"
-    }, 
-    {
-        "anc": "2E", 
-        "when": "2014-10-06T18:30:00"
-    }, 
-    {
-        "anc": "2E", 
-        "when": "2014-11-03T18:30:00"
-    }, 
-    {
-        "anc": "2F", 
-        "when": "2014-01-08T19:00:00"
-    }, 
-    {
-        "anc": "2F", 
-        "when": "2014-02-05T19:00:00"
-    }, 
-    {
-        "anc": "2F", 
-        "when": "2014-03-05T19:00:00"
-    }, 
-    {
-        "anc": "2F", 
-        "when": "2014-04-02T19:00:00"
-    }, 
-    {
-        "anc": "2F", 
-        "when": "2014-05-07T19:00:00"
-    }, 
-    {
-        "anc": "2A", 
-        "when": "2014-01-15T19:00:00"
-    }, 
-    {
-        "anc": "2A", 
-        "when": "2014-02-19T19:00:00"
-    }, 
-    {
-        "anc": "2A", 
-        "when": "2014-03-19T19:00:00"
-    }, 
-    {
-        "anc": "2B", 
-        "when": "2014-01-08T19:00:00"
-    }, 
-    {
-        "anc": "2B", 
-        "when": "2014-02-12T19:00:00"
-    }, 
-    {
-        "anc": "2C", 
-        "when": "2014-01-13T18:30:00"
-    }, 
-    {
-        "anc": "2C", 
-        "when": "2014-02-10T18:30:00"
-    }, 
-    {
-        "anc": "2C", 
-        "when": "2014-03-10T18:30:00"
-    }, 
-    {
-        "anc": "2C", 
-        "when": "2014-04-14T18:30:00"
-    }, 
-    {
-        "anc": "2C", 
-        "when": "2014-05-12T18:30:00"
-    }, 
-    {
-        "anc": "4D", 
-        "when": "2014-01-21T19:00:00"
-    }, 
-    {
-        "anc": "4D", 
-        "when": "2014-02-18T19:00:00"
-    }, 
-    {
-        "anc": "4B", 
-        "when": "2014-01-27T19:00:00"
-    }, 
-    {
-        "anc": "4B", 
-        "when": "2014-02-24T19:00:00"
-    }, 
-    {
-        "anc": "4C", 
-        "when": "2014-01-08T18:30:00"
-    }, 
-    {
-        "anc": "4C", 
-        "when": "2014-02-12T18:30:00"
-    }, 
-    {
-        "anc": "4A", 
-        "when": "2014-01-07T19:00:00"
-    }, 
-    {
-        "anc": "4A", 
-        "when": "2014-02-04T19:00:00"
-    }, 
-    {
-        "anc": "4A", 
-        "when": "2014-03-04T19:00:00"
-    }, 
-    {
-        "anc": "6A", 
-        "when": "2014-01-09T19:00:00"
-    }, 
-    {
-        "anc": "6A", 
-        "when": "2014-02-13T19:00:00"
-    }, 
-    {
-        "anc": "6B", 
-        "when": "2014-01-14T19:00:00"
-    }, 
-    {
-        "anc": "6B", 
-        "when": "2014-02-11T19:00:00"
-    }, 
-    {
-        "anc": "6C", 
-        "when": "2014-01-08T19:00:00"
-    }, 
-    {
-        "anc": "6C", 
-        "when": "2014-02-12T19:00:00"
-    }, 
-    {
-        "anc": "6D", 
-        "when": "2014-03-10T19:00:00"
-    }, 
-    {
-        "anc": "6E", 
-        "when": "2014-01-08T18:30:00"
-    }, 
-    {
-        "anc": "6E", 
-        "when": "2014-02-05T18:30:00"
-    }, 
-    {
-        "anc": "6E", 
-        "when": "2014-03-05T18:30:00"
-    }, 
-    {
-        "anc": "6E", 
-        "when": "2014-04-02T18:30:00"
-    }, 
-    {
-        "anc": "8B", 
-        "when": "2014-01-21T19:00:00"
-    }, 
-    {
-        "anc": "8B", 
-        "when": "2014-02-18T19:00:00"
-    }, 
-    {
-        "anc": "8C", 
-        "when": "2014-01-08T19:00:00"
-    }, 
-    {
-        "anc": "8C", 
-        "when": "2014-02-05T19:00:00"
-    }, 
-    {
-        "anc": "8C", 
-        "when": "2014-03-05T19:00:00"
-    }, 
-    {
-        "anc": "8C", 
-        "when": "2014-04-02T19:00:00"
-    }, 
-    {
-        "anc": "8C", 
-        "when": "2014-05-07T19:00:00"
-    }, 
-    {
-        "anc": "8A", 
-        "when": "2014-02-04T19:15:00"
-    }, 
-    {
-        "anc": "8A", 
-        "when": "2014-03-04T19:15:00"
-    }, 
-    {
-        "anc": "8A", 
-        "when": "2014-04-01T19:15:00"
-    }, 
-    {
-        "anc": "8D", 
-        "when": "2014-01-23T19:00:00"
-    }, 
-    {
-        "anc": "8D", 
-        "when": "2014-02-27T19:00:00"
-    }, 
-    {
-        "anc": "8E", 
-        "when": "2014-02-03T19:00:00"
-    }, 
-    {
-        "anc": "8E", 
-        "when": "2014-03-03T19:00:00"
+{
+    "1A": {
+        "meetings": {
+            "2014-02-12T19:00:00": {
+                "address": "3101 13th Street, NW, Washington, DC", 
+                "building": "Harriet Tubman Elementary School", 
+                "room": null
+            }, 
+            "2014-03-12T19:00:00": {
+                "address": "3101 13th Street, NW, Washington, DC", 
+                "building": "Harriet Tubman Elementary School", 
+                "room": null
+            }, 
+            "2014-04-09T19:00:00": {
+                "address": "3101 13th Street, NW, Washington, DC", 
+                "building": "Harriet Tubman Elementary School", 
+                "room": null
+            }
+        }
+    }, 
+    "1B": {
+        "meetings": {
+            "2014-02-06T19:00:00": {
+                "address": "2000 14th Street, NW, Washington, DC 20009", 
+                "building": "Reeves Center", 
+                "room": "2nd Floor"
+            }, 
+            "2014-03-06T19:00:00": {
+                "address": "2000 14th Street, NW, Washington, DC 20009", 
+                "building": "Reeves Center", 
+                "room": "2nd Floor"
+            }, 
+            "2014-04-03T19:00:00": {
+                "address": "2000 14th Street, NW, Washington, DC 20009", 
+                "building": "Reeves Center", 
+                "room": "2nd Floor"
+            }
+        }
+    }, 
+    "1C": {
+        "meetings": {
+            "2014-02-05T19:00:00": {
+                "address": "2355 Ontario Road, NW, Washington, DC 20009", 
+                "building": "Mary's Center for Maternal and Child Health - \"The Pink Building\"", 
+                "room": null
+            }, 
+            "2014-03-05T19:00:00": {
+                "address": "2355 Ontario Road, NW, Washington, DC 20009", 
+                "building": "Mary's Center for Maternal and Child Health - \"The Pink Building\"", 
+                "room": null
+            }, 
+            "2014-04-02T19:00:00": {
+                "address": "2355 Ontario Road, NW, Washington, DC 20009", 
+                "building": "Mary's Center for Maternal and Child Health - \"The Pink Building\"", 
+                "room": null
+            }
+        }
+    }, 
+    "1D": {
+        "meetings": {
+            "2014-01-21T19:00:00": {
+                "address": "3166 Mount Pleasant Street, NW, Washington, DC", 
+                "building": "La Casa Community Center", 
+                "room": null
+            }, 
+            "2014-02-18T19:00:00": {
+                "address": "3166 Mount Pleasant Street, NW, Washington, DC", 
+                "building": "La Casa Community Center", 
+                "room": null
+            }
+        }
+    }, 
+    "2A": {
+        "meetings": {
+            "2014-01-15T19:00:00": {
+                "address": "725 24th Street, NW", 
+                "building": "St. Mary\u2019s Court", 
+                "room": null
+            }, 
+            "2014-02-19T19:00:00": {
+                "address": "725 24th Street, NW", 
+                "building": "St. Mary\u2019s Court", 
+                "room": null
+            }, 
+            "2014-03-19T19:00:00": {
+                "address": "725 24th Street, NW", 
+                "building": "St. Mary\u2019s Court", 
+                "room": null
+            }
+        }
+    }, 
+    "2B": {
+        "meetings": {
+            "2014-02-12T19:00:00": {
+                "address": "1775 Massachusetts Avenue, NW, Washington, DC", 
+                "building": "Brookings Institution", 
+                "room": null
+            }
+        }
+    }, 
+    "2C": {
+        "meetings": {
+            "2014-01-13T18:30:00": {
+                "address": "Martin Luther King Jr. Memorial Library", 
+                "building": null, 
+                "room": "Auditorium 3"
+            }, 
+            "2014-02-10T18:30:00": {
+                "address": "Martin Luther King Jr. Memorial Library", 
+                "building": null, 
+                "room": "Auditorium 3"
+            }, 
+            "2014-03-10T18:30:00": {
+                "address": "Martin Luther King Jr. Memorial Library", 
+                "building": null, 
+                "room": "Auditorium 3"
+            }, 
+            "2014-04-14T18:30:00": {
+                "address": "Martin Luther King Jr. Memorial Library", 
+                "building": null, 
+                "room": "Auditorium 3"
+            }, 
+            "2014-05-12T18:30:00": {
+                "address": "Martin Luther King Jr. Memorial Library", 
+                "building": null, 
+                "room": "Auditorium 3"
+            }
+        }
+    }, 
+    "2D": {
+        "meetings": {
+            "2014-01-20T19:00:00": {
+                "address": "2200 California Street, NW, Washington, DC 20008", 
+                "building": "Our Lady Queen of the Americas Church", 
+                "room": null
+            }, 
+            "2014-02-17T19:00:00": {
+                "address": "2200 California Street, NW, Washington, DC 20008", 
+                "building": "Our Lady Queen of the Americas Church", 
+                "room": null
+            }
+        }
+    }, 
+    "2E": {
+        "meetings": {
+            "2014-02-03T18:30:00": {
+                "address": "35th Street and Volta Place, NW, Washington, DC 20007-2700", 
+                "building": "Georgetown Visitation School", 
+                "room": null
+            }, 
+            "2014-03-03T18:30:00": {
+                "address": "35th Street and Volta Place, NW, Washington, DC 20007-2700", 
+                "building": "Georgetown Visitation School", 
+                "room": null
+            }, 
+            "2014-04-07T18:30:00": {
+                "address": "35th Street and Volta Place, NW, Washington, DC 20007-2700", 
+                "building": "Georgetown Visitation School", 
+                "room": null
+            }, 
+            "2014-05-05T18:30:00": {
+                "address": "35th Street and Volta Place, NW, Washington, DC 20007-2700", 
+                "building": "Georgetown Visitation School", 
+                "room": null
+            }, 
+            "2014-06-02T18:30:00": {
+                "address": "35th Street and Volta Place, NW, Washington, DC 20007-2700", 
+                "building": "Georgetown Visitation School", 
+                "room": null
+            }, 
+            "2014-07-07T18:30:00": {
+                "address": "35th Street and Volta Place, NW, Washington, DC 20007-2700", 
+                "building": "Georgetown Visitation School", 
+                "room": null
+            }, 
+            "2014-09-01T18:30:00": {
+                "address": "35th Street and Volta Place, NW, Washington, DC 20007-2700", 
+                "building": "Georgetown Visitation School", 
+                "room": null
+            }, 
+            "2014-10-06T18:30:00": {
+                "address": "35th Street and Volta Place, NW, Washington, DC 20007-2700", 
+                "building": "Georgetown Visitation School", 
+                "room": null
+            }, 
+            "2014-11-03T18:30:00": {
+                "address": "35th Street and Volta Place, NW, Washington, DC 20007-2700", 
+                "building": "Georgetown Visitation School", 
+                "room": null
+            }
+        }
+    }, 
+    "2F": {
+        "meetings": {
+            "2014-02-05T19:00:00": {
+                "address": "10 Thomas Circle, NW, Washington, DC", 
+                "building": "Washington Plaza Hotel", 
+                "room": null
+            }, 
+            "2014-03-05T19:00:00": {
+                "address": "10 Thomas Circle, NW, Washington, DC", 
+                "building": "Washington Plaza Hotel", 
+                "room": null
+            }, 
+            "2014-04-02T19:00:00": {
+                "address": "10 Thomas Circle, NW, Washington, DC", 
+                "building": "Washington Plaza Hotel", 
+                "room": null
+            }, 
+            "2014-05-07T19:00:00": {
+                "address": "10 Thomas Circle, NW, Washington, DC", 
+                "building": "Washington Plaza Hotel", 
+                "room": null
+            }
+        }
+    }, 
+    "3B": {
+        "meetings": {
+            "2014-02-13T19:00:00": {
+                "address": "4000  Calvert Street, NW, Washington, DC", 
+                "building": "Stoddert Elementary and Rec Center", 
+                "room": null
+            }, 
+            "2014-03-13T19:00:00": {
+                "address": "4000  Calvert Street, NW, Washington, DC", 
+                "building": "Stoddert Elementary and Rec Center", 
+                "room": null
+            }
+        }
+    }, 
+    "3C": {
+        "meetings": {
+            "2014-01-20T19:30:00": {
+                "address": "3220 Idaho Avenue, NW, Washington, DC", 
+                "building": "2nd District Police Station", 
+                "room": null
+            }, 
+            "2014-02-17T19:30:00": {
+                "address": "3220 Idaho Avenue, NW, Washington, DC", 
+                "building": "2nd District Police Station", 
+                "room": null
+            }
+        }
+    }, 
+    "3D": {
+        "meetings": {
+            "2014-02-05T19:00:00": {
+                "address": "American University", 
+                "building": "School of International Service", 
+                "room": "Founders Room"
+            }, 
+            "2014-03-05T19:00:00": {
+                "address": "American University", 
+                "building": "School of International Service", 
+                "room": "Founders Room"
+            }, 
+            "2014-04-02T19:00:00": {
+                "address": "American University", 
+                "building": "School of International Service", 
+                "room": "Founders Room"
+            }
+        }
+    }, 
+    "3E": {
+        "meetings": {
+            "2014-02-13T19:30:00": {
+                "address": "4130 Albemarle Street, NW", 
+                "building": "Janney Elementary School Library", 
+                "room": null
+            }
+        }
+    }, 
+    "3F": {
+        "meetings": {
+            "2014-01-21T19:30:00": {
+                "address": "4901 Connecticut Avenue, NW, Washington, DC", 
+                "building": "Methodist House", 
+                "room": null
+            }, 
+            "2014-02-18T19:30:00": {
+                "address": "4901 Connecticut Avenue, NW, Washington, DC", 
+                "building": "Methodist House", 
+                "room": null
+            }
+        }
+    }, 
+    "3G": {
+        "meetings": {
+            "2014-01-13T19:30:00": {
+                "address": "5601 Connecticut Avenue, NW, Washington, DC", 
+                "building": "Chevy Chase Community Center", 
+                "room": null
+            }, 
+            "2014-01-27T19:30:00": {
+                "address": "5601 Connecticut Avenue, NW, Washington, DC", 
+                "building": "Chevy Chase Community Center", 
+                "room": null
+            }, 
+            "2014-02-10T19:30:00": {
+                "address": "5601 Connecticut Avenue, NW, Washington, DC", 
+                "building": "Chevy Chase Community Center", 
+                "room": null
+            }
+        }
+    }, 
+    "4A": {
+        "meetings": {
+            "2014-02-04T19:00:00": {
+                "address": "1327 Van Buren Street, NW", 
+                "building": "Fort Stevens Recreation Center", 
+                "room": null
+            }, 
+            "2014-03-04T19:00:00": {
+                "address": "1327 Van Buren Street, NW", 
+                "building": "Fort Stevens Recreation Center", 
+                "room": null
+            }
+        }
+    }, 
+    "4B": {
+        "meetings": {
+            "2014-01-27T19:00:00": {
+                "address": "6001 Georgia Avenue, NW, Washington, DC 20011", 
+                "building": "4th District Metropolitan Police Department", 
+                "room": null
+            }, 
+            "2014-02-24T19:00:00": {
+                "address": "6001 Georgia Avenue, NW, Washington, DC 20011", 
+                "building": "4th District Metropolitan Police Department", 
+                "room": null
+            }
+        }
+    }, 
+    "4C": {
+        "meetings": {
+            "2014-02-12T18:30:00": {
+                "address": "4200 Kansas Avenue, NW, Washington, DC 20011", 
+                "building": "Petworth Library", 
+                "room": null
+            }
+        }
+    }, 
+    "4D": {
+        "meetings": {
+            "2014-01-21T19:00:00": {
+                "address": "800 Ingraham Street NW Washington DC", 
+                "building": "Truesdell Educational Center", 
+                "room": null
+            }, 
+            "2014-02-18T19:00:00": {
+                "address": "800 Ingraham Street NW Washington DC", 
+                "building": "Truesdell Educational Center", 
+                "room": null
+            }
+        }
+    }, 
+    "5A": {
+        "meetings": {
+            "2014-01-22T19:00:00": {
+                "address": "13th & Emerson Streets, NE, Washington, DC 20018", 
+                "building": "North Michigan Park Recreation Center", 
+                "room": null
+            }, 
+            "2014-02-26T19:00:00": {
+                "address": "13th & Emerson Streets, NE, Washington, DC 20018", 
+                "building": "North Michigan Park Recreation Center", 
+                "room": null
+            }
+        }
+    }, 
+    "5B": {
+        "meetings": {
+            "2014-01-22T18:30:00": {
+                "address": "1322 Irving Street, NE", 
+                "building": null, 
+                "room": null
+            }, 
+            "2014-02-26T18:30:00": {
+                "address": "1322 Irving Street, NE", 
+                "building": null, 
+                "room": null
+            }, 
+            "2014-03-26T18:30:00": {
+                "address": "1322 Irving Street, NE", 
+                "building": null, 
+                "room": null
+            }
+        }
+    }, 
+    "5C": {
+        "meetings": {
+            "2014-01-15T19:00:00": {
+                "address": "1805 Bladensburg Road, NE, Washington, DC 20002", 
+                "building": "Fifth District Police Station", 
+                "room": null
+            }, 
+            "2014-02-19T19:00:00": {
+                "address": "1805 Bladensburg Road, NE, Washington, DC 20002", 
+                "building": "Fifth District Police Station", 
+                "room": null
+            }
+        }
+    }, 
+    "5D": {
+        "meetings": {
+            "2014-01-14T19:00:00": {
+                "address": "1805 Bladensburg Road, NE", 
+                "building": "5th District Police Headquarters", 
+                "room": null
+            }, 
+            "2014-02-11T19:00:00": {
+                "address": "1805 Bladensburg Road, NE", 
+                "building": "5th District Police Headquarters", 
+                "room": null
+            }
+        }
+    }, 
+    "5E": {
+        "meetings": {
+            "2014-01-21T19:00:00": {
+                "address": "Trinity College, Michigan and Franklin Avenues, NE", 
+                "building": null, 
+                "room": null
+            }, 
+            "2014-02-18T19:00:00": {
+                "address": "Trinity College, Michigan and Franklin Avenues, NE", 
+                "building": null, 
+                "room": null
+            }
+        }
+    }, 
+    "6A": {
+        "meetings": {
+            "2014-02-13T19:00:00": {
+                "address": "601 15th Street, NE, Washington, DC", 
+                "building": "Miner Elementary School", 
+                "room": null
+            }
+        }
+    }, 
+    "6B": {
+        "meetings": {
+            "2014-01-14T19:00:00": {
+                "address": "921 Pennsylvania Ave, SE", 
+                "building": "Hill Center", 
+                "room": null
+            }, 
+            "2014-02-11T19:00:00": {
+                "address": "921 Pennsylvania Ave, SE", 
+                "building": "Hill Center", 
+                "room": null
+            }
+        }
+    }, 
+    "6C": {
+        "meetings": {
+            "2014-02-12T19:00:00": {
+                "address": "214 Massachusetts Avenue, NE, Washington, DC", 
+                "building": "The Heritage Foundation", 
+                "room": null
+            }
+        }
+    }, 
+    "6D": {
+        "meetings": {
+            "2014-03-10T19:00:00": {
+                "address": "Waterfront, 1100 4th Street, SW", 
+                "building": null, 
+                "room": null
+            }
+        }
+    }, 
+    "6E": {
+        "meetings": {
+            "2014-02-05T18:30:00": {
+                "address": "1630 7th Street, NW", 
+                "building": "Shaw Library", 
+                "room": null
+            }, 
+            "2014-03-05T18:30:00": {
+                "address": "1630 7th Street, NW", 
+                "building": "Shaw Library", 
+                "room": null
+            }, 
+            "2014-04-02T18:30:00": {
+                "address": "1630 7th Street, NW", 
+                "building": "Shaw Library", 
+                "room": null
+            }
+        }
+    }, 
+    "7B": {
+        "meetings": {
+            "2014-01-16T19:00:00": {
+                "address": "3200  S Street SE Washington DC", 
+                "building": "Ryland Methodist Church", 
+                "room": null
+            }, 
+            "2014-02-20T19:00:00": {
+                "address": "3200  S Street SE Washington DC", 
+                "building": "Ryland Methodist Church", 
+                "room": null
+            }
+        }
+    }, 
+    "7C": {
+        "meetings": {
+            "2014-02-13T19:00:00": {
+                "address": "4800 Nannie Helen Burroughs Ave, NE, Washington, DC ", 
+                "building": null, 
+                "room": null
+            }
+        }
+    }, 
+    "7D": {
+        "meetings": {
+            "2014-01-14T18:30:00": {
+                "address": "100 42nd Street, NE, Washington, DC 20019", 
+                "building": "Sixth District Police Station", 
+                "room": null
+            }, 
+            "2014-02-11T18:30:00": {
+                "address": "100 42nd Street, NE, Washington, DC 20019", 
+                "building": "Sixth District Police Station", 
+                "room": null
+            }
+        }
+    }, 
+    "7E": {
+        "meetings": {
+            "2014-01-14T19:00:00": {
+                "address": "4625  G Street, SE, Washington, DC, 20019", 
+                "building": "Jones Memorial Church", 
+                "room": null
+            }, 
+            "2014-02-11T19:00:00": {
+                "address": "4625  G Street, SE, Washington, DC, 20019", 
+                "building": "Jones Memorial Church", 
+                "room": null
+            }, 
+            "2014-03-11T19:00:00": {
+                "address": "4625  G Street, SE, Washington, DC, 20019", 
+                "building": "Jones Memorial Church", 
+                "room": null
+            }, 
+            "2014-04-08T19:00:00": {
+                "address": "4625  G Street, SE, Washington, DC, 20019", 
+                "building": "Jones Memorial Church", 
+                "room": null
+            }
+        }
+    }, 
+    "7F": {
+        "meetings": {
+            "2014-01-21T18:30:00": {
+                "address": "200 Stoddert Place, SE", 
+                "building": "Washington Tennis and Education Foundation", 
+                "room": null
+            }, 
+            "2014-02-18T18:30:00": {
+                "address": "200 Stoddert Place, SE", 
+                "building": "Washington Tennis and Education Foundation", 
+                "room": null
+            }, 
+            "2014-03-18T18:30:00": {
+                "address": "200 Stoddert Place, SE", 
+                "building": "Washington Tennis and Education Foundation", 
+                "room": null
+            }, 
+            "2014-05-20T18:30:00": {
+                "address": "200 Stoddert Place, SE", 
+                "building": "Washington Tennis and Education Foundation", 
+                "room": null
+            }
+        }
+    }, 
+    "8A": {
+        "meetings": {
+            "2014-02-04T19:15:00": {
+                "address": "1649 Good Hope Road, SE, Washington, DC", 
+                "building": "UPO Anacostia Community Service Center", 
+                "room": null
+            }, 
+            "2014-03-04T19:15:00": {
+                "address": "1649 Good Hope Road, SE, Washington, DC", 
+                "building": "UPO Anacostia Community Service Center", 
+                "room": null
+            }, 
+            "2014-04-01T19:15:00": {
+                "address": "1649 Good Hope Road, SE, Washington, DC", 
+                "building": "UPO Anacostia Community Service Center", 
+                "room": null
+            }
+        }
+    }, 
+    "8B": {
+        "meetings": {
+            "2014-01-21T19:00:00": {
+                "address": "Alabama and McGee Streets, SE", 
+                "building": "Metropolitan Police Department 7th District Police Station", 
+                "room": null
+            }, 
+            "2014-02-18T19:00:00": {
+                "address": "Alabama and McGee Streets, SE", 
+                "building": "Metropolitan Police Department 7th District Police Station", 
+                "room": null
+            }
+        }
+    }, 
+    "8C": {
+        "meetings": {
+            "2014-02-05T19:00:00": {
+                "address": "2907 Martin Luther King Jr. Avenue, SE, Washington, DC 20032", 
+                "building": "Petey Green Center", 
+                "room": null
+            }, 
+            "2014-03-05T19:00:00": {
+                "address": "2907 Martin Luther King Jr. Avenue, SE, Washington, DC 20032", 
+                "building": "Petey Green Center", 
+                "room": null
+            }, 
+            "2014-04-02T19:00:00": {
+                "address": "2907 Martin Luther King Jr. Avenue, SE, Washington, DC 20032", 
+                "building": "Petey Green Center", 
+                "room": null
+            }, 
+            "2014-05-07T19:00:00": {
+                "address": "2907 Martin Luther King Jr. Avenue, SE, Washington, DC 20032", 
+                "building": "Petey Green Center", 
+                "room": null
+            }
+        }
+    }, 
+    "8D": {
+        "meetings": {
+            "2014-01-23T19:00:00": {
+                "address": "4601 Martin Luther King Jr Avenue, SW Washington DC", 
+                "building": "Specialty Hospital of Washington (Formerly known as Hadley Hospital)", 
+                "room": null
+            }, 
+            "2014-02-27T19:00:00": {
+                "address": "4601 Martin Luther King Jr Avenue, SW Washington DC", 
+                "building": "Specialty Hospital of Washington (Formerly known as Hadley Hospital)", 
+                "room": null
+            }
+        }
+    }, 
+    "8E": {
+        "meetings": {
+            "2014-02-03T19:00:00": {
+                "address": "3400 Wheeler Road, SE, Washington DC", 
+                "building": "Eagle Academy", 
+                "room": null
+            }, 
+            "2014-03-03T19:00:00": {
+                "address": "3400 Wheeler Road, SE, Washington DC", 
+                "building": "Eagle Academy", 
+                "room": null
+            }
+        }
     }
-]
+}
