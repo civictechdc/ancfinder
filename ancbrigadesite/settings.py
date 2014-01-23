@@ -29,6 +29,7 @@ if not os.path.exists('/home/dotcloud/environment.json'):
 	
 	MANAGERS = ADMINS
 	
+	ALLOWED_HOSTS = ["*"]
 
 else:
 	# Settings for a public dotcloud deployment.
@@ -60,10 +61,7 @@ else:
 	EMAIL_HOST_PASSWORD = env['SMTP_PASSWORD']
 	EMAIL_USE_TLS = True
 	
-
-# Hosts/domain names that are valid for this site; required if DEBUG is False
-# See https://docs.djangoproject.com/en/1.4/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+	ALLOWED_HOSTS = ["www.ancbrigade.com"]
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
