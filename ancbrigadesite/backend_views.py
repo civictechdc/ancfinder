@@ -126,8 +126,6 @@ def edit_document(request, doc_id):
 		if form.is_valid():
 			# Save and redirect back to page.
 			doc.save()
-
-			return HttpResponseRedirect(reverse('ancbrigadesite.backend_views.edit_document', args=[doc.id]))
 	else:
 		form = EditDocumentForm(instance=doc)
 		

@@ -7,7 +7,7 @@ class Document(models.Model):
 	"""An ANC document."""
 
 	anc = models.CharField(max_length=4, db_index=True, verbose_name="ANC") # e.g. "3B" or later perhaps "3B08"
-	title = models.CharField(max_length=64, blank=True, null=True)
+	title = models.CharField(max_length=64, default="No Title")
 	created = models.DateTimeField(auto_now_add=True, db_index=True)
 
 	doc_type = models.IntegerField(choices=[

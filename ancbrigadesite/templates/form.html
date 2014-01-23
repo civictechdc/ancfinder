@@ -2,7 +2,7 @@
 {% csrf_token %}
 <fieldset>
 
-	<legend>{{title}}</legend>
+	<legend style="margin-bottom: 0">{{title}}</legend>
 	
 	{% for field in form %}
 	{% if 'type="hidden"' not in field|capfirst %} {# capfirst forces type cast to string #}
@@ -22,7 +22,7 @@
 	<div class="control-group">
 	  <label class="control-label" for="singlebutton"></label>
 	  <div class="controls">
-		<button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+		<button id="singlebutton" name="singlebutton" class="btn btn-primary">{% firstof submit_button_text "Submit" %}</button>
 	  </div>
 	</div>
 
