@@ -94,8 +94,7 @@ class Document(models.Model):
 		elif self.document_content_type == "application/pdf":
 			ad.body = Document.convert_pdf_to_html(base64.b64decode(self.document_content))
 		else:
-			# don't know how to convert this file type
-			return
+			raise ValueError("Don't know how to convert this file type: %s" % self.document_content_type)
 
 		ad.save()
 		
@@ -103,8 +102,34 @@ class Document(models.Model):
 		self.save()
 
 	@staticmethod
+	def convert_pdf_to_text(pdf_blob):
+		import sys, subprocess, tempfile, os
+
+		if not os.path.exists("/usr/bin/pdftotext"):
+			# fall back!
+			return Document.convert_pdf_to_text_with_pdf2txt(pdf_blob)
+
+		try:
+			(fd1, fn1) = tempfile.mkstemp(suffix=".pdf")
+			os.write(fd1, pdf_blob)
+			os.close(fd1)
+			
+			(fd2, fn2) = tempfile.mkstemp(suffix=".txt")
+			os.close(fd2)
+			subprocess.check_call(["/usr/bin/pdftotext", "-layout", "-enc", "UTF-8", fn1, fn2])
+			with open(fn2, "rb") as fo:
+				return fo.read().decode("utf-8")
+		finally:
+			os.unlink(fn1)
+			os.unlink(fn2)
+
+	@staticmethod
 	def convert_pdf_to_html(pdf_blob):
-		import tempfile, os, subprocess, lxml.etree, re
+		return Document.convert_text_to_html(Document.convert_pdf_to_text(pdf_blob))
+				
+	@staticmethod
+	def convert_pdf_to_text_with_pdf2txt(pdf_blob):
+		import tempfile, os, subprocess
 
 		# Convert the PDF to plain text. Conversion to HTML is usually either
 		# ugly or produces complex HTML layouts that make selection behave
@@ -113,13 +138,16 @@ class Document(models.Model):
 			(fd1, fn1) = tempfile.mkstemp(suffix=".pdf")
 			os.write(fd1, pdf_blob)
 			os.close(fd1)
-
 			text_blob = subprocess.check_output(["pdf2txt.py", "-c", "utf8", "-t", "text", "-Y", "loose", fn1])
 			text_blob = text_blob.decode('utf8')
 		finally:
 			os.unlink(fn1)
+		return text_blob
 
-		# Now convert to simple HTML.
+	@staticmethod
+	def convert_text_to_html(text_blob):
+		import lxml.etree
+
 		root = lxml.etree.Element("div")
 		for page in text_blob.split("\x0C"):
 			page = page.strip()
@@ -136,6 +164,8 @@ class Document(models.Model):
 				if line.strip() == "":
 					n.text = u'\u00a0' # nbsp prevents the <div> from collapsing to zero height
 				else:
+					print repr(line)
 					n.text = line
+
 		return lxml.etree.tostring(root, pretty_print=True, method="html", encoding=unicode)
 		
