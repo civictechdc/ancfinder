@@ -31,7 +31,9 @@ Then, install dependencies and set up the site database:
 	sudo pip install -r requirements.txt
 	./manage.py syncdb
 	
-If it seems like you're missing stuff, also try 'git submodule init; git submodule update".
+If it seems like you're missing stuff, also try
+        
+        git submodule init; git submodule update
 
 Running the Site
 ----------------
