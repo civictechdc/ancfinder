@@ -1,4 +1,4 @@
-import urllib2, lxml, csv, re
+import urllib2, csv, re
 from bs4 import BeautifulSoup
 
 scraper_writer = csv.writer(open('data/scraped-anc.csv', 'w'), delimiter=',')
