@@ -56,8 +56,21 @@
 					<tr>
 					{% for smd in info.smds.values %}
 					<td id="smd{{ smd.smd_number }}" width="33%" style="vertical-align: top; padding-right: 1.25em;">
-						<div style="padding-bottom: .4em; color: black; border-bottom: 1px solid #444;">{{ smd.first_name }} {{ smd.last_name }}</div>
-						<div style="padding-bottom: .75em"><small><b>SMD {{ smd.smd_number }}</b>: {{ smd.neighborhood_list|capfirst }}</small></div>
+                                          <div style="padding-bottom: .4em; color: black; border-bottom: 1px solid #444;">{{ smd.first_name }} {{ smd.last_name }}, <b><small>SMD {{ smd.smd_number }}</b></small>
+                                          </div>
+                                          <div>
+                                            <small>
+                                              {% if smd.Position %}<p><em>Position: </em>{{ smd.Position }}</p>{% endif %}
+                                              <p><em>Neighborhoods:</em> {{ smd.neighborhood_list|capfirst }}</p>
+                                            </small>
+                                          </div>
+                                          <div class="hidey" id="hidey{{ smd.smd_number }}">
+                                            <small>
+                                              <p><em>Email:</em> {% if smd.email %}{{ smd.email }}{% else %}None provided{% endif %}</p>
+                                              <p><em>Phone:</em> {% if smd.phone %}{{ smd.phone }}{% else %}None provided{% endif %}</p>
+                                              <p><em>Terms as commissioner: </em>{{ smd.terms }}</p>
+                                            </small>
+                                          </div>
 					</td>
 					{% if forloop.counter|divisibleby:3 and not forloop.last %}</tr><tr>{% endif %}
 					{% endfor %}
@@ -124,8 +137,8 @@
 		</div>
   	</div><!-- /body -->
 
-{% endblock %}
 
+{% endblock %}
 
 {% block scripts %}
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -201,7 +214,53 @@
 			map.overlayMapTypes.insertAt(0, overlay);
 		}
 
+                $(".hidey").hide();
+                
 		$("#smd" + window.location.hash.replace("#", "")).css({"background-color": "#ffffcc"});
+                $("#hidey" + window.location.hash.replace("#", "")).show();
+                               
+                {% for smd in info.smds.values %}
+                $("#smd{{ smd.smd_number }}").click(function() {
+                        $(".hidey").hide();
+                        $("#hidey{{ smd.smd_number }}").show();
+                    
+                        $(function () {
+                        on_resize();
+                         $(window).resize(on_resize);
+                
+                        try {
+                                google;
+                        } catch (err) {
+                                return; // We're working off-line and don't have access to Google Maps.
+                        }
+                        
+                        var sw = new google.maps.LatLng({{smd.bounds.1}}, {{smd.bounds.0}});
+                        var ne = new google.maps.LatLng({{smd.bounds.3}}, {{smd.bounds.2}});
+                        var bounds = new google.maps.LatLngBounds(sw, ne);
+                        
+                        var myOptions = {
+                                zoom: 13,
+                                center: bounds.getCenter(),
+                                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                                panControl: false,
+                                zoomControl: true,
+                                mapTypeControl: false,
+                                scaleControl: true,
+                                streetViewControl: false,
+                                styles: [ { "featureType": "poi.park", "elementType": "geometry.fill", "stylers": [ { "visibility": "off" } ] } ]
+                                };
+                        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
+                        map.fitBounds(bounds);
+                        
+                        add_overlay(map, "dc-ward-2013", 8, 12);
+                        add_overlay(map, "dc-anc-2013", 13, 14);
+                        add_overlay(map, "dc-anc-2013-outlines", 15, 20);
+                        add_overlay(map, "dc-smd-2013-outlines", 13, 14);
+                        add_overlay(map, "dc-smd-2013", 15, 20);
+                });
+                });
+                {% endfor %}
+                
 	</script>
 {% endblock %}

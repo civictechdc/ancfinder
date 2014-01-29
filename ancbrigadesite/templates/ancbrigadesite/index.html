@@ -384,38 +384,6 @@
 								$('#what-is-an-anc .how-many-commissioners').text("Your ANC is composed of " +  Object.keys(anc["smds"]).length + " commissioners who make decisions about a broad range of issues in your community, such as liquor licenses, parking, and sanitation.");
 								
 								// Show next meeting for the ANC.
-
-								var now = moment().format(); // get current local time in ISO format (assumes user is in Eastern Time)
-								anc_meetings.sort(function(a,b) {
-									if (!a.when && !b.when) return 0; // not all meetings have parsed dates
-									if (!a.when) return 1; // put unparsed (null) dates *later*, hoping they include current meeting info
-									if (!b.when) return -1;
-									a.when.localeCompare(b.when);
-								});
-								var mtg = null;
-								for (var i = 0; i < anc_meetings.length; i++) {
-									if (anc_meetings[i].anc != anc.anc) continue;
-									mtg = anc_meetings[i];
-									if (mtg.when > now) break; // stop at first meeting in the future
-								}
-								if (mtg) {
-									// Found a meeting.
-									var future = (!mtg.when || (mtg.when > now));
-									$('#meeting').show().text("");
-									$('#meeting').append($("<p/>").text(
-										  (future ? "The next" : "The last")
-										+ " meeting of ANC "
-										+ anc.anc
-										+ " "
-										+ (future ? "will be" : "was")
-										+ " on "
-										+ moment(mtg.when).format("dddd, MMMM Do YYYY, h:mm a")
-										+ "."
-									));
-									
-								} else {
-									$('#meeting').hide();
-								}
 								
 								$('#anc-link').attr('href', "/" + anc.anc + "#" + smd.smd_number)
 									.text("Find out more about " + anc.anc + " >");
