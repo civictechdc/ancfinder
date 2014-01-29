@@ -33,7 +33,7 @@
 			
 				<h2 style="font-size: 100%">About</h2>
 
-				<p>{% for tag in document.get_tags %}{{tag}}{% if forloop.revcounter > 1 %}, {% endif %}{% endfor %}</p>
+				{# <p>{% for tag in document.get_tags %}{{tag}}{% if forloop.revcounter > 1 %}, {% endif %}{% endfor %}</p> #}
 
 				{% if document.meeting_date %}<p>Meeting Date: {{document.meeting_date|date}}</p>{% endif %}
 				{% if document.pub_date %}<p>Published on: {{document.pub_date|date}}</p>{% endif %}
