@@ -2,5 +2,7 @@ www:
     type: python
     config:
         python_version: v2.7
+    systempackages:
+        - poppler-utils
 db:
     type: postgresql
