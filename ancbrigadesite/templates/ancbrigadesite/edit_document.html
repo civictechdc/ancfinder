@@ -92,7 +92,7 @@ jQuery(function ($) {
 		// form field that ties to Django, and having the datepicker
 		// store the value there, but use a new field for display.
 		var newfield = $(this).clone();
-		newfield.attr('id', '');
+		newfield.attr('id', $(this).attr('id') + "_display");
 		newfield.attr('name', '');
 		newfield.insertAfter($(this));
 		$(this).hide();
@@ -122,6 +122,20 @@ jQuery(function ($) {
 			  }
 			});
 	*/
+
+	// When the doc type is Aganda or Minutes, hide the title field since we
+	// will override it internally.
+	$('#id_doc_type, #id_meeting_date_display').change(function() {
+		var doc_type = $('#id_doc_type').val();
+		var auto_title = (doc_type == '1' || doc_type == '2');
+		if (!auto_title) {
+			$('#control-group-title').fadeIn();
+		} else {
+			$('#control-group-title').fadeOut();
+			$('#id_title').val("No Title");
+		}
+	});
+	$('#id_doc_type').change();
 });
 </script>
 

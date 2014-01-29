@@ -19,8 +19,10 @@
   	<div id="masthead">
   		<div class="container">
   			<div class="row">
-  				<h1>Title: {{document.title}}</h1>
-				<div style="text-align: center">{{document.get_doc_type_display}}</div>
+  				<h1>{{document.get_display_title}}</h1>
+  				{% if document.doc_type != 1 and document.doc_type != 2 %}
+					<div style="text-align: center">{{document.get_doc_type_display}}</div>
+				{% endif %}
   			</div>
   		</div><!-- /container -->
   	</div><!-- /masthead -->

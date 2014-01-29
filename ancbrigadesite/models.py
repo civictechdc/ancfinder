@@ -65,6 +65,12 @@ class Document(models.Model):
 				url += "/" + s
 		return url
 
+	def get_display_title(self):
+		if self.doc_type in (1, 2):
+			if self.meeting_date:
+				return "ANC %s %s for %s" % (self.anc, self.get_doc_type_display(), self.meeting_date.strftime("%B %d, %Y"))
+		return self.title
+
 	def get_display_date(self):
 		if self.meeting_date:
 			return self.meeting_date
