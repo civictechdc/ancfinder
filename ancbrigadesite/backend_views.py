@@ -30,6 +30,11 @@ class UploadDocumentForm(forms.Form):
 		help_text="Enter the ANC number, like 3B, that this document is associated with.",
 		widget=forms.TextInput(attrs={'class':'input-large'})
 		)
+
+	doc_type = forms.ChoiceField(
+		label="Document Type",
+		choices=[("", "(Select Document Type)")] + Document.doc_type_choices[1:] + [(0, "Other")] # move "Unknown" to the end
+		)
 	
 	upload_type = forms.ChoiceField(
 		choices=(("file", "Upload a File"), ("paste", "Paste Document"), ("url", "Paste a Link")),
@@ -76,6 +81,7 @@ def upload_document(request):
 			and not (form.cleaned_data["upload_type"] == "url" and not form.cleaned_data["url"]):
 			newdoc = Document()
 			newdoc.anc = form.cleaned_data['anc']
+			newdoc.doc_type = form.cleaned_data['doc_type']
 			if form.cleaned_data["upload_type"] == "file":
 				newdoc.set_document_content(request.FILES['docfile'])
 			elif form.cleaned_data["upload_type"] == "paste":
@@ -108,7 +114,8 @@ def upload_document(request):
 			# Redirect to the document list after POST
 			return HttpResponseRedirect(reverse('ancbrigadesite.backend_views.edit_document', args=[newdoc.id]))
 	else:
-		form = UploadDocumentForm() # A empty, unbound form
+		# A empty, unbound form
+		form = UploadDocumentForm(initial=request.GET)
 
 	return render_to_response(
 		'ancbrigadesite/upload_document.html',

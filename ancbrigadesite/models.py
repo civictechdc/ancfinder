@@ -3,14 +3,11 @@ from django.template.defaultfilters import slugify
 
 import base64, json
 
+
 class Document(models.Model):
 	"""An ANC document."""
 
-	anc = models.CharField(max_length=4, db_index=True, verbose_name="ANC") # e.g. "3B" or later perhaps "3B08"
-	title = models.CharField(max_length=64, default="No Title")
-	created = models.DateTimeField(auto_now_add=True, db_index=True)
-
-	doc_type = models.IntegerField(choices=[
+	doc_type_choices = [
 		(0, "Unknown"),
 		(1, "Agenda"),
 		(2, "Minutes"),
@@ -25,7 +22,13 @@ class Document(models.Model):
 		(11, "Committee Agenda"),
 		(12, "Committee Minutes"),
 		(13, "Committee Report"),
-		], default=0, verbose_name="Document Type")
+		]
+
+	anc = models.CharField(max_length=4, db_index=True, verbose_name="ANC") # e.g. "3B" or later perhaps "3B08"
+	title = models.CharField(max_length=64, default="No Title")
+	created = models.DateTimeField(auto_now_add=True, db_index=True)
+
+	doc_type = models.IntegerField(choices=doc_type_choices, default=0, verbose_name="Document Type")
 	pub_date = models.DateField(blank=True, null=True, verbose_name="Date Published", help_text="The date the document was published by the ANC, if known.")
 	meeting_date = models.DateField(blank=True, null=True, verbose_name="Date of Meeting", help_text="The date of an associated meeting, if relevant.")
 	

@@ -37,12 +37,12 @@
 				<div id="recent_docs">
 				{% for timeperiod, doclist in recent_documents %}
 					<p><b>{{timeperiod}}:</b>
-						{% for docname, doc in doclist %}
+						{% for doc_type_id, docname, doc in doclist %}
 							{% if not forloop.first %} | {% endif %}
 							{% if doc %}
 								<a href="{{doc.get_absolute_url}}">{{docname}}</a>
 							{% else %}
-								No {{docname}} (<a href="/upload-document">Upload</a>)
+								No {{docname}} (<a href="/upload-document?anc={{anc}}&amp;doc_type={{doc_type_id}}">Upload</a>)
 							{% endif %}
 						{% endfor %}
 					</p>

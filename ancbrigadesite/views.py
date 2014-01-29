@@ -1,3 +1,4 @@
+
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404, HttpResponse
 from django.views.generic import TemplateView
@@ -117,6 +118,7 @@ class AncInfoTemplateView(TemplateView):
 				datetime.datetime(year, month, 1).strftime("%B"),
 				[
 					(
+						doc_type_id,
 						doc_type_name,
 						first(Document.objects.filter(anc=anc, meeting_date__year=year, meeting_date__month=month,
 					doc_type=doc_type_id))
