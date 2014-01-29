@@ -80,6 +80,7 @@ def upload_document(request):
 			and not (form.cleaned_data["upload_type"] == "paste" and not form.cleaned_data["content"]) \
 			and not (form.cleaned_data["upload_type"] == "url" and not form.cleaned_data["url"]):
 			newdoc = Document()
+			newdoc.owner = request.user
 			newdoc.anc = form.cleaned_data['anc']
 			newdoc.doc_type = form.cleaned_data['doc_type']
 			if form.cleaned_data["upload_type"] == "file":
@@ -123,10 +124,12 @@ def upload_document(request):
 		context_instance=RequestContext(request)
 	)
 
+@login_required
 def edit_document(request, doc_id):
 	class EditDocumentForm(forms.ModelForm):
 		class Meta:
 			model = Document
+			fields = ['anc', 'title', 'doc_type', 'pub_date', 'meeting_date', 'source_url']
 
 	doc = get_object_or_404(Document, id=doc_id)
 

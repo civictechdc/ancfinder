@@ -1,5 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
+from django.contrib.auth.models import User
 
 import base64, json
 
@@ -23,6 +24,8 @@ class Document(models.Model):
 		(12, "Committee Minutes"),
 		(13, "Committee Report"),
 		]
+
+	owner = models.ForeignKey(User, related_name="uploaded_documents")
 
 	anc = models.CharField(max_length=4, db_index=True, verbose_name="ANC") # e.g. "3B" or later perhaps "3B08"
 	title = models.CharField(max_length=64, default="No Title")
