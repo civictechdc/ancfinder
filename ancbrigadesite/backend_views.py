@@ -8,8 +8,7 @@ from django.core.exceptions import ValidationError
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import permission_required
 
-from ancbrigadesite.models import Document
-from ancbrigadesite.views import anc_data
+from ancbrigadesite.models import Document, anc_list, anc_data
 
 import re
 
@@ -22,13 +21,10 @@ def is_valid_anc(value):
 		raise ValidationError("%s is not an ANC." % value)
 
 class UploadDocumentForm(forms.Form):
-	anc = forms.CharField(
+	anc = forms.ChoiceField(
 		label="ANC",
-		max_length=2,
-		initial="9X",
-		validators=[is_valid_anc],
-		help_text="Enter the ANC number, like 3B, that this document is associated with.",
-		widget=forms.TextInput(attrs={'class':'input-large'})
+		choices=[("", "(Select ANC)")] + [(x,x) for x in anc_list],
+		help_text="Enter the ANC number that this document is associated with.",
 		)
 
 	doc_type = forms.ChoiceField(

@@ -2,8 +2,19 @@ from django.db import models
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
 
-import base64, json
+import base64, collections
 
+try:
+	import json
+except ImportError:
+	import simplejson as json
+
+anc_data_as_json = open("ancbrigadesite/static/ancs.json").read()
+anc_data = json.loads(anc_data_as_json, object_pairs_hook=collections.OrderedDict)
+anc_list = []
+for ward in anc_data.values():
+	anc_list.extend(list(x['anc'] for x in ward['ancs'].values()))
+anc_list.sort()
 
 class Document(models.Model):
 	"""An ANC document."""
@@ -27,7 +38,7 @@ class Document(models.Model):
 
 	owner = models.ForeignKey(User, related_name="uploaded_documents")
 
-	anc = models.CharField(max_length=4, db_index=True, verbose_name="ANC") # e.g. "3B" or later perhaps "3B08"
+	anc = models.CharField(choices=[(x,x) for x in anc_list], max_length=4, db_index=True, verbose_name="ANC") # e.g. "3B" or later perhaps "3B08"
 	title = models.CharField(max_length=64, default="No Title")
 	created = models.DateTimeField(auto_now_add=True, db_index=True)
 

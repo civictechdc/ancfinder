@@ -2,17 +2,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404, HttpResponse
 from django.views.generic import TemplateView
-import datetime, collections, calendar
+import datetime, calendar
 
-try:
-	import json
-except ImportError:
-	import simplejson as json
 
-from models import Document
-
-anc_data_as_json = open("ancbrigadesite/static/ancs.json").read()
-anc_data = json.loads(anc_data_as_json, object_pairs_hook=collections.OrderedDict)
+from models import Document, anc_data_as_json, anc_data
 
 # assemble census data on first load
 def make_anc_hex_color(anc):

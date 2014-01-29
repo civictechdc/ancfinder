@@ -30,8 +30,9 @@
 
 		<div class="row">
 			<div class="span3">
-			
 				<h2 style="font-size: 100%">About</h2>
+
+				<p>ANC: <a href="/{{document.anc}}">{{document.anc}}</a></p>
 
 				{# <p>{% for tag in document.get_tags %}{{tag}}{% if forloop.revcounter > 1 %}, {% endif %}{% endfor %}</p> #}
 
@@ -39,6 +40,11 @@
 				{% if document.pub_date %}<p>Published on: {{document.pub_date|date}}</p>{% endif %}
 				<p>Uploaded on: {{document.created|date}}</p>
 				{% if document.source_url %}<p><a href="{{document.source_url}}">Download Original</a></p>{% endif %}
+
+				{% if user %}
+					<p><a href="/document/{{document.id}}/edit">Edit This Information</a></p>
+				{% endif %}
+			
 			</div><!-- /column -->
 		
 			<div class="span9">
