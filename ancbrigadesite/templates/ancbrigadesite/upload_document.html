@@ -21,12 +21,13 @@
 	<script>
 		update_toggle_state();
 
-		$('#id_upload_type').change(update_toggle_state);
+		$('#id_upload_type_0, #id_upload_type_1, #id_upload_type_2').change(update_toggle_state);
 		
 		function update_toggle_state() {
-			$('#control-group-docfile').toggle($('#id_upload_type').val() == "file");
-			$('#control-group-content').toggle($('#id_upload_type').val() == "paste");
-			$('#control-group-url').toggle($('#id_upload_type').val() == "url");
+			var val = $('input[name="upload_type"]:checked').val();
+			$('#control-group-docfile').toggle(val == "file");
+			$('#control-group-content').toggle(val == "paste");
+			$('#control-group-url').toggle(val == "url");
 		}
 	</script>
 {% endblock %}

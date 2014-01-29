@@ -87,6 +87,24 @@ Annotator.Plugin.CommonTags = function (element) {
 };
 
 jQuery(function ($) {
+	$('#id_pub_date, #id_meeting_date').each(function() {
+		// Store the date in ISO format natively by making a hidden
+		// form field that ties to Django, and having the datepicker
+		// store the value there, but use a new field for display.
+		var newfield = $(this).clone();
+		newfield.attr('id', '');
+		newfield.attr('name', '');
+		newfield.insertAfter($(this));
+		$(this).hide();
+
+		// initialize value in the display field, also used as datepicker's initial value
+		if ($(this).val() != "")
+			newfield.val($.datepicker.formatDate($.datepicker.regional[""].dateFormat, $.datepicker.parseDate('yy-mm-dd', $(this).val())));
+
+		// turn on the datepicker
+		newfield.datepicker({ altField: this, altFormat: "yy-mm-dd" });
+	});
+
     $('#annotation_body').annotator()
     	.annotator('addPlugin', 'Unsupported')
     	.annotator('addPlugin', 'Tags')

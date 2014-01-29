@@ -12,6 +12,7 @@
 	<link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="{{ STATIC_URL }}css/theme.css" rel="stylesheet">
+  <link href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
 	
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -97,6 +98,7 @@
 			document.write("\u003Cscript src\u003D\u0027static/bootstrap/js/jquery-1.7.2.min.js\u0027\u003E \u003C/script\u003E");
 		}
 	</script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"> </script>
 	
 	{# CSRF as required by Django #}
 	<script>$('html').ajaxSend(function(event, xhr, settings) { if (!/^https?:.*/.test(settings.url)) xhr.setRequestHeader("X-CSRFToken", "{{csrf_token|escapejs}}"); });</script> <!-- {% csrf_token %} -->

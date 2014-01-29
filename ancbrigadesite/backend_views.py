@@ -35,6 +35,7 @@ class UploadDocumentForm(forms.Form):
 		choices=(("file", "Upload a File"), ("paste", "Paste Document"), ("url", "Paste a Link")),
 		initial="file",
 		label="Upload Method",
+		widget=forms.RadioSelect()
 		)
 
 	docfile = forms.FileField(
@@ -64,6 +65,7 @@ class UploadDocumentForm(forms.Form):
 		if "docfile" not in self.cleaned_data:
 			raise forms.ValidationError("Select a file.")
 
+@login_required
 def upload_document(request):
 	# Handle file upload
 	if request.method == 'POST':
