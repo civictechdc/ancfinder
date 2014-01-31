@@ -44,18 +44,9 @@
 			<!--If search successful, details below-->
 			<div id="info" style="display: none; margin-top: 1em;">
 				<div>
-					<p>You live in <b>ANC <span class="anc-short-name"> </span></b> within <b>Ward <span class="ward-name"> </span></b>.
-					It&rsquo;s called <span class="anc-name"> </span> for short.</p>
+					<p>You live in <b>ANC <span class="anc-name"> </span></b>, single member district <b><span class="smd-name"> </span></b>.</p>
 					
-					<p>Your single member district is <b><span class="smd-name"> </span></b>.</p>
-					
-					<p>Your commissioner is: <b><span class="smd-commissioner"> </span></b><span class="smd-commissioner-email"></span>. <span class="smd-commissioner-position"></span></p>
-					
-					<p><span id="smd-terms"> </span> <span id="smd-contestation"> </span></p>
-
-					<p class="anc-has-website">ANC <span class="anc-name"> </span>&rsquo;s website is <a class="anc-website"> </a>.
-					
-					<p id="meeting" style="display: none"> </p>
+					<p>Your commissioner is: <b><span class="smd-commissioner"></span></b>.
 					
 					<p><a id="anc-link">Find out more about this ANC.</a></p>
 				
@@ -63,7 +54,7 @@
 			</div>
 			<!--Search unsuccessful-->
 			<div id="info_address_not_found" style="display: none">
-				We could not find your address, sorry!
+				We couldn't find your address. Please try again.
 			</div>
 			
 		  </div>
@@ -330,15 +321,7 @@
 								
 								// show ANC/SMD info
 								$(".smd-name").text(smd.smd);
-								$(".ward-name").text(ward.ward);
-								$(".anc-short-name").text(anc.anc_letter);
-							
 								$(".anc-name").text(anc.anc);
-								$(".anc-website").text(anc.website);
-								$(".anc-website").attr('href', anc.website);
-								if (!anc.website) {
-									$(".anc-has-website").hide();
-								}
 								
 								$('.has-commissioner').show();
 								var name = "";
@@ -347,34 +330,7 @@
 								if (smd["middle_name"]) name += smd["middle_name"] + " ";
 								name += smd["last_name"];
 								$(".smd-commissioner").text(name);
-								
-								if (smd.email || smd.phone) {
-									var contacts = [];
-									if (smd.email) contacts.push(smd.email);
-									if (smd.phone) contacts.push(smd.phone);
-									$('.smd-commissioner-email').text(" (" + contacts.join(", ") + ")");
-								} else {
-									$('.smd-commissioner-email').text(" (contact information was not provided)");
-								}
-								
-								if (smd.Position) {
-									$('.smd-commissioner-position').text(smd.first_name + " serves as the " + smd.Position + " of the ANC.");
-								} else {
-									$('.smd-commissioner-position').text("");
-								}
-								
-								if (smd.terms) {
-									$('#smd-terms').text(smd.first_name + " has been an ANC commissioner for " + smd.terms + " term" + (smd.terms > 1 ? "s" : "") + ".");
-								}
-								
-								if (smd.contestation == 1) {
-									$('#smd-contestation').text("Only 1 candidate competed for this seat in the 2012 election.")
-								} else if (smd.contestation > 1) {
-									$('#smd-contestation').text(smd.contestation + " candidates competed for this seat in the 2012 election.")
-								} else {
-									$('#smd-contestation').text("Nobody ran for this seat in the 2012 election.")
-								}
-	
+									
 								$('#map_col').show();
 								$('#info').fadeIn();
 								$('#info_address_not_found').fadeOut();
@@ -382,8 +338,6 @@
 								$('#what-is-an-anc h2').text("What is ANC " + anc.anc + "?");
 								$('#what-is-an-anc .what-is-it').text(anc.anc + " is one of Washington DC’s 40 Advisory Neighborhood Commissions.");  
 								$('#what-is-an-anc .how-many-commissioners').text("Your ANC is composed of " +  Object.keys(anc["smds"]).length + " commissioners who make decisions about a broad range of issues in your community, such as liquor licenses, parking, and sanitation.");
-								
-								// Show next meeting for the ANC.
 								
 								$('#anc-link').attr('href', "/" + anc.anc + "#" + smd.smd_number)
 									.text("Find out more about " + anc.anc + " >");
