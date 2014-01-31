@@ -24,6 +24,7 @@
   			<div class="row">
   				<h1 style="font-size: 36px">ANC {{anc}}</h1>
 				<div style="text-align: center">{{info.neighborhood_list}}</div>
+                                <div style="text-align: center">Website: <a href="{{ info.website }}">{{ info.website }}</a> | Next meeting: {{ next_meeting }}</div>
   			</div>
   		</div><!-- /container -->
   	</div><!-- /masthead -->
@@ -56,7 +57,7 @@
 					<tr>
 					{% for smd in info.smds.values %}
 					<td id="smd{{ smd.smd_number }}" width="33%" style="vertical-align: top; padding-right: 1.25em;">
-                                          <div style="padding-bottom: .4em; color: black; border-bottom: 1px solid #444;">{{ smd.first_name }} {{ smd.last_name }}, <b><small>SMD {{ smd.smd_number }}</b></small>
+                                          <div style="padding-bottom: .4em; color: black; border-bottom: 1px solid #444;">{{ smd.first_name }} {{ smd.last_name }} <br><b><small>SMD {{ smd.smd_number }}</b></small>
                                           </div>
                                           <div>
                                             <small>
@@ -148,7 +149,7 @@
 
 		function on_resize() {
 			var cw = $('#map_canvas').parent().width();
-			var wht = $(window).height() / 2;
+			var wht = $(window).height();
 			$('#map_canvas').css({ width: cw, height: cw < wht ? cw : wht });
 		}
 

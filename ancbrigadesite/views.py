@@ -2,10 +2,14 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404, HttpResponse
 from django.views.generic import TemplateView
-import datetime, calendar
+import datetime, calendar, json, collections
 
 
 from models import Document, anc_data_as_json, anc_data
+
+anc_data_as_json = open("ancbrigadesite/static/ancs.json").read()
+anc_data = json.loads(anc_data_as_json, object_pairs_hook=collections.OrderedDict)
+meeting_data = json.loads(open("ancbrigadesite/static/meetings.json").read())
 
 # assemble census data on first load
 def make_anc_hex_color(anc):
@@ -57,9 +61,21 @@ class AncInfoTemplateView(TemplateView):
 		anc = anc.upper()
 		try:
 			info = anc_data[anc[0]]["ancs"][anc[1]]
+                        meetings = meeting_data[anc]["meetings"]
 		except KeyError:
 			raise Http404()
 		
+                # Find next meeting
+                upcoming = []
+                for meeting in meetings:
+                    if meeting > datetime.date:
+                        upcoming.append(meeting)
+                next_meeting = upcoming[0]
+                for meeting in upcoming:
+                    if meeting < next_meeting:
+                        next_meeting = meeting
+                next_meeting = datetime.datetime.strptime( next_meeting, "%Y-%m-%dT%H:%M:%S" )
+                
 		prep_hoods(info, True)
 		for smd in info["smds"].values():
 			prep_hoods(smd, False)
@@ -126,6 +142,8 @@ class AncInfoTemplateView(TemplateView):
 			'documents': documents,
 			'recent_documents': recent_documents,
 			'census_stats': census_stats,
+                        'meetings': meetings,
+                        'next_meeting': next_meeting,
 		})
 
 #Using Class Based Views(CBV) to implement our logic
