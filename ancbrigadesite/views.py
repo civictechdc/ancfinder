@@ -99,7 +99,7 @@ class AncInfoTemplateView(TemplateView):
 		# recent ANC documents
 		documents = Document.objects.filter(anc=anc).order_by('-created')[0:10]
 
-		# get the agenda and minutes for the current and previous month, or if the
+		# get the agenda and minutes for the current and previous two months, or if the
 		# documents don't exist prompt the user to upload them.
 		expected_doc_types = [ (1, "Agenda"), (2, "Meeting Minutes") ] # which docs do we want to display, as tuples of the numeric code for the doc type from models.py and some display text
 
@@ -122,25 +122,32 @@ class AncInfoTemplateView(TemplateView):
 			except IndexError:
 				return None
 
+		ask_for_document = None
 		for i, (year, month) in enumerate(recent_documents):
 			recent_documents[i] = (
 				datetime.datetime(year, month, 1).strftime("%B"),
-				[
-					(
-						doc_type_id,
-						doc_type_name,
-						first(Document.objects.filter(anc=anc, meeting_date__year=year, meeting_date__month=month,
-					doc_type=doc_type_id))
+				[] )
+			for doc_type_id, doc_type_name in expected_doc_types:
+				d = (doc_type_id,
+					doc_type_name,
+					first(Document.objects.filter(anc=anc, meeting_date__year=year, meeting_date__month=month,
+				doc_type=doc_type_id)),
+					datetime.datetime(year, month, 1).strftime("%B"),
 					)
-					for doc_type_id, doc_type_name in expected_doc_types
-				]
-				)
+				recent_documents[i][1].append(d)
+				if d[2] is None:
+					ask_for_document = [d]
+					
+
+		# remove months with no documents
+		recent_documents = [r for r in recent_documents if len([d for d in r[1] if d[2] is not None]) > 0]
 		
 		return render(request, self.template_name, {
 			'anc': anc,
 			'info': info, 
 			'documents': documents,
 			'recent_documents': recent_documents,
+			'ask_for_document': ask_for_document,
 			'census_stats': census_stats,
                         'meetings': meetings,
                         'next_meeting': next_meeting,

@@ -7,7 +7,14 @@
 <style>
 h2 { font-size: 22px; }
 
-#recent_docs > p { margin: 0; }
+#recent_docs {
+    background-color: #ACF;
+    padding: 4px 0;
+    font-size: 13px;
+}
+    #recent_docs a {
+        color: #662;
+    }
 
 #commissioners td {
     cursor: pointer;
@@ -57,29 +64,36 @@ h2 { font-size: 22px; }
         </div><!-- /container -->
     </div><!-- /masthead -->
 
+    <!-- recent documents -->
+    <div id="recent_docs">
     <div class="container">
         <div class="row">
-            <div class="span7">
-                <!-- documents -->
-
-                <h2>{{ anc }}'s Recent Documents</h2>
-                <div id="recent_docs">
-                {% for timeperiod, doclist in recent_documents %}
-                    <p><b>{{timeperiod}}:</b>
+            <div class="span12">
+                <div>
+                    <span><strong>Recent Documents</strong> &mdash; </span>
+                    {% for timeperiod, doclist in recent_documents %}
+                        <span class="month">
+                        {{timeperiod}}:
                         {% for doc_type_id, docname, doc in doclist %}
                             {% if not forloop.first %} | {% endif %}
-                            {% if doc %}
-                                <a href="{{doc.get_absolute_url}}">{{docname}}</a>
-                            {% else %}
-                                No {{docname}} (<a href="/upload-document?anc={{anc}}&amp;doc_type={{doc_type_id}}">Upload</a>)
-                            {% endif %}
+                            <a href="{{doc.get_absolute_url}}">{{docname}}</a>
                         {% endfor %}
-                    </p>
-                {% endfor %}
+                        </span>
+                    {% endfor %}
+                    {% if ask_for_document|length > 0 %}
+                        &mdash;
+                        <strong>Missing:</strong>
+                        {% for doc_type_id, docname, doc, timeperiod in ask_for_document %}
+                            {{timeperiod}} {{docname}}
+                            (<a href="/upload-document?anc={{anc}}&amp;doc_type={{doc_type_id}}" class="missing">Upload</a>)
+                        {% endfor %}
+                    {% endif %}
+                    &mdash;
+                    <a href="#document_archive" class="see_all">More documents...</a>
                 </div>
-                <p style="margin-top: .33em"><a href="#document_archive">See all of {{anc}}&rsquo;s documents...</a></p>
             </div>
         </div>
+    </div>
     </div>
 
     <div class="container">
