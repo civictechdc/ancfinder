@@ -53,10 +53,10 @@
 
                 <h2>Commissioners</h2>
 
-                <table class="commissioners" cols="3">
+                <table id="commissioners" cols="3">
                     <tr>
                     {% for smd in info.smds.values %}
-                    <td id="smd{{ smd.smd_number }}" width="33%" style="vertical-align: top; padding-right: 1.25em;">
+                    <td id="smd{{ smd.smd_number }}" width="33%" style="vertical-align: top; padding-right: 1.25em;" data-smd-number="{{ smd.smd_number }}">
                                           <div style="padding-bottom: .4em; color: black; border-bottom: 1px solid #444;">{{ smd.first_name }} {{ smd.last_name }} <br><b><small>SMD {{ smd.smd_number }}</b></small>
                                           </div>
                                           <div>
@@ -220,48 +220,27 @@
         $("#smd" + window.location.hash.replace("#", "")).css({"background-color": "#ffffcc"});
                 $("#hidey" + window.location.hash.replace("#", "")).show();
                                
-                {% for smd in info.smds.values %}
-                $("#smd{{ smd.smd_number }}").click(function() {
-                        $(".hidey").hide();
-                        $("#hidey{{ smd.smd_number }}").show();
-                    
-                        $(function () {
-                        on_resize();
-                         $(window).resize(on_resize);
-                
-                        try {
-                                google;
-                        } catch (err) {
-                                return; // We're working off-line and don't have access to Google Maps.
-                        }
-                        
-                        var sw = new google.maps.LatLng({{smd.bounds.1}}, {{smd.bounds.0}});
-                        var ne = new google.maps.LatLng({{smd.bounds.3}}, {{smd.bounds.2}});
-                        var bounds = new google.maps.LatLngBounds(sw, ne);
-                        
-                        var myOptions = {
-                                zoom: 13,
-                                center: bounds.getCenter(),
-                                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                                panControl: false,
-                                zoomControl: true,
-                                mapTypeControl: false,
-                                scaleControl: true,
-                                streetViewControl: false,
-                                styles: [ { "featureType": "poi.park", "elementType": "geometry.fill", "stylers": [ { "visibility": "off" } ] } ]
-                                };
-                        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+                var smd_bounds = {
+                    {% for smd in info.smds.values %}
+                        '{{smd.smd_number}}': new google.maps.LatLngBounds(new google.maps.LatLng({{smd.bounds.1}}, {{smd.bounds.0}}), new google.maps.LatLng({{smd.bounds.3}}, {{smd.bounds.2}})){% if not forloop.last %},{% endif %}
+                    {% endfor %}
+                };
 
-                        map.fitBounds(bounds);
-                        
+                $("#commissioners td").click(function() {
+                        var smd_number = $(this).attr('data-smd-number');
+
+                        $(".hidey").hide();
+                        $("#hidey" + smd_number).show();
+                    
+                        if (!map) return;
+                        map.fitBounds(smd_bounds[smd_number]);
+                        map.overlayMapTypes.clear();
                         add_overlay(map, "dc-ward-2013", 8, 12);
                         add_overlay(map, "dc-anc-2013", 13, 14);
                         add_overlay(map, "dc-anc-2013-outlines", 15, 20);
                         add_overlay(map, "dc-smd-2013-outlines", 13, 14);
                         add_overlay(map, "dc-smd-2013", 15, 20);
                 });
-                });
-                {% endfor %}
                 
     </script>
 {% endblock %}
