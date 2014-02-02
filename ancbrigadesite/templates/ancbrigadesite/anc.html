@@ -19,44 +19,44 @@
 {% block master_body %}
 
    <!-- Main hero unit for a primary marketing message or call to action -->
-  	<div id="masthead">
-  		<div class="container">
-  			<div class="row">
-  				<h1 style="font-size: 36px">ANC {{anc}}</h1>
-				<div style="text-align: center">{{info.neighborhood_list}}</div>
+    <div id="masthead">
+        <div class="container">
+            <div class="row">
+                <h1 style="font-size: 36px">ANC {{anc}}</h1>
+                <div style="text-align: center">{{info.neighborhood_list}}</div>
                                 <div style="text-align: center">Website: <a href="{{ info.website }}">{{ info.website }}</a> | Next meeting: {{ next_meeting }}</div>
-  			</div>
-  		</div><!-- /container -->
-  	</div><!-- /masthead -->
+            </div>
+        </div><!-- /container -->
+    </div><!-- /masthead -->
 
-	<div class="container">
-		<div class="row">
-			<div class="span7">
-				<!-- documents -->
+    <div class="container">
+        <div class="row">
+            <div class="span7">
+                <!-- documents -->
 
-				<h2>{{ anc }}'s Recent Documents</h2>
-				<div id="recent_docs">
-				{% for timeperiod, doclist in recent_documents %}
-					<p><b>{{timeperiod}}:</b>
-						{% for doc_type_id, docname, doc in doclist %}
-							{% if not forloop.first %} | {% endif %}
-							{% if doc %}
-								<a href="{{doc.get_absolute_url}}">{{docname}}</a>
-							{% else %}
-								No {{docname}} (<a href="/upload-document?anc={{anc}}&amp;doc_type={{doc_type_id}}">Upload</a>)
-							{% endif %}
-						{% endfor %}
-					</p>
-				{% endfor %}
-				</div>
-				<p style="margin-top: .33em"><a href="#document_archive">See all of {{anc}}&rsquo;s documents...</a></p>
+                <h2>{{ anc }}'s Recent Documents</h2>
+                <div id="recent_docs">
+                {% for timeperiod, doclist in recent_documents %}
+                    <p><b>{{timeperiod}}:</b>
+                        {% for doc_type_id, docname, doc in doclist %}
+                            {% if not forloop.first %} | {% endif %}
+                            {% if doc %}
+                                <a href="{{doc.get_absolute_url}}">{{docname}}</a>
+                            {% else %}
+                                No {{docname}} (<a href="/upload-document?anc={{anc}}&amp;doc_type={{doc_type_id}}">Upload</a>)
+                            {% endif %}
+                        {% endfor %}
+                    </p>
+                {% endfor %}
+                </div>
+                <p style="margin-top: .33em"><a href="#document_archive">See all of {{anc}}&rsquo;s documents...</a></p>
 
-				<h2>Commissioners</h2>
+                <h2>Commissioners</h2>
 
-				<table class="commissioners" cols="3">
-					<tr>
-					{% for smd in info.smds.values %}
-					<td id="smd{{ smd.smd_number }}" width="33%" style="vertical-align: top; padding-right: 1.25em;">
+                <table class="commissioners" cols="3">
+                    <tr>
+                    {% for smd in info.smds.values %}
+                    <td id="smd{{ smd.smd_number }}" width="33%" style="vertical-align: top; padding-right: 1.25em;">
                                           <div style="padding-bottom: .4em; color: black; border-bottom: 1px solid #444;">{{ smd.first_name }} {{ smd.last_name }} <br><b><small>SMD {{ smd.smd_number }}</b></small>
                                           </div>
                                           <div>
@@ -72,18 +72,18 @@
                                               <p><em>Terms as commissioner: </em>{{ smd.terms }}</p>
                                             </small>
                                           </div>
-					</td>
-					{% if forloop.counter|divisibleby:3 and not forloop.last %}</tr><tr>{% endif %}
-					{% endfor %}
-					</tr>
-				</table>
+                    </td>
+                    {% if forloop.counter|divisibleby:3 and not forloop.last %}</tr><tr>{% endif %}
+                    {% endfor %}
+                    </tr>
+                </table>
 
             {% if info.committees.values %}
-				<h2>Committees</h2>
+                <h2>Committees</h2>
 
-				<table class="committees" cols="1">
-					<tr>
-					{% for cmte in info.committees.values %}
+                <table class="committees" cols="1">
+                    <tr>
+                    {% for cmte in info.committees.values %}
                     <td id="{{cmte.committee}} " width="33%" style="vertical-align: top; padding-right: 1.25em;">
                         <div style="padding-bottom: .4em; color: black; border-bottom: 1px solid #444;">{{cmte.committee}}</div>
                         <div style="padding-bottom: .75em"><small>
@@ -93,11 +93,11 @@
                                 <br><b>Meetings:</b> {{ cmte.meetings|safe }}
                                 {% endif %}
                         </small></div>
-					</td>
-					</tr><tr>
-					{% endfor %}
-					</tr>
-				</table>
+                    </td>
+                    </tr><tr>
+                    {% endfor %}
+                    </tr>
+                </table>
             {% endif %}
 
                                 <h2 id="document_archive">Document Archive</h2>
@@ -110,114 +110,114 @@
                                 {% endif %}
                                 <p>Have more documents? <a href="/upload-document?anc={{anc}}">Upload them!</a></p>
                                 
-			</div><!-- /column -->
+            </div><!-- /column -->
 
-			<div class="span5">
+            <div class="span5">
 
-				<div id="map_canvas" style="margin-top: 2.5em;"> </div>
+                <div id="map_canvas" style="margin-top: 2.5em;"> </div>
 
-				<h2>{{ anc }} by the numbers</h2>
+                <h2>{{ anc }} by the numbers</h2>
 
-				<div id="by_the_numbers">
-					{% for stat in census_stats %}
-					<div title="{{stat.details}}">
-						<span class="number">{% if stat.is_dollars %}${% endif %}{{stat.value|intcomma}}{% if stat.is_percent %}%{% endif %}</span>
-						<span class="description">{{stat.label}}</span>
-						<div class="grid">
-							{% for cell_anc, cell_value, cell_color in stat.grid %}<span
-								{% if cell_anc == anc %}class="me"{% endif %}
-								title="{{cell_anc}}: {% if stat.is_dollars %}${% endif %}{{cell_value|intcomma}}{% if stat.is_percent %}%{% endif %}"
-								style="color: #{{cell_color}}"
-								>{% if cell_anc != anc %}■{% else %}◼{% endif %}</span>{% endfor %}
-						</div>
-					</div>
-					{% endfor %}
-					<p style="width: 420px; margin-top: .75em; line-height: 110%;"><small style="font-size: 80%; color: #666;">Each square represents one of the 40 ANCs color-coded in the same manner as the map above. Hover a square to see more information about the ANC. Data from the U.S. Census, ABRA, and DCRA.</small></p>
-				</div>
-			</div><!-- /column -->
-		</div>
-  	</div><!-- /body -->
+                <div id="by_the_numbers">
+                    {% for stat in census_stats %}
+                    <div title="{{stat.details}}">
+                        <span class="number">{% if stat.is_dollars %}${% endif %}{{stat.value|intcomma}}{% if stat.is_percent %}%{% endif %}</span>
+                        <span class="description">{{stat.label}}</span>
+                        <div class="grid">
+                            {% for cell_anc, cell_value, cell_color in stat.grid %}<span
+                                {% if cell_anc == anc %}class="me"{% endif %}
+                                title="{{cell_anc}}: {% if stat.is_dollars %}${% endif %}{{cell_value|intcomma}}{% if stat.is_percent %}%{% endif %}"
+                                style="color: #{{cell_color}}"
+                                >{% if cell_anc != anc %}■{% else %}◼{% endif %}</span>{% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <p style="width: 420px; margin-top: .75em; line-height: 110%;"><small style="font-size: 80%; color: #666;">Each square represents one of the 40 ANCs color-coded in the same manner as the map above. Hover a square to see more information about the ANC. Data from the U.S. Census, ABRA, and DCRA.</small></p>
+                </div>
+            </div><!-- /column -->
+        </div>
+    </div><!-- /body -->
 
 
 {% endblock %}
 
 {% block scripts %}
-	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 
-	<script type="text/javascript">
-		var map = null;
+    <script type="text/javascript">
+        var map = null;
 
-		function on_resize() {
-			var cw = $('#map_canvas').parent().width();
-			var wht = $(window).height();
-			$('#map_canvas').css({ width: cw, height: cw < wht ? cw : wht });
-		}
+        function on_resize() {
+            var cw = $('#map_canvas').parent().width();
+            var wht = $(window).height();
+            $('#map_canvas').css({ width: cw, height: cw < wht ? cw : wht });
+        }
 
-		function make_map(bound1, bound2, bound3, bound4) {
+        function make_map(bound1, bound2, bound3, bound4) {
 
-			on_resize();
-			$(window).resize(on_resize);
+            on_resize();
+            $(window).resize(on_resize);
 
-			try {
-				google;
-			} catch (err) {
-				return; // We're working off-line and don't have access to Google Maps.
-			}
+            try {
+                google;
+            } catch (err) {
+                return; // We're working off-line and don't have access to Google Maps.
+            }
 
-			var sw = new google.maps.LatLng(bound1, bound2);
-			var ne = new google.maps.LatLng(bound3, bound4);
-			var bounds = new google.maps.LatLngBounds(sw, ne);
+            var sw = new google.maps.LatLng(bound1, bound2);
+            var ne = new google.maps.LatLng(bound3, bound4);
+            var bounds = new google.maps.LatLngBounds(sw, ne);
 
-			var myOptions = {
-				zoom: 13,
-				center: bounds.getCenter(),
-				mapTypeId: google.maps.MapTypeId.ROADMAP,
-				panControl: false,
-				zoomControl: true,
-				mapTypeControl: false,
-				scaleControl: true,
-				streetViewControl: false,
-				styles: [ { "featureType": "poi.park", "elementType": "geometry.fill", "stylers": [ { "visibility": "off" } ] } ]
-				};
-			map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+            var myOptions = {
+                zoom: 13,
+                center: bounds.getCenter(),
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                panControl: false,
+                zoomControl: true,
+                mapTypeControl: false,
+                scaleControl: true,
+                streetViewControl: false,
+                styles: [ { "featureType": "poi.park", "elementType": "geometry.fill", "stylers": [ { "visibility": "off" } ] } ]
+                };
+            map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
-			map.fitBounds(bounds);
+            map.fitBounds(bounds);
 
-			add_overlay(map, "dc-ward-2013", 8, 12);
-			add_overlay(map, "dc-anc-2013", 13, 14);
-			add_overlay(map, "dc-anc-2013-outlines", 15, 20);
-			add_overlay(map, "dc-smd-2013-outlines", 13, 14);
-			add_overlay(map, "dc-smd-2013", 15, 20);
+            add_overlay(map, "dc-ward-2013", 8, 12);
+            add_overlay(map, "dc-anc-2013", 13, 14);
+            add_overlay(map, "dc-anc-2013-outlines", 15, 20);
+            add_overlay(map, "dc-smd-2013-outlines", 13, 14);
+            add_overlay(map, "dc-smd-2013", 15, 20);
 
-		}
+        }
 
-		$(make_map({{info.bounds.1}}, {{info.bounds.0}}, {{info.bounds.3}}, {{info.bounds.2}}));
+        $(make_map({{info.bounds.1}}, {{info.bounds.0}}, {{info.bounds.3}}, {{info.bounds.2}}));
 
-		// Add a tile overlay for this layer.
-		function add_overlay(map, layer, minzoom, maxzoom, opacity) {
-			if (!opacity) opacity = 1.0;
-			var tileimgformat = 'png';
-			if (navigator.appName == 'Microsoft Internet Explorer' && new RegExp("MSIE [678]").exec(navigator.userAgent)) tileimgformat = 'gif';
+        // Add a tile overlay for this layer.
+        function add_overlay(map, layer, minzoom, maxzoom, opacity) {
+            if (!opacity) opacity = 1.0;
+            var tileimgformat = 'png';
+            if (navigator.appName == 'Microsoft Internet Explorer' && new RegExp("MSIE [678]").exec(navigator.userAgent)) tileimgformat = 'gif';
 
-			var overlay = new google.maps.ImageMapType({
-			  getTileUrl: function(coord, zoom) {
-				  if (maxzoom && zoom > maxzoom) return null; // minZoom, maxZoom ineffectual below?
-				  if (minzoom && zoom < minzoom) return null;
-				  return "http://gis.govtrack.us/map/tiles/" + layer + "/" + zoom + "/" + coord.x + "/" + coord.y + "." + tileimgformat + "?gen=8";
-			  },
-			  tileSize: new google.maps.Size(256, 256),
-			  isPng: tileimgformat == 'png',
+            var overlay = new google.maps.ImageMapType({
+              getTileUrl: function(coord, zoom) {
+                  if (maxzoom && zoom > maxzoom) return null; // minZoom, maxZoom ineffectual below?
+                  if (minzoom && zoom < minzoom) return null;
+                  return "http://gis.govtrack.us/map/tiles/" + layer + "/" + zoom + "/" + coord.x + "/" + coord.y + "." + tileimgformat + "?gen=8";
+              },
+              tileSize: new google.maps.Size(256, 256),
+              isPng: tileimgformat == 'png',
 
-			  minZoom: minzoom,
-			  maxZoom: maxzoom,
-			  opacity: (tileimgformat == 'png' ? .8 : .25) * opacity
-			});
-			map.overlayMapTypes.insertAt(0, overlay);
-		}
+              minZoom: minzoom,
+              maxZoom: maxzoom,
+              opacity: (tileimgformat == 'png' ? .8 : .25) * opacity
+            });
+            map.overlayMapTypes.insertAt(0, overlay);
+        }
 
                 $(".hidey").hide();
                 
-		$("#smd" + window.location.hash.replace("#", "")).css({"background-color": "#ffffcc"});
+        $("#smd" + window.location.hash.replace("#", "")).css({"background-color": "#ffffcc"});
                 $("#hidey" + window.location.hash.replace("#", "")).show();
                                
                 {% for smd in info.smds.values %}
@@ -263,5 +263,5 @@
                 });
                 {% endfor %}
                 
-	</script>
+    </script>
 {% endblock %}
