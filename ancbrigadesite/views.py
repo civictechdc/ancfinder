@@ -134,13 +134,13 @@ class AncInfoTemplateView(TemplateView):
 				doc_type=doc_type_id)),
 					datetime.datetime(year, month, 1).strftime("%B"),
 					)
-				recent_documents[i][1].append(d)
 				if d[2] is None:
 					ask_for_document = [d]
-					
+				else:
+					recent_documents[i][1].append(d)
 
 		# remove months with no documents
-		recent_documents = [r for r in recent_documents if len([d for d in r[1] if d[2] is not None]) > 0]
+		recent_documents = [r for r in recent_documents if len(r[1]) > 0]
 		
 		return render(request, self.template_name, {
 			'anc': anc,
