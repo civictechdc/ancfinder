@@ -162,6 +162,9 @@ a {
 a:hover { 
 	color: #79A5D3;
 	}
+	#masthead a, #body a, footer a {
+		text-decoration: underline;
+	}
 
 p {
 	line-height: 140%;
@@ -394,9 +397,6 @@ div#use_my_location {
 }
 .widecontainer.style1 h2, .widecontainer.style1 a {
 	color: white;
-}
-.widecontainer.style1 a, .widecontainer.style2 a {
-	text-decoration: underline;
 }
 .widecontainer.style2 h2 {
 }
