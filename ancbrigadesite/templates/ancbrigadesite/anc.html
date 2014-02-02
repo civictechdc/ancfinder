@@ -58,7 +58,6 @@ h2 { font-size: 22px; }
         <div class="container">
             <div class="row" style="text-align: center">
                 <h1 style="font-size: 36px">ANC {{anc}}</h1>
-                <div>{{info.neighborhood_list}}</div>
                 <div style="margin-top: 3px">Website: <a href="{{ info.website }}">{{ info.website }}</a> | Next meeting: {{ next_meeting }}</div>
             </div>
         </div><!-- /container -->
@@ -99,6 +98,8 @@ h2 { font-size: 22px; }
     <div class="container">
         <div class="row">
             <div class="span7">
+                <p style="margin-top: 40px">ANC {{anc}} covers {{info.neighborhood_list}}.</p>
+
                 <h2>Commissioners</h2>
 
                 <table id="commissioners" cols="3">
