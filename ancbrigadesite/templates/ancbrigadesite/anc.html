@@ -137,21 +137,22 @@ h2 { font-size: 22px; }
             {% if info.committees.values %}
                 <h2>Committees</h2>
 
-</td>
                 <table class="committees" cols="1">
                     <tr>
                     {% for cmte in info.committees.values %}
-                    <td id="{{cmte.committee}} " width="33%" style="vertical-align: top; padding-right: 1.25em;">
-                        <div style="padding-bottom: .4em; color: black; border-bottom: 1px solid #444;">{{cmte.committee}}</div>
+                    <td id="{{cmte.committee}} " width="33%" style="vertical-align: top; padding-right: 1.5em;">
+                        <div style="padding-bottom: .4em; border-bottom: 1px solid #666; margin-bottom: 2px;">{{cmte.committee}}</div>
                         <div style="padding-bottom: .75em"><small>
-                                {% if cmte.chair %}<b>Chair:</b> {{ cmte.chair }}{% if cmte.chair_email %} ({{cmte.chair_email}}){% endif %}<br>{% endif %}
-                                {{ cmte.purpose|safe }}
+                                <p style="margin: .5em 0 .25em 0">{% if cmte.chair %}<b>Chair:</b> {{ cmte.chair }}{% if cmte.chair_email %} ({{cmte.chair_email}}){% endif %}<br>{% endif %}</p>
+                                <div {% if "..." in cmte.purpose|truncatewords_html:20 %}class="make-popover" data-content="<small>{{cmte.purpose}}</small>"{% endif %}>
+                                	{{ cmte.purpose|truncatewords_html:20|safe }}
+                                </div>
                                 {% if cmte.meetings %}
                                 <br><b>Meetings:</b> {{ cmte.meetings|safe }}
                                 {% endif %}
                         </small></div>
                     </td>
-                    </tr><tr>
+                    {% if forloop.counter|divisibleby:2 and not forloop.last %}</tr><tr>{% endif %}
                     {% endfor %}
                     </tr>
                 </table>
@@ -272,10 +273,15 @@ h2 { font-size: 22px; }
             map.overlayMapTypes.insertAt(0, overlay);
         }
 
-                $(".hidey").hide();
+	        $('.make-popover').popover({
+	            container: 'body',
+	            trigger: 'hover',
+	            placement: function() { return $(window).width() > 640 ? 'right' : 'bottom'; },
+	            html: true,
+	        });
+
                 
         $("#smd" + window.location.hash.replace("#", "")).css({"background-color": "#ffffcc"});
-                $("#hidey" + window.location.hash.replace("#", "")).show();
 
                 var smd_bounds = {
                     {% for smd in info.smds.values %}
