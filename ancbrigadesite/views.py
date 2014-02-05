@@ -61,21 +61,21 @@ class AncInfoTemplateView(TemplateView):
 		anc = anc.upper()
 		try:
 			info = anc_data[anc[0]]["ancs"][anc[1]]
-                        meetings = meeting_data[anc]["meetings"]
+			meetings = meeting_data[anc]["meetings"]
 		except KeyError:
 			raise Http404()
 		
-                # Find next meeting
-                upcoming = []
-                for meeting in meetings:
-                    if meeting > datetime.date:
-                        upcoming.append(meeting)
-                next_meeting = upcoming[0]
-                for meeting in upcoming:
-                    if meeting < next_meeting:
-                        next_meeting = meeting
-                next_meeting = datetime.datetime.strptime( next_meeting, "%Y-%m-%dT%H:%M:%S" )
-                
+		# Find next meeting
+		upcoming = []
+		for meeting in meetings:
+			if meeting > datetime.date:
+				upcoming.append(meeting)
+		next_meeting = upcoming[0]
+		for meeting in upcoming:
+			if meeting < next_meeting:
+				next_meeting = meeting
+		next_meeting = datetime.datetime.strptime( next_meeting, "%Y-%m-%dT%H:%M:%S" )
+		
 		prep_hoods(info, True)
 		for smd in info["smds"].values():
 			prep_hoods(smd, False)
@@ -149,8 +149,8 @@ class AncInfoTemplateView(TemplateView):
 			'recent_documents': recent_documents,
 			'ask_for_document': ask_for_document,
 			'census_stats': census_stats,
-                        'meetings': meetings,
-                        'next_meeting': next_meeting,
+			'meetings': meetings,
+			'next_meeting': next_meeting,
 		})
 
 #Using Class Based Views(CBV) to implement our logic
