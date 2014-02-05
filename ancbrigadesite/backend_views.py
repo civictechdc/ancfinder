@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import permission_required
 
 from ancbrigadesite.models import Document, anc_list, anc_data
 
-import re
+import re, datetime
 
 from tinymce.widgets import TinyMCE
 
@@ -32,6 +32,16 @@ class UploadDocumentForm(forms.Form):
 		choices=[("", "(Select Document Type)")] + Document.doc_type_choices[1:] + [(0, "Other")] # move "Unknown" to the end
 		)
 	
+	meeting_date_hidden = forms.CharField(
+		label="Meeting Date (Hidden Field, ISO formatted date)",
+		required=False,
+		)
+
+	meeting_date_display = forms.CharField(
+		label="Meeting Date",
+		required=False,
+		)
+
 	upload_type = forms.ChoiceField(
 		choices=(("file", "Upload a File"), ("paste", "Paste Document"), ("url", "Paste a Link")),
 		initial="file",
@@ -68,6 +78,10 @@ class UploadDocumentForm(forms.Form):
 
 @login_required
 def upload_document(request):
+	def parse_meeting_date(d):
+		# ISO formatted
+		return datetime.datetime.strptime(d, "%Y-%m-%dT%H:%M:%S")
+
 	# Handle file upload
 	if request.method == 'POST':
 		form = UploadDocumentForm(request.POST, request.FILES)
@@ -75,10 +89,14 @@ def upload_document(request):
 			and not (form.cleaned_data["upload_type"] == "file" and "docfile" not in request.FILES) \
 			and not (form.cleaned_data["upload_type"] == "paste" and not form.cleaned_data["content"]) \
 			and not (form.cleaned_data["upload_type"] == "url" and not form.cleaned_data["url"]):
+
 			newdoc = Document()
 			newdoc.owner = request.user
 			newdoc.anc = form.cleaned_data['anc']
 			newdoc.doc_type = form.cleaned_data['doc_type']
+			if form.cleaned_data['meeting_date_hidden'].strip() != "":
+				newdoc.meeting_date = parse_meeting_date(form.cleaned_data['meeting_date_hidden'])
+		
 			if form.cleaned_data["upload_type"] == "file":
 				newdoc.set_document_content(request.FILES['docfile'])
 			elif form.cleaned_data["upload_type"] == "paste":
@@ -112,7 +130,16 @@ def upload_document(request):
 			return HttpResponseRedirect(reverse('ancbrigadesite.backend_views.edit_document', args=[newdoc.id]))
 	else:
 		# A empty, unbound form
-		form = UploadDocumentForm(initial=request.GET)
+		form = UploadDocumentForm(initial={
+				"anc": request.GET.get("anc"),
+				"doc_type": request.GET.get("doc_type"),
+				"meeting_date_hidden": request.GET.get("meeting_date"),
+				"meeting_date_display": parse_meeting_date(request.GET.get("meeting_date")).strftime("%x") if request.GET.get("meeting_date") else None,
+			})
+		if request.GET.get("meeting_date") is None:
+			del form.fields['meeting_date_display']
+		else:
+			form.fields['meeting_date_display'].widget.attrs['disabled'] = 'disabled'
 
 	return render_to_response(
 		'ancbrigadesite/upload_document.html',

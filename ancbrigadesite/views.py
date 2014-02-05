@@ -61,21 +61,22 @@ class AncInfoTemplateView(TemplateView):
 		anc = anc.upper()
 		try:
 			info = anc_data[anc[0]]["ancs"][anc[1]]
-			meetings = meeting_data[anc]["meetings"]
 		except KeyError:
 			raise Http404()
 		
-		# Find next meeting
-		upcoming = []
-		for meeting in meetings:
-			if meeting > datetime.date:
-				upcoming.append(meeting)
-		next_meeting = upcoming[0]
-		for meeting in upcoming:
-			if meeting < next_meeting:
-				next_meeting = meeting
-		next_meeting = datetime.datetime.strptime( next_meeting, "%Y-%m-%dT%H:%M:%S" )
-		
+		# Find the next meeting and the most recent two meetings so we can
+		# display related documents for those meetings.
+		now = datetime.datetime.now()
+		all_meetings = sorted([datetime.datetime.strptime(m, "%Y-%m-%dT%H:%M:%S")
+			for m in meeting_data.get(anc, {}).get("meetings", {}).keys() ])
+		next_meeting = None
+		for m in all_meetings:
+			if m > now:
+				next_meeting = m # this is the first meeting in the future (i.e. the next meeting)
+				break
+		i = all_meetings.index(next_meeting) if next_meeting is not None else len(all_meetings)
+		previous_meetings = all_meetings[i-2:i]
+
 		prep_hoods(info, True)
 		for smd in info["smds"].values():
 			prep_hoods(smd, False)
@@ -97,59 +98,43 @@ class AncInfoTemplateView(TemplateView):
 			s["grid"] = census_grids[s["key"]]
 
 		# recent ANC documents
-		documents = Document.objects.filter(anc=anc).order_by('-created')[0:10]
+		recent_documents = Document.objects.filter(anc=anc).order_by('-created')[0:10]
 
-		# get the agenda and minutes for the current and previous two months, or if the
-		# documents don't exist prompt the user to upload them.
-		expected_doc_types = [ (1, "Agenda"), (2, "Meeting Minutes") ] # which docs do we want to display, as tuples of the numeric code for the doc type from models.py and some display text
+		# documents that *should* exist
+		highlight_documents = []
+		ask_for_document = []
+		for mtg in previous_meetings + ([next_meeting] if next_meeting else []):
+			did_ask_for_doc = False
+			for doc_type_id, doc_type_name in [(1, "Minutes"), (2, "Agenda")]:
+				# don't look for minutes for the next meeting because it hasn't ocurred
+				# yet and so won't have minutes, and we don't want to prompt the user to
+				# upload minutes
+				if mtg == next_meeting and doc_type_id == 1: continue
 
-		# get the month as of a few days ago, since if the month just started there probably
-		# isn't a document ready for it yet.
-		nowish = datetime.datetime.now() - datetime.timedelta(days=2)
-		recent_documents = [(nowish.year, nowish.month)]
-		for i in xrange(2): # go back in time 2 month2 too
-			# add the previous month
-			recent_documents.append( (recent_documents[-1][0], recent_documents[-1][1]-1) )
+				# in case there are two documents of the same type, just get the first
+				def first(qs):
+					if qs.count() == 0: raise Document.DoesNotExist()
+					return qs[0]
 
-			# overflow
-			if recent_documents[-1][1] == 0:
-				# if we subtracted and got month 0, go to December of the previous year
-				recent_documents[-1] = (recent_documents[-1][0] - 1, 12)
+				try:
+					doc = first(Document.objects.filter(anc=anc, doc_type=doc_type_id, meeting_date=mtg))
+					highlight_documents.append( (mtg, doc_type_id, doc_type_name, doc) )
+					break
+				except Document.DoesNotExist:
+					# ask the user to upload minutes but not agendas if we are
+					# missing minutes
+					if not did_ask_for_doc:
+						ask_for_document = [(mtg, doc_type_id, doc_type_name)]
+						did_ask_for_doc = True
 
-		def first(qs):
-			try:
-				return qs[0]
-			except IndexError:
-				return None
 
-		ask_for_document = None
-		for i, (year, month) in enumerate(recent_documents):
-			recent_documents[i] = (
-				datetime.datetime(year, month, 1).strftime("%B"),
-				[] )
-			for doc_type_id, doc_type_name in expected_doc_types:
-				d = (doc_type_id,
-					doc_type_name,
-					first(Document.objects.filter(anc=anc, meeting_date__year=year, meeting_date__month=month,
-				doc_type=doc_type_id)),
-					datetime.datetime(year, month, 1).strftime("%B"),
-					)
-				if d[2] is None:
-					ask_for_document = [d]
-				else:
-					recent_documents[i][1].append(d)
-
-		# remove months with no documents
-		recent_documents = [r for r in recent_documents if len(r[1]) > 0]
-		
 		return render(request, self.template_name, {
 			'anc': anc,
 			'info': info, 
-			'documents': documents,
-			'recent_documents': recent_documents,
+			'documents': recent_documents,
+			'highlight_documents': highlight_documents,
 			'ask_for_document': ask_for_document,
 			'census_stats': census_stats,
-			'meetings': meetings,
 			'next_meeting': next_meeting,
 		})
 

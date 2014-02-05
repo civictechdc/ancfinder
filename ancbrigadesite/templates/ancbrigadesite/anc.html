@@ -63,42 +63,30 @@ h2 { font-size: 22px; }
         </div><!-- /container -->
     </div><!-- /masthead -->
 
-    <!-- recent documents -->
-    <div id="recent_docs">
     <div class="container">
         <div class="row">
-            <div class="span12">
-                <div>
+            <div class="span7">
+                <p style="margin: 40px 0 25px 0;">ANC {{anc}} covers {{info.neighborhood_list}}.</p>
+
+
+  				<!-- highlighting documents for recent meetings and asking the user to upload some -->
+                <div id="recent-docs">
                     <span><strong>Recent Documents</strong> &mdash; </span>
-                    {% for timeperiod, doclist in recent_documents %}
-                        <span class="month">
-                        {{timeperiod}}:
-                        {% for doc_type_id, docname, doc in doclist %}
-                            {% if not forloop.first %} | {% endif %}
-                            <a href="{{doc.get_absolute_url}}">{{docname}}</a>
-                        {% endfor %}
-                        </span>
+                    {% for meeting_date, doc_type_id, doc_type_name, doc in highlight_documents %}
+                        {% if not forloop.first %} | {% endif %}
+                        <a href="{{doc.get_absolute_url}}">{{meeting_date|date}} {{doc_type_name}}</a>
                     {% endfor %}
                     {% if ask_for_document|length > 0 %}
-                        &mdash;
+                        {% if highlight_documents|length > 0 %}&mdash;{% endif %}
                         <strong>Missing:</strong>
-                        {% for doc_type_id, docname, doc, timeperiod in ask_for_document %}
-                            {{timeperiod}} {{docname}}
-                            (<a href="/upload-document?anc={{anc}}&amp;doc_type={{doc_type_id}}" class="missing">Upload</a>)
+                        {% for meeting_date, doc_type_id, doc_type_name in ask_for_document %}
+                            {{meeting_date|date}} {{doc_type_name}}
+                            (<a href="/upload-document?anc={{anc}}&amp;doc_type={{doc_type_id}}&amp;meeting_date={{meeting_date.isoformat}}" class="missing">Upload</a>)
                         {% endfor %}
                     {% endif %}
                     &mdash;
                     <a href="#document_archive" class="see_all">More documents...</a>
                 </div>
-            </div>
-        </div>
-    </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="span7">
-                <p style="margin-top: 40px">ANC {{anc}} covers {{info.neighborhood_list}}.</p>
 
                 <h2>Commissioners</h2>
 

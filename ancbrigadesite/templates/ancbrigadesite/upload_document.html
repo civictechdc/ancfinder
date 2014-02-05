@@ -4,6 +4,13 @@
 
 {% block head %}
 	{{ form.media }}
+	<style>
+		/* don't really want user's input, just pass through info from
+		anc.html */
+		#control-group-meeting_date_hidden {
+			display: none;
+		}
+	</style>
 {% endblock %}
 
 {% block masthead %}Upload a Document{% endblock %}
