@@ -281,7 +281,7 @@ h2 { font-size: 22px; }
 	        });
 
                 
-        $("#smd" + window.location.hash.replace("#", "")).css({"background-color": "#ffffcc"});
+        $("#smd" + window.location.hash.replace("#", "")).find(">div").css({"background-color": "#ffffcc"});
 
                 var smd_bounds = {
                     {% for smd in info.smds.values %}
