@@ -8694,7 +8694,7 @@
       "Short Bio": "", 
       "Twitter": "", 
       "Website": "", 
-      "address": "", 
+      "address": "2800 R Street NW", 
       "anc": "2E", 
       "bounds": [
        -77.06875204922432, 
@@ -8770,8 +8770,8 @@
       }, 
       "contestation": "1", 
       "email": "2E07@anc.dc.gov", 
-      "first_name": "", 
-      "last_name": "Vacant", 
+      "first_name": "Ellen", 
+      "last_name": "Steury", 
       "neighborhoods": [
        {
         "population": 1852, 
@@ -8804,13 +8804,13 @@
         "part-of-smd": 0.006456782603562762
        }
       ], 
-      "phone": "", 
+      "phone": "202- 406-0835", 
       "smd": "2E07", 
       "smd_number": "07", 
       "suffix": "", 
       "terms": "5", 
       "ward": "2", 
-      "zip": "", 
+      "zip": "20007", 
       "area": 799283.0234424174
      }, 
      "08": {
@@ -15690,7 +15690,7 @@
       "contestation": "1", 
       "email": "3G06@anc.dc.gov", 
       "first_name": "Jim", 
-      "last_name": "McCarthyChairperson", 
+      "last_name": "McCarthy", 
       "neighborhoods": [
        {
         "population": 1083, 
@@ -16334,7 +16334,7 @@
       "Short Bio": "", 
       "Twitter": "", 
       "Website": "", 
-      "address": "1346 Sheridan Street NW", 
+      "address": "", 
       "anc": "4A", 
       "bounds": [
        -77.03638420262988, 
@@ -16410,8 +16410,8 @@
       }, 
       "contestation": "1", 
       "email": "4A04@anc.dc.gov", 
-      "first_name": "Marian C.", 
-      "last_name": "Bennett", 
+      "first_name": "", 
+      "last_name": "Vacant", 
       "neighborhoods": [
        {
         "population": 1990, 
@@ -18218,11 +18218,11 @@
       "Key Initiatives": "", 
       "LinkedIn/Misc": "", 
       "Listserv": "", 
-      "Position": "Chair", 
+      "Position": "", 
       "Short Bio": "", 
       "Twitter": "", 
       "Website": "", 
-      "address": "", 
+      "address": "1403 Critenden Street NW Washington, 20011", 
       "anc": "4C", 
       "bounds": [
        -77.03643075415509, 
@@ -18298,8 +18298,8 @@
       }, 
       "contestation": "1", 
       "email": "4C02@anc.dc.gov", 
-      "first_name": "", 
-      "last_name": "Vacant", 
+      "first_name": "Joseph", 
+      "last_name": "Maloney", 
       "neighborhoods": [
        {
         "population": 3718, 
@@ -18861,7 +18861,7 @@
       "Short Bio": "", 
       "Twitter": "", 
       "Website": "", 
-      "address": "737 Rock Creek Church Road NW Apt. 110", 
+      "address": "737 Rock Creek Church Road NW", 
       "anc": "4C", 
       "bounds": [
        -77.02496379434544, 
@@ -19074,7 +19074,7 @@
       "Short Bio": "", 
       "Twitter": "", 
       "Website": "", 
-      "address": "327 Upshur Street NW", 
+      "address": "112 Varnum Street NW", 
       "anc": "4C", 
       "bounds": [
        -77.01922377654346, 
@@ -19149,8 +19149,8 @@
        }
       }, 
       "email": "4C10@anc.dc.gov", 
-      "first_name": "Evan", 
-      "last_name": "Waldt", 
+      "first_name": "Janell", 
+      "last_name": "Rawlings", 
       "neighborhoods": [
        {
         "population": 1893, 
@@ -24014,7 +24014,7 @@
         "part-of-smd": 0.0010398495911762018
        }
       ], 
-      "phone": "", 
+      "phone": "202- 681-0095", 
       "smd": "5E01", 
       "smd_number": "01", 
       "suffix": "", 
@@ -28144,9 +28144,9 @@
     "committees": {
      "Alcoholic Beverage Licensing": {
       "committee": "Alcoholic Beverage Licensing", 
-      "meetings": "", 
-      "chair": "Tony Richardson", 
-      "chair_email": " tonyrichardson08@gmail.com", 
+      "meetings": " first Monday of the month at 7 pm at Kaiser Permanente Capitol Hill Medical Center, 700 Second Street NE", 
+      "chair": "Drew Courtney", 
+      "chair_email": "anc6c.abl.committee@gmail.com", 
       "purpose": "See <a href=\"http://www.anc6c.org/abl.html\">this page</a>"
      }, 
      "Grants": {
@@ -28330,7 +28330,7 @@
       "Short Bio": "", 
       "Twitter": "", 
       "Website": "", 
-      "address": "", 
+      "address": "907 6th Street SW", 
       "anc": "6D", 
       "bounds": [
        -77.03216174274102, 
@@ -28406,8 +28406,8 @@
       }, 
       "contestation": "1", 
       "email": "6D01@anc.dc.gov", 
-      "first_name": "", 
-      "last_name": "Vacant", 
+      "first_name": "Sam", 
+      "last_name": "Marrero", 
       "neighborhoods": [
        {
         "population": 1482, 
@@ -28428,7 +28428,7 @@
       "suffix": "", 
       "terms": "1", 
       "ward": "6", 
-      "zip": "", 
+      "zip": "20024", 
       "area": 1079215.3423275698
      }, 
      "02": {
@@ -28441,7 +28441,7 @@
       "Short Bio": "", 
       "Twitter": "", 
       "Website": "", 
-      "address": "1025 1st Street SE", 
+      "address": "", 
       "anc": "6D", 
       "bounds": [
        -77.01520618013832, 
@@ -28517,8 +28517,8 @@
       }, 
       "contestation": "2", 
       "email": "6D02@anc.dc.gov", 
-      "first_name": "Ed", 
-      "last_name": "Kaminski", 
+      "first_name": "", 
+      "last_name": "Vacant", 
       "neighborhoods": [
        {
         "population": 1451, 
@@ -28551,7 +28551,7 @@
       "suffix": "", 
       "terms": "1", 
       "ward": "6", 
-      "zip": "20024", 
+      "zip": "20003", 
       "area": 881412.3841430517
      }, 
      "03": {
