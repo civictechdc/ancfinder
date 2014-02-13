@@ -61,7 +61,7 @@ else:
 	EMAIL_HOST_PASSWORD = env['SMTP_PASSWORD']
 	EMAIL_USE_TLS = True
 	
-	ALLOWED_HOSTS = ["www.ancbrigade.com"]
+	ALLOWED_HOSTS = ["www.ancbrigade.com", "ancfinder.com"]
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
