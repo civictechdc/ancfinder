@@ -94,8 +94,12 @@ class AncInfoTemplateView(TemplateView):
 			{ "key": "building_permits",	"label": "building permits",	"details": "Permits granted by DCRA for construction or alteration in the area" },
 		]
 		for s in census_stats:
-			s["value"] = info["census"][s["key"]]["value"]
-			s["grid"] = census_grids[s["key"]]
+		
+                    try:
+                        s["value"] = info["census"][s["key"]]["value"]
+                    except KeyError:
+                        s["value"] = 0
+		    s["grid"] = census_grids[s["key"]]
 
 		# recent ANC documents
 		recent_documents = Document.objects.filter(anc=anc).order_by('-created')[0:10]
