@@ -34,8 +34,8 @@ if not os.path.exists('/home/dotcloud/environment.json'):
 else:
 	# Settings for a public dotcloud deployment.
 	
-	#DEBUG = False
-	#TEMPLATE_DEBUG = False
+	DEBUG = False
+	TEMPLATE_DEBUG = False
 	import json
 	with open('/home/dotcloud/environment.json') as f:
 	  env = json.load(f)

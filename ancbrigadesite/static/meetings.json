@@ -110,6 +110,11 @@
                 "building": null, 
                 "room": "Auditorium 3"
             }, 
+            "2014-03-05T18:30:00": {
+                "address": "Martin Luther King Jr. Memorial Library", 
+                "building": null, 
+                "room": "Auditorium 3"
+            }, 
             "2014-03-10T18:30:00": {
                 "address": "Martin Luther King Jr. Memorial Library", 
                 "building": null, 
@@ -473,6 +478,11 @@
     "6E": {
         "meetings": {
             "2014-02-05T18:30:00": {
+                "address": "1630 7th Street, NW", 
+                "building": "Shaw Library", 
+                "room": null
+            }, 
+            "2014-03-04T18:30:00": {
                 "address": "1630 7th Street, NW", 
                 "building": "Shaw Library", 
                 "room": null
