@@ -8,6 +8,9 @@ import os.path
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+RECAPTCHA_PUBLIC_KEY = '6LeYAO8SAAAAALEZqtnk4qm7hoh8Iwv_h4lZ3lSe'
+RECAPTCHA_PRIVATE_KEY = '6LeYAO8SAAAAAICslEpPIpmMmkFiuNs_hrAzSRxx'
+
 if not os.path.exists('/home/dotcloud/environment.json'):
 	# Settings for local (not public) deployments.
 	

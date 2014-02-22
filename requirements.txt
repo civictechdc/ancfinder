@@ -5,3 +5,4 @@ pdfminer==20131113
 django-tinymce
 BeautifulSoup4
 django-picklefield
+recaptcha-client
