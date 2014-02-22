@@ -10,11 +10,13 @@ anc_meetings =
             "2014-03-12T19:00:00": {
                 "address": "3101 13th Street, NW, Washington, DC", 
                 "building": "Harriet Tubman Elementary School", 
+                "link": "http://calendar.dc.gov/event/anc-1a-monthly-meeting", 
                 "room": null
             }, 
             "2014-04-09T19:00:00": {
                 "address": "3101 13th Street, NW, Washington, DC", 
                 "building": "Harriet Tubman Elementary School", 
+                "link": "http://calendar.dc.gov/event/anc-1a-monthly-meeting", 
                 "room": null
             }
         }
@@ -29,11 +31,13 @@ anc_meetings =
             "2014-03-06T19:00:00": {
                 "address": "2000 14th Street, NW, Washington, DC 20009", 
                 "building": "Reeves Center", 
+                "link": "http://calendar.dc.gov/event/anc-1b-monthly-meeting", 
                 "room": "2nd Floor"
             }, 
             "2014-04-03T19:00:00": {
                 "address": "2000 14th Street, NW, Washington, DC 20009", 
                 "building": "Reeves Center", 
+                "link": "http://calendar.dc.gov/event/anc-1b-monthly-meeting", 
                 "room": "2nd Floor"
             }
         }
@@ -48,11 +52,13 @@ anc_meetings =
             "2014-03-05T19:00:00": {
                 "address": "2355 Ontario Road, NW, Washington, DC 20009", 
                 "building": "Mary's Center for Maternal and Child Health - \"The Pink Building\"", 
+                "link": "http://calendar.dc.gov/event/anc-1c-monthly-meeting", 
                 "room": null
             }, 
             "2014-04-02T19:00:00": {
                 "address": "2355 Ontario Road, NW, Washington, DC 20009", 
                 "building": "Mary's Center for Maternal and Child Health - \"The Pink Building\"", 
+                "link": "http://calendar.dc.gov/event/anc-1c-monthly-meeting", 
                 "room": null
             }
         }
@@ -86,6 +92,7 @@ anc_meetings =
             "2014-03-19T19:00:00": {
                 "address": "725 24th Street, NW", 
                 "building": "St. Mary\u2019s Court", 
+                "link": "http://anc.dc.gov/event/anc-2a-monthly-meeting-00", 
                 "room": null
             }
         }
@@ -114,6 +121,7 @@ anc_meetings =
             "2014-03-05T18:30:00": {
                 "address": "Martin Luther King Jr. Memorial Library", 
                 "building": null, 
+                "link": "http://anc.dc.gov/event/anc-2c-monthly-meeting-0", 
                 "room": "Auditorium 3"
             }, 
             "2014-03-10T18:30:00": {
@@ -157,41 +165,49 @@ anc_meetings =
             "2014-03-03T18:30:00": {
                 "address": "35th Street and Volta Place, NW, Washington, DC 20007-2700", 
                 "building": "Georgetown Visitation School", 
+                "link": "http://calendar.dc.gov/event/anc-2e-monthly-meeting", 
                 "room": null
             }, 
             "2014-04-07T18:30:00": {
                 "address": "35th Street and Volta Place, NW, Washington, DC 20007-2700", 
                 "building": "Georgetown Visitation School", 
+                "link": "http://calendar.dc.gov/event/anc-2e-monthly-meeting", 
                 "room": null
             }, 
             "2014-05-05T18:30:00": {
                 "address": "35th Street and Volta Place, NW, Washington, DC 20007-2700", 
                 "building": "Georgetown Visitation School", 
+                "link": "http://calendar.dc.gov/event/anc-2e-monthly-meeting", 
                 "room": null
             }, 
             "2014-06-02T18:30:00": {
                 "address": "35th Street and Volta Place, NW, Washington, DC 20007-2700", 
                 "building": "Georgetown Visitation School", 
+                "link": "http://calendar.dc.gov/event/anc-2e-monthly-meeting", 
                 "room": null
             }, 
             "2014-07-07T18:30:00": {
                 "address": "35th Street and Volta Place, NW, Washington, DC 20007-2700", 
                 "building": "Georgetown Visitation School", 
+                "link": "http://calendar.dc.gov/event/anc-2e-monthly-meeting", 
                 "room": null
             }, 
             "2014-09-01T18:30:00": {
                 "address": "35th Street and Volta Place, NW, Washington, DC 20007-2700", 
                 "building": "Georgetown Visitation School", 
+                "link": "http://calendar.dc.gov/event/anc-2e-monthly-meeting", 
                 "room": null
             }, 
             "2014-10-06T18:30:00": {
                 "address": "35th Street and Volta Place, NW, Washington, DC 20007-2700", 
                 "building": "Georgetown Visitation School", 
+                "link": "http://calendar.dc.gov/event/anc-2e-monthly-meeting", 
                 "room": null
             }, 
             "2014-11-03T18:30:00": {
                 "address": "35th Street and Volta Place, NW, Washington, DC 20007-2700", 
                 "building": "Georgetown Visitation School", 
+                "link": "http://calendar.dc.gov/event/anc-2e-monthly-meeting", 
                 "room": null
             }
         }
@@ -206,16 +222,19 @@ anc_meetings =
             "2014-03-05T19:00:00": {
                 "address": "10 Thomas Circle, NW, Washington, DC", 
                 "building": "Washington Plaza Hotel", 
+                "link": "http://calendar.dc.gov/event/anc-2f-monthly-meeting", 
                 "room": null
             }, 
             "2014-04-02T19:00:00": {
                 "address": "10 Thomas Circle, NW, Washington, DC", 
                 "building": "Washington Plaza Hotel", 
+                "link": "http://calendar.dc.gov/event/anc-2f-monthly-meeting", 
                 "room": null
             }, 
             "2014-05-07T19:00:00": {
                 "address": "10 Thomas Circle, NW, Washington, DC", 
                 "building": "Washington Plaza Hotel", 
+                "link": "http://calendar.dc.gov/event/anc-2f-monthly-meeting", 
                 "room": null
             }
         }
@@ -230,6 +249,7 @@ anc_meetings =
             "2014-03-13T19:00:00": {
                 "address": "4000  Calvert Street, NW, Washington, DC", 
                 "building": "Stoddert Elementary and Rec Center", 
+                "link": "http://calendar.dc.gov/event/anc-3b-monthly-meeting", 
                 "room": null
             }
         }
@@ -258,11 +278,13 @@ anc_meetings =
             "2014-03-05T19:00:00": {
                 "address": "American University", 
                 "building": "School of International Service", 
+                "link": "http://calendar.dc.gov/event/anc-3d-monthly-meeting", 
                 "room": "Founders Room"
             }, 
             "2014-04-02T19:00:00": {
                 "address": "American University", 
                 "building": "School of International Service", 
+                "link": "http://calendar.dc.gov/event/anc-3d-monthly-meeting", 
                 "room": "Founders Room"
             }
         }
@@ -319,6 +341,7 @@ anc_meetings =
             "2014-03-04T19:00:00": {
                 "address": "1327 Van Buren Street, NW", 
                 "building": "Fort Stevens Recreation Center", 
+                "link": "http://calendar.dc.gov/event/anc-4a-monthly-meeting-0", 
                 "room": null
             }
         }
@@ -333,6 +356,7 @@ anc_meetings =
             "2014-02-24T19:00:00": {
                 "address": "6001 Georgia Avenue, NW, Washington, DC 20011", 
                 "building": "4th District Metropolitan Police Department", 
+                "link": "http://calendar.dc.gov/event/anc-4b-monthly-meeting", 
                 "room": null
             }
         }
@@ -370,6 +394,7 @@ anc_meetings =
             "2014-02-26T19:00:00": {
                 "address": "13th & Emerson Streets, NE, Washington, DC 20018", 
                 "building": "North Michigan Park Recreation Center", 
+                "link": "http://calendar.dc.gov/event/anc-5a-monthly-meeting", 
                 "room": null
             }
         }
@@ -384,11 +409,13 @@ anc_meetings =
             "2014-02-26T18:30:00": {
                 "address": "1322 Irving Street, NE", 
                 "building": null, 
+                "link": "http://calendar.dc.gov/event/anc-5b-monthly-meeting", 
                 "room": null
             }, 
             "2014-03-26T18:30:00": {
                 "address": "1322 Irving Street, NE", 
                 "building": null, 
+                "link": "http://calendar.dc.gov/event/anc-5b-monthly-meeting", 
                 "room": null
             }
         }
@@ -472,6 +499,7 @@ anc_meetings =
             "2014-03-10T19:00:00": {
                 "address": "Waterfront, 1100 4th Street, SW", 
                 "building": null, 
+                "link": "http://anc.dc.gov/event/anc-6d-monthly-meeting", 
                 "room": null
             }
         }
@@ -486,6 +514,7 @@ anc_meetings =
             "2014-03-04T18:30:00": {
                 "address": "1630 7th Street, NW", 
                 "building": "Shaw Library", 
+                "link": "http://calendar.dc.gov/event/anc-6e-monthly-meeting", 
                 "room": null
             }, 
             "2014-03-05T18:30:00": {
@@ -552,11 +581,13 @@ anc_meetings =
             "2014-03-11T19:00:00": {
                 "address": "4625  G Street, SE, Washington, DC, 20019", 
                 "building": "Jones Memorial Church", 
+                "link": "http://calendar.dc.gov/event/anc-7e-monthly-meeting", 
                 "room": null
             }, 
             "2014-04-08T19:00:00": {
                 "address": "4625  G Street, SE, Washington, DC, 20019", 
                 "building": "Jones Memorial Church", 
+                "link": "http://calendar.dc.gov/event/anc-7e-monthly-meeting", 
                 "room": null
             }
         }
@@ -576,11 +607,13 @@ anc_meetings =
             "2014-03-18T18:30:00": {
                 "address": "200 Stoddert Place, SE", 
                 "building": "Washington Tennis and Education Foundation", 
+                "link": "http://anc.dc.gov/event/anc-7f-monthly-meeting", 
                 "room": null
             }, 
             "2014-05-20T18:30:00": {
                 "address": "200 Stoddert Place, SE", 
                 "building": "Washington Tennis and Education Foundation", 
+                "link": "http://anc.dc.gov/event/anc-7f-monthly-meeting", 
                 "room": null
             }
         }
@@ -595,11 +628,13 @@ anc_meetings =
             "2014-03-04T19:15:00": {
                 "address": "1649 Good Hope Road, SE, Washington, DC", 
                 "building": "UPO Anacostia Community Service Center", 
+                "link": "http://calendar.dc.gov/event/anc-8a-monthly-meeting", 
                 "room": null
             }, 
             "2014-04-01T19:15:00": {
                 "address": "1649 Good Hope Road, SE, Washington, DC", 
                 "building": "UPO Anacostia Community Service Center", 
+                "link": "http://calendar.dc.gov/event/anc-8a-monthly-meeting", 
                 "room": null
             }
         }
@@ -628,16 +663,19 @@ anc_meetings =
             "2014-03-05T19:00:00": {
                 "address": "2907 Martin Luther King Jr. Avenue, SE, Washington, DC 20032", 
                 "building": "Petey Green Center", 
+                "link": "http://calendar.dc.gov/event/anc-8c-monthly-meeting", 
                 "room": null
             }, 
             "2014-04-02T19:00:00": {
                 "address": "2907 Martin Luther King Jr. Avenue, SE, Washington, DC 20032", 
                 "building": "Petey Green Center", 
+                "link": "http://calendar.dc.gov/event/anc-8c-monthly-meeting", 
                 "room": null
             }, 
             "2014-05-07T19:00:00": {
                 "address": "2907 Martin Luther King Jr. Avenue, SE, Washington, DC 20032", 
                 "building": "Petey Green Center", 
+                "link": "http://calendar.dc.gov/event/anc-8c-monthly-meeting", 
                 "room": null
             }
         }
@@ -652,6 +690,7 @@ anc_meetings =
             "2014-02-27T19:00:00": {
                 "address": "4601 Martin Luther King Jr Avenue, SW Washington DC", 
                 "building": "Specialty Hospital of Washington (Formerly known as Hadley Hospital)", 
+                "link": "http://calendar.dc.gov/event/anc-8d-monthly-meeting", 
                 "room": null
             }
         }
@@ -666,6 +705,7 @@ anc_meetings =
             "2014-03-03T19:00:00": {
                 "address": "3400 Wheeler Road, SE, Washington DC", 
                 "building": "Eagle Academy", 
+                "link": "http://calendar.dc.gov/event/anc-8e-monthly-meeting", 
                 "room": null
             }
         }

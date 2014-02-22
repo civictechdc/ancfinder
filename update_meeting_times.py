@@ -82,25 +82,23 @@ for page in pagenums:
 		link = meet.find('a').get('href')
 		if link[0] == '/':
 			link = 'http://anc.dc.gov' + link
-		link = BeautifulSoup(urllib2.urlopen(link))
-		address = link.find('div','field-name-field-location')
+		link_text = BeautifulSoup(urllib2.urlopen(link))
+		address = link_text.find('div','field-name-field-location')
 		address = address.find('div','field-item').text
 		try:
-			building = link.find('div','field-name-field-building-name')
+			building = link_text.find('div','field-name-field-building-name')
 			building = building.find('div','field-item').text
 		except AttributeError:
 			building = None
 		try:
-			room = link.find('div','field-name-field-suite-number')
+			room = link_text.find('div','field-name-field-suite-number')
 			room = room.find('div','field-item').text
 		except AttributeError:
 			room = None
-		details = {'address':address,'building':building,'room':room}
+                print link
+                details = {'address':address,'building':building,'room':room,'link':link}
 		try:
-			if date in archive[anc]['meetings']:
-				continue
-			else:
-				archive[anc]['meetings'][date] = details
+			archive[anc]['meetings'][date] = details
 		except KeyError:
 			meetings = {'meetings': {}}
 			archive[anc] = meetings
