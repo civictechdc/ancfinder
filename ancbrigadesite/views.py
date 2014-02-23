@@ -74,7 +74,10 @@ class AncInfoTemplateView(TemplateView):
 			if m > now:
 				next_meeting = m # this is the first meeting in the future (i.e. the next meeting)
 				break
-                next_meeting_link = meeting_data[anc]["meetings"][next_meeting.strftime("%Y-%m-%dT%H:%M:%S")]["link"]
+                if next_meeting != None:
+                    next_meeting_link = meeting_data[anc]["meetings"][next_meeting.strftime("%Y-%m-%dT%H:%M:%S")]["link"]
+                else:
+                    next_meeting_link = None
 		i = all_meetings.index(next_meeting) if next_meeting is not None else len(all_meetings)
 		previous_meetings = all_meetings[i-2:i]
 
