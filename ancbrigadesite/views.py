@@ -96,6 +96,7 @@ class AncInfoTemplateView(TemplateView):
 			{ "key": "POP_DENSITY",	"label": "density (pop/sq-mi)", "details": "Total population divided by the area of the ANC." },
 			{ "key": "liquor_licenses",	"label": "liquor licenses",	"details": "Liquor licenses granted by ABRA held by bars and restaurants in the area" },
 			{ "key": "building_permits",	"label": "building permits",	"details": "Permits granted by DCRA for construction or alteration in the area" },
+                        { "key": "311_requests",    "label": "311 requests",    "details": "Requests to the 311 hotline from this area" },
 		]
 		for s in census_stats:
 		

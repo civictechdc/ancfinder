@@ -83,6 +83,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 2166
+     }, 
+     "311_requests": {
+      "value": 153
      }
     }, 
     "neighborhoods": [
@@ -1548,6 +1551,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 3102
+     }, 
+     "311_requests": {
+      "value": 170
      }
     }, 
     "neighborhoods": [
@@ -3013,6 +3019,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1662
+     }, 
+     "311_requests": {
+      "value": 32
      }
     }, 
     "neighborhoods": [
@@ -4072,6 +4081,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1316
+     }, 
+     "311_requests": {
+      "value": 42
      }
     }, 
     "neighborhoods": [
@@ -4719,6 +4731,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1328
+     }, 
+     "311_requests": {
+      "value": 47
      }
     }, 
     "neighborhoods": [
@@ -5824,6 +5839,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1981
+     }, 
+     "311_requests": {
+      "value": 101
      }
     }, 
     "neighborhoods": [
@@ -6980,6 +6998,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 623
+     }, 
+     "311_requests": {
+      "value": 60
      }
     }, 
     "neighborhoods": [
@@ -7516,6 +7537,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 351
+     }, 
+     "311_requests": {
+      "value": 4
      }
     }, 
     "neighborhoods": [
@@ -7874,6 +7898,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1226
+     }, 
+     "311_requests": {
+      "value": 60
      }
     }, 
     "neighborhoods": [
@@ -9006,6 +9033,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1527
+     }, 
+     "311_requests": {
+      "value": 88
      }
     }, 
     "neighborhoods": [
@@ -10001,6 +10031,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 957
+     }, 
+     "311_requests": {
+      "value": 36
      }
     }, 
     "neighborhoods": [
@@ -10678,6 +10711,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1475
+     }, 
+     "311_requests": {
+      "value": 54
      }
     }, 
     "neighborhoods": [
@@ -11934,6 +11970,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1252
+     }, 
+     "311_requests": {
+      "value": 44
      }
     }, 
     "neighborhoods": [
@@ -13377,6 +13416,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 615
+     }, 
+     "311_requests": {
+      "value": 30
      }
     }, 
     "neighborhoods": [
@@ -14099,6 +14141,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1334
+     }, 
+     "311_requests": {
+      "value": 15
      }
     }, 
     "neighborhoods": [
@@ -15016,6 +15061,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 340
+     }, 
+     "311_requests": {
+      "value": 44
      }
     }, 
     "neighborhoods": [
@@ -15915,6 +15963,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 735
+     }, 
+     "311_requests": {
+      "value": 34
      }
     }, 
     "neighborhoods": [
@@ -16946,6 +16997,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1200
+     }, 
+     "311_requests": {
+      "value": 49
      }
     }, 
     "neighborhoods": [
@@ -18093,6 +18147,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 2000
+     }, 
+     "311_requests": {
+      "value": 96
      }
     }, 
     "neighborhoods": [
@@ -19298,6 +19355,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1243
+     }, 
+     "311_requests": {
+      "value": 22
      }
     }, 
     "neighborhoods": [
@@ -20057,6 +20117,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1541
+     }, 
+     "311_requests": {
+      "value": 29
      }
     }, 
     "neighborhoods": [
@@ -21113,6 +21176,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 531
+     }, 
+     "311_requests": {
+      "value": 69
      }
     }, 
     "neighborhoods": [
@@ -21869,6 +21935,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1166
+     }, 
+     "311_requests": {
+      "value": 78
      }
     }, 
     "neighborhoods": [
@@ -22870,6 +22939,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1663
+     }, 
+     "311_requests": {
+      "value": 21
      }
     }, 
     "neighborhoods": [
@@ -23805,6 +23877,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1850
+     }, 
+     "311_requests": {
+      "value": 246
      }
     }, 
     "neighborhoods": [
@@ -25196,6 +25271,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 2275
+     }, 
+     "311_requests": {
+      "value": 99
      }
     }, 
     "neighborhoods": [
@@ -26196,6 +26274,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1979
+     }, 
+     "311_requests": {
+      "value": 125
      }
     }, 
     "neighborhoods": [
@@ -27425,6 +27506,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1574
+     }, 
+     "311_requests": {
+      "value": 158
      }
     }, 
     "neighborhoods": [
@@ -28261,6 +28345,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1296
+     }, 
+     "311_requests": {
+      "value": 41
      }
     }, 
     "neighborhoods": [
@@ -29220,6 +29307,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1171
+     }, 
+     "311_requests": {
+      "value": 109
      }
     }, 
     "neighborhoods": [
@@ -30116,6 +30206,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 778
+     }, 
+     "311_requests": {
+      "value": 14
      }
     }, 
     "neighborhoods": [
@@ -31194,6 +31287,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1113
+     }, 
+     "311_requests": {
+      "value": 23
      }
     }, 
     "neighborhoods": [
@@ -32081,6 +32177,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 2002
+     }, 
+     "311_requests": {
+      "value": 30
      }
     }, 
     "neighborhoods": [
@@ -33149,6 +33248,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1181
+     }, 
+     "311_requests": {
+      "value": 6
      }
     }, 
     "neighborhoods": [
@@ -34041,6 +34143,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1992
+     }, 
+     "311_requests": {
+      "value": 14
      }
     }, 
     "neighborhoods": [
@@ -35031,6 +35136,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 2164
+     }, 
+     "311_requests": {
+      "value": 17
      }
     }, 
     "neighborhoods": [
@@ -35996,6 +36104,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 2403
+     }, 
+     "311_requests": {
+      "value": 23
      }
     }, 
     "neighborhoods": [
@@ -37010,6 +37121,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 2331
+     }, 
+     "311_requests": {
+      "value": 8
      }
     }, 
     "neighborhoods": [
@@ -37969,6 +38083,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 1354
+     }, 
+     "311_requests": {
+      "value": 4
      }
     }, 
     "neighborhoods": [
@@ -38890,6 +39007,9 @@
      "B07001_033E": {
       "source": "tract", 
       "value": 2508
+     }, 
+     "311_requests": {
+      "value": 4
      }
     }, 
     "neighborhoods": [

@@ -166,6 +166,13 @@ def add_building_permit_data(output):
     anc = rec[0]
     output[anc[0]]["ancs"][anc[1]]["census"]["building_permits"] = { "value": int(rec[1]) }
 
+def add_311_data(output):
+  print("adding 311 information")
+  # Number of 311 requests in each ANC 
+  data = json.loads(open('data/311.json').read())
+  for anc in data:
+    output[anc[0]]['ancs'][anc[1]]['census']['311_requests'] = { "value": int(data[anc]['total']) }
+
 def add_geographic_data(output):
   print("adding geographic data")
 
@@ -453,6 +460,7 @@ if __name__ == "__main__":
   if should("census") or should("census-analysis"): add_census_data_analysis(output)
   if should("abra"): add_abra_data(output)
   if should("building"): add_building_permit_data(output)
+  if should("311"): add_311_data(output)
 
   
   # Output.
