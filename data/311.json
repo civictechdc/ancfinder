@@ -60,7 +60,7 @@
                 }
             }, 
             "1A06": {
-                "total": 15, 
+                "total": 16, 
                 "types": {
                     "Bicycles": 2, 
                     "Curb and Gutter Repair": 1, 
@@ -71,11 +71,12 @@
                     "Parking Enforcement": 1, 
                     "Safe Routes to School": 1, 
                     "Sign Missing": 1, 
-                    "Tree Inspection": 1
+                    "Tree Inspection": 1, 
+                    "Vacant Lot": 1
                 }
             }, 
             "1A07": {
-                "total": 13, 
+                "total": 12, 
                 "types": {
                     "Abandoned Vehicle - On Public Property": 2, 
                     "Autumn Leaf Collection": 1, 
@@ -86,17 +87,16 @@
                     "Sanitation Enforcement": 1, 
                     "Sign removal request": 1, 
                     "Trash Collection - Missed": 1, 
-                    "Tree Planting": 1, 
-                    "Tree planting request": 1
+                    "Tree Planting": 1
                 }
             }, 
             "1A08": {
-                "total": 34, 
+                "total": 30, 
                 "types": {
                     "Abandoned Sign Post": 1, 
                     "Abandoned Vehicle - On Public Property": 2, 
                     "Graffiti Removal": 1, 
-                    "Graffiti removal request": 15, 
+                    "Graffiti removal request": 11, 
                     "Illegal Dumping": 1, 
                     "Illegal dumping": 1, 
                     "Parking Enforcement": 1, 
@@ -154,7 +154,7 @@
                 }
             }
         }, 
-        "total": 157, 
+        "total": 153, 
         "types": {
             "Abandoned Sign Post": 1, 
             "Abandoned Vehicle - On Public Property": 5, 
@@ -166,7 +166,7 @@
             "Broken parking sign": 1, 
             "Curb and Gutter Repair": 1, 
             "Graffiti Removal": 25, 
-            "Graffiti removal request": 39, 
+            "Graffiti removal request": 35, 
             "How's My Driving - Complaint": 1, 
             "Illegal Dumping": 5, 
             "Illegal Posters": 1, 
@@ -196,7 +196,8 @@
             "Tree Planting": 3, 
             "Tree Removal": 1, 
             "Tree box repair request": 1, 
-            "Tree planting request": 3, 
+            "Tree planting request": 2, 
+            "Vacant Lot": 1, 
             "Very Dangerous Crossing": 1, 
             "Yard Waste": 1
         }
@@ -217,16 +218,16 @@
                 }
             }, 
             "1B02": {
-                "total": 21, 
+                "total": 23, 
                 "types": {
                     "Alley Cleaning": 1, 
                     "Bicycles": 1, 
                     "Cones Blocking a Lane": 1, 
                     "Graffiti Removal": 1, 
                     "Graffiti removal request": 1, 
-                    "Illegal Dumping": 1, 
+                    "Illegal Dumping": 2, 
                     "Parking Enforcement": 7, 
-                    "Pothole": 2, 
+                    "Pothole": 3, 
                     "Potholes at 11th & V St NW": 1, 
                     "Recycling Collection - Missed": 1, 
                     "Sanitation Enforcement": 1, 
@@ -252,7 +253,7 @@
                 }
             }, 
             "1B04": {
-                "total": 35, 
+                "total": 34, 
                 "types": {
                     "Alley Cleaning": 1, 
                     "Alley Repair": 1, 
@@ -262,7 +263,7 @@
                     "Out of State Parking Violation (ROSA)": 1, 
                     "Parking Enforcement": 9, 
                     "Recycling Collection - Missed": 1, 
-                    "Residential Parking Permit Violation": 11, 
+                    "Residential Parking Permit Violation": 10, 
                     "Sidewalk Repair": 1, 
                     "Sign Removal": 1, 
                     "Trash Collection - Missed": 1, 
@@ -270,13 +271,13 @@
                 }
             }, 
             "1B05": {
-                "total": 12, 
+                "total": 10, 
                 "types": {
-                    "Bicycles": 2, 
+                    "Bicycles": 1, 
                     "Graffiti Removal": 1, 
                     "How's My Driving - Complaint": 1, 
                     "Illegal Dumping": 1, 
-                    "Snow/Ice Removal": 7
+                    "Snow/Ice Removal": 6
                 }
             }, 
             "1B06": {
@@ -311,18 +312,17 @@
                 }
             }, 
             "1B09": {
-                "total": 15, 
+                "total": 13, 
                 "types": {
                     "DMV - Vehicle Registration Issues": 1, 
                     "Graffiti Removal": 2, 
-                    "Graffiti removal request": 4, 
+                    "Graffiti removal request": 3, 
                     "Illegal Dumping": 1, 
                     "Illegal dumping on corner of Sherman and Girard": 1, 
                     "Pothole": 1, 
                     "Sanitation Enforcement": 2, 
                     "Street Cleaning": 1, 
-                    "Tree Removal": 1, 
-                    "Very Bad Potholes Needing Repair": 1
+                    "Tree Removal": 1
                 }
             }, 
             "1B10": {
@@ -355,29 +355,29 @@
                 }
             }
         }, 
-        "total": 173, 
+        "total": 170, 
         "types": {
             "Alley Cleaning": 3, 
             "Alley Repair": 2, 
-            "Bicycles": 10, 
+            "Bicycles": 9, 
             "Cones Blocking a Lane": 1, 
             "Curb and Gutter Repair": 2, 
             "DMV - Vehicle Registration Issues": 1, 
             "Damaged metal tree box fence": 1, 
             "Dead Animal Pickup": 1, 
             "Graffiti Removal": 12, 
-            "Graffiti removal request": 32, 
+            "Graffiti removal request": 31, 
             "How's My Driving - Complaint": 1, 
-            "Illegal Dumping": 4, 
+            "Illegal Dumping": 5, 
             "Illegal dumping on corner of Sherman and Girard": 1, 
             "Out of State Parking Violation (ROSA)": 1, 
             "Parking Enforcement": 29, 
-            "Pothole": 6, 
+            "Pothole": 7, 
             "Potholes at 11th & V St NW": 1, 
             "Rat Abatement": 2, 
             "Recycling Collection - Missed": 5, 
             "Resident Parking Permit": 1, 
-            "Residential Parking Permit Violation": 11, 
+            "Residential Parking Permit Violation": 10, 
             "Roadway Marking Installation": 1, 
             "Safe Routes to School": 1, 
             "Sanitation Enforcement": 4, 
@@ -386,7 +386,7 @@
             "Sign Removal": 2, 
             "Sign Replace": 2, 
             "Sign replacement request": 2, 
-            "Snow/Ice Removal": 9, 
+            "Snow/Ice Removal": 8, 
             "Street Cleaning": 1, 
             "Street Repair": 5, 
             "Trash Collection - Missed": 4, 
@@ -394,7 +394,6 @@
             "Tree Removal": 1, 
             "Tree planting request": 2, 
             "Utility Repair": 1, 
-            "Very Bad Potholes Needing Repair": 1, 
             "parking enforcement": 1
         }
     }, 
@@ -416,10 +415,9 @@
                 }
             }, 
             "1C03": {
-                "total": 6, 
+                "total": 5, 
                 "types": {
                     "Graffiti Removal": 2, 
-                    "Parks and Recreation": 1, 
                     "Rat Abatement": 1, 
                     "Streetlight Repair": 1, 
                     "Tree Planting": 1
@@ -434,8 +432,9 @@
                 }
             }, 
             "1C05": {
-                "total": 2, 
+                "total": 3, 
                 "types": {
+                    "Rat Abatement": 1, 
                     "Roadway Marking Maintenance": 1, 
                     "Sign replacement request": 1
                 }
@@ -478,9 +477,8 @@
             "Graffiti Removal - Paint Voucher Request": 1, 
             "Graffiti removal request": 2, 
             "Parking Enforcement": 2, 
-            "Parks and Recreation": 1, 
             "Pothole": 1, 
-            "Rat Abatement": 2, 
+            "Rat Abatement": 3, 
             "Rat Infestation": 1, 
             "Recycling Collection - Missed": 2, 
             "Roadway Marking Maintenance": 1, 
@@ -508,11 +506,12 @@
                 }
             }, 
             "1D02": {
-                "total": 4, 
+                "total": 5, 
                 "types": {
                     "Graffiti removal request": 1, 
                     "Hazardous driving as a result of unresolved repair work": 1, 
                     "Illegal Dumping": 1, 
+                    "Pothole": 1, 
                     "Unofficial Emergency Parking signs posted": 1
                 }
             }, 
@@ -551,7 +550,7 @@
                 }
             }
         }, 
-        "total": 41, 
+        "total": 42, 
         "types": {
             "Abandoned Vehicle - On Public Property": 1, 
             "Ally Dumping ": 1, 
@@ -563,7 +562,7 @@
             "Hazardous driving as a result of unresolved repair work": 1, 
             "Illegal Dumping": 2, 
             "Lamp light out": 1, 
-            "Pothole": 1, 
+            "Pothole": 2, 
             "Potholes": 2, 
             "Rat Abatement": 6, 
             "Recycling Collection - Missed": 2, 
@@ -583,10 +582,11 @@
     "2A": {
         "smds": {
             "2A01": {
-                "total": 4, 
+                "total": 5, 
                 "types": {
                     "Bicycles": 1, 
                     "Parking Meter Request": 2, 
+                    "Speed Study Data & Map": 1, 
                     "Streetlight Repair": 1
                 }
             }, 
@@ -647,7 +647,7 @@
                 }
             }
         }, 
-        "total": 46, 
+        "total": 47, 
         "types": {
             "Alley Cleaning": 1, 
             "Bicycles": 1, 
@@ -662,6 +662,7 @@
             "Sidewalk Repair": 1, 
             "Sign Replace": 1, 
             "Snow/Ice Removal": 4, 
+            "Speed Study Data & Map": 1, 
             "Streetlight Repair": 3, 
             "Tagging on Roadway Wall": 1, 
             "Traffic Signal Maintenance": 8, 
@@ -679,20 +680,20 @@
                 }
             }, 
             "2B02": {
-                "total": 15, 
+                "total": 14, 
                 "types": {
                     " Please remove improperly placed \"Do Not Enter\" sign": 1, 
                     "Entire block--no recycling collection": 1, 
                     "Parking Enforcement": 2, 
                     "Pothole": 1, 
-                    "Rat Abatement": 3, 
+                    "Rat Abatement": 2, 
                     "Rats Everywhere": 1, 
                     "Sidewalk Repair": 5, 
                     "Tree Planting": 1
                 }
             }, 
             "2B03": {
-                "total": 14, 
+                "total": 13, 
                 "types": {
                     "Graffiti Removal": 2, 
                     "Illegal Dumping": 1, 
@@ -700,13 +701,13 @@
                     "Rat Abatement": 1, 
                     "Sidewalk Repair": 2, 
                     "Sign Removal": 1, 
-                    "Tree Planting": 5, 
-                    "Tree Removal": 1
+                    "Tree Planting": 5
                 }
             }, 
             "2B04": {
-                "total": 6, 
+                "total": 9, 
                 "types": {
+                    "Bicycles": 3, 
                     "Bike Lane Lane Totally Gone": 1, 
                     "Graffiti Removal": 1, 
                     "Illegal Dumping": 1, 
@@ -716,10 +717,11 @@
                 }
             }, 
             "2B05": {
-                "total": 23, 
+                "total": 26, 
                 "types": {
-                    "Alley Cleaning": 2, 
+                    "Alley Cleaning": 3, 
                     "Bicycles": 1, 
+                    "Broken Glass in L St Cycletrack": 1, 
                     "Construction Sign Announcing Lane Closure is Blocking Bike Lane": 1, 
                     "Flex Posts Missing from Cycletrack": 1, 
                     "Graffiti Removal": 2, 
@@ -729,6 +731,7 @@
                     "Number of rats observed in alley has increased significantly.": 1, 
                     "Parking Enforcement": 1, 
                     "Parking Meter Request": 1, 
+                    "Rat Abatement": 1, 
                     "Resurface Needed in Alley": 1, 
                     "Sidewalk Repair": 2, 
                     "Sign Removal": 1, 
@@ -786,12 +789,13 @@
                 }
             }
         }, 
-        "total": 97, 
+        "total": 101, 
         "types": {
             " Please remove improperly placed \"Do Not Enter\" sign": 1, 
-            "Alley Cleaning": 2, 
-            "Bicycles": 4, 
+            "Alley Cleaning": 3, 
+            "Bicycles": 7, 
             "Bike Lane Lane Totally Gone": 1, 
+            "Broken Glass in L St Cycletrack": 1, 
             "Construction Sign Announcing Lane Closure is Blocking Bike Lane": 1, 
             "Entire block--no recycling collection": 1, 
             "Flex Posts Missing from Cycletrack": 1, 
@@ -824,18 +828,18 @@
             "Traffic Signal Maintenance": 2, 
             "Trash Collection - Missed": 3, 
             "Tree Planting": 8, 
-            "Tree Removal": 3, 
+            "Tree Removal": 2, 
             "Water leak from insider street pipe": 1
         }
     }, 
     "2C": {
         "smds": {
             "2C01": {
-                "total": 32, 
+                "total": 35, 
                 "types": {
-                    "Bicycles": 5, 
+                    "Bicycles": 6, 
                     "Broken ticket machine": 1, 
-                    "Parking Enforcement": 4, 
+                    "Parking Enforcement": 5, 
                     "Parking Meter Request": 2, 
                     "Pothole": 3, 
                     "Sanitation Enforcement": 1, 
@@ -845,14 +849,16 @@
                     "Sign Replace": 3, 
                     "Sign Replace - 2 sign problems": 1, 
                     "Streetlight Repair": 3, 
-                    "Traffic Signal Maintenance": 4
+                    "Traffic Signal Maintenance": 4, 
+                    "Tree Pruning": 1
                 }
             }, 
             "2C02": {
-                "total": 8, 
+                "total": 9, 
                 "types": {
                     "3rd St Ramp": 1, 
                     "Fix the RAMP": 1, 
+                    "HUGE Pothole still not fixed": 1, 
                     "Large potholes slow traffic": 1, 
                     "Parking Enforcement": 1, 
                     "Pothole": 3, 
@@ -860,10 +866,10 @@
                 }
             }, 
             "2C03": {
-                "total": 17, 
+                "total": 16, 
                 "types": {
                     "Alley Repair": 1, 
-                    "Bicycles": 2, 
+                    "Bicycles": 1, 
                     "FEMS - Fire Safety Education": 1, 
                     "Graffiti Removal": 1, 
                     "How's My Driving - Complaint": 1, 
@@ -877,7 +883,7 @@
                 }
             }
         }, 
-        "total": 57, 
+        "total": 60, 
         "types": {
             "3rd St Ramp": 1, 
             "Alley Repair": 1, 
@@ -886,10 +892,11 @@
             "FEMS - Fire Safety Education": 1, 
             "Fix the RAMP": 1, 
             "Graffiti Removal": 1, 
+            "HUGE Pothole still not fixed": 1, 
             "How's My Driving - Complaint": 1, 
             "Large potholes slow traffic": 1, 
             "Mistimed Traffic Signal - 3rd St NW": 1, 
-            "Parking Enforcement": 5, 
+            "Parking Enforcement": 6, 
             "Parking Meter Request": 6, 
             "Pothole": 6, 
             "Rat Abatement": 1, 
@@ -903,7 +910,8 @@
             "Snow/Ice Removal": 1, 
             "Street Repair": 1, 
             "Streetlight Repair": 3, 
-            "Traffic Signal Maintenance": 5
+            "Traffic Signal Maintenance": 5, 
+            "Tree Pruning": 1
         }
     }, 
     "2D": {
@@ -925,7 +933,7 @@
     "2E": {
         "smds": {
             "2E01": {
-                "total": 12, 
+                "total": 13, 
                 "types": {
                     "Double meter missing head": 1, 
                     "Illegal poster on traffic control box": 1, 
@@ -936,6 +944,7 @@
                     "Roadway Marking Maintenance": 1, 
                     "Sign Removal": 1, 
                     "Street Cleaning": 1, 
+                    "Streetlight Repair": 1, 
                     "Tree Planting": 1, 
                     "Two incomplete sidewalk repairs (asphalt) on concrete sidewalk": 1, 
                     "Unused DDOT sign pole": 1
@@ -965,7 +974,7 @@
                 }
             }, 
             "2E05": {
-                "total": 29, 
+                "total": 28, 
                 "types": {
                     "Fix the pavement - dangerous for bikes": 1, 
                     "Graffiti Removal - Westbound Canal Road Road NW 1/4 mile west of Whitehurst Fwy, illegal poster on traffic control box": 1, 
@@ -982,7 +991,6 @@
                     "Roadway Marking Modification": 1, 
                     "Second request - please remove unauthorized plastic trash can on triagular median at Key Bridge & M St": 1, 
                     "Sign New": 1, 
-                    "Some type of square utility access in middle of 35 NW between Prospect and N NW is becoming a pothole;": 1, 
                     "Streetlight Repair": 1, 
                     "square block in middle of street (possibly utility access) needs to be inspected and repaved": 1
                 }
@@ -1034,10 +1042,9 @@
             "Sign Removal": 2, 
             "Sign Replace": 1, 
             "Snow/Ice Removal": 1, 
-            "Some type of square utility access in middle of 35 NW between Prospect and N NW is becoming a pothole;": 1, 
             "Street Cleaning": 1, 
             "Street Repair": 2, 
-            "Streetlight Repair": 1, 
+            "Streetlight Repair": 2, 
             "Tree Planting": 1, 
             "Two incomplete sidewalk repairs (asphalt) on concrete sidewalk": 1, 
             "Unused DDOT sign pole": 1, 
@@ -1107,9 +1114,10 @@
                 }
             }, 
             "2F05": {
-                "total": 13, 
+                "total": 14, 
                 "types": {
                     "Base of Street Light is Missing": 1, 
+                    "Construction debris": 1, 
                     "Parking Enforcement": 1, 
                     "Parking Meter Request": 1, 
                     "Pothole": 2, 
@@ -1133,18 +1141,16 @@
                 }
             }, 
             "2F07": {
-                "total": 4, 
+                "total": 3, 
                 "types": {
                     "Alley Repair": 1, 
-                    "Bicycles": 1, 
                     "Parking Meter Request": 1, 
                     "Traffic Signal Maintenance": 1
                 }
             }, 
             "2F08": {
-                "total": 12, 
+                "total": 11, 
                 "types": {
-                    "Bicycles": 1, 
                     "Bike Lane Protection at 12th & Mass": 1, 
                     "Illegal Dumping": 1, 
                     "Lane Marking Improvement for 12th & Mass Ave": 1, 
@@ -1158,12 +1164,13 @@
                 }
             }
         }, 
-        "total": 89, 
+        "total": 88, 
         "types": {
             "Alley Repair": 3, 
             "Base of Street Light is Missing": 1, 
-            "Bicycles": 6, 
+            "Bicycles": 4, 
             "Bike Lane Protection at 12th & Mass": 1, 
+            "Construction debris": 1, 
             "Curb and Gutter Repair": 3, 
             "Dogs not allowed sign missing in Logan Circle": 1, 
             "Drivers Drifting into R St Bike Lane - Enforcement Needed": 1, 
@@ -1214,21 +1221,24 @@
                 }
             }, 
             "3B02": {
-                "total": 4, 
+                "total": 5, 
                 "types": {
                     "2328 37th nw - small tree stump in treebox - please remove and plant a new tree": 1, 
                     "Insects": 1, 
                     "Sidewalk is uneven asphalt instead of concrete - please replace": 1, 
+                    "Sign Removal - 3' tall DDOT sign frame left behind from completed construction project": 1, 
                     "Sign is not on pole where it is visible to traffic, please move": 1
                 }
             }, 
             "3B03": {
-                "total": 4, 
+                "total": 7, 
                 "types": {
                     "2nd request - bus stop tagged with graffiti": 1, 
+                    "Bicycles": 1, 
                     "Illegal Dumping": 1, 
                     "Parking Enforcement": 1, 
-                    "Snow/Ice Removal": 1
+                    "Snow/Ice Removal": 1, 
+                    "Two burnt out streetlights": 2
                 }
             }, 
             "3B04": {
@@ -1238,7 +1248,7 @@
                 }
             }, 
             "3B05": {
-                "total": 19, 
+                "total": 20, 
                 "types": {
                     "\"bad words\" drawn in fresh concrete next to new crosswalk ramp; please remove words from concrete": 1, 
                     "Curb and Gutter Repair": 1, 
@@ -1250,16 +1260,18 @@
                     "Sidewalk Repair": 1, 
                     "Street Repair": 1, 
                     "Streetlight Repair - alley east of this address": 1, 
+                    "Streetlight Repair - burnt out street light": 1, 
                     "Tree Planting": 8, 
                     "Unused DDOT sign pole": 1
                 }
             }
         }, 
-        "total": 31, 
+        "total": 36, 
         "types": {
             "\"bad words\" drawn in fresh concrete next to new crosswalk ramp; please remove words from concrete": 1, 
             "2328 37th nw - small tree stump in treebox - please remove and plant a new tree": 1, 
             "2nd request - bus stop tagged with graffiti": 1, 
+            "Bicycles": 1, 
             "Chunk of sidewalk next to storm drain has fallen away - needs to be repositioned": 1, 
             "Curb and Gutter Repair": 1, 
             "Holes in concrete gutter in front of storm drain - please repair - tripping hazard": 1, 
@@ -1274,21 +1286,23 @@
             "Roadway markings do not make sense - cars driving southbound directed to drive into oncoming traffic": 1, 
             "Sidewalk Repair": 1, 
             "Sidewalk is uneven asphalt instead of concrete - please replace": 1, 
+            "Sign Removal - 3' tall DDOT sign frame left behind from completed construction project": 1, 
             "Sign is not on pole where it is visible to traffic, please move": 1, 
             "Snow/Ice Removal": 1, 
             "Street Repair": 1, 
             "Streetlight Repair - alley east of this address": 1, 
+            "Streetlight Repair - burnt out street light": 1, 
             "Tree Planting": 8, 
+            "Two burnt out streetlights": 2, 
             "Unused DDOT sign pole": 1
         }
     }, 
     "3C": {
         "smds": {
             "3C01": {
-                "total": 6, 
+                "total": 5, 
                 "types": {
                     "Speed Study Data & Map": 1, 
-                    "Streetlight Repair": 1, 
                     "Traffic Signal Maintenance": 4
                 }
             }, 
@@ -1304,16 +1318,15 @@
                 }
             }, 
             "3C03": {
-                "total": 1, 
+                "total": 2, 
                 "types": {
+                    "Pothole": 1, 
                     "Traffic Signal Maintenance": 1
                 }
             }, 
             "3C04": {
-                "total": 4, 
+                "total": 2, 
                 "types": {
-                    "Alleylight Repair": 1, 
-                    "Curb and Gutter Repair": 1, 
                     "School Crossing Guard Program": 1, 
                     "Sign Replace - Speed limit sign knocked over": 1
                 }
@@ -1330,9 +1343,8 @@
                 }
             }, 
             "3C06": {
-                "total": 11, 
+                "total": 9, 
                 "types": {
-                    "Out of State Parking Violation (ROSA)": 2, 
                     "Parking Enforcement": 2, 
                     "Pothole": 2, 
                     "Residential Parking Permit Violation": 3, 
@@ -1347,10 +1359,11 @@
                 }
             }, 
             "3C08": {
-                "total": 19, 
+                "total": 17, 
                 "types": {
                     "Graffiti Removal - from west side of intersection on traffic control box at Wisconsin & Edmunds NW": 1, 
                     "Please install sign for Glover Park Community Center on NW corner of Wisconsin and Calvert NW": 1, 
+                    "Pothole": 1, 
                     "Recycling Collection - Missed": 1, 
                     "Roadway Marking Maintenance": 1, 
                     "Sidewalk Repair": 3, 
@@ -1358,25 +1371,22 @@
                     "Snow/Ice Removal": 1, 
                     "Street Cleaning": 1, 
                     "Street Repair": 1, 
-                    "Streetlight Repair": 5, 
+                    "Streetlight Repair": 2, 
                     "Traffic Signal Maintenance": 1, 
                     "Tree Planting": 1
                 }
             }
         }, 
-        "total": 60, 
+        "total": 54, 
         "types": {
             "\"stop line\" roadway markings painted in wrong place": 1, 
-            "Alleylight Repair": 1, 
             "Bicycles": 1, 
-            "Curb and Gutter Repair": 1, 
             "Faded no parking sign (right arrow)": 1, 
             "Graffiti Removal - from west side of intersection on traffic control box at Wisconsin & Edmunds NW": 1, 
             "Illegal Posters": 1, 
-            "Out of State Parking Violation (ROSA)": 2, 
             "Parking Enforcement": 2, 
             "Please install sign for Glover Park Community Center on NW corner of Wisconsin and Calvert NW": 1, 
-            "Pothole": 5, 
+            "Pothole": 7, 
             "Recycling Collection - Missed": 1, 
             "Residential Parking Permit Violation": 3, 
             "Roadway Marking Maintenance": 1, 
@@ -1389,7 +1399,7 @@
             "Speed Study Data & Map": 1, 
             "Street Cleaning": 1, 
             "Street Repair": 2, 
-            "Streetlight Repair": 7, 
+            "Streetlight Repair": 3, 
             "Traffic Signal Maintenance": 9, 
             "Tree Planting": 1, 
             "Tree Pruning": 2
@@ -1398,8 +1408,9 @@
     "3D": {
         "smds": {
             "3D01": {
-                "total": 9, 
+                "total": 10, 
                 "types": {
+                    "Burnt out street light": 1, 
                     "Dead Animal Pickup": 1, 
                     "Parking Enforcement": 1, 
                     "Pothole": 2, 
@@ -1442,11 +1453,12 @@
                 }
             }, 
             "3D06": {
-                "total": 8, 
+                "total": 11, 
                 "types": {
+                    "Curb and Gutter Repair": 1, 
                     "Parking Enforcement": 2, 
-                    "Pothole": 3, 
-                    "Recycling Collection - Missed": 1, 
+                    "Pothole": 4, 
+                    "Recycling Collection - Missed": 2, 
                     "Traffic Signal Maintenance": 1, 
                     "Trash Collection - Missed": 1
                 }
@@ -1459,11 +1471,10 @@
                 }
             }, 
             "3D09": {
-                "total": 11, 
+                "total": 7, 
                 "types": {
-                    "Parking Enforcement": 1, 
+                    "Parking Enforcement": 2, 
                     "Pothole": 1, 
-                    "Sidewalk Repair": 5, 
                     "Snow/Ice Removal": 1, 
                     "Trash Collection - Missed": 1, 
                     "Tree Removal": 2
@@ -1478,16 +1489,17 @@
         }, 
         "total": 44, 
         "types": {
-            "Curb and Gutter Repair": 1, 
+            "Burnt out street light": 1, 
+            "Curb and Gutter Repair": 2, 
             "Dead Animal Pickup": 2, 
             "Illegal Posters": 2, 
             "No signs for bicycles and pedestrians": 1, 
-            "Parking Enforcement": 4, 
-            "Pothole": 8, 
-            "Recycling Collection - Missed": 2, 
+            "Parking Enforcement": 5, 
+            "Pothole": 9, 
+            "Recycling Collection - Missed": 3, 
             "Roadway Marking Installation": 1, 
             "Roadway Marking Modification": 1, 
-            "Sidewalk Repair": 6, 
+            "Sidewalk Repair": 1, 
             "Sign Missing": 1, 
             "Snow/Ice Removal": 3, 
             "Street Repair": 2, 
@@ -1501,10 +1513,10 @@
     "3E": {
         "smds": {
             "3E01": {
-                "total": 2, 
+                "total": 5, 
                 "types": {
-                    "Parking Meter Request": 1, 
-                    "Pothole": 1
+                    "Parking Meter Request": 3, 
+                    "Pothole": 2
                 }
             }, 
             "3E02": {
@@ -1550,14 +1562,14 @@
                 }
             }
         }, 
-        "total": 27, 
+        "total": 30, 
         "types": {
             "Conflicting signs southbound on Wisconsin Avenue at Windom Pl NW": 1, 
             "Curb and Gutter Repair": 1, 
             "Drivers blowing through stop signs": 1, 
             "Multiple street & parking signs in front of Sullivans Toys (4200 Wisconsin NW) defaced with graffiti": 1, 
-            "Parking Meter Request": 2, 
-            "Pothole": 1, 
+            "Parking Meter Request": 4, 
+            "Pothole": 2, 
             "Potholes": 1, 
             "Recycling Collection - Missed": 6, 
             "Roadway Marking Maintenance": 2, 
@@ -1588,10 +1600,10 @@
                 }
             }, 
             "3F03": {
-                "total": 2, 
+                "total": 3, 
                 "types": {
                     "Massive Pothole": 1, 
-                    "Pothole": 1
+                    "Pothole": 2
                 }
             }, 
             "3F04": {
@@ -1602,9 +1614,10 @@
                 }
             }, 
             "3F05": {
-                "total": 1, 
+                "total": 2, 
                 "types": {
-                    "Alley Repair": 1
+                    "Alley Repair": 1, 
+                    "Pothole": 1
                 }
             }, 
             "3F06": {
@@ -1622,12 +1635,12 @@
                 }
             }
         }, 
-        "total": 13, 
+        "total": 15, 
         "types": {
             "Alley Repair": 1, 
             "Construction Forcing People to Walk in Street": 1, 
             "Massive Pothole": 1, 
-            "Pothole": 1, 
+            "Pothole": 3, 
             "Safe Routes to School": 1, 
             "Sidewalk Repair": 2, 
             "Sign Removal": 1, 
@@ -1656,7 +1669,7 @@
                 }
             }, 
             "3G03": {
-                "total": 13, 
+                "total": 12, 
                 "types": {
                     "Insects": 1, 
                     "Pothole": 1, 
@@ -1664,7 +1677,7 @@
                     "Sidewalk Repair": 1, 
                     "Street Repair": 1, 
                     "Trash Collection - Missed": 1, 
-                    "Tree Planting": 6
+                    "Tree Planting": 5
                 }
             }, 
             "3G04": {
@@ -1696,10 +1709,10 @@
                 }
             }, 
             "3G07": {
-                "total": 5, 
+                "total": 6, 
                 "types": {
                     "Missing \"No left turn\" sign": 1, 
-                    "Pothole": 1, 
+                    "Pothole": 2, 
                     "Roadway Marking Installation": 1, 
                     "Sidewalk Repair": 1, 
                     "Tree Planting": 1
@@ -1714,7 +1727,7 @@
             "Insects": 1, 
             "Missing \"No left turn\" sign": 1, 
             "Please repaint faded crosswalk": 1, 
-            "Pothole": 4, 
+            "Pothole": 5, 
             "Recycling Collection - Missed": 2, 
             "Residential Bulk Collection": 2, 
             "Roadway Marking Installation": 1, 
@@ -1724,7 +1737,7 @@
             "Streetlight Repair": 2, 
             "Trash Collection - Missed": 2, 
             "Trash Container - Delivery": 1, 
-            "Tree Planting": 15, 
+            "Tree Planting": 14, 
             "Yard Waste": 1
         }
     }, 
@@ -1772,7 +1785,7 @@
                 }
             }, 
             "4A08": {
-                "total": 12, 
+                "total": 11, 
                 "types": {
                     "Alley Repair": 2, 
                     "No pickup 2nd week in a row.": 1, 
@@ -1780,12 +1793,11 @@
                     "Pothole": 2, 
                     "Residential Bulk Collection": 1, 
                     "Sidewalk Repair": 1, 
-                    "Steel plate cover-up": 1, 
-                    "Traffic Signal Maintenance": 1
+                    "Steel plate cover-up": 1
                 }
             }
         }, 
-        "total": 35, 
+        "total": 34, 
         "types": {
             "Alley Repair": 2, 
             "Hazardous condition 16th St & Nicholson NW": 1, 
@@ -1803,7 +1815,6 @@
             "Speed Study Data & Map": 1, 
             "Steel plate cover-up": 1, 
             "Streetlight Repair": 1, 
-            "Traffic Signal Maintenance": 1, 
             "Tree Pruning": 2, 
             "Utility Repair": 1
         }
@@ -1818,9 +1829,8 @@
                 }
             }, 
             "4B02": {
-                "total": 4, 
+                "total": 3, 
                 "types": {
-                    "Curb and Gutter Repair": 1, 
                     "Sign Replace": 1, 
                     "Traffic Signal Maintenance": 1, 
                     "Traffic light at 5th and Cedar NW": 1
@@ -1890,13 +1900,19 @@
                     "Streetlight Repair": 1, 
                     "Traffic Signal Maintenance": 2
                 }
+            }, 
+            "4B09": {
+                "total": 1, 
+                "types": {
+                    "Pothole": 1
+                }
             }
         }, 
         "total": 49, 
         "types": {
             "Abandoned Vehicle - On Private Property": 1, 
             "Alley Cleaning": 1, 
-            "Curb and Gutter Repair": 2, 
+            "Curb and Gutter Repair": 1, 
             "Dead Animal Pickup": 1, 
             "Graffiti Removal": 1, 
             "How's My Driving - Complaint": 1, 
@@ -1906,7 +1922,7 @@
             "Light not visible and traffic flow unclear": 1, 
             "Out of State Parking Violation (ROSA)": 1, 
             "Parking Meter Request": 1, 
-            "Pothole": 10, 
+            "Pothole": 11, 
             "Safe Routes to School": 1, 
             "Sanitation Enforcement": 1, 
             "Sidewalk & ground sinking ": 1, 
@@ -1969,12 +1985,13 @@
                 }
             }, 
             "4C05": {
-                "total": 7, 
+                "total": 8, 
                 "types": {
                     "Illegal Dumping": 2, 
                     "Sidewalk standing water after rain": 1, 
                     "Streetlight Repair": 2, 
-                    "Trash Collection - Missed": 2
+                    "Trash Collection - Missed": 2, 
+                    "Utility Repair": 1
                 }
             }, 
             "4C06": {
@@ -2038,7 +2055,7 @@
                 }
             }
         }, 
-        "total": 95, 
+        "total": 96, 
         "types": {
             "Abandoned Vehicle - On Public Property": 1, 
             "Alley Cleaning": 3, 
@@ -2070,7 +2087,7 @@
             "Tree Pruning": 1, 
             "Tree Removal": 8, 
             "Tree planting request": 3, 
-            "Utility Repair": 1, 
+            "Utility Repair": 2, 
             "Walmart Related Lane Paint Modifications": 1, 
             "Yard Waste": 1
         }
@@ -2103,10 +2120,9 @@
                 }
             }, 
             "4D05": {
-                "total": 12, 
+                "total": 10, 
                 "types": {
                     "1st St needs repaving": 1, 
-                    "Out of State Parking Violation (ROSA)": 2, 
                     "Pothole": 1, 
                     "Sidewalk Repair": 1, 
                     "Streetlight Repair": 1, 
@@ -2123,7 +2139,7 @@
                 }
             }
         }, 
-        "total": 24, 
+        "total": 22, 
         "types": {
             "1st St needs repaving": 1, 
             "Abandoned Vehicle - On Public Property": 1, 
@@ -2132,7 +2148,6 @@
             "Insects": 1, 
             "No si": 1, 
             "No signs inside the underpass": 1, 
-            "Out of State Parking Violation (ROSA)": 2, 
             "Parking Enforcement": 1, 
             "Pothole": 1, 
             "Rat Abatement": 1, 
@@ -2183,10 +2198,10 @@
                 }
             }, 
             "5A05": {
-                "total": 9, 
+                "total": 10, 
                 "types": {
                     "Graffiti removal request": 1, 
-                    "Pothole": 1, 
+                    "Pothole": 2, 
                     "Sign replacement request": 1, 
                     "Street Repair": 2, 
                     "Streetlight Repair": 1, 
@@ -2202,7 +2217,7 @@
                 }
             }
         }, 
-        "total": 28, 
+        "total": 29, 
         "types": {
             "Abandoned Vehicle - On Private Property": 1, 
             "Alley Repair": 1, 
@@ -2213,7 +2228,7 @@
             "Loose salt and gravel obstructing trail": 1, 
             "Overhanging branch": 1, 
             "Parking Enforcement": 2, 
-            "Pothole": 1, 
+            "Pothole": 2, 
             "Recycling Collection - Missed": 1, 
             "Resurface Alley": 1, 
             "Sidewalk Repair": 1, 
@@ -2342,7 +2357,7 @@
     "5C": {
         "smds": {
             "5C01": {
-                "total": 19, 
+                "total": 20, 
                 "types": {
                     "\"All Way\" Stop Sign Missing": 1, 
                     "Asphalt Cut Has Never Been Filled": 1, 
@@ -2358,6 +2373,7 @@
                     "Street Light Not Working": 1, 
                     "Tree Planting": 1, 
                     "Tree Removal": 2, 
+                    "Utility Repair": 1, 
                     "graffiti on wall": 1, 
                     "street light out": 1, 
                     "street light out on pedestrian island": 1
@@ -2435,7 +2451,7 @@
                 }
             }
         }, 
-        "total": 77, 
+        "total": 78, 
         "types": {
             "\"All Way\" Stop Sign Missing": 1, 
             "Asphalt Cut Has Never Been Filled": 1, 
@@ -2475,6 +2491,7 @@
             "Tree Planting on 30th St NE": 1, 
             "Tree Removal": 2, 
             "UNSAFE Wires hanging from Utility Pole!": 1, 
+            "Utility Repair": 1, 
             "Yard Waste": 1, 
             "graffiti on bridge support under Rhode Island Ave metro": 1, 
             "graffiti on utility box": 1, 
@@ -2520,13 +2537,13 @@
             "5D06": {
                 "total": 7, 
                 "types": {
+                    "Graffiti Removal": 1, 
                     "Huge Pothole - Needs filling asap": 1, 
                     "Illegal Dumping": 1, 
                     "Illegal Posters": 1, 
                     "Roadway Marking Modification": 1, 
                     "Sign New": 1, 
-                    "Street Cleaning": 1, 
-                    "Streetlight Repair": 1
+                    "Street Cleaning": 1
                 }
             }, 
             "5D07": {
@@ -2540,6 +2557,7 @@
         "types": {
             "Abandoned Vehicle - On Private Property": 1, 
             "Alley Cleaning": 2, 
+            "Graffiti Removal": 1, 
             "Huge Pothole - Needs filling asap": 1, 
             "Illegal Dumping": 3, 
             "Illegal Posters": 1, 
@@ -2551,7 +2569,6 @@
             "Sign New": 1, 
             "Street Cleaning": 2, 
             "Street Repair": 1, 
-            "Streetlight Repair": 1, 
             "Swm - Street & Alley Cleaning": 1, 
             "Traffic Signal Maintenance": 1
         }
@@ -2559,9 +2576,9 @@
     "5E": {
         "smds": {
             "5E01": {
-                "total": 21, 
+                "total": 19, 
                 "types": {
-                    "Bicycles": 4, 
+                    "Bicycles": 2, 
                     "FEMS - Smoke Alarm Application": 1, 
                     "Graffiti Removal": 1, 
                     "How's My Driving - Complaint": 1, 
@@ -2578,9 +2595,9 @@
                 }
             }, 
             "5E02": {
-                "total": 27, 
+                "total": 26, 
                 "types": {
-                    "Bicycles": 7, 
+                    "Bicycles": 6, 
                     "Graffiti Removal": 6, 
                     "Parking Enforcement": 3, 
                     "Pothole": 2, 
@@ -2596,12 +2613,12 @@
                 }
             }, 
             "5E03": {
-                "total": 56, 
+                "total": 57, 
                 "types": {
                     "Alley Cleaning": 1, 
                     "Alleylight Repair": 1, 
                     "Bicycle ": 1, 
-                    "Bicycles": 17, 
+                    "Bicycles": 16, 
                     "Bike Lane Covered in Piles of Leaves": 1, 
                     "Excessive graffiti on wall": 1, 
                     "Fallen /broken trail light": 1, 
@@ -2611,6 +2628,8 @@
                     "Graffiti on wall": 2, 
                     "Graffiti removal": 1, 
                     "Illegal Dumping": 3, 
+                    "Illegal Posters": 1, 
+                    "Illegal Posters - cash 4 cars": 1, 
                     "Leaves Blocking R St NE Bike Lane": 1, 
                     "Rat Abatement": 1, 
                     "Resurface Needed": 1, 
@@ -2633,12 +2652,12 @@
                 }
             }, 
             "5E04": {
-                "total": 21, 
+                "total": 22, 
                 "types": {
                     "Alley Cleaning": 1, 
                     "Detour Sign Removal": 1, 
                     "Garbage/Recycling removal": 1, 
-                    "Illegal Dumping": 1, 
+                    "Illegal Dumping": 2, 
                     "Parking Enforcement": 1, 
                     "Pothole": 1, 
                     "RESIDENTIAL PARKING ZONE 5 RESTRICTED": 1, 
@@ -2655,7 +2674,7 @@
                 }
             }, 
             "5E05": {
-                "total": 28, 
+                "total": 29, 
                 "types": {
                     "Alley Cleaning": 1, 
                     "Alleylight Repair": 1, 
@@ -2663,7 +2682,7 @@
                     "Graffiti Removal": 2, 
                     "Graffiti in alley along 80 P St NW ": 1, 
                     "Illegal Dumping": 4, 
-                    "Parking Enforcement": 10, 
+                    "Parking Enforcement": 11, 
                     "Recycling Collection - Missed": 1, 
                     "Sanitation Enforcement": 2, 
                     "Sign Missing": 1, 
@@ -2676,14 +2695,14 @@
                 "total": 38, 
                 "types": {
                     "Abandoned Vehicle - On Private Property": 2, 
-                    "Alley Cleaning": 1, 
+                    "Alley Cleaning": 2, 
                     "Broken Glass in Roadway": 1, 
                     "Crosswalk Button Not Working": 1, 
                     "DMV - Vehicle Registration Issues": 2, 
                     "Drivers Blocking the Box at R & N Capitol": 1, 
                     "Graffiti Removal": 4, 
                     "Graffiti on Utility Box": 1, 
-                    "Illegal Dumping": 2, 
+                    "Illegal Dumping": 1, 
                     "Parking Enforcement": 1, 
                     "Pedestrian Crosswalk Signal Not Working": 1, 
                     "Pedestrian crosswalk button not working": 1, 
@@ -2708,13 +2727,13 @@
                 }
             }, 
             "5E07": {
-                "total": 18, 
+                "total": 19, 
                 "types": {
                     "Abandoned Vehicle - On Public Property": 1, 
                     "Alley Cleaning": 1, 
                     "Cyclists riding recklessly": 1, 
                     "Graffiti Removal": 3, 
-                    "Parking Enforcement": 3, 
+                    "Parking Enforcement": 4, 
                     "Rat Abatement": 1, 
                     "Recycling Collection - Missed": 2, 
                     "Residential Parking Permit Violation": 1, 
@@ -2740,12 +2759,12 @@
                 }
             }, 
             "5E09": {
-                "total": 14, 
+                "total": 15, 
                 "types": {
                     "Broken & Raised Sidewalk - Safety Hazard": 1, 
                     "Curb and Gutter Repair": 2, 
                     "Graffiti Removal": 1, 
-                    "Pothole": 2, 
+                    "Pothole": 3, 
                     "Sanitation Enforcement": 2, 
                     "Trash Collection - Missed": 5, 
                     "Weed Cutting and Litter Pick up": 1
@@ -2763,15 +2782,15 @@
                 }
             }
         }, 
-        "total": 244, 
+        "total": 246, 
         "types": {
             "Abandoned Car": 1, 
             "Abandoned Vehicle - On Private Property": 2, 
             "Abandoned Vehicle - On Public Property": 1, 
-            "Alley Cleaning": 5, 
+            "Alley Cleaning": 6, 
             "Alleylight Repair": 2, 
             "Bicycle ": 1, 
-            "Bicycles": 28, 
+            "Bicycles": 24, 
             "Bike Lane Covered in Piles of Leaves": 1, 
             "Broken & Raised Sidewalk - Safety Hazard": 1, 
             "Broken Glass in Roadway": 1, 
@@ -2796,13 +2815,15 @@
             "How's My Driving - Complaint": 1, 
             "Illegal Dumping": 13, 
             "Illegal Dumping - Glass Plate": 1, 
+            "Illegal Posters": 1, 
+            "Illegal Posters - cash 4 cars": 1, 
             "Leaves Blocking R St NE Bike Lane": 1, 
             "No Parking Sign Needed on Bridge": 1, 
             "No Parking Stripes Missing after Construction": 1, 
-            "Parking Enforcement": 23, 
+            "Parking Enforcement": 25, 
             "Pedestrian Crosswalk Signal Not Working": 1, 
             "Pedestrian crosswalk button not working": 1, 
-            "Pothole": 6, 
+            "Pothole": 7, 
             "RESIDENTIAL PARKING ZONE 5 RESTRICTED": 1, 
             "Rat Abatement": 7, 
             "Recycling Collection - Missed": 7, 
@@ -2870,14 +2891,14 @@
     "6A": {
         "smds": {
             "6A01": {
-                "total": 19, 
+                "total": 20, 
                 "types": {
                     "Abandoned Vehicle - On Public Property": 1, 
                     "Alley Cleaning": 1, 
                     "Dead Animal Pickup": 1, 
                     "Illegal Dumping": 1, 
                     "Illegal Posters": 1, 
-                    "Parking Enforcement": 2, 
+                    "Parking Enforcement": 3, 
                     "REAR 1118 H ST NE IN ATLAS COURT": 1, 
                     "Recycling Collection - Missed": 5, 
                     "Trash Collection - Missed": 1, 
@@ -2940,10 +2961,9 @@
                 }
             }, 
             "6A06": {
-                "total": 9, 
+                "total": 8, 
                 "types": {
                     "Graffiti Removal": 1, 
-                    "Illegal Posters": 1, 
                     "Parking Meter Request": 1, 
                     "Recycling Collection - Missed": 1, 
                     "Sidewalk Graffiti 14th and G NE": 1, 
@@ -2991,11 +3011,11 @@
             "Dead Animal Pickup": 1, 
             "Graffiti Removal": 3, 
             "Illegal Dumping": 10, 
-            "Illegal Posters": 5, 
+            "Illegal Posters": 4, 
             "Missed recycling collection": 1, 
             "New bike path bi-directional signage needs new location": 1, 
             "Other": 1, 
-            "Parking Enforcement": 9, 
+            "Parking Enforcement": 10, 
             "Parking Meter Request": 1, 
             "REAR 1118 H ST NE IN ATLAS COURT": 1, 
             "Rat Abatement": 1, 
@@ -3035,7 +3055,7 @@
                 }
             }, 
             "6B02": {
-                "total": 22, 
+                "total": 21, 
                 "types": {
                     "Alley Repair": 1, 
                     "Curb and Gutter Repair": 2, 
@@ -3046,7 +3066,7 @@
                     "Recycling Collection - Missed": 2, 
                     "Snow/Ice Removal": 1, 
                     "Street Cleaning": 2, 
-                    "Street Repair": 2, 
+                    "Street Repair": 1, 
                     "Utility Repair": 1
                 }
             }, 
@@ -3069,26 +3089,27 @@
                 }
             }, 
             "6B05": {
-                "total": 8, 
+                "total": 9, 
                 "types": {
                     "Alley Repair": 1, 
                     "Parking Enforcement": 4, 
                     "Recycling Collection - Missed": 1, 
-                    "Streetlight Repair": 1, 
+                    "Streetlight Repair": 2, 
                     "Tree Pruning": 1
                 }
             }, 
             "6B06": {
-                "total": 29, 
+                "total": 31, 
                 "types": {
                     "Alley Cleaning": 1, 
                     "Bicycles": 2, 
                     "Curb and Gutter Repair": 2, 
                     "Illegal Dumping": 1, 
                     "Parking Enforcement": 1, 
-                    "Recycling Collection - Missed": 6, 
+                    "Recycling Collection - Missed": 7, 
                     "Recycling Container Repair": 1, 
                     "Resident Parking Permit": 2, 
+                    "Residential Parking Permit Violation": 1, 
                     "Sidewalk Repair": 1, 
                     "Street Repair": 1, 
                     "Streetlight Repair": 1, 
@@ -3140,17 +3161,16 @@
                 }
             }, 
             "6B10": {
-                "total": 4, 
+                "total": 3, 
                 "types": {
-                    "Abandoned Vehicle - On Public Property": 1, 
                     "Sidewalk Repair": 1, 
                     "Tree Removal": 2
                 }
             }
         }, 
-        "total": 124, 
+        "total": 125, 
         "types": {
-            "Abandoned Vehicle - On Public Property": 2, 
+            "Abandoned Vehicle - On Public Property": 1, 
             "Alley Cleaning": 3, 
             "Alley Repair": 3, 
             "Alleylight Repair": 1, 
@@ -3171,18 +3191,19 @@
             "Parking Meter Request": 1, 
             "Pothole": 1, 
             "Rat Abatement": 2, 
-            "Recycling Collection - Missed": 12, 
+            "Recycling Collection - Missed": 13, 
             "Recycling Container Repair": 1, 
             "Resident Parking Permit": 3, 
             "Residential Bulk Collection": 1, 
+            "Residential Parking Permit Violation": 1, 
             "Sidewalk Repair": 8, 
             "Sign New": 2, 
             "Sign Removal": 2, 
             "Sign removal": 1, 
             "Snow/Ice Removal": 6, 
             "Street Cleaning": 2, 
-            "Street Repair": 5, 
-            "Streetlight Repair": 5, 
+            "Street Repair": 4, 
+            "Streetlight Repair": 6, 
             "Trail lights out": 1, 
             "Trash Collection - Missed": 12, 
             "Trash was not picked up in alley way": 1, 
@@ -3227,23 +3248,25 @@
                     "Go Car Violation-Repeat Offenders": 1, 
                     "Legally parking too close to crosswalk": 1, 
                     "Out of State Parking Violation (ROSA)": 3, 
-                    "Parking Enforcement": 1, 
                     "Recycling Collection - Missed": 1, 
+                    "Safe Routes to School": 1, 
                     "Sign Removal": 1, 
                     "Street Repair": 1, 
                     "Traffic Signal Maintenance": 1
                 }
             }, 
             "6C04": {
-                "total": 41, 
+                "total": 40, 
                 "types": {
+                    "Alley Cleaning": 1, 
                     "Alley Repair": 1, 
                     "Illegal Dumping": 2, 
-                    "Parking Enforcement": 25, 
+                    "Parking Enforcement": 22, 
                     "Recycling Collection - Missed": 2, 
                     "Safe Routes to School": 1, 
                     "Sanitation Enforcement": 1, 
                     "Sign Missing": 1, 
+                    "Streetlight Repair": 1, 
                     "Traffic Signal Maintenance": 1, 
                     "Trash Collection - Missed": 5, 
                     "Wayfinder sign missing from existing frame": 1, 
@@ -3272,12 +3295,11 @@
                 }
             }, 
             "6C06": {
-                "total": 62, 
+                "total": 54, 
                 "types": {
                     "Alley Cleaning": 1, 
                     "Alley Repair": 1, 
-                    "Bicycles": 22, 
-                    "Car parked too close to intersection, blocking visibility": 1, 
+                    "Bicycles": 15, 
                     "Fix mirror located at the bottom of the metropolitian branch trail ramp": 1, 
                     "Graffiti Removal": 2, 
                     "Illegal Posters": 2, 
@@ -3302,13 +3324,12 @@
                 }
             }
         }, 
-        "total": 167, 
+        "total": 158, 
         "types": {
-            "Alley Cleaning": 3, 
+            "Alley Cleaning": 4, 
             "Alley Repair": 3, 
             "Alleylight Repair": 2, 
-            "Bicycles": 23, 
-            "Car parked too close to intersection, blocking visibility": 1, 
+            "Bicycles": 16, 
             "Curb and Gutter Repair": 1, 
             "Dead Animal Pickup": 2, 
             "Fix mirror located at the bottom of the metropolitian branch trail ramp": 1, 
@@ -3320,7 +3341,7 @@
             "Illegal Posters": 2, 
             "Legally parking too close to crosswalk": 1, 
             "Out of State Parking Violation (ROSA)": 5, 
-            "Parking Enforcement": 29, 
+            "Parking Enforcement": 25, 
             "Parking Meter Request": 1, 
             "Parking meter": 1, 
             "Pothole": 2, 
@@ -3330,7 +3351,7 @@
             "Recycling Collection - Missed": 13, 
             "Residential Bulk Collection": 7, 
             "Roadway Marking Maintenance": 3, 
-            "Safe Routes to School": 1, 
+            "Safe Routes to School": 2, 
             "Sanitation Enforcement": 2, 
             "Sidewalk Repair": 5, 
             "Sign Missing": 3, 
@@ -3343,7 +3364,7 @@
             "Street Repair": 3, 
             "Street Repair at Intersection of 6th St and L St NE ": 1, 
             "Street repairs at 300 b/o L Street NE": 1, 
-            "Streetlight Repair": 2, 
+            "Streetlight Repair": 3, 
             "Traffic Signal Maintenance": 3, 
             "Trash Collection - Missed": 11, 
             "Utility Repair": 1, 
@@ -3400,9 +3421,9 @@
                 }
             }, 
             "6D07": {
-                "total": 12, 
+                "total": 13, 
                 "types": {
-                    "Bicycles": 2, 
+                    "Bicycles": 1, 
                     "Bridge struck debris needs cleanup": 1, 
                     "Recycling Collection - Missed": 1, 
                     "Resident Parking Permit": 1, 
@@ -3410,15 +3431,16 @@
                     "S capital bridge structure damaged": 1, 
                     "Sidewalk Repair": 1, 
                     "Sign blocked": 1, 
+                    "Streetlight Repair": 2, 
                     "Trash Collection - Missed": 3
                 }
             }
         }, 
-        "total": 40, 
+        "total": 41, 
         "types": {
             "All highway lights dark!": 1, 
             "Alleylight Repair": 2, 
-            "Bicycles": 2, 
+            "Bicycles": 1, 
             "Bridge struck debris needs cleanup": 1, 
             "Decrepit Sidewalk is Hazardous, dirty": 1, 
             "Graffiti Removal": 3, 
@@ -3437,7 +3459,7 @@
             "Sign blocked": 1, 
             "Street Cleaning": 2, 
             "Street Repair": 2, 
-            "Streetlight Repair": 3, 
+            "Streetlight Repair": 5, 
             "Trash Collection - Missed": 3
         }
     }, 
@@ -3474,9 +3496,9 @@
                     "How's My Driving - Complaint": 1, 
                     "Illegal Dumping": 1, 
                     "One way sign laying on grounf": 1, 
-                    "Parking Enforcement": 1, 
+                    "Parking Enforcement": 2, 
                     "Post to neighbors": 2, 
-                    "Sidewalk Repair": 2, 
+                    "Sidewalk Repair": 1, 
                     "Street Repair": 1, 
                     "Street sweeping missed": 1, 
                     "Streetlight Repair": 1, 
@@ -3557,7 +3579,7 @@
             "Missing sign in front of church": 1, 
             "Need Parkmobile signs in 300 block of I St NW": 1, 
             "One way sign laying on grounf": 1, 
-            "Parking Enforcement": 7, 
+            "Parking Enforcement": 8, 
             "Post to neighbors": 2, 
             "Pothole": 8, 
             "Pothole at 1300 b/o 5th Street NW": 1, 
@@ -3569,7 +3591,7 @@
             "Roadway Marking Installation": 1, 
             "Roadway Marking Modification": 2, 
             "Sanitation Enforcement": 1, 
-            "Sidewalk Repair": 8, 
+            "Sidewalk Repair": 7, 
             "Sign Missing": 4, 
             "Sign New": 1, 
             "Sign Removal": 1, 
@@ -3595,10 +3617,9 @@
     "7B": {
         "smds": {
             "7B01": {
-                "total": 5, 
+                "total": 4, 
                 "types": {
                     "Abandoned Vehicle - On Public Property": 1, 
-                    "Alleylight Repair": 1, 
                     "Sign New": 1, 
                     "Street Repair": 1, 
                     "missing barrier": 1
@@ -3613,15 +3634,17 @@
             "7B03": {
                 "total": 4, 
                 "types": {
+                    "Pothole": 1, 
                     "Sign New": 1, 
-                    "Street Repair": 2, 
+                    "Street Repair": 1, 
                     "Streetlight Repair": 1
                 }
             }, 
             "7B04": {
-                "total": 3, 
+                "total": 4, 
                 "types": {
                     "Illegal Dumping": 1, 
+                    "Pothole": 1, 
                     "Utility Repair": 1, 
                     "Vacant Lot": 1
                 }
@@ -3636,12 +3659,11 @@
         "total": 14, 
         "types": {
             "Abandoned Vehicle - On Public Property": 1, 
-            "Alleylight Repair": 1, 
             "Illegal Dumping": 1, 
-            "Pothole": 1, 
+            "Pothole": 3, 
             "Sign New": 2, 
             "Snow/Ice Removal": 1, 
-            "Street Repair": 3, 
+            "Street Repair": 2, 
             "Streetlight Repair": 1, 
             "Utility Repair": 1, 
             "Vacant Lot": 1, 
@@ -3651,9 +3673,8 @@
     "7C": {
         "smds": {
             "7C01": {
-                "total": 3, 
+                "total": 2, 
                 "types": {
-                    "Alley Cleaning": 1, 
                     "Excessive speed. Drivers refuse to stop for pedestrians in the crosswalks.": 1, 
                     "Sidewalk Repair": 1
                 }
@@ -3708,9 +3729,9 @@
                 }
             }
         }, 
-        "total": 24, 
+        "total": 23, 
         "types": {
-            "Alley Cleaning": 2, 
+            "Alley Cleaning": 1, 
             "Alleylight Repair": 1, 
             "Broken light on top of wooden pole": 2, 
             "Construction Debris left on ground after dumpster removed": 1, 
@@ -3763,14 +3784,13 @@
                 }
             }, 
             "7D06": {
-                "total": 8, 
+                "total": 7, 
                 "types": {
                     "Alley Repair": 1, 
                     "Bins and Blankets": 1, 
                     "Broken Glass at Bus Shelter": 1, 
                     "Grass has completely overgrown the sidewalk": 1, 
                     "Illegal Dumping": 1, 
-                    "Insects": 1, 
                     "Sidewalk Repair": 1, 
                     "Streetlight Repair": 1
                 }
@@ -3788,7 +3808,7 @@
                 }
             }
         }, 
-        "total": 31, 
+        "total": 30, 
         "types": {
             "Abandoned Vehicle - On Private Property": 1, 
             "Alley Repair": 1, 
@@ -3800,7 +3820,6 @@
             "Graffiti Removal": 1, 
             "Grass has completely overgrown the sidewalk": 1, 
             "Illegal Dumping": 3, 
-            "Insects": 1, 
             "Kenilorth Ave towards 295 on ramp is constantly filled with debris": 1, 
             "Many many lights out on trail": 1, 
             "Missing Stop Sign at Anacosta NE and": 1, 
@@ -3860,13 +3879,14 @@
     "7F": {
         "smds": {
             "7F01": {
-                "total": 5, 
+                "total": 6, 
                 "types": {
                     "Graffiti Removal": 1, 
                     "Illegal Dumping": 1, 
                     "Pothole": 1, 
                     "Recycling Collection - Missed": 1, 
-                    "Sidewalk Bulking Up (Address approx. 4015 Grant Street NE)": 1
+                    "Sidewalk Bulking Up (Address approx. 4015 Grant Street NE)": 1, 
+                    "Streetlight Repair": 1
                 }
             }, 
             "7F06": {
@@ -3887,7 +3907,7 @@
                 }
             }
         }, 
-        "total": 13, 
+        "total": 14, 
         "types": {
             "Alley Cleaning": 1, 
             "Bicycles": 1, 
@@ -3898,15 +3918,14 @@
             "Recycling Collection - Missed": 1, 
             "Sidewalk Bulking Up (Address approx. 4015 Grant Street NE)": 1, 
             "Sign New": 1, 
-            "Streetlight Repair": 1
+            "Streetlight Repair": 2
         }
     }, 
     "8A": {
         "smds": {
             "8A01": {
-                "total": 7, 
+                "total": 6, 
                 "types": {
-                    "Abandoned Vehicle - On Private Property": 1, 
                     "Alley Repair": 1, 
                     "Graffiti Removal": 1, 
                     "Illegal Dumping": 1, 
@@ -3936,9 +3955,8 @@
                 }
             }, 
             "8A06": {
-                "total": 6, 
+                "total": 5, 
                 "types": {
-                    "Bicycles": 1, 
                     "Curb and Gutter Repair": 1, 
                     "Directional signage down": 1, 
                     "Graffiti Removal": 1, 
@@ -3947,11 +3965,9 @@
                 }
             }
         }, 
-        "total": 19, 
+        "total": 17, 
         "types": {
-            "Abandoned Vehicle - On Private Property": 1, 
             "Alley Repair": 1, 
-            "Bicycles": 1, 
             "Curb and Gutter Repair": 1, 
             "Dead Animal Pickup": 1, 
             "Directional signage down": 1, 
@@ -3993,6 +4009,12 @@
                     "Sign Replace": 1
                 }
             }, 
+            "8B05": {
+                "total": 2, 
+                "types": {
+                    "Rat Abatement": 2
+                }
+            }, 
             "8B07": {
                 "total": 1, 
                 "types": {
@@ -4000,7 +4022,7 @@
                 }
             }
         }, 
-        "total": 21, 
+        "total": 23, 
         "types": {
             "Alley Repair": 1, 
             "Bicycles": 8, 
@@ -4009,6 +4031,7 @@
             "Massive Sinkhole on Suitland Parkway Trail": 1, 
             "Out of State Parking Violation (ROSA)": 1, 
             "Pothole": 2, 
+            "Rat Abatement": 2, 
             "Sanitation Enforcement": 3, 
             "Sidewalk Repair": 2, 
             "Sign Replace": 1
@@ -4017,9 +4040,10 @@
     "8C": {
         "smds": {
             "8C01": {
-                "total": 1, 
+                "total": 2, 
                 "types": {
-                    "Bicycles": 1
+                    "Bicycles": 1, 
+                    "Pothole": 1
                 }
             }, 
             "8C02": {
@@ -4042,12 +4066,6 @@
                     "Traffic Signal Maintenance": 1
                 }
             }, 
-            "8C06": {
-                "total": 1, 
-                "types": {
-                    "Bicycles": 1
-                }
-            }, 
             "8C07": {
                 "total": 1, 
                 "types": {
@@ -4057,9 +4075,9 @@
         }, 
         "total": 8, 
         "types": {
-            "Bicycles": 2, 
+            "Bicycles": 1, 
             "How's My Driving - Complaint": 1, 
-            "Pothole": 2, 
+            "Pothole": 3, 
             "Street Sweeping": 1, 
             "Streetlight Repair": 1, 
             "Traffic Signal Maintenance": 1
@@ -4079,11 +4097,18 @@
                     "Light Pole Repair": 1, 
                     "Streetlight Repair": 1
                 }
+            }, 
+            "8D07": {
+                "total": 1, 
+                "types": {
+                    "Pothole": 1
+                }
             }
         }, 
-        "total": 3, 
+        "total": 4, 
         "types": {
             "Light Pole Repair": 1, 
+            "Pothole": 1, 
             "Residential Bulk Collection": 1, 
             "Streetlight Repair": 1
         }
