@@ -95,7 +95,7 @@ for page in pagenums:
 			room = room.find('div','field-item').text
 		except AttributeError:
 			room = None
-                print link
+                #print link # any output gets emailed to Josh whenever this script is run by cron, so let's not have output
                 details = {'address':address,'building':building,'room':room,'link':link}
 		try:
 			archive[anc]['meetings'][date] = details

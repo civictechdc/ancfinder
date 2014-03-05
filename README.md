@@ -28,7 +28,7 @@ If you're using a virtual environment, set that up:
 Then, install dependencies and set up the site database:
 
 	sudo apt-get install libxslt1-dev # Not necessary on OSX
-	sudo pip install -r requirements.txt
+	pip install -r requirements.txt
 	./manage.py syncdb
 	
 If it seems like you're missing stuff, also try
@@ -90,10 +90,8 @@ All of the scripts should be run occasionally to make sure the data shown on the
 Deployment
 ----------
 
-We're currently deploying to dotCloud.
+When deploying the code to the live server, remember to update the static files:
 
-	sudo pip install dotcloud
-	dotcloud setup
-	dotcloud connect ancbrigade
-	dotcloud push # push changes to the live site
+	./manage.py collectstatic
+
 	

@@ -1,2 +1,2 @@
-MAILTO=tauberer@govtrack.us
-14 3 * * * { cd /home/dotcloud/current; ../env/bin/python update_meeting_times.py; }
+MAILTO=tauberer+anc@govtrack.us
+14 3 * * * { cd /home/ancbrigade/web; .env/bin/python update_meeting_times.py; }

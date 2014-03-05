@@ -5,16 +5,20 @@ sys.path.append("lib")
 
 import os.path
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
-
 RECAPTCHA_PUBLIC_KEY = '6LeYAO8SAAAAALEZqtnk4qm7hoh8Iwv_h4lZ3lSe'
 RECAPTCHA_PRIVATE_KEY = '6LeYAO8SAAAAAICslEpPIpmMmkFiuNs_hrAzSRxx'
 
-if not os.path.exists('/home/dotcloud/environment.json'):
+environment_file = '/home/ancbrigade/environment.json'
+
+if not os.path.exists(environment_file):
 	# Settings for local (not public) deployments.
-	
-	# Make this unique, and don't share it with anybody.
+
+	print "Running a local deployment..."
+
+	DEBUG = True
+	TEMPLATE_DEBUG = DEBUG
+
+	# For a simple setup when debugging, we'll hard-code these values.
 	SECRET_KEY = '7^^6oohvb%oc3$&amp;4z^#vplkp(!@dy24nm$d6a2g9^w#imqpme8'
 
 	DATABASES = {
@@ -39,24 +43,23 @@ else:
 	
 	DEBUG = False
 	TEMPLATE_DEBUG = False
-	import json
-	with open('/home/dotcloud/environment.json') as f:
-	  env = json.load(f)
+
+	import yaml
+	with open(environment_file) as f:
+	  env = yaml.load(f)
 	SECRET_KEY = env['DJANGO_SECRET_KEY']
 	DATABASES = {
 		'default': {
 			'ENGINE': 'django.db.backends.postgresql_psycopg2',
-			'NAME': 'template1',
-			'USER': env['DOTCLOUD_DB_SQL_LOGIN'],
-			'PASSWORD': env['DOTCLOUD_DB_SQL_PASSWORD'],
-			'HOST': env['DOTCLOUD_DB_SQL_HOST'],
-			'PORT': int(env['DOTCLOUD_DB_SQL_PORT']),
+            'HOST': env['DATABASE_HOST'],
+            'PORT': int(env['DATABASE_PORT']),
+			'NAME': env['DATABASE_NAME'],
+			'USER': env['DATABASE_USERNAME'],
+			'PASSWORD': env['DATABASE_PASSWORD'],
 		}
 	}
 
-	ADMINS = (
-		(env['DOTCLOUD_USERNAME'], env['DOTCLOUD_EMAIL']),
-	)
+	ADMINS = env['ADMINS']
 	MANAGERS = ADMINS
 
 	EMAIL_HOST = env['SMTP_HOST']
@@ -64,7 +67,7 @@ else:
 	EMAIL_HOST_PASSWORD = env['SMTP_PASSWORD']
 	EMAIL_USE_TLS = True
 
-	ALLOWED_HOSTS = ["www.ancbrigade.com", "www.ancfinder.com", "www.ancbrigade.net", "www.ancbrigade.org", "www.ancfinder.org"]
+	ALLOWED_HOSTS = ["*"] # anything unexpected will be filtered out by the http server
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -102,7 +105,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = '/home/dotcloud/volatile/static/'
+STATIC_ROOT = '/home/ancbrigade/volatile/static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
