@@ -75,9 +75,16 @@ class AncInfoTemplateView(TemplateView):
 				next_meeting = m # this is the first meeting in the future (i.e. the next meeting)
 				break
                 if next_meeting != None:
-                    next_meeting_link = meeting_data[anc]["meetings"][next_meeting.strftime("%Y-%m-%dT%H:%M:%S")]["link"]
+                    # Sometimes the meeting disappears from the calendar, which causes problems
+                    try:
+                        next_meeting_link = meeting_data[anc]["meetings"][next_meeting.strftime("%Y-%m-%dT%H:%M:%S")]["link"]
+                        link_missing = False
+                    except KeyError:
+                        next_meeting_link = ""
+                        link_missing = True
                 else:
                     next_meeting_link = None
+                    link_missing = False
 		i = all_meetings.index(next_meeting) if next_meeting is not None else len(all_meetings)
 		previous_meetings = all_meetings[i-2:i]
 
@@ -146,6 +153,7 @@ class AncInfoTemplateView(TemplateView):
 			'census_stats': census_stats,
 			'next_meeting': next_meeting,
                         'next_meeting_link': next_meeting_link,
+                        'link_missing': link_missing,
 		})
 
 #Using Class Based Views(CBV) to implement our logic
