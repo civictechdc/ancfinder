@@ -45,11 +45,11 @@
 			<!--If search successful, details below-->
 			<div id="info" style="display: none; margin-top: 1em;">
 				<div>
-					<p>You live in <b>ANC <span class="anc-name"> </span></b>, single member district <b><span class="smd-name"> </span></b>.</p>
+					<p>You live in <b>ANC <span class="anc-name"> </span></b>, single member district <b><span class="smd-name"> </span></b></p>
 					
-					<p>Your commissioner is: <b><span class="smd-commissioner"></span></b>.
+					<p>Your commissioner is: <b><span class="smd-commissioner"></span></b>
 					
-					<p><a id="anc-link">Find out more about this ANC.</a></p>
+					<p><a id="anc-link">Find out more about this ANC</a></p>
 				
 					</div>
 			</div>
@@ -333,6 +333,7 @@
 								if (smd["nickname"]) name += smd["nickname"] + " ";
 								if (smd["middle_name"]) name += smd["middle_name"] + " ";
 								name += smd["last_name"];
+                                                                if (smd["suffix"]) name += " " + smd["suffix"];
 								$(".smd-commissioner").text(name);
 									
 								$('#map_col').show();
