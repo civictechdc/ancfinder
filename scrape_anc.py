@@ -31,6 +31,8 @@ for anc in ANC:
         else:
             data[smd]['suffix'] = ''
             data[smd]['last_name'] = name[len(name) - 1]
+        if data[smd]['last_name'] in ['Vacant', 'vacant']:
+            data[smd]['last_name'] = ''
         for word in name[1:len(name) - 1]:    #nickname or Middle Name?
             if word[0] == '"' or word[0] == '(':
                 data[smd]['nickname'] = word
