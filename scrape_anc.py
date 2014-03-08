@@ -20,35 +20,36 @@ for anc in ANC:
         td = row.find_all('td', recursive=False)
         smd = td[0].text.strip()
         data[smd] = {}
+        data[smd]['official_name'] = td[1].text.strip()
         name = td[1].text.strip().split()
-        data[smd]['First_Name'] = name[0]
-        data[smd]['Middle_Name'] = ''
-        data[smd]['Nickname'] = ''
+        data[smd]['first_name'] = name[0]
+        data[smd]['middle_name'] = ''
+        data[smd]['nickname'] = ''
         if name[len(name) - 1] in ['Jr', 'Jr.', 'Sr.', 'Sr', 'I', 'II', 'III']:
-            data[smd]['Suffix'] = name[len(name) - 1]
-            data[smd]['Last_Name'] = name[len(name) - 2]
+            data[smd]['suffix'] = name[len(name) - 1]
+            data[smd]['last_name'] = name[len(name) - 2]
         else:
-            data[smd]['Suffix'] = ''
-            data[smd]['Last_Name'] = name[len(name) - 1]
-        for word in name[1:len(name) - 1]:    #Nickname or Middle Name?
+            data[smd]['suffix'] = ''
+            data[smd]['last_name'] = name[len(name) - 1]
+        for word in name[1:len(name) - 1]:    #nickname or Middle Name?
             if word[0] == '"' or word[0] == '(':
-                data[smd]['Nickname'] = word
+                data[smd]['nickname'] = word
             else: 
-                if word != data[smd]['Last_Name']:
-                    data[smd]['Middle_Name'] = word
-            if data[smd]['Suffix'] in ['Jr', 'Sr']:
-                data[smd]['Suffix'] += '.'
-            if (data[smd]['Suffix'] in ['Jr.', 'Sr.', 'I', 'II', 'III']) & (data[smd]['Last_Name'][len(data[smd]['Last_Name']) - 1] != ','):
-                data[smd]['Last_Name'] += ','
-        data[smd]['Address'] = re.sub("\xa0", " ", re.sub("\s*\n\s*", "; ", td[2].text.strip()))
+                if word != data[smd]['last_name']:
+                    data[smd]['middle_name'] = word
+            if data[smd]['suffix'] in ['Jr', 'Sr']:
+                data[smd]['suffix'] += '.'
+            if (data[smd]['suffix'] in ['Jr.', 'Sr.', 'I', 'II', 'III']) & (data[smd]['last_name'][len(data[smd]['last_name']) - 1] != ','):
+                data[smd]['last_name'] += ','
+        data[smd]['address'] = re.sub("\xa0", " ", re.sub("\s*\n\s*", "; ", td[2].text.strip()))
         phone = td[3].text.strip()
         phone = phone.replace("(202) ", "202-")
         if len(phone) == 8:
             phone = '202-' + phone
         elif len(phone) < 8:
             phone = ''
-        data[smd]['Phone'] = phone
-        data[smd]['Email'] = td[4].a.text
+        data[smd]['phone'] = phone
+        data[smd]['email'] = td[4].a.text
         print data[smd]
 
 with open('data/scraped-anc.json', 'w') as output:
