@@ -39,7 +39,7 @@ if not os.path.exists(environment_file):
 	ALLOWED_HOSTS = ["*"]
 
 else:
-	# Settings for a public dotcloud deployment.
+	# Settings for a public deployment.
 	
 	DEBUG = False
 	TEMPLATE_DEBUG = False
@@ -68,6 +68,8 @@ else:
 	EMAIL_USE_TLS = True
 
 	ALLOWED_HOSTS = ["*"] # anything unexpected will be filtered out by the http server
+
+	OPENID_TEMP_FOLDER = "/tmp/openid-ancbrigade"
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
