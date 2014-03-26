@@ -171,11 +171,6 @@ class  ShareTemplateView(TemplateView):
 class AuthorityTemplateView(TemplateView):
 	'''This CBV generates the authority page. '''
 	template_name = 'ancbrigadesite/authority.html'
-	
-	
-class  ElectionsTemplateView(TemplateView):
-	'''This CBV generates the elections page. '''
-	template_name =  'ancbrigadesite/elections.html'
 
 
 class BigMapTemplateView(TemplateView):

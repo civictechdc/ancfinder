@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from .views import (AboutTemplateView, ShareTemplateView, AuthorityTemplateView, ElectionsTemplateView, 
+from .views import (AboutTemplateView, ShareTemplateView, AuthorityTemplateView, 
 				LegalTemplateView, BigMapTemplateView, HomeTemplateView, DocumentTemplateView, AncInfoTemplateView)
 
 admin.autodiscover()
@@ -14,7 +14,6 @@ urlpatterns = patterns('',
 	url(r'^about$', AboutTemplateView.as_view(), name='ancbrigadesite_about',),
 	url(r'^share$', ShareTemplateView.as_view(), name='ancbrigadesite_share',),
 	url(r'^authority$', AuthorityTemplateView.as_view(), name='ancbrigadesite_authority',),
-	url(r'^elections$', ElectionsTemplateView.as_view(), name='ancbrigadesite_elections',),
 	url(r'^map$', BigMapTemplateView.as_view(), name='ancbrigadesite_bigmap',),
 	url(r'^legal$', LegalTemplateView.as_view(), name='ancbrigadesite_legal',),
 	url(r'^(?P<anc>[0-9][A-Za-z])$', AncInfoTemplateView.as_view(), name = 'ancbrigadesite_anc_info'),
