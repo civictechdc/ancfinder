@@ -9,7 +9,7 @@ from models import Document, anc_data_as_json, anc_data
 
 anc_data_as_json = open("ancbrigadesite/static/ancs.json").read()
 anc_data = json.loads(anc_data_as_json, object_pairs_hook=collections.OrderedDict)
-meeting_data = json.loads(open("ancbrigadesite/static/meetings.json").read())
+meeting_data = json.loads(open("data/meetings.json").read())
 
 # assemble census data on first load
 def make_anc_hex_color(anc):

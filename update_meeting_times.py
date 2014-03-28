@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import urllib2, lxml, csv, json, datetime, os, errno, re
+import urllib2, lxml, csv, json, datetime, os, errno, re, os.path
 
 # URLs for different pages look like this:
 # http://anc.dc.gov/events?field_date_time_rep_value[value]=2013-12-25&field_date_time_rep_value2[value]&keys=& ... 
@@ -36,10 +36,9 @@ import urllib2, lxml, csv, json, datetime, os, errno, re
 # <span class="field-content">	-->  name of council: 'ANC 5B Monthly Meeting'
 #------------------------------------------------------------------------------
 
-file_name = 'ancbrigadesite/static/meetings.json'
+file_name = 'data/meetings.json'
 
-# Ensure JSON file exists and then open
-
+# Ensure JSON file output directory exists and then open.
 def mkdir_p(path):
 	try:
 		os.makedirs(path)
@@ -48,12 +47,11 @@ def mkdir_p(path):
 			pass
 		else:
 			raise
-
-mkdir_p(file_name)
+mkdir_p(os.path.basename(file_name))
 
 try:
 	archive = json.loads(open(file_name).read())
-except ValueError:
+except IOError:
 	archive = {}
 
 # Open up main page and figure out how many pages there are so we can loop through them all
@@ -105,9 +103,5 @@ for page in pagenums:
 
 # Save the JSON file
 with open(file_name, 'w') as output:
-	json.dump(archive, output, sort_keys=True, indent=4)
-
-with open(file_name + 'p', 'w') as output:
-	output.write('anc_meetings = \n')
 	json.dump(archive, output, sort_keys=True, indent=4)
 
