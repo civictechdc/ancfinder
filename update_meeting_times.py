@@ -1,15 +1,11 @@
 from bs4 import BeautifulSoup
-import urllib2, lxml, csv, json, datetime, os, errno, re, os.path
+import dateutil.parser
+import sys, urllib2, lxml, csv, json, datetime, os, errno, re, os.path, urlparse
 
-# URLs for different pages look like this:
-# http://anc.dc.gov/events?field_date_time_rep_value[value]=2013-12-25&field_date_time_rep_value2[value]&keys=& ... 
-# type=All&field_topic_tid=All&field_audience_tid=All&field_ward_tid=All&field_police_service_area_tid=All&sort_ ... 
-# by=field_date_time_rep_value&sort_order=ASC&page=1
-#-----------------------------------------------------------------------------
-# Notice the "page=1" at the end. That's page 2. The real page one has no "page" attribute in the URL, but has everything else 
-# Link giving the last page number:
-#				<a title="Go to last page">
-#-----------------------------------------------------------------------------
+# Get ANC upcoming meetings from http://anc.dc.gov/events by reading the page
+# for meeting details URLs, and following the "next >" link to page through
+# the paginated results.
+#
 # A row in the table looks like this:
 #
 # <div class="views-row views-row-1 views-row-odd views-row-first calendar-event-row">
@@ -54,52 +50,77 @@ try:
 except IOError:
 	archive = {}
 
-# Open up main page and figure out how many pages there are so we can loop through them all
+# Remove any future meetings (and re-add them below) in case they've been changed.
+for ancmtgs1 in archive.values():
+	for mtg in list(ancmtgs1.get("meetings", {})):
+		if dateutil.parser.parse(mtg) > datetime.datetime.now():
+			del ancmtgs1["meetings"][mtg]
 
-presoup = BeautifulSoup(urllib2.urlopen('http://anc.dc.gov/events'))
+# Loop through the paginated list of upcoming ANC events.
 
-lastpage = presoup.find_all('a',{'title':'Go to last page'})
-lastnum = lastpage[0]['href']
-lastnum = int(lastnum[len(lastnum)-1])
+url = 'http://anc.dc.gov/events'
+cached_meeting_data = { }
+meeting_links = []
+while True:
+	if sys.stdout.isatty(): print url, "..." # don't print when running from a cron job
 
-pagenums = ['']; i = 1
-while i <= lastnum:
-	pagenums.append('&page='+(str(i)))
-	i+=1
-
-								
-# Now loop through the url's for each page
-for page in pagenums:
-	soup = BeautifulSoup(urllib2.urlopen('http://anc.dc.gov/events?field_date_time_rep_value[value]=2013-12-25&field_date_time_rep_value2[value]&keys=&type=All&field_topic_tid=All&field_audience_tid=All&field_ward_tid=All&field_police_service_area_tid=All&sort_by=field_date_time_rep_value&sort_order=ASC'+page))
-  
+	soup = BeautifulSoup(urllib2.urlopen(url))
 	meetings = soup.find_all('div','views-row')
-	for meeting in meetings:
-		meet = BeautifulSoup(str(meeting))
-		date = datetime.datetime.strptime(meet.find('span','date-display-single').text, '%m/%d/%Y - %I:%M%p').isoformat()
+	last_meeting_date = None
+	for meet in meetings:
+		# get the date, ANC, and link to more information
+		date = datetime.datetime.strptime(meet.find('span','date-display-single').text, '%m/%d/%Y - %I:%M%p')
 		anc = meet.find('span','field-content').text[4:6]
-		link = meet.find('a').get('href')
-		if link[0] == '/':
-			link = 'http://anc.dc.gov' + link
-		link_text = BeautifulSoup(urllib2.urlopen(link))
-		address = link_text.find('div','field-name-field-location')
-		address = address.find('div','field-item').text
+		link = urlparse.urljoin(url, meet.find('a').get('href'))
+
+		# scrape the individual meeting page for more details. the same
+		# target page is used for each meeting time, so we can cache it
+		# to be a little faster.
+		if link not in cached_meeting_data:
+			if sys.stdout.isatty(): print "\t", link, "..."
+			meeting_info = urllib2.urlopen(link).read()
+			cached_meeting_data[link] = meeting_info
+		else:
+			meeting_info = cached_meeting_data[link]
+		meeting_info = BeautifulSoup(meeting_info)
+
 		try:
-			building = link_text.find('div','field-name-field-building-name')
-			building = building.find('div','field-item').text
+			address = meeting_info.find('div', 'field-name-field-location').find('div','field-item').text
+		except AttributeError:
+			address = None
+
+		try:
+			building = meeting_info.find('div','field-name-field-building-name').find('div','field-item').text
 		except AttributeError:
 			building = None
+
 		try:
-			room = link_text.find('div','field-name-field-suite-number')
-			room = room.find('div','field-item').text
+			room = meeting_info.find('div','field-name-field-suite-number').find('div','field-item').text
 		except AttributeError:
 			room = None
-                #print link # any output gets emailed to Josh whenever this script is run by cron, so let's not have output
-                details = {'address':address,'building':building,'room':room,'link':link}
-		try:
-			archive[anc]['meetings'][date] = details
-		except KeyError:
-			meetings = {'meetings': {}}
-			archive[anc] = meetings
+
+		if anc not in archive: archive[anc] = { "meetings": { } }
+		archive[anc]['meetings'][date.isoformat()] = {
+			'address': address,
+			'building': building,
+			'room': room,
+			'link': link
+		}
+
+		last_meeting_date = date
+
+	# Stop if we are waaaay in the future, since the events page goes years ahead, which
+	# is not actually very helpful.
+	if last_meeting_date and last_meeting_date > datetime.datetime.now()+datetime.timedelta(days=6*30.5):
+		break
+
+	# Go onto the next page, if there is a next page.
+	nextpage = soup.find_all('a',{'title':'Go to next page'})
+	if not nextpage:
+		break
+
+	# turn a relative URL into an absolute URL for the next iteration
+	url = urlparse.urljoin(url, nextpage[0]['href'])
 
 # Save the JSON file
 with open(file_name, 'w') as output:
