@@ -7,6 +7,12 @@
 <style>
 h2 { font-size: 22px; }
 
+@media (max-width: 767px) {
+    .container {
+        padding: 5px;
+    }
+}
+
 #recent_docs {
     background-color: #ACF;
     padding: 4px 0;
@@ -225,7 +231,13 @@ h2 { font-size: 22px; }
                 streetViewControl: false,
                 styles: [ { "featureType": "poi.park", "elementType": "geometry.fill", "stylers": [ { "visibility": "off" } ] } ]
                 };
+
             map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+            // prevent the map from responding to mouse events on ultra small screens
+            // since it's 100% wide and would prevent scrolling past the map
+            if ($(window).width() < 768)
+                map.setOptions({draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true});
 
             map.fitBounds(bounds);
 
