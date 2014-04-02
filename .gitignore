@@ -1,6 +1,7 @@
 update_anc_database_creds.py
 ancbrigadesite/database.sqlite
 data
+static
 
 .DS_Store
 *~
