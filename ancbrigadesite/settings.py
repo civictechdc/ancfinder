@@ -8,7 +8,7 @@ import os.path
 RECAPTCHA_PUBLIC_KEY = '6LeYAO8SAAAAALEZqtnk4qm7hoh8Iwv_h4lZ3lSe'
 RECAPTCHA_PRIVATE_KEY = '6LeYAO8SAAAAAICslEpPIpmMmkFiuNs_hrAzSRxx'
 
-environment_file = '/home/ancbrigade/environment.json'
+environment_file = '/home/ancbrigade/environment.yaml'
 
 if not os.path.exists(environment_file):
 	# Settings for local (not public) deployments.
