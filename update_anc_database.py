@@ -1,7 +1,7 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 import sys, os.path, csv, json, re, subprocess
-import urllib.request, urllib.parse, urllib.error, io
+import urllib, io
 import getpass
 from collections import OrderedDict
 
@@ -22,8 +22,8 @@ class GoogleDocsClient(object):
             "accountType": "HOSTED_OR_GOOGLE",
             "source": source
         }
-        req = urllib.request.Request(url, urllib.parse.urlencode(params).encode("utf8"))
-        return re.findall(br"Auth=(.*)", urllib.request.urlopen(req).read())[0]
+        resp = urllib.urlopen(url, urllib.urlencode(params).encode("utf8"))
+        return re.findall(br"Auth=(.*)", resp.read())[0]
     
     def get_auth_token(self):
         source = type(self).__name__
@@ -35,12 +35,12 @@ class GoogleDocsClient(object):
             b"Authorization": b"GoogleLogin auth=" + self.get_auth_token(),
             b"GData-Version": b"3.0"
         }
-        req = urllib.request.Request(url_format % (spreadsheet, format, gid), headers=headers)
-        return io.TextIOWrapper(urllib.request.urlopen(req), encoding="utf8")
+        resp = urllib.urlopen(url_format % (spreadsheet, format, gid), headers=headers)
+        return io.TextIOWrapper(resp, encoding="utf8")
 
 def urlopen(url):
     # Opens a URL and decodes its content assuming UTF-8; returns a stream.
-    data = urllib.request.urlopen(url)
+    data = urllib.urlopen(url)
     return io.TextIOWrapper(data, encoding="utf8")
 
 def csv_file_to_dict(csv_file):
@@ -474,5 +474,5 @@ if __name__ == "__main__":
     
     # for new Django-backed site
     with open(anc_json_filename, "w") as f:
-                f.write(output)
+                f.write(output.encode('utf-8'))
                 
