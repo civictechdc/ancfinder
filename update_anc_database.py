@@ -5,6 +5,8 @@ import urllib.request, urllib.parse, urllib.error, io
 import getpass
 from collections import OrderedDict
 
+anc_json_filename = os.environ.get('STATIC_ROOT', 'static') + '/ancs.json'
+
 # from cspickert, https://gist.github.com/cspickert/1650271
 class GoogleDocsClient(object):
     def __init__(self, email, password):
@@ -442,7 +444,7 @@ if __name__ == "__main__":
         output = get_base_data()
     else:
         # Update file in place.
-        output = json.load(open("ancbrigadesite/static/ancs.json"), object_pairs_hook=OrderedDict)
+        output = json.load(open(anc_json_filename), object_pairs_hook=OrderedDict)
 
     if "--update" in sys.argv:
         subprocess.call(['python', 'update_abra.py', '&&', 'python', 'update_311.py'])
@@ -470,12 +472,7 @@ if __name__ == "__main__":
     # Output.
     output = json.dumps(output, indent=True, ensure_ascii=False, sort_keys=("--reset" in sys.argv))
     
-    ## for old static file site
-    #with open("www/ancs.jsonp", "w") as f:
-    #            f.write("anc_data = ")
-    #            f.write(output)
-
     # for new Django-backed site
-    with open("ancbrigadesite/static/ancs.json", "w") as f:
+    with open(anc_json_filename, "w") as f:
                 f.write(output)
                 

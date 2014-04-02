@@ -1,6 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
+from django.conf import settings
 
 import base64, collections
 
@@ -9,7 +10,7 @@ try:
 except ImportError:
 	import simplejson as json
 
-anc_data_as_json = open("ancbrigadesite/static/ancs.json").read()
+anc_data_as_json = open(settings.STATIC_ROOT + "/ancs.json").read()
 anc_data = json.loads(anc_data_as_json, object_pairs_hook=collections.OrderedDict)
 anc_list = []
 for ward in anc_data.values():

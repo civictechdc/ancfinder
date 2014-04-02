@@ -32,7 +32,7 @@ import sys, urllib2, lxml, csv, json, datetime, os, errno, re, os.path, urlparse
 # <span class="field-content">	-->  name of council: 'ANC 5B Monthly Meeting'
 #------------------------------------------------------------------------------
 
-file_name = 'data/meetings.json'
+file_name = os.environ.get('STATIC_ROOT', 'static') + '/meetings.json'
 
 # Ensure JSON file output directory exists and then open.
 def mkdir_p(path):

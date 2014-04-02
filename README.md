@@ -30,6 +30,12 @@ Then, install dependencies and set up the site database:
 	sudo apt-get install libxslt1-dev # Not necessary on OSX
 	pip install -r requirements.txt
 	./manage.py syncdb
+
+Get our latest data files:
+
+	mkdir static
+	wget -O static/ancs.json http://ancfinder.org/static/ancs.json
+	wget -O static/meetings.json http://ancfinder.org/static/meetings.json
 	
 If it seems like you're missing stuff, also try
         
@@ -59,7 +65,7 @@ If we modify the database schema, you may need to delete ancbrigadesite/database
 Updating Static Data
 --------------------
 
-The ANC/SMD metadata is stored statically in ancbrigadesite/static/ancs.json. To update this file
+The ANC/SMD metadata is stored statically in `static/ancs.json`. To update this file
 from our Google Doc, our ScraperWiki scraper, and other external data sources, run:
 
 	python3 update_anc_database.py
@@ -74,9 +80,9 @@ You can also selectively update just some of the data (because updating some tak
 	
 	python3 update_anc_database.py [--base] [--terms] [--gis] [--neighborhoods] [--census] [--census-analysis]
 
-And to fetch the latest ANC meetings calendar:
+And to fetch the latest ANC meetings calendar (note that it currently requires Python 2):
 	
-	python3 update_meeting_database.py
+	python update_meeting_database.py
 
 There are also several scripts to grab data for use in `update_anc_database.py`. They are:
 
