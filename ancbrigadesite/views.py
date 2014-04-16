@@ -117,7 +117,6 @@ class AncInfoTemplateView(TemplateView):
 
 		# documents that *should* exist
 		highlight_documents = []
-		ask_for_document = []
 		for mtg in previous_meetings + ([next_meeting] if next_meeting else []):
 			did_ask_for_doc = False
 			for doc_type_id, doc_type_name in [(1, "Minutes"), (2, "Agenda")]:
@@ -133,22 +132,22 @@ class AncInfoTemplateView(TemplateView):
 
 				try:
 					doc = first(Document.objects.filter(anc=anc, doc_type=doc_type_id, meeting_date=mtg))
-					highlight_documents.append( (mtg, doc_type_id, doc_type_name, doc) )
-					break
 				except Document.DoesNotExist:
-					# ask the user to upload minutes but not agendas if we are
-					# missing minutes
-					if not did_ask_for_doc:
-						ask_for_document = [(mtg, doc_type_id, doc_type_name)]
-						did_ask_for_doc = True
+					doc = None
+				highlight_documents.append( (mtg, doc_type_id, doc_type_name, doc) )
 
+				# If minutes exist for a meeting, don't bother displaying an
+				# agenda (or ask to upload an agenda) for the meeting.
+				if doc and doc_type_id == 1:
+					continue
+
+		highlight_documents.reverse()
 
 		return render(request, self.template_name, {
 			'anc': anc,
 			'info': info, 
 			'documents': recent_documents,
 			'highlight_documents': highlight_documents,
-			'ask_for_document': ask_for_document,
 			'census_stats': census_stats,
 			'next_meeting': next_meeting,
                         'next_meeting_link': next_meeting_link,
