@@ -223,7 +223,7 @@ LOGGING = {
         },
     }
 }
-APP_NICE_SHORT_NAME = "ANCBrigade"
-SERVER_EMAIL = "ANCBrigade <no.reply@ancfinder.org>" # From: address on verification emails
+APP_NICE_SHORT_NAME = "ANCFinder.org"
+SERVER_EMAIL = "ANCFinder.org <no.reply@ancfinder.org>" # From: address on verification emails
 REGISTRATION_ASK_USERNAME = True
 SITE_ROOT_URL = "http://www.ancfinder.org"
