@@ -73,17 +73,17 @@ class AncInfoTemplateView(TemplateView):
 			if m > now:
 				next_meeting = m # this is the first meeting in the future (i.e. the next meeting)
 				break
-                if next_meeting != None:
-                    # Sometimes the meeting disappears from the calendar, which causes problems
-                    try:
-                        next_meeting_link = meeting_data[anc]["meetings"][next_meeting.strftime("%Y-%m-%dT%H:%M:%S")]["link"]
-                        link_missing = False
-                    except KeyError:
-                        next_meeting_link = ""
-                        link_missing = True
-                else:
-                    next_meeting_link = None
-                    link_missing = False
+				if next_meeting != None:
+					# Sometimes the meeting disappears from the calendar, which causes problems
+					try:
+						next_meeting_link = meeting_data[anc]["meetings"][next_meeting.strftime("%Y-%m-%dT%H:%M:%S")]["link"]
+						link_missing = False
+					except KeyError:
+						next_meeting_link = ""
+						link_missing = True
+				else:
+					next_meeting_link = None
+					link_missing = False
 		i = all_meetings.index(next_meeting) if next_meeting is not None else len(all_meetings)
 		previous_meetings = all_meetings[i-2:i]
 
@@ -102,15 +102,15 @@ class AncInfoTemplateView(TemplateView):
 			{ "key": "POP_DENSITY",	"label": "density (pop/sq-mi)", "details": "Total population divided by the area of the ANC." },
 			{ "key": "liquor_licenses",	"label": "liquor licenses",	"details": "Liquor licenses granted by ABRA held by bars and restaurants in the area" },
 			{ "key": "building_permits",	"label": "building permits",	"details": "Permits granted by DCRA for construction or alteration in the area" },
-                        { "key": "311_requests",    "label": "311 requests",    "details": "Requests to the 311 hotline from this area" },
+						{ "key": "311_requests",    "label": "311 requests",    "details": "Requests to the 311 hotline from this area" },
 		]
 		for s in census_stats:
 		
-                    try:
-                        s["value"] = info["census"][s["key"]]["value"]
-                    except KeyError:
-                        s["value"] = 0
-		    s["grid"] = census_grids[s["key"]]
+					try:
+						s["value"] = info["census"][s["key"]]["value"]
+					except KeyError:
+						s["value"] = 0
+			s["grid"] = census_grids[s["key"]]
 
 		# recent ANC documents
 		recent_documents = Document.objects.filter(anc=anc).order_by('-created')[0:10]
@@ -150,8 +150,8 @@ class AncInfoTemplateView(TemplateView):
 			'highlight_documents': highlight_documents,
 			'census_stats': census_stats,
 			'next_meeting': next_meeting,
-                        'next_meeting_link': next_meeting_link,
-                        'link_missing': link_missing,
+						'next_meeting_link': next_meeting_link,
+						'link_missing': link_missing,
 		})
 
 #Using Class Based Views(CBV) to implement our logic
