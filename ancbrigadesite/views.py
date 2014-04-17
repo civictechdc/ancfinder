@@ -153,6 +153,7 @@ class AncInfoTemplateView(TemplateView):
 						'link_missing': link_missing,
 		})
 
+
 #Using Class Based Views(CBV) to implement our logic
 	
 class AboutTemplateView(TemplateView):
@@ -232,4 +233,67 @@ class DocumentTemplateView(TemplateView):
 		document = get_object_or_404(Document, id=id)
 		return render(request, self.template_name, {"document": document})
 		
-		
+# RSS feeds for new documents
+from django.contrib.syndication.views import Feed
+from django.core.urlresolvers import reverse
+import dateutil.parser
+def make_anc_feed(request, anc):
+	
+	if anc: anc = anc.upper()
+
+	class ANCRSSFeed(Feed):
+		title = settings.APP_NICE_SHORT_NAME if anc is None else ("ANC " + anc + " - " + settings.APP_NICE_SHORT_NAME)
+		link = settings.SITE_ROOT_URL + "/" + (anc if anc else "")
+		description = "New documents and upcoming meetings for Advisory Neighborhood Commissions on ANCFinder.org."
+
+		def items(self):
+			# recent documents
+			docs = Document.objects.order_by('-created')
+			if anc: docs = docs.filter(anc=anc)
+			docs = list(docs[:15])
+
+			# upcoming meetings
+			if anc is not None:
+				# for an ANC-specific feed, include the next three meetings
+				meetings = []
+				now = datetime.datetime.now().isoformat()
+				for mtgdate, mtginfo in meeting_data[anc]['meetings'].items():
+					if mtgdate < now: continue
+					meetings.append( (mtgdate, anc, mtginfo) )
+				meetings.sort()
+				meetings = meetings[:3]
+			else:
+				# for the site-wide feed, show the next meeting of each ANC
+				meetings = []
+				now = datetime.datetime.now().isoformat()
+				for mtganc, mtgs in meeting_data.items():
+					for mtgdate, mtginfo in sorted(mtgs['meetings'].items()):
+						if mtgdate < now: continue
+						meetings.append( (mtgdate, mtganc, mtginfo) )
+						break
+				meetings.sort()
+
+			return docs + meetings
+
+		def item_title(self, item):
+			if isinstance(item, Document):
+				return item.title
+			else:
+				return item[1] + " Meeting"
+		def item_description(self, item):
+			if isinstance(item, Document):
+				return str(item)
+			else:
+				return item[1] + " Meeting"
+		def item_pubdate(self, item):
+			if isinstance(item, Document):
+				return item.created
+			else:
+				return dateutil.parser.parse(item[0])
+		def item_link(self, item):
+			if isinstance(item, Document):
+				return settings.SITE_ROOT_URL + item.get_absolute_url()
+			else:
+				return settings.SITE_ROOT_URL + "/" + item[1] # e.g. /1A
+
+	return ANCRSSFeed()(request)

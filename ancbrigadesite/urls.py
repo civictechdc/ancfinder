@@ -1,7 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from .views import (AboutTemplateView, ShareTemplateView, AuthorityTemplateView, 
-				LegalTemplateView, BigMapTemplateView, HomeTemplateView, DocumentTemplateView, AncInfoTemplateView)
+from .views import *
 
 admin.autodiscover()
 
@@ -18,6 +17,8 @@ urlpatterns = patterns('',
 	url(r'^legal$', LegalTemplateView.as_view(), name='ancbrigadesite_legal',),
 	url(r'^(?P<anc>[0-9][A-Za-z])$', AncInfoTemplateView.as_view(), name = 'ancbrigadesite_anc_info'),
 	url(r'^document/(?P<anc>..)/(?P<date>....-..-..)/(?P<id>\d+)(?P<slug>/.*)?$', DocumentTemplateView.as_view(), name = 'ancbrigadesite_document',),
+    url(r'^feeds/ancfinder(?:-(\d[a-z]))?.rss$', make_anc_feed),
+
 
 	# Django admin
 	url(r'^admin/', include(admin.site.urls)),
