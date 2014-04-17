@@ -69,6 +69,8 @@ class AncInfoTemplateView(TemplateView):
 		all_meetings = sorted([datetime.datetime.strptime(m, "%Y-%m-%dT%H:%M:%S")
 			for m in meeting_data.get(anc, {}).get("meetings", {}).keys() ])
 		next_meeting = None
+		next_meeting_link = None
+		link_missing = False
 		for m in all_meetings:
 			if m > now:
 				next_meeting = m # this is the first meeting in the future (i.e. the next meeting)
