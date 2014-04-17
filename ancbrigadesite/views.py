@@ -105,11 +105,10 @@ class AncInfoTemplateView(TemplateView):
 						{ "key": "311_requests",    "label": "311 requests",    "details": "Requests to the 311 hotline from this area" },
 		]
 		for s in census_stats:
-		
-					try:
-						s["value"] = info["census"][s["key"]]["value"]
-					except KeyError:
-						s["value"] = 0
+			try:
+				s["value"] = info["census"][s["key"]]["value"]
+			except KeyError:
+				s["value"] = 0
 			s["grid"] = census_grids[s["key"]]
 
 		# recent ANC documents
