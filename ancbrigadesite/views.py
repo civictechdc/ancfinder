@@ -281,12 +281,12 @@ def make_anc_feed(request, anc):
 			if isinstance(item, Document):
 				return item.get_display_title()
 			else:
-				return item[1] + " Meeting"
+				return item[1] + " Meeting on " + dateutil.parser.parse(item[0]).strftime("%B %d")
 		def item_description(self, item):
 			if isinstance(item, Document):
-				return str(item)
+				return "New Document: " + item.get_display_title() + "."
 			else:
-				return item[1] + " Meeting"
+				return "A meeting of ANC " + item[1] + " has been scheduled for " + dateutil.parser.parse(item[0]).strftime("%A, %B %d, %Y at %I:%M %p") + "."
 		def item_pubdate(self, item):
 			if isinstance(item, Document):
 				return item.created
