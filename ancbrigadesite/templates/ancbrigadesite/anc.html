@@ -50,7 +50,9 @@ h2 { font-size: 22px; }
 #by_the_numbers .grid span:hover { color: #777 !important; border: 1px solid #777; }
 #by_the_numbers .grid span.me { background-color: white !important; border: 2px solid black;}
 </style>
-{% endblock %}p
+{% endblock %}
+
+{% block rss_feed %}<a href="/feeds/ancfinder-{{anc|lower}}.rss">{{anc}} RSS</a> {% endblock %}
 
 {% block master_body %}
 
