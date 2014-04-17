@@ -279,7 +279,7 @@ def make_anc_feed(request, anc):
 
 		def item_title(self, item):
 			if isinstance(item, Document):
-				return item.title
+				return item.get_display_title()
 			else:
 				return item[1] + " Meeting"
 		def item_description(self, item):
