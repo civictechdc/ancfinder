@@ -1,2 +1,2 @@
 MAILTO=tauberer+anc@govtrack.us
-14 3 * * * { cd /home/ancbrigade/web; python conf/cronjob.py; }
+14 3 * * * { cd /home/ancbrigade/web; python conf/cronjob.py; ./fcgi; }
