@@ -59,12 +59,10 @@ class Document(models.Model):
 		return self.get_doc_type_display() + ("/" + self.title if self.title else "")
 
 	def get_absolute_url(self):
-		url = "/document/%s/%s/%d" % (self.anc, self.get_display_date().isoformat(), self.id)
-		if self.title:
-			s = slugify(self.title)
-			if len(s) > 7:
-				url += "/" + s
-		return url
+		title = self.title
+		if title is None or title.strip() in ("", "No Title"):
+			title = self.get_doc_type_display()
+		return "/document/%s/%s/%d/%s" % (self.anc, self.get_display_date().isoformat(), self.id, slugify(title))
 
 	def get_display_title(self):
 		if self.doc_type in (1, 2):

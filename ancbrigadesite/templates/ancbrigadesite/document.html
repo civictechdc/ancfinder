@@ -1,7 +1,7 @@
 {% extends "master.html" %}
 {% load humanize %}
 
-{% block master_title %}{{document.title}} -- ANC Finder{% endblock %}
+{% block master_title %}{{document.get_display_title}} -- ANC Finder{% endblock %}
 
 {% block head %}
 <style>

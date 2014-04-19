@@ -1,5 +1,5 @@
 
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import Http404, HttpResponse
 from django.views.generic import TemplateView
 from django.conf import settings
@@ -230,6 +230,9 @@ class DocumentTemplateView(TemplateView):
 	template_name = 'ancbrigadesite/document.html'
 	def get(self, request, anc=None, date=None, id=None, slug=None, *args, **kwagrs):
 		document = get_object_or_404(Document, id=id)
+		if request.path != document.get_absolute_url():
+			# redirect to canonical URL
+			return redirect(document)
 		return render(request, self.template_name, {"document": document})
 		
 # RSS feeds for new documents
