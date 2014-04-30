@@ -102,7 +102,7 @@ h2 { font-size: 22px; }
                         <div class="smd_num_and_name">
                             <div class="smd_num">
                                 <strong>SMD {{ smd.smd_number }}</strong>
-                                {% if smd.Position %} / {{ smd.Position }}{% endif %}
+                                {% if smd.Position|length > 0 %} / {{ smd.Position|join:', ' }}{% endif %}
                             </div>
                             <div class="smd_name">
                               {{ smd.first_name }} {{ smd.middle_name }} {{ smd.nickname }} {{ smd.last_name }} {{ smd.suffix }}

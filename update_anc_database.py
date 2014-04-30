@@ -122,9 +122,18 @@ def add_googledoc_data(output):
     # Use name from anc.dc.gov to check that we have the right commissioner
     # before overwriting with spreadsheet information
     for smd in smds:
+        s = output[ smd["smd"][0] ]["ancs"][ smd["smd"][1] ]["smds"][ smd["smd"][2:] ]
         if scraped[smd["smd"]]["official_name"] == smd["official_name"]:
-            s = output[ smd["smd"][0] ]["ancs"][ smd["smd"][1] ]["smds"][ smd["smd"][2:] ]
             s.update(smd)
+        if isinstance(s.get("Position"), str):
+            # migrate this field to a list; once we're all migrated we should
+            # move this conversion out of this if block and up to where we
+            # update s.
+            # We encode multiple positions using double asterisks in the spreadsheet.
+            if s["Position"].strip() == "":
+                s["Position"] = [] # empty list
+            else:
+                s["Position"] = s["Position"].split("**")
 
     for cmte in committees:
         c = OrderedDict()
