@@ -7,3 +7,4 @@ BeautifulSoup4
 django-picklefield
 recaptcha-client
 python-dateutil
+pyyaml
