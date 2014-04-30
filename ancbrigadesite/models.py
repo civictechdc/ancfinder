@@ -56,7 +56,7 @@ class Document(models.Model):
 	annotation_document = models.ForeignKey('annotator.Document', editable=False, blank=True, null=True, on_delete=models.SET_NULL)
 
 	def __str__(self):
-		return self.get_doc_type_display() + ("/" + self.title if self.title else "")
+		return self.get_display_date().isoformat() + " " + self.anc + " " + self.get_doc_type_display() + ("/" + self.title if self.title else "")
 
 	def get_absolute_url(self):
 		title = self.title
