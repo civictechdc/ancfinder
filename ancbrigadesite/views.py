@@ -119,7 +119,7 @@ class AncInfoTemplateView(TemplateView):
 		# documents that *should* exist
 		highlight_documents = []
 		for mtg in reversed(previous_meetings + ([next_meeting] if next_meeting else [])):
-			for doc_type_id, doc_type_name in [(1, "Minutes"), (2, "Agenda")]:
+			for doc_type_id, doc_type_name in [(1, "Agenda"), (2, "Minutes")]:
 				# don't look for minutes for the next meeting because it hasn't ocurred
 				# yet and so won't have minutes, and we don't want to prompt the user to
 				# upload minutes
