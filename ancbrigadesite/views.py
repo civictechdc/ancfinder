@@ -69,23 +69,10 @@ class AncInfoTemplateView(TemplateView):
 		all_meetings = sorted([datetime.datetime.strptime(m, "%Y-%m-%dT%H:%M:%S")
 			for m in meeting_data.get(anc, {}).get("meetings", {}).keys() ])
 		next_meeting = None
-		next_meeting_link = None
-		link_missing = False
 		for m in all_meetings:
 			if m > now:
 				next_meeting = m # this is the first meeting in the future (i.e. the next meeting)
 				break
-				if next_meeting != None:
-					# Sometimes the meeting disappears from the calendar, which causes problems
-					try:
-						next_meeting_link = meeting_data[anc]["meetings"][next_meeting.strftime("%Y-%m-%dT%H:%M:%S")]["link"]
-						link_missing = False
-					except KeyError:
-						next_meeting_link = ""
-						link_missing = True
-				else:
-					next_meeting_link = None
-					link_missing = False
 		i = all_meetings.index(next_meeting) if next_meeting is not None else len(all_meetings)
 		previous_meetings = all_meetings[i-2:i]
 
@@ -118,7 +105,10 @@ class AncInfoTemplateView(TemplateView):
 
 		# documents that *should* exist
 		highlight_documents = []
-		for mtg in reversed(previous_meetings + ([next_meeting] if next_meeting else [])):
+		for mtg in previous_meetings + ([next_meeting] if next_meeting else []):
+			hd_mtg = (mtg, [])
+			highlight_documents.append(hd_mtg)
+
 			for doc_type_id, doc_type_name in [(2, "Minutes"), (1, "Agenda")]:
 				# don't look for minutes for the next meeting because it hasn't ocurred
 				# yet and so won't have minutes, and we don't want to prompt the user to
@@ -134,7 +124,7 @@ class AncInfoTemplateView(TemplateView):
 					doc = first(Document.objects.filter(anc=anc, doc_type=doc_type_id, meeting_date=mtg))
 				except Document.DoesNotExist:
 					doc = None
-				highlight_documents.append( (mtg, doc_type_id, doc_type_name, doc) )
+				hd_mtg[1].insert(0, (doc_type_id, doc_type_name, doc) )
 
 				# If minutes exist for a meeting, don't bother displaying an
 				# agenda (or ask to upload an agenda) for the meeting.
@@ -148,8 +138,6 @@ class AncInfoTemplateView(TemplateView):
 			'highlight_documents': highlight_documents,
 			'census_stats': census_stats,
 			'next_meeting': next_meeting,
-						'next_meeting_link': next_meeting_link,
-						'link_missing': link_missing,
 		})
 
 

@@ -61,7 +61,7 @@ h2 { font-size: 22px; }
         <div class="container">
             <div class="row" style="text-align: center">
                 <h1 style="font-size: 36px">ANC {{anc}}</h1>
-                <div style="margin-top: 3px">{% if info.website %}Website: <a href="{{ info.website }}">{{ info.website }}</a> |{% endif %} Next meeting: <a href="{{ next_meeting_link }}">{{ next_meeting }}</a>{% if link_missing %} - possibly rescheduled {% endif %}</div>
+                <div style="margin-top: 3px">{% if info.website %}<a href="{{ info.website }}">{{ info.website }}</a>{% endif %}</div>
             </div>
         </div><!-- /container -->
     </div><!-- /masthead -->
@@ -69,29 +69,43 @@ h2 { font-size: 22px; }
     <div class="container">
         <div class="row">
             <div class="col-sm-7">
-                <p style="margin: 40px 0 25px 0;">ANC {{anc}} covers {{info.neighborhood_list}}.</p>
+                <h2>Overview</h2>
+                <p>ANC {{anc}} covers {{info.neighborhood_list}}.</p>
 
-                {% if hilight_documents|length > 0 %}
-  				<!-- highlighting documents for recent meetings and asking the user to upload some -->
-                <h2>Looking for these documents?</h2>
-                <table id="recent-docs">
-                    {% for meeting_date, doc_type_id, doc_type_name, doc in highlight_documents %}
-                        <tr>
-                            <td>{{meeting_date|date}}</td>
-                            <td>{{doc_type_name}}</td>
-                            <td>
-                            {% if doc %}
-                                <a href="{{doc.get_absolute_url}}">Read Document</a>
-                            {% else %}
-                                Missing! <a href="/upload-document?anc={{anc}}&amp;doc_type={{doc_type_id}}&amp;meeting_date={{meeting_date.isoformat}}" class="missing">Please Upload It</a>
-                            {% endif %}
-                            </td>
-                        </tr>
-                    {% endfor %}
-                <tr><td colspan="4"><a href="#document_archive" class="see_all">More documents...</a></td></tr>
-                </table>
+                {% if next_meeting %}
+                <p>The next meeting of ANC {{anc}} is <strong>{{ next_meeting }}</strong>.</p>
                 {% endif %}
+            </div>
 
+            {% if hilight_documents|length > 0 %}
+            <div class="col-sm-5">
+                <!-- highlighting documents for recent meetings and asking the user to upload some -->
+                <h2 style="font-size: 18px">Key Documents</h2>
+                <div id="recent-docs" class="row">
+                    {% for meeting in highlight_documents %}
+                    <div class="col-xs-4" style="font-size: 12px">
+                        <p style="font-weight: bold">{{meeting.0|date}}</p>
+
+                        {% for doc_type_id, doc_type_name, doc in meeting.1 %}
+                        <p>
+                            {% if doc %}
+                                <a href="{{doc.get_absolute_url}}">{{doc_type_name}}</a>
+                            {% else %}
+                                Missing {{doc_type_name}}!<br>
+                                <a href="/upload-document?anc={{anc}}&amp;doc_type={{doc_type_id}}&amp;meeting_date={{meeting.0.isoformat}}" class="missing">Please Upload It</a>
+                            {% endif %}
+                        </p>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+                <p><a href="#document_archive" class="see_all">More documents...</a></p>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="row">
+            <div class="col-sm-7">
                 <h2>Commissioners</h2>
 
                 <table id="commissioners" cols="3">

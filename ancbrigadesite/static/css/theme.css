@@ -306,10 +306,6 @@ input[type="color"].large,
     text-shadow: 0 1px 1px #066982;
 }
 
-h2 {
-	margin: .75em 0 .25em 0;
-}
-
 #menu_anc_list {
 	text-align: left;
 	font-family: OpenSans, 'Helvetica Neue', Helvetica, Arial, sans-serif;
