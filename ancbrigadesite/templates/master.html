@@ -10,7 +10,7 @@
 
 	<!-- styles -->
 	<link href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<link href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="{{ STATIC_URL }}bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="{{ STATIC_URL }}css/theme.css" rel="stylesheet">
   <link href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
 	
@@ -25,8 +25,8 @@
 	<div id="header" class='topbar' data-dropdown="dropdown">
   		<div class="container">
 	  		<div class="row">
-	  			<a href="{% url 'ancbrigadesite_home' %}" id="logo" class="span2">ANC<br>Finder</a>
-	  			<div class="span10">
+	  			<a href="{% url 'ancbrigadesite_home' %}" id="logo" class="col-sm-2">ANC<br>Finder</a>
+	  			<div class="col-sm-10">
 	  				<ul class="nav-links">
               <li><a class="smooth" href="{% url 'ancbrigadesite_home' %}#what-is-an-anc" title="Discover what ANCs do for DC.">What Are ANCs?</a></li>
 
@@ -73,15 +73,15 @@
 
     <footer>
         <div class="row">
-          <div class="span3 offset2">
+          <div class="col-sm-3 col-sm-offset-2">
                 <p>ANC Finder is a project in Washington, D.C. to strengthen our unique hyper-local level of government called Advisory Neighborhood Commissions (ANCs).</p>
                 {% block rss_feed %}<p><a href="/feeds/ancfinder.rss">RSS</a></p>{% endblock %}
           </div>
-          <div class="span3 offset">
+          <div class="col-sm-3 offset">
               <p class="by">ANC Finder is a project of the <a href="http://codefordc.org/">Code for DC</a>. We’re volunteers interested in using technology to solve problems in our civic lives. This is a work in progress.</p>
               <p>The <a href="http://ryantroyford.com/central-union-mission/">Central Union Mission-inspired font</a> in the header is by <a href="http://ryantroyford.com/">Ryan Troy Ford</a>.</p>
           </div>
-          <div class="span3">
+          <div class="col-sm-3">
               <p>Last updated June 2, 2013.
               <br>
               <a href="https://github.com/codefordc/ancbrigade">Source code on github</a>.</p>
@@ -93,11 +93,11 @@
     <!-- javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"> </script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"> </script>
 	<script>
 		// when debugging off the network, fall back to a local copy of jquery
 		try { $; } catch (err) {
-			document.write("\u003Cscript src\u003D\u0027static/bootstrap/js/jquery-1.7.2.min.js\u0027\u003E \u003C/script\u003E");
+			document.write("\u003Cscript src\u003D\u0027static/jquery-2.1.0.min.js\u0027\u003E \u003C/script\u003E");
 		}
 	</script>
   <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"> </script>

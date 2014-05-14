@@ -1,30 +1,22 @@
+{% load bootstrap %}
+
 <form class="form-{{form_display_layout}}" method="post" {% if form.is_multipart %}enctype="multipart/form-data"{% endif %}>
 {% csrf_token %}
 <fieldset>
 
-	<legend style="margin-bottom: 0">{{title}}</legend>
+	<legend>{{title}}</legend>
 	
-	{% for field in form %}
-	{% if 'type="hidden"' not in field|capfirst %} {# capfirst forces type cast to string #}
-		<div id="control-group-{{field.name}}" class="control-group">
-		  <label class="control-label" for="form-field-{{field.name}}">{{field.label}}</label>
-		  <div class="controls">
-			{{field}}
-			<p class="help-block" style="line-height: 120%; margin-top: {% if form_display_layout == 'horizontal' %}0{% else %}-10px{% endif %}"><small>{{field.help_text}}</small></p>
-			{% for err in field.errors %}<p class="text-error">{{err}}</p>{% endfor %}
-		  </div>
-		</div>
-	{% else %}
-		{{field}}
-	{% endif %}
-	{% endfor %}
-	
-	<div class="control-group">
-	  <label class="control-label" for="singlebutton"></label>
-	  <div class="controls">
-		<button id="singlebutton" name="singlebutton" class="btn btn-primary">{% firstof submit_button_text "Submit" %}</button>
-	  </div>
-	</div>
+	{% if form_display_layout == 'horizontal' %}
+    	{{ form|bootstrap_horizontal }}
+    {% else %}
+    	{{ form|bootstrap }}
+    {% endif %}
+
+    <div class="form-group">
+      <div class="{% if form_display_layout == 'horizontal' %}col-sm-10 col-sm-offset-2{% endif %}">
+      	<button type="submit" class="btn btn-primary">{% firstof submit_button_text "Submit" %}</button>
+      </div>
+    </div>
 
 </fieldset>
 </form>

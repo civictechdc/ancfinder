@@ -401,10 +401,10 @@ div#use_my_location {
 .widecontainer.style2 h2 {
 }
 
-.widecontainer .span5.image {
+#what-is-an-anc-wrapper .image {
 	text-align: center;
 }
-.span5.image img {
+#what-is-an-anc-wrapper .image img {
 	margin-top: 20px;
 	width: 50%;
 }
@@ -467,5 +467,5 @@ div#use_my_location {
 /* forms */
 
 p.error { color: red; }
-form ul { list-style: none; margin: 0; } /* radio widget */
+form ul { list-style: none; margin: 0; padding: 0; } /* radio widget */
 

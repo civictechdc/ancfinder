@@ -186,6 +186,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.humanize',
     
+    'bootstrapform',
     'tinymce',
 
     'registration',

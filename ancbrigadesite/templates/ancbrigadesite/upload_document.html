@@ -7,7 +7,7 @@
 	<style>
 		/* don't really want user's input, just pass through info from
 		anc.html */
-		#control-group-meeting_date_hidden {
+		.form-group-meeting_date_hidden {
 			display: none;
 		}
 	</style>
@@ -16,7 +16,7 @@
 {% block masthead %}Upload a Document{% endblock %}
 
 {% block body %}
-		{% include "form.html" with form=form title="Upload Document" form_display_layout="horizontal" %}
+        {% include "form.html" with form=form title="Upload Document" form_display_layout="horizontal" %}
 
 		{% if url_error %}<p class="text-error">{{url_error}}</p>{% endif %}
 
@@ -28,13 +28,13 @@
 	<script>
 		update_toggle_state();
 
-		$('#id_upload_type_0, #id_upload_type_1, #id_upload_type_2').change(update_toggle_state);
+		$('.form-group-upload_type input').change(update_toggle_state);
 		
 		function update_toggle_state() {
-			var val = $('input[name="upload_type"]:checked').val();
-			$('#control-group-docfile').toggle(val == "file");
-			$('#control-group-content').toggle(val == "paste");
-			$('#control-group-url').toggle(val == "url");
+			var val = $('.form-group-upload_type input:checked').val();
+			$('.form-group-docfile').toggle(val == "file");
+			$('.form-group-content').toggle(val == "paste");
+			$('.form-group-url').toggle(val == "url");
 		}
 	</script>
 {% endblock %}

@@ -17,7 +17,7 @@
 <div id="masthead">
     	<div class="container">
     		<div class="row">
-    			<div class="span10 offset1">
+    			<div class="col-sm-10 col-sm-offset-1">
     				<h1><a class="smooth" href="#what-is-an-anc" style="text-decoration: none">What is an ANC? Give me the tour! <span style="margin-left: .5em">▶</span></a></h1>
     			</div>
     		</div>
@@ -28,7 +28,7 @@
 <div class="main widecontainer style2">
 	<div class="container">
 		<div class="row">
-			<div class="span5 offset1">
+			<div class="col-sm-5 col-sm-offset-1">
 
 			<div id="intro">
 				<h3>Find Your ANC</h3>
@@ -60,7 +60,7 @@
 			
 		  </div>
 		  
-		  <div id="map_col" class="span5" style="padding-bottom: 10px">
+		  <div id="map_col" class="col-sm-5" style="padding-bottom: 10px">
 			<div id="map_canvas_google" class="map"> </div>
 		  </div>
 		</div>
@@ -68,18 +68,18 @@
 	</div>
 	</div>
 	
-        <div id="info-wrapper" style="display: none">
+        <div id="what-is-an-anc-wrapper" style="display: none">
         <div id="what-is-an-anc" class="widecontainer style1">
 	<div class="container">
 		<div class="row">
-			<div class="span5 offset1 text">
+			<div class="col-sm-5 col-sm-offset-1 text">
 				<h2>What is an ANC?</h2>
 				<p class="what-is-it">Washington DC is divided into 40 districts called Advisory Neighborhood Commissions, or ANCs.</p>
 				<p class="how-many-commissioners">ANCs are made up of 2-12 commissioners who make decisions about a broad range of issues in your community, such as liquor licenses, parking, and sanitation.</p>
 				<div id="commissioners"> </div>
 				<p>This is your most local form of government. <span class="anc-has-website" style="display: none">Check out your ANC&rsquo;s website at <a class="anc-website"> </a>.</span></p>
 			</div>
-			<div class="span5 image">
+			<div class="col-sm-5 image">
 				<img src="static/img/anc.svg"/>
 			</div>
 		</div>
@@ -89,10 +89,10 @@
 	<div class="widecontainer style2">
 	<div class="container">
 		<div class="row">
-			<div class="span5 offset1 image">
+			<div class="col-sm-5 col-sm-offset-1 image">
 				<img src="static/img/neighborhood.svg"/>
 			</div>
-			<div class="span5 text">
+			<div class="col-sm-5 text">
 				<h2>Single Member Districts</h2>
 				<p>Each commissioner on an ANC represents a division of Washington DC called a Single Member District, or SMD. Commissioners each represent about 2,000 DC residents who live in the SMD.</p>
 				<p>You elect your ANC commissioner every two years in non-partisan elections.</p>
@@ -105,13 +105,13 @@
 	<div class="widecontainer style1">
 	<div class="container">
 		<div class="row">
-			<div class="span5 offset1 text">
+			<div class="col-sm-5 col-sm-offset-1 text">
 				<h2>What do ANCs do?</h2>
 				<p>ANCs advise the DC government about issues that affect their community, such as parking, recreation, street improvements, liquor licenses, zoning, restaurants, the police, sanitation, and the District's annual budget.</p>
 				<p>Your ANC commissioners also control grant money of several thousand dollars (or more) for the general purpose of improving their area and hiring staff for the ANC.</p>
 				<p><a href="{% url 'ancbrigadesite_authority' %}">Learn more about ANC authority and budget &raquo;</a></p>
 			</div>
-			<div class="span5 image">
+			<div class="col-sm-5 image">
 				<img src="static/img/people.svg"/>
 			</div>
 		</div>
@@ -121,10 +121,10 @@
 	<div class="widecontainer style2">
 	<div class="container">
 		<div class="row">
-			<div class="span5 offset1 image">
+			<div class="col-sm-5 col-sm-offset-1 image">
 				<img src="static/img/vote.svg"/>
 			</div>
-			<div class="span5 text">
+			<div class="col-sm-5 text">
 				<h2>Who elects ANC commissioners?</h2>
                                 <p>ANC commissioners each represent one single member district (SMD). ANC campaigns are typically small, grassroots efforts. In fact, winning candidates often run unopposed and receive just a few hundred votes.</p>
                                 <p>To run for a seat, a candidate must collect 25 signatures from registered voters in his or her SMD. Visit the DC Board of Elections website to <a href="http://www.dcboee.org/candidate_info/general_info/">learn more about running for ANC commissioner</a>.</p>
@@ -136,12 +136,12 @@
 	<div class="widecontainer style1">
 	<div class="container">
 		<div class="row">
-			<div class="span5 offset1 text">
+			<div class="col-sm-5 col-sm-offset-1 text">
 				<h2>How can I get involved?</h2>
 				<p>To get involved in your ANC, you can attend ANC meetings, learn more about your ANC, or even <a href="http://runforanc.com/">become an ANC Commissioner</a>.</p>
 				<p><a class="smooth" href="#intro">Start by finding your ANC.</a></p>
 			</div>
-			<div class="span5 image">
+			<div class="col-sm-5 image">
 				<img src="static/img/hand.svg"/>
 				
 				<div id="jump_to_top">
@@ -185,7 +185,7 @@
 			if (navigator.geolocation) $('#use_my_location').show();
 			
 			$('a.smooth').click(function(e) {
-                          $("#info-wrapper").show();
+                          $("#what-is-an-anc-wrapper").show();
 				e.preventDefault();
 				var target = this.hash,
 				$target = $(target);
