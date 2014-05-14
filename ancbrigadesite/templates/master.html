@@ -73,19 +73,16 @@
 
     <footer>
         <div class="row">
-          <div class="col-sm-3 col-sm-offset-2">
-                <p>ANC Finder is a project in Washington, D.C. to strengthen our unique hyper-local level of government called Advisory Neighborhood Commissions (ANCs).</p>
-                {% block rss_feed %}<p><a href="/feeds/ancfinder.rss">RSS</a></p>{% endblock %}
-          </div>
-          <div class="col-sm-3 offset">
-              <p class="by">ANC Finder is a project of the <a href="http://codefordc.org/">Code for DC</a>. We’re volunteers interested in using technology to solve problems in our civic lives. This is a work in progress.</p>
-              <p>The <a href="http://ryantroyford.com/central-union-mission/">Central Union Mission-inspired font</a> in the header is by <a href="http://ryantroyford.com/">Ryan Troy Ford</a>.</p>
+        <hr>
+          <div class="col-sm-7 col-sm-offset-1">
+              <p>ANC Finder is a project in Washington, D.C. to strengthen our unique hyper-local level of government called Advisory Neighborhood Commissions (ANCs).</p>
+              <p class="by">This is a project of the <a href="http://codefordc.org/">Code for DC</a>. We’re volunteers interested in using technology to solve problems in our civic lives. The site is a work in progress.</p>
+              {% block rss_feed %}<p><a href="/feeds/ancfinder.rss">RSS</a></p>{% endblock %}
           </div>
           <div class="col-sm-3">
-              <p>Last updated June 2, 2013.
-              <br>
-              <a href="https://github.com/codefordc/ancbrigade">Source code on github</a>.</p>
+              <p>The source code for this website is on <a href="https://github.com/codefordc/ancbrigade">github</a>.</p>
               <p>Legal: <a href="{% url 'ancbrigadesite_legal' %}">Required disclaimers</a>.</p>
+              <p>The <a href="http://ryantroyford.com/central-union-mission/">Central Union Mission-inspired font</a> in the header is by <a href="http://ryantroyford.com/">Ryan Troy Ford</a>.</p>
           </div>
         </div>
     </footer>
