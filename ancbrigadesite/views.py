@@ -297,5 +297,10 @@ def make_anc_feed(request, anc):
 				return settings.SITE_ROOT_URL + item.get_absolute_url()
 			else:
 				return settings.SITE_ROOT_URL + "/" + item[1] # e.g. /1A
+		def item_guid(self, item):
+			if isinstance(item, Document):
+				return settings.SITE_ROOT_URL + item.get_absolute_url()
+			else:
+				return settings.SITE_ROOT_URL + "/" + item[1] + "/meeting/" + item[0].replace("-", "").replace(":", "") # e.g. /1A/meeting/20140101T000000
 
 	return ANCRSSFeed()(request)
