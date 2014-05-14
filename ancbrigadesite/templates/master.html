@@ -108,6 +108,16 @@
 	<script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
 	<script src="{{ STATIC_URL }}jquery-utils.js"> </script>
 	<script src="{{ STATIC_URL }}moment.min.js"> </script>
+
+  <script>
+    $(function() {
+      // enable all tabs
+      $('.nav-tabs a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show');
+      })
+    })
+  </script>
 	
 	{% block scripts %}
 	{% endblock %}

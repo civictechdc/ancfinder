@@ -13,10 +13,6 @@ h2 { font-size: 22px; }
     }
 }
 
-#recent-docs td {
-    padding: 4px 9px;
-}
-
 #commissioners td {
     cursor: pointer;
     padding: 0 1.5em .75em 0;
@@ -67,6 +63,15 @@ h2 { font-size: 22px; }
     </div><!-- /masthead -->
 
     <div class="container">
+        <ul class="nav nav-tabs" style="margin-top: 1em">
+          <li class="active"><a href="#home">{{anc}} Overview</a></li>
+          <li><a href="#documents">Documents</a></li>
+          <li><a href="#stats">Statistics</a></li>
+          {% if info.committees.values %}<li><a href="#committees">Committees</a></li>{% endif %}
+        </ul>
+
+<div class="tab-content">
+    <div class="tab-pane active" id="home">
         <div class="row">
             <div class="col-sm-7">
                 <h2>Overview</h2>
@@ -79,7 +84,7 @@ h2 { font-size: 22px; }
 
             {% if hilight_documents|length > 0 %}
             <div class="col-sm-5">
-                <!-- highlighting documents for recent meetings and asking the user to upload some -->
+  				<!-- highlighting documents for recent meetings and asking the user to upload some -->
                 <h2 style="font-size: 18px">Key Documents</h2>
                 <div id="recent-docs" class="row">
                     {% for meeting in highlight_documents %}
@@ -99,15 +104,13 @@ h2 { font-size: 22px; }
                     </div>
                     {% endfor %}
                 </div>
-                <p><a href="#document_archive" class="see_all">More documents...</a></p>
+                <p><a href="#documents" class="see_all" onclick="$('.nav-tabs a[href=\'#documents\']').tab('show'); return false;">More documents...</a></p>
             </div>
             {% endif %}
         </div>
-
         <div class="row">
             <div class="col-sm-7">
                 <h2>Commissioners</h2>
-
                 <table id="commissioners" cols="3">
                     <tr>
                     {% for smd in info.smds.values %}
@@ -140,7 +143,15 @@ h2 { font-size: 22px; }
                     </tr>
                 </table>
                 <p>Have more information about these commissioners? <a href="https://docs.google.com/spreadsheet/ccc?key=0AsuPWK1wtxNfdGdyVWU4Z3J3X3g3RzVyVWJ1Rkd4dXc#gid=0">Add it here!</a></p>
-            {% if info.committees.values %}
+            </div>
+            <div class="col-sm-5">
+                <div id="map_canvas" style="margin-top: 2.5em;"> </div>
+            </div><!-- /column -->            
+        </div>
+    </div> <!-- home tab -->
+
+    {% if info.committees.values %}
+    <div class="tab-pane" id="committees">
                 <h2>Committees</h2>
 
                 <table class="committees" cols="1">
@@ -162,8 +173,12 @@ h2 { font-size: 22px; }
                     {% endfor %}
                     </tr>
                 </table>
-            {% endif %}
+    </div> <!-- commissioners tab -->
+    {% endif %}
 
+    <div class="tab-pane" id="documents">
+        <div class="row">
+            <div class="col-sm-7">
                                 <h2 id="document_archive">Document Archive</h2>
                                 {% if documents %}        
                                 <ul id="document_list">
@@ -173,13 +188,13 @@ h2 { font-size: 22px; }
                                 </ul>
                                 {% endif %}
                                 <p>Have more documents? <a href="/upload-document?anc={{anc}}">Upload them!</a></p>
-                                
-            </div><!-- /column -->
+            </div>
+        </div>
+    </div> <!-- documents tab -->
 
-            <div class="col-sm-5">
-
-                <div id="map_canvas" style="margin-top: 2.5em;"> </div>
-
+    <div class="tab-pane" id="stats">
+        <div class="row">
+            <div class="col-sm-7">
                 <h2>{{ anc }} by the numbers</h2>
 
                 <div id="by_the_numbers">

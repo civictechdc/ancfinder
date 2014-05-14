@@ -165,6 +165,15 @@ a:hover {
 	#masthead a, #body a, footer a {
 		text-decoration: underline;
 	}
+		#body .nav-tabs a {
+			/* undo the above CSS about underlines and set a better color than our
+			   general link color (and better than Bootstrap's default tab/pill link color) */
+			text-decoration: none;
+			color: #777;
+		}
+			#body .nav-tabs li.active>a {
+				color: black;
+			}
 
 p {
 	line-height: 140%;
@@ -411,10 +420,6 @@ div#use_my_location {
 }
 #jump_to_top a {
 	color: white;
-}
-
-.active {
-	font-weight: bold;
 }
 
 /* Some fixes for the responsive layout */
