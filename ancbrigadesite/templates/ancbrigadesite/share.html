@@ -1,10 +1,23 @@
 {% extends "base.html" %}
 
-{% block title %}Submit ANC Information{% endblock %}
+{% block title %}Contribute ANC Information{% endblock %}
 
 {% block body %}
 
-          <h2 id="share1">Submit and share ANC info and data</h2>
-          <p>Soon, we expect to launch a simple interface for adding and requesting additional information about your ANC. In the mean time, you can email us at <a href="mailto:contactus@ancbrigade.com">contactus@ancbrigade.com</a> or submit data to <a href="http://opendatadc.org">Code for DC's CKAN</a>.</p>
+          <h2 id="share1">We Need Your Help!</h2>
+          <p>This project is only as good as the data in it, so we need your help to make sure that we have the most up-to-date information. There are several ways that you can chip in:</p>
+          <h3>Submit Commissioner Information</h3>
+          <p>We've started a spreadsheet of commissioner information right <a href='https://docs.google.com/spreadsheet/ccc?key=0AsuPWK1wtxNfdGdyVWU4Z3J3X3g3RzVyVWJ1Rkd4dXc#gid=0'>here</a>. Here's how to contribute to it:</p>
+          <p><em>Step 1</em>: Get the commissioner's name from <a href='http://anc.dc.gov/'>here</a>.</p>
+          <p><em>Step 2</em>: Put that name in the <code>official_name</code> field of the spreadsheet, or check that the name already there is correct. This step ensures that we don't display old data if a commissioner changes.</p>
+          <p><em>Step 3</em>: Fill in the information for any other column you know.</p>
+          <p><em>Step 4</em>: That's it! The data you entered will appear on the site within 24 hours (once our scripts do their magic).</p>
+          <h3>Submit Some Documents</h3>
+          <p>Using our <a href="{% url 'ancbrigadesite.backend_views.upload_document' %}">document uploader</a>, you can share documents in 3 different ways: uploading PDFs, sharing a link to a PDF on another website, or just pasting the text of a document.</p>
+          <p>We're looking for any kind of ANC document: agendas, minutes, resolutions, grants, etc. You can also edit previously-uploaded documents to add or correct information aobut them.</p>
+          <h3>Correct Us!</h3>
+          <p>While we're trying our best to pull data only from sources that we trust, it's always possible that something goes wrong along the way. If you see information that needs fixing, and you can't fix it through either of the above methods, <a href="{%url 'ancbrigadesite_about' %}">let us know</a>! We want to make sure that we do this right.</p>
+          <h3>Open a Pull Request on Github</h3>
+          <p>Have a suggestion for the code behind this site? Let us know! The link to our repo is down there at the bottom of the page.</p>
 
 {% endblock %}
