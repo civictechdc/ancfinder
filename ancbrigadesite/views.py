@@ -110,20 +110,23 @@ class AncInfoTemplateView(TemplateView):
 			highlight_documents.append(hd_mtg)
 
 			for doc_type_id, doc_type_name in [(2, "Minutes"), (1, "Agenda")]:
-				# don't look for minutes for the next meeting because it hasn't ocurred
-				# yet and so won't have minutes, and we don't want to prompt the user to
-				# upload minutes
-				if mtg == next_meeting and doc_type_id == 2: continue
-
 				# in case there are two documents of the same type, just get the first
 				def first(qs):
 					if qs.count() == 0: raise Document.DoesNotExist()
 					return qs[0]
 
+				# find the document
 				try:
 					doc = first(Document.objects.filter(anc=anc, doc_type=doc_type_id, meeting_date=mtg))
 				except Document.DoesNotExist:
 					doc = None
+
+				# for meetings that aren't two weeks behind us, if minutes aren't
+				# available, don't bother asking for them because they are almost
+				# certainly not available yet
+				if not doc and doc_type_id == 2 and (now - mtg).days < 14:
+					continue
+
 				hd_mtg[1].insert(0, (doc_type_id, doc_type_name, doc) )
 
 				# If minutes exist for a meeting, don't bother displaying an
