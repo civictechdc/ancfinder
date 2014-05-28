@@ -35,6 +35,7 @@ class Document(models.Model):
 		(11, "Committee Agenda"),
 		(12, "Committee Minutes"),
 		(13, "Committee Report"),
+		(14, "Meeting Summary"), # unofficial summary
 		]
 
 	owner = models.ForeignKey(User, related_name="uploaded_documents")
@@ -65,7 +66,7 @@ class Document(models.Model):
 		return "/document/%s/%s/%d/%s" % (self.anc, self.get_display_date().isoformat(), self.id, slugify(title))
 
 	def get_display_title(self):
-		if self.doc_type in (1, 2):
+		if self.doc_type in (1, 2, 14):
 			if self.meeting_date:
 				return "ANC %s %s for %s" % (self.anc, self.get_doc_type_display(), self.meeting_date.strftime("%B %d, %Y"))
 		if self.title is None: return "No Title"

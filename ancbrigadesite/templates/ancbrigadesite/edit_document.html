@@ -127,7 +127,7 @@ jQuery(function ($) {
 	// will override it internally.
 	$('#id_doc_type, #id_meeting_date_display').change(function() {
 		var doc_type = $('#id_doc_type').val();
-		var auto_title = (doc_type == '1' || doc_type == '2');
+		var auto_title = (doc_type == '1' || doc_type == '2' || doc_type == '14);
 		if (!auto_title) {
 			$('#control-group-title').fadeIn();
 		} else {

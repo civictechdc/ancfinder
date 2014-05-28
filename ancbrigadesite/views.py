@@ -109,7 +109,13 @@ class AncInfoTemplateView(TemplateView):
 			hd_mtg = (mtg, [])
 			highlight_documents.append(hd_mtg)
 
-			for doc_type_id, doc_type_name in [(2, "Minutes"), (1, "Agenda")]:
+			has_doc = False
+			for doc_type_id, doc_type_name in [(14, "Summary"), (2, "Minutes"), (1, "Agenda")]:
+				# If minutes or a summary exist for a meeting, don't bother displaying an
+				# agenda (or ask to upload an agenda) for the meeting.
+				if has_doc and doc_type_id == 1:
+					continue
+
 				# in case there are two documents of the same type, just get the first
 				def first(qs):
 					if qs.count() == 0: raise Document.DoesNotExist()
@@ -118,8 +124,18 @@ class AncInfoTemplateView(TemplateView):
 				# find the document
 				try:
 					doc = first(Document.objects.filter(anc=anc, doc_type=doc_type_id, meeting_date=mtg))
+					has_doc = True
 				except Document.DoesNotExist:
 					doc = None
+
+				# for meetings that aren't behind us, if a summary isn't available
+				# don't bother asking the user to upload one.
+				if not doc and doc_type_id == 14 and mtg >= now:
+					continue
+				
+				# for ANCs that have never had a summary posted, don't ask for one either
+				if not doc and doc_type_id == 14 and not Document.objects.filter(anc=anc, doc_type=doc_type_id).exists():
+					continue
 
 				# for meetings that aren't two weeks behind us, if minutes aren't
 				# available, don't bother asking for them because they are almost
@@ -128,11 +144,6 @@ class AncInfoTemplateView(TemplateView):
 					continue
 
 				hd_mtg[1].insert(0, (doc_type_id, doc_type_name, doc) )
-
-				# If minutes exist for a meeting, don't bother displaying an
-				# agenda (or ask to upload an agenda) for the meeting.
-				if doc and doc_type_id == 2:
-					break
 
 		return render(request, self.template_name, {
 			'anc': anc,
