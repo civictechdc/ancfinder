@@ -5,5 +5,5 @@ env = yaml.load(open("/home/ancbrigade/environment.yaml"))
 os.environ["STATIC_ROOT"] = env["STATIC_ROOT"]
 
 # Run da scripts.
-os.system(". .env/bin/activate; python3 update_anc_database.py base")
+os.system(". .env/bin/activate; python3 update_anc_database.py --base")
 os.system(". .env/bin/activate; python update_meeting_times.py")
