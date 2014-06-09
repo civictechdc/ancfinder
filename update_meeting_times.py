@@ -50,17 +50,12 @@ try:
 except IOError:
 	archive = {}
 
-# Remove any future meetings (and re-add them below) in case they've been changed.
-for ancmtgs1 in archive.values():
-	for mtg in list(ancmtgs1.get("meetings", {})):
-		if dateutil.parser.parse(mtg) > datetime.datetime.now():
-			del ancmtgs1["meetings"][mtg]
-
 # Loop through the paginated list of upcoming ANC events.
 
 url = 'http://anc.dc.gov/events'
 cached_meeting_data = { }
 meeting_links = []
+seen_meetings = set()
 while True:
 	if sys.stdout.isatty(): print url, "..." # don't print when running from a cron job
 
@@ -100,7 +95,18 @@ while True:
 			room = None
 
 		if anc not in archive: archive[anc] = { "meetings": { } }
-		archive[anc]['meetings'][date.isoformat()] = {
+
+		date_key = date.isoformat()
+
+		# Record the date we first saw this meeting. In our RSS feed, we'll use
+		# this date as the <pubdate>.
+		prev_mtg_record = archive[anc]['meetings'].get(date_key)
+		record_created = datetime.datetime.now().isoformat()
+		if prev_mtg_record is not None:
+			record_created = prev_mtg_record.get("created")
+
+		archive[anc]['meetings'][date_key] = {
+			'created': record_created,
 			'address': address,
 			'building': building,
 			'room': room,
@@ -108,6 +114,7 @@ while True:
 		}
 
 		last_meeting_date = date
+		seen_meetings.add((anc, date_key))
 
 	# Stop if we are waaaay in the future, since the events page goes years ahead, which
 	# is not actually very helpful.
@@ -121,6 +128,12 @@ while True:
 
 	# turn a relative URL into an absolute URL for the next iteration
 	url = urlparse.urljoin(url, nextpage[0]['href'])
+
+# Remove future meetings that no longer are posted by DC.
+for anc, ancmtgs1 in archive.items():
+	for mtg in list(ancmtgs1.get("meetings", {})):
+		if (anc, mtg) not in seen_meetings and dateutil.parser.parse(mtg) > datetime.datetime.now():
+			del ancmtgs1["meetings"][mtg]
 
 # Save the JSON file
 with open(file_name, 'w') as output:
