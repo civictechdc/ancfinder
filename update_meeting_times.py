@@ -117,8 +117,8 @@ while True:
 		seen_meetings.add((anc, date_key))
 
 	# Stop if we are waaaay in the future, since the events page goes years ahead, which
-	# is not actually very helpful.
-	if last_meeting_date and last_meeting_date > datetime.datetime.now()+datetime.timedelta(days=6*30.5):
+	# is not actually very helpful. Cut off after 3 months.
+	if last_meeting_date and last_meeting_date > datetime.datetime.now()+datetime.timedelta(days=3*30.5):
 		break
 
 	# Go onto the next page, if there is a next page.
