@@ -78,7 +78,7 @@ h2 { font-size: 22px; }
                 <p>ANC {{anc}} covers {{info.neighborhood_list}}.</p>
 
                 {% if next_meeting %}
-                <p>The next meeting of ANC {{anc}} is <strong>{{ next_meeting }}</strong>.</p>
+                <p>The next meeting of ANC {{anc}} is <strong>{{ next_meeting|date }} at {{ next_meeting|time|cut:'.'}}</strong>.</p>
                 {% endif %}
             </div>
 
