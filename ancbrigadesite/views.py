@@ -293,7 +293,7 @@ def make_anc_feed(request, anc):
 			if isinstance(item, Document):
 				return item.created
 			else:
-				return dateutil.parser.parse(item[0])
+				return dateutil.parser.parse(item[2]["created"])
 		def item_link(self, item):
 			if isinstance(item, Document):
 				return settings.SITE_ROOT_URL + item.get_absolute_url()
