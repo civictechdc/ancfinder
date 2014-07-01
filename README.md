@@ -68,9 +68,9 @@ Updating Static Data
 The ANC/SMD metadata is stored statically in `static/ancs.json`. To update this file
 from our Google Doc, our ScraperWiki scraper, and other external data sources, run:
 
-	python3 update_anc_database.py
+	python3 scripts/update_anc_database.py
 
-You will need to provide your Google email & password and a Census API key, which you can get at http://www.census.gov/developers/tos/key_request.html. For convenience, you can also store these credentials in a file named "update_anc_database_creds.py" in this directory and put in it:
+You will need to provide your Google email & password and a Census API key, which you can get at http://www.census.gov/developers/tos/key_request.html. For convenience, you can also store these credentials in a file named "update_anc_database_creds.py" in this (root) directory and put in it:
 
 	google_email="your.address@gmail.com"
 	google_password="your google password"
@@ -78,18 +78,18 @@ You will need to provide your Google email & password and a Census API key, whic
 
 You can also selectively update just some of the data (because updating some takes a long time) using command line arguments:
 	
-	python3 update_anc_database.py [--base] [--terms] [--gis] [--neighborhoods] [--census] [--census-analysis]
+	python3 scripts/update_anc_database.py [--base] [--terms] [--gis] [--neighborhoods] [--census] [--census-analysis]
 
 And to fetch the latest ANC meetings calendar (note that it currently requires Python 2):
 	
-	python update_meeting_database.py
+	python scripts/update_meeting_database.py
 
 There are also several scripts to grab data for use in `update_anc_database.py`. They are:
 
-        update_abra.py # Liquor licenses
-        update_building_permits.py # Building permits
-        update_crimes.py # Crimes reported
-        update_terms.py # Terms served by commissioners
+        scripts/update_abra.py # Liquor licenses
+        scripts/update_building_permits.py # Building permits
+        scripts/update_crimes.py # Crimes reported
+        scripts/update_terms.py # Terms served by commissioners
 
 All of the scripts should be run occasionally to make sure the data shown on the site is up-to-date.
 
