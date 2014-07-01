@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import Http404, HttpResponse
 from django.views.generic import TemplateView
 from django.conf import settings
+from django.utils.timezone import make_aware, get_default_timezone
 import datetime, calendar, json, collections
 
 
@@ -275,9 +276,10 @@ def make_anc_feed(request, anc):
 						if mtgdate < now: continue
 						meetings.append( (mtgdate, mtganc, mtginfo) )
 						break
-				meetings.sort()
 
-			return docs + meetings
+			items = docs + meetings
+			items.sort(key = lambda item : self.item_pubdate(item), reverse=True)
+			return items
 
 		def item_title(self, item):
 			if isinstance(item, Document):
@@ -293,7 +295,7 @@ def make_anc_feed(request, anc):
 			if isinstance(item, Document):
 				return item.created
 			else:
-				return dateutil.parser.parse(item[2]["created"])
+				return make_aware(dateutil.parser.parse(item[2]["created"]), get_default_timezone())
 		def item_link(self, item):
 			if isinstance(item, Document):
 				return settings.SITE_ROOT_URL + item.get_absolute_url()
