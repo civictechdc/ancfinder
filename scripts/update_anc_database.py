@@ -436,16 +436,16 @@ def add_census_data_analysis(output):
             anc["census"]["POP_DENSITY"] = { "value": int(round(anc["census"]["P0010001"]["value"] / anc["area"] * 2589990.0)) } # pop per sq mi
 
 if __name__ == "__main__":
-    if not os.path.exists("update_anc_database_creds.py"):
+    if not os.path.exists("credentials.py"):
         print("This program downloads our public Google Doc with Ward/ANC/SMD information.")
         print("But we need your Google login and Census API key info to get it...")
         google_email = input("google account email> ")
         google_password = getpass.getpass("google account password> ")
         census_api_key = getpass.getpass("census api key> ")
     else:
-        # Or create a file named "update_anc_database_creds.py" and put in
+        # Or create a file named "credentials.py" and put in
         # it your Google credentials and Census API key (see the README).
-        exec(compile(open("update_anc_database_creds.py").read(), "update_anc_database_creds.py", 'exec'))
+        exec(compile(open("credentials.py").read(), "credentials.py", 'exec'))
         
     
     if "--reset" in sys.argv:
