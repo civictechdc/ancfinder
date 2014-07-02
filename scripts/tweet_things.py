@@ -18,7 +18,6 @@ def main():
 	# Post to Twitter. Mix it up a bit.
 	if (random.random() > .5) or not post_meeting_tweet(previous_tweets):
 		post_document_tweet(previous_tweets)
-		pass
 
 	# Save the JSON file so we can record the things we've already
 	# tweeted about.
@@ -120,6 +119,7 @@ def post_tweet(key, text, previous_tweets):
 	ret = t.statuses.update(status=text)
 	previous_tweets[key] = ret
 
-	print(text, ret)
+	#print(text)
+	#print(json.dumps(ret, sort_keys=True, indent=4))
 
 main()
