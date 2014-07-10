@@ -48,7 +48,10 @@ h2 { font-size: 22px; }
 </style>
 {% endblock %}
 
-{% block rss_feed %}<a href="/feeds/ancfinder-{{anc|lower}}.rss">{{anc}} RSS</a> {% endblock %}
+{% block rss_feed %}
+    <a href="/feeds/ancfinder-{{anc|lower}}.rss">{{anc}} RSS</a>
+    <a href="/feeds/ancfinder-{{anc|lower}}.ics">{{anc}} iCal</a>
+{% endblock %}
 
 {% block master_body %}
 

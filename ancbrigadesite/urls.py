@@ -18,6 +18,7 @@ urlpatterns = patterns('',
 	url(r'^(?P<anc>[0-9][A-Za-z])$', AncInfoTemplateView.as_view(), name = 'ancbrigadesite_anc_info'),
 	url(r'^document/(?P<anc>..)/(?P<date>....-..-..)/(?P<id>\d+)(?P<slug>/.*)?$', DocumentTemplateView.as_view(), name = 'ancbrigadesite_document',),
     url(r'^feeds/ancfinder(?:-(\d[a-z]))?.rss$', make_anc_feed),
+    url(r'^feeds/ancfinder(?:-(\d[a-z]))?.ics$', make_anc_ical),
 
 
 	# Django admin

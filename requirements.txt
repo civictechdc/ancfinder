@@ -10,3 +10,4 @@ python-dateutil
 pyyaml
 git+https://github.com/JoshData/django-bootstrap-form
 twitter
+icalendar

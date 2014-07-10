@@ -79,7 +79,10 @@
             <div class="col-sm-7 col-sm-offset-1">
                 <p>ANC Finder is a project in Washington, D.C. to strengthen our unique hyper-local level of government called Advisory Neighborhood Commissions (ANCs).</p>
                 <p class="by">This is a project of <a href="http://codefordc.org/">Code for DC</a>. We’re volunteers interested in using technology to solve problems in our civic lives. The site is a work in progress.</p>
-                {% block rss_feed %}<p><a href="/feeds/ancfinder.rss">RSS</a></p>{% endblock %}
+                <p>{% block rss_feed %}
+                  <a href="/feeds/ancfinder.rss">RSS</a>
+                  <a href="/feeds/ancfinder.ics">iCal</a>
+                {% endblock %}</p>
             </div>
             <div class="col-sm-3">
                 <p>The source code for this website is on <a href="https://github.com/codefordc/ancbrigade">github</a>.</p>

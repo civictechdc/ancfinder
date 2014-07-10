@@ -308,3 +308,29 @@ def make_anc_feed(request, anc):
 				return settings.SITE_ROOT_URL + "/" + item[1] + "/meeting/" + item[0].replace("-", "").replace(":", "") # e.g. /1A/meeting/20140101T000000
 
 	return ANCRSSFeed()(request)
+
+def make_anc_ical(request, anc=None):
+	# Collect future meetings and sort after collating meetings across ANCs.
+	now = datetime.datetime.now()
+	meetings = []
+	for mtganc, mtgs in meeting_data.items():
+		if anc != None and mtganc.lower() != anc: continue
+		for mtgdate, mtginfo in sorted(mtgs['meetings'].items()):
+			mtgdate = dateutil.parser.parse(mtgdate)
+			if mtgdate < now: continue
+			meetings.append( (mtgdate, mtganc, mtginfo) )
+	meetings.sort()
+
+	# Make ical.
+	from icalendar import Calendar, Event
+	cal = Calendar()
+	for mtgdate, mtganc, mtginfo in meetings:
+		event = Event()
+		event.add('dtstart', mtgdate)
+		event['summary'] = "ANC %s Meeting" % mtganc
+		event['description'] = "See ANCFinder.org for details: http://ancfinder.org/%s" % mtganc
+		event['location'] = '; '.join(mtginfo[k] for k in ('building', 'address', 'root') if mtginfo.get(k))
+		event['link'] = mtginfo.get("link")
+		cal.add_component(event)
+
+	return HttpResponse(cal.to_ical(), "text/calendar" if "mime" not in request.GET else "text/plain")
