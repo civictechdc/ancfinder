@@ -3,7 +3,7 @@
     "thumbnailUrl":"http://ancfinder.org/static/img/favicon.png",
     "needs": [
         {"need":"ANC document uploading"},
-        {"need":"Python"},
+        {"need":"Python"}
     ],
     "bornAt": "Code for DC",
     "type": "Web App",
