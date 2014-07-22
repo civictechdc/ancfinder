@@ -17,6 +17,8 @@ Get the repo running on your machine:
 
 	git clone --recursive https://github.com/codefordc/ancbrigade
 	cd ./ancbrigade
+	git submodule init
+	git submodule update
 
 Note --recursive on 'git clone' to get the submodule dependencies.
 
@@ -39,7 +41,7 @@ Get our latest data files:
 	
 If it seems like you're missing stuff, also try
         
-        git submodule init; git submodule update
+    git submodule update
 
 Running the Site
 ----------------
