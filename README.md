@@ -33,9 +33,10 @@ Then, install dependencies and set up the site database:
 	pip install -r requirements.txt
 	./manage.py syncdb
 
+If you are missing libxml on OSX run `xcode-select --install`
+
 Get our latest data files:
 
-	mkdir static
 	wget -O static/ancs.json http://ancfinder.org/static/ancs.json
 	wget -O static/meetings.json http://ancfinder.org/static/meetings.json
 	
