@@ -17,6 +17,8 @@ Get the repo running on your machine:
 
 	git clone --recursive https://github.com/codefordc/ancbrigade
 	cd ./ancbrigade
+	git submodule init
+	git submodule update
 
 Note --recursive on 'git clone' to get the submodule dependencies.
 
@@ -31,15 +33,16 @@ Then, install dependencies and set up the site database:
 	pip install -r requirements.txt
 	./manage.py syncdb
 
+If you are missing libxml on OSX run `xcode-select --install`
+
 Get our latest data files:
 
-	mkdir static
 	wget -O static/ancs.json http://ancfinder.org/static/ancs.json
 	wget -O static/meetings.json http://ancfinder.org/static/meetings.json
 	
 If it seems like you're missing stuff, also try
         
-        git submodule init; git submodule update
+    git submodule update
 
 Running the Site
 ----------------
