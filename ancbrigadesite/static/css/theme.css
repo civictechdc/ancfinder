@@ -145,7 +145,7 @@ h4 {
 h2 span, h3 span, h4 span, span span, a em {
     font-family: PTSerifItalic;
     font-weight: normal;
-    font-style: normal;    
+    font-style: normal;
     text-transform: none;
 	}
 p+h2,
@@ -159,7 +159,7 @@ a {
     color: #89A22c;
     text-decoration: none;
 	}
-a:hover { 
+a:hover {
 	color: #79A5D3;
 	}
 	#masthead a, #body a, footer a {
@@ -252,17 +252,26 @@ input[type="color"].large,
 
 /* 04. Layout styles =============================== */
 
-#header {
+nav {
 	padding: 1em 0;
 	background: #394042;
 	line-height: 1.5em;
 }
 
-	#header a {
+    .navbar {
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+    }
+
+	.navbar-inverse .navbar-nav>li>a {
 		color: #fff;
+        padding-bottom: 5px;
+        padding-left: 30px;
 	}
-	#header a:hover,
-	#header a:active {
+
+	.navbar-inverse .navbar-nav>li>a:hover,
+	.navbar-inverse .navbar-nav>li>a:active {
 		color: #fff1c9;
 		text-decoration: none;
 	}
@@ -270,8 +279,11 @@ input[type="color"].large,
 	#logo {
 		display: block;
 		font-size: 1.5em;
+        line-height: 1.1em;
 		font-family: CentralUnionMission;
+        color: white;
 		text-transform: uppercase; /* required for CentralUnionMission font which only provides uppercase glyphs */
+        padding-left: 50px;
 	}
 
 	ul.nav-links {
@@ -283,14 +295,19 @@ input[type="color"].large,
 		display: inline;
 		margin-left: 60px;
 	}
-	
-	#header .login-row {
+
+	.login-row a{
 		font-family: OpenSans, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		text-transform: none;
 		font-size: 70%;
 		color: white;
 		text-align: right;
 	}
+    .login-row a:hover,
+    .login-row a:active {
+        color: #fff1c9;
+        text-decoration: none;
+    }
 
 #masthead {
 	background-color: #79A5D3;
@@ -456,6 +473,12 @@ div#use_my_location {
 		width: 350px;
 		height: 300px;
 	}
+    #logo {
+        padding-left: 10px;
+    }
+    .navbar-inverse .navbar-nav>li>a {
+        padding-left: 15px;
+    }
 }
 @media (max-width: 420px) {
 	#map_canvas_google {
@@ -469,4 +492,3 @@ div#use_my_location {
 
 p.error { color: red; }
 form ul { list-style: none; margin: 0; padding: 0; } /* radio widget */
-

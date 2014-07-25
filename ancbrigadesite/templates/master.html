@@ -25,12 +25,21 @@
     {% block head %}{% endblock %}
 </head>
 <body>
-    <div id="header" class='topbar' data-dropdown="dropdown">
-        <div class="container">
-            <div class="row">
-                <a href="{% url 'ancbrigadesite_home' %}" id="logo" class="col-sm-2">ANC<br>Finder</a>
-                <div class="col-sm-10">
-                    <ul class="nav-links">
+    <nav class='navbar navbar-inverse' role='navigation'>
+        <div class='container-fluid'>
+            <div class='navbar-header'>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="{% url 'ancbrigadesite_home' %}" id="logo" class="col-sm-2 navbar-brand">ANC<br>Finder</a>
+            </div><!-- /navbar-header -->
+            <div class='navbar-collapse collapse'>
+                <div class='col-sm-10'>
+                <div class='row'>
+                    <ul class='nav navbar-nav navbar-right'>
                         <li><a class="smooth" href="{% url 'ancbrigadesite_home' %}#what-is-an-anc" title="Discover what ANCs do for DC.">What Are ANCs?</a></li>
 
                         <li class="dropdown">
@@ -56,20 +65,24 @@
                         <li><a href="{% url 'ancbrigadesite_about' %}" title="This is a project of Code for DC, a group of volunteer civic hackers. Learn more and get involved!">About Us</a></li>
                         <li><a href="https://twitter.com/ancfinder"><i class="fa fa-twitter"></i> Follow Us</a></li>
                     </ul>
-
-                    <div class="login-row">
+                </div>
+                <div class='row'>
+                    <div class='col-sm-12'>
+                    <ul class="nav navbar-nav navbar-right login-row">
                         {% if not user.is_authenticated %}
                         <a href="{% url 'registration.views.loginform' %}{% if request.resolver_match.url_name|slice:":19" != "registration.views." %}?next={{request.path|urlencode}}{% endif %}">Log In</a>
                         {% else %}
                         <a href="{% url 'registration.views.profile' %}">{{user.email}}</a>
                         | <a href="{% url 'registration.views.logoutview' %}">log out</a>
                         {% endif %}
-                    </div>
-
+                    </ul>
+                </div>
                 </div>
             </div>
+            </div>
+
         </div>
-    </div><!-- /header -->
+    </nav><!-- /header -->
 
     <div id="body">
         {% block master_body %}{% endblock %}
@@ -82,58 +95,58 @@
                 <p>ANC Finder is a project in Washington, D.C. to strengthen our unique hyper-local level of government called Advisory Neighborhood Commissions (ANCs).</p>
                 <p class="by">This is a project of <a href="http://codefordc.org/">Code for DC</a>. We’re volunteers interested in using technology to solve problems in our civic lives. The site is a work in progress.</p>
                 <p>{% block rss_feed %}
-                  <a href="/feeds/ancfinder.rss">RSS</a>
-                  <a href="/feeds/ancfinder.ics">iCal</a>
-                {% endblock %}</p>
+                    <a href="/feeds/ancfinder.rss">RSS</a>
+                    <a href="/feeds/ancfinder.ics">iCal</a>
+                    {% endblock %}</p>
+                </div>
+                <div class="col-sm-3">
+                    <p>The source code for this website is on <a href="https://github.com/codefordc/ancbrigade">github</a>.</p>
+                    <p>Legal: <a href="{% url 'ancbrigadesite_legal' %}">Required disclaimers</a>.</p>
+                    <p>The <a href="http://ryantroyford.com/central-union-mission/">Central Union Mission-inspired font</a> in the header is by <a href="http://ryantroyford.com/">Ryan Troy Ford</a>.</p>
+                </div>
             </div>
-            <div class="col-sm-3">
-                <p>The source code for this website is on <a href="https://github.com/codefordc/ancbrigade">github</a>.</p>
-                <p>Legal: <a href="{% url 'ancbrigadesite_legal' %}">Required disclaimers</a>.</p>
-                <p>The <a href="http://ryantroyford.com/central-union-mission/">Central Union Mission-inspired font</a> in the header is by <a href="http://ryantroyford.com/">Ryan Troy Ford</a>.</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
 
-    <!-- javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"> </script>
-    <script>
-    // when debugging off the network, fall back to a local copy of jquery
-    try { $; } catch (err) {
-        document.write("\u003Cscript src\u003D\u0027static/jquery-2.1.0.min.js\u0027\u003E \u003C/script\u003E");
-    }
-    </script>
-    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"> </script>
+        <!-- javascript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"> </script>
+        <script>
+        // when debugging off the network, fall back to a local copy of jquery
+        try { $; } catch (err) {
+            document.write("\u003Cscript src\u003D\u0027static/jquery-2.1.0.min.js\u0027\u003E \u003C/script\u003E");
+        }
+        </script>
+        <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"> </script>
 
-    {# CSRF as required by Django #}
-    <script>$('html').ajaxSend(function(event, xhr, settings) { if (!/^https?:.*/.test(settings.url)) xhr.setRequestHeader("X-CSRFToken", "{{csrf_token|escapejs}}"); });</script> <!-- {% csrf_token %} -->
+        {# CSRF as required by Django #}
+        <script>$('html').ajaxSend(function(event, xhr, settings) { if (!/^https?:.*/.test(settings.url)) xhr.setRequestHeader("X-CSRFToken", "{{csrf_token|escapejs}}"); });</script> <!-- {% csrf_token %} -->
 
-    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
-    <script src="{{ STATIC_URL }}jquery-utils.js"> </script>
-    <script src="{{ STATIC_URL }}moment.min.js"> </script>
+        <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
+        <script src="{{ STATIC_URL }}jquery-utils.js"> </script>
+        <script src="{{ STATIC_URL }}moment.min.js"> </script>
 
-    <script>
-    $(function() {
-        // enable all tabs
-        $('.nav-tabs a').click(function (e) {
-            e.preventDefault()
-            $(this).tab('show');
+        <script>
+        $(function() {
+            // enable all tabs
+            $('.nav-tabs a').click(function (e) {
+                e.preventDefault()
+                $(this).tab('show');
+            })
         })
-    })
-    </script>
+        </script>
 
-    {% block scripts %}
-    {% endblock %}
+        {% block scripts %}
+        {% endblock %}
 
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-41757236-1', 'ancfinder.org');
-    ga('send', 'pageview');
-    </script>
-</body>
-</html>
+        ga('create', 'UA-41757236-1', 'ancfinder.org');
+        ga('send', 'pageview');
+        </script>
+    </body>
+    </html>
