@@ -67,8 +67,11 @@ class AncInfoTemplateView(TemplateView):
 		# Find the next meeting and the most recent two meetings so we can
 		# display related documents for those meetings.
 		now = datetime.datetime.now()
+		all_meetings = meeting_data.get(anc, {}).get("meetings", {})
 		all_meetings = sorted([datetime.datetime.strptime(m, "%Y-%m-%dT%H:%M:%S")
-			for m in meeting_data.get(anc, {}).get("meetings", {}).keys() ])
+			for m in all_meetings.keys()
+			if all_meetings[m].get("status") != "invalid"
+			])
 		next_meeting = None
 		for m in all_meetings:
 			if m > now:
@@ -263,6 +266,7 @@ def make_anc_feed(request, anc):
 				meetings = []
 				now = datetime.datetime.now().isoformat()
 				for mtgdate, mtginfo in meeting_data[anc]['meetings'].items():
+					if mtginfo.get("status") == "invalid": continue
 					if mtgdate < now: continue
 					meetings.append( (mtgdate, anc, mtginfo) )
 				meetings.sort()
@@ -274,6 +278,7 @@ def make_anc_feed(request, anc):
 				for mtganc, mtgs in meeting_data.items():
 					for mtgdate, mtginfo in sorted(mtgs['meetings'].items()):
 						if mtgdate < now: continue
+						if mtginfo.get("status") == "invalid": continue
 						meetings.append( (mtgdate, mtganc, mtginfo) )
 						break
 
@@ -325,6 +330,7 @@ def make_anc_ical(request, anc=None):
 	from icalendar import Calendar, Event
 	cal = Calendar()
 	for mtgdate, mtganc, mtginfo in meetings:
+		if mtginfo.get("status") == "invalid": continue
 		event = Event()
 		event.add('dtstart', mtgdate)
 		event['summary'] = "ANC %s Meeting" % mtganc

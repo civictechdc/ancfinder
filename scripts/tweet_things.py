@@ -36,6 +36,7 @@ def post_meeting_tweet(previous_tweets):
 		def meeting_iterator():
 			for anc in meetings:
 				for meeting_date, meeting_info in meetings[anc]['meetings'].items():
+					if meeting_info.get("status") == "invalid": continue # don't tweet these
 					meeting_date = dateutil.parser.parse(meeting_date)
 					if meeting_date <= now: continue
 					tweet_key = 'meeting:' + meeting_date.isoformat() + ':' + tweet_type

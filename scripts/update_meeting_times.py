@@ -130,10 +130,13 @@ while True:
 	url = urlparse.urljoin(url, nextpage[0]['href'])
 
 # Remove future meetings that no longer are posted by DC.
+# Don't delete meetings with status == "manual" which are
+# meetings we're entering by hand when the DC data is wrong.
 for anc, ancmtgs1 in archive.items():
-	for mtg in list(ancmtgs1.get("meetings", {})):
-		if (anc, mtg) not in seen_meetings and dateutil.parser.parse(mtg) > datetime.datetime.now():
-			del ancmtgs1["meetings"][mtg]
+	for mtgdate, mtgobj in list(ancmtgs1.get("meetings", {}).items()):
+		if mtgobj.get("status") == "manual": continue
+		if (anc, mtgdate) not in seen_meetings and dateutil.parser.parse(mtgdate) > datetime.datetime.now():
+			del ancmtgs1["meetings"][mtgdate]
 
 # Save the JSON file
 with open(file_name, 'w') as output:
