@@ -479,6 +479,9 @@ div#use_my_location {
     .navbar-inverse .navbar-nav>li>a {
         padding-left: 15px;
     }
+    nav .col-sm-10 {
+        font-size: 15px;
+    }
 }
 @media (max-width: 420px) {
 	#map_canvas_google {
