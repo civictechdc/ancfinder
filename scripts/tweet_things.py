@@ -48,7 +48,7 @@ def post_meeting_tweet(previous_tweets):
 		for mtg in all_meetings_sorted(tweet_type):
 			if mtg['anc'] in seen: continue
 			yield mtg
-			seen.add('anc')
+			seen.add(mtg['anc'])
 
 	def get_next_day_of_meeting():
 		day_of = [m for m in all_meetings_sorted('day-of')
