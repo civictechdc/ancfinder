@@ -40,10 +40,10 @@
                 <div class='col-sm-10'>
                 <div class='row'>
                     <ul class='nav navbar-nav navbar-right'>
-                        <li><a class="smooth" href="{% url 'ancfindersite_home' %}#what-is-an-anc" title="Discover what ANCs do for DC.">What Are ANCs?</a></li>
+                        <li><a class="smooth" href="{% url 'ancfindersite_home' %}#what-is-an-anc">What Are ANCs?</a></li>
 
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Explore</a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Explore ANCs</a>
                             <ul id="menu_anc_list" class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                                 {% for ward, ward_info in ancs.items %}
                                 <div class="ward">
@@ -61,8 +61,17 @@
                         </li>
 
                         <!--<li><a href="map.html" title="Which ANC distict do you live in? Who is your Commissioner? Learn that and more here.">Find My ANC</a></li>-->
-                        <li><a href="{% url 'ancfindersite_share' %}" title="We're all in this together. You can submit any kind of info about an ANC here, such as meeting minutes, budget info, and other documents.">Submit ANC Info</a></li>
-                        <li><a href="{% url 'ancfindersite_about' %}" title="This is a project of Code for DC, a group of volunteer civic hackers. Learn more and get involved!">About Us</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Submit Info</a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{% url 'ancfindersite_share' %}">How to Help</a></li>
+                                <li class="divider"></li>
+                                <li><a href="{% url 'ancfindersite.backend_views.upload_document' %}">Upload Documents</a></li>
+                                <li><a href="https://docs.google.com/spreadsheet/ccc?key=0AsuPWK1wtxNfdGdyVWU4Z3J3X3g3RzVyVWJ1Rkd4dXc#gid=0">Submit Commissioner Info</a></li>
+                                <li><a href="https://github.com/codefordc/ancfinder">Contribute Code</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'ancfindersite_about' %}">About Us</a></li>
                         <li><a href="https://twitter.com/ancfinder"><i class="fa fa-twitter"></i> Follow Us</a></li>
                     </ul>
                 </div>
