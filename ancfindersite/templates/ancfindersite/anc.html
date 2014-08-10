@@ -48,11 +48,6 @@ h2 { font-size: 22px; }
 </style>
 {% endblock %}
 
-{% block rss_feed %}
-    <a href="/feeds/ancfinder-{{anc|lower}}.rss">{{anc}} RSS</a>
-    <a href="/feeds/ancfinder-{{anc|lower}}.ics">{{anc}} iCal</a>
-{% endblock %}
-
 {% block master_body %}
 
    <!-- Main hero unit for a primary marketing message or call to action -->
@@ -60,7 +55,8 @@ h2 { font-size: 22px; }
         <div class="container">
             <div class="row" style="text-align: center">
                 <h1 style="font-size: 36px">ANC {{anc}}</h1>
-                <div style="margin-top: 3px">{% if info.website %}<a href="{{ info.website }}">{{ info.website }}</a>{% endif %}</div>
+                <div style="margin-top: 3px">{% if info.website %}Website: <a href="{{ info.website }}">{{ info.website }}</a>{% endif %}</div>
+                <i class="fa fa-rss"></i> <a href="/feeds/ancfinder-{{anc|lower}}.rss">Subscribe to updates</a> | <i class="fa fa-calendar"> </i> <a href="/feeds/ancfinder-{{anc|lower}}.ics">Add to your calendar</a>
             </div>
         </div><!-- /container -->
     </div><!-- /masthead -->
@@ -149,7 +145,7 @@ h2 { font-size: 22px; }
             </div>
             <div class="col-sm-5">
                 <div id="map_canvas" style="margin-top: 2.5em;"> </div>
-            </div><!-- /column -->            
+            </div><!-- /column -->
         </div>
     </div> <!-- home tab -->
 
@@ -183,7 +179,7 @@ h2 { font-size: 22px; }
         <div class="row">
             <div class="col-sm-7">
                                 <h2 id="document_archive">Document Archive</h2>
-                                {% if documents %}        
+                                {% if documents %}
                                 <ul id="document_list">
                                         {% for doc in documents %}
                                                 <li><a href="{{doc.get_absolute_url}}">{{doc.get_display_date|date}}. {% if doc.get_display_title %}{{doc.get_display_title}}{% endif %}</a></li>
@@ -310,7 +306,7 @@ h2 { font-size: 22px; }
 	            html: true,
 	        });
 
-                
+
         $("#smd" + window.location.hash.replace("#", "")).find(">div").css({"background-color": "#ffffcc"});
 
                 var smd_bounds = {
@@ -318,7 +314,7 @@ h2 { font-size: 22px; }
                         '{{smd.smd_number}}': new google.maps.LatLngBounds(new google.maps.LatLng({{smd.bounds.1}}, {{smd.bounds.0}}), new google.maps.LatLng({{smd.bounds.3}}, {{smd.bounds.2}})){% if not forloop.last %},{% endif %}
                     {% endfor %}
                 };
-                               
+
                 $("#commissioners td").each(function() {
                     var smd_number = $(this).attr('data-smd-number');
 
@@ -344,6 +340,6 @@ h2 { font-size: 22px; }
                         return false;
                     });
                 });
-                
+
     </script>
 {% endblock %}

@@ -3,17 +3,21 @@
 {% block title %}About ANC Finder{% endblock %}
 
 {% block body %}
-          <h2 id="Whoarewe">Who are we?</h2>
-          <p>ANC Finder is a project of <a href="http://codefordc.org/">Code for DC</a>, which is a <a href="http://brigade.codeforamerica.org/">Code for America Brigade</a>. We&rsquo;re volunteers interested in using technology and open data to improve our civic lives.
-          <p>We welcome your feedback and ideas: email us at <a href="mailto:contactus@ancfinder.org">contactus@ancfinder.org</a>.</p>
-          <p>Our goal is to strengthen DC's unique hyper-local level of government called <b>Advisory Neighborhood Commissions (ANCs)</b>. This is a work in progress.</p>
+<h2 id="Whoarewe">Who are we?</h2>
+<p>ANC Finder is a project of <a href="http://codefordc.org/">Code for DC</a>, which is a <a href="http://brigade.codeforamerica.org/">Code for America Brigade</a>. We&rsquo;re volunteers interested in using technology and open data to improve our civic lives.</p>
+<p>We welcome your feedback and ideas: email us at <a href="mailto:contactus@ancfinder.org">contactus@ancfinder.org</a>.</p>
+<p>Our goal is to strengthen DC's unique hyper-local level of government called <b>Advisory Neighborhood Commissions (ANCs)</b>. This is a work in progress.</p>
 
-          <h2 id="getinvolved">Get Involved!</h2>
-          <p>Come to <a href="http://codefordc.org/">our next meeting</a> if you would like to get involved.</p>
-          <p>You can also help:</p>
-            <ul>
-              <li>Submit ANC documents <a href="{% url "ancfindersite.backend_views.upload_document" %}">here</a> or make pull requests on <a href="https://github.com/codefordc/ancfinder">github</a>.</li>
-              <li>Search online for ANC websites and social media and add it to this <a href="https://docs.google.com/spreadsheet/ccc?key=0AsuPWK1wtxNfdGdyVWU4Z3J3X3g3RzVyVWJ1Rkd4dXc#gid=1">google doc</a>.</li>
-            </ul>
+<h2 id="getinvolved">Get Involved!</h2>
+<p>Come to <a href="http://codefordc.org/">our next meeting</a> if you would like to get involved.</p>
+<p>You can also help:</p>
+<ul>
+    <li>Submit ANC documents <a href="{% url "ancfindersite.backend_views.upload_document" %}">here</a> or make pull requests on <a href="https://github.com/codefordc/ancfinder">github</a>.</li>
+    <li>Search online for ANC websites and social media and add it to this <a href="https://docs.google.com/spreadsheet/ccc?key=0AsuPWK1wtxNfdGdyVWU4Z3J3X3g3RzVyVWJ1Rkd4dXc#gid=1">google doc</a>.</li>
+</ul>
+
+<h2>Our Data</h2>
+<p>You can subscribe to a site-wide feed of documents <a href="/feeds/ancfinder.rss">here</a>, or add all upcoming meetings to your calendar <a href="/feeds/ancfinder.ics">here</a>.</p>
+<p>We've also made the data that powers the site available. You can find commissioner information <a href="http://ancfinder.org/static/ancs.json">here</a> and meeting information <a href="http://ancfinder.org/static/meetings.json">here</a>.
 
 {% endblock %}
