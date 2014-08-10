@@ -3,9 +3,9 @@ from datetime import datetime, timedelta
 import dateutil.parser
 
 sys.path.insert(0, '.')
-os.environ['DJANGO_SETTINGS_MODULE'] = 'ancbrigadesite.settings'
-from ancbrigadesite import settings
-from ancbrigadesite.models import Document
+os.environ['DJANGO_SETTINGS_MODULE'] = 'ancfindersite.settings'
+from ancfindersite import settings
+from ancfindersite.models import Document
 
 def main():
 	# What have we tweeted about before?

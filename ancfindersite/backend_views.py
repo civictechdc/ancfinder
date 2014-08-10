@@ -8,7 +8,7 @@ from django.core.exceptions import ValidationError
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import permission_required
 
-from ancbrigadesite.models import Document, anc_list, anc_data
+from ancfindersite.models import Document, anc_list, anc_data
 
 import re, datetime
 
@@ -105,7 +105,7 @@ def upload_document(request):
 				try:
 					import urllib2
 					req = urllib2.Request(form.cleaned_data["url"])
-					req.add_unredirected_header('User-Agent', 'ANCBrigade.com') # some ANC websites require something like this
+					req.add_unredirected_header('User-Agent', 'ancfinder.com') # some ANC websites require something like this
 					req.add_unredirected_header('Accept', '*/*') # some ANC websites require this
 					resp = urllib2.urlopen(req)
 					if resp.code != 200: raise ValueError("URL returned an error.")
@@ -118,7 +118,7 @@ def upload_document(request):
 				except Exception as e:
 					# ugh, dup'd code
 					return render_to_response(
-						'ancbrigadesite/upload_document.html',
+						'ancfindersite/upload_document.html',
 						{ 'form': form, 'url_error': str(e) },
 						context_instance=RequestContext(request)
 					)
@@ -127,7 +127,7 @@ def upload_document(request):
 			newdoc.save()
 
 			# Redirect to the document list after POST
-			return HttpResponseRedirect(reverse('ancbrigadesite.backend_views.edit_document', args=[newdoc.id]))
+			return HttpResponseRedirect(reverse('ancfindersite.backend_views.edit_document', args=[newdoc.id]))
 	else:
 		# A empty, unbound form
 		form = UploadDocumentForm(initial={
@@ -142,7 +142,7 @@ def upload_document(request):
 			form.fields['meeting_date_display'].widget.attrs['disabled'] = 'disabled'
 
 	return render_to_response(
-		'ancbrigadesite/upload_document.html',
+		'ancfindersite/upload_document.html',
 		{ 'form': form },
 		context_instance=RequestContext(request)
 	)
@@ -168,7 +168,7 @@ def edit_document(request, doc_id):
 	doc.populate_annotation_document()
 
 	return render_to_response(
-		'ancbrigadesite/edit_document.html',
+		'ancfindersite/edit_document.html',
 		{
 			'document': doc,
 			'form': form,

@@ -1,4 +1,4 @@
-# Django settings for ancbrigadesite project.
+# Django settings for ancfindersite project.
 
 import sys
 sys.path.append("lib")
@@ -8,7 +8,7 @@ import os.path
 RECAPTCHA_PUBLIC_KEY = '6LeYAO8SAAAAALEZqtnk4qm7hoh8Iwv_h4lZ3lSe'
 RECAPTCHA_PRIVATE_KEY = '6LeYAO8SAAAAAICslEpPIpmMmkFiuNs_hrAzSRxx'
 
-environment_file = '/home/ancbrigade/environment.yaml'
+environment_file = '/home/ancfinder/environment.yaml'
 
 if not os.path.exists(environment_file):
 	# Settings for local (not public) deployments.
@@ -75,7 +75,7 @@ else:
 
 	ALLOWED_HOSTS = ["*"] # anything unexpected will be filtered out by the http server
 
-	OPENID_TEMP_FOLDER = "/tmp/openid-ancbrigade"
+	OPENID_TEMP_FOLDER = "/tmp/openid-ancfinder"
 
 	# Absolute path to the directory static files should be collected to.
 	# Don't put anything in this directory yourself; store your static files
@@ -152,10 +152,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'ancbrigadesite.urls'
+ROOT_URLCONF = 'ancfindersite.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'ancbrigadesite.wsgi.application'
+WSGI_APPLICATION = 'ancfindersite.wsgi.application'
 
 TEMPLATE_DIRS = (
     os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
@@ -173,7 +173,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.static",
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
-    'ancbrigadesite.views.TemplateContextProcessor',
+    'ancfindersite.views.TemplateContextProcessor',
     )
 
 INSTALLED_APPS = (
@@ -192,7 +192,7 @@ INSTALLED_APPS = (
     'registration',
     'emailverification',
     
-    'ancbrigadesite',
+    'ancfindersite',
     'annotator',
 )
 

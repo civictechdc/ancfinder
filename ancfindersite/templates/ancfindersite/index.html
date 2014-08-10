@@ -109,7 +109,7 @@
 				<h2>What do ANCs do?</h2>
 				<p>ANCs advise the DC government about issues that affect their community, such as parking, recreation, street improvements, liquor licenses, zoning, restaurants, the police, sanitation, and the District's annual budget.</p>
 				<p>Your ANC commissioners also control grant money of several thousand dollars (or more) for the general purpose of improving their area and hiring staff for the ANC.</p>
-				<p><a href="{% url 'ancbrigadesite_authority' %}">Learn more about ANC authority and budget &raquo;</a></p>
+				<p><a href="{% url 'ancfindersite_authority' %}">Learn more about ANC authority and budget &raquo;</a></p>
 			</div>
 			<div class="col-sm-5 image">
 				<img src="static/img/people.svg"/>
@@ -223,7 +223,7 @@
 			if (map) google.maps.event.trigger(map, "resize");
 		}
 
-		{% include "ancbrigadesite/google_maps.js" %}
+		{% include "ancfindersite/google_maps.js" %}
 		
 		function use_my_location() {
 			navigator.geolocation.getCurrentPosition(

@@ -1,5 +1,5 @@
 update_anc_database_creds.py
-ancbrigadesite/database.sqlite
+ancfindersite/database.sqlite
 data
 
 .DS_Store

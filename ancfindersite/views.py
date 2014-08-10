@@ -45,7 +45,7 @@ def TemplateContextProcessor(request):
 
 
 class HomeTemplateView(TemplateView):
-	template_name = 'ancbrigadesite/index.html'
+	template_name = 'ancfindersite/index.html'
 	
 	def get_context_data(self, **kwargs):
 		# Used to pass the anc_data to our home page
@@ -55,7 +55,7 @@ class HomeTemplateView(TemplateView):
 		return context
 			
 class AncInfoTemplateView(TemplateView):
-	template_name = 'ancbrigadesite/anc.html'
+	template_name = 'ancfindersite/anc.html'
 	# Override the HTTP get method to pass along some additional information
 	def get(self, request, anc, *args, **kwargs):
 		anc = anc.upper()
@@ -163,22 +163,22 @@ class AncInfoTemplateView(TemplateView):
 	
 class AboutTemplateView(TemplateView):
 	'''This CBV generates the about page. '''
-	template_name = 'ancbrigadesite/about.html'
+	template_name = 'ancfindersite/about.html'
 
 
 class  ShareTemplateView(TemplateView):
 	'''This CBV generates the share page. '''
-	template_name = 'ancbrigadesite/share.html'
+	template_name = 'ancfindersite/share.html'
 
 
 class AuthorityTemplateView(TemplateView):
 	'''This CBV generates the authority page. '''
-	template_name = 'ancbrigadesite/authority.html'
+	template_name = 'ancfindersite/authority.html'
 
 
 class BigMapTemplateView(TemplateView):
 	'''This CBV generates the map page. '''
-	template_name = 'ancbrigadesite/map.html'
+	template_name = 'ancfindersite/map.html'
 	
 	# Add anc_data to the context of our CBV
 	def get_context_data(self, **kwargs):
@@ -190,7 +190,7 @@ class BigMapTemplateView(TemplateView):
 	
 	 
 class LegalTemplateView(TemplateView):
-	template_name = 'ancbrigadesite/legal.html'
+	template_name = 'ancfindersite/legal.html'
 	
 def prep_hoods(info, is_anc):
 	def is_part(h):
@@ -233,7 +233,7 @@ def prep_hoods(info, is_anc):
 	
 # CBV for document page
 class DocumentTemplateView(TemplateView):
-	template_name = 'ancbrigadesite/document.html'
+	template_name = 'ancfindersite/document.html'
 	def get(self, request, anc=None, date=None, id=None, slug=None, *args, **kwagrs):
 		document = get_object_or_404(Document, id=id)
 		if request.path != document.get_absolute_url():
