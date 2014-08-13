@@ -11,3 +11,6 @@ pyyaml
 git+https://github.com/JoshData/django-bootstrap-form
 twitter
 icalendar
+psycopg2
+flup
+
