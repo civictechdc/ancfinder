@@ -259,18 +259,18 @@
 		}
 		
 		function show_info_for_coord(lat, lng) {
-						$.ajax({
-							url: "http://gis.govtrack.us/boundaries/dc-smd-2013/?contains=" + lat + "," + lng,
-							dataType: "jsonp",
-							success: function(data) {
-								if (data.objects.length == 0) {
-									// Not found!
-									hide_smd_info();
-								} else {
-									show_smd_info(data.objects[0].external_id.toUpperCase(), new google.maps.LatLng(lat, lng));
-								}
-							}
-						});
+			$.ajax({
+				url: "http://gis.govtrack.us/boundaries/dc-smd-2013/?contains=" + lat + "," + lng,
+				dataType: "jsonp",
+				success: function(data) {
+					if (data.objects.length == 0) {
+						// Not found!
+						hide_smd_info();
+					} else {
+						show_smd_info(data.objects[0].external_id.toUpperCase(), new google.maps.LatLng(lat, lng));
+					}
+				}
+			});
 		}
 
 		function hide_smd_info() {
@@ -280,72 +280,72 @@
 		
 		var location_marker = null;
 		function show_smd_info(smd_id, addr_coords) {
-								var ward = anc_data[smd_id.substring(0,1)];
-								if (!ward) return false;
-								var anc = ward["ancs"][smd_id.substring(1,2)];
-								if (!anc) return false;
-								var smd = anc["smds"][smd_id.substring(2,4)];
-								if (!smd) return false;
-								
-								// put SMD in the URL fragment so the user can reload the page
-								// and get right to his district again
-								window.location.hash = "#" + smd_id;
-								
-								// hide prompt text to enter your address
-								$('#intro').slideUp();
-								
-								// update the map
-								if (map) {
-									var boundsarray = anc.bounds;
-									var sw = new google.maps.LatLng(boundsarray[1], boundsarray[0]);
-									var ne = new google.maps.LatLng(boundsarray[3], boundsarray[2]);
-									var bounds = new google.maps.LatLngBounds(sw, ne);
-									map.fitBounds(bounds);
-									if (addr_coords) map.panTo(addr_coords);
-									map.overlayMapTypes.clear();
-									add_overlay(map, "dc-anc-2013/" + smd_id.toLowerCase().substring(0, 2), null, null, .75);
-									add_overlay(map, "dc-smd-2013/" + smd_id.toLowerCase());
-									
-									if (addr_coords) {
-										if (!location_marker) {
-											location_marker = new google.maps.Marker({
-												map: map,
-												position: addr_coords,
-												title: "You"
-												});
-										}
-										location_marker.setPosition(addr_coords);
-										location_marker.setVisible(true);
-									} else if (location_marker) {
-										location_marker.setVisible(false);
-									}
-								}
-								
-								// show ANC/SMD info
-								$(".smd-name").text(smd.smd);
-								$(".anc-name").text(anc.anc);
-								
-								$('.has-commissioner').show();
-								var name = "";
-								name += smd["first_name"] + " ";
-								if (smd["nickname"]) name += smd["nickname"] + " ";
-								if (smd["middle_name"]) name += smd["middle_name"] + " ";
-								name += smd["last_name"];
-                                                                if (smd["suffix"]) name += " " + smd["suffix"];
-								$(".smd-commissioner").text(name);
-									
-								$('#map_col').show();
-								$('#info').fadeIn();
-								$('#info_address_not_found').fadeOut();
-								
-								$('#what-is-an-anc h2').text("What is ANC " + anc.anc + "?");
-								$('#what-is-an-anc .what-is-it').text(anc.anc + " is one of Washington DC’s 40 Advisory Neighborhood Commissions.");  
-								$('#what-is-an-anc .how-many-commissioners').text("Your ANC is composed of " +  Object.keys(anc["smds"]).length + " commissioners who make decisions about a broad range of issues in your community, such as liquor licenses, parking, and sanitation.");
-								
-								$('#anc-link').attr('href', "/" + anc.anc + "#" + smd.smd_number)
-									.text("Find out more about " + anc.anc + " >");
-								
-								return true;
+			var ward = anc_data[smd_id.substring(0,1)];
+			if (!ward) return false;
+			var anc = ward["ancs"][smd_id.substring(1,2)];
+			if (!anc) return false;
+			var smd = anc["smds"][smd_id.substring(2,4)];
+			if (!smd) return false;
+			
+			// put SMD in the URL fragment so the user can reload the page
+			// and get right to his district again
+			window.location.hash = "#" + smd_id;
+			
+			// hide prompt text to enter your address
+			$('#intro').slideUp();
+			
+			// update the map
+			if (map) {
+				var boundsarray = anc.bounds;
+				var sw = new google.maps.LatLng(boundsarray[1], boundsarray[0]);
+				var ne = new google.maps.LatLng(boundsarray[3], boundsarray[2]);
+				var bounds = new google.maps.LatLngBounds(sw, ne);
+				map.fitBounds(bounds);
+				if (addr_coords) map.panTo(addr_coords);
+				map.overlayMapTypes.clear();
+				add_overlay(map, "dc-anc-2013/" + smd_id.toLowerCase().substring(0, 2), null, null, .75);
+				add_overlay(map, "dc-smd-2013/" + smd_id.toLowerCase());
+				
+				if (addr_coords) {
+					if (!location_marker) {
+						location_marker = new google.maps.Marker({
+							map: map,
+							position: addr_coords,
+							title: "You"
+							});
+					}
+					location_marker.setPosition(addr_coords);
+					location_marker.setVisible(true);
+				} else if (location_marker) {
+					location_marker.setVisible(false);
+				}
+			}
+			
+			// show ANC/SMD info
+			$(".smd-name").text(smd.smd);
+			$(".anc-name").text(anc.anc);
+			
+			$('.has-commissioner').show();
+			var name = "";
+			name += smd["first_name"] + " ";
+			if (smd["nickname"]) name += smd["nickname"] + " ";
+			if (smd["middle_name"]) name += smd["middle_name"] + " ";
+			name += smd["last_name"];
+                                            if (smd["suffix"]) name += " " + smd["suffix"];
+			$(".smd-commissioner").text(name);
+				
+			$('#map_col').show();
+			$('#info').fadeIn();
+			$('#info_address_not_found').fadeOut();
+			
+			$('#what-is-an-anc h2').text("What is ANC " + anc.anc + "?");
+			$('#what-is-an-anc .what-is-it').text(anc.anc + " is one of Washington DC’s 40 Advisory Neighborhood Commissions.");  
+			$('#what-is-an-anc .how-many-commissioners').text("Your ANC is composed of " +  Object.keys(anc["smds"]).length + " commissioners who make decisions about a broad range of issues in your community, such as liquor licenses, parking, and sanitation.");
+			
+			$('#anc-link').attr('href', "/" + anc.anc + "#" + smd.smd_number)
+				.text("Find out more about " + anc.anc + " >");
+			
+			return true;
 		}
 	</script>
 {% endblock %}	
