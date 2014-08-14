@@ -46,12 +46,9 @@
 			<div id="info" style="display: none; margin-top: 1em;">
 				<div>
 					<p>You live in <b>ANC <span class="anc-name"> </span></b>, single member district <b><span class="smd-name"> </span></b></p>
-					
 					<p>Your commissioner is: <b><span class="smd-commissioner"></span></b>
-					
 					<p><a id="anc-link">Find out more about this ANC</a></p>
-				
-					</div>
+				</div>
 			</div>
 			<!--Search unsuccessful-->
 			<div id="info_address_not_found" style="display: none">
@@ -256,8 +253,6 @@
 						var lat = geocoder_result.lat();
 						var lng = geocoder_result.lng();
 
-						show_info_for_coord(lat, lng);
-
 						var lat_lngs = create_search_lat_lngs(lat, lng);
 
 						var smdSearchResults = {};
@@ -275,7 +270,7 @@
 										//how?
 									}
 									else if(data.objects.length!=0){
-										smdSearchResults[data.objects[0].name] = data.objects[0];
+										smdSearchResults[data.objects[0].external_id.toUpperCase()] = data.objects[0];
 									}
 									runSearch(i+1);
 								});
@@ -283,7 +278,13 @@
 						}
 
 						function next(){
-							console.log(smdSearchResults);
+							var keys = Object.keys(smdSearchResults);
+							if(keys.length==0){
+								hide_smd_info();
+							}
+							else{
+								show_smd_info(keys[0], new google.maps.LatLng(lat, lng), keys);
+							}
 						}
 
 					}
@@ -344,7 +345,12 @@
 		}
 		
 		var location_marker = null;
-		function show_smd_info(smd_id, addr_coords) {
+		function show_smd_info(smd_id, addr_coords, all_possible_smd_ids) {
+			all_possible_smd_ids = all_possible_smd_ids || [smd_id]; //make sure a all_possible_smd_ids is provided
+			if(all_possible_smd_ids.indexOf(smd_id)==-1){
+				all_possible_smd_ids = [smd_id].concat(all_possible_smd_ids); //like push but on the top
+			}
+
 			var ward = anc_data[smd_id.substring(0,1)];
 			if (!ward) return false;
 			var anc = ward["ancs"][smd_id.substring(1,2)];
@@ -385,25 +391,45 @@
 					location_marker.setVisible(false);
 				}
 			}
-			
+
+			var ancListHolder = document.getElementById("info");
+			while(ancListHolder.children.length>0){
+				ancListHolder.children[0].remove();
+			}
+
 			// show ANC/SMD info
-			$(".smd-name").text(smd.smd);
-			$(".anc-name").text(anc.anc);
-			
 			$('.has-commissioner').show();
-			var name = "";
-			name += smd["first_name"] + " ";
-			if (smd["nickname"]) name += smd["nickname"] + " ";
-			if (smd["middle_name"]) name += smd["middle_name"] + " ";
-			name += smd["last_name"];
-			
-			if (smd["suffix"]) name += " " + smd["suffix"];
-			$(".smd-commissioner").text(name);
-				
-			$('#map_col').show();
 			$('#info').fadeIn();
 			$('#info_address_not_found').fadeOut();
+
+			var doYouLive = all_possible_smd_ids.length == 1 ? "" : "might ";
+
+			for(var i=0; i<all_possible_smd_ids.length; i++){
+				var possible_smd_id = all_possible_smd_ids[i];
+				var about = document.createElement("div");
+
+				var possible_ward = anc_data[possible_smd_id.substring(0,1)];
+				var possible_anc = possible_ward["ancs"][possible_smd_id.substring(1,2)];
+				var possible_smd = possible_anc["smds"][possible_smd_id.substring(2,4)];
+				console.log(i, possible_smd_id, possible_anc.anc, possible_smd.smd, possible_ward);
+
+				var commissioner_name = "";
+				commissioner_name += possible_smd["first_name"] + " ";
+				if (possible_smd["nickname"]) commissioner_name += possible_smd["nickname"] + " ";
+				if (possible_smd["middle_name"]) commissioner_name += possible_smd["middle_name"] + " ";
+				commissioner_name += possible_smd["last_name"];
+				if (possible_smd["suffix"]) commissioner_name += " " + possible_smd["suffix"];
+
+				about.innerHTML =  "<p>You "+doYouLive+"live in <b>"+possible_anc.anc+",</b> single member district <b>"+possible_smd.smd+"</b></p>";
+				about.innerHTML += "<p>"+possible_smd.smd+"'s commissioner is: <b>"+commissioner_name+"</b></p>";
+				about.innerHTML += "<p><a href='"+possible_anc.anc+"#"+possible_smd.smd_number+"'>Find out more about "+possible_anc.anc+" ></a></p>";
+				ancListHolder.appendChild(about);
+			}
+
+			//show map
+			$('#map_col').show();
 			
+			//talk about ancs from the first anc content
 			$('#what-is-an-anc h2').text("What is ANC " + anc.anc + "?");
 			$('#what-is-an-anc .what-is-it').text(anc.anc + " is one of Washington DC’s 40 Advisory Neighborhood Commissions.");  
 			$('#what-is-an-anc .how-many-commissioners').text("Your ANC is composed of " +  Object.keys(anc["smds"]).length + " commissioners who make decisions about a broad range of issues in your community, such as liquor licenses, parking, and sanitation.");
