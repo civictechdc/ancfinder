@@ -63,10 +63,10 @@ h2 { font-size: 22px; }
 
     <div class="container">
         <ul class="nav nav-tabs" style="margin-top: 1em">
-          <li class="active"><a href="#home">{{anc}} Overview</a></li>
-          <li><a href="#documents">Documents</a></li>
-          <li><a href="#stats">Statistics</a></li>
-          {% if info.committees.values %}<li><a href="#committees">Committees</a></li>{% endif %}
+          <li class="active"><a href="#home" data-toggle="tab">{{anc}} Overview</a></li>
+          <li><a href="#documents" data-toggle="tab">Documents</a></li>
+          <li><a href="#stats" data-toggle="tab">Statistics</a></li>
+          {% if info.committees.values %}<li><a href="#committees" data-toggle="tab">Committees</a></li>{% endif %}
         </ul>
 
 <div class="tab-content">
@@ -340,6 +340,20 @@ h2 { font-size: 22px; }
                         return false;
                     });
                 });
+
+      $(document).ready(function() {
+        // Found this at http://stackoverflow.com/a/21443271/33194
+        if (location.hash !== '') $('a[href="' + location.hash + '"]').tab('show');
+        
+        // remember the hash in the URL without jumping
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+          if(history.pushState) {
+                history.pushState(null, null, '#'+$(e.target).attr('href').substr(1));
+          } else {
+                location.hash = '#'+$(e.target).attr('href').substr(1);
+          }
+        });
+      });
 
     </script>
 {% endblock %}
