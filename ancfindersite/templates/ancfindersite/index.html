@@ -252,23 +252,88 @@
 				function(results, status) {
 					if (status == google.maps.GeocoderStatus.OK) {
 						var geocoder_result = results[0].geometry.location;
-						show_info_for_coord(geocoder_result.lat(), geocoder_result.lng());
+
+						var lat = geocoder_result.lat();
+						var lng = geocoder_result.lng();
+
+						show_info_for_coord(lat, lng);
+
+						var lat_lngs = create_search_lat_lngs(lat, lng);
+
+						var smdSearchResults = {};
+
+						runSearch(0);
+
+						function runSearch(i){
+							if(i==lat_lngs.length){
+								next();
+							}
+							else{
+								var loc = lat_lngs[i];
+								find_smd_by_lat_lng(loc.lat, loc.lng, function(err, data){
+									if(err){
+										//how?
+									}
+									else if(data.objects.length!=0){
+										smdSearchResults[data.objects[0].name] = data.objects[0];
+									}
+									runSearch(i+1);
+								});
+							}
+						}
+
+						function next(){
+							console.log(smdSearchResults);
+						}
+
 					}
 				}
-				);
+			);
 		}
-		
-		function show_info_for_coord(lat, lng) {
+
+		function create_search_lat_lngs(lat, lng){
+			// this is a made up number bassed on the difference
+			// between the lat and lng of two addresses across a street
+			var spread = 0.0002;
+
+
+			return [
+				{
+					lat: lat-spread,
+					lng: lng
+				},
+				{
+					lat: lat+spread,
+					lng: lng
+				},
+				{
+					lat: lat,
+					lng: lng+spread
+				},
+				{
+					lat: lat,
+					lng: lng-spread
+				}
+			];
+		}
+
+		function find_smd_by_lat_lng(lat, lng, cb){
 			$.ajax({
 				url: "http://gis.govtrack.us/boundaries/dc-smd-2013/?contains=" + lat + "," + lng,
 				dataType: "jsonp",
 				success: function(data) {
-					if (data.objects.length == 0) {
-						// Not found!
-						hide_smd_info();
-					} else {
-						show_smd_info(data.objects[0].external_id.toUpperCase(), new google.maps.LatLng(lat, lng));
-					}
+					cb(null, data);
+				}
+			});
+		}
+		
+		function show_info_for_coord(lat, lng) {
+			find_smd_by_lat_lng(lat, lng, function(err, data){
+				if (data.objects.length == 0) {
+					// Not found!
+					hide_smd_info();
+				} else {
+					show_smd_info(data.objects[0].external_id.toUpperCase(), new google.maps.LatLng(lat, lng));
 				}
 			});
 		}
@@ -312,7 +377,7 @@
 							map: map,
 							position: addr_coords,
 							title: "You"
-							});
+						});
 					}
 					location_marker.setPosition(addr_coords);
 					location_marker.setVisible(true);
@@ -331,7 +396,8 @@
 			if (smd["nickname"]) name += smd["nickname"] + " ";
 			if (smd["middle_name"]) name += smd["middle_name"] + " ";
 			name += smd["last_name"];
-                                            if (smd["suffix"]) name += " " + smd["suffix"];
+			
+			if (smd["suffix"]) name += " " + smd["suffix"];
 			$(".smd-commissioner").text(name);
 				
 			$('#map_col').show();
