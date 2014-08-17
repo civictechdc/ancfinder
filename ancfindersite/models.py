@@ -25,13 +25,13 @@ class Document(models.Model):
 		(1, "Agenda"),
 		(2, "Minutes"),
 		(3, "Report"),
-		(4, "Decision"), # resolutions, etc.
+		(4, "Resolution"), # resolutions, etc.
 		(5, "Draft"),
 		(6, "Application"),
 		(7, "Grant"),
 		(8, "Official Correspondence"),
 		(9, "Financial Statement"),
-		(10, "Operating Documents"), # charter, etc.
+		(10, "Operating Document"), # charter, etc.
 		(11, "Committee Agenda"),
 		(12, "Committee Minutes"),
 		(13, "Committee Report"),
@@ -47,13 +47,13 @@ class Document(models.Model):
 	doc_type = models.IntegerField(choices=doc_type_choices, default=0, verbose_name="Document Type")
 	pub_date = models.DateField(blank=True, null=True, verbose_name="Date Published", help_text="The date the document was published by the ANC, if known.")
 	meeting_date = models.DateField(blank=True, null=True, verbose_name="Date of Meeting", help_text="The date of an associated meeting, if relevant.")
-	
+
 	document_content = models.TextField(editable=False, help_text="The binary document content, stored Base64-encoded.")
 	document_content_type = models.CharField(editable=False, max_length=128, help_text="The MIME type of the document_content.")
 	document_content_size = models.IntegerField(editable=False, blank=True, null=True)
 
 	source_url = models.CharField(max_length=256, blank=True, null=True, verbose_name="Source URL", help_text="The web address where this document was obtained from.")
-	
+
 	annotation_document = models.ForeignKey('annotator.Document', editable=False, blank=True, null=True, on_delete=models.SET_NULL)
 
 	def __str__(self):
@@ -103,7 +103,7 @@ class Document(models.Model):
 		self.document_content = base64.b64encode(self.document_content)
 
 		self.save()
-		
+
 	def populate_annotation_document(self):
 		if self.annotation_document:
 			# already created
@@ -121,7 +121,7 @@ class Document(models.Model):
 			raise ValueError("Don't know how to convert this file type: %s" % self.document_content_type)
 
 		ad.save()
-		
+
 		self.annotation_document = ad
 		self.save()
 
@@ -137,7 +137,7 @@ class Document(models.Model):
 			(fd1, fn1) = tempfile.mkstemp(suffix=".pdf")
 			os.write(fd1, pdf_blob)
 			os.close(fd1)
-			
+
 			(fd2, fn2) = tempfile.mkstemp(suffix=".txt")
 			os.close(fd2)
 			subprocess.check_call(["/usr/bin/pdftotext", "-layout", "-enc", "UTF-8", fn1, fn2])
@@ -150,7 +150,7 @@ class Document(models.Model):
 	@staticmethod
 	def convert_pdf_to_html(pdf_blob):
 		return Document.convert_text_to_html(Document.convert_pdf_to_text(pdf_blob))
-				
+
 	@staticmethod
 	def convert_pdf_to_text_with_pdf2txt(pdf_blob):
 		import tempfile, os, subprocess
@@ -192,4 +192,3 @@ class Document(models.Model):
 					n.text = line
 
 		return lxml.etree.tostring(root, pretty_print=True, method="html", encoding=unicode)
-		
