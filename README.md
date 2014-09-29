@@ -10,49 +10,41 @@ If you plan to contribute to the repo, you should set up your own fork and open 
 
 If you're not familiar with forking, Github has a [useful guide](https://help.github.com/articles/fork-a-repo).
 
-Installation
-------------
+Installation using Vagrant
+--------------------------
 
-Get the repo running on your machine:
+First get [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/). Once they're both installed, clone the ANC Finder repo on your machine:
 
 	git clone --recursive https://github.com/codefordc/ancfinder
 	cd ./ancfinder
 	git submodule init
 	git submodule update
 
-Note --recursive on 'git clone' to get the submodule dependencies.
+Then get the Vagrant box setup (you're still in the 'ancfinder' directory):
 
-If you're using a virtual environment, set that up:
+	vagrant up
 
-	virtualenv .env # Maybe one day we'll use '-p python3' but dotcloud makes that harder
-	. .env/bin/activate
+Log into the newly-established VM:
 
-Then, install dependencies and set up the site database:
+	vagrant ssh
 
-	sudo apt-get install libxslt1-dev # Not necessary on OSX
-	pip install -r requirements.txt
-	./manage.py syncdb
+and then run the script that will take care of all the dependencies:
 
-If you are missing libxml on OSX run `xcode-select --install`
+	/bin/bash provision.sh
 
-Get our latest data files:
-
-	wget -O static/ancs.json http://ancfinder.org/static/ancs.json
-	wget -O static/meetings.json http://ancfinder.org/static/meetings.json
-
-If it seems like you're missing stuff, also try
-
-    git submodule update
+The new Vagrant-managed VM with the application and its dependencies is now all ready to go. (If instead you do not want to use Vagrant, you can run all the steps listed in 'provision.sh' on your machine directly.)
 
 Running the Site
 ----------------
 
-Just run:
+Once you have finished the steps above, you're ready to start the app from within the Vagrant box (you have already ssh'd into the box):
 
-	. .env/bin/activate
-	./manage.py runserver
+	cd ancfinder
+	source .env/bin/activate
+	./manage.py runserver 0.0.0.0:8000
 
-Then view the site in your browser at the address shown to you.
+Then point your browser to http://localhost:8000 and if you see the ANC Finder site, you're all set.
+
 
 Updating the Code
 -----------------
