@@ -15,5 +15,6 @@ source .env/bin/activate
 pip install -r requirements.txt
 wget -O static/ancs.json http://ancfinder.org/static/ancs.json
 wget -O static/meetings.json http://ancfinder.org/static/meetings.json
+python manage.py syncdb
 rm ~/provision.sh
 
