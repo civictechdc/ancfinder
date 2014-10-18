@@ -20,31 +20,24 @@ First get [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.vir
 	git submodule init
 	git submodule update
 
-Then get the Vagrant box setup (you're still in the 'ancfinder' directory):
+Then get the Vagrant box provisioned (you should still be in the 'ancfinder' directory):
 
 	vagrant up
 
-Log into the newly-established VM:
-
-	vagrant ssh
-
-and then run the script that will take care of all the dependencies:
-
-	/bin/bash provision.sh
-
-The new Vagrant-managed VM with the application and its dependencies is now all ready to go. (If instead you do not want to use Vagrant, you can run all the steps listed in 'provision.sh' on your machine directly.)
+Once the provisioning is done, the new Vagrant box with the ANC Finder app and its dependencies will be ready to go.
 
 Running the Site
 ----------------
 
-Once you have finished the steps above, you're ready to start the app from within the Vagrant box (you have already ssh'd into the box):
+Login to the newly-established machine:
 
-	cd ancfinder
-	source .env/bin/activate
-	./manage.py runserver 0.0.0.0:8000
+	vagrant ssh
 
-Then point your browser to http://localhost:8000 and if you see the ANC Finder site, you're all set.
+and then type this at the shell prompt:
 
+	run_ancfinder
+
+Wait a few seconds for things to start up, then point your browser to http://localhost:8000 -- if you see the ANC Finder, you're all set. From here you can start modifying the code you checked out to the 'ancfinder' directory, and these changes will be reflected in the locally-running instance of the site as you go.
 
 Updating the Code
 -----------------

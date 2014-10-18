@@ -15,5 +15,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
      vb.customize ["modifyvm", :id, "--memory", "1024"]
   end
 
-  config.vm.provision :file, source: "provision.sh", destination: "provision.sh"
+  config.vm.provision "shell" do |s|
+    s.inline = "sudo -u vagrant /bin/bash /vagrant/provision.sh"
+  end
+
 end
