@@ -238,24 +238,64 @@
 			);
 		}
 
-		var geocoder;
+		function no_address_match() {
+			return $('#addr').val("No match, try again!");
+		}
+
 		function do_address() {
 			var addr = $('#addr').val() + ", Washington, DC";
-			if (!geocoder) geocoder = new google.maps.Geocoder();
+			var geocoder = new google.maps.Geocoder();
+
 			geocoder.geocode(
 				{
 					'address': addr,
-					'bounds': new google.maps.LatLngBounds(new google.maps.LatLng(23.471824072761766, -97.75457204169999), new google.maps.LatLng(51.6101792052535, -56.27019704169999)),
+					'bounds': new google.maps.LatLngBounds(
+						new google.maps.LatLng(23.471824072761766, -97.75457204169999),
+						new google.maps.LatLng(51.6101792052535, -56.27019704169999)),
 					'language': 'en',
 					'region': 'us'
 				},
 				function(results, status) {
-					if (status == google.maps.GeocoderStatus.OK) {
-						var geocoder_result = results[0].geometry.location;
-						show_info_for_coord(geocoder_result.lat(), geocoder_result.lng());
+					if ((status == google.maps.GeocoderStatus.OK) && results.length) {
+						var geocoder_result = results[0];
+						if (geocoder_result.formatted_address == 'Washington, DC, USA') {
+							// when Google doesn't find a match
+							no_address_match();
+						}
+	
+						// we need Google's 'long_name' to get 'Street' instead of 'St',
+						// as required by DCGIS, but this means we have to convert 'Northwest' to NW,
+						// since DCGIS only wants the quadrant abbreviations
+
+						var norm_addr = (
+							geocoder_result.address_components[0].long_name + ' ' +
+							geocoder_result.address_components[1].long_name)
+						norm_addr = norm_addr.replace(
+							/^(.*)(Northwest|Northeast|Southwest|Southeast)$/,
+							function(m, p1, p2) {
+								return (p1 + {'Northwest': 'NW', 'Northeast': 'NE', 'Southwest': 'SW', 'Southeast': 'SE'}[p2]);
+							}
+						);
+
+						$.ajax({
+							url: ("http://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Location/MapServer/find?searchText=" + 
+							      norm_addr.replace(/\s+/gi, "+") +
+							      "&searchFields=FULLADDRESS&layers=0&f=json"),
+							dataType: "jsonp",
+							success: function(data) {
+								if (data.results.length) {
+									return show_info_for_coord(
+										data.results[0].attributes.LATITUDE, data.results[0].attributes.LONGITUDE);
+								} else {
+									no_address_match();
+								}
+							}
+						});
+					} else {
+						no_address_match();
 					}
 				}
-				);
+			);
 		}
 		
 		function show_info_for_coord(lat, lng) {
