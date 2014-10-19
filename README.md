@@ -10,49 +10,40 @@ If you plan to contribute to the repo, you should set up your own fork and open 
 
 If you're not familiar with forking, Github has a [useful guide](https://help.github.com/articles/fork-a-repo).
 
-Installation
-------------
+Installation using Vagrant
+--------------------------
 
-Get the repo running on your machine:
+First get [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/). Once they're both installed, clone the ANC Finder repo on your machine:
 
 	git clone --recursive https://github.com/codefordc/ancfinder
 	cd ./ancfinder
 	git submodule init
 	git submodule update
 
-Note --recursive on 'git clone' to get the submodule dependencies.
+Then get the Vagrant box provisioned (you should still be in the 'ancfinder' directory):
 
-If you're using a virtual environment, set that up:
+	vagrant up
 
-	virtualenv .env # Maybe one day we'll use '-p python3' but dotcloud makes that harder
-	. .env/bin/activate
-
-Then, install dependencies and set up the site database:
-
-	sudo apt-get install libxslt1-dev # Not necessary on OSX
-	pip install -r requirements.txt
-	./manage.py syncdb
-
-If you are missing libxml on OSX run `xcode-select --install`
-
-Get our latest data files:
-
-	wget -O static/ancs.json http://ancfinder.org/static/ancs.json
-	wget -O static/meetings.json http://ancfinder.org/static/meetings.json
-
-If it seems like you're missing stuff, also try
-
-    git submodule update
+Once the provisioning is done, the new Vagrant box with the ANC Finder app and its dependencies will be ready to go.
 
 Running the Site
 ----------------
 
-Just run:
+Login to the newly-established machine:
 
-	. .env/bin/activate
-	./manage.py runserver
+	vagrant ssh
 
-Then view the site in your browser at the address shown to you.
+and then type this at the shell prompt:
+
+	run_ancfinder
+
+Wait a few seconds for things to start up, then point your browser to [http://localhost:8000](http://localhost:8000) -- if you see the ANC Finder, you're all set. From here you can start modifying the code you checked out to the 'ancfinder' directory, and these changes will be reflected in the locally-running instance of the site as you go.
+
+Installation without Vagrant
+----------------------------
+
+To set up without Vagrant, see [provision.sh](provision.sh) for the steps needed to install dependencies.
+
 
 Updating the Code
 -----------------

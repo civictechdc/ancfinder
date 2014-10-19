@@ -10,3 +10,4 @@ data
 *.swp
 .env
 __pycache__
+.vagrant

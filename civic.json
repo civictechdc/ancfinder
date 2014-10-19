@@ -19,8 +19,8 @@
             "email": "contactus@ancfinder.org",
             "twitter": "@ancfinder"
         },
-    "communityPartner": "",
-    "politicalEntity": "Office of Advisory Neighborhood Commissions",
-    "governmentPartner": "",
+    "communityPartner": {},
+    "politicalEntity": {"Office of Advisory Neighborhood Commissions":"http://anc.dc.gov/"},
+    "governmentPartner": {},
     "moreInfo": ""
 }
