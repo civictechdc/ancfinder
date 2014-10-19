@@ -37,7 +37,7 @@ and then type this at the shell prompt:
 
 	run_ancfinder
 
-Wait a few seconds for things to start up, then point your browser to http://localhost:8000 -- if you see the ANC Finder, you're all set. From here you can start modifying the code you checked out to the 'ancfinder' directory, and these changes will be reflected in the locally-running instance of the site as you go.
+Wait a few seconds for things to start up, then point your browser to [http://localhost:8000](http://localhost:8000) -- if you see the ANC Finder, you're all set. From here you can start modifying the code you checked out to the 'ancfinder' directory, and these changes will be reflected in the locally-running instance of the site as you go.
 
 Installation without Vagrant
 ----------------------------
