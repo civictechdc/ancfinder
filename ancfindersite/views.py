@@ -85,17 +85,17 @@ class AncInfoTemplateView(TemplateView):
 			prep_hoods(smd, False)
 	
 		census_stats = [
-			{ "key": "P0180002", 	"label": "families", 		"details": "A group of two or more related people residing together." },
-			{ "key": "P0180001", 	"label": "households", 		"details": "A house, apartment, or room intended as separate living quarters." },
-			{ "key": "P0010001", 	"label": "residents", 		"details": "The total population of the ANC." },
-			{ "key": "H0050001_PCT", "label": "vacant homes", 	"details": "Vacant housing units out of all housing units", "is_percent": True },
-			{ "key": "B07001_001E_PCT", "label": "new residents", "details": "Residents who moved into DC in the last year", "is_percent": True },
-			{ "key": "B01002_001E",	"label": "median age", "details": "The median age of all residents in the ANC." },
-			{ "key": "B19019_001E",	"label": "median household income", "details": "The median income of households in the ANC.", "is_dollars": True },
-			{ "key": "POP_DENSITY",	"label": "density (pop/sq-mi)", "details": "Total population divided by the area of the ANC." },
-			{ "key": "liquor_licenses",	"label": "liquor licenses",	"details": "Liquor licenses granted by ABRA held by bars and restaurants in the area" },
-			{ "key": "building_permits",	"label": "building permits",	"details": "Permits granted by DCRA for construction or alteration in the area" },
-						{ "key": "311_requests",    "label": "311 requests",    "details": "Requests to the 311 hotline from this area" },
+			{ "key": "P0180002", 	"label": "families", 		"details": "A group of two or more related people residing together", "credit": "US Census" },
+			{ "key": "P0180001", 	"label": "households", 		"details": "A house, apartment, or room intended as separate living quarters", "credit": "US Census" },
+			{ "key": "P0010001", 	"label": "residents", 		"details": "The total population of the ANC", "credit": "US Census" },
+			{ "key": "H0050001_PCT", "label": "vacant homes", 	"details": "Vacant housing units out of all housing units", "credit": "US Census", "is_percent": True },
+			{ "key": "B07001_001E_PCT", "label": "new residents", "details": "Residents who moved into DC in the last year", "credit": "US Census", "is_percent": True },
+			{ "key": "B01002_001E",	"label": "median age", "details": "The median age of all residents in the ANC", "credit": "US Census" },
+			{ "key": "B19019_001E",	"label": "median household income", "details": "The median income of households in the ANC", "credit": "US Census", "is_dollars": True },
+			{ "key": "POP_DENSITY",	"label": "density (pop/sq-mi)", "details": "Total population divided by the area of the ANC", "credit": "US Census" },
+			{ "key": "liquor_licenses",	"label": "liquor licenses",	"details": "Liquor licenses granted by ABRA held by bars and restaurants in the area", "credit": "ABRA" },
+			{ "key": "building_permits",	"label": "building permits",	"details": "Permits granted by DCRA for construction or alteration in the area", "credit": "DCRA" },
+						{ "key": "311_requests",    "label": "311 requests",    "details": "Requests to the 311 hotline from this area", "credit": "SeeClickFix" },
 		]
 		for s in census_stats:
 			try:

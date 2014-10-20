@@ -198,7 +198,7 @@ h2 { font-size: 22px; }
 
                 <div id="by_the_numbers">
                     {% for stat in census_stats %}
-                    <div title="{{stat.details}}">
+                    <div>
                         <span class="number">{% if stat.is_dollars %}${% endif %}{{stat.value|intcomma}}{% if stat.is_percent %}%{% endif %}</span>
                         <span class="description">{{stat.label}}</span>
                         <div class="grid">
@@ -208,9 +208,10 @@ h2 { font-size: 22px; }
                                 style="background-color: #{{cell_color}};"
                                 > </span>{% endfor %}
                         </div>
+                        <div class="explanation" style="color: #666"><small>{{stat.details}}. Credit: {{stat.credit}}</small></div>
                     </div>
                     {% endfor %}
-                    <p style="width: 420px; margin-top: .75em; line-height: 110%;"><small style="font-size: 80%; color: #666;">Each square represents one of the 40 ANCs color-coded in the same manner as the map above. Hover a square to see more information about the ANC. Data from the U.S. Census, ABRA, and DCRA.</small></p>
+                    <p style="margin-top: .75em; line-height: 110%;"><small style="font-size: 80%; color: #666;">Each square represents one of the 40 ANCs color-coded in the same manner as the map on the ANCFinder homepage.</small></p>
                 </div>
             </div><!-- /column -->
         </div>
