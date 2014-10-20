@@ -34,9 +34,13 @@ census_grids = { }
 for ward in anc_data.values():
 	for anc in ward["ancs"].values():
 		for key, info in anc["census"].items():
-			census_grids.setdefault(key, []).append( (anc["anc"], info["value"], make_anc_hex_color(anc["anc"])) )
+			census_grids.setdefault(key, []).append( { "anc": anc["anc"], "value": info["value"], "color": make_anc_hex_color(anc["anc"]) } )
 for d in census_grids.values():
-	d.sort(key = lambda x : x[1])
+	d.sort(key = lambda x : x["value"], reverse=True)
+	max_val = d[0]["value"]
+	for dd in d:
+		dd["width"] = int(45 * dd["value"] / max_val)
+
 
 def TemplateContextProcessor(request):
 	return {
@@ -92,7 +96,7 @@ class AncInfoTemplateView(TemplateView):
 			{ "key": "B07001_001E_PCT", "label": "new residents", "details": "Residents who moved into DC in the last year", "credit": "US Census", "is_percent": True },
 			{ "key": "B01002_001E",	"label": "median age", "details": "The median age of all residents in the ANC", "credit": "US Census" },
 			{ "key": "B19019_001E",	"label": "median household income", "details": "The median income of households in the ANC", "credit": "US Census", "is_dollars": True },
-			{ "key": "POP_DENSITY",	"label": "density (pop/sq-mi)", "details": "Total population divided by the area of the ANC", "credit": "US Census" },
+			{ "key": "POP_DENSITY",	"label": u"density (pop/mi\u00B2)", "details": "Total population divided by the area of the ANC", "credit": "US Census" },
 			{ "key": "liquor_licenses",	"label": "liquor licenses",	"details": "Liquor licenses granted by ABRA held by bars and restaurants in the area", "credit": "ABRA" },
 			{ "key": "building_permits",	"label": "building permits",	"details": "Permits granted by DCRA for construction or alteration in the area", "credit": "DCRA" },
 						{ "key": "311_requests",    "label": "311 requests",    "details": "Requests to the 311 hotline from this area", "credit": "SeeClickFix" },

@@ -40,11 +40,15 @@ h2 { font-size: 22px; }
 }
 
 #by_the_numbers > div { margin-top: 12px; }
-#by_the_numbers span.number { font-size: 130%; font-weight: bold; }
-#by_the_numbers span.description { margin-left: 1em; color: #555; }
-#by_the_numbers .grid span { display: inline-block; width: 2.475%; height: 1em; box-sizing: border-box; cursor: default; font-size: 70%; color: #888; font-family: Times New Roman; line-height: 100%; border: 1px solid white;}
-#by_the_numbers .grid span:hover { color: #777 !important; border: 1px solid #777; }
-#by_the_numbers .grid span.me { background-color: white !important; border: 2px solid black;}
+#by_the_numbers .number { font-size: 110%; font-weight: bold; padding-left: 16px; }
+#by_the_numbers .description { font-size: 90%; color: #555; line-height: 115%; height: 2.55em; padding-left: 16px; }
+#by_the_numbers .explanation { color: #555; font-size: 80%; line-height: 120%; }
+#by_the_numbers .credit { color: #666; font-size: 70%; line-height: 120%; margin-top: .5em; margin-bottom: 1em; }
+#by_the_numbers .grid { padding: 1em 0; cursor: default; line-height: 0; }
+#by_the_numbers .grid .anc { display: inline-block; width: 12px; font-size: 9px; color: #666; font-family: sans-serif; }
+#by_the_numbers .grid .bar { display: inline-block; margin-top: 1px; height: 11px; }
+#by_the_numbers .grid .me .anc { color: black; font-weight: bold; }
+#by_the_numbers .grid .me .bar { background-color: black !important; }
 </style>
 {% endblock %}
 
@@ -192,28 +196,30 @@ h2 { font-size: 22px; }
     </div> <!-- documents tab -->
 
     <div class="tab-pane" id="stats">
-        <div class="row">
-            <div class="col-sm-7">
-                <h2>{{ anc }} by the numbers</h2>
+        <h2 style="padding-left: 8px">{{ anc }} by the numbers</h2>
 
-                <div id="by_the_numbers">
-                    {% for stat in census_stats %}
-                    <div>
-                        <span class="number">{% if stat.is_dollars %}${% endif %}{{stat.value|intcomma}}{% if stat.is_percent %}%{% endif %}</span>
-                        <span class="description">{{stat.label}}</span>
-                        <div class="grid">
-                            {% for cell_anc, cell_value, cell_color in stat.grid %}<span
-                                {% if cell_anc == anc %}class="me"{% endif %}
-                                title="{{cell_anc}}: {% if stat.is_dollars %}${% endif %}{{cell_value|intcomma}}{% if stat.is_percent %}%{% endif %}"
-                                style="background-color: #{{cell_color}};"
-                                > </span>{% endfor %}
+        <div class="row" id="by_the_numbers">
+        {% for stat in census_stats %}
+            <div class="col-xs-3 col-sm-2 col-lg-1">
+                <div class="number">{% if stat.is_dollars %}${% endif %}{{stat.value|intcomma}}{% if stat.is_percent %}%{% endif %}</div>
+                <div class="description">{{stat.label}}</div>
+                <div class="grid">
+                    {% for cell in stat.grid %}
+                        <div
+                            {% if cell.anc == anc %}class="me"{% endif %}
+                            title="{{cell.anc}}: {% if stat.is_dollars %}${% endif %}{{cell.value|intcomma}}{% if stat.is_percent %}%{% endif %}">
+                            <div class="anc">{{cell.anc}}</div>
+                            <div class="bar" style="background-color: #{{cell.color}}; width: {{cell.width}}px;"></div>
+                            <div class="clearfix"></div>
                         </div>
-                        <div class="explanation" style="color: #666"><small>{{stat.details}}. Credit: {{stat.credit}}</small></div>
-                    </div>
                     {% endfor %}
-                    <p style="margin-top: .75em; line-height: 110%;"><small style="font-size: 80%; color: #666;">Each square represents one of the 40 ANCs color-coded in the same manner as the map on the ANCFinder homepage.</small></p>
                 </div>
-            </div><!-- /column -->
+                <div class="explanation">{{stat.details}}</div>
+                <div class="credit">Credit: {{stat.credit}}</div>
+            </div>
+            {% if forloop.counter == 6 %}<div class="clearfix visible-sm"></div><div class="clearfix visible-md"></div>{% endif %}
+            {% if forloop.counter|divisibleby:3 %}<div class="clearfix visible-xs"></div>{% endif %}
+        {% endfor %}
         </div>
     </div><!-- /body -->
 
