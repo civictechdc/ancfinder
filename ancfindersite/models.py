@@ -41,7 +41,7 @@ class Document(models.Model):
 	owner = models.ForeignKey(User, related_name="uploaded_documents")
 
 	anc = models.CharField(choices=[(x,x) for x in anc_list], max_length=4, db_index=True, verbose_name="ANC") # e.g. "3B" or later perhaps "3B08"
-	title = models.CharField(max_length=64, default="No Title")
+	title = models.CharField(max_length=256, default="No Title")
 	created = models.DateTimeField(auto_now_add=True, db_index=True)
 
 	doc_type = models.IntegerField(choices=doc_type_choices, default=0, verbose_name="Document Type")
