@@ -115,7 +115,10 @@ def add_googledoc_data(output):
         w["description"] = ward["Description"]
     
     for anc in ancs:
-        a = output[ anc["ANC"][0] ]["ancs"][ anc["ANC"][1] ]
+        try:
+            a = output[ anc["ANC"][0] ]["ancs"][ anc["ANC"][1] ]
+        except KeyError:
+            raise ValueError(anc["ANC"][0] + " is not an ANC.")
         a["website"] = anc["Website"]
         a["committees"] = OrderedDict() # clear
     
