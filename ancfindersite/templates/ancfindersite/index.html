@@ -242,6 +242,15 @@
 			return $('#addr').val("No match, try again!");
 		}
 
+		function extract_addr_component(geocoder_result, addr_type) {
+			/* find a particular address component from a Google Maps geocoder result */
+			return _.first(_.filter(
+				geocoder_result.address_components,
+				function(ac) { 
+					return _.filter(ac.types, function(t) { return t === addr_type; }).length;
+				}));
+		}
+
 		function do_address() {
 			var addr = $('#addr').val() + ", Washington, DC";
 			var geocoder = new google.maps.Geocoder();
@@ -268,8 +277,8 @@
 						// since DCGIS only wants the quadrant abbreviations
 
 						var norm_addr = (
-							geocoder_result.address_components[0].long_name + ' ' +
-							geocoder_result.address_components[1].long_name)
+							extract_addr_component(geocoder_result, 'street_number').long_name + ' ' +
+							extract_addr_component(geocoder_result, 'route').long_name);
 						norm_addr = norm_addr.replace(
 							/^(.*)(Northwest|Northeast|Southwest|Southeast)$/,
 							function(m, p1, p2) {
