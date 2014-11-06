@@ -226,11 +226,12 @@
 		{% include "ancfindersite/google_maps.js" %}
 		
 		function use_my_location() {
+			// TODO
 			navigator.geolocation.getCurrentPosition(
 				function(position) {
 					if (!position || !position.coords) return;
 					$('#addr').val("your current location");
-					show_info_for_coord(position.coords.latitude, position.coords.longitude);
+					alert('NOT IMPLEMENTED');
 				},
 				function(position) {
 					alert("We couldn't get your current location.");
@@ -238,39 +239,35 @@
 			);
 		}
 
-		var geocoder;
-		function do_address() {
-			var addr = $('#addr').val() + ", Washington, DC";
-			if (!geocoder) geocoder = new google.maps.Geocoder();
-			geocoder.geocode(
-				{
-					'address': addr,
-					'bounds': new google.maps.LatLngBounds(new google.maps.LatLng(23.471824072761766, -97.75457204169999), new google.maps.LatLng(51.6101792052535, -56.27019704169999)),
-					'language': 'en',
-					'region': 'us'
-				},
-				function(results, status) {
-					if (status == google.maps.GeocoderStatus.OK) {
-						var geocoder_result = results[0].geometry.location;
-						show_info_for_coord(geocoder_result.lat(), geocoder_result.lng());
-					}
-				}
-				);
+		function no_address_match() {
+			return $('#addr').val("No match, try again!");
 		}
-		
-		function show_info_for_coord(lat, lng) {
-						$.ajax({
-							url: "http://gis.govtrack.us/boundaries/dc-smd-2013/?contains=" + lat + "," + lng,
-							dataType: "jsonp",
-							success: function(data) {
-								if (data.objects.length == 0) {
-									// Not found!
-									hide_smd_info();
-								} else {
-									show_smd_info(data.objects[0].external_id.toUpperCase(), new google.maps.LatLng(lat, lng));
-								}
-							}
-						});
+
+		function do_address() {
+			var addr = $('#addr').val();
+			if (addr) {
+				$.ajax({
+					url: "/mar-lookup-proxy",
+					type: "get",
+					dataType: "json",
+					data: {"address": addr},
+					success: function(r) {
+						if (r.returnDataset) {
+							var mar_info = r.returnDataset.Table1[0];
+							var smd_id = mar_info.SMD.replace(/SMD\s+/, ''),
+							    lat = mar_info.LATITUDE,
+							    lng = mar_info.LONGITUDE;
+							show_smd_info(smd_id, new google.maps.LatLng(lat, lng));
+						}
+						else {
+							no_address_match();
+						}
+					},
+					failure: function() {
+						no_address_match();
+					}
+				});
+			}
 		}
 
 		function hide_smd_info() {
