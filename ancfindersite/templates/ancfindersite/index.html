@@ -226,12 +226,23 @@
 		{% include "ancfindersite/google_maps.js" %}
 		
 		function use_my_location() {
-			// TODO
 			navigator.geolocation.getCurrentPosition(
 				function(position) {
 					if (!position || !position.coords) return;
 					$('#addr').val("your current location");
-					alert('NOT IMPLEMENTED');
+					var lat = position.coords.latitude;
+					var lng = position.coords.longitude;
+					$.ajax({
+						url: "http://gis.govtrack.us/boundaries/dc-smd-2013/?contains=" + lat + "," + lng,
+						dataType: "jsonp",
+						success: function(data) {
+							if (data.objects.length == 0) {
+								no_address_match();
+							} else {
+								show_smd_info(data.objects[0].external_id.toUpperCase(), new google.maps.LatLng(lat, lng));
+							}
+						}
+					});
 				},
 				function(position) {
 					alert("We couldn't get your current location.");
@@ -254,7 +265,7 @@
 					success: function(r) {
 						if (r.returnDataset) {
 							var mar_info = r.returnDataset.Table1[0];
-							var smd_id = mar_info.SMD.replace(/SMD\s+/, ''),
+							var smd_id = mar_info.SMD.replace(/^\s*SMD\s+/, ''),
 							    lat = mar_info.LATITUDE,
 							    lng = mar_info.LONGITUDE;
 							show_smd_info(smd_id, new google.maps.LatLng(lat, lng));
