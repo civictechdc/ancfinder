@@ -46,12 +46,9 @@
 			<div id="info" style="display: none; margin-top: 1em;">
 				<div>
 					<p>You live in <b>ANC <span class="anc-name"> </span></b>, single member district <b><span class="smd-name"> </span></b></p>
-					
 					<p>Your commissioner is: <b><span class="smd-commissioner"></span></b>
-					
 					<p><a id="anc-link">Find out more about this ANC</a></p>
-				
-					</div>
+				</div>
 			</div>
 			<!--Search unsuccessful-->
 			<div id="info_address_not_found" style="display: none">
@@ -252,25 +249,94 @@
 				function(results, status) {
 					if (status == google.maps.GeocoderStatus.OK) {
 						var geocoder_result = results[0].geometry.location;
-						show_info_for_coord(geocoder_result.lat(), geocoder_result.lng());
+
+						var lat = geocoder_result.lat();
+						var lng = geocoder_result.lng();
+
+						var lat_lngs = create_search_lat_lngs(lat, lng);
+
+						var smdSearchResults = {};
+
+						runSearch(0);
+
+						function runSearch(i){
+							if(i==lat_lngs.length){
+								next();
+							}
+							else{
+								var loc = lat_lngs[i];
+								find_smd_by_lat_lng(loc.lat, loc.lng, function(err, data){
+									if(err){
+										//how?
+									}
+									else if(data.objects.length!=0){
+										smdSearchResults[data.objects[0].external_id.toUpperCase()] = data.objects[0];
+									}
+									runSearch(i+1);
+								});
+							}
+						}
+
+						function next(){
+							var keys = Object.keys(smdSearchResults);
+							if(keys.length==0){
+								hide_smd_info();
+							}
+							else{
+								show_smd_info(keys[0], new google.maps.LatLng(lat, lng), keys);
+							}
+						}
+
 					}
 				}
-				);
+			);
+		}
+
+		function create_search_lat_lngs(lat, lng){
+			// this is a made up number bassed on the difference
+			// between the lat and lng of two addresses across a street
+			var spread = 0.0002;
+
+
+			return [
+				{
+					lat: lat-spread,
+					lng: lng
+				},
+				{
+					lat: lat+spread,
+					lng: lng
+				},
+				{
+					lat: lat,
+					lng: lng+spread
+				},
+				{
+					lat: lat,
+					lng: lng-spread
+				}
+			];
+		}
+
+		function find_smd_by_lat_lng(lat, lng, cb){
+			$.ajax({
+				url: "http://gis.govtrack.us/boundaries/dc-smd-2013/?contains=" + lat + "," + lng,
+				dataType: "jsonp",
+				success: function(data) {
+					cb(null, data);
+				}
+			});
 		}
 		
 		function show_info_for_coord(lat, lng) {
-						$.ajax({
-							url: "http://gis.govtrack.us/boundaries/dc-smd-2013/?contains=" + lat + "," + lng,
-							dataType: "jsonp",
-							success: function(data) {
-								if (data.objects.length == 0) {
-									// Not found!
-									hide_smd_info();
-								} else {
-									show_smd_info(data.objects[0].external_id.toUpperCase(), new google.maps.LatLng(lat, lng));
-								}
-							}
-						});
+			find_smd_by_lat_lng(lat, lng, function(err, data){
+				if (data.objects.length == 0) {
+					// Not found!
+					hide_smd_info();
+				} else {
+					show_smd_info(data.objects[0].external_id.toUpperCase(), new google.maps.LatLng(lat, lng));
+				}
+			});
 		}
 
 		function hide_smd_info() {
@@ -279,73 +345,99 @@
 		}
 		
 		var location_marker = null;
-		function show_smd_info(smd_id, addr_coords) {
-								var ward = anc_data[smd_id.substring(0,1)];
-								if (!ward) return false;
-								var anc = ward["ancs"][smd_id.substring(1,2)];
-								if (!anc) return false;
-								var smd = anc["smds"][smd_id.substring(2,4)];
-								if (!smd) return false;
-								
-								// put SMD in the URL fragment so the user can reload the page
-								// and get right to his district again
-								window.location.hash = "#" + smd_id;
-								
-								// hide prompt text to enter your address
-								$('#intro').slideUp();
-								
-								// update the map
-								if (map) {
-									var boundsarray = anc.bounds;
-									var sw = new google.maps.LatLng(boundsarray[1], boundsarray[0]);
-									var ne = new google.maps.LatLng(boundsarray[3], boundsarray[2]);
-									var bounds = new google.maps.LatLngBounds(sw, ne);
-									map.fitBounds(bounds);
-									if (addr_coords) map.panTo(addr_coords);
-									map.overlayMapTypes.clear();
-									add_overlay(map, "dc-anc-2013/" + smd_id.toLowerCase().substring(0, 2), null, null, .75);
-									add_overlay(map, "dc-smd-2013/" + smd_id.toLowerCase());
-									
-									if (addr_coords) {
-										if (!location_marker) {
-											location_marker = new google.maps.Marker({
-												map: map,
-												position: addr_coords,
-												title: "You"
-												});
-										}
-										location_marker.setPosition(addr_coords);
-										location_marker.setVisible(true);
-									} else if (location_marker) {
-										location_marker.setVisible(false);
-									}
-								}
-								
-								// show ANC/SMD info
-								$(".smd-name").text(smd.smd);
-								$(".anc-name").text(anc.anc);
-								
-								$('.has-commissioner').show();
-								var name = "";
-								name += smd["first_name"] + " ";
-								if (smd["nickname"]) name += smd["nickname"] + " ";
-								if (smd["middle_name"]) name += smd["middle_name"] + " ";
-								name += smd["last_name"];
-                                                                if (smd["suffix"]) name += " " + smd["suffix"];
-								$(".smd-commissioner").text(name);
-									
-								$('#map_col').show();
-								$('#info').fadeIn();
-								$('#info_address_not_found').fadeOut();
-								
-								$('#what-is-an-anc h2').text("What is ANC " + anc.anc + "?");
-								$('#what-is-an-anc .what-is-it').text(anc.anc + " is one of Washington DC’s 40 Advisory Neighborhood Commissions.");  
-								$('#what-is-an-anc .how-many-commissioners').text("Your ANC is composed of " +  Object.keys(anc["smds"]).length + " commissioners who make decisions about a broad range of issues in your community, such as liquor licenses, parking, and sanitation.");
-								
-								$('#anc-link').attr('href', "/" + anc.anc + "#" + smd.smd_number)
-									.text("Find out more about " + anc.anc + " >");
-								
-								return true;
+		function show_smd_info(smd_id, addr_coords, all_possible_smd_ids) {
+			all_possible_smd_ids = all_possible_smd_ids || [smd_id]; //make sure a all_possible_smd_ids is provided
+			if(all_possible_smd_ids.indexOf(smd_id)==-1){
+				all_possible_smd_ids = [smd_id].concat(all_possible_smd_ids); //like push but on the top
+			}
+
+			var ward = anc_data[smd_id.substring(0,1)];
+			if (!ward) return false;
+			var anc = ward["ancs"][smd_id.substring(1,2)];
+			if (!anc) return false;
+			var smd = anc["smds"][smd_id.substring(2,4)];
+			if (!smd) return false;
+			
+			// put SMD in the URL fragment so the user can reload the page
+			// and get right to his district again
+			window.location.hash = "#" + smd_id;
+			
+			// hide prompt text to enter your address
+			$('#intro').slideUp();
+			
+			// update the map
+			if (map) {
+				var boundsarray = anc.bounds;
+				var sw = new google.maps.LatLng(boundsarray[1], boundsarray[0]);
+				var ne = new google.maps.LatLng(boundsarray[3], boundsarray[2]);
+				var bounds = new google.maps.LatLngBounds(sw, ne);
+				map.fitBounds(bounds);
+				if (addr_coords) map.panTo(addr_coords);
+				map.overlayMapTypes.clear();
+				add_overlay(map, "dc-anc-2013/" + smd_id.toLowerCase().substring(0, 2), null, null, .75);
+				add_overlay(map, "dc-smd-2013/" + smd_id.toLowerCase());
+				
+				if (addr_coords) {
+					if (!location_marker) {
+						location_marker = new google.maps.Marker({
+							map: map,
+							position: addr_coords,
+							title: "You"
+						});
+					}
+					location_marker.setPosition(addr_coords);
+					location_marker.setVisible(true);
+				} else if (location_marker) {
+					location_marker.setVisible(false);
+				}
+			}
+
+			var ancListHolder = document.getElementById("info");
+			while(ancListHolder.children.length>0){
+				ancListHolder.children[0].remove();
+			}
+
+			// show ANC/SMD info
+			$('.has-commissioner').show();
+			$('#info').fadeIn();
+			$('#info_address_not_found').fadeOut();
+
+			var doYouLive = all_possible_smd_ids.length == 1 ? "" : "might ";
+
+			for(var i=0; i<all_possible_smd_ids.length; i++){
+				var possible_smd_id = all_possible_smd_ids[i];
+				var about = document.createElement("div");
+
+				var possible_ward = anc_data[possible_smd_id.substring(0,1)];
+				var possible_anc = possible_ward["ancs"][possible_smd_id.substring(1,2)];
+				var possible_smd = possible_anc["smds"][possible_smd_id.substring(2,4)];
+				console.log(i, possible_smd_id, possible_anc.anc, possible_smd.smd, possible_ward);
+
+				var commissioner_name = "";
+				commissioner_name += possible_smd["first_name"] + " ";
+				if (possible_smd["nickname"]) commissioner_name += possible_smd["nickname"] + " ";
+				if (possible_smd["middle_name"]) commissioner_name += possible_smd["middle_name"] + " ";
+				commissioner_name += possible_smd["last_name"];
+				if (possible_smd["suffix"]) commissioner_name += " " + possible_smd["suffix"];
+
+				about.innerHTML =  "<p>You "+doYouLive+"live in <b>"+possible_anc.anc+",</b> single member district <b>"+possible_smd.smd+"</b></p>";
+				about.innerHTML += "<p>"+possible_smd.smd+"'s commissioner is: <b>"+commissioner_name+"</b></p>";
+				about.innerHTML += "<p><a href='"+possible_anc.anc+"#"+possible_smd.smd_number+"'>Find out more about "+possible_anc.anc+" ></a></p>";
+				ancListHolder.appendChild(about);
+			}
+
+			//show map
+			$('#map_col').show();
+			
+			//talk about ancs from the first anc content
+			$('#what-is-an-anc h2').text("What is ANC " + anc.anc + "?");
+			$('#what-is-an-anc .what-is-it').text(anc.anc + " is one of Washington DC’s 40 Advisory Neighborhood Commissions.");  
+			$('#what-is-an-anc .how-many-commissioners').text("Your ANC is composed of " +  Object.keys(anc["smds"]).length + " commissioners who make decisions about a broad range of issues in your community, such as liquor licenses, parking, and sanitation.");
+			
+			$('#anc-link').attr('href', "/" + anc.anc + "#" + smd.smd_number)
+				.text("Find out more about " + anc.anc + " >");
+			
+			return true;
 		}
 	</script>
 {% endblock %}	
