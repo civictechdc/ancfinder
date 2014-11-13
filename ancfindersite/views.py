@@ -6,8 +6,10 @@ from django.conf import settings
 from django.utils.timezone import make_aware, get_default_timezone
 import datetime, calendar, json, collections
 
+import requests
 
 from models import Document, anc_data_as_json, anc_data
+
 
 meeting_data = json.loads(open(settings.STATIC_ROOT + "/meetings.json").read())
 
@@ -344,3 +346,20 @@ def make_anc_ical(request, anc=None):
 		cal.add_component(event)
 
 	return HttpResponse(cal.to_ical(), "text/calendar" if "mime" not in request.GET else "text/plain")
+
+
+def mar_lookup_proxy(request):
+	''' proxying the DC MAR endpoint because it doesn't seem to work with direct requests from the browser '''
+
+	address = request.GET.get('address')
+
+	if not address:
+		raise Http404()
+	r = requests.post(
+		r'http://citizenatlas.dc.gov/newwebservices/locationverifier.asmx/findLocation2',
+		data={'f': 'json', 'str': address})
+
+	assert r.status_code == 200, "Got non-200 response from MAR API for address %s" % address
+	mar_json = r.json()
+
+	return HttpResponse(json.dumps(mar_json), content_type="application/json")

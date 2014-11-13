@@ -20,6 +20,8 @@ urlpatterns = patterns('',
     url(r'^feeds/ancfinder(?:-(\d[a-z]))?.rss$', make_anc_feed),
     url(r'^feeds/ancfinder(?:-(\d[a-z]))?.ics$', make_anc_ical),
 
+    # MAR endpoint proxy because it doesn't use JSONP and doesn't have CORS configured properly
+    url(r'^mar-lookup-proxy$', mar_lookup_proxy),
 
 	# Django admin
 	url(r'^admin/', include(admin.site.urls)),

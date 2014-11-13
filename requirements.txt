@@ -13,4 +13,4 @@ twitter
 icalendar
 psycopg2
 flup
-
+requests
