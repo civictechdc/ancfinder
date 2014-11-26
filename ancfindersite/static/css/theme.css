@@ -162,6 +162,9 @@ a {
 a:hover {
 	color: #79A5D3;
 	}
+	.navbar-inverse .navbar-nav>li>a {
+		color: white;
+	}
 	#masthead a, #body a, footer a {
 		text-decoration: underline;
 	}
@@ -185,125 +188,30 @@ footer {
 	color: #666;
 }
 
-select.large,
-input[type="text"].large,
-input[type="password"].large,
-input[type="datetime"].large,
-input[type="datetime-local"].large,
-input[type="date"].large,
-input[type="month"].large,
-input[type="time"].large,
-input[type="week"].large,
-input[type="number"].large,
-input[type="email"].large,
-input[type="url"].large,
-input[type="search"].large,
-input[type="tel"].large,
-input[type="color"].large,
-.uneditable-input.large {
-	height: 36px;
-	padding: 4px;
-	font-size: 20px;
-	line-height: 24px;
-}
-
-
-/* 03. Helper classes ============================== */
-
-.btn-large {
-	padding: 12px 20px;
-	font-size: 18px;
-	line-height: 20px;
-}
-.box,
-.topbox {
-    background: #f3f1e9 url('../images/bg-paper.jpg'); /* File does not exist! */
-    border: solid #e7e4dc 1px;
-    -moz-box-shadow:
-        0 0 0 5px #f9f8f4,
-        0 1px 2px 5px rgba(106,106,106,.4);
-    -webkit-box-shadow:
-        0 0 0 5px #f9f8f4,
-        0 1px 2px 5px rgba(106,106,106,.4);
-    box-shadow:
-        0 0 0 5px #f9f8f4,
-        0 1px 2px 5px rgba(106,106,106,.4);
-}
-.topbox {
-  margin: 15px 6px 30px;
-}
-.lt-ie9 .box,
-.lt-ie9 .topbox {
-    box-shadow: none;
-    outline: solid #f9f8f4 5px;
-}
-
-.group:after { /* Set containers to clear their floats */
-    visibility: hidden;
+#logo {
     display: block;
-    content: "";
-    clear: both;
-    height: 0;
-    }
-* html .group { zoom: 1; } /* IE6 */
-*:first-child+html .group { zoom: 1; } /* IE7 */
-
-
-
-/* 04. Layout styles =============================== */
-
-nav {
-	padding: 1em 0;
-	background: #394042;
-	line-height: 1.5em;
+    font-size: 1.5em;
+	line-height: .95em;
+    font-family: CentralUnionMission;
+	color: white;
+    text-transform: uppercase; /* required for CentralUnionMission font which only provides uppercase glyphs */
+	padding-left: 50px;
 }
 
-    .navbar {
-        padding: 0;
-        margin: 0;
-        border-radius: 0;
-    }
+.navbar {
+	margin: 0;
+}
 
-	.navbar-inverse .navbar-nav>li>a {
-		color: #fff;
-        padding-bottom: 5px;
-        padding-left: 30px;
-	}
-
-	.navbar-inverse .navbar-nav>li>a:hover,
-	.navbar-inverse .navbar-nav>li>a:active {
-		color: #fff1c9;
-		text-decoration: none;
-	}
-
-	#logo {
-		display: block;
-		font-size: 1.5em;
-        line-height: 1.1em;
-		font-family: CentralUnionMission;
+   .login-row {
+   	   margin: 0 13px 6px 0;
+       font-family: OpenSans, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+       font-size: 75%;
+       text-align: right;
+   }
+   .login-row a {
         color: white;
-		text-transform: uppercase; /* required for CentralUnionMission font which only provides uppercase glyphs */
-        padding-left: 50px;
-	}
-
-	ul.nav-links {
-		text-align: right;
-		list-style: none;
-		margin: 0;
-	}
-	ul.nav-links li {
-		display: inline;
-		margin-left: 60px;
-	}
-
-	.login-row a{
-		font-family: OpenSans, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-		text-transform: none;
-		font-size: 70%;
-		color: white;
-		text-align: right;
-	}
-    .login-row a:hover,
+   }
+   .login-row a:hover,
     .login-row a:active {
         color: #fff1c9;
         text-decoration: none;
