@@ -272,20 +272,15 @@ footer {
 #intro p { margin: 0; } /* weirdness with slideUp() */
 
 #addr_box {
-	margin: 1.75em 2em 2em 1em;
+	margin: 1.75em 2em 2em 0;
 	text-align: right;
 }
 #addr {
 	display: block;
 	width: 100%;
 	margin-top: 5px;
-	border: 1px solid #888;
-	box-shadow: none;
-	padding: 3px 0 3px 1px;
-	height: 32px;
 	font: bold 28px/32px sans-serif;
 	color: black;
-	text-align: left;
 }
 
 #addr_box div {
