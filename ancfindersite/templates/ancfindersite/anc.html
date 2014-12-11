@@ -46,7 +46,7 @@ h2 { font-size: 22px; }
 #by_the_numbers .credit { color: #666; font-size: 70%; line-height: 120%; margin-top: .5em; margin-bottom: 1em; }
 #by_the_numbers .grid { padding: 1em 0; cursor: default; line-height: 0; }
 #by_the_numbers .grid .anc { display: inline-block; width: 12px; font-size: 9px; color: #666; font-family: sans-serif; }
-#by_the_numbers .grid .bar { display: inline-block; margin-top: 1px; height: 11px; }
+#by_the_numbers .grid .bar { display: inline-block; margin-top: 1px; height: 11px; background-color: #EEE; }
 #by_the_numbers .grid .me .anc { color: black; font-weight: bold; }
 #by_the_numbers .grid .me .bar { background-color: black !important; }
 </style>
@@ -209,7 +209,7 @@ h2 { font-size: 22px; }
                             {% if cell.anc == anc %}class="me"{% endif %}
                             title="{{cell.anc}}: {% if stat.is_dollars %}${% endif %}{{cell.value|intcomma}}{% if stat.is_percent %}%{% endif %}">
                             <div class="anc">{{cell.anc}}</div>
-                            <div class="bar" style="background-color: #{{cell.color}}; width: {{cell.width}}px;"></div>
+                            <div class="bar" style="width: {{cell.width}}px;"></div>
                             <div class="clearfix"></div>
                         </div>
                     {% endfor %}

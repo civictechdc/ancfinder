@@ -13,30 +13,12 @@ from models import Document, anc_data_as_json, anc_data
 
 meeting_data = json.loads(open(settings.STATIC_ROOT + "/meetings.json").read())
 
-# assemble census data on first load
-def make_anc_hex_color(anc):
-	def avg(t1, f1, t2, f2): 
-		return (int((t1[0]*f1+t2[0]*f2)/(f1+f2)), int((t1[1]*f1+t2[1]*f2)/(f1+f2)), int((t1[2]*f1+t2[2]*f2)/(f1+f2)))
-	
-	def hexish(tup): 
-		return "".join(("%0.2X" % d) for d in tup)
-	
-	ward_color_set = [ (27, 158, 119), (217, 95, 2), (166, 118, 29), (117, 112, 179), (231, 41, 138), (102, 166, 30), (230, 171, 2), (166, 118, 29) ]
-	
-	anc_color_set = [ (228, 26, 28), (55, 126, 184), (77, 175, 74), (152, 78, 163), (255, 127, 0), (255, 127, 0), (166, 86, 40) ]
-	
-	ward_color = ward_color_set[int(anc[0])-1]
-	
-	anc_color = anc_color_set[ord(anc[1])-ord('A')]
-	
-	return hexish(ward_color) #avg(ward_color, 1.0, anc_color, 0.22))
-
 census_grids = { }
 
 for ward in anc_data.values():
 	for anc in ward["ancs"].values():
 		for key, info in anc["census"].items():
-			census_grids.setdefault(key, []).append( { "anc": anc["anc"], "value": info["value"], "color": make_anc_hex_color(anc["anc"]) } )
+			census_grids.setdefault(key, []).append( { "anc": anc["anc"], "value": info["value"] } )
 for d in census_grids.values():
 	d.sort(key = lambda x : x["value"], reverse=True)
 	max_val = d[0]["value"]
