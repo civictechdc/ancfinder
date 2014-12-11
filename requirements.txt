@@ -1,4 +1,4 @@
-django==1.5.2
+django==1.7.1
 cssselect
 lxml
 pdfminer==20131113
