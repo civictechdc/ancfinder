@@ -149,6 +149,11 @@ h2 { font-size: 22px; }
             </div>
             <div class="col-sm-5">
                 <div id="map_canvas" style="margin-top: 2.5em;"> </div>
+                <p style="margin-top: 1em">Download PDF map of SMD:<br>
+                    {% for smd in info.smds.values %}
+                        <a href="/assets/smd-pdfs/{{ smd.smd }}.pdf">{{smd.smd_number}}</a>
+                    {% endfor %}
+                </p>
             </div><!-- /column -->
         </div>
     </div> <!-- home tab -->
