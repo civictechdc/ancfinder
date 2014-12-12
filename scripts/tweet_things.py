@@ -1,9 +1,18 @@
-import  sys, os, os.path, json, re, random
+# django setup...
+
+import  sys, os
+sys.path.insert(0, '.')
+os.environ['DJANGO_SETTINGS_MODULE'] = 'ancfindersite.settings'
+
+import django
+django.setup()
+
+# ok...
+
+import os.path, json, re, random
 from datetime import datetime, timedelta
 import dateutil.parser
 
-sys.path.insert(0, '.')
-os.environ['DJANGO_SETTINGS_MODULE'] = 'ancfindersite.settings'
 from ancfindersite import settings
 from ancfindersite.models import Document
 
