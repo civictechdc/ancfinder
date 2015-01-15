@@ -14,7 +14,7 @@ for anc in ANC:
     for tag in tag_extract:
         for d in soup.find_all(tag):
             d.extract()
-    info = soup('tbody', limit=3)[2]
+    info = soup('tbody', limit=3)[0]
     tr = info.find_all('tr', recursive=False)
     for row in tr:
         td = row.find_all('td', recursive=False)
@@ -52,7 +52,7 @@ for anc in ANC:
             phone = ''
         data[smd]['phone'] = phone
         data[smd]['email'] = td[4].a.text
-        print data[smd]
+        #print data[smd]
 
 with open('data/scraped-anc.json', 'w') as output:
     json.dump(data, output, sort_keys=True, indent=4)
