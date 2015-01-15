@@ -20,7 +20,7 @@ anc_list.sort()
 class CommissionerInfo(models.Model):
 	created = models.DateTimeField(auto_now_add=True, db_index=True, help_text="The date and time that this value was entered.")
 
-	author = models.ForeignKey(User, help_text="The user who provided this value.")
+	author = models.ForeignKey(User, blank=True, null=True, help_text="The user who provided this value.")
 	superseded_by = models.ForeignKey('self', blank=True, null=True, related_name="supersedes", help_text="The CommissionerInfo that has newer info than this one.")
 
 	anc = models.CharField(choices=[(x,x) for x in anc_list], max_length=2, db_index=True, verbose_name="ANC") # e.g. "3B"
@@ -41,7 +41,7 @@ class CommissionerInfo(models.Model):
 				superseded_by=None)
 			prev.superseded_by = self
 		except CommissionerInfo.DoesNotExist:
-			# there is no value at all for this field yet 
+			# there is no value at all for this field yet
 			pass
 
 	def delete(self):
