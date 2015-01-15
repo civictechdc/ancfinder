@@ -17,6 +17,48 @@ for ward in anc_data.values():
 	anc_list.extend(list(x['anc'] for x in ward['ancs'].values()))
 anc_list.sort()
 
+class CommissionerInfo(models.Model):
+	created = models.DateTimeField(auto_now_add=True, db_index=True, help_text="The date and time that this value was entered.")
+
+	author = models.ForeignKey(User, help_text="The user who provided this value.")
+	superseded_by = models.ForeignKey('self', blank=True, null=True, related_name="supersedes", help_text="The CommissionerInfo that has newer info than this one.")
+
+	anc = models.CharField(choices=[(x,x) for x in anc_list], max_length=2, db_index=True, verbose_name="ANC") # e.g. "3B"
+	smd = models.CharField(max_length=2, verbose_name="SMD")
+	field_name = models.CharField(max_length=32)
+	field_value = models.CharField(max_length=256, blank=True)
+
+	def save(self):
+		# Save first.
+		super(CommissionerInfo, self).save()
+
+		# Set linkage: Set the item that was previously the latest field
+		# value so that now it is superseded_by the newly saved record.
+		try:
+			prev = CommissionerInfo.objects\
+				.exclude(id=self.id)\
+				.get(anc=self.anc, smd=self.smd, field_name=self.field_name,
+				superseded_by=None)
+			prev.superseded_by = self
+		except CommissionerInfo.DoesNotExist:
+			# there is no value at all for this field yet 
+			pass
+
+	def delete(self):
+		# Before deleting, reset the superseded_by on the record that
+		# this record superseded. Set it to what supersedes this one.
+		try:
+			prev = self.supersedes
+			prev.superseded_by = self.superseded_by
+			prev.save()
+		except CommissionerInfo.DoesNotExist:
+			pass
+
+		# And actually delete.
+		super(CommissionerInfo, self).delete()
+
+
+
 class Document(models.Model):
 	"""An ANC document."""
 
