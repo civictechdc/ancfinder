@@ -5,10 +5,17 @@ from bs4 import BeautifulSoup
 file_name = open('data/scraped-anc.json', 'w')
 data = {}
 
-ANC = ['1A', '1B', '1C', '1D', '2A', '2B', '2C', '2D', '2E', '2F', '3B', '3C', '3D', '3E', '3F', '3G', '4A', '4B', '4C', '4D', '5A', '5B', '5C', '5D', '5E', '6A', '6B', '6C', '6D', '6E', '7B', '7C', '7D', '7E', '7F', '8A', '8B', '8C', '8D', '8E']
+ANC = []
+
+base = BeautifulSoup(urllib2.urlopen('http://anc.dc.gov/'))
+links = base('div', id='block-domain-conf-domain-main-links')[0].find_all('a')
+for link in links:
+    if re.search('commission-', link['href']):
+        ANC.append(link['href'])
+
 
 for anc in ANC:
-    url = 'http://anc.dc.gov/page/advisory-neighborhood-commission-' + anc
+    url = 'http://anc.dc.gov' + anc
     soup = BeautifulSoup(urllib2.urlopen(url))
     tag_extract = ['br', 'i', 'sub']
     for tag in tag_extract:
@@ -36,7 +43,7 @@ for anc in ANC:
         for word in name[1:len(name) - 1]:    #nickname or Middle Name?
             if word[0] == '"' or word[0] == '(':
                 data[smd]['nickname'] = word
-            else: 
+            else:
                 if word != data[smd]['last_name']:
                     data[smd]['middle_name'] = word
             if data[smd]['suffix'] in ['Jr', 'Sr']:
@@ -56,4 +63,3 @@ for anc in ANC:
 
 with open('data/scraped-anc.json', 'w') as output:
     json.dump(data, output, sort_keys=True, indent=4)
-
