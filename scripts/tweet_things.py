@@ -109,6 +109,9 @@ def post_document_tweet(previous_tweets):
 
 	for doc in Document.objects.filter(created__gt=now() - timedelta(days=5)).order_by('created'):
 		key = "document:%d" % doc.id
+		# Don't post empty documents
+		if document.annotation_document.body.strip() == "":
+			break
 		if key in previous_tweets: continue
 
 		post_tweet(
