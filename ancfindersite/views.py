@@ -334,14 +334,20 @@ def mar_lookup_proxy(request):
 	''' proxying the DC MAR endpoint because it doesn't seem to work with direct requests from the browser '''
 
 	address = request.GET.get('address')
-
 	if not address:
 		raise Http404()
-	r = requests.post(
-		r'http://citizenatlas.dc.gov/newwebservices/locationverifier.asmx/findLocation2',
-		data={'f': 'json', 'str': address})
 
-	assert r.status_code == 200, "Got non-200 response from MAR API for address %s" % address
-	mar_json = r.json()
+	def mar_request(addr):
+		''' put the mar request in a function so we can call it more than once '''
+		r = requests.post(
+			r'http://citizenatlas.dc.gov/newwebservices/locationverifier.asmx/findLocation2',
+			data={'f': 'json', 'str': addr})
+		r.raise_for_status()
+		return r.json()
+
+	try:
+		mar_json = mar_request(address)
+	except:
+		mar_json = mar_request(address)  # one retry for now
 
 	return HttpResponse(json.dumps(mar_json), content_type="application/json")
