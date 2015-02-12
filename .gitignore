@@ -11,3 +11,6 @@ data
 .env
 __pycache__
 .vagrant
+
+#excluding migrations files
+ancfindersite/migrations

@@ -21,5 +21,5 @@ class Command(BaseCommand):
                 ci.field_value = field_value
                 ci.save()
 
-        for c in CommisssionerInfo.objects.all():
+        for c in CommissionerInfo.objects.all():
             print c.superceded_by
