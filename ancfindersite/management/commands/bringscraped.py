@@ -1,11 +1,8 @@
 import json
-from django.core.management.base import BaseCommand#, CommandError
+from django.core.management.base import BaseCommand
 from ancfindersite.models import CommissionerInfo
-# from polls.models import Poll
 
 class Command(BaseCommand):
-    # args = '<poll_id poll_id ...>'
-    # help = 'Closes the specified poll for voting'
 
     def handle(self, path_to_json, *args, **options):
         with open(path_to_json) as source_file:
@@ -20,6 +17,3 @@ class Command(BaseCommand):
                 ci.field_name = field_name
                 ci.field_value = field_value
                 ci.save()
-
-        for c in CommissionerInfo.objects.all():
-            print c.superceded_by
