@@ -1,4 +1,4 @@
-from django.db import models
+from django.db import models, transaction
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
 from django.conf import settings
@@ -17,33 +17,55 @@ for ward in anc_data.values():
 	anc_list.extend(list(x['anc'] for x in ward['ancs'].values()))
 anc_list.sort()
 
+class NoMassDeleteManager(models.Manager):
+	class CustomQuerySet(models.QuerySet):
+		def delete(self):
+			# Can't do a mass delete because it would not call delete() on each,
+			# which we need to do to keep the model consistent.
+			for obj in self:
+				obj.delete()
+	def get_queryset(self):
+		return NoMassDeleteManager.CustomQuerySet(self.model, using=self._db)
+
 class CommissionerInfo(models.Model):
 	created = models.DateTimeField(auto_now_add=True, db_index=True, help_text="The date and time that this value was entered.")
 
 	author = models.ForeignKey(User, blank=True, null=True, help_text="The user who provided this value.")
-	superseded_by = models.ForeignKey('self', blank=True, null=True, related_name="supersedes", help_text="The CommissionerInfo that has newer info than this one.")
+	superseded_by = models.OneToOneField('self', blank=True, null=True, related_name="supersedes", help_text="The CommissionerInfo that has newer info than this one.")
 
 	anc = models.CharField(choices=[(x,x) for x in anc_list], max_length=2, db_index=True, verbose_name="ANC") # e.g. "3B"
 	smd = models.CharField(max_length=2, verbose_name="SMD")
 	field_name = models.CharField(max_length=32)
 	field_value = models.CharField(max_length=256, blank=True)
 
+	objects = NoMassDeleteManager()
+
+	def __str__(self):
+		return "%s%s %s: %s (%s)" % (self.anc, self.smd, self.field_name, self.field_value, self.author if self.author else "anonymous")
+
+	@transaction.atomic
 	def save(self):
+		# Is this a new save?
+		is_new = self.id is None
+
 		# Save first.
 		super(CommissionerInfo, self).save()
 
-		# Set linkage: Set the item that was previously the latest field
-		# value so that now it is superseded_by the newly saved record.
-		try:
-			prev = CommissionerInfo.objects\
-				.exclude(id=self.id)\
-				.get(anc=self.anc, smd=self.smd, field_name=self.field_name,
-				superseded_by=None)
-			prev.superseded_by = self
-		except CommissionerInfo.DoesNotExist:
-			# there is no value at all for this field yet
-			pass
+		if is_new:
+			# Set linkage: Set the item that was previously the latest field
+			# value so that now it is superseded_by the newly saved record.
+			try:
+				prev = CommissionerInfo.objects\
+					.exclude(id=self.id)\
+					.get(anc=self.anc, smd=self.smd, field_name=self.field_name,
+					superseded_by=None)
+				prev.superseded_by = self
+				prev.save()
+			except CommissionerInfo.DoesNotExist:
+				# there is no value at all for this field yet
+				pass
 
+	@transaction.atomic
 	def delete(self):
 		# Before deleting, reset the superseded_by on the record that
 		# this record superseded. Set it to what supersedes this one.
@@ -57,7 +79,11 @@ class CommissionerInfo(models.Model):
 		# And actually delete.
 		super(CommissionerInfo, self).delete()
 
-
+	@staticmethod
+	def get(anc, smd, field_name):
+		return CommissionerInfo.objects.get(
+			anc=anc, smd=smd, field_name=field_name, superseded_by=None)\
+			.field_value
 
 class Document(models.Model):
 	"""An ANC document."""
