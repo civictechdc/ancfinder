@@ -7,8 +7,9 @@ from django import forms
 from django.core.exceptions import ValidationError
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import permission_required
+from django.views.generic import FormView
 
-from ancfindersite.models import Document, anc_list, anc_data
+from ancfindersite.models import CommissionerInfo, Document, anc_list, anc_data
 
 import re, datetime
 
@@ -19,6 +20,69 @@ def is_valid_anc(value):
 		raise ValidationError("An ANC is a number followed by an uppercase letter.")
 	if value[0] not in anc_data or value[1] not in anc_data[value[0]]['ancs']:
 		raise ValidationError("%s is not an ANC." % value)
+
+commissioner_info_fields = sorted(CommissionerInfo.objects.values_list("field_name", flat=True).distinct())
+class ANCUpdateForm(forms.Form):
+	anc = forms.ChoiceField(label="ANC", choices=[(x,x) for x in anc_list]) # e.g. "3B"
+	smd = forms.CharField(label="SMD", max_length=2)
+
+	# build the fields dynamically to cover all of the field types we have
+	for f in commissioner_info_fields:
+		vars()[f] = forms.CharField(required=False)
+
+	def clean_smd(self):
+		# Check that the SMD is an SMD of the given ANC.
+		try:
+			smd = "%02d" % int(self.cleaned_data['smd'])
+		except ValueError:
+			raise forms.ValidationError("An SMD looks like 01, 02, ...")
+		anc = self.cleaned_data['anc']
+		smd_list = anc_data[anc[0]]['ancs'][anc[1]]['smds'].keys()
+		if smd not in smd_list:
+			raise forms.ValidationError("That's not an SMD in %s." % anc)
+		return smd
+
+@login_required
+def update_anc_info(request):
+	# Submitted.
+	if request.method == 'POST':
+		form = ANCUpdateForm(request.POST)
+		if form.is_valid():
+			for f in commissioner_info_fields:
+				try:
+					if form.cleaned_data[f] == CommissionerInfo.get(form.cleaned_data['anc'], form.cleaned_data['smd'], f):
+						# Nothing to update.
+						continue
+				except CommissionerInfo.DoesNotExist:
+					pass
+				CommissionerInfo.put(
+					request.user,
+					form.cleaned_data['anc'],
+					form.cleaned_data['smd'],
+					f,
+					form.cleaned_data[f],
+					)
+
+			# Redirect to the ANC the user uploaded info about.
+			return HttpResponseRedirect('/' + form.cleaned_data['anc'].upper())
+	else:
+		# A empty, unbound form.
+		initial = {
+			"anc": request.GET.get("anc"),
+			"smd": request.GET.get("smd"),
+		}
+		for f in commissioner_info_fields:
+			try:
+				initial[f] = CommissionerInfo.get(request.GET.get("anc"), request.GET.get("smd"), f)
+			except CommissionerInfo.DoesNotExist:
+				pass
+		form = ANCUpdateForm(initial=initial)
+
+	return render_to_response(
+		'ancfindersite/anc-update-form.html',
+		{ 'form': form },
+		context_instance=RequestContext(request)
+	)
 
 class UploadDocumentForm(forms.Form):
 	anc = forms.ChoiceField(

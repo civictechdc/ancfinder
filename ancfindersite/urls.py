@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from .views import *
+from ancfindersite.views import *
 
 admin.autodiscover()
 
@@ -27,6 +27,7 @@ urlpatterns = patterns('',
 	url(r'^admin/', include(admin.site.urls)),
 
 	# Backend
+	url(r'^update-info$', 'ancfindersite.backend_views.update_anc_info', name='anc_update_form'),
 	url(r'^upload-document$', 'ancfindersite.backend_views.upload_document'),
 	url(r'^document/(\d+)/edit$', 'ancfindersite.backend_views.edit_document'),
 	url(r'^document-annotations', include('annotator.urls')),

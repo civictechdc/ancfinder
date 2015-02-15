@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+{% load bootstrap %}
+
+{% block master_title %}Submit a change to ANC Info - ANC Finder{% endblock %}
+
+{% block master_body %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-7">
+      <h2>Submit change to ANC Info</h2>
+      <form role="form" method="POST">
+        {% csrf_token %}
+        {{ form|bootstrap }}
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

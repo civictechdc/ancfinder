@@ -25,8 +25,4 @@ class Command(BaseCommand):
                     pass
 
                 # Write a new object.
-                ci = CommissionerInfo()
-                ci.anc, ci.smd = anc, smd
-                ci.field_name = field_name
-                ci.field_value = field_value
-                ci.save()
+                CommissionerInfo.put(None, anc, smd, field_name, field_value)

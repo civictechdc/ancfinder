@@ -31,7 +31,7 @@ class CommissionerInfo(models.Model):
 	created = models.DateTimeField(auto_now_add=True, db_index=True, help_text="The date and time that this value was entered.")
 
 	author = models.ForeignKey(User, blank=True, null=True, help_text="The user who provided this value.")
-	superseded_by = models.OneToOneField('self', blank=True, null=True, related_name="supersedes", help_text="The CommissionerInfo that has newer info than this one.")
+	superseded_by = models.OneToOneField('self', blank=True, null=True, on_delete=models.SET_NULL, related_name="supersedes", help_text="The CommissionerInfo that has newer info than this one.")
 
 	anc = models.CharField(choices=[(x,x) for x in anc_list], max_length=2, db_index=True, verbose_name="ANC") # e.g. "3B"
 	smd = models.CharField(max_length=2, verbose_name="SMD")
@@ -84,6 +84,16 @@ class CommissionerInfo(models.Model):
 		return CommissionerInfo.objects.get(
 			anc=anc, smd=smd, field_name=field_name, superseded_by=None)\
 			.field_value
+
+	@staticmethod
+	def put(author, anc, smd, field_name, field_value):
+		ci = CommissionerInfo()
+		ci.author = author
+		ci.anc = anc
+		ci.smd = smd
+		ci.field_name = field_name
+		ci.field_value = field_value
+		ci.save()
 
 class Document(models.Model):
 	"""An ANC document."""
