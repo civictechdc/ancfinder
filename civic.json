@@ -1,9 +1,10 @@
 {
+    "conformsTo":"http://codefordc.org/resources/specification.html",
     "status": "Production",
     "thumbnailUrl":"http://ancfinder.org/static/img/favicon.png",
     "needs": [
-        {"need":"ANC document uploading"},
-        {"need":"Python"}
+        {"want":"ANC document uploading"},
+        {"need":"Django"}
     ],
     "bornAt": "Code for DC",
     "type": "Web App",
@@ -22,5 +23,9 @@
     "communityPartner": {},
     "politicalEntity": {"Office of Advisory Neighborhood Commissions":"http://anc.dc.gov/"},
     "governmentPartner": {},
+    "data": {
+        "ANC Commissioners": "http://ancfinder.org/static/ancs.json",
+        "ANC Meetings": "http://ancfinder.org/static/meetings.json"
+    }
     "moreInfo": ""
 }
