@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import permission_required
 from django.views.generic import FormView
 
-from ancfindersite.models import CommissionerInfo, Document, anc_list, anc_data
+from ancfindersite.models import CommissionerInfo, Document, anc_data, anc_list
 
 import re, datetime
 
@@ -18,7 +18,7 @@ from tinymce.widgets import TinyMCE
 def is_valid_anc(value):
 	if not re.match("^[0-9][A-Z]$", value):
 		raise ValidationError("An ANC is a number followed by an uppercase letter.")
-	if value[0] not in anc_data or value[1] not in anc_data[value[0]]['ancs']:
+	if value not in anc_list:
 		raise ValidationError("%s is not an ANC." % value)
 
 commissioner_info_fields = sorted(CommissionerInfo.objects.values_list("field_name", flat=True).distinct())
