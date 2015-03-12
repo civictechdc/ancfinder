@@ -34,8 +34,7 @@ def get_anc_details(request):
 		"bounds": anc_data[smd[0]]['ancs'][smd[1]]['smds'][smd[2:4]]['bounds'],
 	}
 
-	for key in ("first_name", "nickname", "middle_name", "last_name", "suffix"):
-		data[key] = CommissionerInfo.get(smd[0:2], smd[2:4], key)
+	data.update( CommissionerInfo.get_all(smd[0:2], smd[2:4]) )
 
 	return HttpResponse(json.dumps(data), content_type="application/json")
 
@@ -62,12 +61,17 @@ class AncInfoTemplateView(TemplateView):
 	template_name = 'ancfindersite/anc.html'
 	# Override the HTTP get method to pass along some additional information
 	def get(self, request, anc, *args, **kwargs):
+		# Get the ANC and static metadata from ancs.json.
 		anc = anc.upper()
 		try:
 			info = anc_data[anc[0]]["ancs"][anc[1]]
 		except KeyError:
 			raise Http404()
-		
+
+		# For each SMD, pull in data from our database.
+		for smd in info['smds']:
+			info['smds'][smd].update( CommissionerInfo.get_all(anc, smd) )
+
 		# Find the next meeting and the most recent two meetings so we can
 		# display related documents for those meetings.
 		now = datetime.datetime.now()

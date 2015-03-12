@@ -77,6 +77,11 @@ class CommissionerInfo(models.Model):
 		super(CommissionerInfo, self).delete()
 
 	@staticmethod
+	def get_all(anc, smd):
+		return dict(CommissionerInfo.objects.filter(anc=anc, smd=smd, superseded_by=None)\
+			.values_list('field_name', 'field_value'))
+
+	@staticmethod
 	def get(anc, smd, field_name):
 		try:
 			return CommissionerInfo.objects.get(
