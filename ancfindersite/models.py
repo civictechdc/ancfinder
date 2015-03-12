@@ -10,12 +10,9 @@ try:
 except ImportError:
 	import simplejson as json
 
-anc_data_as_json = open(settings.STATIC_ROOT + "/ancs.json").read()
-anc_data = json.loads(anc_data_as_json, object_pairs_hook=collections.OrderedDict)
-anc_list = []
-for ward in anc_data.values():
-	anc_list.extend(list(x['anc'] for x in ward['ancs'].values()))
-anc_list.sort()
+anc_list = ['1A', '1B', '1C', '1D', '2A', '2B', '2C', '2D', '2E', '2F', '3B', '3C', '3D', '3E', '3F', '3G', '4A', '4B', '4C', '4D', '5A', '5B', '5C', '5D', '5E', '6A', '6B', '6C', '6D', '6E', '7B', '7C', '7D', '7E', '7F', '8A', '8B', '8C', '8D', '8E']
+
+anc_data = json.loads(open(settings.STATIC_ROOT + "/ancs.json").read(), object_pairs_hook=collections.OrderedDict)
 
 class NoMassDeleteManager(models.Manager):
 	class CustomQuerySet(models.QuerySet):
@@ -81,9 +78,12 @@ class CommissionerInfo(models.Model):
 
 	@staticmethod
 	def get(anc, smd, field_name):
-		return CommissionerInfo.objects.get(
-			anc=anc, smd=smd, field_name=field_name, superseded_by=None)\
-			.field_value
+		try:
+			return CommissionerInfo.objects.get(
+				anc=anc, smd=smd, field_name=field_name, superseded_by=None)\
+				.field_value
+		except CommissionerInfo.DoesNotExist:
+			return None
 
 	@staticmethod
 	def put(author, anc, smd, field_name, field_value):

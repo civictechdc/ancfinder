@@ -19,6 +19,7 @@ urlpatterns = patterns('',
 	url(r'^document/(?P<anc>..)/(?P<date>....-..-..)/(?P<id>\d+)(?P<slug>/.*)?$', DocumentTemplateView.as_view(), name = 'ancfindersite_document',),
     url(r'^feeds/ancfinder(?:-(\d[a-z]))?.rss$', make_anc_feed),
     url(r'^feeds/ancfinder(?:-(\d[a-z]))?.ics$', make_anc_ical),
+    url(r'^get_anc_details', get_anc_details),
 
     # MAR endpoint proxy because it doesn't use JSONP and doesn't have CORS configured properly
     url(r'^mar-lookup-proxy$', mar_lookup_proxy),

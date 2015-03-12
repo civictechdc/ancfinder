@@ -43,10 +43,10 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Explore ANCs</a>
                     <ul id="menu_anc_list" class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                        {% for ward, ward_info in ancs.items %}
+                        {% for ancs in ancs_by_ward %}
                         <div class="ward">
                             <nobr>
-                                {% for anc, anc_info in ward_info.ancs.items %}
+                                {% for anc in ancs %}
                                 <a class="anc" href="/{{ward}}{{anc}}">{{ward}}{{anc}}</a>
                                 {% endfor %}
                             </nobr>

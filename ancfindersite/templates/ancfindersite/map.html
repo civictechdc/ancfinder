@@ -47,8 +47,6 @@
 <script type="text/javascript" src="http://gis.govtrack.us/static/js/maps_helpers.js"></script>
 
 <script type="text/javascript">
-    var anc_data = {{ anc_data|safe }};
-    
     var map = null;
     
     $(function() {
@@ -82,12 +80,7 @@
             if (data) {
               $('#map_infobox .info').show();
               $('#map_infobox .nothing_here').hide();
-
-              var ward = anc_data[key.substring(0, 1)];
-              var anc = ward.ancs[key.substring(1, 2).toUpperCase()];
-              var smd = anc.smds[key.substring(2, 4)];
-
-              $('#map_infobox .info').html(smd.smd);
+              $('#map_infobox .info').html(key.toUpperCase());
             } else {
               $('#map_infobox .info').hide();
               $('#map_infobox .nothing_here').show();

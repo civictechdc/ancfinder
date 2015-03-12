@@ -8,7 +8,7 @@ import datetime, calendar, json, collections
 
 import requests
 
-from models import Document, anc_data_as_json, anc_data
+from models import Document, anc_data, anc_list, CommissionerInfo
 
 
 meeting_data = json.loads(open(settings.STATIC_ROOT + "/meetings.json").read())
@@ -25,22 +25,38 @@ for d in census_grids.values():
 	for dd in d:
 		dd["width"] = int(45 * dd["value"] / max_val)
 
+def get_anc_details(request):
+	smd = request.GET['smd']
+	data = {
+		"anc": smd[0:2],
+		"smd": smd[2:4],
+		"num_smds": 123,
+		"bounds": anc_data[smd[0]]['ancs'][smd[1]]['smds'][smd[2:4]]['bounds'],
+	}
+
+	for key in ("first_name", "nickname", "middle_name", "last_name", "suffix"):
+		data[key] = CommissionerInfo.get(smd[0:2], smd[2:4], key)
+
+	return HttpResponse(json.dumps(data), content_type="application/json")
+
 
 def TemplateContextProcessor(request):
+	# For master.html's Explore menu, we need the list of ancs
+	# by ward.
+	import collections
+	ancs_by_ward = collections.defaultdict(list)
+	for anc in anc_list:
+		ancs_by_ward[anc[0]].append(anc)
+	ancs_by_ward = [x[1] for x in sorted(ancs_by_ward.items())]
+
 	return {
-		"ancs": anc_data,
+		"ancs_by_ward": ancs_by_ward,
+		"anc_list": anc_list,
 	}
 
 
 class HomeTemplateView(TemplateView):
 	template_name = 'ancfindersite/index.html'
-	
-	def get_context_data(self, **kwargs):
-		# Used to pass the anc_data to our home page
-		context = super(HomeTemplateView, self).get_context_data(**kwargs)
-		# Add in the anc_data 
-		context['anc_data'] = anc_data_as_json
-		return context
 			
 class AncInfoTemplateView(TemplateView):
 	template_name = 'ancfindersite/anc.html'
@@ -166,16 +182,7 @@ class AuthorityTemplateView(TemplateView):
 
 class BigMapTemplateView(TemplateView):
 	'''This CBV generates the map page. '''
-	template_name = 'ancfindersite/map.html'
-	
-	# Add anc_data to the context of our CBV
-	def get_context_data(self, **kwargs):
-		# Call the base implementation first to get a context
-		context = super(BigMapTemplateView, self).get_context_data(**kwargs)
-		# Add in anc_data to our CBV
-		context['anc_data'] = anc_data_as_json
-		return context
-	
+	template_name = 'ancfindersite/map.html'	
 	 
 class LegalTemplateView(TemplateView):
 	template_name = 'ancfindersite/legal.html'
