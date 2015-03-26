@@ -26,6 +26,6 @@
     "data": {
         "ANC Commissioners": "http://ancfinder.org/static/ancs.json",
         "ANC Meetings": "http://ancfinder.org/static/meetings.json"
-    }
+    },
     "moreInfo": ""
 }
