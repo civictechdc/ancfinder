@@ -6,5 +6,4 @@ os.environ["STATIC_ROOT"] = env["STATIC_ROOT"]
 
 # Run da scripts.
 os.system(". .env/bin/activate; python scripts/scrape_anc.py")
-os.system(". .env/bin/activate; python3 scripts/update_anc_database.py --base")
 os.system(". .env/bin/activate; python scripts/update_meeting_times.py")

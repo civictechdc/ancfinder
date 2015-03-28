@@ -122,7 +122,7 @@ h2 { font-size: 22px; }
                         <div class="smd_num_and_name">
                             <div class="smd_num">
                                 <strong>SMD {{ smd.smd_number }}</strong>
-                                {% if smd.Position|length > 0 %} / {{ smd.Position|join:', ' }}{% endif %}
+                                {% if smd.position %} / {{ smd.position }}{% endif %}
                             </div>
                             <div class="smd_name">
                               {{ smd.first_name }} {{ smd.middle_name }} {{ smd.nickname }} {{ smd.last_name }} {{ smd.suffix }}
@@ -131,12 +131,12 @@ h2 { font-size: 22px; }
                         <div class="smd_actions">
                             <a href="#" class="show_on_map">show on map</a>
                             {% if smd.email %}| <a href="mailto:{{ smd.email }}">email</a>{% endif %}
+                            | <a href="/update-info?anc={{anc}}&amp;smd={{smd.smd_number}}">edit</a>
                         </div>
                         <div class="smd_extra_info" style="display: none">
                           <div class="smd_extra_info_wrapper">
                               <p><em>Neighborhoods</em> {{ smd.neighborhood_list|capfirst }}</p>
                               <p><em>Phone</em> {% if smd.phone %}{{ smd.phone }}{% else %}None provided{% endif %}</p>
-                              <p><em>Terms as commissioner: </em>{{ smd.terms|ordinal }} term</p>
                           </div>
                         </div>
                         </div>
@@ -145,7 +145,6 @@ h2 { font-size: 22px; }
                     {% endfor %}
                     </tr>
                 </table>
-                <p>Have more information about these commissioners? <a href="https://docs.google.com/spreadsheet/ccc?key=0AsuPWK1wtxNfdGdyVWU4Z3J3X3g3RzVyVWJ1Rkd4dXc#gid=0">Add it here!</a></p>
             </div>
             <div class="col-sm-5">
                 <div id="map_canvas" style="margin-top: 2.5em;"> </div>
