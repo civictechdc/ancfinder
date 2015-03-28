@@ -21,7 +21,8 @@ def is_valid_anc(value):
 	if value not in anc_list:
 		raise ValidationError("%s is not an ANC." % value)
 
-commissioner_info_fields = sorted(CommissionerInfo.objects.values_list("field_name", flat=True).distinct())
+commissioner_info_fields = ['first_name', 'middle_name', 'nickname', 'last_name', 'suffix', 'official_name', 'email', 'address', 'phone']
+commissioner_info_fields += sorted(f for f in CommissionerInfo.objects.values_list("field_name", flat=True).distinct() if f not in commissioner_info_fields)
 class ANCUpdateForm(forms.Form):
 	anc = forms.ChoiceField(label="ANC", choices=[(x,x) for x in anc_list]) # e.g. "3B"
 	smd = forms.CharField(label="SMD", max_length=2)
