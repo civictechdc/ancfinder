@@ -27,10 +27,14 @@ for d in census_grids.values():
 
 def get_anc_details(request):
 	smd = request.GET['smd']
+	anc = smd[0:2]
+
+	num_smds = len(anc_data[anc[0]]['ancs'][anc[1]]['smds'])
+
 	data = {
-		"anc": smd[0:2],
+		"anc": anc,
 		"smd": smd[2:4],
-		"num_smds": 123,
+		"num_smds": num_smds,
 		"bounds": anc_data[smd[0]]['ancs'][smd[1]]['smds'][smd[2:4]]['bounds'],
 	}
 
