@@ -114,7 +114,7 @@ def post_document_tweet(previous_tweets):
 		post_tweet(
 			key,
 			"New: %s at %s. #ANC%s"
-			% ( doc.get_display_title(), settings.SITE_ROOT_URL + doc.get_absolute_url(), doc.anc ),
+			% ( doc.get_display_title()[0:100], settings.SITE_ROOT_URL + doc.get_absolute_url(), doc.anc ),
 			previous_tweets)
 
 		# Just do one, of course.
