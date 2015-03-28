@@ -206,7 +206,9 @@
 			});
 			
 			// If the URL fragment has an SMD name, show the info for that SMD.
-			show_smd_info(window.location.hash.toUpperCase().substring(1), null);
+			var initial_smd = window.location.hash.toUpperCase().substring(1);
+			if (initial_smd.length == 4)
+				show_smd_info(initial_smd, null);
 		});
 
 		function resize_things() {
