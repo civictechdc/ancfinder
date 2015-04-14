@@ -43,6 +43,23 @@ class ANCUpdateForm(forms.Form):
 			raise forms.ValidationError("That's not an SMD in %s." % anc)
 		return smd
 
+	def clean_email(self):
+		if self.cleaned_data['email'] == '':
+			return ''
+		if not ANCUpdateForm.validate_email(self.cleaned_data['email']):
+			raise forms.ValidationError("That is not a valid email address.")
+		return self.cleaned_data['email']
+
+	@staticmethod
+	def validate_email(email):
+		if len(email) > 255: return False
+		ATEXT = r'[A-Za-z0-9_!#$%&\'\*\+\-/=\?\^`\{\|\}~]' # RFC 2822 3.2.4
+		ATEXT2 = r'[a-zA-Z0-9\-]' # RFC 952/RFC 1123
+		DOT_ATOM_TEXT_LOCAL = ATEXT + r'+(?:\.' + ATEXT + r'+)*' # RFC 2822 3.2.4
+		DOT_ATOM_TEXT_HOST = ATEXT2 + r'+(?:\.' + ATEXT2 + r'+)*(?:\.' + ATEXT2 + r'*' + ATEXT2 + ')' # domain names must have at least one period
+		ADDR_SPEC = '^(%s)@(%s)$' % (DOT_ATOM_TEXT_LOCAL, DOT_ATOM_TEXT_HOST) # RFC 2822 3.4.1
+		return re.match(ADDR_SPEC, email) is not None
+
 @login_required
 def update_anc_info(request):
 	# Submitted.
