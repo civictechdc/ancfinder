@@ -79,8 +79,9 @@ class AncInfoTemplateView(TemplateView):
 
 		# Get the committees.
 		committees = CommissionerInfo.get(anc, None, 'committees')
-		committees = re.sub(r"(^|\n)# ", r"\1### ", committees)
-		committees = markdown.markdown(committees)
+		if committees is not None:
+			committees = re.sub(r"(^|\n)# ", r"\1### ", committees)
+			committees = markdown.markdown(committees)
 
 		# Find the next meeting and the most recent two meetings so we can
 		# display related documents for those meetings.

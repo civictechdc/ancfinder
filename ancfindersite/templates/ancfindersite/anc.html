@@ -6,6 +6,7 @@
 {% block head %}
 <style>
 h2 { font-size: 22px; }
+h3 { font-size: 18px; }
 
 @media (max-width: 767px) {
     .container {
@@ -70,7 +71,7 @@ h2 { font-size: 22px; }
           <li class="active"><a href="#home" data-toggle="tab">{{anc}} Overview</a></li>
           <li><a href="#documents" data-toggle="tab">Documents</a></li>
           <li><a href="#stats" data-toggle="tab">Statistics</a></li>
-          {% if info.committees.values %}<li><a href="#committees" data-toggle="tab">Committees</a></li>{% endif %}
+          {% if committees %}<li><a href="#committees" data-toggle="tab">Committees</a></li>{% endif %}
         </ul>
 
 <div class="tab-content">
