@@ -31,9 +31,9 @@ class CommissionerInfo(models.Model):
 	superseded_by = models.OneToOneField('self', blank=True, null=True, on_delete=models.SET_NULL, related_name="supersedes", help_text="The CommissionerInfo that has newer info than this one.")
 
 	anc = models.CharField(choices=[(x,x) for x in anc_list], max_length=2, db_index=True, verbose_name="ANC") # e.g. "3B"
-	smd = models.CharField(max_length=2, verbose_name="SMD")
+	smd = models.CharField(max_length=2, verbose_name="SMD", blank=True, null=True)
 	field_name = models.CharField(max_length=32)
-	field_value = models.CharField(max_length=256, blank=True)
+	field_value = models.TextField(blank=True)
 
 	objects = NoMassDeleteManager()
 

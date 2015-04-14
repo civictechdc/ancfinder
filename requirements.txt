@@ -14,3 +14,4 @@ icalendar
 psycopg2
 flup
 requests
+markdown

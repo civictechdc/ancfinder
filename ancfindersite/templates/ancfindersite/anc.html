@@ -157,29 +157,15 @@ h2 { font-size: 22px; }
         </div>
     </div> <!-- home tab -->
 
-    {% if info.committees.values %}
+    {% if committees %}
     <div class="tab-pane" id="committees">
-                <h2>Committees</h2>
+        <div style="float: right">
+            <a href="/update-info?anc={{anc}}&amp;smd=&amp;field_name=committees">edit</a>
+        </div>
 
-                <table class="committees" cols="1">
-                    <tr>
-                    {% for cmte in info.committees.values %}
-                    <td id="{{cmte.committee}} " width="33%" style="vertical-align: top; padding-right: 1.5em;">
-                        <div style="padding-bottom: .4em; border-bottom: 1px solid #666; margin-bottom: 2px;">{{cmte.committee}}</div>
-                        <div style="padding-bottom: .75em"><small>
-                                <p style="margin: .5em 0 .25em 0">{% if cmte.chair %}<b>Chair:</b> {{ cmte.chair }}{% if cmte.chair_email %} ({{cmte.chair_email}}){% endif %}<br>{% endif %}</p>
-                                <div {% if "..." in cmte.purpose|truncatewords_html:20 %}class="make-popover" data-content="<small>{{cmte.purpose}}</small>"{% endif %}>
-                                	{{ cmte.purpose|truncatewords_html:20|safe }}
-                                </div>
-                                {% if cmte.meetings %}
-                                <br><b>Meetings:</b> {{ cmte.meetings|safe }}
-                                {% endif %}
-                        </small></div>
-                    </td>
-                    {% if forloop.counter|divisibleby:2 and not forloop.last %}</tr><tr>{% endif %}
-                    {% endfor %}
-                    </tr>
-                </table>
+        <h2>Committees</h2>
+
+        {{committees|safe}}        
     </div> <!-- commissioners tab -->
     {% endif %}
 

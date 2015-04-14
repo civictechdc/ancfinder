@@ -4,9 +4,10 @@ from django.http import Http404, HttpResponse
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.utils.timezone import make_aware, get_default_timezone
-import datetime, calendar, json, collections
+import datetime, calendar, json, collections, re
 
 import requests
+import markdown
 
 from models import Document, anc_data, anc_list, CommissionerInfo
 
@@ -75,6 +76,11 @@ class AncInfoTemplateView(TemplateView):
 		# For each SMD, pull in data from our database.
 		for smd in info['smds']:
 			info['smds'][smd].update( CommissionerInfo.get_all(anc, smd) )
+
+		# Get the committees.
+		committees = CommissionerInfo.get(anc, None, 'committees')
+		committees = re.sub(r"(^|\n)# ", r"\1### ", committees)
+		committees = markdown.markdown(committees)
 
 		# Find the next meeting and the most recent two meetings so we can
 		# display related documents for those meetings.
@@ -163,7 +169,8 @@ class AncInfoTemplateView(TemplateView):
 
 		return render(request, self.template_name, {
 			'anc': anc,
-			'info': info, 
+			'info': info,
+			'committees': committees,
 			'documents': recent_documents,
 			'highlight_documents': highlight_documents,
 			'census_stats': census_stats,

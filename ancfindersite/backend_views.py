@@ -22,8 +22,8 @@ def is_valid_anc(value):
 		raise ValidationError("%s is not an ANC." % value)
 
 commissioner_info_fields = ['first_name', 'middle_name', 'nickname', 'last_name', 'suffix', 'official_name', 'email', 'address', 'phone']
-commissioner_info_fields += sorted(f for f in CommissionerInfo.objects.values_list("field_name", flat=True).distinct() if f not in commissioner_info_fields)
-class ANCUpdateForm(forms.Form):
+commissioner_info_fields += sorted(f for f in CommissionerInfo.objects.exclude(smd=None).values_list("field_name", flat=True).distinct() if f not in commissioner_info_fields)
+class SMDUpdateForm(forms.Form):
 	anc = forms.ChoiceField(label="ANC", choices=[(x,x) for x in anc_list]) # e.g. "3B"
 	smd = forms.CharField(label="SMD", max_length=2)
 
@@ -46,7 +46,7 @@ class ANCUpdateForm(forms.Form):
 	def clean_email(self):
 		if self.cleaned_data['email'] == '':
 			return ''
-		if not ANCUpdateForm.validate_email(self.cleaned_data['email']):
+		if not SMDUpdateForm.validate_email(self.cleaned_data['email']):
 			raise forms.ValidationError("That is not a valid email address.")
 		return self.cleaned_data['email']
 
@@ -60,15 +60,27 @@ class ANCUpdateForm(forms.Form):
 		ADDR_SPEC = '^(%s)@(%s)$' % (DOT_ATOM_TEXT_LOCAL, DOT_ATOM_TEXT_HOST) # RFC 2822 3.4.1
 		return re.match(ADDR_SPEC, email) is not None
 
+class ANCUpdateForm(forms.Form):
+	anc = forms.ChoiceField(label="ANC", choices=[(x,x) for x in anc_list]) # e.g. "3B"
+	committees = forms.CharField(widget = forms.Textarea)
+
 @login_required
 def update_anc_info(request):
+	if request.GET.get('smd'):
+		form_class = SMDUpdateForm
+		info_fields = commissioner_info_fields
+	else:
+		form_class = ANCUpdateForm
+		info_fields = ['committees']
+
 	# Submitted.
 	if request.method == 'POST':
-		form = ANCUpdateForm(request.POST)
+		form = form_class(request.POST)
 		if form.is_valid():
-			for f in commissioner_info_fields:
+			smd = form.cleaned_data['smd'] if request.POST.get('smd') else None
+			for f in info_fields:
 				try:
-					if form.cleaned_data[f] == CommissionerInfo.get(form.cleaned_data['anc'], form.cleaned_data['smd'], f):
+					if form.cleaned_data[f] == CommissionerInfo.get(form.cleaned_data['anc'], smd, f):
 						# Nothing to update.
 						continue
 				except CommissionerInfo.DoesNotExist:
@@ -76,7 +88,7 @@ def update_anc_info(request):
 				CommissionerInfo.put(
 					request.user,
 					form.cleaned_data['anc'],
-					form.cleaned_data['smd'],
+					smd,
 					f,
 					form.cleaned_data[f],
 					)
@@ -89,12 +101,12 @@ def update_anc_info(request):
 			"anc": request.GET.get("anc"),
 			"smd": request.GET.get("smd"),
 		}
-		for f in commissioner_info_fields:
+		for f in info_fields:
 			try:
-				initial[f] = CommissionerInfo.get(request.GET.get("anc"), request.GET.get("smd"), f)
+				initial[f] = CommissionerInfo.get(request.GET.get("anc"), request.GET.get("smd") or None, f)
 			except CommissionerInfo.DoesNotExist:
 				pass
-		form = ANCUpdateForm(initial=initial)
+		form = form_class(initial=initial)
 
 	return render_to_response(
 		'ancfindersite/anc-update-form.html',
