@@ -39,11 +39,27 @@ and then type this at the shell prompt:
 
 Wait a few seconds for things to start up, then point your browser to [http://localhost:8000](http://localhost:8000) -- if you see the ANC Finder, you're all set. From here you can start modifying the code you checked out to the 'ancfinder' directory, and these changes will be reflected in the locally-running instance of the site as you go.
 
+Installation with Cloud9
+------------------------
+
+You can easily set up the development environment with [Cloud9](https://c9.io/). After forking the ancfinder repo, sign up for a free Cloud9 account using your Github credentials.
+
+Your fork of ancfinder should appear on the left side of your Cloud9 dashboard under 'Projects on Github.' Select it and click 'Clone to Edit.' Choose the pre-configured Python/Django environment. The ancfinder fork will now be listed under 'My Projects.' Once cloned, click 'Start Editing.'
+
+To continue using git, run the following in your workspace terminal:
+
+    git remote add ancfinder 'git@github.com:[github username]/ancfinder'
+
+Then, to install the dependencies, run:
+
+    sh c9provision.sh
+
+Run the site by clicking 'Run Project' in the Cloud9 IDE menubar and navigate to http://ancfinder-c9-[username].c9.io to see it.
+
 Installation without Vagrant
 ----------------------------
 
-To set up without Vagrant, see [provision.sh](provision.sh) for the steps needed to install dependencies.
-
+To set up without Vagrant or Cloud9, see [provision.sh](provision.sh) for the steps needed to install dependencies.
 
 Updating the Code
 -----------------
