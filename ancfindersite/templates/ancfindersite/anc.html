@@ -117,7 +117,7 @@ h3 { font-size: 18px; }
                 <h2>Commissioners</h2>
                 <table id="commissioners" cols="3">
                     <tr>
-                    {% for smd in info.smds.values %}
+                    {% for smd in smds %}
                         <td id="smd{{ smd.smd_number }}" width="33%" data-smd-number="{{ smd.smd_number }}">
                         <div>
                         <div class="smd_num_and_name">
@@ -150,7 +150,7 @@ h3 { font-size: 18px; }
             <div class="col-sm-5">
                 <div id="map_canvas" style="margin-top: 2.5em;"> </div>
                 <p style="margin-top: 1em">Download PDF map of SMD:<br>
-                    {% for smd in info.smds.values %}
+                    {% for smd in smds %}
                         <a href="/assets/smd-pdfs/{{ smd.smd }}.pdf">{{smd.smd_number}}</a>
                     {% endfor %}
                 </p>
@@ -308,7 +308,7 @@ h3 { font-size: 18px; }
         $("#smd" + window.location.hash.replace("#", "")).find(">div").css({"background-color": "#ffffcc"});
 
                 var smd_bounds = {
-                    {% for smd in info.smds.values %}
+                    {% for smd in smds %}
                         '{{smd.smd_number}}': new google.maps.LatLngBounds(new google.maps.LatLng({{smd.bounds.1}}, {{smd.bounds.0}}), new google.maps.LatLng({{smd.bounds.3}}, {{smd.bounds.2}})){% if not forloop.last %},{% endif %}
                     {% endfor %}
                 };

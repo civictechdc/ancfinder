@@ -74,8 +74,11 @@ class AncInfoTemplateView(TemplateView):
 			raise Http404()
 
 		# For each SMD, pull in data from our database.
+		smds = []
 		for smd in info['smds']:
 			info['smds'][smd].update( CommissionerInfo.get_all(anc, smd) )
+			smds.append(info['smds'][smd])
+		smds.sort(key = lambda x : x['smd'])
 
 		# Get the committees.
 		committees = CommissionerInfo.get(anc, None, 'committees')
@@ -171,6 +174,7 @@ class AncInfoTemplateView(TemplateView):
 		return render(request, self.template_name, {
 			'anc': anc,
 			'info': info,
+			'smds': smds,
 			'committees': committees,
 			'documents': recent_documents,
 			'highlight_documents': highlight_documents,
