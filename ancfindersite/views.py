@@ -4,7 +4,7 @@ from django.http import Http404, HttpResponse
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.utils.timezone import make_aware, get_default_timezone
-import datetime, calendar, json, collections, re
+import datetime, calendar, json, collections, re, copy
 
 import requests
 import markdown
@@ -76,8 +76,9 @@ class AncInfoTemplateView(TemplateView):
 		# For each SMD, pull in data from our database.
 		smds = []
 		for smd in info['smds']:
-			info['smds'][smd].update( CommissionerInfo.get_all(anc, smd) )
-			smds.append(info['smds'][smd])
+			smddict = copy.deepcopy(info['smds'][smd])
+			smddict.update( CommissionerInfo.get_all(anc, smd) )
+			smds.append(smddict)
 		smds.sort(key = lambda x : x['smd'])
 
 		# Get the committees.
