@@ -21,7 +21,7 @@ def is_valid_anc(value):
 	if value not in anc_list:
 		raise ValidationError("%s is not an ANC." % value)
 
-commissioner_info_fields = ['first_name', 'middle_name', 'nickname', 'last_name', 'suffix', 'official_name', 'email', 'address', 'phone']
+commissioner_info_fields = ['first_name', 'middle_name', 'nickname', 'last_name', 'suffix', 'official_name', 'email', 'address', 'phone', 'twitter_handle']
 commissioner_info_fields += sorted(f for f in CommissionerInfo.objects.exclude(smd=None).values_list("field_name", flat=True).distinct() if f not in commissioner_info_fields)
 class SMDUpdateForm(forms.Form):
 	anc = forms.ChoiceField(label="ANC", choices=[(x,x) for x in anc_list]) # e.g. "3B"
@@ -59,6 +59,9 @@ class SMDUpdateForm(forms.Form):
 		DOT_ATOM_TEXT_HOST = ATEXT2 + r'+(?:\.' + ATEXT2 + r'+)*(?:\.' + ATEXT2 + r'*' + ATEXT2 + ')' # domain names must have at least one period
 		ADDR_SPEC = '^(%s)@(%s)$' % (DOT_ATOM_TEXT_LOCAL, DOT_ATOM_TEXT_HOST) # RFC 2822 3.4.1
 		return re.match(ADDR_SPEC, email) is not None
+
+	def clean_twitter_handle(self):
+		return self.cleaned_data['twitter_handle'].replace("@", "")
 
 class ANCUpdateForm(forms.Form):
 	anc = forms.ChoiceField(label="ANC", choices=[(x,x) for x in anc_list]) # e.g. "3B"

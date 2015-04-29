@@ -31,6 +31,12 @@ h3 { font-size: 18px; }
 }
 #commissioners .smd_name {
 }
+#commissioners .smd_twitter_handle {
+    font-size: 85%;
+}
+    #commissioners .smd_twitter_handle a {
+        text-decoration: none;
+    }
 #commissioners .smd_actions {
     font-size: 11px;
 }
@@ -128,6 +134,11 @@ h3 { font-size: 18px; }
                             <div class="smd_name">
                               {{ smd.first_name }} {{ smd.middle_name }} {{ smd.nickname }} {{ smd.last_name }} {{ smd.suffix }}
                             </div>
+                            {% if smd.twitter_handle %}
+                            <div class="smd_twitter_handle">
+                              <a href="https://twitter.com/{{ smd.twitter_handle }}"><i class="fa fa-twitter"></i> @{{ smd.twitter_handle }}</a>
+                            </div>
+                            {% endif %}
                         </div>
                         <div class="smd_actions">
                             <a href="#" class="show_on_map">show on map</a>
