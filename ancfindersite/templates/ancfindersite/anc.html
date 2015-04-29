@@ -31,10 +31,14 @@ h3 { font-size: 18px; }
 }
 #commissioners .smd_name {
 }
-#commissioners .smd_twitter_handle {
+#commissioners .smd_contact {
     font-size: 85%;
+    margin-top: 1px;
 }
-    #commissioners .smd_twitter_handle a {
+    #commissioners .smd_contact i {
+        width: 1.2em;
+    }
+    #commissioners .smd_contact a {
         text-decoration: none;
     }
 #commissioners .smd_actions {
@@ -134,15 +138,19 @@ h3 { font-size: 18px; }
                             <div class="smd_name">
                               {{ smd.first_name }} {{ smd.middle_name }} {{ smd.nickname }} {{ smd.last_name }} {{ smd.suffix }}
                             </div>
+                            {% if smd.email %}
+                            <div class="smd_contact clearfix">
+                              <a href="mailto:{{ smd.email }}"><i class="fa fa-envelope-o"></i> {{smd.email|truncatechars:22}}</a>
+                            </div>
+                            {% endif %}
                             {% if smd.twitter_handle %}
-                            <div class="smd_twitter_handle">
+                            <div class="smd_contact clearfix">
                               <a href="https://twitter.com/{{ smd.twitter_handle }}"><i class="fa fa-twitter"></i> @{{ smd.twitter_handle }}</a>
                             </div>
                             {% endif %}
                         </div>
                         <div class="smd_actions">
                             <a href="#" class="show_on_map">show on map</a>
-                            {% if smd.email %}| <a href="mailto:{{ smd.email }}">email</a>{% endif %}
                             | <a href="/update-info?anc={{anc}}&amp;smd={{smd.smd_number}}">edit</a>
                         </div>
                         <div class="smd_extra_info" style="display: none">
