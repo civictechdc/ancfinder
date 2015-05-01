@@ -31,6 +31,16 @@ h3 { font-size: 18px; }
 }
 #commissioners .smd_name {
 }
+#commissioners .smd_contact {
+    font-size: 85%;
+    margin-top: 1px;
+}
+    #commissioners .smd_contact i {
+        width: 1.2em;
+    }
+    #commissioners .smd_contact a {
+        text-decoration: none;
+    }
 #commissioners .smd_actions {
     font-size: 11px;
 }
@@ -117,7 +127,7 @@ h3 { font-size: 18px; }
                 <h2>Commissioners</h2>
                 <table id="commissioners" cols="3">
                     <tr>
-                    {% for smd in info.smds.values %}
+                    {% for smd in smds %}
                         <td id="smd{{ smd.smd_number }}" width="33%" data-smd-number="{{ smd.smd_number }}">
                         <div>
                         <div class="smd_num_and_name">
@@ -128,10 +138,19 @@ h3 { font-size: 18px; }
                             <div class="smd_name">
                               {{ smd.first_name }} {{ smd.middle_name }} {{ smd.nickname }} {{ smd.last_name }} {{ smd.suffix }}
                             </div>
+                            {% if smd.email %}
+                            <div class="smd_contact clearfix">
+                              <a href="mailto:{{ smd.email }}"><i class="fa fa-envelope-o"></i> {{smd.email|truncatechars:22}}</a>
+                            </div>
+                            {% endif %}
+                            {% if smd.twitter_handle %}
+                            <div class="smd_contact clearfix">
+                              <a href="https://twitter.com/{{ smd.twitter_handle }}"><i class="fa fa-twitter"></i> @{{ smd.twitter_handle }}</a>
+                            </div>
+                            {% endif %}
                         </div>
                         <div class="smd_actions">
                             <a href="#" class="show_on_map">show on map</a>
-                            {% if smd.email %}| <a href="mailto:{{ smd.email }}">email</a>{% endif %}
                             | <a href="/update-info?anc={{anc}}&amp;smd={{smd.smd_number}}">edit</a>
                         </div>
                         <div class="smd_extra_info" style="display: none">
@@ -150,7 +169,7 @@ h3 { font-size: 18px; }
             <div class="col-sm-5">
                 <div id="map_canvas" style="margin-top: 2.5em;"> </div>
                 <p style="margin-top: 1em">Download PDF map of SMD:<br>
-                    {% for smd in info.smds.values %}
+                    {% for smd in smds %}
                         <a href="/assets/smd-pdfs/{{ smd.smd }}.pdf">{{smd.smd_number}}</a>
                     {% endfor %}
                 </p>
@@ -308,7 +327,7 @@ h3 { font-size: 18px; }
         $("#smd" + window.location.hash.replace("#", "")).find(">div").css({"background-color": "#ffffcc"});
 
                 var smd_bounds = {
-                    {% for smd in info.smds.values %}
+                    {% for smd in smds %}
                         '{{smd.smd_number}}': new google.maps.LatLngBounds(new google.maps.LatLng({{smd.bounds.1}}, {{smd.bounds.0}}), new google.maps.LatLng({{smd.bounds.3}}, {{smd.bounds.2}})){% if not forloop.last %},{% endif %}
                     {% endfor %}
                 };
