@@ -11,3 +11,5 @@ data
 .env
 __pycache__
 .vagrant
+
+*.c9
