@@ -183,7 +183,7 @@
 			if (navigator.geolocation) $('#use_my_location').show();
 			
 			$('a.smooth').click(function(e) {
-                          $("#what-is-an-anc-wrapper").show();
+                $("#what-is-an-anc-wrapper").show();
 				e.preventDefault();
 				var target = this.hash,
 				$target = $(target);
@@ -195,6 +195,15 @@
 				return false;
 			});
 			
+			$(function() {
+				if (window.location.hash.length > 1) {
+					$('a.smooth').each(function() {
+						if ($(this).attr('href') == window.location.hash)
+							$(this).click();
+					})
+				}
+			})
+
 			$('#jump_to_top a').click(function(e) {
 				e.preventDefault();
 				$('html, body').stop().animate({
