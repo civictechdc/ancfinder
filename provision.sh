@@ -11,6 +11,7 @@ sudo python /tmp/get-pip.py
 rm /tmp/get-pip.py
 sudo pip install virtualenv
 
+sudo apt-get update
 sudo apt-get -y install git
 sudo apt-get -y install libpq-dev libxml2 libxslt1.1 libxml2-dev libxslt1-dev python-libxml2
 sudo apt-get -y install python-libxslt1 python-dev libyaml-dev

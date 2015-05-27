@@ -16,7 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.provision "shell" do |s|
-    s.inline = "sudo -u vagrant /bin/bash /vagrant/provision.sh"
+    s.inline = "bash /vagrant/provision.sh"
   end
 
 end
