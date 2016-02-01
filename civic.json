@@ -1,31 +1,44 @@
 {
-    "conformsTo":"http://codefordc.org/resources/specification.html",
-    "status": "Production",
-    "thumbnailUrl":"http://ancfinder.org/static/img/favicon.png",
-    "needs": [
-        {"want":"ANC document uploading"},
-        {"need":"Django"}
-    ],
-    "bornAt": "Code for DC",
-    "type": "Web App",
-    "categories": [
-        {"category":"Politics"},
-        {"category":"Government"},
-        {"category":"Open Data"}
-    ],
-    "geography": "Washington, DC",
-    "contact":
+    "name": "ANC Finder", 
+    "description": "A website about DC's Advisory Neighborhood Commission system.", 
+    "license": "CC0-1.0", 
+    "status": "Production", 
+    "type": "Web App", 
+    "homepage": "http://ancfinder.org/", 
+    "repository": "https://github.com/codefordc/ancfinder", 
+    "thumbnail": "http://ancfinder.org/static/img/favicon.png", 
+    "geography": [
+        "Washington, DC"
+    ], 
+    "contact": {
+        "name": "", 
+        "email": "contactus@ancfinder.org", 
+        "url": "https://twitter.com/@ancfinder"
+    }, 
+    "partners": [
         {
-            "name": "",
-            "email": "contactus@ancfinder.org",
-            "twitter": "@ancfinder"
-        },
-    "communityPartner": {},
-    "politicalEntity": {"Office of Advisory Neighborhood Commissions":"http://anc.dc.gov/"},
-    "governmentPartner": {},
-    "data": {
-        "ANC Commissioners": "http://ancfinder.org/static/ancs.json",
-        "ANC Meetings": "http://ancfinder.org/static/meetings.json"
-    },
-    "moreInfo": ""
+            "url": "http://codefordc.org", 
+            "name": "Code for DC", 
+            "email": ""
+        }
+    ], 
+    "data": [
+        {
+            "url": "http://ancfinder.org/static/meetings.json", 
+            "name": "ANC Meetings", 
+            "metadata": ""
+        }, 
+        {
+            "url": "http://ancfinder.org/static/ancs.json", 
+            "name": "ANC Commissioners", 
+            "metadata": ""
+        }
+    ], 
+    "tags": [
+        "Politics", 
+        "Government", 
+        "Open Data"
+    ], 
+    "links": [], 
+    "id": "https://raw.githubusercontent.com/DCgov/civic.json/master/schemas/schema-v1.json"
 }
