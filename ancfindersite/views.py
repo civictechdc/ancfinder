@@ -27,6 +27,8 @@ for d in census_grids.values():
 		dd["width"] = int(45 * dd["value"] / max_val)
 
 def get_anc_details(request):
+	if "smd" not in request.GET: raise Http404()
+
 	smd = request.GET['smd']
 	anc = smd[0:2]
 
