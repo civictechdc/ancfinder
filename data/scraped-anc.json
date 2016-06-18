@@ -44,24 +44,24 @@
         "suffix": ""
     }, 
     "1A05": {
-        "address": "1451 Park Road NW #510; Washington, DC 20010", 
+        "address": "Washington, DC 20010", 
         "email": "1A05@anc.dc.gov", 
-        "first_name": "Thu", 
-        "last_name": "Nguyen", 
+        "first_name": "Vacant", 
+        "last_name": "", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Thu Nguyen", 
+        "official_name": "Vacant", 
         "phone": "", 
         "suffix": ""
     }, 
     "1A06": {
-        "address": "1364 Kenyon Street, NW; Apt. 1; Washington, DC 20010", 
+        "address": "1102 Monroe Street NW; Washington, DC 20010", 
         "email": "1A06@anc.dc.gov", 
-        "first_name": "Patrick", 
-        "last_name": "Flynn", 
-        "middle_name": "W.", 
+        "first_name": "Richard", 
+        "last_name": "DuBeshter", 
+        "middle_name": "", 
         "nickname": "", 
-        "official_name": "Patrick W. Flynn", 
+        "official_name": "Richard DuBeshter", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -80,10 +80,10 @@
         "address": "608 Rock Creek Church Road, NW; Washington, DC 20010", 
         "email": "1A08@anc.dc.gov", 
         "first_name": "Kent", 
-        "last_name": "Boese", 
-        "middle_name": "C.", 
+        "last_name": "Chairperson", 
+        "middle_name": "Boese", 
         "nickname": "", 
-        "official_name": "Kent C. Boese", 
+        "official_name": "Kent C. Boese\nChairperson", 
         "phone": "202-904-8111", 
         "suffix": ""
     }, 
@@ -150,7 +150,7 @@
         "middle_name": "Nedrow", 
         "nickname": "", 
         "official_name": "Ellen Nedrow Sullivan", 
-        "phone": "202-780-4939", 
+        "phone": "(202)\u00a0780-4939", 
         "suffix": ""
     }, 
     "1B03": {
@@ -161,55 +161,55 @@
         "middle_name": "", 
         "nickname": "", 
         "official_name": "Sedrick Muhammad", 
-        "phone": "202-791-0281", 
+        "phone": "(202)\u00a0791-0281", 
         "suffix": ""
     }, 
     "1B04": {
-        "address": "2125 14th Street, NW  #714; Washington, DC 20009", 
+        "address": "1315 W Street NW; Washington, DC 20009", 
         "email": "1B04@anc.dc.gov", 
-        "first_name": "Kevin", 
-        "last_name": "Cain", 
+        "first_name": "LaKisha", 
+        "last_name": "Brown", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Kevin Cain", 
+        "official_name": "LaKisha Brown", 
         "phone": "", 
         "suffix": ""
     }, 
     "1B05": {
-        "address": "2315 15th Street, NW; Washington, DC 20009", 
+        "address": "2313 15th Street NW; Washington, DC 20009", 
         "email": "1B05@anc.dc.gov", 
-        "first_name": "Nicolas", 
-        "last_name": "Ferreyros", 
+        "first_name": "Nathan", 
+        "last_name": "Ackerman", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Nicolas Ferreyros", 
+        "official_name": "Nathan Ackerman", 
         "phone": "", 
         "suffix": ""
     }, 
     "1B06": {
-        "address": "1443 Clifton Street, NW  Apt. B; Washington, DC 20009", 
+        "address": "1308 Clifton Street, NW; Washington, DC 20009", 
         "email": "1B06@anc.dc.gov", 
-        "first_name": "Dyana", 
-        "last_name": "Forester", 
+        "first_name": "David", 
+        "last_name": "Gilliland", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Dyana Forester", 
+        "official_name": "David Gilliland", 
         "phone": "", 
         "suffix": ""
     }, 
     "1B07": {
-        "address": "2637 16th Street, NW  #106; Washington, DC 20009", 
+        "address": "2639 15th Street NW; Washington, DC 20009", 
         "email": "1B07@anc.dc.gov", 
         "first_name": "Jessica", 
         "last_name": "Smith", 
         "middle_name": "Laura", 
         "nickname": "", 
         "official_name": "Jessica Laura Smith", 
-        "phone": "202-627-0724", 
+        "phone": "(202)\u00a0627-0724", 
         "suffix": ""
     }, 
     "1B08": {
-        "address": "1326 Fairmont Street, NW  Apt. A; Washington, DC 20009", 
+        "address": "1326 Fairmont Street, NW Apt. A; Washington, DC 20009", 
         "email": "1B08@anc.dc.gov", 
         "first_name": "Mark", 
         "last_name": "Ranslem", 
@@ -223,21 +223,21 @@
         "address": "1236 Girard Street, NW; Washington, DC 20009", 
         "email": "1B09@anc.dc.gov", 
         "first_name": "James", 
-        "last_name": "Turner", 
-        "middle_name": "A.", 
+        "last_name": "Chairperson", 
+        "middle_name": "Turner", 
         "nickname": "", 
-        "official_name": "James A. Turner", 
+        "official_name": "James A. Turner\nChairperson", 
         "phone": "", 
         "suffix": ""
     }, 
     "1B10": {
-        "address": "2225 4th Street, NW #409; Washington, DC 20001", 
+        "address": "", 
         "email": "1B10@anc.dc.gov", 
-        "first_name": "Allyson", 
-        "last_name": "Carpenter", 
-        "middle_name": "N.", 
+        "first_name": "Amanda", 
+        "last_name": "Bonam", 
+        "middle_name": "", 
         "nickname": "", 
-        "official_name": "Allyson N. Carpenter", 
+        "official_name": "Amanda Bonam", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -249,11 +249,11 @@
         "middle_name": "", 
         "nickname": "", 
         "official_name": "Robb Hudson", 
-        "phone": "202-681-4564", 
+        "phone": "(202)\u00a0681-4564", 
         "suffix": ""
     }, 
     "1B12": {
-        "address": "1927 13th Street, NW  Apt. A; Washington, DC 20009", 
+        "address": "1927 13th Street, NW Apt. A; Washington, DC 20009", 
         "email": "1B12@anc.dc.gov", 
         "first_name": "John", 
         "last_name": "Green", 
@@ -264,18 +264,18 @@
         "suffix": ""
     }, 
     "1C01": {
-        "address": "", 
+        "address": "P.O. Box 21009; Washington, DC 20009", 
         "email": "1C01@anc.dc.gov", 
-        "first_name": "Vacant", 
-        "last_name": "", 
+        "first_name": "Julie", 
+        "last_name": "Seiwell", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Vacant", 
+        "official_name": "Julie Seiwell", 
         "phone": "", 
         "suffix": ""
     }, 
     "1C02": {
-        "address": "2032 Belmont Road, NW  #106; Washington, DC 20009", 
+        "address": "2032 Belmont Road, NW #106; Washington, DC 20009", 
         "email": "1C02@anc.dc.gov", 
         "first_name": "Hector", 
         "last_name": "Huezo", 
@@ -286,13 +286,13 @@
         "suffix": ""
     }, 
     "1C03": {
-        "address": "1849 Kalorama Road, NW  Apt. 2; Washington, DC 20009", 
+        "address": "1849 Kalorama Road, NW Apt. 2; Washington, DC 20009", 
         "email": "1C03@anc.dc.gov", 
         "first_name": "Ted", 
-        "last_name": "Guthrie", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Guthrie", 
         "nickname": "", 
-        "official_name": "Ted Guthrie", 
+        "official_name": "Ted Guthrie\nChairperson", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -330,7 +330,7 @@
         "suffix": ""
     }, 
     "1C07": {
-        "address": "2370 Champlain Street, NW  # 23; Washington, DC 20009", 
+        "address": "2370 Champlain Street, NW #23; Washington, DC 20009", 
         "email": "1C07@anc.dc.gov", 
         "first_name": "Wilson", 
         "last_name": "Reynolds", 
@@ -352,7 +352,7 @@
         "suffix": ""
     }, 
     "1D01": {
-        "address": "1702 Kilbourne Place NW", 
+        "address": "1702 Kilbourne Place NW; Washington, DC 20010", 
         "email": "1D01@anc.dc.gov", 
         "first_name": "Frank", 
         "last_name": "Agbro", 
@@ -388,10 +388,10 @@
         "address": "3149 Mt. Pleasant Street NW #303; Washington, DC 20010", 
         "email": "1D04@anc.dc.gov", 
         "first_name": "Rosa", 
-        "last_name": "Rivas", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Rivas", 
         "nickname": "", 
-        "official_name": "Rosa Rivas", 
+        "official_name": "Rosa Rivas\nChairperson", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -410,10 +410,10 @@
         "address": "532 20th Street NW #312; Washington, DC 20006", 
         "email": "2A01@anc.dc.gov", 
         "first_name": "Patrick", 
-        "last_name": "Kennedy", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Kennedy", 
         "nickname": "", 
-        "official_name": "Patrick Kennedy", 
+        "official_name": "Patrick Kennedy\nChairperson", 
         "phone": "202-630-2201", 
         "suffix": ""
     }, 
@@ -447,18 +447,18 @@
         "middle_name": "Kennedy", 
         "nickname": "", 
         "official_name": "William Kennedy Smith", 
-        "phone": "202-681-5527", 
+        "phone": "(202)\u00a0681-5527", 
         "suffix": ""
     }, 
     "2A05": {
-        "address": "725  24th Street NW #709; Washington, DC 20037", 
+        "address": "725 24th Street NW #709; Washington, DC 20037", 
         "email": "2A05@anc.dc.gov", 
         "first_name": "Philip", 
         "last_name": "Schrefer", 
         "middle_name": "J.", 
         "nickname": "", 
         "official_name": "Philip J. Schrefer", 
-        "phone": "202-378-8694", 
+        "phone": "(202)\u00a0378-8694", 
         "suffix": ""
     }, 
     "2A06": {
@@ -469,39 +469,39 @@
         "middle_name": "E.", 
         "nickname": "", 
         "official_name": "Florence E. Harmon", 
-        "phone": "202-390-4438", 
+        "phone": "(202)\u00a0390-4438", 
         "suffix": ""
     }, 
     "2A07": {
-        "address": "510 21st Street NW #405; Washington, DC 20006", 
+        "address": "", 
         "email": "2A07@anc.dc.gov", 
-        "first_name": "Jackson", 
-        "last_name": "Carnes", 
+        "first_name": "Vacant", 
+        "last_name": "", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Jackson Carnes", 
+        "official_name": "Vacant", 
         "phone": "", 
         "suffix": ""
     }, 
     "2A08": {
-        "address": "600 20th Street NW #805; Washington, DC 20052", 
+        "address": "2100 I St. NW; Washington, DC 20052", 
         "email": "2A08@anc.dc.gov", 
-        "first_name": "Peter", 
-        "last_name": "Sacco", 
-        "middle_name": "Edward", 
+        "first_name": "Eve", 
+        "last_name": "Zhurbinskiy", 
+        "middle_name": "", 
         "nickname": "", 
-        "official_name": "Peter Edward Sacco", 
-        "phone": "978-882-5013", 
+        "official_name": "Eve Zhurbinskiy", 
+        "phone": "", 
         "suffix": ""
     }, 
     "2B01": {
-        "address": "1920 S Street, NW #207; Washington, DC 20009", 
+        "address": "Washington, DC 20009", 
         "email": "2B01@anc.dc.gov", 
-        "first_name": "Michael", 
-        "last_name": "Feldstein", 
+        "first_name": "Vacant", 
+        "last_name": "", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Michael Feldstein", 
+        "official_name": "Vacant", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -513,7 +513,7 @@
         "middle_name": "", 
         "nickname": "", 
         "official_name": "Daniel Warwick", 
-        "phone": "360-200-8978", 
+        "phone": "(360) 200-8978", 
         "suffix": ""
     }, 
     "2B03": {
@@ -561,13 +561,13 @@
         "suffix": ""
     }, 
     "2B07": {
-        "address": "1731 Church Street, NW; Washington, DC 20036", 
+        "address": "1767 P Street NW; Washington, DC 20036", 
         "email": "2B07@anc.dc.gov", 
-        "first_name": "Justine", 
-        "last_name": "Underhill", 
+        "first_name": "John", 
+        "last_name": "Kupcinski", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Justine Underhill", 
+        "official_name": "John Kupcinski", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -575,15 +575,15 @@
         "address": "1758 T Street, NW Apt. Lower; Washington, DC 20036", 
         "email": "2B08@anc.dc.gov", 
         "first_name": "Nicole", 
-        "last_name": "Mann", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Mann", 
         "nickname": "", 
-        "official_name": "Nicole Mann", 
+        "official_name": "Nicole Mann\nChairperson", 
         "phone": "", 
         "suffix": ""
     }, 
     "2B09": {
-        "address": "1815 17th Street, NW #412; Washington, DC 20009", 
+        "address": "1825 New Hampshire Ave NW #714; Washington, DC 20009", 
         "email": "2B09@anc.dc.gov", 
         "first_name": "Noah", 
         "last_name": "Smith", 
@@ -597,15 +597,15 @@
         "address": "777 7th Street, NW # 506; Washington, DC 20001", 
         "email": "2C01@anc.dc.gov", 
         "first_name": "John", 
-        "last_name": "Tinpe", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Tinpe", 
         "nickname": "", 
-        "official_name": "John Tinpe", 
+        "official_name": "John Tinpe\nChairperson", 
         "phone": "202-230-8538", 
         "suffix": ""
     }, 
     "2C02": {
-        "address": "400 Massachusetts Avenue, NW # 1019; Washington, DC 20001", 
+        "address": "400 Massachusetts Avenue, NW #1019; Washington, DC 20001", 
         "email": "2C02@anc.dc.gov", 
         "first_name": "Harold", 
         "last_name": "Closter", 
@@ -616,7 +616,7 @@
         "suffix": ""
     }, 
     "2C03": {
-        "address": "631 D Street, NW #931; Washington, DC 20004", 
+        "address": "631 D Street, NW #332; Washington, DC 20004", 
         "email": "2C03@anc.dc.gov", 
         "first_name": "Jeffrey", 
         "last_name": "Higgins", 
@@ -628,133 +628,123 @@
     }, 
     "2D01": {
         "address": "2126 Connecticut Avenue, NW #34; Washington, DC 20008", 
-        "email": "2D01@anc.dc.gov", 
         "first_name": "David", 
-        "last_name": "Bender", 
-        "middle_name": "R.", 
+        "last_name": "Chairperson", 
+        "middle_name": "Bender", 
         "nickname": "", 
-        "official_name": "David R. Bender", 
-        "phone": "", 
+        "official_name": "David R. Bender\nChairperson", 
+        "phone": "2D01@anc.dc.gov", 
         "suffix": ""
     }, 
     "2D02": {
         "address": "2129 Florida Avenue, NW #501; Washington, DC 20008", 
-        "email": "2D02@anc.dc.gov", 
         "first_name": "Ellen", 
         "last_name": "Goldstein", 
         "middle_name": "L.", 
         "nickname": "", 
         "official_name": "Ellen L. Goldstein", 
-        "phone": "", 
+        "phone": "2D02@anc.dc.gov", 
         "suffix": ""
     }, 
     "2E01": {
         "address": "3525 S Street, NW; Washington, DC 20007", 
-        "email": "2E01@anc.dc.gov", 
         "first_name": "Ed", 
         "last_name": "Soloman", 
         "middle_name": "", 
         "nickname": "", 
         "official_name": "Ed Soloman", 
-        "phone": "", 
+        "phone": "2E01@anc.dc.gov", 
         "suffix": ""
     }, 
     "2E02": {
         "address": "3400 Reservoir Road, NW; Washington, DC 20007", 
-        "email": "2E02@anc.dc.gov", 
         "first_name": "Ron", 
-        "last_name": "Lewis", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Lewis", 
         "nickname": "", 
-        "official_name": "Ron Lewis", 
-        "phone": "", 
+        "official_name": "Ron Lewis\nChairperson", 
+        "phone": "2E02@anc.dc.gov", 
         "suffix": ""
     }, 
     "2E03": {
         "address": "3526 P Street, NW; Washington, DC 20007", 
-        "email": "2E03@anc.dc.gov", 
         "first_name": "Jeffrey", 
         "last_name": "Jones", 
         "middle_name": "L.", 
         "nickname": "", 
         "official_name": "Jeffrey L. Jones", 
-        "phone": "", 
+        "phone": "2E03@anc.dc.gov", 
         "suffix": ""
     }, 
     "2E04": {
-        "address": "424 GT- New South Hall NW; Washington, DC 20057", 
-        "email": "2E04@anc.dc.gov", 
-        "first_name": "Kendyl", 
-        "last_name": "Clausen", 
+        "address": "Washington, DC 20057", 
+        "first_name": "Vacant", 
+        "last_name": "", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Kendyl Clausen", 
-        "phone": "", 
+        "official_name": "Vacant", 
+        "phone": "2E04@anc.dc.gov", 
         "suffix": ""
     }, 
     "2E05": {
-        "address": "1045 31st Street NW  Apt. 502; Washington, DC 20007", 
-        "email": "2E05@anc.dc.gov", 
+        "address": "1045 31st Street NW Apt. 502; Washington, DC 20007", 
         "first_name": "William", 
         "last_name": "Starrels", 
         "middle_name": "", 
         "nickname": "", 
         "official_name": "William Starrels", 
-        "phone": "703-625-7355", 
+        "phone": "2E05@anc.dc.gov", 
         "suffix": ""
     }, 
     "2E06": {
         "address": "1240 29th Street, NW; Washington, DC 20007", 
-        "email": "2E06@anc.dc.gov", 
         "first_name": "Tom", 
         "last_name": "Birch", 
         "middle_name": "", 
         "nickname": "", 
         "official_name": "Tom Birch", 
-        "phone": "202-342-6262", 
+        "phone": "2E06@anc.dc.gov", 
         "suffix": ""
     }, 
     "2E07": {
         "address": "2731 P Street NW; Washington, DC 20007", 
-        "email": "2E07@anc.dc.gov", 
         "first_name": "Monica", 
         "last_name": "Roache", 
         "middle_name": "L.", 
         "nickname": "", 
         "official_name": "Monica L. Roache", 
-        "phone": "", 
+        "phone": "2E07@anc.dc.gov", 
         "suffix": ""
     }, 
     "2E08": {
-        "address": "53 Henle Village, Georgetown University; Washington, DC 20007", 
-        "email": "2E08@anc.dc.gov", 
+        "address": "3624 N Street NW; Washington, DC 20007", 
         "first_name": "Reed", 
         "last_name": "Howard", 
         "middle_name": "", 
         "nickname": "", 
         "official_name": "Reed Howard", 
-        "phone": "", 
+        "phone": "2E08@anc.dc.gov", 
         "suffix": ""
     }, 
     "2F01": {
-        "address": "1441 Q Street NW; Washington, DC 20009", 
+        "address": "1423 Corcoran Street NW; Washington, DC 20009", 
         "email": "2F01@anc.dc.gov", 
-        "first_name": "Katherine", 
-        "last_name": "Gordon", 
+        "first_name": "Maurice", 
+        "last_name": "Dorsey", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Katherine Gordon", 
+        "official_name": "Maurice Dorsey", 
         "phone": "", 
         "suffix": ""
     }, 
     "2F02": {
-        "address": "1446 Q Street NW; Washington, DC 20005", 
+        "address": "Washington, DC 20005", 
         "email": "2F02@anc.dc.gov", 
-        "first_name": "Karin", 
-        "last_name": "Berry", 
+        "first_name": "Vacant", 
+        "last_name": "", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Karin Berry", 
+        "official_name": "Vacant", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -773,10 +763,10 @@
         "address": "1307 12th Street, NW #505; Washington, DC 20005", 
         "email": "2F04@anc.dc.gov", 
         "first_name": "John", 
-        "last_name": "Fanning", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Fanning", 
         "nickname": "", 
-        "official_name": "John Fanning", 
+        "official_name": "John Fanning\nChairperson", 
         "phone": "202-510-1983", 
         "suffix": ""
     }, 
@@ -821,7 +811,7 @@
         "middle_name": "", 
         "nickname": "", 
         "official_name": "Kevin Deeley", 
-        "phone": "413-422-0262", 
+        "phone": "(413) 422-0262", 
         "suffix": ""
     }, 
     "3B01": {
@@ -839,26 +829,26 @@
         "address": "3515 W Place, NW; Washington, DC 20007", 
         "email": "3B02@anc.dc.gov", 
         "first_name": "Jackie", 
-        "last_name": "Blumenthal", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Blumenthal", 
         "nickname": "", 
-        "official_name": "Jackie Blumenthal", 
+        "official_name": "Jackie Blumenthal\nChairperson", 
         "phone": "", 
         "suffix": ""
     }, 
     "3B03": {
-        "address": "4119 Davis Place NW #201; Washington, DC 20007", 
+        "address": "4114 Davis Place, NW,; Washington, DC 20007", 
         "email": "3B03@anc.dc.gov", 
-        "first_name": "Abigail", 
-        "last_name": "Zenner", 
+        "first_name": "Melissa", 
+        "last_name": "Lane", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Abigail Zenner", 
+        "official_name": "Melissa Lane", 
         "phone": "", 
         "suffix": ""
     }, 
     "3B04": {
-        "address": "3040 Idaho Avenue, NW  #722; Washington, DC 20016", 
+        "address": "3040 Idaho Avenue, NW #722; Washington, DC 20016", 
         "email": "3B04@anc.dc.gov", 
         "first_name": "Mary", 
         "last_name": "Young", 
@@ -909,17 +899,17 @@
         "middle_name": "", 
         "nickname": "", 
         "official_name": "David Valdez", 
-        "phone": "210-802-6238", 
+        "phone": "(210) 802-6238", 
         "suffix": ""
     }, 
     "3C04": {
-        "address": "", 
+        "address": "2501 Porter Street, NW #720; Washington DC 20036", 
         "email": "3C04@anc.dc.gov", 
-        "first_name": "Vacant", 
-        "last_name": "", 
+        "first_name": "Arthur", 
+        "last_name": "Barkmann", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Vacant", 
+        "official_name": "Arthur Barkmann", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -938,10 +928,10 @@
         "address": "3530 39th Street, NW #A649; Washington, DC 20016", 
         "email": "3C06@anc.dc.gov", 
         "first_name": "Carl", 
-        "last_name": "Roller", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Roller", 
         "nickname": "", 
-        "official_name": "Carl Roller", 
+        "official_name": "Carl Roller\nChairperson", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -993,10 +983,10 @@
         "address": "4601 Tilden Street NW; Washington, DC 20016", 
         "email": "3D02@anc.dc.gov", 
         "first_name": "Thomas", 
-        "last_name": "Smith", 
-        "middle_name": "M.", 
+        "last_name": "Chairperson", 
+        "middle_name": "Smith", 
         "nickname": "", 
-        "official_name": "Thomas M. Smith", 
+        "official_name": "Thomas M. Smith\nChairperson", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -1045,13 +1035,13 @@
         "suffix": ""
     }, 
     "3D07": {
-        "address": "4400 Massachusetts Avenue NW  ; Washington, DC 20016", 
+        "address": "", 
         "email": "3D07@anc.dc.gov", 
-        "first_name": "Regina", 
-        "last_name": "Monge", 
-        "middle_name": "A.", 
+        "first_name": "Vacant", 
+        "last_name": "", 
+        "middle_name": "", 
         "nickname": "", 
-        "official_name": "Regina A. Monge", 
+        "official_name": "Vacant", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -1114,10 +1104,10 @@
         "address": "4411 Fessenden Street NW; Washington, DC 20016", 
         "email": "3E03@anc.dc.gov", 
         "first_name": "Jonathan", 
-        "last_name": "Bender", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Bender", 
         "nickname": "", 
-        "official_name": "Jonathan Bender", 
+        "official_name": "Jonathan Bender\nChairperson", 
         "phone": "202-552-1420", 
         "suffix": ""
     }, 
@@ -1144,24 +1134,24 @@
         "suffix": ""
     }, 
     "3F01": {
-        "address": "4319 Reno Road, NW; Washington, DC 20008", 
+        "address": "3728 Veazey Street NW; Washington, DC 20008", 
         "email": "3F01@anc.dc.gov", 
-        "first_name": "Adam", 
-        "last_name": "Tope", 
+        "first_name": "David", 
+        "last_name": "Dickinson", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Adam Tope", 
-        "phone": "610-428-1412", 
+        "official_name": "David Dickinson", 
+        "phone": "", 
         "suffix": ""
     }, 
     "3F02": {
-        "address": "3003 Van Ness Street, NW  #W-118; Washington, DC 20008", 
+        "address": "3003 Van Ness Street NW; Washington, DC 20008", 
         "email": "3F02@anc.dc.gov", 
-        "first_name": "Karen", 
-        "last_name": "Perry", 
-        "middle_name": "Lee", 
+        "first_name": "Shirley", 
+        "last_name": "Adelstein", 
+        "middle_name": "", 
         "nickname": "", 
-        "official_name": "Karen Lee Perry", 
+        "official_name": "Shirley Adelstein", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -1202,15 +1192,15 @@
         "address": "3632 Appleton St NW; Washington, DC 20008", 
         "email": "3F06@anc.dc.gov", 
         "first_name": "Malachy", 
-        "last_name": "Nugent", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Nugent", 
         "nickname": "", 
-        "official_name": "Malachy Nugent", 
+        "official_name": "Malachy Nugent\nChairperson", 
         "phone": "", 
         "suffix": ""
     }, 
     "3F07": {
-        "address": "3701 Connecticut Avenue, NW  #816; Washington, DC 20008", 
+        "address": "3701 Connecticut Avenue, NW #816; Washington, DC 20008", 
         "email": "3F07@anc.dc.gov", 
         "first_name": "Patrick", 
         "last_name": "Jakopchek", 
@@ -1246,15 +1236,15 @@
         "address": "2940 Northampton Street, NW; Washington, DC 20015", 
         "email": "3G03@anc.dc.gov", 
         "first_name": "Randy", 
-        "last_name": "Speck", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Speck", 
         "nickname": "", 
-        "official_name": "Randy Speck", 
+        "official_name": "Randy Speck\nChairperson", 
         "phone": "", 
         "suffix": ""
     }, 
     "3G04": {
-        "address": "5900 Utah Avenue NW; Washington, DC 20015", 
+        "address": "PO Box 6252; Washington, DC 20015", 
         "email": "3G04@anc.dc.gov", 
         "first_name": "Rebecca", 
         "last_name": "Maydak", 
@@ -1272,7 +1262,7 @@
         "middle_name": "A.", 
         "nickname": "", 
         "official_name": "Peter A. Shapiro", 
-        "phone": "202-735-1937", 
+        "phone": "", 
         "suffix": ""
     }, 
     "3G06": {
@@ -1342,14 +1332,14 @@
         "suffix": ""
     }, 
     "4A05": {
-        "address": "6101 16th Street NW  #909; Washington, DC 20011", 
+        "address": "Washington, DC 20011", 
         "email": "4A05@anc.dc.gov", 
-        "first_name": "Kimberly", 
-        "last_name": "Worthy", 
-        "middle_name": "A.", 
+        "first_name": "Vacant", 
+        "last_name": "", 
+        "middle_name": "", 
         "nickname": "", 
-        "official_name": "Kimberly A. Worthy", 
-        "phone": "202-758-2783", 
+        "official_name": "Vacant", 
+        "phone": "", 
         "suffix": ""
     }, 
     "4A06": {
@@ -1378,10 +1368,10 @@
         "address": "1761 Crestwood Drive, NW; Washington, DC 20011", 
         "email": "4A08@anc.dc.gov", 
         "first_name": "Gale", 
-        "last_name": "Black", 
-        "middle_name": "B.", 
+        "last_name": "Chairperson", 
+        "middle_name": "Black", 
         "nickname": "", 
-        "official_name": "Gale B. Black", 
+        "official_name": "Gale B. Black\nChairperson", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -1408,14 +1398,14 @@
         "suffix": "III"
     }, 
     "4B03": {
-        "address": "601 Roxboro Place, NW; Washington, DC 20011", 
+        "address": "814 Underwood Street NW; Washington, DC 20012", 
         "email": "4B03@anc.dc.gov", 
-        "first_name": "Fred", 
-        "last_name": "Grant", 
+        "first_name": "Scot", 
+        "last_name": "Knickerbocker", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Fred Grant", 
-        "phone": "", 
+        "official_name": "Scot Knickerbocker", 
+        "phone": "202-854-9191", 
         "suffix": ""
     }, 
     "4B04": {
@@ -1444,10 +1434,10 @@
         "address": "6120 North Dakota Avenue, NW; Washington, DC 20011", 
         "email": "4B06@anc.dc.gov", 
         "first_name": "Ronald", 
-        "last_name": "Austin", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Austin", 
         "nickname": "", 
-        "official_name": "Ronald Austin", 
+        "official_name": "Ronald Austin\nChairperson", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -1463,13 +1453,13 @@
         "suffix": ""
     }, 
     "4B08": {
-        "address": "", 
+        "address": "339 Oneida Street, NE; Washington, DC 20011", 
         "email": "4B08@anc.dc.gov", 
-        "first_name": "Vacant", 
-        "last_name": "", 
+        "first_name": "Barbara", 
+        "last_name": "Rogers", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Vacant", 
+        "official_name": "Barbara Rogers", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -1496,37 +1486,37 @@
         "suffix": ""
     }, 
     "4C02": {
-        "address": "1403 Critenden Street NW ; Washington, 20011", 
+        "address": "1409 Ingraham Street NW; Washington, 20011", 
         "email": "4C02@anc.dc.gov", 
-        "first_name": "Joseph", 
-        "last_name": "Maloney", 
+        "first_name": "Maria", 
+        "last_name": "Barry", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Joseph Maloney", 
+        "official_name": "Maria Barry", 
         "phone": "", 
         "suffix": ""
     }, 
     "4C03": {
-        "address": "1127 Buchanan Street, NW; Washington, DC 20011", 
+        "address": "Washington, DC 20011", 
         "email": "4C03@anc.dc.gov", 
-        "first_name": "Jeff", 
-        "last_name": "Standish", 
+        "first_name": "Vacant", 
+        "last_name": "", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Jeff Standish", 
+        "official_name": "Vacant", 
         "phone": "", 
         "suffix": ""
     }, 
     "4C04": {
-        "address": "3900 14th Street, NW   #207; Washington, DC 20011", 
+        "address": "1418 Shepherd Street NW; Washington, DC 20011", 
         "email": "4C04@anc.dc.gov", 
-        "first_name": "Rickey", 
-        "last_name": "Williams,", 
-        "middle_name": "", 
+        "first_name": "Michael", 
+        "last_name": "Halpern", 
+        "middle_name": "H.", 
         "nickname": "", 
-        "official_name": "Rickey Williams Jr.", 
+        "official_name": "Michael H. Halpern", 
         "phone": "", 
-        "suffix": "Jr."
+        "suffix": ""
     }, 
     "4C05": {
         "address": "1323 Shepherd Street, NW; Washington, DC 20011", 
@@ -1543,10 +1533,10 @@
         "address": "3809 13th Street, NW; Washington, DC 20011", 
         "email": "4C06@anc.dc.gov", 
         "first_name": "Vann-Di", 
-        "last_name": "Galloway", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Galloway", 
         "nickname": "", 
-        "official_name": "Vann-Di Galloway", 
+        "official_name": "Vann-Di Galloway\nChairperson", 
         "phone": "202-545-8155", 
         "suffix": ""
     }, 
@@ -1584,13 +1574,13 @@
         "suffix": ""
     }, 
     "4C10": {
-        "address": "445 Quincy Street NW; Washington, DC 20011", 
+        "address": "4217 4th Street NW; Washington, DC 20011", 
         "email": "4C10@anc.dc.gov", 
-        "first_name": "Kathleen", 
-        "last_name": "Crowley", 
-        "middle_name": "M.", 
+        "first_name": "Jonah", 
+        "last_name": "Goodman", 
+        "middle_name": "", 
         "nickname": "", 
-        "official_name": "Kathleen M. Crowley", 
+        "official_name": "Jonah Goodman", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -1602,7 +1592,7 @@
         "middle_name": "E.", 
         "nickname": "", 
         "official_name": "Nancy E. Roth", 
-        "phone": "", 
+        "phone": "202-550-8353", 
         "suffix": ""
     }, 
     "4D02": {
@@ -1620,10 +1610,10 @@
         "address": "601 Gallatin Street, NW; Washington, DC 20001", 
         "email": "4D03@anc.dc.gov", 
         "first_name": "Lisa", 
-        "last_name": "Colbert", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Colbert", 
         "nickname": "", 
-        "official_name": "Lisa Colbert", 
+        "official_name": "Lisa Colbert\nChairperson", 
         "phone": "202-200-0144", 
         "suffix": ""
     }, 
@@ -1694,14 +1684,14 @@
         "suffix": ""
     }, 
     "5A04": {
-        "address": "", 
+        "address": "620 Michigan Ave., NE; Washington, DC 20064", 
         "email": "5A04@anc.dc.gov", 
-        "first_name": "Vacant", 
-        "last_name": "", 
+        "first_name": "Isaiah", 
+        "last_name": "Burroughs", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Vacant", 
-        "phone": "", 
+        "official_name": "Isaiah Burroughs", 
+        "phone": "202-796-5982", 
         "suffix": ""
     }, 
     "5A05": {
@@ -1716,7 +1706,7 @@
         "suffix": ""
     }, 
     "5A06": {
-        "address": "4409 Clermont Dr. NE    #152; Washington, DC 20011", 
+        "address": "4409 Clermont Dr., NE    #152; Washington, DC 20011", 
         "email": "5A06@anc.dc.gov", 
         "first_name": "Jasmine", 
         "last_name": "White", 
@@ -1741,15 +1731,15 @@
         "address": "4720 7th Street, NE; Washington, DC 20017", 
         "email": "5A08@anc.dc.gov", 
         "first_name": "Angel", 
-        "last_name": "Alston", 
-        "middle_name": "Sherri", 
+        "last_name": "Chairperson", 
+        "middle_name": "Alston", 
         "nickname": "", 
-        "official_name": "Angel Sherri Alston", 
+        "official_name": "Angel Sherri Alston\nChairperson", 
         "phone": "", 
         "suffix": ""
     }, 
     "5B01": {
-        "address": "4031 South Dakota Avenue NE; Washington, DC 20018", 
+        "address": "4031 South Dakota Avenue, NE; Washington, DC 20018", 
         "email": "5B01@anc.dc.gov", 
         "first_name": "Gayle", 
         "last_name": "Hall-Carley", 
@@ -1763,15 +1753,15 @@
         "address": "1902 Newton Street, NE; Washington, DC 20018", 
         "email": "5B02@anc.dc.gov", 
         "first_name": "Ursula", 
-        "last_name": "Higgins", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Higgins", 
         "nickname": "", 
-        "official_name": "Ursula Higgins", 
+        "official_name": "Ursula Higgins\nChairperson", 
         "phone": "", 
         "suffix": ""
     }, 
     "5B03": {
-        "address": "1843 Monroe Street NE; Washington, DC 20018", 
+        "address": "1843 Monroe Street, NE; Washington, DC 20018", 
         "email": "5B03@anc.dc.gov", 
         "first_name": "Michael", 
         "last_name": "Morrison", 
@@ -1782,18 +1772,18 @@
         "suffix": ""
     }, 
     "5B04": {
-        "address": "1236 Hamlin Street NE; Washington, DC 20018", 
+        "address": "1024 Girard Street, NE; Washington, DC 20017", 
         "email": "5B04@anc.dc.gov", 
-        "first_name": "Joe", 
-        "last_name": "Barrios", 
+        "first_name": "Rayseen", 
+        "last_name": "Woodland", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Joe Barrios", 
+        "official_name": "Rayseen Woodland", 
         "phone": "", 
         "suffix": ""
     }, 
     "5B05": {
-        "address": "1009 Sigsbee Place NE; Washington, DC 20017", 
+        "address": "1009 Sigsbee Place, NE; Washington, DC 20017", 
         "email": "5B05@anc.dc.gov", 
         "first_name": "John", 
         "last_name": "Feeley,", 
@@ -1804,7 +1794,7 @@
         "suffix": "Jr."
     }, 
     "5C01": {
-        "address": "2848 Myrtle Avenue NE; Washington, DC 20018", 
+        "address": "2848 Myrtle Avenue, NE; Washington, DC 20018", 
         "email": "5C01@anc.dc.gov", 
         "first_name": "Gail", 
         "last_name": "Brevard", 
@@ -1815,7 +1805,7 @@
         "suffix": ""
     }, 
     "5C02": {
-        "address": "2725 28th Street NE; Washington, DC 20018", 
+        "address": "2725 28th Street, NE; Washington, DC 20018", 
         "email": "5C02@anc.dc.gov", 
         "first_name": "Walter", 
         "last_name": "Deleon", 
@@ -1826,7 +1816,7 @@
         "suffix": ""
     }, 
     "5C03": {
-        "address": "3823 Comm J. Barney Dr. NE; Washington, DC 20018", 
+        "address": "3823 Comm J. Barney Dr., NE; Washington, DC 20018", 
         "email": "5C03@anc.dc.gov", 
         "first_name": "Robert", 
         "last_name": "Looper,", 
@@ -1840,10 +1830,10 @@
         "address": "2116 R Street, NE; Washington, DC 20002", 
         "email": "5C04@anc.dc.gov", 
         "first_name": "Jacqueline", 
-        "last_name": "Manning", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Manning", 
         "nickname": "", 
-        "official_name": "Jacqueline Manning", 
+        "official_name": "Jacqueline Manning\nChairperson", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -1859,14 +1849,14 @@
         "suffix": ""
     }, 
     "5C06": {
-        "address": "1714 Montana Avenue NE; Washington, DC 20018", 
+        "address": "1714 Montana Avenue, NE; Washington, DC 20018", 
         "email": "5C06@anc.dc.gov", 
         "first_name": "Monique", 
         "last_name": "Smith", 
         "middle_name": "C.", 
         "nickname": "", 
         "official_name": "Monique C. Smith", 
-        "phone": "301-275-5987", 
+        "phone": "(301) 275-5987", 
         "suffix": ""
     }, 
     "5C07": {
@@ -1892,25 +1882,25 @@
         "suffix": ""
     }, 
     "5D02": {
-        "address": "1239 16th Street NE; Washington, DC 20002", 
+        "address": "1239 16th Street, NE; Washington, DC 20002", 
         "email": "5D02@anc.dc.gov", 
         "first_name": "Keisha", 
         "last_name": "Shropshire", 
         "middle_name": "L.", 
         "nickname": "", 
         "official_name": "Keisha L. Shropshire", 
-        "phone": "404-245-6722", 
+        "phone": "(404) 245-6772", 
         "suffix": ""
     }, 
     "5D03": {
-        "address": "1832 L Street NE; Washington, DC 20002", 
+        "address": "1832 L Street, NE; Washington, DC 20002", 
         "email": "5D03@anc.dc.gov", 
         "first_name": "Adam", 
-        "last_name": "Roberts", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Roberts", 
         "nickname": "", 
-        "official_name": "Adam Roberts", 
-        "phone": "", 
+        "official_name": "Adam Roberts\nChairperson", 
+        "phone": "202-759-4382", 
         "suffix": ""
     }, 
     "5D04": {
@@ -1936,18 +1926,18 @@
         "suffix": ""
     }, 
     "5D06": {
-        "address": "1113 Montello Avenue NE; Washington, DC 20002", 
+        "address": "1113 Montello Avenue, NE; Washington, DC 20002", 
         "email": "5D06@anc.dc.gov", 
         "first_name": "H.", 
         "last_name": "Buggs", 
         "middle_name": "Yvonne", 
         "nickname": "", 
         "official_name": "H. Yvonne Buggs", 
-        "phone": "", 
+        "phone": "202-300-8436", 
         "suffix": ""
     }, 
     "5D07": {
-        "address": "1519 Trinidad Avenue NE; Washington, DC 20002", 
+        "address": "1519 Trinidad Avenue, NE; Washington, DC 20002", 
         "email": "5D07@anc.dc.gov", 
         "first_name": "Clarence", 
         "last_name": "Lee", 
@@ -1969,18 +1959,18 @@
         "suffix": ""
     }, 
     "5E02": {
-        "address": "622 Evarts Street NE; Washington, DC 20017", 
+        "address": "401 Edgewood Street NE ; Washington, DC 20017", 
         "email": "5E02@anc.dc.gov", 
-        "first_name": "Christy", 
-        "last_name": "Davis", 
-        "middle_name": "'Love'", 
+        "first_name": "Patricia", 
+        "last_name": "Williams", 
+        "middle_name": "", 
         "nickname": "", 
-        "official_name": "Christy 'Love' Davis", 
-        "phone": "202\u00a0525-4863", 
+        "official_name": "Patricia Williams", 
+        "phone": "202-709-9375", 
         "suffix": ""
     }, 
     "5E03": {
-        "address": "302 T Street NE; Washington, DC 20002", 
+        "address": "307 T Street NE; Washington, DC 20002", 
         "email": "5E03@anc.dc.gov", 
         "first_name": "Renee", 
         "last_name": "Lewis", 
@@ -1991,7 +1981,7 @@
         "suffix": ""
     }, 
     "5E04": {
-        "address": "34 R Street, NE; Washington, DC 20002", 
+        "address": "34 R Street  NE; Washington, DC 20002", 
         "email": "5E04@anc.dc.gov", 
         "first_name": "Sylvia", 
         "last_name": "Pinkney", 
@@ -2013,14 +2003,14 @@
         "suffix": ""
     }, 
     "5E06": {
-        "address": "1708 2nd Street, NW; Washington, DC 20001", 
+        "address": "1708 2nd Street NW; Washington, DC 20001", 
         "email": "5E06@anc.dc.gov", 
         "first_name": "Teri", 
-        "last_name": "Quinn", 
-        "middle_name": "Janine", 
+        "last_name": "Chairperson", 
+        "middle_name": "Quin", 
         "nickname": "", 
-        "official_name": "Teri Janine Quinn", 
-        "phone": "214-908-1913", 
+        "official_name": "Teri Janine Quin\nChairperson", 
+        "phone": "202-495-1177", 
         "suffix": ""
     }, 
     "5E07": {
@@ -2035,18 +2025,18 @@
         "suffix": ""
     }, 
     "5E08": {
-        "address": "2024 North Capitol Street; Washington, DC 20002", 
+        "address": "Washington, DC 20002", 
         "email": "5E08@anc.dc.gov", 
-        "first_name": "Austin", 
-        "last_name": "Pearl", 
-        "middle_name": "L.", 
+        "first_name": "Vacant", 
+        "last_name": "", 
+        "middle_name": "", 
         "nickname": "", 
-        "official_name": "Austin L. Pearl", 
+        "official_name": "Vacant", 
         "phone": "", 
         "suffix": ""
     }, 
     "5E09": {
-        "address": "41 Adams Street, NW; Washington, DC 20001", 
+        "address": "41 Adams Street NW; Washington, DC 20001", 
         "email": "5E09@anc.dc.gov", 
         "first_name": "Dianne", 
         "last_name": "Barnes", 
@@ -2068,7 +2058,7 @@
         "suffix": ""
     }, 
     "6A01": {
-        "address": "718 10th Street NE; Washington, DC 20002", 
+        "address": "718 10th Street, NE; Washington, DC 20002", 
         "email": "6A01@anc.dc.gov", 
         "first_name": "J.", 
         "last_name": "Mahmud", 
@@ -2079,29 +2069,29 @@
         "suffix": ""
     }, 
     "6A02": {
-        "address": "631 10th Street NE; Washington, DC 20002", 
+        "address": "631 10th Street, NE; Washington, DC 20002", 
         "email": "6A02@anc.dc.gov", 
         "first_name": "Phil", 
-        "last_name": "Toomajian", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Toomajian", 
         "nickname": "", 
-        "official_name": "Phil Toomajian", 
+        "official_name": "Phil Toomajian\nChairperson", 
         "phone": "", 
         "suffix": ""
     }, 
     "6A03": {
-        "address": "141 11th Street NE; Washington, DC 20002", 
+        "address": "217 10th Street, NE; Washington, DC 20002", 
         "email": "6A03@anc.dc.gov", 
-        "first_name": "Chris", 
-        "last_name": "Ward", 
+        "first_name": "Michael", 
+        "last_name": "Soderman", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Chris Ward", 
+        "official_name": "Michael Soderman", 
         "phone": "", 
         "suffix": ""
     }, 
     "6A04": {
-        "address": "231 14th Street NE; Washington, DC 20002", 
+        "address": "231 14th Street, NE; Washington, DC 20002", 
         "email": "6A04@anc.dc.gov", 
         "first_name": "Matt", 
         "last_name": "Levy", 
@@ -2112,7 +2102,7 @@
         "suffix": ""
     }, 
     "6A05": {
-        "address": "1323 Corbin Place NE; Washington, DC 20002", 
+        "address": "1323 Corbin Place, NE; Washington, DC 20002", 
         "email": "6A05@anc.dc.gov", 
         "first_name": "Patrick", 
         "last_name": "Malone", 
@@ -2123,7 +2113,7 @@
         "suffix": ""
     }, 
     "6A06": {
-        "address": "1368 Emerald Street NE; Washington, DC 20002", 
+        "address": "1368 Emerald Street, NE; Washington, DC 20002", 
         "email": "6A06@anc.dc.gov", 
         "first_name": "Stephanie", 
         "last_name": "Zimny", 
@@ -2134,7 +2124,7 @@
         "suffix": ""
     }, 
     "6A07": {
-        "address": "1744 E Street NE; Washington, DC 20002", 
+        "address": "1744 E Street, NE; Washington, DC 20002", 
         "email": "6A07@anc.dc.gov", 
         "first_name": "Sondra", 
         "last_name": "Phillips-Gilbert", 
@@ -2145,18 +2135,18 @@
         "suffix": ""
     }, 
     "6A08": {
-        "address": "436 19th Street NE; Washington, DC 20002", 
+        "address": "436 19th Street, NE; Washington, DC 20002", 
         "email": "6A08@anc.dc.gov", 
         "first_name": "Calvin", 
-        "last_name": "Ward", 
+        "last_name": "Ward>", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Calvin Ward", 
+        "official_name": "Calvin Ward>", 
         "phone": "", 
         "suffix": ""
     }, 
     "6B01": {
-        "address": "407 2nd Street SE; Washington, DC 20003", 
+        "address": "407 2nd Street, SE; Washington, DC 20003", 
         "email": "6B01@anc.dc.gov", 
         "first_name": "Jennifer", 
         "last_name": "Samolyk", 
@@ -2167,7 +2157,7 @@
         "suffix": ""
     }, 
     "6B02": {
-        "address": "649 C Street SE; Washington, DC 20003", 
+        "address": "649 C Street, SE; Washington, DC 20003", 
         "email": "6B02@anc.dc.gov", 
         "first_name": "K.", 
         "last_name": "Hoskins", 
@@ -2178,7 +2168,7 @@
         "suffix": ""
     }, 
     "6B03": {
-        "address": "634 G Street SE; Washington, DC 20003", 
+        "address": "634 G Street, SE; Washington, DC 20003", 
         "email": "6B03@anc.dc.gov", 
         "first_name": "James", 
         "last_name": "Loots", 
@@ -2189,18 +2179,18 @@
         "suffix": ""
     }, 
     "6B04": {
-        "address": "423 12th Street SE; Washington, DC 20003", 
+        "address": "423 12th Street, SE; Washington, DC 20003", 
         "email": "6B04@anc.dc.gov", 
         "first_name": "Kirsten", 
-        "last_name": "Oldenburg", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Oldenburg", 
         "nickname": "", 
-        "official_name": "Kirsten Oldenburg", 
+        "official_name": "Kirsten Oldenburg\nChairperson", 
         "phone": "202-546-8542", 
         "suffix": ""
     }, 
     "6B05": {
-        "address": "246 9th Street SE; Washington, DC 20003", 
+        "address": "246 9th Street, SE; Washington, DC 20003", 
         "email": "6B05@anc.dc.gov", 
         "first_name": "Steve", 
         "last_name": "Hagedorn", 
@@ -2211,7 +2201,7 @@
         "suffix": ""
     }, 
     "6B06": {
-        "address": "1336 E Street SE; Washington, DC 20003", 
+        "address": "1336 E Street, SE; Washington, DC 20003", 
         "email": "6B06@anc.dc.gov", 
         "first_name": "Nick", 
         "last_name": "Burger", 
@@ -2222,7 +2212,7 @@
         "suffix": ""
     }, 
     "6B07": {
-        "address": "1329 K Street SE; Washington, DC 20003", 
+        "address": "1329 K Street, SE; Washington, DC 20003", 
         "email": "6B07@anc.dc.gov", 
         "first_name": "Daniel", 
         "last_name": "Chao", 
@@ -2233,7 +2223,7 @@
         "suffix": ""
     }, 
     "6B08": {
-        "address": "1436 Independence Avenue SE;  Washington, DC 20003", 
+        "address": "1436 Independence Avenue, SE;  Washington, DC 20003", 
         "email": "6B08@anc.dc.gov", 
         "first_name": "Chander", 
         "last_name": "Jayaraman", 
@@ -2244,18 +2234,18 @@
         "suffix": ""
     }, 
     "6B09": {
-        "address": "1628 Potomac Avenue SE;  Washington, DC 20003", 
+        "address": "1504 Potomac Ave SE;  Washington, DC 20003", 
         "email": "6B09@anc.dc.gov", 
-        "first_name": "Brian", 
-        "last_name": "Flahaven", 
+        "first_name": "Daniel", 
+        "last_name": "Ridge", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Brian Flahaven", 
+        "official_name": "Daniel Ridge", 
         "phone": "", 
         "suffix": ""
     }, 
     "6B10": {
-        "address": "1837 A Street SE;  Washington, DC 20003", 
+        "address": "1837 A Street, SE;  Washington, DC 20003", 
         "email": "6B10@anc.dc.gov", 
         "first_name": "K.", 
         "last_name": "Krepp", 
@@ -2266,7 +2256,7 @@
         "suffix": ""
     }, 
     "6C01": {
-        "address": "19 7th Street NE; Washington, DC 20002", 
+        "address": "19 7th Street, NE; Washington, DC 20002", 
         "email": "6C01@anc.dc.gov", 
         "first_name": "Daniele", 
         "last_name": "Schiffman", 
@@ -2277,18 +2267,18 @@
         "suffix": ""
     }, 
     "6C02": {
-        "address": "234 E Street NE; Washington, DC 20002", 
+        "address": "234 E Street, NE; Washington, DC 20002", 
         "email": "6C02@anc.dc.gov", 
         "first_name": "Karen", 
-        "last_name": "Wirt", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Wirt", 
         "nickname": "", 
-        "official_name": "Karen Wirt", 
+        "official_name": "Karen Wirt\nChairperson", 
         "phone": "202-547-7168", 
         "suffix": ""
     }, 
     "6C03": {
-        "address": "517 E Street NE; Washington, DC 20002", 
+        "address": "517 E Street, NE; Washington, DC 20002", 
         "email": "6C03@anc.dc.gov", 
         "first_name": "Scott", 
         "last_name": "Price", 
@@ -2299,7 +2289,7 @@
         "suffix": ""
     }, 
     "6C04": {
-        "address": "312 E Street NE; Washington, DC 20002", 
+        "address": "312 E Street, NE; Washington, DC 20002", 
         "email": "6C04@anc.dc.gov", 
         "first_name": "Mark", 
         "last_name": "Eckenwiler", 
@@ -2310,7 +2300,7 @@
         "suffix": ""
     }, 
     "6C05": {
-        "address": "707 6th Street NE; Washington, DC 20002", 
+        "address": "707 6th Street, NE; Washington, DC 20002", 
         "email": "6C05@anc.dc.gov", 
         "first_name": "Chris", 
         "last_name": "Miller", 
@@ -2321,7 +2311,7 @@
         "suffix": ""
     }, 
     "6C06": {
-        "address": "1152 4th Street NE; Washington, DC 20002", 
+        "address": "1152 4th Street, NE; Washington, DC 20002", 
         "email": "6C06@anc.dc.gov", 
         "first_name": "Tony", 
         "last_name": "Goodman", 
@@ -2332,7 +2322,7 @@
         "suffix": ""
     }, 
     "6D01": {
-        "address": "1100 6th Street SW; Washington, DC 20024", 
+        "address": "1100 6th Street, SW; Washington, DC 20024", 
         "email": "6D01@anc.dc.gov", 
         "first_name": "Marjorie", 
         "last_name": "Lightman", 
@@ -2343,7 +2333,7 @@
         "suffix": ""
     }, 
     "6D02": {
-        "address": "771 Delaware Avenue SW; Washington, DC 20024", 
+        "address": "771 Delaware Avenue, SW; Washington, DC 20024", 
         "email": "6D02@anc.dc.gov", 
         "first_name": "Stacy", 
         "last_name": "Cloyd", 
@@ -2354,7 +2344,7 @@
         "suffix": ""
     }, 
     "6D03": {
-        "address": "800 4th Street SW; Washington, DC 20024", 
+        "address": "800 4th Street, SW; Washington, DC 20024", 
         "email": "6D03@anc.dc.gov", 
         "first_name": "Rachel", 
         "last_name": "Carroll", 
@@ -2365,18 +2355,18 @@
         "suffix": ""
     }, 
     "6D04": {
-        "address": "423 N Street SW; Washington, DC 20024", 
+        "address": "423 N Street, SW; Washington, DC 20024", 
         "email": "6D04@anc.dc.gov", 
         "first_name": "Andy", 
-        "last_name": "Litsky", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Litsky", 
         "nickname": "", 
-        "official_name": "Andy Litsky", 
+        "official_name": "Andy Litsky\nChairperson", 
         "phone": "", 
         "suffix": ""
     }, 
     "6D05": {
-        "address": "1301 Delaware Avenue SW; Washington, DC 20024", 
+        "address": "1301 Delaware Avenue, SW; Washington, DC 20024", 
         "email": "6D05@anc.dc.gov", 
         "first_name": "Roger", 
         "last_name": "Moffatt", 
@@ -2387,7 +2377,7 @@
         "suffix": ""
     }, 
     "6D06": {
-        "address": "44 O Street SW; Washington, DC 20024", 
+        "address": "44 O Street, SW; Washington, DC 20024", 
         "email": "6D06@anc.dc.gov", 
         "first_name": "Rhonda", 
         "last_name": "Hamilton", 
@@ -2398,18 +2388,18 @@
         "suffix": ""
     }, 
     "6D07": {
-        "address": "909 4tt Street SE; Washington, DC 20024", 
+        "address": "1101 4th Street, SW; Washington, DC 20024", 
         "email": "6D07@anc.dc.gov", 
         "first_name": "Meredith", 
         "last_name": "Fascett", 
         "middle_name": "", 
         "nickname": "", 
         "official_name": "Meredith Fascett", 
-        "phone": "", 
+        "phone": "202-750-0295", 
         "suffix": ""
     }, 
     "6E01": {
-        "address": "1519 8th Street NW; Washington, DC 20001", 
+        "address": "1519 8th Street, NW; Washington, DC 20001", 
         "email": "6E01@anc.dc.gov", 
         "first_name": "Alexander", 
         "last_name": "Padro", 
@@ -2420,7 +2410,7 @@
         "suffix": ""
     }, 
     "6E02": {
-        "address": "438 S Steet NW; Washington, DC 20001", 
+        "address": "438 S Street, NW; Washington, DC 20001", 
         "email": "6E02@anc.dc.gov", 
         "first_name": "Kevin", 
         "last_name": "Chapple", 
@@ -2431,7 +2421,7 @@
         "suffix": ""
     }, 
     "6E03": {
-        "address": "1340 5th Street NW; Washington, DC 20001", 
+        "address": "1340 5th Street, NW; Washington, DC 20001", 
         "email": "6E03@anc.dc.gov", 
         "first_name": "Frank", 
         "last_name": "Wiggins", 
@@ -2442,7 +2432,7 @@
         "suffix": ""
     }, 
     "6E04": {
-        "address": "437 New York Avenue NW; Washington, DC 20001", 
+        "address": "437 New York Avenue, NW; Washington, DC 20001", 
         "email": "6E04@anc.dc.gov", 
         "first_name": "Rachelle", 
         "last_name": "Nigro", 
@@ -2453,18 +2443,18 @@
         "suffix": ""
     }, 
     "6E05": {
-        "address": "475 K Street NW #802; Washington, DC 20001", 
+        "address": "475 K Street, NW #802; Washington, DC 20001", 
         "email": "6E05@anc.dc.gov", 
         "first_name": "Marge", 
-        "last_name": "Maceda", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Maceda", 
         "nickname": "", 
-        "official_name": "Marge Maceda", 
+        "official_name": "Marge Maceda\nChairperson", 
         "phone": "202-360-7404", 
         "suffix": ""
     }, 
     "6E06": {
-        "address": "54 M Street NW; Washington, DC 20001", 
+        "address": "54 M Street, NW; Washington, DC 20001", 
         "email": "6E06@anc.dc.gov", 
         "first_name": "Antonio", 
         "last_name": "Barnes", 
@@ -2475,7 +2465,7 @@
         "suffix": ""
     }, 
     "6E07": {
-        "address": "117 Pierce Street NW; Washington, DC 20001", 
+        "address": "117 Pierce Street, NW; Washington, DC 20001", 
         "email": "6E07@anc.dc.gov", 
         "first_name": "Alfreda", 
         "last_name": "Judd", 
@@ -2497,7 +2487,7 @@
         "suffix": ""
     }, 
     "7B02": {
-        "address": "2918 Akron Place SE; Washington, DC 20020", 
+        "address": "2918 Akron Place, SE; Washington, DC 20020", 
         "email": "7B02@anc.dc.gov", 
         "first_name": "Tiffany", 
         "last_name": "Brown", 
@@ -2533,15 +2523,15 @@
         "address": "3200 S Street, SE; Washington, DC 20020", 
         "email": "7B05@anc.dc.gov", 
         "first_name": "Robin", 
-        "last_name": "Marlin", 
-        "middle_name": "Hammond", 
+        "last_name": "Chairperson", 
+        "middle_name": "Marlin", 
         "nickname": "", 
-        "official_name": "Robin Hammond Marlin", 
+        "official_name": "Robin Hammond Marlin\nChairperson", 
         "phone": "", 
         "suffix": ""
     }, 
     "7B06": {
-        "address": "2516 34th Street SE; Washington, DC 20020", 
+        "address": "2516 34th Street, SE; Washington, DC 20020", 
         "email": "7B06@anc.dc.gov", 
         "first_name": "Donovan", 
         "last_name": "Anderson", 
@@ -2552,13 +2542,13 @@
         "suffix": ""
     }, 
     "7B07": {
-        "address": "3956 Pennsylvania Avenue SE #104; Washington, DC 20020", 
+        "address": "3452 N Street, SE ; Washington, DC 20019", 
         "email": "7B07@anc.dc.gov", 
-        "first_name": "Marcus", 
-        "last_name": "Turner", 
-        "middle_name": "", 
+        "first_name": "D.", 
+        "last_name": "Humphrey", 
+        "middle_name": "Lynnell", 
         "nickname": "", 
-        "official_name": "Marcus Turner", 
+        "official_name": "D. Lynnell Humphrey", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -2596,15 +2586,15 @@
         "suffix": ""
     }, 
     "7C04": {
-        "address": "4605 Hunt Place, NE; Washington, DC 20019", 
+        "address": "901 46th Street, NE; Washington DC 20019", 
         "email": "7C04@anc.dc.gov", 
-        "first_name": "Walter", 
-        "last_name": "Garcia,", 
-        "middle_name": "Garcia", 
+        "first_name": "Leniqua'", 
+        "last_name": "Jenkins", 
+        "middle_name": "Dominique", 
         "nickname": "", 
-        "official_name": "Walter J. Garcia II", 
-        "phone": "", 
-        "suffix": "II"
+        "official_name": "Leniqua' Dominique Jenkins", 
+        "phone": "(856) 369-7911", 
+        "suffix": ""
     }, 
     "7C05": {
         "address": "328 62nd Street, NE; Washington, DC 20019", 
@@ -2618,29 +2608,29 @@
         "suffix": ""
     }, 
     "7C06": {
-        "address": "4651 Nannie Helen Burroughs Avenue, NE; Washington, DC 20019", 
+        "address": "916 Eastern Ave., NE # 202; Washington, DC 20019", 
         "email": "7C06@anc.dc.gov", 
-        "first_name": "Jennifer", 
-        "last_name": "Cosby", 
+        "first_name": "Wendell", 
+        "last_name": "Felder", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Jennifer Cosby", 
-        "phone": "", 
+        "official_name": "Wendell Felder", 
+        "phone": "202-813-0722", 
         "suffix": ""
     }, 
     "7C07": {
         "address": "4805 Meade Street, NE; Washington, DC 20019", 
         "email": "7C07@anc.dc.gov", 
         "first_name": "Antawan", 
-        "last_name": "Holmes", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Holmes", 
         "nickname": "", 
-        "official_name": "Antawan Holmes", 
+        "official_name": "Antawan Holmes\nChairperson", 
         "phone": "202-556-0962", 
         "suffix": ""
     }, 
     "7D01": {
-        "address": "425 21st Street NE; Washington, DC 20019", 
+        "address": "425 21st Street, NE; Washington, DC 20019", 
         "email": "7D01@anc.dc.gov", 
         "first_name": "Bob", 
         "last_name": "Coomber", 
@@ -2651,7 +2641,7 @@
         "suffix": ""
     }, 
     "7D02": {
-        "address": "1104 42nd Street NE; Washington, DC 2001", 
+        "address": "1104 42nd Street, NE; Washington, DC 2001", 
         "email": "7D02@anc.dc.gov", 
         "first_name": "Siraaj", 
         "last_name": "Hasan", 
@@ -2662,7 +2652,7 @@
         "suffix": ""
     }, 
     "7D03": {
-        "address": "4401 Minnesota Avenue NE; Washington, DC 20019", 
+        "address": "4401 Minnesota Avenue, NE; Washington, DC 20019", 
         "email": "7D03@anc.dc.gov", 
         "first_name": "Dorothy", 
         "last_name": "Douglas", 
@@ -2698,10 +2688,10 @@
         "address": "4409 Jay Street, NE; Washington, DC 20019", 
         "email": "7D06@anc.dc.gov", 
         "first_name": "Sherice", 
-        "last_name": "Muhammad", 
-        "middle_name": "A.", 
+        "last_name": "Chairperson", 
+        "middle_name": "Muhammad", 
         "nickname": "", 
-        "official_name": "Sherice A. Muhammad", 
+        "official_name": "Sherice A. Muhammad\nChairperson", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -2713,17 +2703,17 @@
         "middle_name": "A.", 
         "nickname": "", 
         "official_name": "Justin A. Lini", 
-        "phone": "", 
+        "phone": "202-768-8019", 
         "suffix": ""
     }, 
     "7E01": {
-        "address": "", 
+        "address": "1138 Chaplin Street, SE; Washington, DC  20019", 
         "email": "7E01@anc.dc.gov", 
-        "first_name": "Vacant", 
-        "last_name": "", 
+        "first_name": "Kevin", 
+        "last_name": "McIntosh-McEwen", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Vacant", 
+        "official_name": "Kevin McIntosh-McEwen", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -2750,7 +2740,7 @@
         "suffix": ""
     }, 
     "7E04": {
-        "address": "4633 East Capitol Street SE; Washington, DC 20019", 
+        "address": "4633 East Capitol Street, SE; Washington, DC 20019", 
         "email": "7E04@anc.dc.gov", 
         "first_name": "Myron", 
         "last_name": "Smith", 
@@ -2764,26 +2754,26 @@
         "address": "4940 A Street SE #305; Washington, DC 20019", 
         "email": "7E05@anc.dc.gov", 
         "first_name": "Rochelle", 
-        "last_name": "Bent", 
-        "middle_name": "AC", 
+        "last_name": "Chairperson", 
+        "middle_name": "Bent", 
         "nickname": "", 
-        "official_name": "Rochelle AC Bent", 
+        "official_name": "Rochelle AC Bent\nChairperson", 
         "phone": "202-573-7798", 
         "suffix": ""
     }, 
     "7E06": {
-        "address": "431 54th Street SE; Washington, DC 20019", 
+        "address": "Washington, DC 20019", 
         "email": "7E06@anc.dc.gov", 
-        "first_name": "Maxine", 
-        "last_name": "Nightingale", 
+        "first_name": "Lakeshia", 
+        "last_name": "Lloyd-Lee", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Maxine Nightingale", 
+        "official_name": "Lakeshia Lloyd-Lee", 
         "phone": "", 
         "suffix": ""
     }, 
     "7E07": {
-        "address": "5890 Southern Avenue SE; Washington, DC 20019", 
+        "address": "5890 Southern Avenue, SE; Washington, DC 20019", 
         "email": "7E07@anc.dc.gov", 
         "first_name": "Linda", 
         "last_name": "Holmes", 
@@ -2794,18 +2784,18 @@
         "suffix": ""
     }, 
     "7F01": {
-        "address": "3909 Blaine Street NE; Washington, DC 20019", 
+        "address": "3940 Benning Road NE; Washington, DC 20019", 
         "email": "7F01@anc.dc.gov", 
-        "first_name": "Edward", 
-        "last_name": "Rhodes", 
+        "first_name": "David", 
+        "last_name": "Belt", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Edward Rhodes", 
+        "official_name": "David Belt", 
         "phone": "", 
         "suffix": ""
     }, 
     "7F02": {
-        "address": "4562 Texas Avenue, SE; Washington, DC 20019", 
+        "address": "Washington, DC 20019", 
         "email": "7F02@anc.dc.gov", 
         "first_name": "Eboni-Rose", 
         "last_name": "Thompson", 
@@ -2816,18 +2806,18 @@
         "suffix": ""
     }, 
     "7F03": {
-        "address": "515 46th Street ,SE; Washington, DC 20019", 
+        "address": "515 46th Street, SE; Washington, DC 20019", 
         "email": "7F03@anc.dc.gov", 
         "first_name": "Sheila", 
-        "last_name": "Carr", 
-        "middle_name": "Carson", 
+        "last_name": "Chairperson", 
+        "middle_name": "Carr", 
         "nickname": "", 
-        "official_name": "Sheila Carson Carr", 
+        "official_name": "Sheila Carson Carr\nChairperson", 
         "phone": "", 
         "suffix": ""
     }, 
     "7F04": {
-        "address": "304 Anacostia Road SE #301; Washington, DC 20019", 
+        "address": "304 Anacostia Road, SE #301; Washington, DC 20019", 
         "email": "7F04@anc.dc.gov", 
         "first_name": "Yolanda", 
         "last_name": "Armstrong", 
@@ -2856,11 +2846,11 @@
         "middle_name": "H.", 
         "nickname": "", 
         "official_name": "Elizabeth H. Travers", 
-        "phone": "", 
+        "phone": "202-581-1227", 
         "suffix": ""
     }, 
     "7F07": {
-        "address": "", 
+        "address": "Washington, DC 20019", 
         "email": "7F07@anc.dc.gov", 
         "first_name": "Vacant", 
         "last_name": "", 
@@ -2878,7 +2868,7 @@
         "middle_name": "", 
         "nickname": "", 
         "official_name": "Holly Muhammad", 
-        "phone": "202-907-5990", 
+        "phone": "202-422-4957", 
         "suffix": ""
     }, 
     "8A02": {
@@ -2893,14 +2883,14 @@
         "suffix": ""
     }, 
     "8A03": {
-        "address": "2300 Good Hope Road SE  #1012; Washington, DC 20020", 
+        "address": "2100-D  Martin Luther King Jr. Avenue SE; Washington, DC 20020", 
         "email": "8A03@anc.dc.gov", 
         "first_name": "Cynthia", 
         "last_name": "Simms", 
         "middle_name": "W.", 
         "nickname": "", 
         "official_name": "Cynthia W. Simms", 
-        "phone": "202-821-3043", 
+        "phone": "202-422-4422", 
         "suffix": ""
     }, 
     "8A04": {
@@ -2926,7 +2916,7 @@
         "suffix": ""
     }, 
     "8A06": {
-        "address": "1340 Talbert Ct. SE #A; Washington, DC 20020", 
+        "address": "1385 Morris Road SE; Washington, DC 20020", 
         "email": "8A06@anc.dc.gov", 
         "first_name": "Tina", 
         "last_name": "Fletcher", 
@@ -2940,10 +2930,10 @@
         "address": "2619 Douglass Place SE  #403; Washington, DC 20020", 
         "email": "8A07@anc.dc.gov", 
         "first_name": "Natalie", 
-        "last_name": "Williams", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Williams", 
         "nickname": "", 
-        "official_name": "Natalie Williams", 
+        "official_name": "Natalie Williams\nChairperson", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -2981,14 +2971,14 @@
         "suffix": ""
     }, 
     "8B04": {
-        "address": "1615 Morris Road SE #104; Washington, DC 20020", 
+        "address": "Washington, DC 20020", 
         "email": "8B04@anc.dc.gov", 
-        "first_name": "Anthony", 
-        "last_name": "Green", 
-        "middle_name": "Lorenzo", 
+        "first_name": "Vacant", 
+        "last_name": "", 
+        "middle_name": "", 
         "nickname": "", 
-        "official_name": "Anthony Lorenzo Green", 
-        "phone": "202-709-8091", 
+        "official_name": "Vacant", 
+        "phone": "", 
         "suffix": ""
     }, 
     "8B05": {
@@ -3003,13 +2993,13 @@
         "suffix": ""
     }, 
     "8B06": {
-        "address": "", 
+        "address": "1809 Savannah Street SE (#A); Washington, DC 20020", 
         "email": "8B06@anc.dc.gov", 
-        "first_name": "Vacant", 
-        "last_name": "", 
-        "middle_name": "", 
+        "first_name": "Zaneta", 
+        "last_name": "Tyler", 
+        "middle_name": "S.", 
         "nickname": "", 
-        "official_name": "Vacant", 
+        "official_name": "Zaneta S. Tyler", 
         "phone": "", 
         "suffix": ""
     }, 
@@ -3050,10 +3040,10 @@
         "address": "3325 Martin Luther King Ave SE #12; Washington, DC 20032", 
         "email": "8C03@anc.dc.gov", 
         "first_name": "Mary", 
-        "last_name": "Cuthbert", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Cuthbert", 
         "nickname": "", 
-        "official_name": "Mary Cuthbert", 
+        "official_name": "Mary Cuthbert\nChairperson", 
         "phone": "202-246-9410", 
         "suffix": ""
     }, 
@@ -3103,156 +3093,142 @@
     }, 
     "8D01": {
         "address": "816 Southern Avenue SE #204; Washington, DC 20032", 
-        "email": "8D01@anc.dc.gov", 
         "first_name": "Patricia", 
         "last_name": "Carmon", 
         "middle_name": "", 
         "nickname": "", 
         "official_name": "Patricia Carmon", 
-        "phone": "", 
+        "phone": "8D01@anc.dc.gov", 
         "suffix": ""
     }, 
     "8D02": {
         "address": "4612 6th Street SE; Washington, DC 20032", 
-        "email": "8D02@anc.dc.gov", 
         "first_name": "Olivia", 
-        "last_name": "Henderson", 
-        "middle_name": "L.", 
+        "last_name": "Chairperson", 
+        "middle_name": "Henderson", 
         "nickname": "", 
-        "official_name": "Olivia L. Henderson", 
-        "phone": "", 
+        "official_name": "Olivia L. Henderson\nChairperson", 
+        "phone": "8D02@anc.dc.gov", 
         "suffix": ""
     }, 
     "8D03": {
         "address": "4335 4th Street SE; Washington, DC 20032", 
-        "email": "8D03@anc.dc.gov", 
         "first_name": "Absalom", 
         "last_name": "Jordan", 
         "middle_name": "", 
         "nickname": "", 
         "official_name": "Absalom Jordan", 
-        "phone": "", 
+        "phone": "8D03@anc.dc.gov", 
         "suffix": ""
     }, 
     "8D04": {
         "address": "4660 MLK Avenue SW; Washington DC 20032", 
-        "email": "8D04@anc.dc.gov", 
         "first_name": "Monique", 
         "last_name": "Diop", 
         "middle_name": "T.", 
         "nickname": "", 
         "official_name": "Monique T. Diop", 
-        "phone": "", 
+        "phone": "8D04@anc.dc.gov", 
         "suffix": ""
     }, 
     "8D05": {
         "address": "153 Galveston Place SW #4; Washington, DC 20032", 
-        "email": "8D05@anc.dc.gov", 
         "first_name": "Thomas", 
         "last_name": "Ruffin,", 
         "middle_name": "", 
         "nickname": "", 
         "official_name": "Thomas Ruffin, Jr.", 
-        "phone": "", 
+        "phone": "8D05@anc.dc.gov", 
         "suffix": "Jr."
     }, 
     "8D06": {
-        "address": "", 
-        "email": "8D06@anc.dc.gov", 
-        "first_name": "Vacant", 
-        "last_name": "", 
+        "address": "142 Elmira Street SW; Washington, DC 20032", 
+        "first_name": "Thea", 
+        "last_name": "Dyson", 
         "middle_name": "", 
         "nickname": "", 
-        "official_name": "Vacant", 
-        "phone": "", 
+        "official_name": "Thea Dyson", 
+        "phone": "8D06@anc.dc.gov", 
         "suffix": ""
     }, 
     "8D07": {
         "address": "4020 1st Place SW; Washington, DC 20032", 
-        "email": "8D07@anc.dc.gov", 
         "first_name": "Theresa", 
         "last_name": "Jones", 
         "middle_name": "H.", 
         "nickname": "", 
         "official_name": "Theresa H. Jones", 
-        "phone": "", 
+        "phone": "8D07@anc.dc.gov", 
         "suffix": ""
     }, 
     "8E01": {
         "address": "3261 Stanton Road SE; Washington, DC 20032", 
-        "email": "8E01@anc.dc.gov", 
         "first_name": "Marvin", 
         "last_name": "Lee", 
         "middle_name": "S.", 
         "nickname": "", 
         "official_name": "Marvin S. Lee", 
-        "phone": "", 
+        "phone": "8E01@anc.dc.gov", 
         "suffix": ""
     }, 
     "8E02": {
         "address": "P.O. Box 73878; Washington, DC 20056", 
-        "email": "8E02@anc.dc.gov", 
         "first_name": "Anthony", 
-        "last_name": "Muhammad", 
-        "middle_name": "", 
+        "last_name": "Chairperson", 
+        "middle_name": "Muhammad", 
         "nickname": "", 
-        "official_name": "Anthony Muhammad", 
-        "phone": "", 
+        "official_name": "Anthony Muhammad\nChairperson", 
+        "phone": "8E02@anc.dc.gov", 
         "suffix": ""
     }, 
     "8E03": {
-        "address": "1920 Savannah StreetSE #204; Washington DC 20032", 
-        "email": "8E03@anc.dc.gov", 
+        "address": "1920 Savannah Street SE #204; Washington DC 20032", 
         "first_name": "Anthony", 
         "last_name": "Dailey", 
         "middle_name": "Jamaal", 
         "nickname": "", 
         "official_name": "Anthony Jamaal Dailey", 
-        "phone": "", 
+        "phone": "8E03@anc.dc.gov", 
         "suffix": ""
     }, 
     "8E04": {
-        "address": "1329 Savannah StreetSE #7; Washington DC 20032", 
-        "email": "8E04@anc.dc.gov", 
+        "address": "1329 Savannah Street SE #7; Washington DC 20032", 
         "first_name": "Shekita", 
         "last_name": "McBroom", 
         "middle_name": "", 
         "nickname": "", 
         "official_name": "Shekita McBroom", 
-        "phone": "", 
+        "phone": "8E04@anc.dc.gov", 
         "suffix": ""
     }, 
     "8E05": {
         "address": "1922 Valley Terrace SE; Washington DC 20032", 
-        "email": "8E05@anc.dc.gov", 
         "first_name": "Christopher", 
         "last_name": "Hawthorne", 
         "middle_name": "L.", 
         "nickname": "", 
         "official_name": "Christopher L. Hawthorne", 
-        "phone": "", 
+        "phone": "8E05@anc.dc.gov", 
         "suffix": ""
     }, 
     "8E06": {
         "address": "559 Foxhall Place SE; Washington DC 20032", 
-        "email": "8E06@anc.dc.gov", 
         "first_name": "Karlene", 
         "last_name": "Armstead", 
         "middle_name": "", 
         "nickname": "", 
         "official_name": "Karlene Armstead", 
-        "phone": "", 
+        "phone": "8E06@anc.dc.gov", 
         "suffix": ""
     }, 
     "8E07": {
         "address": "855 Barnaby Street SE; Washington, DC 20032", 
-        "email": "8E07@anc.dc.gov", 
         "first_name": "Stephen", 
         "last_name": "Slaughter", 
         "middle_name": "A.", 
         "nickname": "", 
         "official_name": "Stephen A. Slaughter", 
-        "phone": "", 
+        "phone": "8E07@anc.dc.gov", 
         "suffix": ""
     }
 }
