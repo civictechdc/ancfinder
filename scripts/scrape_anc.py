@@ -58,7 +58,10 @@ for anc in ANC:
         elif len(phone) < 8:
             phone = ''
         data[smd]['phone'] = phone
-        data[smd]['email'] = td[4].a.text
+        try:
+            data[smd]['email'] = td[4].a.text
+        except IndexError:
+            pass    
         #print data[smd]
 
 with open('data/scraped-anc.json', 'w') as output:
