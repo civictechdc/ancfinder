@@ -18,7 +18,7 @@ services:
         links: 
             - ancfinder
     ancfinder:
-        image: codefordc2/ancdfinder:releae
+        image: codefordc2/ancdfinder:release
         links:
             - postgres
         volumes: 
