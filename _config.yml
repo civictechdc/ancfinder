@@ -1,11 +1,10 @@
-port:  4000
 markdown: kramdown
-name: Chi Hack Night
-url: https://chihacknight.org
-title: Chi Hack Night
-description: "Chicago's weekly event to build, share, and learn about civic tech."
+name: Code for DC
+url: https://codefordc.org
+title: Code for DC
+description: "We are a a non-partisan, non-political group of volunteer civic hackers working together to solve local issues and help people engage with the city."
 encoding: utf-8
-timezone: America/Chicago
+timezone: America/New_York
 gems:
   - jekyll-redirect-from
 future: true
