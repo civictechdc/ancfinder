@@ -1,0 +1,110 @@
+---
+layout: default
+title: Breakout groups
+description: Every week after the presentation, we break out into topic-specific working and learning groups led by regular facilitators to guide conversations, answer questions, and build teams for civic apps. The groups are split into two types - working groups and learning groups.
+---
+
+<h1><i class='fa fa-group'></i> Breakout groups</h1>
+
+<p>Every week after the presentation, we break out into topic-specific working and learning groups led by regular facilitators to guide conversations, answer questions, and build teams for civic apps. The groups are split into two types: <a href='#working'>working</a> groups and <a href='#learning'>learning</a> groups.</p>
+
+<p>Want to start your own breakout group? Just announce it at the next hack night and people will vote with their feet!</p>
+
+<button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  <i class='fa fa-question-circle'></i> How do I add to this list?
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+    <ol>
+      <li>Create a GitHub account if you don't already have one: <a href='https://github.com/join' target='_blank'>https://github.com/join</a></li>
+      <li>Open a new GitHub Issue in this repository: <a href='https://github.com/chihacknight/breakout-groups/issues/new' target='_blank'>https://github.com/chihacknight/join-a-breakout/issues/new</a></li>
+      <li>Set the title of your issue to the name of your breakout, and fill out the description template in the body. We will add the appropriate labels to it.</li>
+    </ol>
+  </div>
+</div>
+<br /><br />
+
+<h2 id='learning'>Learning Groups</h2>
+<p>New to Chi Hack Night? Interested in learning what it's all about? Or learning how to program or work with data? Join a learning group!</p>
+
+<table id='learning-groups' class='table table-bordered'>
+  <tbody>
+  </tbody>
+</table>
+
+<br />
+<h2 id='working'>Working Groups</h2>
+<p>These groups focus on building civic apps, doing research and pursuing ways of using technology to make Chicago a better place to live in. Groups can last for one night or several years - it's up to you!</p>
+
+<table id='working-groups' class='table table-bordered'>
+  <tbody>
+  </tbody>
+</table>
+
+{{raw}}
+<script>
+
+  //grab issue list from GitHub
+  $.when( $.getJSON( "https://api.github.com/repos/chihacknight/breakout-groups/issues?state=open&direction=asc" ) ).then(function( data, textStatus, jqXHR ) {
+
+    $.each(data, function(i, json){
+      json['opened-on'] = moment(json['created_at']).fromNow();
+      var labels = '';
+      var is_learning_group = false;
+      $.each(json['labels'], function(i, label){
+        if (label['name'] == 'Learning group')
+          is_learning_group = true;
+
+        labels += "<span class='label label-info' style='background-color:#" + label['color'] + "'>" + label['name'] + "</span> ";
+        });
+
+      var html = "\
+      <tr>\
+        <td>\
+          <h4><strong><a href='" + json['html_url'] + "' target='_blank'>" + json['title'] + "</a></strong> " + labels + "</h4>\
+          <p>Started " + json['opened-on'] + " by <a href='" + json['user']['html_url'] + "' target='_blank'>" + json['user']['login'] + "</a></p>\
+        </td>\
+      </tr>\
+      ";
+
+      if (is_learning_group)
+        $("#learning-groups tbody").append(html);
+      else
+        $("#working-groups tbody").append(html);
+    });
+  });
+
+
+  // // initialize datatables
+  // $('#working_table').dataTable( {
+  //     "aaSorting": [ [0,'asc'], [1, 'asc'] ],
+  //     "aoColumns": [
+  //         null,
+  //         null,
+  //         null,
+  //         null
+  //     ],
+  //     "bInfo": false,
+  //     "bPaginate": false,
+  //     "bFilter": false
+  // });
+</script>
+{{endraw}}
+
+<button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+  <i class='fa fa-question-circle'></i> I made a group but don't see it listed!
+  
+</button>
+<div class="collapse" id="collapse2">
+  <div class="well">
+    <p>Sometimes groups get marked as <code>closed</code> if they haven't been active in a few weeks. This is to keep the list size managable. Any group marked this way can be re-opened at any time.</a></p>
+
+    <p>To re-open a group:</p>
+    <ol>
+      <li>Visit the <a href='https://github.com/chihacknight/breakout-groups/issues?q=is%3Aissue+is%3Aclosed' target='_blank'>list of closed Github Issues</a>.</li>
+      <li>Search for your project and click on it.</li>
+      <li>You will see all the project notes and comments previously left. Scroll to the bottom of the page you'll see a box that allows you to leave a comment. Next to the comment button there should be a 'Reopen Issue' button. </li>
+      <li>We recommend leaving a comment while you re-open the issue, to update the project and mention if you're looking for anything new!</li>
+    </ol>
+  </div>
+</div>

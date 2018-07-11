@@ -1,72 +1,313 @@
 ---
-layout: page
-title: My website
-subtitle: This is where I will tell my friends way too much about me
-use-site-title: true
+layout: default
 ---
 
-<div class="posts-list">
-  {% for post in paginator.posts %}
-  <article class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-	  <h2 class="post-title">{{ post.title }}</h2>
+<div class='row'>
+  <div class='col-sm-12'>
+    <p class='h2'>Chicago's weekly event to build, share &amp; learn about civic tech<br /><br /></p>
+  </div>
+</div>
 
-	  {% if post.subtitle %}
-	  <h3 class="post-subtitle">
-	    {{ post.subtitle }}
-	  </h3>
-	  {% endif %}
-    </a>
+<!-- Thanksgiving notice -->
+<!-- <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><b>Next Chi Hack Night</b> <a class='pull-right' href='/events/'>Past events &raquo;</a></h3>
+  </div>
+  <div class="panel-body">
+    <h2><i class='fa fa-fw fa-spoon fa-spin'></i> No Chi Hack Night on Nov 21st. Happy Thanksgiving!<i class='fa fa-fw fa-spoon fa-spin'></i></h2>
+    <p>We're taking the week of Thanksgiving off. We’ll be back again on <strong>Nov 28th, 2017</strong> with more civic hacking fun!</p>
+  </div>
+</div> -->
 
-    <p class="post-meta">
-      Posted on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
+<!-- End of year holiday notice -->
+<!-- <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><b>Next Chi Hack Night</b> <a class='pull-right' href='/events/'>Past events &raquo;</a></h3>
+  </div>
+  <div class="panel-body">
+    <h2><i class='fa fa-snowflake-o fa-spin'></i> Happy holidays! See you in 2018! <i class='fa fa-snowflake-o fa-spin'></i></h2>
+    <p>We're taking the next three weeks off due to the holidays. We’ll be back again on <strong>January 9th, 2018</strong> with more civic hacking fun! While you're waiting, <a href='/events/index.html'>check out some of our presentations</a> from the last year.</p>
 
-    <div class="post-entry-container">
-      {% if post.image %}
-      <div class="post-image">
-        <a href="{{ post.url | prepend: site.baseurl }}">
-          <img src="{{ post.image }}">
-        </a>
+    <p><i class='fa fa-lightbulb-o fa-fw'></i> Would you like to propose a talk at an upcoming Chi Hack Night? Take a look at our <a href='/speaker-submissions.html'>speaker requirements</a>.</p>
+
+    <p><i class='fa fa-dollar fa-fw'></i> If your organization is interested in becoming a sponsor of Chi Hack Night in 2018, <a href='mailto:info@chihacknight.org?subject=2018 sponsorship'>drop us a line</a>!</p>
+  </div>
+</div> -->
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><b>Next Chi Hack Night</b> <a class='pull-right' href='/events/'>Past events &raquo;</a></h3>
+  </div>
+  <div class="panel-body">
+    {% for post in site.categories['events'] limit:1 %}
+    <strong>6pm {{ post.date | date: "%A, %B %-d, %Y" }}</strong>
+
+    <h2 class='no-margin-top'>
+      <small>#{{post.event_id}}</small>
+      <a href="{{post.url}}">{{post.title}}</a>
+    </h2>
+    <div class='row'>
+      <div class='col-sm-7'>
+        {% if post.description %}
+          <p>{{ post.description }}</p>
+        {% endif %}
+        <br />
+        {% if site.time <= post.date %}
+          <a class='btn btn-success btn-lg' href="http://chihacknight.eventbrite.com/" target='_blank'><i class='fa fa-check-square-o'></i> RSVP (required)</a>
+        {% endif %}
+        <a class='btn btn-link btn-lg' href="{{post.url}}"><i class='fa fa-info-circle-square-o'></i> Details</a>
+        <a class='btn btn-link btn-lg' href="{{post.agenda}}" target='_blank'><i class='fa fa-file-text-o'></i> Agenda</a>
       </div>
-      {% endif %}
-      <div class="post-entry">
-        {{ post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
-        {% assign excerpt_word_count = post.excerpt | number_of_words %}
-        {% if post.content != post.excerpt or excerpt_word_count > site.excerpt_length %}
-          <a href="{{ post.url | prepend: site.baseurl }}" class="post-read-more">[Read&nbsp;More]</a>
+      <div class='col-sm-5'>
+        {% if post.image %}
+          <a href="{{post.url}}"><img class='img-responsive img-thumbnail' src='{{post.image}}' alt='{{post.title}}' /></a>
+          {% if post.image_credit %}
+            <br /><small class='pull-right'><em>Photo: {{ post.image_credit }}</em></small>
+          {% endif %}
         {% endif %}
       </div>
     </div>
-
-    {% if post.tags.size > 0 %}
-    <div class="blog-tags">
-      Tags:
-      {% if site.link-tags %}
-      {% for tag in post.tags %}
-      <a href="{{ site.baseurl }}/tags#{{- tag -}}">{{- tag -}}</a>
       {% endfor %}
-      {% else %}
-        {{ post.tags | join: ", " }}
-      {% endif %}
-    </div>
-    {% endif %}
-
-   </article>
-  {% endfor %}
+  </div>
 </div>
 
-{% if paginator.total_pages > 1 %}
-<ul class="pager main-pager">
-  {% if paginator.previous_page %}
-  <li class="previous">
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-  </li>
+{% for post in site.categories['satellite']  limit:1 %}
+  {% if site.time <= post.date %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><b>Next Community Event</b></h3>
+      </div>
+      <div class="panel-body">
+        <strong>6pm {{ post.date | date: "%A, %B %-d, %Y" }}</strong>
+
+        <h2 class='no-margin-top'>
+          <a href="{{post.url}}">{{post.title}}</a>
+        </h2>
+        <div class='row'>
+          <div class='col-sm-7'>
+            {% if post.description %}
+              <p>{{ post.description }}</p>
+            {% endif %}
+            <br />
+            {% if site.time <= post.date %}
+              <a class='btn btn-success btn-lg' href="{{post.rsvp}}" target='_blank'><i class='fa fa-check-square-o'></i> RSVP</a>
+            {% endif %}
+            <a class='btn btn-link btn-lg' href="{{post.url}}"><i class='fa fa-info-circle-square-o'></i> Details</a>
+            <a class='btn btn-link btn-lg' href="{{post.agenda}}" target='_blank'><i class='fa fa-file-text-o'></i> Agenda</a>
+          </div>
+          <div class='col-sm-5'>
+            {% if post.image %}
+              <a href="{{post.url}}"><img class='img-responsive img-thumbnail' src='{{post.image}}' alt='{{post.title}}' /></a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
   {% endif %}
-  {% if paginator.next_page %}
-  <li class="next">
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-  </li>
-  {% endif %}
-</ul>
-{% endif %}
+{% endfor %}
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><b>Latest blog post</b> <a class='pull-right' href='/blog/'>All posts &raquo;</a></h3>
+  </div>
+  <div class="panel-body">
+    {% for post in site.categories['blog'] limit:1 %}
+      <div class='row'>
+        <div class='col-sm-4'>
+          {% if post.image %}
+            <img class='img-thumbnail img-responsive' src='{{post.image}}' alt='{{ post.title }}' />
+          {% else %}
+            <img class='img-thumbnail img-responsive' src='/images/logo/logo.png' alt='{{ post.title }}' />
+          {% endif %}
+        </div>
+        <div class='col-sm-8'>
+          <h4>
+            <a href='{{post.url}}'>{{ post.title }}</a>
+          </h4>
+          <p>
+            <small>{{ post.date | date: "%b %-d, %Y" }} by
+              <a class='muted' href='{{post.author_url}}'>{{post.author}}</a>
+              {% if post.author2 %}
+                , <a class='muted' href='{{post.author2_url}}'>{{post.author2}}</a>
+              {% endif %}
+            </small>
+            <br />
+            {{ post.description | markdownify }} <a href='{{post.url}}'>Read&nbsp;more&nbsp;&raquo;</a>
+          </p>
+          <br />
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class='row'>
+  <div class='col-sm-12'>
+
+    <h2 id='about'>Welcome!</h2>
+
+    <p><iframe frameborder="0" height="450" src="https://www.youtube.com/embed/j3Ltxgiw46o" width="100%"></iframe></p>
+
+    <p>Join us every Tuesday from 6-10pm on the 8th floor of the Merchandise Mart to hear from <a href='/events/index.html'>amazing speakers</a>, <a href='/breakouts.html#learning'>learn from each other</a> and <a href='/breakouts.html#working'>work on civic projects</a>. <a href='/about.html#everyone'><strong>Everyone is welcome!</strong></a></p>
+
+    <p>We are a group of thousands of designers, academic researchers, data journalists, activists, policy wonks, web developers and curious citizens who want to make our city more just, equitable, transparent and delightful to live in through data, design and technology. <a href='/about.html'>More about us »</a></p>
+
+    <hr />
+    <h2 id='community'>Join our community</h2>
+
+    <p>Chi Hack Night is a central hub for <a href='/community.html'>Chicago's civic tech community</a>. Here's the three best ways to get involved:</p>
+
+    <div class='row text-center'>
+      <div class='col-sm-4'>
+        <div class='well'>
+          <h1><i class='fa fa-fw fa-calendar'></i></h1>
+          <p>1. Go to Chi Hack Night. <a href='http://chihacknight.eventbrite.com/'>We meet every Tuesday at 6pm</a></p>
+        </div>
+      </div>
+
+      <div class='col-sm-4'>
+        <div class='well'>
+          <h1><i class='fa fa-fw fa-envelope'></i></h1>
+          <p>2. <a href='http://eepurl.com/z65hn'>Subscribe to updates</a> on upcoming speakers and events</p>
+        </div>
+      </div>
+
+      <div class='col-sm-4'>
+        <div class='well'>
+          <h1><i class='fa fa-fw fa-group'></i></h1>
+          <p>3. Browse our <a href='/breakouts.html'>weekly breakouts</a> to find your group</p>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <div class='sponsors'>
+
+      <h2 id='sponsors'>Sponsors</h2>
+      <p>Chi Hack Night is organized by Derek Eder, Emily Drevets, Katie O'Shea and members of our <a href='/leadership-council.html'>Leadership Council</a>, hosted at <a href='https://www.braintreepayments.com/'>Braintree</a> and supported by our amazing sponsors. DataMade is the fiscal sponsor.</p>
+
+      <p>Is your organization interested in becoming a Chi Hack Night sponsor? <a href='mailto:info@chihacknight.org'>Drop us a line!</a></p>
+
+      <div class='row'>
+        <div class='col-sm-2'>
+          <h4 class='sponsor-level'>4-Star</h4>
+        </div>
+
+        <div class='col-sm-3'>
+          <div itemscope itemtype='http://schema.org/Organization' class='sponsor-details'>
+            <a href='https://www.braintreepayments.com/' itemprop='url'>
+                <img src='images/sponsors/braintree.png' alt='Braintree' itemprop='logo' class='img-responsive' />
+                <span itemprop='name'>Braintree</span>
+            </a>
+          </div>
+        </div>
+
+        <div class='col-sm-3'>
+          <div itemscope itemtype='http://schema.org/Organization' class='sponsor-details'>
+            <a href='https://microsoft-chicago.com' itemprop='url'>
+                <img src='images/sponsors/microsoft.png' alt='Microsoft' itemprop='logo' class='img-responsive' />
+                <span itemprop='name'>Microsoft</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-sm-2'>
+          <h4 class='sponsor-level'>3-Star</h4>
+        </div>
+        <div class='col-sm-3'>
+          <div itemscope itemtype='http://schema.org/Organization' class='sponsor-details'>
+            <a href='https://datamade.us' itemprop='url'>
+                <img src='images/sponsors/datamade.png' alt='DataMade' itemprop='logo' class='img-responsive' />
+                <span itemprop='name'>DataMade</span>
+            </a>
+          </div>
+        </div>
+        <div class='col-sm-3'>
+          <div itemscope itemtype='http://schema.org/Organization' class='sponsor-details'>
+            <a href='https://google.com/' itemprop='url'>
+                <img src='images/sponsors/google.png' alt='Google' itemprop='logo' class='img-responsive' />
+                <span itemprop='name'>Google</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class='row'>
+        <div class='col-sm-2'>
+          <h4 class='sponsor-level'>2-Star</h4>
+        </div>
+
+        <div class='col-sm-3'>
+          <div itemscope itemtype='http://schema.org/Organization' class='sponsor-details'>
+            <a href='http://thecitybase.com' itemprop='url'>
+                <img src='images/sponsors/citybase.jpg' alt='City Base' itemprop='logo' class='img-responsive' />
+                <span itemprop='name'>City Base</span>
+            </a>
+          </div>
+        </div>
+
+        <div class='col-sm-3'>
+          <div itemscope itemtype='http://schema.org/Organization' class='sponsor-details'>
+            <a href='https://opentechstrategies.com' itemprop='url'>
+                <img src='images/sponsors/open-tech-strategies.png' alt='Open Tech Strategies' itemprop='logo' class='img-responsive' />
+                <span itemprop='name'>Open Tech Strategies</span>
+            </a>
+          </div>
+        </div>
+
+        <div class='col-sm-3'>
+          <div itemscope itemtype='http://schema.org/Organization' class='sponsor-details'>
+            <a href='https://www.civisanalytics.com' itemprop='url'>
+                <img src='images/sponsors/civis-analytics.png' alt='Civis Analytics' itemprop='logo' class='img-responsive' />
+                <span itemprop='name'>Civis Analytics</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 2 star row 2 -->
+      <!-- <div class='row'>
+        <div class='col-sm-2'>
+        </div>
+
+        <div class='col-sm-3'>
+          <div itemscope itemtype='http://schema.org/Organization' class='sponsor-details'>
+            <a href='https://edelson.com/' itemprop='url'>
+                <img src='images/sponsors/edelson.jpg' alt='Edelson' itemprop='logo' class='img-responsive' />
+                <span itemprop='name'>Edelson</span>
+            </a>
+          </div>
+        </div>
+      </div> -->
+
+      <div class='row'>
+        <div class='col-sm-2'>
+          <h4 class='sponsor-level'>1-Star</h4>
+        </div>
+
+        <div class='col-sm-3'>
+          <div itemscope itemtype='http://schema.org/Organization' class='sponsor-details'>
+            <a href='https://www.mrelief.com' itemprop='url'>
+                <img src='images/sponsors/mrelief.png' alt='mRelief' itemprop='logo' class='img-responsive' />
+                <span itemprop='name'>mRelief</span>
+            </a>
+          </div>
+        </div>
+
+        <div class='col-sm-3'>
+          <div itemscope itemtype='http://schema.org/Organization' class='sponsor-details'>
+            <a href='https://www.chicagocityscape.com' itemprop='url'>
+                <img src='images/sponsors/chicagocityscape.jpg' alt='Chicago Cityscape' itemprop='logo' class='img-responsive' />
+                <span itemprop='name'>Chicago Cityscape</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

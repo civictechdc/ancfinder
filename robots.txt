@@ -1,0 +1,3 @@
+Sitemap: http://chihacknight.org/sitemap.xml
+User-agent: *
+Disallow:

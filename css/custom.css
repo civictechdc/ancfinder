@@ -1,0 +1,246 @@
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  font-size: 18px;
+}
+
+.navbar { min-height: 90px; }
+
+.navbar-brand img { height: 40px; }
+
+.navbar-nav > li > a { 
+  padding-bottom: 10px; 
+  padding-top: 10px; 
+  font-size: 0.9em;
+}
+
+.navbar-nav { padding-top: 60px; }
+
+.navbar-toggle { border: 1px solid #ccc; }
+.navbar-toggle .icon-bar { background-color: #666;}
+
+a {
+  color: #006fa9;
+}
+
+a:active, a:hover, a:focus {
+  color: #E7121C;
+}
+
+a { text-decoration: none !important; }
+
+.donate {
+  color: #E7121C;
+}
+
+.table a {
+  text-decoration: none;
+}
+
+.no-margin-top{
+  margin-top: 0px;
+}
+
+.muted { color: #999; }
+.img-home-teaser { margin-top: 60px;}
+
+.btn-link {
+  color: #E7121C;
+}
+
+.btn-link:hover {
+  color: #980c12;
+}
+
+.btn-success {
+  background-color: #E7121C;
+  border-color: #E7121C;
+}
+
+.btn-success:hover {
+  background-color: #980c12;
+  border-color: #980c12;
+}
+
+.author-headshot {
+  width: 100px;
+  margin-top: 18px;
+}
+
+.project-headshot {
+  width: 100px;
+  margin-right: 10px;
+}
+
+.testimonial-headshot {
+  width: 100px;
+  margin-right: 10px;
+  clear: both;
+}
+
+.breakout-headshot {
+  width: 80px;
+}
+
+.contributors img {
+  width: 50px;
+}
+
+.contributor-owner img {
+  border: 1px solid #428bca;
+}
+
+.people td {
+  font-size: 20px;
+}
+
+.people img {
+  width: 50px;
+}
+
+.sponsors img {
+  padding: 10px 30px 10px 0;
+}
+
+.label:hover { text-decoration: none; }
+
+.footer {
+  background-color: #efefef;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.post, .post p, .post li {
+  font-size: 20px;
+  line-height: 1.55em;
+}
+
+.post p {
+  margin-bottom: 28px;
+}
+
+.post h2 {
+  font-size: 28px;
+}
+
+.post h3 {
+  font-size: 25px;
+}
+
+/* Customize container */
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+/*.jumbotron {
+  background-color: #E5001C;
+  color: #fff;
+  padding: 30px;
+}
+
+.jumbotron h2 a, .jumbotron h2 small, .jumbotron a { color: #fff;}
+*/
+.jumbotron h2 { margin-top: 0;}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+@media screen and (max-width: 767px) {
+  body, table { font-size: 16px; }
+
+  .h1, h1 { font-size: 29px; }
+  .h2, h2 { font-size: 22px; }
+  .h3, h3 { font-size: 20px; }
+  .h4, h4 { font-size: 19px; }
+
+  .btn-lg {
+    padding: 10px 15px;
+    font-size: inherit;
+    line-height: inherit;
+    border-radius: 3px;
+  }
+
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .navbar-brand img { height: 80px; }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+.nowrap { white-space:nowrap; }
+
+#recent-event { margin: 10px 0 0 0; }
+
+.api-title { width: 30%; }
+
+.thumbnail {margin-bottom: 5px;}
+
+/* Bars */
+.bar {
+  position: relative;
+  width: 4px;
+  height: 50px;
+  margin: 10px 1px 0 1px;
+  float: left;
+}
+.bar span {
+    border-style: solid;
+    border-width: 0 2px;
+    display: block;
+    width: 1px;
+    margin: 0 1px;
+    text-indent: -5000px;
+    background: none repeat scroll 0 0 #95A5A6;
+    border-color: #95A5A6;
+    position: absolute;
+    bottom: 0;
+}
+
+.project-needs { margin-top: 20px;}
+
+.sponsor-details a span {
+  position: absolute;
+  left: -999em;
+}
+
+.sponsor-level {
+  margin-top: 28px;
+}
+
+.twitter-tweet {
+  margin: auto !important;
+}
+
+#press-list img { padding-bottom: 15px; }
+
+.alert-info {
+  background-color: #d0f2ff;
+  border-color: #7bd9ff;
+  color: #2c3e50;
+}

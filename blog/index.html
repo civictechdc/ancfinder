@@ -1,0 +1,42 @@
+---
+layout: default
+title: Blog
+description: A communal blog with the goal of amplifying more diverse perspectives and stories in Chicago civic tech.
+---
+
+<!-- Begin page content-->
+<h1>
+  <i class='fa fa-pencil'></i> Blog
+</h1>
+
+<p>A communal blog with the goal of amplifying more diverse perspectives and stories in Chicago civic tech. <a href='/blog_feed.xml'><i class='fa fa-rss-square'></i> RSS feed</a></p> 
+
+<p><a class='btn btn-success' href='https://docs.google.com/forms/d/1p1Ml3rFSMYAgyU7Ue61_N-Gyx2VccuUrKizSntwLNu0/viewform'>Submit a post &raquo;</a></p>
+
+{% for post in site.categories['blog'] %}
+  <div class='row'>
+    <div class='col-sm-4'>
+      {% if post.image %}
+        <img class='img-thumbnail img-responsive' src='{{post.image}}' alt='{{ post.title }}' />
+      {% else %}
+        <img class='img-thumbnail img-responsive' src='/images/logo/logo.png' alt='{{ post.title }}' />
+      {% endif %}
+    </div>
+    <div class='col-sm-8'>
+      <h4>
+        <a href='{{post.url}}'>{{ post.title }}</a>
+      </h4>
+      <p>
+        <small>{{ post.date | date: "%b %-d, %Y" }} by <span class='muted'>{{post.author}}
+          {% if post.author2 %}
+            , {{post.author2}}
+          {% endif %}
+          </span>
+        </small>
+        <br />
+        {{ post.description | markdownify }} <a href='{{post.url}}'>Read&nbsp;more&nbsp;&raquo;</a>
+      </p>
+      <br />
+    </div>
+  </div>
+{% endfor %}

@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<p><img alt="{{page.title}}" class="img-thumbnail" src="{{page.image}}" /></p>
+
+<p><a href='/projects.html'>&laquo; back to Projects &amp; successes</a></p>
+
+<h2>{{ page.title }}</h2>
+{% if page.website %}
+  <p><i class='fa fa-globe'></i> <a target='_blank' href='{{page.website}}'>{{page.website}}</a></p>
+{% endif %}
+
+<div class='post'>
+  {{ page.description | markdownify }}
+</div>
+
+<div class="row post">
+  <div class="col-sm-7">
+    {{ content }}
+  </div>
+  <div class="col-sm-5">
+    <div class="well">
+      <table class='table table-condensed'>
+        <tbody>
+          {% if page.website %}
+          <tr>
+            <td>Website</td>
+            <td><a target='_blank' href='{{page.website}}'>{{page.title}}</a></td>
+          </tr>
+          {% endif %}
+          <tr>
+            <td>Tags</td>
+            <td>
+              {% for tag in page.tags %}
+                {{tag}}<br />
+              {% endfor %}
+            </td>
+          </tr>
+          <tr>
+            <td>Creators</td>
+            <td>
+              {% for creator in page.creators %}
+                {{creator}}<br />
+              {% endfor %}
+            </td>
+          </tr>
+          <tr>
+            <td>GitHub</td>
+            <td><a href='{{page.github}}'>{{page.github}}</a></td>
+          </tr>
+          <tr>
+            <td>Launched</td>
+            <td>{{page.date | date: "%B %Y"}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

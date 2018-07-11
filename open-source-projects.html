@@ -1,0 +1,49 @@
+---
+layout: default
+title: Projects
+description: This is a list of open source civic tech projects from Chicago's civic tech community.
+---
+        
+<h1><small id='project-count'></small> Open source projects</h1>
+<p>Keep track of open source projects from Chicago's civic tech community. Recent commits show activity in the last 30 days.</p>
+
+<p><strong>Bonus!</strong> See a <a href='/open-source-people.html'>list of the most active contributors</a> to these projects.</p>
+
+<div id='share-project'>
+  <div class='well'>
+
+    <p>If you have a civic app and it's open sourced on <a href='http://github.com'>Github</a>, share it! We <a href='https://github.com/open-city/civic-json-worker'>automatically update</a> this list based on your activity.</p>
+
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
+        <label for="github-url" class="col-sm-2 control-label">Github URL</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="github-url" placeholder="https://github.com/my-name/my-project">
+        </div>
+        <div class="col-sm-2">
+          <button  id='submit-project' type="submit" class="btn btn-success">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div id='submit-message' class="alert" style="display: none;"></div>
+</div>
+
+<hr />
+<table id='hack-night-projects' class='table'>
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Description</th>
+      <th>Recent commits</th>
+      <th>Stars</th>
+      <th>Forks</th>
+      <th>Issues</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+<script src="/lib/projects.js"></script>

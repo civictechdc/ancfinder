@@ -1,0 +1,54 @@
+---
+layout: default
+title: Events
+description: Recent and upcoming hack nights, with links to each event's video livestream, projects, people, and data. 
+---
+
+<!-- Begin page content-->
+<h1>
+  <i class='fa fa-calendar-o'></i> Events
+</h1>
+<p>Past and upcoming hack night presentations, with links to each event's video livestream, projects, people, and data. We meet every Tuesday, except the week of Thanksgiving and the last two weeks of December.<br /><a href='/event_feed.xml'><i class='fa fa-rss-square'></i> RSS feed</a></p>
+
+<table id='hack-night-events' class='table table-striped'>
+  <thead>
+    <tr itemscope itemtype='http://schema.org/Event'>
+      <th>Date</th>
+      <th>#</th>
+      <th>Event</th>
+      <th>Speaker(s)</th>
+      <th>Tags</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for post in site.posts %}
+      {% if post.categories contains 'events' or post.categories contains 'satellite' %}
+        <tr>
+          <td class='nowrap'>
+              <meta itemprop='startDate' datetime='{{ post.date | date: "%Y-%m-%d" }}' content='{{ post.date | date: "%Y-%m-%d" }}' />
+              <p>{{ post.date | date: "%b %-d, %Y" }}</p>
+          </td>
+          <td>{{post.event_id}}</td>
+          <td>
+            <a href='{{ post.url }}' itemprop='url'><span itemprop='name'>{{ post.title }}</span></a>
+            {% if post.youtube_id %}
+              <small><i title='This event has a video' class='fa fa-fw fa-video-camera'></i></small>
+            {% endif %}
+          </td>
+          <td>
+            {% for speaker in post.speakers %}
+              {{speaker}}<br />
+            {% endfor %}
+          </td>
+          <td class='nowrap'>
+            {% for tag in post.tags %}
+              {{tag}}<br />
+            {% endfor %}
+          </td>
+        </tr>
+      {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
+
+<script src="/lib/events.js"></script>
