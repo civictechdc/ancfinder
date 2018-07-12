@@ -85,10 +85,10 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://chihacknight.org/apple-touch-icon-152x152.png" />
     <link rel="icon" type="image/png" href="https://chihacknight.org/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="https://chihacknight.org/favicon-16x16.png" sizes="16x16" />
-    <meta name="application-name" content="Chi Hack Night"/>
+    <meta name="application-name" content="Code for DC"/>
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="https://chihacknight.org/mstile-144x144.png" />
-    
+
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.flatly.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -133,7 +133,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/"><img src='/images/logo/logo.png' alt='Chi Hack Night' title='Chi Hack Night' class='img-responsive' /></a>
+            <a class="navbar-brand" href="/"><img src='/images/logo/logo.png' alt='Code for DC' title='Code for DC' class='img-responsive' /></a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -152,7 +152,7 @@
 
     <div class="container">
       <div id='primary-content' class='col-sm-10 col-sm-offset-1'>
-      
+
         {{content}}
 
       </div>
@@ -183,10 +183,10 @@
               <a href='/speaker-submissions.html'>Speaker submissions</a>
             </small>
           </div>
-          
+
           <div class='col-sm-2'>
             <small>
-              <strong>Elsewhere</strong><br /> 
+              <strong>Elsewhere</strong><br />
               <i class='fa fa-fw fa-youtube'></i> <a href="https://www.youtube.com/c/ChiHackNight">YouTube</a><br />
               <i class='fa fa-fw fa-facebook'></i> <a href="https://www.facebook.com/chihacknight">Facebook</a><br />
               <i class='fa fa-fw fa-twitter'></i> <a href="https://twitter.com/chihacknight" target='_blank'>Twitter</a><br />
@@ -195,7 +195,7 @@
           </div>
           <div class='col-sm-2'>
             <small>
-              &copy; 2018 Chi Hack Night
+              &copy; {{ 'now' | date: "%Y" }} District Civic Labs
             </small>
           </div>
         </div>
