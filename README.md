@@ -39,6 +39,12 @@ and then type this at the shell prompt:
 
 Wait a few seconds for things to start up, then point your browser to [http://localhost:8000](http://localhost:8000) -- if you see the ANC Finder, you're all set. From here you can start modifying the code you checked out to the 'ancfinder' directory, and these changes will be reflected in the locally-running instance of the site as you go.
 
+
+RUNNING with Docker
+------------------------
+Go to the root of the cloned directory and run
+`docker-compose up`
+
 Installation with Cloud9
 ------------------------
 
