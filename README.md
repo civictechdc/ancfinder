@@ -10,37 +10,17 @@ If you plan to contribute to the repo, you should set up your own fork and open 
 
 If you're not familiar with forking, Github has a [useful guide](https://help.github.com/articles/fork-a-repo).
 
-Installation using Vagrant
---------------------------
 
-First get [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/). Once they're both installed, clone the ANC Finder repo on your machine:
 
 	git clone --recursive https://github.com/codefordc/ancfinder
 	cd ./ancfinder
 	git submodule init
 	git submodule update
 
-Then get the Vagrant box provisioned (you should still be in the 'ancfinder' directory):
-
-	vagrant up
-
-Once the provisioning is done, the new Vagrant box with the ANC Finder app and its dependencies will be ready to go.
 
 Running the Site
 ----------------
 
-Login to the newly-established machine:
-
-	vagrant ssh
-
-and then type this at the shell prompt:
-
-	run_ancfinder
-
-Wait a few seconds for things to start up, then point your browser to [http://localhost:8000](http://localhost:8000) -- if you see the ANC Finder, you're all set. From here you can start modifying the code you checked out to the 'ancfinder' directory, and these changes will be reflected in the locally-running instance of the site as you go.
-
-Installation without Vagrant
-----------------------------
 
 
 Updating the Code
