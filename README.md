@@ -42,7 +42,7 @@ from our Google Doc, our scrapers, and other external data sources, run:
 
 	python3 scripts/update_anc_database.py
 
-You will need to provide your Google email & password and a Census API key, which you can get at http://www.census.gov/developers/tos/key_request.html. For convenience, you can also store these credentials in a file named "update_anc_database_creds.py" in this (root) directory and put in it:
+You will need to provide your Google email & password and a Census API key, which you can get at http://api.census.gov/data/key_signup.html. For convenience, you can also store these credentials in a file named "update_anc_database_creds.py" in this (root) directory and put in it:
 
 	google_email="your.address@gmail.com"
 	google_password="your google password"
