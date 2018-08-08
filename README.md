@@ -10,18 +10,26 @@ If you plan to contribute to the repo, you should set up your own fork and open 
 
 If you're not familiar with forking, Github has a [useful guide](https://help.github.com/articles/fork-a-repo).
 
+Getting Started
+---------------
 
+In order to get the site running locally you'll want to start by creating an account for Docker, download, and install the program. The community edition can be downloaded [here](https://www.docker.com/community-edition).
 
-	git clone --recursive https://github.com/codefordc/ancfinder
-	cd ./ancfinder
-	git submodule init
-	git submodule update
+Once forked, clone the forked repository to your computer.
 
+git clone --recursive https://github.com/codefordc/ancfinder
+cd ./ancfinder
+git submodule init
+git submodule update
 
 Running the Site
 ----------------
 
+1. Go to the root of the cloned directory and run docker-compose up -d. This will start all the required pieces of infrastructure as well as the application.
+2. Initialize the database by running docker-compose exec ancfinder python manage.py syncdb --noinput.
+3. To stop the application docker-compose stop; it can be restarted with docker-compose start.
 
+To open the site in a browser, direct your browser to http://localhost:80.
 
 Updating the Code
 -----------------
