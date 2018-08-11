@@ -17,10 +17,10 @@ In order to get the site running locally you'll want to start by creating an acc
 
 Once forked, clone the forked repository to your computer.
 
-git clone --recursive https://github.com/codefordc/ancfinder
-cd ./ancfinder
-git submodule init
-git submodule update
+	git clone --recursive https://github.com/codefordc/ancfinder
+	cd ./ancfinder
+	git submodule init
+	git submodule update
 
 Running the Site
 ----------------
