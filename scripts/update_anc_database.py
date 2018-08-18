@@ -158,6 +158,24 @@ def add_abra_data(output):
         for rec in abra_data[rec]['smds']:
                 smd = rec
                 output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]]["census"]["liquor_licenses"] = { "value": abra_data[rec[:2]]['smds'][rec]['number'] }
+    
+    #Iterate through the data for SMDs
+    for ward in anc_json:
+        if ward == "attributes":
+            continue
+        for anc in anc_json[ward]:
+            if anc == "attributes":
+                continue
+            for smd in anc_json[ward][anc]:
+                if smd == "attributes":
+                    continue
+                else:
+                    #query for the licenses for this SMD
+                    request_url = abra_by_smd.format(str(smd))
+                    print("Requesting: " + request_url)
+                    json_request = requests.get(request_url, stream=True).json()
+                    liquor_licenses = json_request["features"]
+                    anc_json[ward][anc][smd]["licenses"] = liquor_licenses
 
 def add_building_permit_data(output):
     print("adding building permit information")
