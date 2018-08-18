@@ -46,15 +46,9 @@ Updating Static Data
 --------------------
 
 The ANC/SMD metadata is stored statically in `static/ancs.json`. To update this file
-from our Google Doc, our scrapers, and other external data sources, run:
+from our external data sources, run:
 
 	python3 scripts/update_anc_database.py
-
-You will need to provide your Google email & password and a Census API key, which you can get at http://api.census.gov/data/key_signup.html. For convenience, you can also store these credentials in a file named "update_anc_database_creds.py" in this (root) directory and put in it:
-
-	google_email="your.address@gmail.com"
-	google_password="your google password"
-	census_api_key="your Census API key"
 
 You can also selectively update just some of the data (because updating some takes a long time) using command line arguments:
 

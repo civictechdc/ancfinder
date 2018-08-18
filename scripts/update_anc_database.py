@@ -2,152 +2,64 @@
 
 import sys, os.path, csv, json, re, subprocess
 import urllib.request, urllib.parse, urllib.error, io
+import requests
 import getpass
 from collections import OrderedDict
 
-anc_json_filename = os.environ.get('STATIC_ROOT', 'static') + '/ancs.json'
-
-# from cspickert, https://gist.github.com/cspickert/1650271
-class GoogleDocsClient(object):
-    def __init__(self, email, password):
-        super(GoogleDocsClient, self).__init__()
-        self.email = email
-        self.password = password
-    
-    def _get_auth_token(self, email, password, source, service):
-        url = "https://www.google.com/accounts/ClientLogin"
-        params = {
-            "Email": email, "Passwd": password,
-            "service": service,
-            "accountType": "HOSTED_OR_GOOGLE",
-            "source": source
-        }
-        req = urllib.request.Request(url, urllib.parse.urlencode(params).encode("utf8"))
-        return re.findall(br"Auth=(.*)", urllib.request.urlopen(req).read())[0]
-    
-    def get_auth_token(self):
-        source = type(self).__name__
-        return self._get_auth_token(self.email, self.password, source, service="wise")
-    
-    def download(self, spreadsheet, gid, format="csv"):
-        url_format = "https://spreadsheets.google.com/feeds/download/spreadsheets/Export?key=%s&exportFormat=%s&gid=%i"
-        headers = {
-            b"Authorization": b"GoogleLogin auth=" + self.get_auth_token(),
-            b"GData-Version": b"3.0"
-        }
-        req = urllib.request.Request(url_format % (spreadsheet, format, gid), headers=headers)
-        return io.TextIOWrapper(urllib.request.urlopen(req), encoding="utf8")
 
 def urlopen(url):
     # Opens a URL and decodes its content assuming UTF-8; returns a stream.
+    print('Making a request to: ' + url)
     data = urllib.request.urlopen(url)
     return io.TextIOWrapper(data, encoding="utf8")
 
 def csv_file_to_dict(csv_file):
     return list(csv.DictReader(csv_file))
 
-def get_base_data():
-    # This function initializes an empty JSON file with base data.
-    # We don't normally use this function since we try to update
-    # data in place selectively, because it's a lot faster than
-    # collecting everything from scratch.
+def load_json(name):
+    return json.loads(open(data_dir + name).read())
 
-    print("fetching Google spreadsheet to create base data")
+def add_base_data(anc_json):
+    #Start things anew
 
-    # Create Google Documents client and download the spreadsheet as a CSV for each worksheet.
-    spreadsheet_id = "0AsuPWK1wtxNfdGdyVWU4Z3J3X3g3RzVyVWJ1Rkd4dXc" # our spreadsheet
-    gs = GoogleDocsClient(google_email, google_password)
-    wards = csv_file_to_dict(gs.download(spreadsheet_id, 1)) # second argument is the worksheet ID
-    ancs = csv_file_to_dict(gs.download(spreadsheet_id, 2))
-    smds = csv_file_to_dict(gs.download(spreadsheet_id, 0))
-            
-    output = OrderedDict()
+    #retrieve data from the GIS opendata website
+    print("Requesting: " + ward_gis_query)
+    json_request = requests.get(ward_gis_query, stream=True).json()
+    wards = json_request["features"]
+
+    ##add each ward to json file
     for ward in wards:
-        w = OrderedDict()
-        output[ward["Ward"]] = w
-        w["ward"] = int(ward["Ward"])
-        w["ancs"] = OrderedDict()
-    
-    for anc in ancs:
-        a = OrderedDict()
-        output[ anc["ANC"][0] ]["ancs"][ anc["ANC"][1] ] = a
-        a["anc"] = anc["ANC"][0:2]
-        a["anc_letter"] = anc["ANC"][1]
-        a["smds"] = OrderedDict()
-        a["committees"] = OrderedDict()
+        current_ward = str(ward["attributes"]["WARD"])
+        print("Setting up ward "+ current_ward)
+        anc_json[current_ward] = OrderedDict()
+        anc_json[current_ward]["attributes"] = ward["attributes"]
 
-    for smd in smds:
-        s = OrderedDict()
-        output[ smd["smd"][0] ]["ancs"][ smd["smd"][1] ]["smds"][ smd["smd"][2:] ] = s
-        s["anc"] = smd["smd"][0:2]
-        s["smd"] = smd["smd"]
-        s["smd_number"] = smd["smd"][2:]
-        s["ward"] = smd["smd"][0]
+        #each ward has a number of ANCs. Lets query for them.
+        request_url = anc_by_ward_gis_query.format(current_ward)
+        print("Requesting: " + request_url)
+        json_request = requests.get(request_url, stream=True).json()
+        ancs = json_request["features"]
 
-    return output
-    
-def add_scraper_data(output):
-    print("adding scraped commissioner data")
-    # additional information about ANC commissioners
-    scraped = json.loads(open('data/scraped-anc.json').read())
-    for rec in scraped:
-        smd = rec
-        for entry in scraped[rec]:
-            output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]][entry] = scraped[rec][entry]
+        ##add each anc for this ward to json file
+        for anc in ancs:
+            current_anc = str(anc["attributes"]["ANC_ID"])
+            print("Adding " + current_anc + " to ward " + current_ward)
+            anc_json[current_ward][current_anc] = OrderedDict()
+            anc_json[current_ward][current_anc]["attributes"] = anc["attributes"]
 
-def add_googledoc_data(output):
-    print("adding Google spreadsheet data")
-    scraped = json.loads(open('data/scraped-anc.json').read())
+            #each anc has a number of SMDs. Lets query for them.
+            request_url = smd_by_anc_gis_query.format(current_anc)
+            print("Requesting: " + request_url)
+            json_request = requests.get(request_url, stream=True).json()
+            smds = json_request["features"]
 
-    # Don't ever run this without also running the scraperwiki
-    # data because scraperwiki overrides google doc data.
-    
-    # Create Google Documents client and download the spreadsheet as a CSV for each worksheet.
-    spreadsheet_id = "0AsuPWK1wtxNfdGdyVWU4Z3J3X3g3RzVyVWJ1Rkd4dXc" # our spreadsheet
-    gs = GoogleDocsClient(google_email, google_password)
-    wards = csv_file_to_dict(gs.download(spreadsheet_id, 1)) # second argument is the worksheet ID
-    ancs = csv_file_to_dict(gs.download(spreadsheet_id, 2))
-    smds = csv_file_to_dict(gs.download(spreadsheet_id, 0))
-    committees = csv_file_to_dict(gs.download(spreadsheet_id, 10))
-            
-    for ward in wards:
-        w = output[ward["Ward"]]
-        w["description"] = ward["Description"]
-    
-    for anc in ancs:
-        try:
-            a = output[ anc["ANC"][0] ]["ancs"][ anc["ANC"][1] ]
-        except KeyError:
-            raise ValueError(anc["ANC"][0] + " is not an ANC.")
-        a["website"] = anc["Website"]
-        a["committees"] = OrderedDict() # clear
-    
-    # Use name from anc.dc.gov to check that we have the right commissioner
-    # before overwriting with spreadsheet information
-    for smd in smds:
-        s = output[ smd["smd"][0] ]["ancs"][ smd["smd"][1] ]["smds"][ smd["smd"][2:] ]
-        if scraped[smd["smd"]]["official_name"] == smd["official_name"]:
-            s.update(smd)
-        if isinstance(s.get("Position"), str):
-            # migrate this field to a list; once we're all migrated we should
-            # move this conversion out of this if block and up to where we
-            # update s.
-            # We encode multiple positions using double asterisks in the spreadsheet.
-            if s["Position"].strip() == "":
-                s["Position"] = [] # empty list
-            else:
-                s["Position"] = s["Position"].split("**")
+            ##add each smd for this anc to json file
+            for smd in smds:
+                current_smd = str(smd["attributes"]["SMD_ID"])
+                print("Adding " + current_smd + " to ANC " + current_anc + ", in ward " + current_ward)
+                anc_json[current_ward][current_anc][current_smd] = OrderedDict()
+                anc_json[current_ward][current_anc][current_smd]["attributes"] = smd["attributes"]
 
-    for cmte in committees:
-        c = OrderedDict()
-        output[ cmte["ANC"][0] ]["ancs"][ cmte["ANC"][1] ]["committees"][ cmte["committee"]] = c
-        c["committee"] = cmte["committee"]
-        c["meetings"] = cmte["meetings"]
-        c["chair"] = cmte["chair"]
-        c["chair_email"] = cmte["chair email"]
-        c["purpose"] = cmte["purpose"]
-                    
-        
 def add_abra_data(output):
     print("adding liquor license information")
     # Number of liquor licenses in each ANC and SMD
@@ -446,39 +358,32 @@ def add_census_data_analysis(output):
             anc["census"]["POP_DENSITY"] = { "value": int(round(anc["census"]["P0010001"]["value"] / anc["area"] * 2589990.0)) } # pop per sq mi
 
 if __name__ == "__main__":
-    if not os.path.exists("credentials.py"):
-        print("This program downloads our public Google Doc with Ward/ANC/SMD information.")
-        print("But we need your Google login and Census API key info to get it...")
-        google_email = input("google account email> ")
-        google_password = getpass.getpass("google account password> ")
-        census_api_key = getpass.getpass("census api key> ")
-    else:
-        # Or create a file named "credentials.py" and put in
-        # it your Google credentials and Census API key (see the README).
-        exec(compile(open("credentials.py").read(), "credentials.py", 'exec'))
-        
-    
-    if "--reset" in sys.argv:
-        # Re-create file from scratch.
-        output = get_base_data()
-    else:
-        # Update file in place.
-        output = json.load(open(anc_json_filename), object_pairs_hook=OrderedDict)
 
-    if "--update" in sys.argv:
-        subprocess.call(['python', 'update_abra.py', '&&', 'python', 'update_311.py'])
-
+    # Should we process this selective update? Yes if:
+    #       * no command line arguments were given (i.e. process all)
+    #       * --reset was specified (must process all)
+    #       * --argname was specified
     def should(argname):
-        # Should we process this selective update? Yes if:
-        #       * no command line arguments were given (i.e. process all)
-        #       * --reset was specified (must process all)
-        #       * --argname was specified
         return len(sys.argv) == 1 or "--reset" in sys.argv or ("--"+argname) in sys.argv
 
-    if should("base"):
-        # always do this together
-        add_scraper_data(output)
-        add_googledoc_data(output)
+    if not os.path.exists("credentials.py"):
+        print("Please provide your census api key> ")
+        census_api_key = getpass.getpass("census api key> ")
+    else:
+        exec(compile(open("credentials.py").read(), "credentials.py", 'exec'))
+
+    ## if the anc json exists then open it for reader
+    ## otherwise grab the base data
+    if os.path.exists(data_dir + 'ancs.json'):
+        anc_json = json.load(open(data_dir + 'ancs.json'), object_pairs_hook=OrderedDict)
+    else:
+        if not "base" in sys.argv:
+            anc_json = OrderedDict()
+            sys.argv.append("base")
+
+    ## Lets pars the passed arguments
+    if should("base"): add_base_data(anc_json)
+
     if should("terms"): add_term_data(output)
     if should("gis"): add_geographic_data(output)
     if should("neighborhoods"): add_neighborhood_data(output)
@@ -487,11 +392,9 @@ if __name__ == "__main__":
     if should("abra"): add_abra_data(output)
     if should("building"): add_building_permit_data(output)
     if should("311"): add_311_data(output)
-    
     # Output.
-    output = json.dumps(output, indent=True, ensure_ascii=False, sort_keys=("--reset" in sys.argv))
-    
+    anc_json = json.dumps(anc_json, indent=True, ensure_ascii=False, sort_keys=("--reset" in sys.argv))
+
     # for new Django-backed site
-    with open(anc_json_filename, "w") as f:
-                f.write(output)
-                
+    with open(data_dir + 'ancs.json', "w") as f:
+                f.write(anc_json)
