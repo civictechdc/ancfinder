@@ -147,17 +147,6 @@ def add_googledoc_data(output):
         c["chair_email"] = cmte["chair email"]
         c["purpose"] = cmte["purpose"]
                     
-def add_term_data(output):
-    print("adding commissioner term information")
-    # Number of terms served by current ANC commissioner
-    term_data = csv.reader(open('data/anc-terms.csv'), delimiter=',')
-    con_data = csv.reader(open('data/anc-contestation.csv'), delimiter=',')
-    for rec in term_data:
-        smd = rec[1]
-        output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]]["terms"] = rec[5]
-    for rec in con_data:
-        smd = rec[0]
-        output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]]["contestation"] = rec[1]
         
 def add_abra_data(output):
     print("adding liquor license information")
