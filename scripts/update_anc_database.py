@@ -12,6 +12,7 @@ data_dir = '../data/'
 ward_gis_query = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Administrative_Other_Boundaries_WebMercator/MapServer/31/query?where=1%3D1&outFields=WARD,NAME,REP_NAME,WEB_URL,REP_PHONE,REP_EMAIL,REP_OFFICE,WARD_ID&returnGeometry=false&returnDistinctValues=true&outSR=4326&f=json"
 anc_by_ward_gis_query = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Administrative_Other_Boundaries_WebMercator/MapServer/1/query?where=&text=%25{0}%25&outFields=ANC_ID,WEB_URL,NAME&returnGeometry=false&outSR=4326&f=json"
 smd_by_anc_gis_query = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Administrative_Other_Boundaries_WebMercator/MapServer/21/query?where=ANC_ID%3D%27{0}%27&outFields=SMD_ID,ANC_ID,NAME,CHAIR,REP_NAME,LAST_NAME,FIRST_NAME,ADDRESS,ZIP,EMAIL,WEB_URL,PHONE&returnGeometry=false&outSR=4326&f=json"
+abra_by_smd_query = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Business_and_Economic_Development_WebMercator/MapServer/5/query?where=UPPER(SMD)%20like%20%27%25{0}%25%27&outFields=LICENSE,APPLICANT,ADDRESS,STATUS,WARD,ZIPCODE,SMD,ANC,TRADE_NAME,CLASS,ADDRID,X,Y,TYPE&outSR=4326&f=json"
 
 def urlopen(url):
     # Opens a URL and decodes its content assuming UTF-8; returns a stream.
@@ -68,15 +69,7 @@ def add_base_data(anc_json):
 
 def add_abra_data(output):
     print("adding liquor license information")
-    # Number of liquor licenses in each ANC and SMD
-    abra_data = json.loads(open('data/abra-licenses.json').read())
-    for rec in abra_data:
-        anc = rec
-        output[anc[0]]["ancs"][anc[1]]["census"]["liquor_licenses"] = { "value": abra_data[rec]['number'] }
-        for rec in abra_data[rec]['smds']:
-                smd = rec
-                output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]]["census"]["liquor_licenses"] = { "value": abra_data[rec[:2]]['smds'][rec]['number'] }
-    
+
     #Iterate through the data for SMDs
     for ward in anc_json:
         if ward == "attributes":
@@ -89,7 +82,7 @@ def add_abra_data(output):
                     continue
                 else:
                     #query for the licenses for this SMD
-                    request_url = abra_by_smd.format(str(smd))
+                    request_url = abra_by_smd_query.format(str(smd))
                     print("Requesting: " + request_url)
                     json_request = requests.get(request_url, stream=True).json()
                     liquor_licenses = json_request["features"]
