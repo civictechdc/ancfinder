@@ -6,6 +6,12 @@ import requests
 import getpass
 from collections import OrderedDict
 
+data_dir = '../data/'
+
+# Opendata.dc.gov queries
+ward_gis_query = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Administrative_Other_Boundaries_WebMercator/MapServer/31/query?where=1%3D1&outFields=WARD,NAME,REP_NAME,WEB_URL,REP_PHONE,REP_EMAIL,REP_OFFICE,WARD_ID&returnGeometry=false&returnDistinctValues=true&outSR=4326&f=json"
+anc_by_ward_gis_query = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Administrative_Other_Boundaries_WebMercator/MapServer/1/query?where=&text=%25{0}%25&outFields=ANC_ID,WEB_URL,NAME&returnGeometry=false&outSR=4326&f=json"
+smd_by_anc_gis_query = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Administrative_Other_Boundaries_WebMercator/MapServer/21/query?where=ANC_ID%3D%27{0}%27&outFields=SMD_ID,ANC_ID,NAME,CHAIR,REP_NAME,LAST_NAME,FIRST_NAME,ADDRESS,ZIP,EMAIL,WEB_URL,PHONE&returnGeometry=false&outSR=4326&f=json"
 
 def urlopen(url):
     # Opens a URL and decodes its content assuming UTF-8; returns a stream.
