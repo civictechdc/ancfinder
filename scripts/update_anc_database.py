@@ -13,6 +13,7 @@ ward_gis_query = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Admi
 anc_by_ward_gis_query = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Administrative_Other_Boundaries_WebMercator/MapServer/1/query?where=&text=%25{0}%25&outFields=ANC_ID,WEB_URL,NAME&returnGeometry=false&outSR=4326&f=json"
 smd_by_anc_gis_query = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Administrative_Other_Boundaries_WebMercator/MapServer/21/query?where=ANC_ID%3D%27{0}%27&outFields=SMD_ID,ANC_ID,NAME,CHAIR,REP_NAME,LAST_NAME,FIRST_NAME,ADDRESS,ZIP,EMAIL,WEB_URL,PHONE&returnGeometry=false&outSR=4326&f=json"
 abra_by_smd_query = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Business_and_Economic_Development_WebMercator/MapServer/5/query?where=UPPER(SMD)%20like%20%27%25{0}%25%27&outFields=LICENSE,APPLICANT,ADDRESS,STATUS,WARD,ZIPCODE,SMD,ANC,TRADE_NAME,CLASS,ADDRID,X,Y,TYPE&outSR=4326&f=json"
+building_permits_by_smd_query = "https://maps2.dcgis.dc.gov/dcgis/rest/services/FEEDS/DCRA/MapServer/9/query?where=UPPER(SMD)%20like%20'%25{0}%25'&outFields=PERMIT_ID,PERMIT_TYPE_NAME,PERMIT_SUBTYPE_NAME,PERMIT_CATEGORY_NAME,APPLICATION_STATUS_NAME,FULL_ADDRESS,ZONING,PERMIT_APPLICANT,OWNER_NAME,LATITUDE,LONGITUDE,XCOORD,YCOORD,ZIPCODE,WARD,ANC,SMD&outSR=4326&f=json"
 
 def urlopen(url):
     # Opens a URL and decodes its content assuming UTF-8; returns a stream.
@@ -91,14 +92,24 @@ def add_abra_data(output):
 def add_building_permit_data(output):
     print("adding building permit information")
     # Number of building permits in each ANC and SMD
-    smd_building_permits = csv.reader(open('data/smd-building-permits.csv'), delimiter=',')
-    anc_building_permits = csv.reader(open('data/anc-building-permits.csv'), delimiter=',')
-    for rec in smd_building_permits:
-        smd = rec[0]
-        output[smd[0]]["ancs"][smd[1]]["smds"][smd[2:]]["census"]["building_permits"] = { "value": int(rec[1]) }
-    for rec in anc_building_permits:
-        anc = rec[0]
-        output[anc[0]]["ancs"][anc[1]]["census"]["building_permits"] = { "value": int(rec[1]) }
+
+    #Iterate through the data for SMDs
+    for ward in anc_json:
+        if ward == "attributes":
+            continue
+        for anc in anc_json[ward]:
+            if anc == "attributes":
+                continue
+            for smd in anc_json[ward][anc]:
+                if smd == "attributes":
+                    continue
+                else:
+                    #query for the licenses for this SMD
+                    request_url = building_permits_by_smd_query.format(str(smd))
+                    print("Requesting: " + request_url)
+                    json_request = requests.get(request_url, stream=True).json()
+                    building_permits = json_request["features"]
+                    anc_json[ward][anc][smd]["buildingPermits"] = building_permits
 
 def add_311_data(output):
     print("adding 311 information")
