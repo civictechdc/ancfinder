@@ -8,80 +8,84 @@ import os.path
 RECAPTCHA_PUBLIC_KEY = '6LeYAO8SAAAAALEZqtnk4qm7hoh8Iwv_h4lZ3lSe'
 RECAPTCHA_PRIVATE_KEY = '6LeYAO8SAAAAAICslEpPIpmMmkFiuNs_hrAzSRxx'
 
-environment_file = '/home/ancfinder/environment.yaml'
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+
+environment_file = '/srv/app/environment.yaml'
 
 if not os.path.exists(environment_file):
-	# Settings for local (not public) deployments.
+    # Settings for local (not public) deployments.
 
-	print "Running a local deployment..."
+    print "Running a local deployment..."
 
-	DEBUG = True
-	TEMPLATE_DEBUG = DEBUG
+    DEBUG = True
+    TEMPLATE_DEBUG = DEBUG
 
-	# For a simple setup when debugging, we'll hard-code these values.
-	SECRET_KEY = '7^^6oohvb%oc3$&amp;4z^#vplkp(!@dy24nm$d6a2g9^w#imqpme8'
+    # For a simple setup when debugging, we'll hard-code these values.
+    SECRET_KEY = '7^^6oohvb%oc3$&amp;4z^#vplkp(!@dy24nm$d6a2g9^w#imqpme8'
 
-	DATABASES = {
-		'default': {
-			'ENGINE': 'django.db.backends.sqlite3',
-			'NAME': os.path.join(os.path.dirname(__file__), 'database.sqlite').replace('\\','/'),
-		}
-	}
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(os.path.dirname(__file__), 'database.sqlite').replace('\\','/'),
+        }
+    }
 
-	EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-	ADMINS = (
-		# ('Your Name', 'your_email@example.com'),
-	)
-	
-	MANAGERS = ADMINS
-	
-	ALLOWED_HOSTS = ["*"]
+    ADMINS = (
+        # ('Your Name', 'your_email@example.com'),
+    )
+    
+    MANAGERS = ADMINS
+    
+    ALLOWED_HOSTS = ["*"]
 
-	# Absolute path to the directory static files should be collected to.
-	# Don't put anything in this directory yourself; store your static files
-	# in apps' "static/" subdirectories and in STATICFILES_DIRS.
-	# Example: "/home/media/media.lawrence.com/static/"
-	STATIC_ROOT = os.path.join(os.path.dirname(__file__), '../static') + '/'
+    # Absolute path to the directory static files should be collected to.
+    # Don't put anything in this directory yourself; store your static files
+    # in apps' "static/" subdirectories and in STATICFILES_DIRS.
+    # Example: "/home/media/media.lawrence.com/static/"
+    STATIC_ROOT = os.path.join(os.path.dirname(__file__), '../static') + '/'
 
 else:
-	# Settings for a public deployment.
-	
-	DEBUG = False
-	TEMPLATE_DEBUG = False
+    # Settings for a public deployment.
+    
+    DEBUG = False
+    TEMPLATE_DEBUG = False
+    
 
-	import yaml
-	with open(environment_file) as f:
-	  env = yaml.load(f)
-	SECRET_KEY = env['DJANGO_SECRET_KEY']
-	DATABASES = {
-		'default': {
-			'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    import yaml
+    with open(environment_file) as f:
+      env = yaml.load(f)
+    SECRET_KEY = env['DJANGO_SECRET_KEY']
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'HOST': env['DATABASE_HOST'],
             'PORT': int(env['DATABASE_PORT']),
-			'NAME': env['DATABASE_NAME'],
-			'USER': env['DATABASE_USERNAME'],
-			'PASSWORD': env['DATABASE_PASSWORD'],
-		}
-	}
+            'NAME': env['DATABASE_NAME'],
+            'USER': env['DATABASE_USERNAME'],
+            'PASSWORD': env['DATABASE_PASSWORD'],
+        }
+    }
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-	ADMINS = env['ADMINS']
-	MANAGERS = ADMINS
+    ADMINS = env['ADMINS']
+    MANAGERS = ADMINS
 
-	EMAIL_HOST = env['SMTP_HOST']
-	EMAIL_HOST_USER = env['SMTP_USER']
-	EMAIL_HOST_PASSWORD = env['SMTP_PASSWORD']
-	EMAIL_USE_TLS = True
+    # EMAIL_HOST = env['SMTP_HOST']
+    # EMAIL_HOST_USER = env['SMTP_USER']
+    # EMAIL_HOST_PASSWORD = env['SMTP_PASSWORD']
+    # EMAIL_USE_TLS = True
 
-	ALLOWED_HOSTS = ["*"] # anything unexpected will be filtered out by the http server
+    ALLOWED_HOSTS = ["*"] # anything unexpected will be filtered out by the http server
 
-	OPENID_TEMP_FOLDER = "/tmp/openid-ancfinder"
+    OPENID_TEMP_FOLDER = "/tmp/openid-ancfinder"
 
-	# Absolute path to the directory static files should be collected to.
-	# Don't put anything in this directory yourself; store your static files
-	# in apps' "static/" subdirectories and in STATICFILES_DIRS.
-	# Example: "/home/media/media.lawrence.com/static/"
-	STATIC_ROOT = env["STATIC_ROOT"]
+    # Absolute path to the directory static files should be collected to.
+    # Don't put anything in this directory yourself; store your static files
+    # in apps' "static/" subdirectories and in STATICFILES_DIRS.
+    # Example: "/home/media/media.lawrence.com/static/"
+    STATIC_ROOT = env["STATIC_ROOT"]
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
