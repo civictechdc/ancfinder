@@ -1,44 +1,44 @@
 {
-    "name": "ANC Finder", 
-    "description": "A website about DC's Advisory Neighborhood Commission system.", 
-    "license": "CC0-1.0", 
-    "status": "Production", 
-    "type": "Web App", 
-    "homepage": "http://ancfinder.org/", 
-    "repository": "https://github.com/codefordc/ancfinder", 
-    "thumbnail": "http://ancfinder.org/static/img/favicon.png", 
+    "name": "ANC Finder",
+    "description": "A website about DC's Advisory Neighborhood Commission system.",
+    "license": "CC0-1.0",
+    "status": "Production",
+    "type": "Web App",
+    "homepage": "http://ancfinder.org/",
+    "repository": "https://github.com/codefordc/ancfinder",
+    "thumbnail": "http://ancfinder.org/static/img/favicon.png",
     "geography": [
         "Washington, DC"
-    ], 
+    ],
     "contact": {
-        "name": "ANC Finder", 
-        "email": "contactus@ancfinder.org", 
+        "name": "ANC Finder",
+        "email": "ancfinder@codefordc.org", 
         "url": "https://twitter.com/@ancfinder"
-    }, 
+    },
     "partners": [
         {
-            "url": "http://codefordc.org", 
-            "name": "Code for DC", 
+            "url": "http://codefordc.org",
+            "name": "Code for DC",
             "email": ""
         }
-    ], 
+    ],
     "data": [
         {
-            "url": "http://ancfinder.org/static/meetings.json", 
-            "name": "ANC Meetings", 
+            "url": "http://ancfinder.org/static/meetings.json",
+            "name": "ANC Meetings",
             "metadata": ""
-        }, 
+        },
         {
-            "url": "http://ancfinder.org/static/ancs.json", 
-            "name": "ANC Commissioners", 
+            "url": "http://ancfinder.org/static/ancs.json",
+            "name": "ANC Commissioners",
             "metadata": ""
         }
-    ], 
+    ],
     "tags": [
-        "Politics", 
-        "Government", 
+        "Politics",
+        "Government",
         "Open Data"
-    ], 
-    "links": [], 
+    ],
+    "links": [],
     "id": "https://raw.githubusercontent.com/DCgov/civic.json/master/schemas/schema-v1.json"
 }
