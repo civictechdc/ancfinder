@@ -1,0 +1,194 @@
+---
+layout: default
+---
+
+<div class='row'>
+  <div class='col-sm-12'>
+    <p class='h2'>Code for DC is a non-partisan, non-political group of volunteer civic hackers working together to solve local issues and help people engage with the city.<br /><br /></p>
+  </div>
+</div>
+
+<!-- if an event page has been created for this day, show that, otherwise pull from meetup -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><b>Next Code for DC [or "Tonight's event" if tonight]</b> <a class='pull-right' href='https://www.meetup.com/Code-for-DC/events/'>All upcoming events &raquo;</a></h3>
+  </div>
+  <div class="panel-body">
+    {% for post in site.categories['events'] limit:1 %}
+    <strong>6pm {{ post.date | date: "%A, %B %-d, %Y" }}</strong>
+
+    <h2 class='no-margin-top'>
+      <small>#{{post.event_id}}</small>
+      <a href="{{post.url}}">{{post.title}}</a>
+    </h2>
+    <div class='row'>
+      <div class='col-sm-7'>
+        {% if post.description %}
+          <p>{{ post.description }}</p>
+        {% endif %}
+        <br />
+        {% if site.time <= post.date %}
+          <a class='btn btn-success btn-lg' href="http://chihacknight.eventbrite.com/" target='_blank'><i class='fa fa-check-square-o'></i> RSVP (required)</a>
+        {% endif %}
+        <a class='btn btn-link btn-lg' href="{{post.url}}"><i class='fa fa-info-circle-square-o'></i> Details</a>
+        <a class='btn btn-link btn-lg' href="{{post.agenda}}" target='_blank'><i class='fa fa-file-text-o'></i> Agenda</a>
+      </div>
+      <div class='col-sm-5'>
+        {% if post.image %}
+          <a href="{{post.url}}"><img class='img-responsive img-thumbnail' src='{{post.image}}' alt='{{post.title}}' /></a>
+          {% if post.image_credit %}
+            <br /><small class='pull-right'><em>Photo: {{ post.image_credit }}</em></small>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+      {% endfor %}
+  </div>
+</div>
+
+{% for post in site.categories['satellite']  limit:1 %}
+  {% if site.time <= post.date %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><b>Next Community Event</b></h3>
+      </div>
+      <div class="panel-body">
+        <strong>6pm {{ post.date | date: "%A, %B %-d, %Y" }}</strong>
+
+        <h2 class='no-margin-top'>
+          <a href="{{post.url}}">{{post.title}}</a>
+        </h2>
+        <div class='row'>
+          <div class='col-sm-7'>
+            {% if post.description %}
+              <p>{{ post.description }}</p>
+            {% endif %}
+            <br />
+            {% if site.time <= post.date %}
+              <a class='btn btn-success btn-lg' href="{{post.rsvp}}" target='_blank'><i class='fa fa-check-square-o'></i> RSVP</a>
+            {% endif %}
+            <a class='btn btn-link btn-lg' href="{{post.url}}"><i class='fa fa-info-circle-square-o'></i> Details</a>
+            <a class='btn btn-link btn-lg' href="{{post.agenda}}" target='_blank'><i class='fa fa-file-text-o'></i> Agenda</a>
+          </div>
+          <div class='col-sm-5'>
+            {% if post.image %}
+              <a href="{{post.url}}"><img class='img-responsive img-thumbnail' src='{{post.image}}' alt='{{post.title}}' /></a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><b>Most recent event</b> <a class='pull-right' href='/events/'>All past events &raquo;</a></h3>
+  </div>
+  <div class="panel-body">
+    {% for post in site.categories['events'] limit:1 %}
+    <strong>6pm {{ post.date | date: "%A, %B %-d, %Y" }}</strong>
+
+    <h2 class='no-margin-top'>
+      <small>#{{post.event_id}}</small>
+      <a href="{{post.url}}">{{post.title}}</a>
+    </h2>
+    <div class='row'>
+      <div class='col-sm-7'>
+        {% if post.description %}
+          <p>{{ post.description }}</p>
+        {% endif %}
+        <br />
+        {% if site.time <= post.date %}
+          <a class='btn btn-success btn-lg' href="http://chihacknight.eventbrite.com/" target='_blank'><i class='fa fa-check-square-o'></i> RSVP (required)</a>
+        {% endif %}
+        <a class='btn btn-link btn-lg' href="{{post.url}}"><i class='fa fa-info-circle-square-o'></i> Details</a>
+        <a class='btn btn-link btn-lg' href="{{post.agenda}}" target='_blank'><i class='fa fa-file-text-o'></i> Agenda</a>
+      </div>
+      <div class='col-sm-5'>
+        {% if post.image %}
+          <a href="{{post.url}}"><img class='img-responsive img-thumbnail' src='{{post.image}}' alt='{{post.title}}' /></a>
+          {% if post.image_credit %}
+            <br /><small class='pull-right'><em>Photo: {{ post.image_credit }}</em></small>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+      {% endfor %}
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><b>Latest blog post [only display if it was within past X time frame]</b> <a class='pull-right' href='/blog/'>All posts &raquo;</a></h3>
+  </div>
+  <div class="panel-body">
+    {% assign post_special = site.categories['blog'] | where: "author", "Steven Reilly and Matt Bailey" %}
+    {% for post in post_special limit:1 %}
+      <div class='row'>
+        <div class='col-sm-4'>
+          {% if post.image %}
+            <img class='img-thumbnail img-responsive' src='{{post.image}}' alt='{{ post.title }}' />
+          {% else %}
+            <img class='img-thumbnail img-responsive' src='/images/logo/logo.png' alt='{{ post.title }}' />
+          {% endif %}
+        </div>
+        <div class='col-sm-8'>
+          <h4>
+            <a href='{{post.url}}'>{{ post.title }}</a>
+          </h4>
+          <p>
+            <small>{{ post.date | date: "%b %-d, %Y" }} by
+              <a class='muted' href='{{post.author_url}}'>{{post.author}}</a>
+              {% if post.author2 %}
+                , <a class='muted' href='{{post.author2_url}}'>{{post.author2}}</a>
+              {% endif %}
+            </small>
+            <br />
+            {{ post.description | markdownify }} <a href='{{post.url}}'>Read&nbsp;more&nbsp;&raquo;</a>
+          </p>
+          <br />
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class='row'>
+  <div class='col-sm-12'>
+
+    <h2 id='about'>Welcome!</h2>
+
+    <p>Founded in 2012, Code for DC is a non-partisan, non-political group of volunteer civic hackers working together to solve local issues and help people engage with the city. We host twice-monthly hacknights and other events to gather, discuss, and get stuff done.</p>
+    <p>We're looking to bring people with all different skill sets together to maximize our potential. Civic hackers aren't just developers—they're journalists, lawyers, designers, and interested citizens in general. The more community participation, the better.</p>
+
+    <!-- <hr />
+    <h2 id='community'>Join our community</h2>
+
+    <p>Chi Hack Night is a central hub for <a href='/community.html'>Chicago's civic tech community</a>. Here's the three best ways to get involved:</p>
+
+    <div class='row text-center'>
+      <div class='col-sm-4'>
+        <div class='well'>
+          <h1><i class='fa fa-fw fa-calendar'></i></h1>
+          <p>1. Go to Chi Hack Night. <a href='http://chihacknight.eventbrite.com/'>We meet every Tuesday at 6pm</a></p>
+        </div>
+      </div>
+
+      <div class='col-sm-4'>
+        <div class='well'>
+          <h1><i class='fa fa-fw fa-envelope'></i></h1>
+          <p>2. <a href='http://eepurl.com/z65hn'>Subscribe to updates</a> on upcoming speakers and events</p>
+        </div>
+      </div>
+
+      <div class='col-sm-4'>
+        <div class='well'>
+          <h1><i class='fa fa-fw fa-group'></i></h1>
+          <p>3. Browse our <a href='/breakouts.html'>weekly breakouts</a> to find your group</p>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+</div>
