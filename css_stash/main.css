@@ -1,0 +1,118 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  color: #640000;
+}
+
+footer {
+  background-color: #F5F6F6;
+}
+
+button {
+  background-color: #0051EF;
+}
+
+#navbar {
+  padding: 1%;
+  background-color: #F5F6F6;
+  display:inline-block;
+}
+
+
+#hero-image {
+  background-image: url("../assets/aa.png");
+  height: 80vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+}
+
+#hero-header-text {
+  margin: 2%;
+  margin-left: 10%;
+}
+
+#hero-text {
+  color: white;
+  background-color: #711613;
+  padding-left: 2%;
+  padding-right: 2%;
+  display: inline-block;
+  font-size: 320%;
+}
+
+#hero-p {
+  width: 50%;
+  color: white;
+  margin-left: 2%;
+}
+
+#learn-more {
+  padding: 2.1%;
+  padding-left: 8%;
+  padding-right: 8%;
+  border-top: solid 2px #0051EF;
+}
+
+#join-slack {
+  background-color: rgba(255, 255, 255, 0);
+  border: solid 2px white;
+}
+
+.card-container {
+  margin-left: 10%;
+}
+
+.card-container > * {
+  width: 90%;
+}
+
+.navbar-right {
+  margin-top: 1%;
+  float: right;
+  width: 50%;
+}
+
+.navbar-right > * {
+  margin-left: 6%;
+}
+
+.nav-link, .nav-link:visited  {
+  text-decoration: none;
+  font-size: 140%;
+  color: #7A7A7A;
+}
+
+.project-section-header {
+  margin-left: 5%;
+  display: inline-block;
+}
+
+.project-section-header ~ a {
+  float: right;
+  margin-top: 3%;
+  margin-right: 5%;
+  color: #6F130E;
+  display: inline-block;
+}
+
+.project-card {
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  border-radius: 20px;
+}
+
+.project-card > img {
+  border-radius: 20px 20px 0 0;
+}
+
+.project-card > h3, .project-card > p {
+  padding-left: 20px;
+}
