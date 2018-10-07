@@ -41,7 +41,7 @@
                 <li><a class="smooth" href="{% url 'ancfindersite_home' %}#what-is-an-anc">What Are ANCs?</a></li>
 
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Explore ANCs</a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Explore Classy ANCs</a>
                     <ul id="menu_anc_list" class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                         {% for ancs in ancs_by_ward %}
                         <div class="ward">
@@ -59,6 +59,14 @@
                 </li>
 
                 <!--<li><a href="map.html" title="Which ANC distict do you live in? Who is your Commissioner? Learn that and more here.">Find My ANC</a></li>-->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Elections</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="https://www.dcboe.org/Candidates/2018-Elections-(2)">Full City List</a></li>
+                        <li class="divider"></li>
+                        <li><a href="https://www.dcboe.org/Candidates/2018-Elections-(1)">ANC Candidate List</a></li>
+                    </ul>
+                </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Submit Info</a>
                     <ul class="dropdown-menu" role="menu">
