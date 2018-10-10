@@ -20,9 +20,6 @@ services:
             - "443:443"
         links:
             - ancfinder
-        networks:
-            - docker-network
-
     ancfinder:
         image: codefordc2/ancfinder:2.0
         command: python manage.py runserver 0.0.0.0:8000
@@ -30,7 +27,3 @@ services:
             - postgres
         volumes:
             - ./environment.yaml:/home/ancfinder/environment.yaml
-
-networks:
-    docker-network:
-        driver: bridge
