@@ -15,6 +15,8 @@ import os, sys
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 environment_file = '/srv/app/environment.yaml'
+local_environment_file = 'user_local_environment.yaml'
+
 
 if os.path.exists(environment_file):
     print("Running production deployment...")
@@ -52,8 +54,8 @@ if os.path.exists(environment_file):
     # Don't put anything in this directory yourself; store your static files
     # in apps' "static/" subdirectories and in STATICFILES_DIRS.
     # Example: "/home/media/media.lawrence.com/static/"
-    STATIC_URL = "/static/"
-    STATIC_ROOT = env["STATIC_ROOT"]
+    STATIC_URL = env["STATIC_ROOT"]
+    MAPBOX_API_KEY = env["MAPBOX_API_KEY"]
 
     MAPBOX_API_KEY = env["MAPBOX_API_KEY"]
 elif "POSTGRES_PASSWORD" in os.environ:

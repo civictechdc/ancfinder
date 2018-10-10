@@ -44,5 +44,8 @@ def TemplateContextProcessor(request):
 	return {
 		"ancs_by_ward": sorted(ancs_by_ward.items()),
 		"anc_list": sorted(anc_list),
+<<<<<<< HEAD
 		"MAPBOX_API_KEY": settings.MAPBOX_API_KEY,
+=======
+>>>>>>> initial commit of new version of ancfinder
 	}
