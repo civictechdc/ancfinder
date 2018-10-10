@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from django.http import Http404, HttpResponse
 from django.views.generic import TemplateView
+<<<<<<< HEAD
 from django.conf import settings
+=======
+>>>>>>> initial commit of new version of ancfinder
 import logging
 
 from ancfinder_site.models import *

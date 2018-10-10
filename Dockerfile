@@ -19,5 +19,9 @@ EXPOSE 8000
 # RUN python3 manage.py makemigrations
 # RUN python3 manage.py migrate
 
+# Ensure that the model and database are correctly mapped
+RUN python3 manage.py makemigrations
+RUN python3 manage.py migrate
+
 # Run these when the container launches
 CMD ["./run.sh"]
