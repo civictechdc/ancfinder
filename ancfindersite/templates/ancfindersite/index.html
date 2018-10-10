@@ -15,13 +15,7 @@
 {% block master_body %}
 
 <div id="masthead">
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-sm-10 col-sm-offset-1">
-    				<h1><a class="smooth" href="#what-is-an-anc" style="text-decoration: none">What is an ANC? Give me the tour! <span style="margin-left: .5em">▶</span></a></h1>
-    			</div>
-    		</div>
-    	</div>
+	What is an ANC? Give me the tour! <span style="margin-left: .5em">▶</span>
 </div>
 
 <div id="body">
@@ -41,25 +35,25 @@
 				<input type="button" onclick="do_address()" value="Find Out About My ANC ▶"/>
 				<div id="use_my_location"><a href="#" onclick="use_my_location(); return false;">Use my current location</a></div>
 			</div>
-			
+
 			<!--If search successful, details below-->
 			<div id="info" style="display: none; margin-top: 1em;">
 				<div>
 					<p>You live in <b>ANC <span class="anc-name"> </span></b>, single member district <b><span class="smd-name"> </span></b></p>
-					
+
 					<p>Your commissioner is: <b><span class="smd-commissioner"></span></b>
-					
+
 					<p><a id="anc-link">Find out more about this ANC</a></p>
-				
+
 					</div>
 			</div>
 			<!--Search unsuccessful-->
 			<div id="info_address_not_found" style="display: none">
 				We couldn't find your address. Please try again.
 			</div>
-			
+
 		  </div>
-		  
+
 		  <div id="map_col" class="col-sm-5" style="padding-bottom: 10px">
 			<div id="map_canvas_google" class="map"> </div>
 		  </div>
@@ -67,7 +61,7 @@
 	</div>
 	</div>
 	</div>
-	
+
         <div id="what-is-an-anc-wrapper" style="display: none">
         <div id="what-is-an-anc" class="widecontainer style1">
 	<div class="container">
@@ -101,7 +95,7 @@
 		</div>
 	</div>
 	</div>
- 
+
 	<div class="widecontainer style1">
 	<div class="container">
 		<div class="row">
@@ -117,7 +111,7 @@
 		</div>
 	</div>
 	</div>
- 
+
 	<div class="widecontainer style2">
 	<div class="container">
 		<div class="row">
@@ -143,7 +137,7 @@
 			</div>
 			<div class="col-sm-5 image">
 				<img src="static/img/hand.svg"/>
-				
+
 				<div id="jump_to_top">
 					<a href="#">Jump to the top ▴</a>
 				</div>
@@ -156,19 +150,19 @@
 {% endblock %}
 
 {% block scripts %}
-	
+
 	<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript" src="https://gis.govtrack.us/static/js/google_maps_helpers.js"></script>
 	<script type="text/javascript" src="https://gis.govtrack.us/static/js/maps_helpers.js"></script>
 
 	<script type="text/javascript">
 		var map = null;
-		
+
 		$(function() {
 			// manually resizing things causes too much responsive design trouble
 			//resize_things();
 			//$(window).resize(resize_things);
-			
+
 			initialize_google_map(false);
 			add_overlay(map, "dc-ward-2013", 8, 12);
 			//add_overlay(map, "dc-ward-2013-outlines", 13, 20);
@@ -176,12 +170,12 @@
 			add_overlay(map, "dc-anc-2013-outlines", 15, 20);
 			add_overlay(map, "dc-smd-2013-outlines", 13, 14);
 			add_overlay(map, "dc-smd-2013", 15, 20);
-			
+
 			$('#addr').keydown_enter(do_address);
 			$('#addr').input_default("Enter an address!");
-			
+
 			if (navigator.geolocation) $('#use_my_location').show();
-			
+
 			$('a.smooth').click(function(e) {
                 $("#what-is-an-anc-wrapper").show();
 				e.preventDefault();
@@ -194,7 +188,7 @@
 				});
 				return false;
 			});
-			
+
 			$(function() {
 				if (window.location.hash.length > 1) {
 					$('a.smooth').each(function() {
@@ -213,7 +207,7 @@
 				});
 				return false;
 			});
-			
+
 			// If the URL fragment has an SMD name, show the info for that SMD.
 			var initial_smd = window.location.hash.toUpperCase().substring(1);
 			if (initial_smd.length == 4)
@@ -222,7 +216,7 @@
 
 		function resize_things() {
 			$('#map_col').css({ height: $('#map_col').width() * 3.5/4 });
-			
+
 			var h = $(window).height() - $('.widecontainer.main').offset().top*2;
 			$('.widecontainer.main').css({ minHeight: h });
 
@@ -233,7 +227,7 @@
 		}
 
 		{% include "ancfindersite/google_maps.js" %}
-		
+
 		function use_my_location() {
 			navigator.geolocation.getCurrentPosition(
 				function(position) {
@@ -292,7 +286,7 @@
 			$('#info').fadeOut();
 			$('#info_address_not_found').fadeIn();
 		}
-		
+
 		var location_marker = null;
 		function show_smd_info(smd_id, addr_coords) {
 			$.ajax({
@@ -304,14 +298,14 @@
 								var ward = res.ward;
 								var anc = res.anc;
 								var smd = res.smd;
-								
+
 								// put SMD in the URL fragment so the user can reload the page
 								// and get right to his district again
 								window.location.hash = "#" + smd_id;
-								
+
 								// hide prompt text to enter your address
 								$('#intro').slideUp();
-								
+
 								// update the map
 								if (map) {
 									var boundsarray = res.bounds;
@@ -323,7 +317,7 @@
 									map.overlayMapTypes.clear();
 									add_overlay(map, "dc-anc-2013/" + smd_id.toLowerCase().substring(0, 2), null, null, .75);
 									add_overlay(map, "dc-smd-2013/" + smd_id.toLowerCase());
-									
+
 									if (addr_coords) {
 										if (!location_marker) {
 											location_marker = new google.maps.Marker({
@@ -338,35 +332,35 @@
 										location_marker.setVisible(false);
 									}
 								}
-								
+
 								// show ANC/SMD info
 								$(".smd-name").text(res.smd);
 								$(".anc-name").text(res.anc);
-								
+
 								$('.has-commissioner').show();
 								var name = "";
 								name += res.first_name + " ";
 								if (res.nickname) name += res.nickname + " ";
 								if (res.middle_name) name += res.middle_name + " ";
-								name += res.last_name;								
+								name += res.last_name;
 								if (res.suffix) name += " " + res.suffix;
 								$(".smd-commissioner").text(name);
-									
+
 								$('#map_col').show();
 								$('#info').fadeIn();
 								$('#info_address_not_found').fadeOut();
-								
+
 								$('#what-is-an-anc h2').text("What is ANC " + res.anc + "?");
-								$('#what-is-an-anc .what-is-it').text(anc + " is one of Washington DC’s 40 Advisory Neighborhood Commissions.");  
+								$('#what-is-an-anc .what-is-it').text(anc + " is one of Washington DC’s 40 Advisory Neighborhood Commissions.");
 								$('#what-is-an-anc .how-many-commissioners').text("Your ANC is composed of " +  res.num_smds + " commissioners who make decisions about a broad range of issues in your community, such as liquor licenses, parking, and sanitation.");
-								
+
 								$('#anc-link').attr('href', "/" + res.anc + "#" + res.smd)
 									.text("Find out more about " + res.anc + " >");
-								
+
 								return true;
-					
+
 				}
 			})
 		}
 	</script>
-{% endblock %}	
+{% endblock %}

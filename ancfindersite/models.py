@@ -10,7 +10,11 @@ try:
 except ImportError:
 	import simplejson as json
 
-anc_list = ['1A', '1B', '1C', '1D', '2A', '2B', '2C', '2D', '2E', '2F', '3B', '3C', '3D', '3E', '3F', '3G', '4A', '4B', '4C', '4D', '5A', '5B', '5C', '5D', '5E', '6A', '6B', '6C', '6D', '6E', '7B', '7C', '7D', '7E', '7F', '8A', '8B', '8C', '8D', '8E']
+anc_list = ['1A', '1B', '1C', '1D', '2A', '2B', '2C', '2D',
+ 			'2E', '2F', '3B', '3C', '3D', '3E', '3F', '3G',
+			'4A', '4B', '4C', '4D', '5A', '5B', '5C', '5D',
+			'5E', '6A', '6B', '6C', '6D', '6E', '7B', '7C',
+			'7D', '7E', '7F', '8A', '8B', '8C', '8D', '8E']
 
 anc_data = json.loads(open(settings.STATIC_ROOT + "/ancs.json").read(), object_pairs_hook=collections.OrderedDict)
 

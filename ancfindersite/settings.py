@@ -15,7 +15,7 @@ environment_file = '/srv/app/environment.yaml'
 if not os.path.exists(environment_file):
     # Settings for local (not public) deployments.
 
-    print "Running a local deployment..."
+    print("Running a local deployment...")
 
     DEBUG = True
     TEMPLATE_DEBUG = DEBUG
@@ -35,9 +35,9 @@ if not os.path.exists(environment_file):
     ADMINS = (
         # ('Your Name', 'your_email@example.com'),
     )
-    
+
     MANAGERS = ADMINS
-    
+
     ALLOWED_HOSTS = ["*"]
 
     # Absolute path to the directory static files should be collected to.
@@ -48,10 +48,10 @@ if not os.path.exists(environment_file):
 
 else:
     # Settings for a public deployment.
-    
+
     DEBUG = False
     TEMPLATE_DEBUG = False
-    
+
 
     import yaml
     with open(environment_file) as f:
@@ -189,13 +189,13 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.humanize',
-    
+
     'bootstrapform',
     'tinymce',
 
     'registration',
     'emailverification',
-    
+
     'ancfindersite',
     'annotator',
 )
