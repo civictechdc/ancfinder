@@ -1,7 +1,7 @@
-import datetime, json, urllib2, os, errno, requests
+import datetime, json, os, errno, requests
 
 # Open/create file, deleting info already in it so that we can make fresh info
-file_name = open('data/311.json', 'w')
+file_name = open('../data/311.json', 'w')
 issues = []
 working = {'issues':issues}
 data = {}
@@ -12,14 +12,16 @@ start_date = (datetime.datetime.today() + datetime.timedelta(-180)).isoformat()
 
 # Request info from SeeClickFix API
 url = 'https://seeclickfix.com/api/v2/issues?place_url=district-of-columbia&&after='+start_date+'&page=1&per_page=100'
-response = urllib2.urlopen(url)
+print("Requesting: " + url)
+response = requests.get(url, stream=True).json()
+print("Response: " + str(response))
 info = json.load(response)
 endpoint = info['metadata']['pagination']['pages']
 
 page = 1
 while page < endpoint:
     url = 'https://seeclickfix.com/api/v2/issues?place_url=district-of-columbia&&after='+start_date+'&page='+str(page)+'&per_page=100'
-    response = urllib2.urlopen(url)
+    response = urllib.request.urlopen(url)
     info = json.load(response)
     working['issues'] += info['issues']
     page +=1
@@ -34,7 +36,7 @@ for issue in working['issues']:
         smd = info['objects'][0]['external_id']
         anc = info['objects'][0]['external_id'][:2]
         variety = issue['summary']
-        print smd, issue['lng'], issue['lat'], variety
+        print(smd, issue['lng'], issue['lat'], variety)
         if anc in data:
             if smd in data[anc]['smds']:
                 data[anc]['smds'][smd]['total'] += 1
@@ -65,6 +67,5 @@ for issue in working['issues']:
 
 # Save the JSON file
 
-with open('data/311.json', 'w') as output:
+with open('../data/311.json', 'w') as output:
 	json.dump(data, output, sort_keys=True, indent=4)
-

@@ -113,27 +113,10 @@ def add_building_permit_data(output):
 
 def add_311_data(output):
     print("adding 311 information")
-    # Number of 311 requests in each ANC 
-    data = json.loads(open('data/311.json').read())
+    # Number of 311 requests in each ANC
+    data = json.loads(open(data_dir + '311.json').read())
     for anc in data:
         output[anc[0]]['ancs'][anc[1]]['census']['311_requests'] = { "value": int(data[anc]['total']) }
-
-def add_geographic_data(output):
-    print("adding geographic data")
-
-    def get_gis_data(name, layer):
-            gisdata = json.load(urlopen("http://gis.govtrack.us/boundaries/dc-%s-2013/%s" % (layer, name.lower())))
-            ret = OrderedDict()
-            ret["bounds"] = gisdata["extent"]
-            ret["area"] = gisdata["metadata"]["area_sq_m"] # square meters
-            return ret
-
-    # Add ANC/SMD geographic extents (bounding box) from the GIS server.
-    for ward in list(output.values()):
-        for anc in list(ward["ancs"].values()):
-            anc.update(get_gis_data(anc["anc"], "anc"))
-            for smd in list(anc["smds"].values()):
-                smd.update(get_gis_data(smd["smd"], "smd"))
 
 def add_neighborhood_data(output):
     print("adding neighborhood data")
@@ -146,7 +129,7 @@ def add_neighborhood_data(output):
     # Query the Census API for the population of every block group that intersects
     # with a neighborhood.
     bg_population = { }
-    for intsect in json.load(open("data/neighborhoods-blockgroups.json")):
+    for intsect in json.load(open(data_dir + "neighborhoods-blockgroups.json")):
         bg = intsect["2012-blockgroups"]["id"]
         if bg in bg_population: continue
         state_fips, county_fips, tract, bg_num = bg[0:2], bg[2:5], bg[5:11], bg[11:12]
@@ -162,24 +145,24 @@ def add_neighborhood_data(output):
     # For each neighborhood, sum the populations of the block groups it intersects with
     # weighted by the proportion of the block group that intersects with the neighborhood.
     hood_population = { }
-    for intsect in json.load(open("data/neighborhoods-blockgroups.json")):
+    for intsect in json.load(open(data_dir + "neighborhoods-blockgroups.json")):
         h = intsect["dc-neighborhoods"]["id"]
         bg = intsect["2012-blockgroups"]["id"]
         intsect_pop = bg_population[bg] * intsect["2012-blockgroups"]["ratio"]
         hood_population[h] = hood_population.get(h, 0) + intsect_pop
-        
+
     # Clear out existing data.
     for ward in output.values():
         for anc in ward["ancs"].values():
             anc["neighborhoods"] = []
             for smd in anc["smds"].values():
                 smd["neighborhoods"] = []
-    
+
     # Now store the neighborhood data in the output, once for ANCs as a whole
     # and once for the SMDs.
 
     for anc_smd in ("anc", "smd"):
-        dat = json.load(open("data/%s-neighborhood.json" % anc_smd))
+        dat = json.load(open(data_dir + "%s-neighborhood.json" % anc_smd))
         for ix in dat:
             ward = ix[anc_smd]["id"][0]
             anc = ix[anc_smd]["id"][1]
@@ -189,7 +172,7 @@ def add_neighborhood_data(output):
             else:
                 smd = ix[anc_smd]["id"][2:]
                 feature = output[ward]["ancs"][anc]["smds"][smd]
-                
+
             feature["neighborhoods"].append({
                 "name": ix["neighborhood"]["name"],
                 "part-of-" + anc_smd: ix[anc_smd]["ratio"],
@@ -237,7 +220,7 @@ def add_census_data(output):
 
     census_data = { }
     for division in ("tract", "blockgroup"):
-        dat = json.load(open("data/smd-%s.json" % division))
+        dat = json.load(open(data_dir + "smd-%s.json" % division))
         for intsect in dat:
             #if intsect["smd"]["id"] != "1A02": continue
 
@@ -272,7 +255,7 @@ def add_census_data(output):
     # Estimate values for the ANCs and SMDs as a whole.
     for division1 in ("smd", "anc"):
         for division2 in ("tract", "blockgroup"):
-            dat = json.load(open("data/%s-%s.json" % (division1, division2)))
+            dat = json.load(open(data_dir + "%s-%s.json" % (division1, division2)))
             for ix in dat:
                 # Here's an intersection between an ANC/SMD and a blockgroup/tract.
 
@@ -393,15 +376,14 @@ if __name__ == "__main__":
 
     ## Lets pars the passed arguments
     if should("base"): add_base_data(anc_json)
+    #if should("gis"): add_geographic_data(anc_json)
+    #if should("neighborhoods"): add_neighborhood_data(anc_json)
+    #if should("census"): add_census_data(anc_json)
+    #if should("census") or should("census-analysis"): add_census_data_analysis(anc_json)
+    if should("abra"): add_abra_data(anc_json)
+    if should("building"): add_building_permit_data(anc_json)
+    #if should("311"): add_311_data(anc_json)
 
-    if should("terms"): add_term_data(output)
-    if should("gis"): add_geographic_data(output)
-    if should("neighborhoods"): add_neighborhood_data(output)
-    if should("census"): add_census_data(output)
-    if should("census") or should("census-analysis"): add_census_data_analysis(output)
-    if should("abra"): add_abra_data(output)
-    if should("building"): add_building_permit_data(output)
-    if should("311"): add_311_data(output)
     # Output.
     anc_json = json.dumps(anc_json, indent=True, ensure_ascii=False, sort_keys=("--reset" in sys.argv))
 
