@@ -18,11 +18,18 @@ services:
         ports:
             - "80:80"
             - "443:443"
-        links: 
+        links:
             - ancfinder
+        networks:
+            - docker-network
+
     ancfinder:
         image: codefordc2/ancfinder:latest
         links:
             - postgres
         volumes:
             - ./environment.yaml:/home/ancfinder/environment.yaml
+
+networks:
+    docker-network:
+        driver: bridge
