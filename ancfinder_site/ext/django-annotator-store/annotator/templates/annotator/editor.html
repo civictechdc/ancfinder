@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Tag: {{document}}{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="http://assets.annotateit.org/annotator/v1.2.7/annotator.min.css">
+{% endblock %}
+
+{% block scripts %}
+<script src="http://assets.annotateit.org/annotator/v1.2.7/annotator-full.js"></script>
+
+<script>
+Annotator.Plugin.ReadOnlyAnnotations = function (element) {
+  return {
+    pluginInit: function () {
+      this.annotator
+          .subscribe("annotationViewerShown", function (viewer) {
+            for (var i in viewer.annotations) {
+            	if (viewer.annotations[i].readonly) { 
+            		$(viewer.element).find(".annotator-edit").remove();
+            		$(viewer.element).find(".annotator-delete").remove();
+				}
+			}
+            console.info("The annotation: %o has just been created!", viewer)
+          })
+    }
+  };
+};
+
+jQuery(function ($) {
+    $('#document_body').annotator()
+    	.annotator('addPlugin', 'Tags')
+    	.annotator('addPlugin', 'ReadOnlyAnnotations')
+    	.annotator('addPlugin', 'Store', {
+			  prefix: '{{storage_api_base_url}}',
+			  annotationData: {
+				'document': {{document.id}}
+			  },
+			  loadFromSearch: {
+				'document': {{document.id}}
+			  }
+			});
+});
+</script>
+{% endblock %}
+
+{% block body %}
+
+	<h1>{{document}}</h1>
+	
+	<div id="document_body">
+		{{document.body|safe}}
+	</div>
+
+{% endblock %}
+

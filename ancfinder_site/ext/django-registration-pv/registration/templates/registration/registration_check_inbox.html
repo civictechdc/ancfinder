@@ -1,0 +1,17 @@
+{% extends "registration/base.html" %}
+
+{% block title %}Check Your Inbox{% endblock %}
+
+{% block body %}
+<h1>Check Your Inbox</h1>
+		
+<p style="margin-top: 1em;">We&rsquo;ve sent an email to you at <em>{{email}}</em> with instructions to activate your account. Please check your email shortly.</p>
+		
+<p>If you do not receive a message within the next minute or two:</p>
+
+<ul>
+	<li>Check your junk or spam email folder.</li>
+	<li>If you registered using the wrong email address, you must go back and <a href="javascript:history.go(-1)">start your registration over</a>.</li>
+</ul>
+{% endblock %}
+

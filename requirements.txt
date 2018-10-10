@@ -1,16 +1,2 @@
-django==2.1
-cssselect
-lxml
-django-tinymce
-BeautifulSoup4
-django-picklefield
-recaptcha-client
-python-dateutil
-pyyaml
-git+https://github.com/JoshData/django-bootstrap-form
-twitter
-icalendar
-psycopg2
-flup
+django=2.1.2
 requests
-markdown
