@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block base_body %}
+<h2>Find Your ANC</h2>
+<p style="margin-bottom: 1em">Washington DC is divided into 40 districts called Advisory Neighborhood Commissions, or ANCs.</p>
+<p>Let&rsquo;s find yours. Enter your home address to get started:</p>
+
+<div class="input-group mb-3">
+	<input type="text" class="form-control" placeholder="Your Address" aria-label="Your address"/>
+	<div class="input-group-append">
+		<button class="btn btn-outline-secoundary" type="button" onclick="do_address()">Find Out About My ANC</button>
+	</div>
+	<!-- <div id="use_my_location"><a href="#" onclick="use_my_location(); return false;">Use my current location</a></div>-->
+</div>
+
+<!--If search successful, details below-->
+<div id="info" style="display: none; margin-top: 1em;">
+	<div>
+		<p>You live in <b>ANC <span class="anc-name"> </span></b>, single member district <b><span class="smd-name"> </span></b></p>
+		<p>Your commissioner is: <b><span class="smd-commissioner"></span></b>
+		<p><a id="anc-link">Find out more about this ANC</a></p>
+	</div>
+</div>
+
+<!--Search unsuccessful-->
+<div id="info_address_not_found" style="display: none">
+	We couldn't find your address. Please try again.
+</div>
+
+<div id='map' style='width: 100%; height: 300px;'></div>
+
+{% endblock %}
+{% block base_scripts %}
+<script>
+mapboxgl.accessToken = 'pk.eyJ1Ijoib3BlbmRhdGFkYyIsImEiOiJjaXp5dG55MjgwM2YxMnFuaHkwcmhzazViIn0.g5M1SkNciMdpOy5IJAs-ow';
+var map = new mapboxgl.Map({
+    container: 'map',
+		center: [-77.0369, 38.9072],
+		zoom: 9,
+    style: 'mapbox://styles/mapbox/streets-v9'
+});
+</script>
+{% endblock %}

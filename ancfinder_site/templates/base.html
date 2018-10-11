@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      {% load static %}
+      <meta charset="utf-8"> {% block meta_viewport %}
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">{% endblock %}
+
+      <title>
+          ANC Finder: Strengthening DC Advisory Neighborhood Commissions
+      </title>
+
+      <link rel="icon" type="image/png" href="/static/img/favicon.png">
+
+      <!-- map box requirements -->
+      <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+      <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+
+      <!-- bootstrap requirements-->
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+      <link href="{% static "css/theme.css" %}" rel="stylesheet">
+      <link href="{% static "css/normalize.css" %}" rel="stylesheet">
+      <link href="{% static "css/syntax.css" %}" rel="stylesheet">
+
+      {% block base_head %}{% endblock %}
+  </head>
+
+  <body>
+      <div class="container">
+        <header role="banner">
+          <div class="warp">
+            <img class="logo" src="{% static "img/anc_red_logo.png" %}" alt="ANC" width="75px">
+            <h1 class="site-title">
+              <a class="title-link" href="">Anc Finder</a>
+            </h1>
+          </div>
+        </header>
+        <div class="wrap content">
+          <aside>
+            <nav class="sidebar-nav" role="navigation">
+              <ul class="nav-tabs">
+                <li class="nav-item">
+                  <a href="{% url 'ancfinder_site_home' %}">Find my ANC</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'ancfinder_site_what_are_ancs' %}">What are ANCs</a>
+                </li>
+                <li class="nav-item">
+                  <a data-toggle="collapse" href="#anc_list_collapse">Explore ANCs</a>
+                </li>
+                <!--<div id="anc_list_collapse" class="collapse show" role="tabpanel">
+                  <ul class="list-group">
+                    {% for ward, ancs in ancs_by_ward %}
+                    <li class="list-group-item">
+                      <a data-toggle="collapse" href="#collapse{{ward}}">Ward {{ward}}</a>
+                      <ul class="collapse" id="collapse{{ward}}">
+                          {% for anc in ancs %}
+                            <li class="list-group-item">{{anc}}</li>
+                          {% endfor %}
+                      </ul>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </div>-->
+                <li class="nav-item">
+                  <a href="{% url 'ancfinder_site_about' %}">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://twitter.com/ancfinder">Follow us <i class="fa fa-twitter"></i></a>
+                </li>
+              </ul>
+            </nav>
+          </aside>
+          <section id="main" class="main-content" role="main">
+            {% block base_body %}{% endblock %}
+          </section>
+        </div>
+      </div>
+
+      <footer role="contentinfo">
+        <div class="wrap">
+            <p>ANC Finder is a project in Washington, D.C. to strengthen our unique hyper-local level of government called Advisory Neighborhood Commissions (ANCs).</p>
+            <p class="by">This is a project of <a href="http://codefordc.org/">Code for DC</a>. We’re volunteers interested in using technology to solve problems in our civic lives. The site is a work in progress.</p>
+            <p>The source code for this website is on <a href="https://github.com/codefordc/ancfinder">github</a>.</p>
+            <p>The <a href="http://ryantroyford.com/central-union-mission/">Central Union Mission-inspired font</a> in the header is by <a href="http://ryantroyford.com/">Ryan Troy Ford</a>.</p>
+        </div>
+      </footer>
+
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+      {% block base_scripts %}{% endblock %}
+  </body>
+</html>

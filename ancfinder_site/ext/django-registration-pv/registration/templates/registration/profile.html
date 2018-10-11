@@ -1,0 +1,62 @@
+{% extends "registration/base.html" %}
+
+{% load registration_providers %}
+
+{% block title %}Account Settings{% endblock %}
+
+{% block body %}
+<style>
+form label {
+	display: inline-block;
+	width: 8em;
+}
+</style>
+
+<h1>Account Settings</h1>
+	
+<p style="width: 40em; margin-top: 1em;">Use this page to change your account settings</p>
+	
+<form method="post" style="margin-top: 1em;">
+	{% csrf_token %}
+
+	{% if ask_username %}
+		<div>
+			<label for="username">Username</label>
+			<input type="text" size="20" id="username" name="username" value="{{user.username}}"/>
+		</div>
+		{% if errors.username %}<p class="error">{{errors.username}}</p>{% endif %}
+	{% endif %}
+			
+	<div>
+		<label for="email">Email Address</label>
+		<input type="text" size="20" id="email" name="email" value="{{user.email}}"/>
+	</div>
+	{% if errors.email %}<p class="error">{{errors.email}}</p>{% endif %}
+	
+	<div>
+		<label for="password">Change Password</label>
+		<input type="password" size="20" id="password" name="password" value=""/>
+	</div>
+	{% if errors.password %}<p class="error">{{errors.password}}</p>{% endif %}
+	{% if not user.has_usable_password %}
+		{% if sso|length == 0 %}
+			<p style="margin-top: 1em">Your account is missing a password. You should set one so you can log back in later!</p>
+		{% else %}
+			{% if sso|length == 1 %}
+				<p style="margin-top: 1em">You are logging in through a {{sso.0.provider|provider_name}} account. Look for the {{sso.0.provider|provider_name}} button to log in when you come back to {{site_name}} later.</p>
+			{% else %}
+				<p style="margin-top: 1em">You are logging in through a social account. Look for the appropriate button to log in when you come back to {{site_name}} later.</p>
+			{% endif %}
+		{% endif %}
+	{% endif %}
+	
+	{% if success %}<p class="error">{{success}}</p>{% endif %}
+
+	<input type="submit" class="submit" value="Continue" style="margin-top: 1em"/>
+</form>
+
+<hr style="margin: 2em 0 2em 0"/>
+
+{% include "registration/profile_singlesignon.html" %}
+
+{% endblock %}

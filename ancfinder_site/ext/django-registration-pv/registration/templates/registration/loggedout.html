@@ -1,0 +1,11 @@
+{% extends "registration/base.html" %}
+
+{% block title %}Logged Out{% endblock %}
+
+{% block body %}
+
+<h1>You Have Been Logged Out</h1>
+
+<p>You can <a href="{% url "registration.views.loginform" %}">log back in</a> if you wish.</p>
+
+{% endblock %}
