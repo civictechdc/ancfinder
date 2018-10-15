@@ -25,11 +25,13 @@ Once forked, clone the forked repository to your computer.
 Running the Site
 ----------------
 
-1. Go to the root of the cloned directory and run `docker-compose up -d`. This will start all the required pieces of infrastructure as well as the application.
-2. Initialize the database by running `docker-compose exec ancfinder python manage.py syncdb --noinput`.
-3. To stop the application `docker-compose stop`; it can be restarted with `docker-compose start`.
+1. Copy `sample.env` into a file called `.env`.  This file is GIT ignored, so please change any credentials to fit your local work.
+2. Go to the root of the cloned directory and run `docker-compose up`. This will start all the required pieces of infrastructure as well as the application.
+3. To stop the application `ctrl-c`; it can be restarted with `docker-compose start`.
 
-To open the site in a browser, direct your browser to http://localhost:80.
+Alternatively, `docker-compose up -d` will spawn it into a background thread.
+
+To open the site in a browser, direct your browser to http://localhost:80; this might take a few minutes.
 
 Updating the Code
 -----------------
