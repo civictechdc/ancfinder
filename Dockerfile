@@ -4,6 +4,7 @@ WORKDIR /srv/app
 
 COPY ./requirements.txt /srv/app/requirements.txt
 RUN pip install -r requirements.txt
+EXPOSE 8000
 
 COPY ./ancfinder /srv/app/ancfinder
 COPY ./ancfinder_site /srv/app/ancfinder_site
