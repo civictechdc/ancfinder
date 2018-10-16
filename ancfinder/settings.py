@@ -15,10 +15,7 @@ import os, sys
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 environment_file = '/srv/app/environment.yaml'
-<<<<<<< HEAD
 local_environment_file = 'user_local_environment.yaml'
-=======
->>>>>>> initial commit of new version of ancfinder
 
 if os.path.exists(environment_file):
     print("Running production deployment...")
@@ -57,7 +54,6 @@ if os.path.exists(environment_file):
     # in apps' "static/" subdirectories and in STATICFILES_DIRS.
     # Example: "/home/media/media.lawrence.com/static/"
     STATIC_URL = env["STATIC_ROOT"]
-<<<<<<< HEAD
     MAPBOX_API_KEY = env["MAPBOX_API_KEY"]
 
 elif os.path.exists(local_environment_file):
@@ -99,9 +95,6 @@ elif os.path.exists(local_environment_file):
     # Example: "/home/media/media.lawrence.com/static/"
     STATIC_URL = env["STATIC_ROOT"]
     MAPBOX_API_KEY = env["MAPBOX_API_KEY"]
-=======
-
->>>>>>> initial commit of new version of ancfinder
 else:
     print("Running development deployment...")
 
@@ -110,10 +103,6 @@ else:
 
     ALLOWED_HOSTS = ["*"]
 
-<<<<<<< HEAD
-
-=======
->>>>>>> initial commit of new version of ancfinder
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
