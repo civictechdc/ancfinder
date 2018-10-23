@@ -8,4 +8,4 @@ timezone: America/New_York
 gems:
   - jekyll-redirect-from
 future: true
-baseurl: /codefordc-website
+baseurl: /
