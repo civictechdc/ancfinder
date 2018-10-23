@@ -1,60 +1,61 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
+
+<head>
     <title>
-      {% if page.title %}
-        {{page.title}} - 
-      {% endif %}
-      {{site.name}} - {{site.description}}
+        {% if page.title %}
+        {{page.title}} -
+        {% endif %}
+        {{site.name}} - {{site.description}}
     </title>
     <meta charset='utf-8' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% if page.description %}
-      <meta content="{{ page.description }}" name='description' />
+    <meta content="{{ page.description }}" name='description' />
     {% else %}
-      <meta content="{{ site.description }}" name='description' />
+    <meta content="{{ site.description }}" name='description' />
     {% endif %}
     <meta content='{{ site.name }}' name='author' />
 
     <!-- Facebook metadata -->
     <meta content="{{ site.title }}" property="og:site_name">
     {% if page.title %}
-      <meta content="{{ page.title }} - {{ site.title }}" property="og:title">
+    <meta content="{{ page.title }} - {{ site.title }}" property="og:title">
     {% else %}
-      <meta content="{{ site.title }}" property="og:title">
+    <meta content="{{ site.title }}" property="og:title">
     {% endif %}
     {% if page.title %}
-      <meta content="article" property="og:type">
+    <meta content="article" property="og:type">
     {% else %}
-      <meta content="website" property="og:type">
+    <meta content="website" property="og:type">
     {% endif %}
     {% if page.description %}
-      <meta content="{{ page.description }}" property="og:description">
+    <meta content="{{ page.description }}" property="og:description">
     {% else %}
-      <meta content="{{ site.description }}" property="og:description">
+    <meta content="{{ site.description }}" property="og:description">
     {% endif %}
     {% if page.url %}
-      <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
     {% endif %}
     {% if page.date %}
-      <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
-      <meta content="{{ site.url }}/about-us/" property="article:author">
+    <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
+    <meta content="{{ site.url }}/about-us/" property="article:author">
     {% endif %}
 
     {% if page.image %}
-      <meta content="{{ site.url }}{{page.image}}" property="og:image">
+    <meta content="{{ site.url }}{{page.image}}" property="og:image">
     {% else %}
-      <meta content="{{ site.url }}/images/logo/logo-star-social.jpg" property="og:image">
+    <meta content="{{ site.url }}/images/logo/logo-star-social.jpg" property="og:image">
     {% endif %}
     {% if page.categories %}
-      {% for category in page.categories limit:1 %}
-      <meta content="{{ category }}" property="article:section">
-      {% endfor %}
+    {% for category in page.categories limit:1 %}
+    <meta content="{{ category }}" property="article:section">
+    {% endfor %}
     {% endif %}
     {% if page.tags %}
-      {% for tag in page.tags %}
-      <meta content="{{ tag }}" property="article:tag">
-      {% endfor %}
+    {% for tag in page.tags %}
+    <meta content="{{ tag }}" property="article:tag">
+    {% endfor %}
     {% endif %}
 
     <!-- Twitter metadata -->
@@ -62,144 +63,100 @@
     <meta name="twitter:site" content="{{ site.title }}">
     <meta name="twitter:creator" content="{{ site.title }}">
     {% if page.title %}
-      <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:title" content="{{ page.title }}">
     {% else %}
-      <meta name="twitter:title" content="{{ site.title }}">
+    <meta name="twitter:title" content="{{ site.title }}">
     {% endif %}
     {% if page.url %}
-      <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
     {% endif %}
     {% if page.description %}
-      <meta name="twitter:description" content="{{ page.description }}">
+    <meta name="twitter:description" content="{{ page.description }}">
     {% else %}
-      <meta name="twitter:description" content="{{ site.description }}">
+    <meta name="twitter:description" content="{{ site.description }}">
     {% endif %}
     {% if page.image %}
-      <meta name="twitter:image" content="{{ site.url }}{{page.image}}">
+    <meta name="twitter:image" content="{{ site.url }}{{page.image}}">
     {% else %}
-      <meta name="twitter:image:src" content="{{ site.url }}/images/logo/logo-star-social.jpg">
+    <meta name="twitter:image:src" content="{{ site.url }}/images/logo/logo-star-social.jpg">
     {% endif %}
 
 
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://chihacknight.org/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://chihacknight.org/apple-touch-icon-152x152.png" />
-    <link rel="icon" type="image/png" href="https://chihacknight.org/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="https://chihacknight.org/favicon-16x16.png" sizes="16x16" />
-    <meta name="application-name" content="Code for DC"/>
-    <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="msapplication-TileImage" content="https://chihacknight.org/mstile-144x144.png" />
+    <meta name="application-name" content="Code for DC" />
 
-    <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.flatly.min.css" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css_new/uswds.min.css">
+    <link rel="stylesheet" href="css_new/main.css">
+</head>
 
-    <link rel="stylesheet" type="text/css" href="/css/dataTables.bootstrap.css">
+<body>
 
-    <!-- Custom styles for this template -->
-    <link href="/css/custom.css" rel="stylesheet">
+    <header class="usa-header usa-header-basic" role="banner">
+        <div class="usa-nav-container">
+            <div class="usa-navbar">
+                <div class="usa-logo" id="basic-logo">
+                    <em class="usa-logo-text">
+                        <a href="/" title="Home" aria-label="Home">
+                            Code for DC
+                        </a>
+                        <img src="../images/" alt="">
+                    </em>
+                </div>
+                <button class="usa-menu-btn">Menu</button>
+            </div>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="/js/html5shiv.js"></script>
-      <script src="/js/respond.min.js"></script>
-    <![endif]-->
+            <nav role="navigation" class="usa-nav">
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/js/jquery-1.10.1.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/analytics_lib.js"></script>
-
-    <script src="/js/moment.min.js"></script>
-    <script src="/js/jquery.dataTables.min.js"></script>
-    <script src="/js/dataTables.bootstrap.js"></script>
-    <script src="/js/jquery.dataTables.sorting.js"></script>
-    <script src="/js/jquery.address.js"></script>
-    <script src="/js/mustache.js"></script>
-    <script src="/js/spin.min.js"></script>
-    <script src="/js/jquery.spin.js"></script>
-    <script src="/js/jquery.scrollto.js"></script>
-  </head>
-  <body>
-
-    <nav class="navbar navbar-inverted navbar-static-top">
-      <div class="container">
-        <div class='col-sm-10 col-sm-offset-1'>
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/"><img src='/images/logo/logo.png' alt='Code for DC' title='Code for DC' class='img-responsive' /></a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href='/events/index.html'><i class='fa fa-calendar-o'></i> Events</a></li>
-              <li><a href='/breakouts.html'><i class='fa fa-group'></i> Breakouts</a></li>
-              <li><a href='/blog/index.html'><i class='fa fa-pencil'></i> Blog</a></li>
-              <li><a href='/projects.html'><i class='fa fa-rocket'></i> Projects</a></li>
-              <li><a href='/about.html'><i class='fa fa-info-circle'></i> About</a></li>
-              <li><a href='/donate/' class='donate'><i class='fa fa-thumbs-up'></i> Donate</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
+                <button class="usa-nav-close">
+                    <img src="../images/uwds/img/close.svg" alt="close">
+                </button>
+                <ul class="usa-nav-primary usa-accordion">
+                    <li><a class="usa-nav-link" href="javascript:void(0)">
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li><a class="usa-nav-link" href="/code-of-conduct">
+                            <span>Code of Conduct</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-      </div>
-    </nav>
+    </header>
 
-
-    <div class="container">
-      <div id='primary-content' class='col-sm-10 col-sm-offset-1'>
-
+    <div class="container content">
         {{content}}
-
-      </div>
     </div> <!-- /container -->
-    <footer class="footer">
-      <div class="container">
-        <div class='row'>
-          <div class='col-sm-2 col-sm-offset-1'>
-            <small>
-              <strong><a href="/events/index.html">Past events</a></strong><br />
-              <a href="/breakouts.html">Breakout groups</a><br />
-              <a href="/code-of-conduct.html">Code of Conduct</a><br />
-            </small>
-          </div>
-          <div class='col-sm-2'>
-            <small>
-              <strong><a href="/blog/index.html">Blog</a></strong><br />
-              <a href="/community.html">Community</a><br />
-              <a href="/open-source-projects.html">Open source projects</a><br />
-              <a href="/data-resources.html">Data & resources</a>
-            </small>
-          </div>
-          <div class='col-sm-2'>
-            <small>
-              <strong><a href="/about.html">About</a></strong><br />
-              <a href='/team.html'>Team</a><br />
-              <a href="/leadership-council.html">Leadership Council</a><br />
-              <a href='/speaker-submissions.html'>Speaker submissions</a>
-            </small>
-          </div>
-
-          <div class='col-sm-2'>
-            <small>
-              <strong>Elsewhere</strong><br />
-              <i class='fa fa-fw fa-youtube'></i> <a href="https://www.youtube.com/c/ChiHackNight">YouTube</a><br />
-              <i class='fa fa-fw fa-facebook'></i> <a href="https://www.facebook.com/chihacknight">Facebook</a><br />
-              <i class='fa fa-fw fa-twitter'></i> <a href="https://twitter.com/chihacknight" target='_blank'>Twitter</a><br />
-              <i class='fa fa-fw fa-github'></i> <a href="https://github.com/chihacknight/chihacknight.org/" target='_blank'>GitHub</a>
-            </small>
-          </div>
-          <div class='col-sm-2'>
-            <small>
-              &copy; {{ 'now' | date: "%Y" }} District Civic Labs
-            </small>
-          </div>
+    <footer class="usa-footer usa-footer-slim" role="contentinfo">
+        <div class="usa-footer-primary-section">
+            <div class="usa-grid">
+                <nav class="usa-footer-nav usa-width-two-thirds">
+                    <ul class="usa-unstyled-list">
+                        <li class="usa-width-one-fourth usa-footer-primary-content">
+                            <a class="usa-footer-primary-link" href="/code-of-conduct">Code of Conduct</a>
+                        </li>
+                    </ul>
+                </nav>
+                <address>
+                    <div class="usa-width-one-third">
+                        <div class="usa-footer-primary-content usa-footer-contact_info">
+                            <p><a href="mailto:team@codefordc.org">team@codefordc.org</a></p>
+                        </div>
+                    </div>
+                </address>
+            </div>
         </div>
-      </div>
+
+        <div class="usa-footer-secondary_section footer">
+            <div class="usa-grid">
+                <div class="usa-footer-logo">
+                    <img class="usa-footer-slim-logo-img" src="../images/uwds/img/logo-img.png" alt="">
+                    <h3 class="usa-footer-slim-logo-heading">Code for DC</h3>
+                </div>
+            </div>
+        </div>
     </footer>
-  </body>
+    <script src="js/uswds.min.js"></script>
+    <script src="js/jquery-1.10.1.min.js"></script>
+</body>
+
 </html>

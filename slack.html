@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<div class="use-grid-wide">
+    <div class="usa-width-one-half usa-offset-one-fourth">
+        <h1>Join Our Slack Team</h1>
+        <div class="usa-alert usa-alert-success" id="success" style="display: none;">
+            <div class="usa-alert-body">
+                <h3 class="usa-alert-heading">Thanks!</h3>
+                <p class="usa-alert-text">Check your email for an invite.</p>
+            </div>
+        </div>
+        <form id="requestinvite" role="form">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="text" placeholder="Email Address">
+            <button type="submit" class="btn btn-primary" id="submitrequest">Submit</button>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function (event) {
+        // Form validation
+        // $("#requestinvite").validator();
+
+        // Send message to Slack
+        $("#requestinvite").submit(function (event) {
+            event.preventDefault();
+            var payload = JSON.stringify({
+                "email": $("#email").val()
+            });
+            $.ajax({
+                url: "https://slackfordc.herokuapp.com/invite",
+                type: "POST",
+                data: payload,
+                contentType: "application/json",
+                success: function () {
+                    $("#email").val("");
+                    $("#success").show();
+                }
+            });
+        });
+    });
+
+</script>
