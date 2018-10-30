@@ -39,7 +39,7 @@ class Command(BaseCommand):
     def _updateAncs(self, logger):
         #Update the ancs model based on data on opendata.gov
         logger.info("~~~Setting up anc models~~")
-        anc_by_ward_gis_query = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Administrative_Other_Boundaries_WebMercator/MapServer/1/query?where=&text=%25{0}%25&outFields=ANC_ID,WEB_URL,NAME&returnGeometry=false&outSR=4326&f=json"
+        anc_by_ward_gis_query = "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Administrative_Other_Boundaries_WebMercator/MapServer/1/query?where=&text=%25{0}%25&outFields=ANC_ID,WEB_URL,NAME&returnGeometry=true&outSR=4326&f=json"
 
         if(Ward.objects.all().count() == 0):
             _updateWards()
@@ -54,10 +54,12 @@ class Command(BaseCommand):
                 ## add each ANC for this ward
                 for anc in ancs:
                     current_anc = str(anc["attributes"]["ANC_ID"])
+                    current_bound = anc["geometry"]["rings"]
                     print("Adding " + current_anc + " to ward " + current_ward.id)
-                    anc_model = Anc(id=current_anc, ward=current_ward)
+                    anc_model = Anc(id=current_anc, ward=current_ward, boundries=str(current_bound))
                     anc_model.save()
-                    logger.info(anc["attributes"])
+                    logger.info("attributes: " + str(anc["attributes"]))
+                    logger.info("geometry: " + str(anc["geometry"]))
         logger.info(Anc.objects.all())
 
     def handle(self, *args, **options):

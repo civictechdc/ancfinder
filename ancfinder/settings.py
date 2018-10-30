@@ -151,6 +151,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #'django.contrib.gis.utils',    # TODO: Use the GIS utils for GeoJSON instead of text field in models
 ]
 
 MIDDLEWARE = [

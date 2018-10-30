@@ -49,3 +49,23 @@ def TemplateContextProcessor(request):
 =======
 >>>>>>> initial commit of new version of ancfinder
 	}
+
+def post(self,request, *args, **kwargs):
+    if self.request.is_ajax():
+        return self.ajax(request)
+
+def ajax(self, request):
+	logger.info("ajax request received...")
+	response_dict = {'success': True}
+	action = request.POST.get('action','')
+
+	if(action == 'get_anc_bounds'):
+		anc_id = request.POST.get('id','')
+		logger.info("requestion anc " + anc_id)
+
+	if(hasattr(self, action)):
+		response_dict = getattr(self, action)(request)
+		anc = Anc.objects.get(id='anc_id')
+		response_dict = {'boundries': anc.boundries}
+
+	return HttpResponse(simplejson.dumps(response_dict), mimetype='application/json')
