@@ -5,9 +5,9 @@
 <p>Let&rsquo;s find yours. Enter your home address to get started:</p>
 
 <div class="input-group mb-3">
-	<input type="text" class="form-control" placeholder="Your Address" aria-label="Your address"/>
+	<input id="strAddress" type="text" class="form-control" placeholder="Your Address" aria-label="Your address"/>
 	<div class="input-group-append">
-		<button class="btn btn-outline-secoundary" type="button" onclick="do_address()">Find Out About My ANC</button>
+		<button id="findByAddress" class="btn btn-outline-secoundary" type="button">Find Out About My ANC</button>
 	</div>
 	<!-- <div id="use_my_location"><a href="#" onclick="use_my_location(); return false;">Use my current location</a></div>-->
 </div>
@@ -38,5 +38,52 @@ var map = new mapboxgl.Map({
 		zoom: 9,
     style: 'mapbox://styles/mapbox/streets-v9'
 });
+
+$(document).ready(function() {
+    $("#findByAddress").click(function(){
+				var strAddress = $("#strAddress").val();
+        var strAnc = retrieve_Anc(strAddress);
+				var boundries = "";
+
+				//Now that we know the ANC, retrieve the boundries from the database
+				$.ajax({
+            type: "POST",
+            data: { action: "get_anc_bounds", id: strAnc },
+            success: function(data){
+                // This will execute when where Django code returns a dictionary
+                // called 'data' back to us.
+                console.log(data);
+            }
+        });
+    });
+});
+
+function retrieve_Anc(strAddress){
+		//using MAR-webservices, retrieve the ANC for this Address
+		var marURL = "https://citizenatlas.dc.gov/newwebservices/locationverifier.asmx?op=findLocation2";
+
+		/*$.ajax({
+			type: "POST",
+			contentType: "text/plain",
+			url: marURL,
+			data: '{f:"json", str:"' + strAddress + '"}',
+			crossDomain: true,
+			headers:{
+			 "accept": "application/JSON"
+			},
+			xhrFields: {
+				withCredentials: false
+			},
+			success: function (data, textStatus) {
+				alert(data.returnDataset.Table1.ANC);
+			},
+			error: function (data, status, error) {
+				alert("error");
+			}
+		});*/
+
+		//return A1 as defult for now
+		return "A1"
+}
 </script>
 {% endblock %}
