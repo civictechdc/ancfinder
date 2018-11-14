@@ -242,7 +242,9 @@
 							if (data.objects.length == 0) {
 								no_address_match();
 							} else {
-								show_smd_info(data.objects[0].external_id.toUpperCase(), new google.maps.LatLng(lat, lng));
+								var anc_id = data.objects[0].external_id.toUpperCase().substring(0,2);
+								var smd_id = data.objects[0].external_id.toUpperCase().replace(/.*[A-Z]/,"");
+								window.location.href = "/"+anc_id+"#"+smd_id,'_self';
 							}
 						}
 					});
@@ -268,10 +270,9 @@
 					success: function(r) {
 						if (r.returnDataset) {
 							var mar_info = r.returnDataset.Table1[0];
-							var smd_id = mar_info.SMD.replace(/^\s*SMD\s+/, ''),
-							    lat = mar_info.LATITUDE,
-							    lng = mar_info.LONGITUDE;
-							show_smd_info(smd_id, new google.maps.LatLng(lat, lng));
+							var anc_id = mar_info.ANC.replace("ANC ","");
+							var smd_id = mar_info.SMD.replace(/.*[A-Z]/,"");
+							window.location.href = "/"+anc_id+"#"+smd_id,'_self';
 						}
 						else {
 							no_address_match();
