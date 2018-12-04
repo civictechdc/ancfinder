@@ -15,8 +15,6 @@ import os, sys
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 environment_file = '/srv/app/environment.yaml'
-local_environment_file = 'user_local_environment.yaml'
-
 
 if os.path.exists(environment_file):
     print("Running production deployment...")
@@ -54,11 +52,11 @@ if os.path.exists(environment_file):
     # Don't put anything in this directory yourself; store your static files
     # in apps' "static/" subdirectories and in STATICFILES_DIRS.
     # Example: "/home/media/media.lawrence.com/static/"
-    STATIC_URL = env["STATIC_ROOT"]
-    MAPBOX_API_KEY = env["MAPBOX_API_KEY"]
+    STATIC_URL = "/static/"
+    STATIC_ROOT = env["STATIC_ROOT"]
 
     MAPBOX_API_KEY = env["MAPBOX_API_KEY"]
-elif "POSTGRES_PASSWORD" in os.environ:
+elif "POSTGRES_PASSWORD" in os.environ and os.environ["POSTGRES_PASSWORD"]:
 
     SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
     DATABASES = {
@@ -96,7 +94,8 @@ else:
 
     SECRET_KEY = '4k90fdv_y#5na2wul&fcd&xg23va!7#3h)we)6%c2ma8mt0uc-'
     DEBUG = True
-    MAPBOX_API_KEY = os.environ['MAPBOX_API_KEY']
+    MAPBOX_API_KEY = os.environ.get('MAPBOX_API_KEY')
+    STATIC_ROOT = os.environ.get("STATIC_ROOT")
 
     ALLOWED_HOSTS = ["*"]
 
@@ -151,7 +150,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'django.contrib.gis.utils',    # TODO: Use the GIS utils for GeoJSON instead of text field in models
 ]
 
 MIDDLEWARE = [

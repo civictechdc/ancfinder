@@ -1,10 +1,7 @@
 from django.shortcuts import render
 from django.http import Http404, HttpResponse
 from django.views.generic import TemplateView
-<<<<<<< HEAD
 from django.conf import settings
-=======
->>>>>>> initial commit of new version of ancfinder
 import logging
 
 from ancfinder_site.models import *
@@ -44,10 +41,7 @@ def TemplateContextProcessor(request):
 	return {
 		"ancs_by_ward": sorted(ancs_by_ward.items()),
 		"anc_list": sorted(anc_list),
-<<<<<<< HEAD
 		"MAPBOX_API_KEY": settings.MAPBOX_API_KEY,
-=======
->>>>>>> initial commit of new version of ancfinder
 	}
 
 def post(self,request, *args, **kwargs):

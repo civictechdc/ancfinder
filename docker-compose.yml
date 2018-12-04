@@ -23,7 +23,7 @@ services:
         links:
             - postgres
         volumes:
-            - ./user_local_environment.yaml:/srv/app/environment.yaml
+            #- ./user_local_environment.yaml:/srv/app/environment.yaml
             - static:/srv/app/static
 volumes:
     static:
