@@ -31,7 +31,7 @@
 {% endblock %}
 {% block base_scripts %}
 <script>
-mapboxgl.accessToken = 'pk.eyJ1Ijoib3BlbmRhdGFkYyIsImEiOiJjaXp5dG55MjgwM2YxMnFuaHkwcmhzazViIn0.g5M1SkNciMdpOy5IJAs-ow';
+mapboxgl.accessToken = "{{ MAPBOX_API_KEY }}";
 var map = new mapboxgl.Map({
     container: 'map',
 		center: [-77.0369, 38.9072],

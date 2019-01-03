@@ -52,15 +52,52 @@ if os.path.exists(environment_file):
     # Don't put anything in this directory yourself; store your static files
     # in apps' "static/" subdirectories and in STATICFILES_DIRS.
     # Example: "/home/media/media.lawrence.com/static/"
-    STATIC_URL = env["STATIC_ROOT"]
+    STATIC_URL = "/static/"
+    STATIC_ROOT = env["STATIC_ROOT"]
 
+    MAPBOX_API_KEY = env["MAPBOX_API_KEY"]
+elif "POSTGRES_PASSWORD" in os.environ:
+
+    SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'HOST': os.environ['POSTGRES_HOST'],
+            'PORT': int(os.environ['POSTGRES_PORT']),
+            'NAME': os.environ['POSTGRES_DB'],
+            'USER': os.environ['POSTGRES_USER'],
+            'PASSWORD': os.environ['POSTGRES_PASSWORD'],
+        }
+    }
+
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+    # EMAIL_HOST = env['SMTP_HOST']
+    # EMAIL_HOST_USER = env['SMTP_USER']
+    # EMAIL_HOST_PASSWORD = env['SMTP_PASSWORD']
+    # EMAIL_USE_TLS = True
+
+    ALLOWED_HOSTS = ["*"] # anything unexpected will be filtered out by the http server
+
+    OPENID_TEMP_FOLDER = "/tmp/openid-ancfinder"
+
+    # Absolute path to the directory static files should be collected to.
+    # Don't put anything in this directory yourself; store your static files
+    # in apps' "static/" subdirectories and in STATICFILES_DIRS.
+    # Example: "/home/media/media.lawrence.com/static/"
+    STATIC_URL = "/static/"
+    STATIC_ROOT = os.environ["STATIC_ROOT"]
+
+    MAPBOX_API_KEY = os.environ["MAPBOX_API_KEY"]
 else:
     print("Running development deployment...")
 
     SECRET_KEY = '4k90fdv_y#5na2wul&fcd&xg23va!7#3h)we)6%c2ma8mt0uc-'
     DEBUG = True
+    MAPBOX_API_KEY = os.environ['MAPBOX_API_KEY']
 
     ALLOWED_HOSTS = ["*"]
+
 
     DATABASES = {
         'default': {
@@ -112,7 +149,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'letsencrypt',
 ]
 
 MIDDLEWARE = [
