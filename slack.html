@@ -1,9 +1,16 @@
 ---
 layout: default
 ---
-<div class="use-grid-wide">
+<div class="use-grid-wide" style="margin-top:1rem;">
     <div class="usa-width-one-half usa-offset-one-fourth">
         <h1>Join Our Slack Team</h1>
+        <p>
+            Slack is a chat tool that Code for DC uses to communicate outside of in-person 
+            meetups.  Each project has there own dedicated channel that are open to everyone.
+        </p>
+        <p>
+            Enter your email below and you'll receive and invite to join codefordc.slack.com.
+        </p>
         <div class="usa-alert usa-alert-success" id="success" style="display: none;">
             <div class="usa-alert-body">
                 <h3 class="usa-alert-heading">Thanks!</h3>
@@ -12,8 +19,10 @@ layout: default
         </div>
         <form id="requestinvite" role="form">
             <label for="email">Email Address</label>
-            <input id="email" name="email" type="text" placeholder="Email Address">
-            <button type="submit" class="btn btn-primary" id="submitrequest">Submit</button>
+            <input id="email" name="email" type="email" placeholder="Email Address">
+            <button id="submitrequest" type="submit" class="btn btn-primary">
+                <img src="assets/slack.png" style="margin-right: 0.5rem;">Join Our Slack 
+            </button>
         </form>
     </div>
 </div>
