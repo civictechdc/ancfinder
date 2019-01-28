@@ -83,71 +83,58 @@
 
 
     <meta name="application-name" content="Code for DC" />
-    <link rel="shortcut icon" href="{{ site.url }}/images/favicon.ico" />
+
     <link rel="stylesheet" href="css_new/uswds.min.css">
     <link rel="stylesheet" href="css_new/main.css">
 </head>
 
 <body>
 
-    <header class="usa-header usa-header-extended" role="banner">
-        <div class="usa-navbar">
-            <div class="usa-logo" id="extended-logo">
-                <em class="usa-logo-text">
-                    <a href="/" title="Home" aria-label="Home">
-                        Code for DC
-                    </a>
-                </em>
-            </div>
-            <button class="usa-menu-btn">Menu</button>
-        </div>
+    <header class="usa-header usa-header-basic" role="banner">
+        <div class="usa-nav-container">
+            <div class="usa-navbar">
+                <div class="usa-logo" id="basic-logo">
+                    <em class="usa-logo-text">
+                        <a href="/" title="Home" aria-label="Home">
+                            <!-- Code for DC -->
+                        <img src="../images/logo/code-for-dc-logo-text-horiz.png" alt="Code for DC">
+                        </a>
 
-        <nav role="navigation" class="usa-nav">
-            <div class="usa-nav-inner">
+                    </em>
+                </div>
+                <button class="usa-menu-btn">Menu</button>
+            </div>
+
+            <nav role="navigation" class="usa-nav">
+
                 <button class="usa-nav-close">
-                    <img src="../img/close.svg" alt="close">
+                    <img src="../images/uwds/img/close.svg" alt="close">
                 </button>
                 <ul class="usa-nav-primary usa-accordion">
+                    <!-- <li>
+                        <a class="usa-nav-link" href="javascript:void(0)">
+                            <span>Projects</span>
+                        </a>
+                    </li> -->
                     <li>
-                        <a class="usa-nav-link" href="/code-of-conduct">
+                        <a class="usa-nav-link" href="{{ site.baseurl }}/code-of-conduct">
                             <span>Code of Conduct</span>
                         </a>
                     </li>
                     <li>
-                        <a class="usa-nav-link" href="/slack">
+                        <a class="usa-nav-link" href="{{ site.baseurl }}/slack">
                             <span>Slack</span>
                         </a>
                     </li>
-                    <li>
-                        <a class="usa-nav-link" href="https://github.com/codefordc">
-                            <span>Github</span>
-                        </a>
-                    </li>
                 </ul>
-                <div class="usa-nav-secondary">
-
-                    <form class="usa-search usa-search-small  js-search-form">
-                        <div role="search">
-                            <label class="usa-sr-only" for="extended-search-field-small">Search small</label>
-                            <input id="extended-search-field-small" type="search" name="search">
-                            <button type="submit">
-                                <span class="usa-sr-only">Search</span>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
 
     <div class="container content">
         {{content}}
-    </div>
-
+    </div> <!-- /container -->
     <footer class="usa-footer usa-footer-slim" role="contentinfo">
-        <div id="returnToTop" class="usa-grid usa-footer-return-to-top" style="display: none;">
-            <a id="returnToTopLink" href="javascript:void(0);">Return to top</a>
-        </div>
         <div class="usa-footer-primary-section">
             <div class="usa-grid">
                 <nav class="usa-footer-nav usa-width-two-thirds">
@@ -166,29 +153,18 @@
                 </address>
             </div>
         </div>
+
+        <div class="usa-footer-secondary_section footer">
+            <div class="usa-grid">
+                <div class="usa-footer-logo">
+                    <img class="usa-footer-slim-logo-img" src="../images/uwds/img/logo-img.png" alt="">
+                    <h3 class="usa-footer-slim-logo-heading">Code for DC</h3>
+                </div>
+            </div>
+        </div>
     </footer>
     <script src="js/uswds.min.js"></script>
     <script src="js/jquery-1.10.1.min.js"></script>
-    <script type="text/javascript">
-        const showReturnToTopThreshold = 100;
-        const returnToTop = () => {
-            const scrollTop = $(window).scrollTop();
-            if (scrollTop > showReturnToTopThreshold) {
-                $('#returnToTop').show();
-            } else {
-                $('#returnToTop').hide();
-            }
-        };
-        
-        $(window).on('scroll', () => returnToTop());
-        $('#returnToTopLink').click((e) => {
-            e.preventDefault();
-            $('html,body').animate({
-                scrollTop: 0
-            }, 700);
-        });
-    
-    </script>
 </body>
 
 </html>
