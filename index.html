@@ -18,21 +18,22 @@ layout: default
         <p>Our twice-monthly meetups are open to anyone, and offer a chance to learn more about what we do, contribute to a current project, or just snag some free pizza!</p>
     </div>
     <div class="usa-width-one-half">
-      <h3>Tonight @ 6:30pm</h3>
-      <!-- <h3>Project Night</h3>
-      <p>Tuesday, January 29 @ 6:30pm</p> -->
-      <p>1200 New York Ave NW
-      <br>
-      65 do-gooders will be there — what about you?
-      <br>
-      <a href="https://www.meetup.com/Code-for-DC/events/" class="usa-button">RSVP on Meetup »</a>
+        <h2>Next meetup</h2>
+        <div id="map"></div>
+        <h4 id="next-meetup-date"></h4>
+        <p id="next-location"></p>
+        <br>
+        <p><span id="next-rsvps"></span> do-gooders will be there — what about you?</p>
+        <br>
+        <a id="next-rsvp" href="#" target="_blank" class="usa-button">RSVP on Meetup »</a>
+        <h3>Future meetups</h3>
+        <h4 id="future-meetup-date"></h4>
+        <p id="future-location"></p>
+        <br>
+        <p><span id="future-rsvps"></span> do-gooders will be there — what about you?</p>
+        <br>
+        <a id="future-rsvp" target="_blank" href="#" class="usa-button">RSVP on Meetup »</a>
       </p>
-      <h3>Wednesday, February 13 @ 6:30pm</h3>
-      <p>1325 G Street, NW, 3rd Floor
-      <br>
-      38 do-gooders will be there — what about you?
-      <br>
-      <a href="https://www.meetup.com/Code-for-DC/events/" class="usa-button">RSVP on Meetup »</a>
       </p>
       <p><a href="https://www.meetup.com/Code-for-DC/events/">See all upcoming events »</a></p>
     </div>
@@ -47,6 +48,7 @@ layout: default
             <br>
             <p>Our twice-monthly meetups are open to anyone, and offer a chance to learn more about what we do, contribute to a current project, or just snag some free pizza!</p>
     </div>
+</div>
 
     <div class="usa-width-one-half">
         <div class="beige-section">
@@ -79,6 +81,7 @@ layout: default
         <!-- <a href="#"> See all projects </a> -->
         <!-- <br><br> -->
     </div>
+</div>
 
     <div class="usa-width-one-third">
         <!-- <div class="project-card"> -->
@@ -109,9 +112,72 @@ layout: default
   </div>
 </div>
 
-<div class="usa-grid-wide">
-    <div class="usa-width-one-whole" align="center">
-        <!-- <br>
-        <button> Submit a Proposal </button> -->
-    </div>
-</div>
+<script >
+    document.addEventListener("DOMContentLoaded", function(event) { 
+        mapboxgl.accessToken = 'pk.eyJ1Ijoib3BlbmRhdGFkYyIsImEiOiJjanJneDkweHEycGMxNDNtbXJiNGdndDRuIn0.ToI609oBwJsdC8fiubjl9A';
+        var map = new mapboxgl.Map({
+            container: 'map', // HTML container id
+            style: 'mapbox://styles/mapbox/streets-v9', // style URL
+            center: [ -77.0369, 38.9072 ], // starting position as [lng, lat]
+            zoom: 13
+        });
+        $.ajax({
+            type: "GET",
+            dataType: 'jsonp',
+            url: 'https://api.meetup.com/Code-for-DC/events?photo-host=public&page=20&sig_id=163907222&sig=f5fae4cf26e324516a55732b9ca095aba0cd6e04',
+            crossDomain : true,
+            xhrFields: {
+                withCredentials: true
+            },
+            beforeSend: function() {
+            $('#meetup').addClass('loading'); // Show loader icon
+            },
+            complete: function() {
+            $('#meetup').removeClass('loading'); // Hide loader icon
+            }
+        })
+        .done(( xhr ) => {
+            const nextMeetup = xhr.data[0]
+            const futureMeetup = xhr.data[1]
+            $('#next-meetup-date').html(
+                moment(!nextMeetup.time).isSame(moment(new Date()), 'day') ?
+                `${moment(nextMeetup.time).format('MM/DD/YYYY')}  ${moment(nextMeetup.time).format('h:mm')}` :
+                `Today @ ${moment(nextMeetup.time).format('h:mm')}`
+            )
+            $("#next-location").html(`
+                <a href="https://www.google.com/maps/place/@${nextMeetup.venue.lat},-${nextMeetup.venue.lon},13z" target="_blank">${nextMeetup.venue.address_1}</a>
+            `)
+            $('#next-rsvps').html(nextMeetup.yes_rsvp_count);
+            $('#next-rsvp').attr('href', `https://www.meetup.com/Code-for-DC/events/${nextMeetup.id}`);
+            
+            if(futureMeetup) {
+                $('#future-meetup-date').html(
+                moment(!futureMeetup.time).isSame(moment(new Date()), 'day') ?
+                `${moment(futureMeetup.time).format('MM/DD/YYYY')}  ${moment(futureMeetup.time).format('h:mm')}` :
+                `Today @ ${moment(futureMeetup.time).format('h:mm')}`
+                )
+                $("#future-location").html(`
+                    <a href="https://www.google.com/maps/place/@${futureMeetup.venue.lat},-${futureMeetup.venue.lon},13z" target="_blank">${futureMeetup.venue.address_1}</a>
+                `)
+                $('#future-rsvps').html(futureMeetup.yes_rsvp_count);
+                $('#future-rsvp').attr('href', `https://www.meetup.com/Code-for-DC/events/${futureMeetup.id}`)
+
+            } else {
+                $('#future-meetup-date').hide();
+                $('#future-location').hide();
+                $('#future-rsvps').hide();
+                $('#future-rsvp').hide();
+            }
+            
+
+
+            var popup = new mapboxgl.Popup({ closeOnClick: false })
+                .setLngLat([nextMeetup.venue.lon, nextMeetup.venue.lat])
+                .setHTML(`
+                    <p>${nextMeetup.venue.name}</p>
+                `)
+                .addTo(map);
+        });
+    });
+</script>
+
