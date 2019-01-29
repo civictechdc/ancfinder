@@ -56,16 +56,19 @@ button {
 #hero-text {
   color: white;
   background-color: #711613;
-  padding-left: 2%;
-  padding-right: 2%;
+  padding: 1rem;
   display: inline-block;
   font-size: 320%;
+  right: 0;
+  margin-left: 55%;
 }
 
 #hero-p {
   width: 50%;
   color: white;
-  margin-left: 2%;
+  margin-left: 75%;
+  background: black;
+  padding: 1rem;
 }
 
 #learn-more {
