@@ -53,32 +53,25 @@ if os.path.exists(environment_file):
     # Don't put anything in this directory yourself; store your static files
     # in apps' "static/" subdirectories and in STATICFILES_DIRS.
     # Example: "/home/media/media.lawrence.com/static/"
-    STATIC_URL = env["STATIC_ROOT"]
+    STATIC_URL = "/static/"
+    STATIC_ROOT = env["STATIC_ROOT"]
+
     MAPBOX_API_KEY = env["MAPBOX_API_KEY"]
+elif "POSTGRES_PASSWORD" in os.environ and os.environ["POSTGRES_PASSWORD"]:
 
-elif os.path.exists(local_environment_file):
-    print("Found local environemnt yaml")
-
-    import yaml
-    with open(local_environment_file) as f:
-      env = yaml.load(f)
-    SECRET_KEY = env['DJANGO_SECRET_KEY']
+    SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(os.path.dirname(__file__), 'database.sqlite').replace('\\','/'),
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'HOST': os.environ['POSTGRES_HOST'],
+            'PORT': int(os.environ['POSTGRES_PORT']),
+            'NAME': os.environ['POSTGRES_DB'],
+            'USER': os.environ['POSTGRES_USER'],
+            'PASSWORD': os.environ['POSTGRES_PASSWORD'],
         }
     }
 
-    SECRET_KEY = '4k90fdv_y#5na2wul&fcd&xg23va!7#3h)we)6%c2ma8mt0uc-'
-    DEBUG = True
-
-    ALLOWED_HOSTS = ["*"]
-
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-    ADMINS = env['ADMINS']
-    MANAGERS = ADMINS
 
     # EMAIL_HOST = env['SMTP_HOST']
     # EMAIL_HOST_USER = env['SMTP_USER']
@@ -93,15 +86,20 @@ elif os.path.exists(local_environment_file):
     # Don't put anything in this directory yourself; store your static files
     # in apps' "static/" subdirectories and in STATICFILES_DIRS.
     # Example: "/home/media/media.lawrence.com/static/"
-    STATIC_URL = env["STATIC_ROOT"]
-    MAPBOX_API_KEY = env["MAPBOX_API_KEY"]
+    STATIC_URL = "/static/"
+    STATIC_ROOT = os.environ["STATIC_ROOT"]
+
+    MAPBOX_API_KEY = os.environ["MAPBOX_API_KEY"]
 else:
     print("Running development deployment...")
 
     SECRET_KEY = '4k90fdv_y#5na2wul&fcd&xg23va!7#3h)we)6%c2ma8mt0uc-'
     DEBUG = True
+    MAPBOX_API_KEY = os.environ.get('MAPBOX_API_KEY')
+    STATIC_ROOT = os.environ.get("STATIC_ROOT")
 
     ALLOWED_HOSTS = ["*"]
+
 
     DATABASES = {
         'default': {
@@ -153,7 +151,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'django.contrib.gis.utils',    # TODO: Use the GIS utils for GeoJSON instead of text field in models
 ]
 
 MIDDLEWARE = [
