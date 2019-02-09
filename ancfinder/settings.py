@@ -15,6 +15,7 @@ import os, sys
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 environment_file = '/srv/app/environment.yaml'
+local_environment_file = 'user_local_environment.yaml'
 
 if os.path.exists(environment_file):
     print("Running production deployment...")
