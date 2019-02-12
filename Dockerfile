@@ -16,14 +16,7 @@ RUN chmod u+x /srv/app/run.sh
 VOLUME /srv/app/static
 
 EXPOSE 8000
-# Ensure that the model and database are correctly mapped
-# RUN python3 manage.py makemigrations
-# RUN python3 manage.py migrate
-
-# Ensure that the model and database are correctly mapped
 RUN python3 manage.py makemigrations
 RUN python3 manage.py migrate
-
-# Run these when the container launches
-
-CMD ["./run.sh"]
+RUN python manage.py collectstatic --noinput
+CMD ["uwsgi", "--ini", "/srv/app/uwsgi.ini"]

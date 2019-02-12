@@ -9,7 +9,7 @@ services:
         image: nginx:latest
         volumes:
             - ./nginx.conf:/etc/nginx/conf.d/default.conf
-            - ./uswgi_params:/home/docker/code/uwsgi_params
+            - ./uwsgi_params:/home/docker/code/uwsgi_params
             - ./certs/letsencrypt:/etc/letsencrypt
             - static:/ancfinder_static
         ports:
