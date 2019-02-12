@@ -12,6 +12,7 @@ COPY ./manage.py /srv/app/manage.py
 COPY ./run.sh /srv/app/run.sh
 
 RUN chmod u+x /srv/app/run.sh
+ENV DJANGO_ENV=test
 
 VOLUME /srv/app/static
 
