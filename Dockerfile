@@ -1,6 +1,9 @@
 FROM python:3.7.0
 
 WORKDIR /srv/app
+RUN apt-get update && \
+    apt-get install -y && \
+    pip3 install uwsgi
 
 COPY ./requirements.txt /srv/app/requirements.txt
 RUN pip install -r requirements.txt
