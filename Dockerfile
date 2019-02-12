@@ -1,24 +1,25 @@
 FROM python:3.7.0
 
-WORKDIR /srv/app
 RUN apt-get update && \
     apt-get install -y && \
     pip3 install uwsgi
 
-COPY ./requirements.txt /srv/app/requirements.txt
-RUN pip install -r requirements.txt
-EXPOSE 8000
+# create working directory and move our app there
+WORKDIR /srv/app
+COPY . /srv/app
 
-COPY ./ancfinder /srv/app/ancfinder
-COPY ./ancfinder_site /srv/app/ancfinder_site
-COPY ./manage.py /srv/app/manage.py
-COPY ./run.sh /srv/app/run.sh
+# install our dependencies
+RUN pip3 install -r requirements.txt
 
-RUN chmod u+x /srv/app/run.sh
+# set environment Vars
 ENV DJANGO_ENV=test
+ENV STATIC_ROOT=/srv/app/static
 
+# create a space for our static static
+# collectstatic below will copy files to this location
 VOLUME /srv/app/static
 
+# expose port and start app
 EXPOSE 8000
 RUN python3 manage.py makemigrations
 RUN python3 manage.py migrate
