@@ -3,8 +3,15 @@ version: '3'
 services:
     postgres:
         image: postgres
-        env_file: .env
-    # TODO: copy the static media into nginx from ancfinder
+        env_file: database.env
+
+    ancfinder:
+            build: .
+            env_file: app.env
+            links:
+                - postgres
+            volumes:
+                - static:/srv/app/static
     nginx:
         image: nginx:latest
         volumes:
@@ -17,13 +24,5 @@ services:
             - "443:443"
         links:
             - ancfinder
-    ancfinder:
-        image: codefordc2/ancfinder:2.0
-        env_file: .env
-        links:
-            - postgres
-        volumes:
-            - ./user_local_environment.yaml:/srv/app/environment.yaml
-            - static:/srv/app/static
 volumes:
     static:
