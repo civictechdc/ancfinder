@@ -13,34 +13,23 @@ If you're not familiar with forking, Github has a [useful guide](https://help.gi
 Getting Started
 ---------------
 
-In order to get the site running locally you'll want to start by creating an account for Docker, download, and install the program. The community edition can be downloaded [here](https://www.docker.com/community-edition).
+In order to get the site running locally you'll want to start by creating an account for Docker, download, and install the program. The community edition can be downloaded [here](https://www.docker.com/community-edition). Additionally, create a [mapbox account](https://www.mapbox.com) to get a access token.
 
-Once forked, clone the forked repository to your computer.
+Next, if you have not done so yet, for this repository from the [Code For DC github page](https://github.com/codefordc). Once forked, clone the repository to your computer to create a working copy.
 
-	git clone --recursive https://github.com/codefordc/ancfinder
-	cd ./ancfinder
+	git clone git@github.com:yourUserName/ancfinder.git
 
-Running the Site with Docker
-----------------
+At this point you will not have any of the dependencies need to run the website. This is where docker comes in hand. To get all the required dependencies run the following at the command line from your cloned repository:
 
-### With Docker
+	docker build .
 
-1. Go to the root of the cloned directory and run `docker-compose up -d`. This will start all the required pieces of infrastructure as well as the application.
-3. To stop the application `docker-compose stop`; it can be restarted with `docker-compose start`.
+If you are unfamiliar with docker, there is a very quick and easy tutorial [here](https://medium.com/@deepakshakya/beginners-guide-to-use-docker-build-run-push-and-pull-4a132c094d75) that will get you up to speed.
 
-To open the site in a browser, direct your browser to http://localhost:80.
+Next open app.env and set the `MAPBOX_API_KEY` to the access token for your mapbox account.
 
-### Without Docker
+Starting Ancfinder
+------------------
 
-1. Go to the root of the cloned directory and run `python3 mange.py runserver`
-2. Use ctrl + C at the command line to stop the process.
+To start the app go to your cloned repository and build run the following:
 
-To open the site in a browser, direct your browser to http://localhost:80
-
-Updating the Code and Database
------------------
-
-As we make code changes you may need to run:
-
-	git pull --rebase
-	./manage.py migrate
+	docker-compose up -d --build
