@@ -16,7 +16,7 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Karla', 'Source Sans Pro', sans-serif;
   font-weight: 700;
   /* color: #640000; */
 }
@@ -33,6 +33,12 @@ button {
   padding: 1%;
   background-color: #F5F6F6;
   display:inline-block;
+}
+
+img#logo {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  max-height: 11rem;
 }
 
 
@@ -66,8 +72,9 @@ button {
 #hero-p {
   width: 50%;
   color: white;
-  margin-left: 75%;
+  margin-left: 10%;
   background: black;
+  opacity: 0.75;
   padding: 1rem;
 }
 

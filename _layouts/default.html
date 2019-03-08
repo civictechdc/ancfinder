@@ -90,8 +90,7 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="shortcut icon" href="{{ site.url }}/images/favicon.ico" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <style>
         #map { height: 300px; }
     </style>
@@ -103,15 +102,16 @@
     <header class="usa-header usa-header-basic" role="banner">
         <div class="usa-nav-container">
             <div class="usa-navbar">
-                <div class="usa-logo" id="basic-logo">
+                <img id="logo" src="../images/logo/code-for-dc-logo-text-bottom.png" alt="Code for DC">
+                <!-- <div class="usa-logo" id="basic-logo">
                     <em class="usa-logo-text">
                         <a href="/" title="Home" aria-label="Home">
-                            <!-- Code for DC -->
-                        <img src="../images/logo/code-for-dc-logo-text-horiz.png" alt="Code for DC">
+                            Code for DC
+                        <img src="../images/logo/code-for-dc-logo-text-bottom.png" alt="Code for DC">
                         </a>
 
                     </em>
-                </div>
+                </div> -->
                 <button class="usa-menu-btn">Menu</button>
             </div>
 
@@ -133,7 +133,12 @@
                     </li>
                     <li>
                         <a class="usa-nav-link" href="https://github.com/codefordc">
-                            <span>Github</span>
+                            <span>GitHub</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="usa-nav-link" href="https://twitter.com/codefordc">
+                            <span>Twitter</span>
                         </a>
                     </li>
                 </ul>
@@ -145,7 +150,7 @@
         {{content}}
     </div> <!-- /container -->
     <footer class="usa-footer usa-footer-slim" role="contentinfo">
-        <div class="usa-footer-primary-section">
+        <!-- <div class="usa-footer-primary-section">
             <div class="usa-grid">
                 <nav class="usa-footer-nav usa-width-two-thirds">
                     <ul class="usa-unstyled-list">
@@ -162,13 +167,33 @@
                     </div>
                 </address>
             </div>
-        </div>
+        </div> -->
 
         <div class="usa-footer-secondary_section footer">
             <div class="usa-grid">
-                <div class="usa-footer-logo">
+                <!-- <div class="usa-footer-logo">
                     <img class="usa-footer-slim-logo-img" src="../images/uwds/img/logo-img.png" alt="">
                     <h3 class="usa-footer-slim-logo-heading">Code for DC</h3>
+                </div> -->
+                <!-- <div class="usa-width-one-fourth">
+                  <a href="/code-of-conduct">Code of Conduct</a>
+                </div>
+                <div class="usa-width-one-fourth">
+                  <a href="/slack">Join Slack</a>
+                </div>
+                <div class="usa-width-one-fourth">
+                  <a href="https://github.com/codefordc">GitHub</a>
+                </div>
+                <div class="usa-width-one-fourth">
+                  <a href="https://twitter.com/codefordc">Twitter</a>
+                </div> -->
+                <div class="usa-width-one-third">
+                  <p><a href="/code-of-conduct">Code of Conduct</a></p>
+                  <p><a href="/slack">Join Slack</a></p>
+                </div>
+                <div class="usa-width-one-third">
+                  <p><a href="https://github.com/codefordc">GitHub</a></p>
+                  <p><a href="https://twitter.com/codefordc">Twitter</a></p>
                 </div>
             </div>
         </div>

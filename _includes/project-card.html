@@ -1,0 +1,13 @@
+{% assign project_slug = include.project_slug %}
+{% assign project = site.projects | where: "slug", project_slug | first %}
+
+<script>
+  // console.log("{{ project_name }}");
+  // console.log("{{ project }}"); -->
+</script>
+
+<div class="usa-width-one-third">
+    <a href="{{ project.link }}" target="_blank"><img src="{{ site.baseurl }}/images/project_thumbnails/{{ project.image }}"></a>
+    <h3>{{ project.project_name }}</h3>
+    <p>{{ project.content }}</p>
+</div>

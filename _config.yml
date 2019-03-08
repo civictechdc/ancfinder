@@ -9,3 +9,6 @@ gems:
   - jekyll-redirect-from
 future: true
 baseurl: ''
+
+collections:
+  - projects
