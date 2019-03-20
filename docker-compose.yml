@@ -7,6 +7,7 @@ services:
 
     ancfinder:
             build: .
+            command: bash -c "python3 manage.py collectstatic --noinput && python3 manage.py makemigrations && python3 manage.py migrate && uwsgi --ini /srv/app/uwsgi.ini"
             env_file: app.env
             links:
                 - postgres

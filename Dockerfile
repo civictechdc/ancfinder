@@ -21,7 +21,3 @@ VOLUME /srv/app/static
 
 # expose port and start app
 EXPOSE 8000
-RUN python3 manage.py makemigrations
-RUN python3 manage.py migrate
-RUN python manage.py collectstatic --noinput
-CMD ["uwsgi", "--ini", "/srv/app/uwsgi.ini"]
