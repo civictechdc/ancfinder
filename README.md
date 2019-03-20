@@ -19,17 +19,22 @@ Next, if you have not done so yet, for this repository from the [Code For DC git
 
 	git clone git@github.com:yourUserName/ancfinder.git
 
-At this point you will not have any of the dependencies need to run the website. This is where docker comes in hand. To get all the required dependencies run the following at the command line from your cloned repository:
+Starting Ancfinder
+------------------
+Before you can use docker to start everything up you'll need to app.env and set the `MAPBOX_API_KEY` to the access token for your mapbox account.
 
-	docker build .
+At this point you will not have any of the dependencies need to run the website. This is where docker comes in hand. To get all the required dependencies and start the app, run the following at the command line from your cloned repository:
+
+	docker-compose up -d
+
+If you wish to see additional logging you may leave of `-d`.
 
 If you are unfamiliar with docker, there is a very quick and easy tutorial [here](https://medium.com/@deepakshakya/beginners-guide-to-use-docker-build-run-push-and-pull-4a132c094d75) that will get you up to speed.
 
-Next open app.env and set the `MAPBOX_API_KEY` to the access token for your mapbox account.
+After all the dependencies have downloaded and installed and ancfinder has started, direct your browser to `localhost` to view the website.
 
-Starting Ancfinder
-------------------
+To bring down the app you run the following:
 
-To start the app go to your cloned repository and build run the following:
+	docker-compose down
 
-	docker-compose up -d --build
+If you started things without `-d`, press ctrl + c to kill the process.
