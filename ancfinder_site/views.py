@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import Http404, HttpResponse
 from django.views.generic import TemplateView
+from django.conf import settings
 import logging
 
 from ancfinder_site.models import *
@@ -40,4 +41,25 @@ def TemplateContextProcessor(request):
 	return {
 		"ancs_by_ward": sorted(ancs_by_ward.items()),
 		"anc_list": sorted(anc_list),
+		"MAPBOX_API_KEY": settings.MAPBOX_API_KEY,
 	}
+
+def post(self,request, *args, **kwargs):
+    if self.request.is_ajax():
+        return self.ajax(request)
+
+def ajax(self, request):
+	logger.info("ajax request received...")
+	response_dict = {'success': True}
+	action = request.POST.get('action','')
+
+	if(action == 'get_anc_bounds'):
+		anc_id = request.POST.get('id','')
+		logger.info("requestion anc " + anc_id)
+
+	if(hasattr(self, action)):
+		response_dict = getattr(self, action)(request)
+		anc = Anc.objects.get(id='anc_id')
+		response_dict = {'boundries': anc.boundries}
+
+	return HttpResponse(simplejson.dumps(response_dict), mimetype='application/json')

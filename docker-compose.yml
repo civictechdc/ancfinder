@@ -3,26 +3,27 @@ version: '3'
 services:
     postgres:
         image: postgres
-        # TODO: use environment variable for password
-        environment:
-            - POSTGRES_PASSWORD=ancfinder_pass
-            - POSTGRES_USER=ancfinder
-            - POSTGRES_DB=ancfinder
-    # TODO: copy the static media into nginx from ancfinder
+        env_file: database.env
+
+    ancfinder:
+            build: .
+            command: bash -c "python3 manage.py collectstatic --noinput && python3 manage.py makemigrations && python3 manage.py migrate && uwsgi --ini /srv/app/uwsgi.ini"
+            env_file: app.env
+            links:
+                - postgres
+            volumes:
+                - static:/srv/app/static
     nginx:
         image: nginx:latest
         volumes:
-            - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
-            - ./uswgi_params:/home/docker/code/uwsgi_params:ro
-            - ./certs/letsencrypt:/etc/letsencrypt:ro
+            - ./nginx.conf:/etc/nginx/conf.d/default.conf
+            - ./uwsgi_params:/home/docker/code/uwsgi_params
+            - ./certs/letsencrypt:/etc/letsencrypt
+            - static:/srv/app/static
         ports:
             - "80:80"
             - "443:443"
-        links: 
-            - ancfinder
-    ancfinder:
-        image: codefordc2/ancfinder:latest
         links:
-            - postgres
-        volumes:
-            - ./environment.yaml:/home/ancfinder/environment.yaml
+            - ancfinder
+volumes:
+    static: {}

@@ -20,5 +20,5 @@ from django.urls import include
 urlpatterns = [
     path('', include('ancfinder_site.urls')),
     path('admin/', admin.site.urls),
-    path('well-known/', include('letsencrypt.urls')),
+    # path('well-known/', include('letsencrypt.urls')),
 ]
