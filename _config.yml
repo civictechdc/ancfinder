@@ -2,7 +2,7 @@ markdown: kramdown
 name: Code for DC
 url: https://codefordc.org
 title: Code for DC
-description: "We are a a non-partisan, non-political group of volunteer civic hackers working together to solve local issues and help people engage with the city."
+description: "We are a non-partisan, non-political group of volunteer civic hackers working together to solve local issues and help people engage with the city."
 encoding: utf-8
 timezone: America/New_York
 gems:
