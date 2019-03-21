@@ -1,4 +1,4 @@
-FROM python:3.7.0
+FROM codefordc2/ancfinder-base:1.0
 
 RUN apt-get update && \
     apt-get install -y && \

@@ -1,0 +1,29 @@
+# This file defines the docker services
+version: '3'
+services:
+    postgres:
+        image: postgres
+        env_file: database.env
+    ancfinder:
+            build: 
+                context: .
+                dockerfile: Dockerfile.dev
+            env_file: app.env
+            working_dir: /srv/app
+            links:
+                - postgres
+            volumes:
+                - static:/srv/app/static
+                - ${PWD}:/srv/app
+    nginx:
+        image: nginx:latest
+        volumes:
+            - ./nginx-dev.conf:/etc/nginx/conf.d/default.conf
+            - static:/srv/app/static
+        ports:
+            - "80:80"
+            - "443:443"
+        links:
+            - ancfinder
+volumes:
+    static: {}

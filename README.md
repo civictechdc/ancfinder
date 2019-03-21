@@ -13,23 +13,24 @@ If you're not familiar with forking, Github has a [useful guide](https://help.gi
 Getting Started
 ---------------
 
-In order to get the site running locally you'll want to start by creating an account for Docker, download, and install the program. The community edition can be downloaded [here](https://www.docker.com/community-edition). Additionally, create a [mapbox account](https://www.mapbox.com) to get a access token.
+In order to get the site running locally you'll want to start by creating an account for Docker, download, and install the program. The community edition can be downloaded [here](https://www.docker.com/community-edition).
+
+You'll then need to contact one of the project leads to the mapbox API token.
 
 Next, if you have not done so yet, for this repository from the [Code For DC github page](https://github.com/codefordc). Once forked, clone the repository to your computer to create a working copy.
 
 	git clone git@github.com:yourUserName/ancfinder.git
 
-At this point you will not have any of the dependencies need to run the website. This is where docker comes in hand. To get all the required dependencies run the following at the command line from your cloned repository:
-
-	docker build .
-
-If you are unfamiliar with docker, there is a very quick and easy tutorial [here](https://medium.com/@deepakshakya/beginners-guide-to-use-docker-build-run-push-and-pull-4a132c094d75) that will get you up to speed.
-
 Next open app.env and set the `MAPBOX_API_KEY` to the access token for your mapbox account.
+
 
 Starting Ancfinder
 ------------------
 
-To start the app go to your cloned repository and build run the following:
+At this point you will not have any of the dependencies need to run the website. This is where docker comes in hand. To get all the required dependencies run the following at the command line from your cloned repository:
 
-	docker-compose up -d --build
+	docker-compose -f docker-compose.dev.yml up -d --build
+
+If you are unfamiliar with docker, there is a very quick and easy tutorial [here](https://medium.com/@deepakshakya/beginners-guide-to-use-docker-build-run-push-and-pull-4a132c094d75) that will get you up to speed.
+
+Navigate to localhost
