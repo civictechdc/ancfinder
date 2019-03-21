@@ -1,4 +1,4 @@
-ancfinder
+Ancfinder
 ==========
 
 A website about DC's Advisory Neighborhood Commission system.
@@ -15,62 +15,22 @@ Getting Started
 
 In order to get the site running locally you'll want to start by creating an account for Docker, download, and install the program. The community edition can be downloaded [here](https://www.docker.com/community-edition).
 
-Once forked, clone the forked repository to your computer.
+You'll then need to contact one of the project leads to the mapbox API token.
 
-	git clone --recursive https://github.com/codefordc/ancfinder
-	cd ./ancfinder
-	git submodule init
-	git submodule update
+Next, if you have not done so yet, for this repository from the [Code For DC github page](https://github.com/codefordc). Once forked, clone the repository to your computer to create a working copy.
 
-Running the Site
-----------------
+	git clone git@github.com:yourUserName/ancfinder.git
 
-1. Go to the root of the cloned directory and run `docker-compose up -d`. This will start all the required pieces of infrastructure as well as the application.
-2. Initialize the database by running `docker-compose exec ancfinder python manage.py syncdb --noinput`.
-3. To stop the application `docker-compose stop`; it can be restarted with `docker-compose start`.
+Next open app.env and set the `MAPBOX_API_KEY` to the access token for your mapbox account.
 
-To open the site in a browser, direct your browser to http://localhost:80.
 
-Updating the Code
------------------
+Starting Ancfinder
+------------------
 
-As we make code changes you may need to run:
+At this point you will not have any of the dependencies need to run the website. This is where docker comes in hand. To get all the required dependencies run the following at the command line from your cloned repository:
 
-	git pull --rebase
-	git submodule update --init
-	./manage.py syncdb
+	docker-compose -f docker-compose.dev.yml up -d --build
 
-If we modify the database schema, you may need to delete ancfindersite/database.sqlite and run `./manage.py syncdb` to recreate your database from scratch since we don't currently have a way to upgrade database schemas.
+If you are unfamiliar with docker, there is a very quick and easy tutorial [here](https://medium.com/@deepakshakya/beginners-guide-to-use-docker-build-run-push-and-pull-4a132c094d75) that will get you up to speed.
 
-Updating Static Data
---------------------
-
-The ANC/SMD metadata is stored statically in `static/ancs.json`. To update this file
-from our external data sources, run:
-
-	python3 scripts/update_anc_database.py
-
-You can also selectively update just some of the data (because updating some takes a long time) using command line arguments:
-
-	python3 scripts/update_anc_database.py [--base] [--terms] [--gis] [--neighborhoods] [--census] [--census-analysis]
-
-And to fetch the latest ANC meetings calendar (note that it currently requires Python 2):
-
-	python scripts/update_meeting_database.py
-
-There are also several scripts to grab data for use in `update_anc_database.py`. They are:
-
-        scripts/update_abra.py # Liquor licenses
-        scripts/update_building_permits.py # Building permits
-        scripts/update_terms.py # Terms served by commissioners
-		scripts/update_311.py # 311 requests
-		scripts/update_crimes.py # Doesn't really do anything right now
-
-All of the scripts should be run occasionally to make sure the data shown on the site is up-to-date.
-
-Deployment
-----------
-
-When deploying the code to the live server, remember to update the static files:
-
-	./manage.py collectstatic
+Navigate to localhost

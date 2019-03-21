@@ -1,6 +1,9 @@
 update_anc_database_creds.py
 ancfindersite/database.sqlite
 data
+user_local_environment.yaml
+*.sqlite
+
 
 .DS_Store
 *~
@@ -13,3 +16,9 @@ __pycache__
 .vagrant
 
 *.c9
+
+.Python
+.python-version
+lib
+include
+anc_finder_sql

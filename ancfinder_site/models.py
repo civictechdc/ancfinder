@@ -8,7 +8,7 @@ class Ward(models.Model):
 class Anc(models.Model):
     id = models.CharField(max_length=4, primary_key=True)
     ward = models.ForeignKey('Ward', on_delete=models.CASCADE)
-    ## boundries = models.
+    boundries = models.TextField('Boundry of the Anc')
     pub_date = models.DateTimeField('Date entered', default=timezone.now)
 
 class Smd(models.Model):
