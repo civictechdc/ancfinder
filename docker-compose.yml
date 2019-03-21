@@ -15,9 +15,10 @@ services:
     nginx:
         image: nginx:latest
         volumes:
-            - ./nginx.conf:/etc/nginx/conf.d/default.conf
+            - ./nginx.production.conf:/etc/nginx/conf.d/default.conf
             - ./uwsgi_params:/home/docker/code/uwsgi_params
-            - ./certs/letsencrypt:/etc/letsencrypt
+            - /etc/letsencrypt:/etc/letsencrypt
+            - /usr/share/nginx/html:/usr/share/nginx/html
             - static:/srv/app/static
         ports:
             - "80:80"

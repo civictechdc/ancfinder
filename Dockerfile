@@ -8,9 +8,6 @@ RUN apt-get update && \
 WORKDIR /srv/app
 COPY . /srv/app
 
-# install our dependencies
-RUN pip3 install -r requirements.txt
-
 # set environment Vars
 ENV DJANGO_ENV=test
 ENV STATIC_ROOT=/srv/app/static

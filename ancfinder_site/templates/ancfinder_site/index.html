@@ -25,7 +25,7 @@
 <!--If search successful, details below-->
 <div id="info" style="display: none; margin-top: 1em;">
 	<div>
-		<p>You live in <b>ANC <span id="anc-name" class="anc-name"> </span></b>, single member district <b><span id="smd-name" class="smd-name"> </span></b></p>
+		<p>You live in <b><span id="anc-name" class="anc-name"> </span></b>, single member district <b><span id="smd-name" class="smd-name"> </span></b></p>
 		<p><a id="anc-link">Find out more about this ANC</a></p>
 	</div>
 </div>
@@ -90,13 +90,13 @@ function retrieve_Anc(strAddress){
 		.then(resp => resp.json())
 		.then(locationResponse => {
 			const location = locationResponse && locationResponse.returnDataset && locationResponse.returnDataset['Table1'] && locationResponse.returnDataset	['Table1'][0];
+			$('#info_address_not_found').hide();
 			$('#info').show();
 			$('#loading').hide();
 			$('#anc-name').text(location['ANC']);
 			$('#smd-name').text(location['SMD']);
 			$('#anc-link').attr('href', `https://anc.dc.gov/page/advisory-neighborhood-commission-${location['ANC'].split(' ')[1]}`);	
 			$('#anc-link').attr('target', '_blank');
-			$('#info_address_not_found').show();
 		})
 		.catch(err => {
 			console.error(err);
