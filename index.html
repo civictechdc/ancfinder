@@ -23,7 +23,7 @@ layout: default
       <br>
       <span id="next-rsvps"></span> do-gooders will be there — what about you?
       <br>
-      <a id ="next-rsvp" href="https://www.meetup.com/Code-for-DC/events/" class="usa-button">RSVP on Meetup »</a>
+      <a id ="next-rsvp" target="_blank" href="https://www.meetup.com/Code-for-DC/events/" class="usa-button">RSVP on Meetup »</a>
       </p>
 
       <h3 id="future-meetup-date"></h3>
@@ -31,9 +31,9 @@ layout: default
       <br>
       <span id="future-rsvps"></span> do-gooders will be there — what about you?
       <br>
-      <a id="future-rsvp" href="https://www.meetup.com/Code-for-DC/events/" class="usa-button">RSVP on Meetup »</a>
+      <a id="future-rsvp" target="_blank" href="https://www.meetup.com/Code-for-DC/events/" class="usa-button">RSVP on Meetup »</a>
       </p>
-      <p><strong><a href="https://www.meetup.com/Code-for-DC/events/">See all upcoming events »</a></strong></p>
+      <p><strong><a href="https://www.meetup.com/Code-for-DC/events/" target="_blank">See all upcoming events »</a></strong></p>
     </div>
     <div class="usa-width-one-half">
       <img src="assets/projnight.jpg">
@@ -226,26 +226,7 @@ layout: default
                 } else {
                     $('#future-meetup-date').hide();
                     $('#future-details').hide();
-                    //$('#future-location').hide();
-                    //$('#future-rsvps').hide();
-                    //$('#future-rsvp').hide();
                 }
-
-
-
-                //var popup = new mapboxgl.Popup({
-                //        closeOnClick: false
-                //    })
-                //    .setLngLat([nextMeetup.venue.lon, nextMeetup.venue.lat])
-                //    .setHTML(
-                //        `
-                //        <div style="width: 12rem;">
-                //            <h3>Project Night</h3>
-                //            <p>${nextMeetup.venue.name}</p>
-                //        </div>
-                //    `
-                //    )
-                //    .addTo(map);
             });
     });
 
