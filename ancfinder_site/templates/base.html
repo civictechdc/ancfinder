@@ -14,7 +14,6 @@
       <!-- map box requirements -->
       <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
       <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.0.0/fetch.min.js"></script>
       <!-- bootstrap requirements-->
       <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
       <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -23,7 +22,10 @@
       <link href="{% static "css/theme.css" %}" rel="stylesheet">
       <link href="{% static "css/normalize.css" %}" rel="stylesheet">
       <link href="{% static "css/syntax.css" %}" rel="stylesheet">
-
+      <script src="{% static "common.js" %}"></script>
+      <script>
+        mapboxgl.accessToken = "{{ MAPBOX_API_KEY }}";
+      </script>
       {% block base_head %}{% endblock %}
   </head>
 
@@ -33,7 +35,7 @@
           <div class="warp">
             <img class="logo" src="{% static "img/anc_red_logo.png" %}" alt="ANC" width="75px">
             <h1 class="site-title">
-              <a class="title-link" href="">Anc Finder</a>
+              <a class="title-link" href="/">Anc Finder</a>
             </h1>
           </div>
         </header>
@@ -48,22 +50,8 @@
                   <a href="{% url 'ancfinder_site_what_are_ancs' %}">What are ANCs</a>
                 </li>
                 <li class="nav-item">
-                  <a data-toggle="collapse" href="#anc_list_collapse">Explore ANCs</a>
+                  <a href="{% url 'ancfinder_site_explore_ancs' %}">Explore ANCs</a>
                 </li>
-                <!--<div id="anc_list_collapse" class="collapse show" role="tabpanel">
-                  <ul class="list-group">
-                    {% for ward, ancs in ancs_by_ward %}
-                    <li class="list-group-item">
-                      <a data-toggle="collapse" href="#collapse{{ward}}">Ward {{ward}}</a>
-                      <ul class="collapse" id="collapse{{ward}}">
-                          {% for anc in ancs %}
-                            <li class="list-group-item">{{anc}}</li>
-                          {% endfor %}
-                      </ul>
-                    </li>
-                    {% endfor %}
-                  </ul>
-                </div>-->
                 <li class="nav-item">
                   <a href="{% url 'ancfinder_site_about' %}">About Us</a>
                 </li>

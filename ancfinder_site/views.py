@@ -22,6 +22,9 @@ class AboutTemplateView(TemplateView):
 class WhatAreAncsTemplateView(TemplateView):
 	template_name = 'ancfindersite/what_are_ancs.html'
 
+class ExploreAncs(TemplateView):
+	template_name = 'ancfindersite/explore_ancs.html'
+
 # Defines context for template
 def TemplateContextProcessor(request):
 	# For master.html's Explore menu, we need the list of ancs
@@ -45,6 +48,12 @@ def TemplateContextProcessor(request):
 	return {
 		"MAPBOX_API_KEY": settings.MAPBOX_API_KEY,
 	}
+
+
+def fetch_anc_data(request, *args, **kwards):
+	r = requests.get('https://opendata.arcgis.com/datasets/fcfbf29074e549d8aff9b9c708179291_1.geojson')
+	r.raise_for_status()
+	return JsonResponse(r.json())
 
 
 def location_search(request, *args, **kwargs):

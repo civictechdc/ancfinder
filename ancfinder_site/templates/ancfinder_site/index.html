@@ -1,33 +1,36 @@
 {% extends "base.html" %}
 {% block base_body %}
 <h2>Find Your ANC</h2>
-<p style="margin-bottom: 1em">Washington DC is divided into 40 districts called Advisory Neighborhood Commissions, or ANCs.</p>
+<p style="margin-bottom: 1em">Washington DC is divided into 40 districts called Advisory Neighborhood Commissions, or
+    ANCs.</p>
 <p>Let&rsquo;s find yours. Enter your home address to get started:</p>
 
-	{% csrf_token %}
-	
+{% csrf_token %}
+
 
 <form class="form-inline">
-	<div class="form-group mx-sm-3 mb-2 w-75">
-		<label for="strAddress" class="sr-only">Street Address</label>
-		<input id="strAddress" type="text" class="form-control w-100" placeholder="Your Address" aria-label="Your address"/>
-	</div>
-	<button id="findByAddress" type="submit" class="btn btn-primary mb-2">Search</button>
+    <div class="form-group mx-sm-3 mb-2 w-75">
+        <label for="strAddress" class="sr-only">Street Address</label>
+        <input id="strAddress" type="text" class="form-control w-100" placeholder="Your Address"
+            aria-label="Your address" />
+    </div>
+    <button id="findByAddress" type="submit" class="btn btn-primary mb-2">Search</button>
 </form>
 
 <div id="loading" style="display: none; margin-top: 1em;">
-	Loading...
+    Loading...
 </div>
 <div id="info_address_not_found" style="display: none; margin-top: 1em;">
-	We couldn't find your address. Please try again.
+    We couldn't find your address. Please try again.
 </div>
 
 <!--If search successful, details below-->
 <div id="info" style="display: none; margin-top: 1em;">
-	<div>
-		<p>You live in <b><span id="anc-name" class="anc-name"> </span></b>, single member district <b><span id="smd-name" class="smd-name"> </span></b></p>
-		<p><a id="anc-link">Find out more about this ANC</a></p>
-	</div>
+    <div>
+        <p>You live in <b><span id="anc-name" class="anc-name"> </span></b>, single member district <b><span
+                    id="smd-name" class="smd-name"> </span></b></p>
+        <p><a id="anc-link">Find out more about this ANC</a></p>
+    </div>
 </div>
 
 
@@ -37,74 +40,90 @@
 {% endblock %}
 {% block base_scripts %}
 <script>
-function getCookie(name) {
-    var cookieValue = null;
-    if (document.cookie && document.cookie != '') {
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = jQuery.trim(cookies[i]);
-            // Does this cookie string begin with the name we want?
-            if (cookie.substring(0, name.length + 1) == (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
-        }
+    let ancGeojson;
+    
+
+    const map = createMap('map');
+
+    $(document).ready(function () {
+        $("#findByAddress").click(function (e) {
+            e.preventDefault();
+            const strAddress = $("#strAddress").val();
+            retrieve_Anc(strAddress);
+            return false;
+        });
+		fetchAncGeojson()	
+			.then((data) => {
+				ancGeojson = data;
+			});
+    });
+
+    const showSpinner = () => {
+        $('#loading').show();
+        $('#address-form').hide();
     }
-    return cookieValue;
-}
 
-mapboxgl.accessToken = "{{ MAPBOX_API_KEY }}";
-const map = new mapboxgl.Map({
-	container: 'map',
-	style: 'mapbox://styles/opendatadc/cjtf0zr475ffb1fojc048myrl',
-	center: [-77.003632, 38.893443],
-	zoom: 10.0,
-	interactive: false
-});
+    function addAncHighlight(anc) {
+		map.getLayer(ancLayerId);
+		if(map.getLayer(ancLayerId)) {
+			map.removeLayer(ancLayerId);
+			map.removeSource(ancLayerId);
+		}
+		const geojson = ancGeojson.find(ancInfo => ancInfo.properties.NAME === anc);
+		if(geojson) {
+			map.addLayer({
+				id: ancLayerId,
+				type: 'line',
+				source: {
+					type: 'geojson',
+					data: {
+						...geojson
+					}
+				},
+				layout: {},
+				paint: {
+					'line-color': '#DA253B',
+					'line-width': 3
+				}
+			});
+		}
+    }
 
-$(document).ready(function() {
-    $("#findByAddress").click(function(e){
-			e.preventDefault();
-			const strAddress = $("#strAddress").val();
-			retrieve_Anc(strAddress);
-			return false;
-		});
-});
+    function retrieve_Anc(strAddress) {
+        //using MAR-webservices, retrieve the ANC for this Address
+        showSpinner();
+        fetch('/api/locationSearch', {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': getCookie('csrftoken'),
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    strAddress
+                })
+            })
+            .then(resp => resp.json())
+            .then(locationResponse => {
+                const location = locationResponse && locationResponse.returnDataset && locationResponse
+                    .returnDataset['Table1'] && locationResponse.returnDataset['Table1'][0];
+                $('#info_address_not_found').hide();
+                $('#info').show();
+                $('#loading').hide();
+                $('#anc-name').text(location['ANC']);
+                $('#smd-name').text(location['SMD']);
+                $('#anc-link').attr('href',
+                    `https://anc.dc.gov/page/advisory-neighborhood-commission-${location['ANC'].split(' ')[1]}`);
+                $('#anc-link').attr('target', '_blank');
+				addAncHighlight(location['ANC']);
+            })
+            .catch(err => {
+                console.error(err);
+                $('#info').hide();
+                $('#loading').hide();
+                $('#info_address_not_found').show();
+            });
 
-const showSpinner = () => {
-	$('#loading').show();
-	$('#address-form').hide();
-}
+    }
 
-function retrieve_Anc(strAddress){
-		//using MAR-webservices, retrieve the ANC for this Address
-		showSpinner();
-		fetch('/api/locationSearch', {
-			method: 'POST',
-			headers: {
-				'X-CSRFToken': getCookie('csrftoken'),
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({strAddress})
-		})
-		.then(resp => resp.json())
-		.then(locationResponse => {
-			const location = locationResponse && locationResponse.returnDataset && locationResponse.returnDataset['Table1'] && locationResponse.returnDataset	['Table1'][0];
-			$('#info_address_not_found').hide();
-			$('#info').show();
-			$('#loading').hide();
-			$('#anc-name').text(location['ANC']);
-			$('#smd-name').text(location['SMD']);
-			$('#anc-link').attr('href', `https://anc.dc.gov/page/advisory-neighborhood-commission-${location['ANC'].split(' ')[1]}`);	
-			$('#anc-link').attr('target', '_blank');
-		})
-		.catch(err => {
-			console.error(err);
-			$('#info').hide();
-			$('#loading').hide();
-			$('#info_address_not_found').show();
-		});
-
-}
 </script>
 {% endblock %}

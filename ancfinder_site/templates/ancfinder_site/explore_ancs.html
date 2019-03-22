@@ -1,17 +1,41 @@
 {% extends "base.html" %}
 {% block base_body %}
+<h2>Explore ANCS</h2>
+<p class="what-is-it">Washington DC is divided into 40 districts called Advisory Neighborhood Commissions, or ANCs.</p>
 
-<div id='map' style='width: 100%; height: 100%;'></div>
+<div class="row">
+  <div class="col-10">
+      <div id='map' style='width: 100%; height: 500px;'></div>
+  </div>
+  <div class="col-2">
+    <div class="row" style='width: 100%; height: 500px;'>
+      <div class="list-group list-group-flush" id="ancs" style="overflow-y: auto; height: 100%">
 
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
 {% block base_scripts %}
 <script>
-mapboxgl.accessToken = 'pk.eyJ1IjoicmJteSIsImEiOiJjajhvdG0zZHUwODRzMnFvM3djdjlta29zIn0.sBuaQB8v_xKC3Fbxz786Aw';
-var map = new mapboxgl.Map({
-    container: 'map',
-		center: [-77.0369, 38.9072],
-		zoom: 9,
-    style: 'mapbox://styles/mapbox/streets-v9'
-});
+  $(document).ready(function () {
+    const map = createMap('map');
+    $(`.anclink`).on('click', (evt) => {
+      console.log(evt.target);
+    });
+    fetchAncGeojson()
+      .then((geojson) => {
+        geojson.forEach(anc => {
+          const hoverHandler = addAncHighlightToMap(anc, map);
+          // const ancCard =  $('<div class="col-2 mb-3"></div>')
+          //   .append($('<div class="card"></div>').append($(`<div class="card-body">${anc.properties.NAME}</div>`)))
+          const ancLink = $(`<a style="font-size:0.8rem;" id="${anc.properties.ANC_ID}" href='javascript:void(0);' class="list-group-item list-group-item-action anclink">${anc.properties.ANC_ID}</a>`);
+          $('#ancs').append(ancLink);
+          $(document).on("mouseenter", `a#${anc.properties.ANC_ID}` , hoverHandler);
+        });
+      });
+  });
+
 </script>
+
 {% endblock %}
